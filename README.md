@@ -3,6 +3,8 @@ Alternative to K Means clustering methods for community detection of embedding v
 
 
 ## Setup
+Setup virtual environment with these packages to reproduce results. 
+Note: If you are using Apple silicon macs, CUDA will not work and the gpu functionalities will not work. <Fixing a workable version of the code for it>
 ```bash
 conda create -n project_env_name python=3.9  
 conda activate project_env_name    
