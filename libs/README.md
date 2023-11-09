@@ -7,3 +7,5 @@ pip install -e PROJECT_PACKAGE_NAME
 
 so that you don't need to keep reinstalling the library. Other external
 libraries can be installed here as well. 
+
+URL to install LFR-benchmark : https://github.com/skojaku/LFR-benchmark
