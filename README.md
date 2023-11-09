@@ -2,7 +2,7 @@
 Alternative to K Means clustering methods for community detection of embedding vectors.
 
 
-Reproducing the initial results produced by Dr Sadamori Kojaku. Read more [here](paper/20220803_testing_the_proposed_method%-%Sadamori%Kojaku.pdf)
+Reproducing the initial results produced by Dr Sadamori Kojaku. Read more [here](paper/20220803_testing_the_proposed_method - Sadamori Kojaku.pdf)
 ## Setup
 Setup virtual environment with these packages to reproduce results. 
 Note: If you are using Apple silicon macs, CUDA was made to run on nvidia cards and the gpu functionalities might not work. [Fixing a workable version of the code for it]
