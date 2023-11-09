@@ -14,3 +14,6 @@ mamba install pytorch torchvision torchaudio cudatoolkit=11.8 -c pytorch -c nvid
 mamba install -y -c bioconda -c conda-forge snakemake -y  
 mamba install -c conda-forge graph-tool scikit-learn numpy numba scipy pandas polars networkx seaborn matplotlib gensim ipykernel tqdm black faiss-gpu==1.7.3 -y 
 ```
+
+Install in-house package:
+'cd libs/LFR-benchmark && python3 setup.py build && pip install -e .'
