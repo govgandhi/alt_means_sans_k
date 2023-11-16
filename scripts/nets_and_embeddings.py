@@ -49,4 +49,12 @@ def create_and_save_network_and_embedding(params= None, emb_params = None):
     community_table.to_csv(path_name+"community_table_"+file_name+ ".npz",index=False)
     np.savez_compressed(path_name+"emb_"+file_name + embedding_name+ ".npz",emb = emb)
 
-    return f"Network with mu {params['mu']} created."
+    return net, community_table, emb
+
+"""
+# For loading:
+# import pandas as pd
+# net = sparse.load_npz(path_name+"net_"+file_name + ".npz")
+# community_table = pd.read_csv(path_name+"community_table_"+file_name+ ".npz")
+# emb = np.load(path_name+"emb_"+file_name + embedding_name+ ".npz")['emb']
+"""

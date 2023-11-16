@@ -2,27 +2,29 @@
 Writing this script such that if I run it with input parameters, 
 it should give me element centric similarity for the methods, we query
 each method we query can run withinn this or out. Will decide.
+Use chanage_mu_test.py as reference.
 '''
-import sys
 import numpy as np
 from scipy import sparse
 import pandas as pd
-import os
-import networkx as nx
-import gensim
-import matplotlib.pyplot as plt
-import seaborn as sns
+#import os
+#import networkx as nx
+#import gensim
+#import matplotlib.pyplot as plt
+#import seaborn as sns
 from sklearn.cluster import KMeans 
 from sklearn.cluster import OPTICS
 from sklearn.cluster import OPTICS, DBSCAN
-from fastnode2vec import Graph, Node2Vec
 from sklearn.linear_model import LogisticRegression 
 import faiss
-import lfr
-import embcom
+#import lfr
+#import embcom
 from tqdm import tqdm
-import csv
-from nets_and_embeddings import create_and_save_network_and_embedding
+#import csv
+import sys
+sys.path.append("/nobackup/gogandhi/alt_means_sans_k/")
+
+from scripts.nets_and_embeddings import create_and_save_network_and_embedding
 
 # Need net, node_table and emb files
 # net is G, emb files are wv, node_table probably
@@ -255,150 +257,81 @@ def _label_switching_(A_indptr, A_indices, Z, num_nodes, rho, node_size,epochs=1
     return cids
 
 
-def get_values(params):
+def get_values(net, community_table, emb, score_keys,device_name):
    
     # Normalize the vector of each node to have unit length. This normalization improves clustering.
     X = np.einsum("ij,i->ij", emb, 1 / np.maximum(np.linalg.norm(emb, axis=1), 1e-24))
     X = emb.copy()
     # Clustering
-    kmeans = KMeans(n_clusters= len(set(community_table["community_id"])), random_state=0).fit(X)
-    dbscan = DBSCAN().fit(X)
-    optics = OPTICS().fit(X)
 
-    
-    rpos, cpos, vpos = find_knn_edges(emb, num_neighbors=100, device = "cuda:3")
-    cneg = np.random.choice(emb.shape[0], len(cpos))
-    vneg = np.array(np.sum(emb[rpos, :] * emb[cneg, :], axis=1)).reshape(-1)
+    def proposed_method_labels(emb,device_name):
+        rpos, cpos, vpos = find_knn_edges(emb, num_neighbors=100, device = device_name)
+        cneg = np.random.choice(emb.shape[0], len(cpos))
+        vneg = np.array(np.sum(emb[rpos, :] * emb[cneg, :], axis=1)).reshape(-1)
 
-    model = LogisticRegression()
-    model.fit(
-        np.concatenate([vpos, vneg]).reshape((-1, 1)),
-        np.concatenate([np.ones_like(vpos), np.zeros_like(vneg)]),
-            )
-    w1, b0 = model.coef_[0, 0], -model.intercept_[0] 
-    gs = louvain(emb, w1, b0, device = "cuda:3")
-   
-        # Evaluate the clustering
-    score_kmeans = calc_esim(community_table["community_id"], kmeans.labels_)
-    score_dbscan = calc_esim(community_table["community_id"], dbscan.labels_)
-    score_optics = calc_esim(community_table["community_id"], optics.labels_)
-    score_proposed = calc_esim(community_table["community_id"], gs) 
-     
-   # print(f"Element-centric similarity:") 
-  #  print(f"K-means: {score_kmeans}")
- #   print(f"DBSCAN: {score_dbscan}") # Something Wrong
-#    print(f"OPTICS: {score_optics}") # Something Wrong
-#    print(f"Proposed: {score_proposed}")
-    print([params['mu'],score_kmeans, score_dbscan, score_optics, score_proposed])
-    return [score_kmeans, score_dbscan, score_optics, score_proposed]
+        model = LogisticRegression()
+        model.fit(
+            np.concatenate([vpos, vneg]).reshape((-1, 1)),
+            np.concatenate([np.ones_like(vpos), np.zeros_like(vneg)]),
+                )
+        w1, b0 = model.coef_[0, 0], -model.intercept_[0] 
+        return louvain(emb, w1, b0, device = device_name)
 
-
-
-# Defaults
-params = {
-    "N": 100000,     # number of nodes
-    "k": 50,       # average degree
-    "maxk": 1000,   # maximum degree sqrt(10*N)
-    "minc": 50,    # minimum community size
-    "maxc": 1000,   # maximum community size sqrt(10*N)
-    "tau": 3.0,    # degree exponent
-    "tau2": 1.2,   # community size exponent
-    "mu": 0.2,     # mixing rate
-}
-
-window_length = 10
-walk_length = 80 # Standard
-num_walks = 10 # Standard
-dim = 64
-
-kmeans_values = {}
-write_file_path = "mixing_parameter_test.txt"
-
-for mu in tqdm(np.linspace(0,1,21)):
-    params['mu'] = mu
-    file_name = f"mixing_test_LFR_n_{params['N']}_tau1_{params['tau']}_tau2_{params['tau2']}_mu_{params['mu']}_k_{params['k']}_mincomm_{params['minc']}"
-    path_name = "/nobackup/gogandhi/kmeans/data/"
-    embedding_name = f"sadamori_node2vec_window_length_{window_length}_dim_{dim}"
-    
-    # Check if the file exists
-    if os.path.isfile(path_name+"net_"+file_name + ".npz"):
-            if os.path.isfile(path_name+"community_table_"+file_name+ ".npz"):
-                if os.path.isfile(path_name+"emb_"+file_name + embedding_name+ ".npz"):
-
-                    net = sparse.load_npz(path_name+"net_"+file_name + ".npz")
-                    community_table = pd.read_csv(path_name+"community_table_"+file_name+ ".npz")
-                    emb = np.load(path_name+"emb_"+file_name + embedding_name+ ".npz")['emb']
-                    print(params['mu'], " there")
-            
-    else:
-        print(params['mu'], "not there")
-        ng = lfr.NetworkGenerator()
-        data = ng.generate(**params)
-
-        net = data["net"]                  # scipy.csr_sparse matrix
-        community_table = data["community_table"]  # pandas DataFrame
-        seed = data["seed"]           # Seed value
-
-        model = embcom.embeddings.Node2Vec(window_length, walk_length, num_walks)
-        model.fit(net)
-        emb = model.transform(dim=dim)
-
-        file_name = f"mixing_test_LFR_n_{params['N']}_tau1_{params['tau']}_tau2_{params['tau2']}_mu_{params['mu']}_k_{params['k']}_mincomm_{params['minc']}"
-        path_name = "/nobackup/gogandhi/kmeans/data/"
-        embedding_name = f"sadamori_node2vec_window_length_{window_length}_dim_{dim}"
-
-        sparse.save_npz(path_name+"net_"+file_name + ".npz" ,net) 
-        community_table.to_csv(path_name+"community_table_"+file_name+ ".npz",index=False)
-        np.savez_compressed(path_name+"emb_"+file_name + embedding_name+ ".npz",emb = emb)
-
-    
-    
-    kmeans_values[mu] = get_values(params)
-
-    with open(write_file_path, 'a') as file:
-        content_to_append = ' '.join(map(str, kmeans_values[mu]))
-
-        # Append the string to the file
-        file.write(str(mu) + " " + content_to_append + '\n')  # Add a newline to separate entries
+    # Evaluate the clustering
+    def method_score(key):
+        if key == "kmeans":
+            kmeans = KMeans(n_clusters= len(set(community_table["community_id"])), random_state=0).fit(X)
+            return calc_esim(community_table["community_id"], kmeans.labels_)
         
+        if key == "dbscan":
+            dbscan = DBSCAN().fit(X)
+            return calc_esim(community_table["community_id"], dbscan.labels_)
+        
+        if key == "optics":
+            optics = OPTICS().fit(X)
+            return calc_esim(community_table["community_id"], optics.labels_)
+        
+        if key == "proposed":
+            return calc_esim(community_table["community_id"], proposed_method_labels(emb,device_name)) 
+        
+        #TODO!: Add BIRCH and add X-Means using pyclustering after resolving dependency conflict.
+        if key == "birch":
+            return
+        if key == "xmeans":
+            return
+        
+    score_dictionary={}
+    for key in score_keys:
+        score_dictionary[key] = method_score(key)
+    
+    return score_dictionary
 
 
-# Save the dictionary to a CSV file
-with open('mixing_parameter_test.csv', 'w', newline='') as csv_file:
-    writer = csv.writer(csv_file)
-    for key, value in kmeans_values.items():
-        writer.writerow([key, value])
-'''
-# Load the dictionary from a CSV file
-loaded_data = {}
-with open('data.csv', 'r') as csv_file:
-    reader = csv.reader(csv_file)
-    for row in reader:
-        key, value = row
-        loaded_data[key] = value
+def get_scores(params= None, emb_params = None, score_keys = ['kmeans', 'optics', 'dbscan', 'proposed'], device_name = "cuda:3"):
+    # Defaults
+    if params is None:
+        params = {
+            "N": 100000,     # number of nodes
+            "k": 50,       # average degree
+            "maxk": 1000,   # maximum degree sqrt(10*N)
+            "minc": 50,    # minimum community size
+            "maxc": 1000,   # maximum community size sqrt(10*N)
+            "tau": 3.0,    # degree exponent
+            "tau2": 1.2,   # community size exponent
+            "mu": 0.2,     # mixing rate
+        }
+    if emb_params is None:
+        emb_params = {      "method": "node2vec",
+                            "window_length": 10,
+                            "walk_length": 80,
+                            "num_walks": 10,
+                            "dim" : 64,
+                            }
+    
+    # Will prohibit using existing files to begin with:
+    
+    net, community_table, emb = create_and_save_network_and_embedding(params,emb_params)
+    return get_values(net, community_table, emb, score_keys,device_name)
 
-print(loaded_data)
-'''
 
 
-# Extract x and y values for each curve
-x_values = list(kmeans_values.keys())
-
-# Organize y values for each curve into separate lists
-y_values = list(zip(*kmeans_values.values()))
-
-curve_name= {1:"K-Means", 2:"DBSCAN", 3:"OPTICS",4:"Proposed"}
-# Create a plot for each curve
-for curve_number, y_data in enumerate(y_values, start=1):
-    plt.plot(x_values, y_data, label=f'{curve_name[curve_number]}')
-
-# Customize the plot
-plt.xlabel('Mixing Parameter (mu)')
-plt.ylabel('Corrected Element Centric Similarity')
-plt.title('Which clustering method is better for varying levels of mixing')
-plt.legend()  # Add a legend to differentiate curves
-plt.grid(True)
-
-# Show or save the plot
-plt.show()
-plt.savefig("mixing_parameter.png")

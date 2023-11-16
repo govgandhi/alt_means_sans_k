@@ -1,12 +1,11 @@
-import sys
-sys.path.append("/nobackup/gogandhi/alt_means_sans_k/scipts/")
-
-from nets_and_embeddings import create_and_save_network_and_embedding
 import time
 import concurrent.futures
-from functools import partial
 import numpy as np
 from copy import deepcopy
+import sys
+sys.path.append("/nobackup/gogandhi/alt_means_sans_k/scipts/")
+from nets_and_embeddings import create_and_save_network_and_embedding
+
 params = {
                     "N": 1000,     # number of nodes
                     "k": 25,       # average degree
