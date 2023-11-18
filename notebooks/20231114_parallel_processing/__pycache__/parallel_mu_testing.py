@@ -11,7 +11,6 @@ sys.path.append("/nobackup/gogandhi/alt_means_sans_k/")
 
 
 from scripts.similarity_scores import get_scores
-
 params = {
                     "N": 1000,     # number of nodes
                     "k": 25,       # average degree
@@ -30,6 +29,8 @@ emb_params = {          "method": "node2vec",
                         }
         
 score_keys = ['kmeans', 'optics', 'dbscan', 'proposed']
+path_name = ""
+
 device_name = "cuda:3"# Define the range of mu values
 
 
@@ -40,7 +41,7 @@ list_of_args=[]
 for mu in np.linspace(0,1,3): # change to 21
     temp_params = deepcopy(params)
     temp_params['mu'] = mu
-    list_of_args.append((temp_params,emb_params,score_keys, device_name))
+    list_of_args.append((temp_params,emb_params,score_keys, path_name,device_name))
 
 if __name__ == '__main__':
     start = time.perf_counter()

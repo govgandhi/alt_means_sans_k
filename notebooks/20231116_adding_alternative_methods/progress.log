@@ -1,0 +1,940 @@
+2023-11-17 23:17:09,658 - exception calling callback for <Future at 0x7ff057905880 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/2435434850.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:17:09,664 - exception calling callback for <Future at 0x7ff057899eb0 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/2435434850.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:17:09,665 - exception calling callback for <Future at 0x7ff0579f5b50 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/2435434850.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:17:09,666 - exception calling callback for <Future at 0x7ff0579f5a00 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/2435434850.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:17:09,666 - exception calling callback for <Future at 0x7ff0579f5340 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/2435434850.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:17:09,667 - exception calling callback for <Future at 0x7ff0579f5be0 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/2435434850.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:17:09,667 - exception calling callback for <Future at 0x7ff0579f5310 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/2435434850.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:17:09,668 - exception calling callback for <Future at 0x7ff057908250 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/2435434850.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:17:09,668 - exception calling callback for <Future at 0x7ff057908340 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/2435434850.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:17:09,669 - exception calling callback for <Future at 0x7ff0579088e0 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/2435434850.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:17:35,709 - exception calling callback for <Future at 0x7ff0579f54f0 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:17:35,712 - exception calling callback for <Future at 0x7ff0565a1a00 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:17:35,713 - exception calling callback for <Future at 0x7ff057905880 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:17:35,714 - exception calling callback for <Future at 0x7ff0565a1b80 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:17:35,714 - exception calling callback for <Future at 0x7ff0565a1ca0 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:17:35,715 - exception calling callback for <Future at 0x7ff0565a1fa0 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:17:35,716 - exception calling callback for <Future at 0x7ff0565a1d90 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:17:35,716 - exception calling callback for <Future at 0x7ff057a02850 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:17:35,717 - exception calling callback for <Future at 0x7ff0565a1eb0 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:17:35,717 - exception calling callback for <Future at 0x7ff057a028e0 state=finished raised TypeError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3574165/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:18:29,716 - collecting all words and their counts
+2023-11-17 23:18:29,716 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:18:29,720 - collecting all words and their counts
+2023-11-17 23:18:29,720 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:18:29,757 - collecting all words and their counts
+2023-11-17 23:18:29,757 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:18:29,768 - collecting all words and their counts
+2023-11-17 23:18:29,769 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:18:29,779 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:18:29,779 - Creating a fresh vocabulary
+2023-11-17 23:18:29,782 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:18:29.782312', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:29,782 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:18:29.782443', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:29,783 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:18:29,783 - Creating a fresh vocabulary
+2023-11-17 23:18:29,786 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:18:29.786044', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:29,786 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:18:29.786166', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:29,786 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:18:29,787 - sample=0.001 downsamples 38 most-common words
+2023-11-17 23:18:29,787 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 758389.4440097947 word corpus (94.8%% of prior 800000)', 'datetime': '2023-11-17T23:18:29.787406', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:29,789 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:18:29,789 - sample=0.001 downsamples 39 most-common words
+2023-11-17 23:18:29,790 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 772591.4103434437 word corpus (96.6%% of prior 800000)', 'datetime': '2023-11-17T23:18:29.790133', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:29,793 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:18:29,793 - resetting layer weights
+2023-11-17 23:18:29,794 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:18:29.794070', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:18:29,794 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:18:29.794226', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:29,795 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:18:29,795 - resetting layer weights
+2023-11-17 23:18:29,796 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:18:29.796701', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:18:29,796 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:18:29.796830', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:29,812 - collecting all words and their counts
+2023-11-17 23:18:29,812 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:18:29,833 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:18:29,833 - Creating a fresh vocabulary
+2023-11-17 23:18:29,838 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:18:29.838377', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:29,838 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:18:29.838557', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:29,844 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:18:29,844 - sample=0.001 downsamples 30 most-common words
+2023-11-17 23:18:29,845 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 769134.5540501731 word corpus (96.1%% of prior 800000)', 'datetime': '2023-11-17T23:18:29.845251', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:29,845 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:18:29,846 - Creating a fresh vocabulary
+2023-11-17 23:18:29,848 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:18:29.848610', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:29,848 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:18:29.848754', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:29,852 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:18:29,852 - sample=0.001 downsamples 32 most-common words
+2023-11-17 23:18:29,852 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 763317.1652626529 word corpus (95.4%% of prior 800000)', 'datetime': '2023-11-17T23:18:29.852912', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:29,855 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:18:29,855 - resetting layer weights
+2023-11-17 23:18:29,856 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:18:29.856588', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:18:29,856 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:18:29.856749', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:29,859 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:18:29,859 - resetting layer weights
+2023-11-17 23:18:29,861 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:18:29.861234', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:18:29,861 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:18:29.861380', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:29,866 - collecting all words and their counts
+2023-11-17 23:18:29,866 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:18:29,893 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:18:29,893 - Creating a fresh vocabulary
+2023-11-17 23:18:29,902 - collecting all words and their counts
+2023-11-17 23:18:29,908 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:18:29,912 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:18:29.912772', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:29,912 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:18:29.912954', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:29,918 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:18:29,919 - sample=0.001 downsamples 25 most-common words
+2023-11-17 23:18:29,919 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 773576.054113736 word corpus (96.7%% of prior 800000)', 'datetime': '2023-11-17T23:18:29.919647', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:29,929 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:18:29,929 - resetting layer weights
+2023-11-17 23:18:29,933 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:18:29.933647', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:18:29,933 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:18:29.933827', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:29,978 - collecting all words and their counts
+2023-11-17 23:18:29,978 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:18:29,991 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:18:29,991 - Creating a fresh vocabulary
+2023-11-17 23:18:30,008 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:18:30.008758', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:30,008 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:18:30.008963', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:30,014 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:18:30,015 - sample=0.001 downsamples 39 most-common words
+2023-11-17 23:18:30,015 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 761192.2769392895 word corpus (95.1%% of prior 800000)', 'datetime': '2023-11-17T23:18:30.015591', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:30,025 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:18:30,025 - resetting layer weights
+2023-11-17 23:18:30,030 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:18:30.030544', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:18:30,030 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:18:30.030710', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:30,092 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:18:30,092 - collecting all words and their counts
+2023-11-17 23:18:30,093 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:18:30,106 - collecting all words and their counts
+2023-11-17 23:18:30,106 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:18:30,092 - Creating a fresh vocabulary
+2023-11-17 23:18:30,116 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:18:30,117 - Creating a fresh vocabulary
+2023-11-17 23:18:30,121 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:18:30.121762', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:30,121 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:18:30.121930', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:30,121 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:18:30.121907', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:30,122 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:18:30.122344', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:30,127 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:18:30,128 - sample=0.001 downsamples 32 most-common words
+2023-11-17 23:18:30,128 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:18:30,140 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 771469.4476105063 word corpus (96.4%% of prior 800000)', 'datetime': '2023-11-17T23:18:30.140624', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:30,140 - sample=0.001 downsamples 32 most-common words
+2023-11-17 23:18:30,141 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 752560.1852963185 word corpus (94.1%% of prior 800000)', 'datetime': '2023-11-17T23:18:30.141024', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:30,150 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:18:30,150 - resetting layer weights
+2023-11-17 23:18:30,150 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:18:30,160 - resetting layer weights
+2023-11-17 23:18:30,161 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:18:30.161395', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:18:30,161 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:18:30.161534', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:30,161 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:18:30.161826', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:18:30,161 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:18:30.161971', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:30,228 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:18:30,228 - Creating a fresh vocabulary
+2023-11-17 23:18:30,233 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:18:30.233620', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:30,233 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:18:30.233927', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:30,239 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:18:30,240 - sample=0.001 downsamples 32 most-common words
+2023-11-17 23:18:30,240 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 744950.9950037316 word corpus (93.1%% of prior 800000)', 'datetime': '2023-11-17T23:18:30.240393', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:30,258 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:18:30,272 - resetting layer weights
+2023-11-17 23:18:30,273 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:18:30.273915', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:18:30,274 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:18:30.274207', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:30,359 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:18:30,359 - Creating a fresh vocabulary
+2023-11-17 23:18:30,368 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:18:30.368638', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:30,368 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:18:30.368790', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:30,390 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:18:30,390 - sample=0.001 downsamples 27 most-common words
+2023-11-17 23:18:30,390 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 759770.2903879371 word corpus (95.0%% of prior 800000)', 'datetime': '2023-11-17T23:18:30.390973', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:18:30,401 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:18:30,401 - resetting layer weights
+2023-11-17 23:18:30,417 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:18:30.417358', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:18:30,417 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:18:30.417495', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:30,832 - EPOCH 0 - PROGRESS: at 26.25% examples, 196190 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:30,844 - EPOCH 0 - PROGRESS: at 27.50% examples, 199120 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:30,870 - EPOCH 0 - PROGRESS: at 28.75% examples, 218695 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:30,916 - EPOCH 0 - PROGRESS: at 23.75% examples, 172315 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:31,035 - EPOCH 0 - PROGRESS: at 20.00% examples, 148484 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:31,134 - EPOCH 0 - PROGRESS: at 21.25% examples, 153517 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:31,237 - EPOCH 0 - PROGRESS: at 20.00% examples, 143686 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:31,317 - EPOCH 0 - PROGRESS: at 18.75% examples, 133515 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:31,359 - EPOCH 0 - PROGRESS: at 16.25% examples, 118959 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:31,486 - EPOCH 0 - PROGRESS: at 16.25% examples, 122054 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:31,847 - EPOCH 0 - PROGRESS: at 53.75% examples, 198889 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:31,910 - EPOCH 0 - PROGRESS: at 52.50% examples, 192099 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:31,920 - EPOCH 0 - PROGRESS: at 50.00% examples, 185603 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:31,921 - EPOCH 0 - PROGRESS: at 57.50% examples, 214394 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:32,040 - EPOCH 0 - PROGRESS: at 45.00% examples, 170031 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:32,156 - EPOCH 0 - PROGRESS: at 46.25% examples, 169654 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:32,246 - EPOCH 0 - PROGRESS: at 47.50% examples, 173816 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:32,347 - EPOCH 0 - PROGRESS: at 45.00% examples, 164229 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:32,383 - EPOCH 0 - PROGRESS: at 40.00% examples, 145948 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:32,520 - EPOCH 0 - PROGRESS: at 41.25% examples, 153271 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:32,930 - EPOCH 0 - PROGRESS: at 81.25% examples, 200419 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:32,946 - EPOCH 0 - PROGRESS: at 78.75% examples, 195005 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:32,992 - EPOCH 0 - PROGRESS: at 85.00% examples, 208635 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:33,009 - EPOCH 0 - PROGRESS: at 81.25% examples, 191800 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:33,157 - EPOCH 0 - PROGRESS: at 71.25% examples, 176342 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:33,173 - EPOCH 0 - PROGRESS: at 75.00% examples, 182406 words/s, in_qsize 8, out_qsize 1
+2023-11-17 23:18:33,279 - EPOCH 0 - PROGRESS: at 75.00% examples, 182707 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:33,379 - EPOCH 0 - PROGRESS: at 71.25% examples, 174712 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:33,412 - EPOCH 0 - PROGRESS: at 67.50% examples, 163819 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:33,413 - EPOCH 0: training on 800000 raw words (769242 effective words) took 3.6s, 216449 effective words/s
+2023-11-17 23:18:33,413 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (769242 effective words) took 3.6s, 216292 effective words/s', 'datetime': '2023-11-17T23:18:33.413563', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:33,413 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:18:33.413862', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:18:33,547 - EPOCH 0 - PROGRESS: at 66.25% examples, 163822 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:18:33,608 - EPOCH 0: training on 800000 raw words (758185 effective words) took 3.8s, 198913 effective words/s
+2023-11-17 23:18:33,608 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (758185 effective words) took 3.8s, 198796 effective words/s', 'datetime': '2023-11-17T23:18:33.608511', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:33,608 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:18:33.608838', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:18:33,610 - EPOCH 0: training on 800000 raw words (772532 effective words) took 3.8s, 202648 effective words/s
+2023-11-17 23:18:33,611 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (772532 effective words) took 3.8s, 202554 effective words/s', 'datetime': '2023-11-17T23:18:33.611132', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:33,611 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:18:33.611455', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:18:33,696 - EPOCH 0: training on 800000 raw words (763072 effective words) took 3.8s, 199096 effective words/s
+2023-11-17 23:18:33,696 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (763072 effective words) took 3.8s, 198969 effective words/s', 'datetime': '2023-11-17T23:18:33.696852', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:33,697 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:18:33.697257', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:18:33,885 - EPOCH 0: training on 800000 raw words (773526 effective words) took 3.9s, 198694 effective words/s
+2023-11-17 23:18:33,885 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (773526 effective words) took 3.9s, 196152 effective words/s', 'datetime': '2023-11-17T23:18:33.885892', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:33,886 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:18:33.886510', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:18:33,954 - EPOCH 0: training on 800000 raw words (752669 effective words) took 3.8s, 199961 effective words/s
+2023-11-17 23:18:33,954 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (752669 effective words) took 3.8s, 198495 effective words/s', 'datetime': '2023-11-17T23:18:33.954294', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:33,954 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:18:33.954684', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:18:34,029 - EPOCH 0: training on 800000 raw words (761234 effective words) took 3.9s, 192844 effective words/s
+2023-11-17 23:18:34,029 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (761234 effective words) took 4.0s, 190381 effective words/s', 'datetime': '2023-11-17T23:18:34.029531', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:34,029 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:18:34.029934', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:18:34,064 - EPOCH 0: training on 800000 raw words (771399 effective words) took 3.8s, 201388 effective words/s
+2023-11-17 23:18:34,064 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (771399 effective words) took 3.9s, 197670 effective words/s', 'datetime': '2023-11-17T23:18:34.064398', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:34,064 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:18:34.064501', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:18:34,342 - EPOCH 0: training on 800000 raw words (745048 effective words) took 4.0s, 186211 effective words/s
+2023-11-17 23:18:34,343 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (745048 effective words) took 4.1s, 183123 effective words/s', 'datetime': '2023-11-17T23:18:34.343072', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:34,343 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:18:34.343489', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:18:34,534 - EPOCH 0: training on 800000 raw words (759944 effective words) took 4.1s, 187135 effective words/s
+2023-11-17 23:18:34,535 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (759944 effective words) took 4.1s, 184574 effective words/s', 'datetime': '2023-11-17T23:18:34.535074', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:18:34,535 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:18:34.535458', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:19:00,942 - exception calling callback for <Future at 0x7f1d5516d100 state=finished raised NameError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3576465/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:19:01,189 - exception calling callback for <Future at 0x7f1d55168ee0 state=finished raised NameError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3576465/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:19:02,683 - exception calling callback for <Future at 0x7f1d5516d3d0 state=finished raised NameError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3576465/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:19:06,572 - exception calling callback for <Future at 0x7f1d55168b50 state=finished raised NameError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3576465/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:19:07,138 - exception calling callback for <Future at 0x7f1d55168fd0 state=finished raised NameError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3576465/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:19:09,139 - exception calling callback for <Future at 0x7f1d5515b700 state=finished raised NameError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3576465/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:19:10,364 - exception calling callback for <Future at 0x7f1d5516d2e0 state=finished raised NameError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3576465/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:19:40,436 - exception calling callback for <Future at 0x7f1d5516d1f0 state=finished raised NameError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3576465/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:19:53,267 - exception calling callback for <Future at 0x7f1d5516d4c0 state=finished raised NameError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3576465/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:19:54,697 - exception calling callback for <Future at 0x7f1d5516d5b0 state=finished raised NameError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3576465/3082492414.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:24:01,793 - collecting all words and their counts
+2023-11-17 23:24:01,793 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:24:01,794 - collecting all words and their counts
+2023-11-17 23:24:01,794 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:24:01,851 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:24:01,852 - Creating a fresh vocabulary
+2023-11-17 23:24:01,852 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:24:01,853 - Creating a fresh vocabulary
+2023-11-17 23:24:01,854 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:24:01.854039', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:24:01,854 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:24:01.854134', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:24:01,855 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:24:01.855537', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:24:01,855 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:24:01.855644', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:24:01,857 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:24:01,857 - sample=0.001 downsamples 35 most-common words
+2023-11-17 23:24:01,857 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 770434.3585972072 word corpus (96.3%% of prior 800000)', 'datetime': '2023-11-17T23:24:01.857955', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:24:01,858 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:24:01,859 - sample=0.001 downsamples 46 most-common words
+2023-11-17 23:24:01,859 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 747938.7715383156 word corpus (93.5%% of prior 800000)', 'datetime': '2023-11-17T23:24:01.859528', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:24:01,863 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:24:01,863 - resetting layer weights
+2023-11-17 23:24:01,863 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:24:01.863952', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:24:01,864 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:24:01.864054', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:24:01,864 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:24:01,864 - resetting layer weights
+2023-11-17 23:24:01,865 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:24:01.865804', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:24:01,865 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:24:01.865909', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:24:02,873 - EPOCH 0 - PROGRESS: at 63.75% examples, 488352 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:24:02,881 - EPOCH 0 - PROGRESS: at 61.25% examples, 452698 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:24:03,311 - EPOCH 0: training on 800000 raw words (770372 effective words) took 1.4s, 533775 effective words/s
+2023-11-17 23:24:03,311 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (770372 effective words) took 1.4s, 532372 effective words/s', 'datetime': '2023-11-17T23:24:03.311462', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:24:03,311 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:24:03.311895', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:24:03,376 - EPOCH 0: training on 800000 raw words (747980 effective words) took 1.5s, 496424 effective words/s
+2023-11-17 23:24:03,376 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (747980 effective words) took 1.5s, 495278 effective words/s', 'datetime': '2023-11-17T23:24:03.376528', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:24:03,377 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:24:03.377008', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:24:11,840 - collecting all words and their counts
+2023-11-17 23:24:11,840 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:24:11,902 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:24:11,902 - Creating a fresh vocabulary
+2023-11-17 23:24:11,904 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:24:11.904300', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:24:11,904 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:24:11.904401', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:24:11,907 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:24:11,907 - sample=0.001 downsamples 37 most-common words
+2023-11-17 23:24:11,907 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 752556.9167121743 word corpus (94.1%% of prior 800000)', 'datetime': '2023-11-17T23:24:11.907397', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:24:11,912 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:24:11,912 - resetting layer weights
+2023-11-17 23:24:11,912 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:24:11.912525', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:24:11,912 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:24:11.912818', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:24:12,917 - EPOCH 0 - PROGRESS: at 43.75% examples, 329236 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:24:13,920 - EPOCH 0 - PROGRESS: at 90.00% examples, 338247 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:24:14,138 - EPOCH 0: training on 800000 raw words (752902 effective words) took 2.2s, 338927 effective words/s
+2023-11-17 23:24:14,138 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (752902 effective words) took 2.2s, 338348 effective words/s', 'datetime': '2023-11-17T23:24:14.138436', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:24:14,138 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:24:14.138934', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:24:14,871 - collecting all words and their counts
+2023-11-17 23:24:14,871 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:24:14,934 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:24:14,934 - Creating a fresh vocabulary
+2023-11-17 23:24:14,937 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:24:14.937307', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:24:14,937 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:24:14.937402', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:24:14,940 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:24:14,940 - sample=0.001 downsamples 43 most-common words
+2023-11-17 23:24:14,941 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 766408.1333360797 word corpus (95.8%% of prior 800000)', 'datetime': '2023-11-17T23:24:14.941187', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:24:14,946 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:24:14,946 - resetting layer weights
+2023-11-17 23:24:14,947 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:24:14.947210', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:24:14,947 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:24:14.947304', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:24:15,952 - EPOCH 0 - PROGRESS: at 33.75% examples, 257762 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:24:16,957 - EPOCH 0 - PROGRESS: at 73.75% examples, 281470 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:24:17,472 - EPOCH 0: training on 800000 raw words (766425 effective words) took 2.5s, 303668 effective words/s
+2023-11-17 23:24:17,473 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (766425 effective words) took 2.5s, 303457 effective words/s', 'datetime': '2023-11-17T23:24:17.473262', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:24:17,473 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:24:17.473816', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:26:16,661 - collecting all words and their counts
+2023-11-17 23:26:16,661 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:26:16,722 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:26:16,722 - Creating a fresh vocabulary
+2023-11-17 23:26:16,724 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:26:16.724434', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:26:16,724 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:26:16.724508', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:26:16,727 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:26:16,727 - sample=0.001 downsamples 32 most-common words
+2023-11-17 23:26:16,727 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 753774.6774216783 word corpus (94.2%% of prior 800000)', 'datetime': '2023-11-17T23:26:16.727413', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:26:16,732 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:26:16,732 - resetting layer weights
+2023-11-17 23:26:16,732 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:26:16.732638', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:26:16,732 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:26:16.732819', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:26:17,786 - EPOCH 0 - PROGRESS: at 46.25% examples, 332101 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:26:18,817 - EPOCH 0 - PROGRESS: at 96.25% examples, 348776 words/s, in_qsize 3, out_qsize 1
+2023-11-17 23:26:18,840 - EPOCH 0: training on 800000 raw words (753995 effective words) took 2.1s, 358417 effective words/s
+2023-11-17 23:26:18,840 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (753995 effective words) took 2.1s, 357851 effective words/s', 'datetime': '2023-11-17T23:26:18.840251', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:26:18,840 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:26:18.840722', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:28:13,696 - collecting all words and their counts
+2023-11-17 23:28:13,697 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:28:13,759 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:28:13,759 - Creating a fresh vocabulary
+2023-11-17 23:28:13,761 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:28:13.761920', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:28:13,762 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:28:13.762037', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:28:13,764 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:28:13,765 - sample=0.001 downsamples 32 most-common words
+2023-11-17 23:28:13,765 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 759032.6216716755 word corpus (94.9%% of prior 800000)', 'datetime': '2023-11-17T23:28:13.765100', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:28:13,770 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:28:13,770 - resetting layer weights
+2023-11-17 23:28:13,770 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:28:13.770430', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:28:13,770 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:28:13.770627', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:28:14,825 - EPOCH 0 - PROGRESS: at 46.25% examples, 333905 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:28:15,866 - EPOCH 0 - PROGRESS: at 96.25% examples, 349131 words/s, in_qsize 3, out_qsize 1
+2023-11-17 23:28:15,907 - EPOCH 0: training on 800000 raw words (758811 effective words) took 2.1s, 355868 effective words/s
+2023-11-17 23:28:15,907 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (758811 effective words) took 2.1s, 355178 effective words/s', 'datetime': '2023-11-17T23:28:15.907431', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:28:15,908 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:28:15.908040', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:28:31,237 - exception calling callback for <Future at 0x7f1d5515b700 state=finished raised NameError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3576465/2435728283.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:30:14,273 - exception calling callback for <Future at 0x7f1d55168e20 state=finished raised NameError>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3576465/2435728283.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:32:06,736 - collecting all words and their counts
+2023-11-17 23:32:06,736 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:32:06,783 - collecting all words and their counts
+2023-11-17 23:32:06,784 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:32:06,800 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:32:06,801 - Creating a fresh vocabulary
+2023-11-17 23:32:06,803 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:32:06.803131', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:32:06,803 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:32:06.803224', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:32:06,806 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:32:06,806 - sample=0.001 downsamples 35 most-common words
+2023-11-17 23:32:06,806 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 759701.3905135234 word corpus (95.0%% of prior 800000)', 'datetime': '2023-11-17T23:32:06.806329', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:32:06,811 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:32:06,811 - resetting layer weights
+2023-11-17 23:32:06,811 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:32:06.811815', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:32:06,811 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:32:06.811929', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:32:06,844 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:32:06,844 - Creating a fresh vocabulary
+2023-11-17 23:32:06,846 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:32:06.846323', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:32:06,846 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:32:06.846438', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:32:06,849 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:32:06,849 - sample=0.001 downsamples 32 most-common words
+2023-11-17 23:32:06,849 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 765145.1932203855 word corpus (95.6%% of prior 800000)', 'datetime': '2023-11-17T23:32:06.849720', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:32:06,855 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:32:06,855 - resetting layer weights
+2023-11-17 23:32:06,856 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:32:06.856238', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:32:06,856 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:32:06.856340', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:32:07,819 - EPOCH 0 - PROGRESS: at 66.25% examples, 501326 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:32:07,870 - EPOCH 0 - PROGRESS: at 66.25% examples, 501321 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:32:08,226 - EPOCH 0: training on 800000 raw words (759678 effective words) took 1.4s, 538469 effective words/s
+2023-11-17 23:32:08,226 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (759678 effective words) took 1.4s, 537078 effective words/s', 'datetime': '2023-11-17T23:32:08.226827', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:32:08,227 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:32:08.227420', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:32:08,250 - EPOCH 0: training on 800000 raw words (765300 effective words) took 1.4s, 550243 effective words/s
+2023-11-17 23:32:08,250 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (765300 effective words) took 1.4s, 549162 effective words/s', 'datetime': '2023-11-17T23:32:08.250287', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:32:08,250 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:32:08.250435', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:32:18,168 - collecting all words and their counts
+2023-11-17 23:32:18,168 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:32:18,230 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:32:18,230 - Creating a fresh vocabulary
+2023-11-17 23:32:18,232 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:32:18.232783', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:32:18,232 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:32:18.232887', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:32:18,235 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:32:18,235 - sample=0.001 downsamples 33 most-common words
+2023-11-17 23:32:18,235 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 763269.6963415559 word corpus (95.4%% of prior 800000)', 'datetime': '2023-11-17T23:32:18.235886', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:32:18,241 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:32:18,241 - resetting layer weights
+2023-11-17 23:32:18,241 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:32:18.241517', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:32:18,241 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:32:18.241641', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:32:19,170 - collecting all words and their counts
+2023-11-17 23:32:19,171 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:32:19,240 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:32:19,240 - Creating a fresh vocabulary
+2023-11-17 23:32:19,242 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:32:19.242262', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:32:19,242 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:32:19.242352', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:32:19,245 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:32:19,245 - sample=0.001 downsamples 35 most-common words
+2023-11-17 23:32:19,245 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 759194.4213560161 word corpus (94.9%% of prior 800000)', 'datetime': '2023-11-17T23:32:19.245407', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:32:19,250 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:32:19,250 - resetting layer weights
+2023-11-17 23:32:19,250 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:32:19.250793', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:32:19,251 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:32:19.251030', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:32:19,297 - EPOCH 0 - PROGRESS: at 51.25% examples, 371397 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:32:20,166 - EPOCH 0: training on 800000 raw words (763016 effective words) took 1.9s, 397021 effective words/s
+2023-11-17 23:32:20,166 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (763016 effective words) took 1.9s, 396385 effective words/s', 'datetime': '2023-11-17T23:32:20.166953', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:32:20,167 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:32:20.167489', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:32:20,304 - EPOCH 0 - PROGRESS: at 46.25% examples, 334692 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:32:21,308 - EPOCH 0 - PROGRESS: at 83.75% examples, 309655 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:32:21,704 - EPOCH 0: training on 800000 raw words (759182 effective words) took 2.4s, 309916 effective words/s
+2023-11-17 23:32:21,704 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (759182 effective words) took 2.5s, 309449 effective words/s', 'datetime': '2023-11-17T23:32:21.704693', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:32:21,705 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:32:21.705129', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:33:36,209 - collecting all words and their counts
+2023-11-17 23:33:36,209 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:33:36,269 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:33:36,269 - Creating a fresh vocabulary
+2023-11-17 23:33:36,271 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:33:36.271840', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:33:36,271 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:33:36.271916', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:33:36,274 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:33:36,274 - sample=0.001 downsamples 37 most-common words
+2023-11-17 23:33:36,274 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 769863.2469705016 word corpus (96.2%% of prior 800000)', 'datetime': '2023-11-17T23:33:36.274972', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:33:36,279 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:33:36,279 - resetting layer weights
+2023-11-17 23:33:36,280 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:33:36.280231', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:33:36,280 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:33:36.280430', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:33:37,364 - EPOCH 0 - PROGRESS: at 46.25% examples, 329284 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:33:38,421 - EPOCH 0 - PROGRESS: at 96.25% examples, 346698 words/s, in_qsize 3, out_qsize 1
+2023-11-17 23:33:38,442 - EPOCH 0: training on 800000 raw words (770122 effective words) took 2.2s, 356787 effective words/s
+2023-11-17 23:33:38,442 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (770122 effective words) took 2.2s, 356247 effective words/s', 'datetime': '2023-11-17T23:33:38.442565', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:33:38,442 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:33:38.442970', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:35:33,398 - Processed run 2. Elapsed time: 208.00 seconds
+2023-11-17 23:35:33,399 - exception calling callback for <Future at 0x7f8ffe085a90 state=finished returned NoneType>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3581953/3469386689.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:36:39,877 - collecting all words and their counts
+2023-11-17 23:36:39,877 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:36:39,946 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:36:39,946 - Creating a fresh vocabulary
+2023-11-17 23:36:39,948 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:36:39.948309', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:36:39,948 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:36:39.948383', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:36:39,951 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:36:39,951 - sample=0.001 downsamples 44 most-common words
+2023-11-17 23:36:39,951 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 749581.0781745532 word corpus (93.7%% of prior 800000)', 'datetime': '2023-11-17T23:36:39.951447', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:36:39,956 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:36:39,956 - resetting layer weights
+2023-11-17 23:36:39,956 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:36:39.956803', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:36:39,956 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:36:39.956919', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:36:40,994 - EPOCH 0 - PROGRESS: at 51.25% examples, 371144 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:36:41,859 - EPOCH 0: training on 800000 raw words (749319 effective words) took 1.9s, 394538 effective words/s
+2023-11-17 23:36:41,859 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (749319 effective words) took 1.9s, 393853 effective words/s', 'datetime': '2023-11-17T23:36:41.859782', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:36:41,860 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:36:41.860409', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:42:02,625 - Processed run 1. Elapsed time: 597.23 seconds
+2023-11-17 23:42:02,625 - exception calling callback for <Future at 0x7f8ffe079640 state=finished returned NoneType>
+Traceback (most recent call last):
+  File "/nobackup/gogandhi/miniconda3/envs/kmeans_env/lib/python3.9/concurrent/futures/_base.py", line 330, in _invoke_callbacks
+    callback(self)
+  File "/tmp/ipykernel_3581953/3469386689.py", line 90, in <lambda>
+    future.add_done_callback(lambda p: save_accumulated_results(accumulator, pathname))
+NameError: name 'pathname' is not defined
+2023-11-17 23:58:06,995 - collecting all words and their counts
+2023-11-17 23:58:06,995 - collecting all words and their counts
+2023-11-17 23:58:06,996 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:58:06,996 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:58:07,008 - collecting all words and their counts
+2023-11-17 23:58:07,008 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:58:07,055 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:58:07,055 - Creating a fresh vocabulary
+2023-11-17 23:58:07,056 - collecting all words and their counts
+2023-11-17 23:58:07,056 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:58:07,057 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:58:07,057 - Creating a fresh vocabulary
+2023-11-17 23:58:07,057 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:58:07.057942', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:58:07,058 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:58:07.058394', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:58:07,060 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:58:07.060554', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:58:07,060 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:58:07.060663', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:58:07,061 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:58:07,061 - sample=0.001 downsamples 34 most-common words
+2023-11-17 23:58:07,062 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 761609.5896680417 word corpus (95.2%% of prior 800000)', 'datetime': '2023-11-17T23:58:07.062394', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:58:07,063 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:58:07,063 - sample=0.001 downsamples 33 most-common words
+2023-11-17 23:58:07,064 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 752650.741716786 word corpus (94.1%% of prior 800000)', 'datetime': '2023-11-17T23:58:07.064362', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:58:07,067 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:58:07,067 - resetting layer weights
+2023-11-17 23:58:07,068 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:58:07.068816', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:58:07,068 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:58:07.068915', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:58:07,069 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:58:07,069 - resetting layer weights
+2023-11-17 23:58:07,070 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:58:07.070770', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:58:07,070 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:58:07.070891', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:58:07,070 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:58:07,071 - Creating a fresh vocabulary
+2023-11-17 23:58:07,073 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:58:07.073893', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:58:07,074 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:58:07.074020', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:58:07,077 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:58:07,077 - sample=0.001 downsamples 43 most-common words
+2023-11-17 23:58:07,078 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 761671.8268577063 word corpus (95.2%% of prior 800000)', 'datetime': '2023-11-17T23:58:07.078133', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:58:07,083 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:58:07,083 - resetting layer weights
+2023-11-17 23:58:07,084 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:58:07.084202', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:58:07,084 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:58:07.084301', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:58:07,122 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:58:07,122 - Creating a fresh vocabulary
+2023-11-17 23:58:07,124 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:58:07.124429', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:58:07,124 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:58:07.124543', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:58:07,127 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:58:07,128 - sample=0.001 downsamples 35 most-common words
+2023-11-17 23:58:07,128 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 760733.4129014427 word corpus (95.1%% of prior 800000)', 'datetime': '2023-11-17T23:58:07.128451', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:58:07,133 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:58:07,133 - resetting layer weights
+2023-11-17 23:58:07,134 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:58:07.134930', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:58:07,135 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:58:07.135047', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:58:07,138 - collecting all words and their counts
+2023-11-17 23:58:07,138 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:58:07,269 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:58:07,269 - Creating a fresh vocabulary
+2023-11-17 23:58:07,274 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:58:07.274403', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:58:07,274 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:58:07.274549', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:58:07,280 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:58:07,280 - sample=0.001 downsamples 32 most-common words
+2023-11-17 23:58:07,281 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 769707.5435941719 word corpus (96.2%% of prior 800000)', 'datetime': '2023-11-17T23:58:07.281114', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:58:07,290 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:58:07,290 - resetting layer weights
+2023-11-17 23:58:07,291 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:58:07.291929', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:58:07,292 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:58:07.292053', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:58:08,086 - EPOCH 0 - PROGRESS: at 45.00% examples, 338115 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:58:08,141 - EPOCH 0 - PROGRESS: at 40.00% examples, 282214 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:58:08,172 - EPOCH 0 - PROGRESS: at 33.75% examples, 237008 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:58:08,195 - EPOCH 0 - PROGRESS: at 32.50% examples, 233507 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:58:08,334 - EPOCH 0 - PROGRESS: at 36.25% examples, 268311 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:58:09,060 - EPOCH 0: training on 800000 raw words (761490 effective words) took 2.0s, 383103 effective words/s
+2023-11-17 23:58:09,060 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (761490 effective words) took 2.0s, 382393 effective words/s', 'datetime': '2023-11-17T23:58:09.060664', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:58:09,061 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:58:09.061071', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:58:09,184 - EPOCH 0 - PROGRESS: at 67.50% examples, 245215 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:58:09,209 - EPOCH 0 - PROGRESS: at 82.50% examples, 290788 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:58:09,236 - EPOCH 0 - PROGRESS: at 66.25% examples, 239976 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:58:09,356 - EPOCH 0 - PROGRESS: at 85.00% examples, 317395 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:58:09,603 - EPOCH 0: training on 800000 raw words (752702 effective words) took 2.5s, 297576 effective words/s
+2023-11-17 23:58:09,604 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (752702 effective words) took 2.5s, 297172 effective words/s', 'datetime': '2023-11-17T23:58:09.604154', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:58:09,604 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:58:09.604251', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:58:09,613 - EPOCH 0: training on 800000 raw words (769802 effective words) took 2.3s, 332008 effective words/s
+2023-11-17 23:58:09,613 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (769802 effective words) took 2.3s, 331588 effective words/s', 'datetime': '2023-11-17T23:58:09.613918', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:58:09,614 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:58:09.614304', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:58:10,101 - EPOCH 0: training on 800000 raw words (761553 effective words) took 3.0s, 252660 effective words/s
+2023-11-17 23:58:10,102 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (761553 effective words) took 3.0s, 252375 effective words/s', 'datetime': '2023-11-17T23:58:10.102177', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:58:10,102 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:58:10.102615', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:58:10,281 - EPOCH 0 - PROGRESS: at 100.00% examples, 241953 words/s, in_qsize 0, out_qsize 1
+2023-11-17 23:58:10,281 - EPOCH 0: training on 800000 raw words (760745 effective words) took 3.1s, 241938 effective words/s
+2023-11-17 23:58:10,281 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (760745 effective words) took 3.1s, 241773 effective words/s', 'datetime': '2023-11-17T23:58:10.281893', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:58:10,282 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-17T23:58:10.282185', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-17 23:58:23,949 - Processed run 2 for mu=0.0 on cuda:0. Elapsed time: 18.33 seconds
+2023-11-17 23:58:31,482 - Processed run 1 for mu=0.0 on cuda:0. Elapsed time: 25.86 seconds
+2023-11-17 23:59:50,723 - collecting all words and their counts
+2023-11-17 23:59:50,723 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:59:50,735 - collecting all words and their counts
+2023-11-17 23:59:50,735 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:59:50,736 - collecting all words and their counts
+2023-11-17 23:59:50,736 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:59:50,785 - collecting all words and their counts
+2023-11-17 23:59:50,785 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:59:50,787 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:59:50,787 - Creating a fresh vocabulary
+2023-11-17 23:59:50,790 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:59:50.789983', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:59:50,790 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:59:50.790110', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:59:50,793 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:59:50,794 - sample=0.001 downsamples 28 most-common words
+2023-11-17 23:59:50,794 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 764906.1044006665 word corpus (95.6%% of prior 800000)', 'datetime': '2023-11-17T23:59:50.794567', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:59:50,795 - collecting all words and their counts
+2023-11-17 23:59:50,795 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:59:50,797 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:59:50,797 - Creating a fresh vocabulary
+2023-11-17 23:59:50,799 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:59:50.799688', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:59:50,799 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:59:50.799788', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:59:50,800 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:59:50,800 - resetting layer weights
+2023-11-17 23:59:50,800 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:59:50,801 - Creating a fresh vocabulary
+2023-11-17 23:59:50,802 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:59:50.802617', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:59:50,802 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:59:50.802880', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:59:50,803 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:59:50,803 - sample=0.001 downsamples 36 most-common words
+2023-11-17 23:59:50,803 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 753422.6978713089 word corpus (94.2%% of prior 800000)', 'datetime': '2023-11-17T23:59:50.803933', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:59:50,803 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:59:50.803918', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:59:50,804 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:59:50.804642', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:59:50,807 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:59:50,808 - sample=0.001 downsamples 35 most-common words
+2023-11-17 23:59:50,808 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 743109.3092341298 word corpus (92.9%% of prior 800000)', 'datetime': '2023-11-17T23:59:50.808200', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:59:50,809 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:59:50,809 - resetting layer weights
+2023-11-17 23:59:50,810 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:59:50.810266', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:59:50,810 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:59:50.810371', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:59:50,813 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:59:50,813 - resetting layer weights
+2023-11-17 23:59:50,814 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:59:50.814696', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:59:50,814 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:59:50.814803', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:59:50,819 - collecting all words and their counts
+2023-11-17 23:59:50,820 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-17 23:59:50,858 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:59:50,858 - Creating a fresh vocabulary
+2023-11-17 23:59:50,861 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:59:50.861267', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:59:50,861 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:59:50.861374', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:59:50,863 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:59:50,863 - Creating a fresh vocabulary
+2023-11-17 23:59:50,865 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:59:50,865 - sample=0.001 downsamples 41 most-common words
+2023-11-17 23:59:50,865 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 760592.9711281565 word corpus (95.1%% of prior 800000)', 'datetime': '2023-11-17T23:59:50.865635', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:59:50,866 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:59:50.866633', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:59:50,866 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:59:50.866745', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:59:50,870 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:59:50,870 - sample=0.001 downsamples 38 most-common words
+2023-11-17 23:59:50,870 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 749622.4933663106 word corpus (93.7%% of prior 800000)', 'datetime': '2023-11-17T23:59:50.870844', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:59:50,871 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:59:50,871 - resetting layer weights
+2023-11-17 23:59:50,872 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:59:50.872330', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:59:50,872 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:59:50.872443', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:59:50,877 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:59:50,877 - resetting layer weights
+2023-11-17 23:59:50,878 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:59:50.878613', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:59:50,878 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:59:50.878721', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:59:50,941 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-17 23:59:50,941 - Creating a fresh vocabulary
+2023-11-17 23:59:50,946 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-17T23:59:50.946483', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:59:50,946 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-17T23:59:50.946786', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:59:50,952 - deleting the raw counts dictionary of 1000 items
+2023-11-17 23:59:50,953 - sample=0.001 downsamples 35 most-common words
+2023-11-17 23:59:50,953 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 764303.703831987 word corpus (95.5%% of prior 800000)', 'datetime': '2023-11-17T23:59:50.953568', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-17 23:59:50,963 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-17 23:59:50,963 - resetting layer weights
+2023-11-17 23:59:50,964 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-17T23:59:50.964699', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-17 23:59:50,965 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-17T23:59:50.965029', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-17 23:59:51,827 - EPOCH 0 - PROGRESS: at 32.50% examples, 243825 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:59:51,863 - EPOCH 0 - PROGRESS: at 28.75% examples, 203963 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:59:51,880 - EPOCH 0 - PROGRESS: at 28.75% examples, 217461 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:59:51,890 - EPOCH 0 - PROGRESS: at 30.00% examples, 209983 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:59:51,939 - EPOCH 0 - PROGRESS: at 32.50% examples, 229893 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:59:52,050 - EPOCH 0 - PROGRESS: at 28.75% examples, 216354 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:59:52,843 - EPOCH 0 - PROGRESS: at 67.50% examples, 253543 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:59:52,874 - EPOCH 0 - PROGRESS: at 58.75% examples, 212115 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:59:52,883 - EPOCH 0 - PROGRESS: at 70.00% examples, 265048 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:59:52,900 - EPOCH 0 - PROGRESS: at 56.25% examples, 203065 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:59:52,975 - EPOCH 0 - PROGRESS: at 63.75% examples, 227956 words/s, in_qsize 7, out_qsize 0
+2023-11-17 23:59:53,079 - EPOCH 0 - PROGRESS: at 71.25% examples, 266252 words/s, in_qsize 7, out_qsize 0
+2023-11-18 00:00:11,461 - collecting all words and their counts
+2023-11-18 00:00:11,462 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-18 00:00:11,493 - collecting all words and their counts
+2023-11-18 00:00:11,493 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-18 00:00:11,523 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-18 00:00:11,523 - Creating a fresh vocabulary
+2023-11-18 00:00:11,526 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-18T00:00:11.526090', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-18 00:00:11,526 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-18T00:00:11.526202', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-18 00:00:11,529 - deleting the raw counts dictionary of 1000 items
+2023-11-18 00:00:11,529 - sample=0.001 downsamples 40 most-common words
+2023-11-18 00:00:11,530 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 762732.3842256353 word corpus (95.3%% of prior 800000)', 'datetime': '2023-11-18T00:00:11.530412', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-18 00:00:11,535 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-18 00:00:11,535 - resetting layer weights
+2023-11-18 00:00:11,536 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-18T00:00:11.536563', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-18 00:00:11,536 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-18T00:00:11.536715', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-18 00:00:11,539 - collecting all words and their counts
+2023-11-18 00:00:11,539 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-18 00:00:11,557 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-18 00:00:11,557 - Creating a fresh vocabulary
+2023-11-18 00:00:11,561 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-18T00:00:11.561432', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-18 00:00:11,561 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-18T00:00:11.561596', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-18 00:00:11,565 - deleting the raw counts dictionary of 1000 items
+2023-11-18 00:00:11,565 - sample=0.001 downsamples 31 most-common words
+2023-11-18 00:00:11,565 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 755820.1823972338 word corpus (94.5%% of prior 800000)', 'datetime': '2023-11-18T00:00:11.565809', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-18 00:00:11,571 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-18 00:00:11,571 - resetting layer weights
+2023-11-18 00:00:11,572 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-18T00:00:11.572947', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-18 00:00:11,573 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-18T00:00:11.573092', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-18 00:00:11,593 - collecting all words and their counts
+2023-11-18 00:00:11,594 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-18 00:00:11,599 - collecting all words and their counts
+2023-11-18 00:00:11,599 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-18 00:00:11,604 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-18 00:00:11,604 - Creating a fresh vocabulary
+2023-11-18 00:00:11,607 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-18T00:00:11.607188', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-18 00:00:11,607 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-18T00:00:11.607306', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-18 00:00:11,610 - deleting the raw counts dictionary of 1000 items
+2023-11-18 00:00:11,610 - sample=0.001 downsamples 38 most-common words
+2023-11-18 00:00:11,611 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 737277.5998273476 word corpus (92.2%% of prior 800000)', 'datetime': '2023-11-18T00:00:11.611305', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-18 00:00:11,616 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-18 00:00:11,616 - resetting layer weights
+2023-11-18 00:00:11,617 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-18T00:00:11.617360', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-18 00:00:11,617 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-18T00:00:11.617467', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-18 00:00:11,633 - collecting all words and their counts
+2023-11-18 00:00:11,633 - PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2023-11-18 00:00:11,665 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-18 00:00:11,665 - Creating a fresh vocabulary
+2023-11-18 00:00:11,668 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-18T00:00:11.668643', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-18 00:00:11,668 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-18T00:00:11.668751', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-18 00:00:11,672 - deleting the raw counts dictionary of 1000 items
+2023-11-18 00:00:11,672 - sample=0.001 downsamples 38 most-common words
+2023-11-18 00:00:11,672 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 745071.4115259079 word corpus (93.1%% of prior 800000)', 'datetime': '2023-11-18T00:00:11.672710', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-18 00:00:11,678 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-18 00:00:11,678 - resetting layer weights
+2023-11-18 00:00:11,679 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-18T00:00:11.679181', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-18 00:00:11,679 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-18T00:00:11.679290', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-18 00:00:11,692 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-18 00:00:11,692 - Creating a fresh vocabulary
+2023-11-18 00:00:11,696 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-18T00:00:11.696675', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-18 00:00:11,696 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-18T00:00:11.696807', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-18 00:00:11,702 - deleting the raw counts dictionary of 1000 items
+2023-11-18 00:00:11,702 - sample=0.001 downsamples 33 most-common words
+2023-11-18 00:00:11,703 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 771563.7011839444 word corpus (96.4%% of prior 800000)', 'datetime': '2023-11-18T00:00:11.703258', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-18 00:00:11,712 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-18 00:00:11,713 - resetting layer weights
+2023-11-18 00:00:11,714 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-18T00:00:11.714244', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-18 00:00:11,714 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-18T00:00:11.714364', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-18 00:00:11,760 - collected 1000 word types from a corpus of 800000 raw words and 10000 sentences
+2023-11-18 00:00:11,761 - Creating a fresh vocabulary
+2023-11-18 00:00:11,765 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 retains 1000 unique words (100.00% of original 1000, drops 0)', 'datetime': '2023-11-18T00:00:11.765928', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-18 00:00:11,766 - Word2Vec lifecycle event {'msg': 'effective_min_count=0 leaves 800000 word corpus (100.00% of original 800000, drops 0)', 'datetime': '2023-11-18T00:00:11.766246', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-18 00:00:11,772 - deleting the raw counts dictionary of 1000 items
+2023-11-18 00:00:11,772 - sample=0.001 downsamples 43 most-common words
+2023-11-18 00:00:11,773 - Word2Vec lifecycle event {'msg': 'downsampling leaves estimated 742542.2315958034 word corpus (92.8%% of prior 800000)', 'datetime': '2023-11-18T00:00:11.773312', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'prepare_vocab'}
+2023-11-18 00:00:11,781 - estimated required memory for 1000 words and 64 dimensions: 1012000 bytes
+2023-11-18 00:00:11,781 - resetting layer weights
+2023-11-18 00:00:11,783 - Word2Vec lifecycle event {'update': False, 'trim_rule': 'None', 'datetime': '2023-11-18T00:00:11.783157', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'build_vocab'}
+2023-11-18 00:00:11,783 - Word2Vec lifecycle event {'msg': 'training model with 4 workers on 1000 vocabulary and 64 features, using sg=1 hs=0 sample=0.001 negative=5 window=10 shrink_windows=True', 'datetime': '2023-11-18T00:00:11.783293', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-18 00:00:12,565 - EPOCH 0 - PROGRESS: at 40.00% examples, 297636 words/s, in_qsize 7, out_qsize 0
+2023-11-18 00:00:12,590 - EPOCH 0 - PROGRESS: at 28.75% examples, 214257 words/s, in_qsize 7, out_qsize 0
+2023-11-18 00:00:12,661 - EPOCH 0 - PROGRESS: at 32.50% examples, 229887 words/s, in_qsize 7, out_qsize 0
+2023-11-18 00:00:12,707 - EPOCH 0 - PROGRESS: at 32.50% examples, 235991 words/s, in_qsize 7, out_qsize 0
+2023-11-18 00:00:12,746 - EPOCH 0 - PROGRESS: at 35.00% examples, 262279 words/s, in_qsize 7, out_qsize 0
+2023-11-18 00:00:12,863 - EPOCH 0 - PROGRESS: at 23.75% examples, 173897 words/s, in_qsize 7, out_qsize 0
+2023-11-18 00:00:13,613 - EPOCH 0 - PROGRESS: at 87.50% examples, 321987 words/s, in_qsize 7, out_qsize 0
+2023-11-18 00:00:13,616 - EPOCH 0 - PROGRESS: at 60.00% examples, 222444 words/s, in_qsize 7, out_qsize 0
+2023-11-18 00:00:13,722 - EPOCH 0 - PROGRESS: at 66.25% examples, 241943 words/s, in_qsize 7, out_qsize 0
+2023-11-18 00:00:13,739 - EPOCH 0 - PROGRESS: at 60.00% examples, 208724 words/s, in_qsize 7, out_qsize 0
+2023-11-18 00:00:13,765 - EPOCH 0 - PROGRESS: at 82.50% examples, 310684 words/s, in_qsize 7, out_qsize 0
+2023-11-18 00:00:13,867 - EPOCH 0 - PROGRESS: at 53.75% examples, 197682 words/s, in_qsize 7, out_qsize 0
+2023-11-18 00:00:13,956 - EPOCH 0: training on 800000 raw words (762854 effective words) took 2.4s, 315791 effective words/s
+2023-11-18 00:00:13,956 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (762854 effective words) took 2.4s, 315328 effective words/s', 'datetime': '2023-11-18T00:00:13.956294', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-18 00:00:13,956 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-18T00:00:13.956706', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-18 00:00:14,089 - EPOCH 0: training on 800000 raw words (771367 effective words) took 2.4s, 325125 effective words/s
+2023-11-18 00:00:14,089 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (771367 effective words) took 2.4s, 324798 effective words/s', 'datetime': '2023-11-18T00:00:14.089599', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-18 00:00:14,089 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-18T00:00:14.089694', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-18 00:00:14,690 - EPOCH 0 - PROGRESS: at 93.75% examples, 227565 words/s, in_qsize 5, out_qsize 0
+2023-11-18 00:00:14,736 - EPOCH 0 - PROGRESS: at 98.75% examples, 240895 words/s, in_qsize 1, out_qsize 1
+2023-11-18 00:00:14,749 - EPOCH 0 - PROGRESS: at 92.50% examples, 217811 words/s, in_qsize 6, out_qsize 0
+2023-11-18 00:00:14,768 - EPOCH 0: training on 800000 raw words (745195 effective words) took 3.1s, 241414 effective words/s
+2023-11-18 00:00:14,768 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (745195 effective words) took 3.1s, 241272 effective words/s', 'datetime': '2023-11-18T00:00:14.768252', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-18 00:00:14,768 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-18T00:00:14.768762', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-18 00:00:14,875 - EPOCH 0 - PROGRESS: at 86.25% examples, 211536 words/s, in_qsize 7, out_qsize 0
+2023-11-18 00:00:14,894 - EPOCH 0: training on 800000 raw words (755839 effective words) took 3.3s, 227755 effective words/s
+2023-11-18 00:00:14,894 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (755839 effective words) took 3.3s, 227565 effective words/s', 'datetime': '2023-11-18T00:00:14.894851', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-18 00:00:14,895 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-18T00:00:14.895180', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-18 00:00:15,071 - EPOCH 0: training on 800000 raw words (737090 effective words) took 3.5s, 213503 effective words/s
+2023-11-18 00:00:15,072 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (737090 effective words) took 3.5s, 213390 effective words/s', 'datetime': '2023-11-18T00:00:15.072034', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-18 00:00:15,072 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-18T00:00:15.072415', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-18 00:00:15,462 - EPOCH 0: training on 800000 raw words (742084 effective words) took 3.6s, 205440 effective words/s
+2023-11-18 00:00:15,462 - Word2Vec lifecycle event {'msg': 'training on 800000 raw words (742084 effective words) took 3.7s, 201728 effective words/s', 'datetime': '2023-11-18T00:00:15.462297', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'train'}
+2023-11-18 00:00:15,462 - Word2Vec lifecycle event {'params': 'Word2Vec<vocab=1000, vector_size=64, alpha=0.025>', 'datetime': '2023-11-18T00:00:15.462385', 'gensim': '4.3.2', 'python': '3.9.18 (main, Sep 11 2023, 13:41:44) \n[GCC 11.2.0]', 'platform': 'Linux-5.15.0-76-generic-x86_64-with-glibc2.31', 'event': 'created'}
+2023-11-18 00:00:34,797 - Processed run 2 for mu=0.0 on cuda:0. Elapsed time: 24.69 seconds
+2023-11-18 00:00:34,803 - Processed run 1 for mu=0.0 on cuda:0. Elapsed time: 24.69 seconds
+2023-11-18 00:02:18,571 - Processed run 2 for mu=1.0 on cuda:2. Elapsed time: 128.46 seconds
+2023-11-18 00:03:12,703 - Processed run 1 for mu=0.5 on cuda:1. Elapsed time: 182.59 seconds
+2023-11-18 00:03:29,252 - Processed run 2 for mu=0.5 on cuda:1. Elapsed time: 199.14 seconds
+2023-11-18 00:05:09,196 - Processed run 1 for mu=1.0 on cuda:2. Elapsed time: 299.09 seconds

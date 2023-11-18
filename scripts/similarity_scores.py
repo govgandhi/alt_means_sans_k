@@ -19,12 +19,22 @@ from sklearn.linear_model import LogisticRegression
 import faiss
 #import lfr
 #import embcom
-from tqdm import tqdm
 #import csv
 import sys
 sys.path.append("/nobackup/gogandhi/alt_means_sans_k/")
 
 from scripts.nets_and_embeddings import create_and_save_network_and_embedding
+#from scripts.clustering_methods import clustering_method_values
+
+from pyclustering.cluster import cluster_visualizer
+from pyclustering.cluster.xmeans import xmeans, splitting_type
+from pyclustering.cluster.center_initializer import kmeans_plusplus_initializer
+from pyclustering.utils import read_sample
+from pyclustering.samples.definitions import FCPS_SAMPLES
+import numpy as np
+import belief_propagation
+import infomap
+from graph_tool.all import Graph,minimize_blockmodel_dl
 
 # Need net, node_table and emb files
 # net is G, emb files are wv, node_table probably
@@ -256,9 +266,10 @@ def _label_switching_(A_indptr, A_indices, Z, num_nodes, rho, node_size,epochs=1
             break
     return cids
 
+def clustering_method_values(net, community_table, emb, score_keys, device_name):
 
-def get_values(net, community_table, emb, score_keys,device_name):
-   
+
+
     # Normalize the vector of each node to have unit length. This normalization improves clustering.
     X = np.einsum("ij,i->ij", emb, 1 / np.maximum(np.linalg.norm(emb, axis=1), 1e-24))
     X = emb.copy()
@@ -294,20 +305,58 @@ def get_values(net, community_table, emb, score_keys,device_name):
         if key == "proposed":
             return calc_esim(community_table["community_id"], proposed_method_labels(emb,device_name)) 
         
-        #TODO!: Add BIRCH and add X-Means using pyclustering after resolving dependency conflict.
-        if key == "birch":
-            return
         if key == "xmeans":
-            return
+            # Create instance of X-Means algorithm with MNDL splitting criterion.
+            initial_centers = kmeans_plusplus_initializer(X, amount_centers=len(set(community_table['community_id']))).initialize()
+            xmeans_mndl = xmeans(X, initial_centers, 20, splitting_type=splitting_type.MINIMUM_NOISELESS_DESCRIPTION_LENGTH)
+            xmeans_mndl.process()
+            mndl_clusters = xmeans_mndl.get_clusters()
+            xmeans_labels = [i[1] for i in sorted([(j,i) for i in range(len(mndl_clusters)) for j in mndl_clusters[i]])]
+
+            return calc_esim(community_table["community_id"], xmeans_labels)
         
+        if key == "belief_prop":
+            belief_prop_labels = belief_propagation.detect(net, q=len(set(community_table['community_id'])), init_memberships=community_table["community_id"]) 
+            return calc_esim(community_table["community_id"], belief_prop_labels)
+        
+        if key == "infomap":
+            r, c, v = sparse.find(net + net.T)
+            im = infomap.Infomap()
+            for i in range(len(r)):
+                im.add_link(r[i], c[i], 1)
+            im.run()
+            cids = np.zeros(net.shape[0])
+            for node in im.tree:
+                if node.is_leaf:
+                    cids[node.node_id] = node.module_id
+                    
+            infomap_labels = np.unique(cids, return_inverse=True)[1]
+
+            return calc_esim(community_table["community_id"], infomap_labels)
+            
+        if key == "flatsbm":
+            r, c, v = sparse.find(net)
+            g = Graph(directed=False)
+            g.add_edge_list(np.vstack([r, c]).T)
+            K = len(set(community_table['community_id']))
+            state = minimize_blockmodel_dl(
+                g,
+                state_args={"B_min": K, "B_max": K},
+                multilevel_mcmc_args={"B_max": K, "B_min": K},
+            )
+            b = state.get_blocks()
+            flatsbm_labels = np.unique(np.array(b.a), return_inverse=True)[1]
+            return calc_esim(community_table["community_id"], flatsbm_labels)
+            
     score_dictionary={}
     for key in score_keys:
         score_dictionary[key] = method_score(key)
     
     return score_dictionary
 
-
-def get_scores(params= None, emb_params = None, score_keys = ['kmeans', 'optics', 'dbscan', 'proposed'], device_name = "cuda:3"):
+def get_scores(params= None, emb_params = None, score_keys = None, path_name = None, device_name = "cuda:3"):
+    
+    
     # Defaults
     if params is None:
         params = {
@@ -328,10 +377,12 @@ def get_scores(params= None, emb_params = None, score_keys = ['kmeans', 'optics'
                             "dim" : 64,
                             }
     
+    if score_keys is None:
+        score_keys = ['kmeans', 'dbscan', 'optics', 'proposed','xmeans','belief_prop','infomap','flatsbm']
     # Will prohibit using existing files to begin with:
     
-    net, community_table, emb = create_and_save_network_and_embedding(params,emb_params)
-    return get_values(net, community_table, emb, score_keys,device_name)
+    net, community_table, emb = create_and_save_network_and_embedding(params,emb_params, path_name, save_file=True)
+    return clustering_method_values(net, community_table, emb, score_keys,device_name)
 
 
 
