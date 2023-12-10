@@ -13,10 +13,10 @@ import pandas as pd
 #import matplotlib.pyplot as plt
 #import seaborn as sns
 from sklearn.cluster import KMeans 
-from sklearn.cluster import OPTICS
 from sklearn.cluster import OPTICS, DBSCAN
 from sklearn.linear_model import LogisticRegression 
 import faiss
+import fast_hdbscan
 #import lfr
 #import embcom
 #import csv
@@ -94,7 +94,7 @@ def find_knn_edges(emb, num_neighbors,
     
     return r, c, distances
 
-
+# Only place where GPU is used, need to handle its closing. 
 def find_knn(target, emb, num_neighbors, metric="dotsim", device=None): 
     if metric == "dotsim":
         index = faiss.IndexFlatIP(emb.shape[1]) 
@@ -123,6 +123,8 @@ def find_knn(target, emb, num_neighbors, metric="dotsim", device=None):
             index.add(emb.astype(np.float32))
             distances, indices = index.search(target.astype(np.float32),
                                               k=num_neighbors)
+        
+    index.reset()
     return indices, distances
 
 import numba
@@ -295,8 +297,10 @@ def clustering_method_values(net, community_table, emb, score_keys, device_name)
             return calc_esim(community_table["community_id"], kmeans.labels_)
         
         if key == "dbscan":
-            dbscan = DBSCAN().fit(X)
-            return calc_esim(community_table["community_id"], dbscan.labels_)
+            
+            clusterer = fast_hdbscan.HDBSCAN(min_cluster_size=len(set(community_table["community_id"])))
+            dbscan_labels = clusterer.fit_predict(X)
+            return calc_esim(community_table["community_id"], dbscan_labels)
         
         if key == "optics":
             optics = OPTICS().fit(X)
@@ -321,10 +325,11 @@ def clustering_method_values(net, community_table, emb, score_keys, device_name)
         
         if key == "infomap":
             r, c, v = sparse.find(net + net.T)
-            im = infomap.Infomap()
+            im = infomap.Infomap(silent=True)
             for i in range(len(r)):
                 im.add_link(r[i], c[i], 1)
             im.run()
+            
             cids = np.zeros(net.shape[0])
             for node in im.tree:
                 if node.is_leaf:

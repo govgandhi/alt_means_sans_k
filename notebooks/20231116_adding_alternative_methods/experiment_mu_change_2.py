@@ -15,7 +15,6 @@ import pickle
 sys.path.append("/nobackup/gogandhi/alt_means_sans_k/")
 
 from scripts.similarity_scores import get_scores
-
 logging.basicConfig(filename='progress.log', level=logging.INFO, format='%(asctime)s - %(message)s')
 
 def process_and_save_result(run_no, mu, path_name, score_keys, device_name, emb_params, params):
@@ -43,12 +42,12 @@ def save_accumulated_results(accumulator, pathname):
 accumulator = []  # List to accumulate results for each run and mu
 
 params = {
-    "N": 1000,
-    "k": 5,    # Scaling k, maxk, minc and maxc as sqrt(N)
-    "maxk": 100,
-    "minc": 5,
-    "maxc": 100,
-    "tau": 3.0,
+    "N": 10000,
+    "k": 50,    # Scaling k, maxk, minc and maxc as sqrt(N)
+    "maxk": 1000,
+    "minc": 50,
+    "maxc": 1000,
+    "tau": 2.1,
     "tau2": 1.0,
     "mu": 0.2,
 }
@@ -63,17 +62,16 @@ emb_params = {
 
 score_keys = ['kmeans', 'optics', 'xmeans', 'belief_prop', 'infomap', 'flatsbm', 'proposed'] # dbscan excluded. Still broke.
 
-path_name = f"/nobackup/gogandhi/alt_means_sans_k/data/experiment_mu_change_{params['N']}_{params['k']}_{params['tau']}_testrun"
+path_name = f"/nobackup/gogandhi/alt_means_sans_k/data/experiment_mu_change_{params['N']}_{params['k']}_{params['tau']}"
 if not os.path.isdir(path_name):
     os.mkdir(path_name)
 
-num_cores = 15
-#runs = np.arange(1,11)
-runs = [1,2]
-#mu_values = np.round(np.arange(0, 1.05, 0.05), decimals =2)
-mu_values = [0.0,0.5,1.0]
+num_cores = 24
+runs = np.arange(1, 11)
+mu_values = np.arange(0, 1.05, 0.05)
 
-device_names = [f"cuda:{i}" for i in [0,1,2,3]]  # ['cuda:0', 'cuda:1', 'cuda:2', 'cuda:3'] for cinder only
+#device_names = [f"cuda:{i}" for i in range(1,4)]  # ['cuda:0', 'cuda:1', 'cuda:2', 'cuda:3']
+device_names = "cuda:1" # For ember
 
 if __name__ == '__main__':
     with ProcessPoolExecutor(max_workers=num_cores) as executor:
@@ -98,8 +96,8 @@ with open(f"{path_name}/final_raw_results.pkl", 'wb') as f:
     pickle.dump(accumulator, f)
 
 # Load the accumulator data
-#with open(f"{path_name}/final_raw_results.pkl", 'rb') as f:
-#    accumulator = pickle.load(f)
+with open(f"{path_name}/final_raw_results.pkl", 'rb') as f:
+    accumulator = pickle.load(f)
 
 # Extract mu values and unique labels
 mu_values = np.unique([entry[1] for entry in accumulator])
@@ -126,7 +124,7 @@ for label in labels:
     df_final[f'{label}_std'] = std_scores
 
 # Save the DataFrame to a CSV file
-df_final.to_csv(f"{path_name}/final_experiment_results_with_error_bars.csv", index_label='mu')
+#df_final.to_csv(f"{path_name}/final_experiment_results_with_error_bars.csv", index_label='mu')
 
 # Plot each column as a separate curve with error bars and fill between errors
 for label in labels:
