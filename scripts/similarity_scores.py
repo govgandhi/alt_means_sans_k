@@ -292,24 +292,24 @@ def clustering_method_values(net, community_table, emb, score_keys, device_name)
 
     # Evaluate the clustering
     def method_score(key):
-        if key == "kmeans":
+        if key == "kmeans": # Does use k
             kmeans = KMeans(n_clusters= len(set(community_table["community_id"])), random_state=0).fit(X)
             return calc_esim(community_table["community_id"], kmeans.labels_)
         
-        if key == "dbscan":
+        if key == "dbscan": # Does kinda use k (kinda we give k as minimum cluster size to avoid errors)
             
             clusterer = fast_hdbscan.HDBSCAN(min_cluster_size=len(set(community_table["community_id"])))
             dbscan_labels = clusterer.fit_predict(X)
             return calc_esim(community_table["community_id"], dbscan_labels)
         
-        if key == "optics":
+        if key == "optics": # Does not use k
             optics = OPTICS().fit(X)
             return calc_esim(community_table["community_id"], optics.labels_)
         
-        if key == "proposed":
+        if key == "proposed": # Does not use k
             return calc_esim(community_table["community_id"], proposed_method_labels(emb,device_name)) 
         
-        if key == "xmeans":
+        if key == "xmeans": # Does use k
             # Create instance of X-Means algorithm with MNDL splitting criterion.
             initial_centers = kmeans_plusplus_initializer(X, amount_centers=len(set(community_table['community_id']))).initialize()
             xmeans_mndl = xmeans(X, initial_centers, 20, splitting_type=splitting_type.MINIMUM_NOISELESS_DESCRIPTION_LENGTH)
@@ -319,11 +319,11 @@ def clustering_method_values(net, community_table, emb, score_keys, device_name)
 
             return calc_esim(community_table["community_id"], xmeans_labels)
         
-        if key == "belief_prop":
+        if key == "belief_prop": # Does use k
             belief_prop_labels = belief_propagation.detect(net, q=len(set(community_table['community_id'])), init_memberships=community_table["community_id"]) 
             return calc_esim(community_table["community_id"], belief_prop_labels)
         
-        if key == "infomap":
+        if key == "infomap": # Does not use k
             r, c, v = sparse.find(net + net.T)
             im = infomap.Infomap(silent=True)
             for i in range(len(r)):
@@ -339,7 +339,7 @@ def clustering_method_values(net, community_table, emb, score_keys, device_name)
 
             return calc_esim(community_table["community_id"], infomap_labels)
             
-        if key == "flatsbm":
+        if key == "flatsbm": # Does use k
             r, c, v = sparse.find(net)
             g = Graph(directed=False)
             g.add_edge_list(np.vstack([r, c]).T)
@@ -384,9 +384,12 @@ def get_scores(params= None, emb_params = None, score_keys = None, path_name = N
     
     if score_keys is None:
         score_keys = ['kmeans', 'dbscan', 'optics', 'proposed','xmeans','belief_prop','infomap','flatsbm']
-    # Will prohibit using existing files to begin with:
     
+    # Allowing existing files in path to be uses. We might need to generate all nets and embeddings first and then proceed to clustering.
+    # Easier for snakemake as well.
+
     net, community_table, emb = create_and_save_network_and_embedding(params,emb_params, path_name, save_file=True)
+
     return clustering_method_values(net, community_table, emb, score_keys,device_name)
 
 
