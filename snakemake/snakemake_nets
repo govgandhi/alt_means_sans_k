@@ -1,0 +1,10 @@
+import sys
+sys.path.insert(0, Path(workflow.basedir).parent.as_posix())
+rule all:
+    output:
+        "output.txt"
+    shell:
+        """
+        python -c "print(sys.path)"
+        """
+        

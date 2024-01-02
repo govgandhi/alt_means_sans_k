@@ -5,7 +5,11 @@ import numpy as np
 import pandas as pd
 import os
 
-
+''' USAGE:
+import sys
+sys.path.append("/nobackup/gogandhi/alt_means_sans_k/")
+from scripts.nets_and_embeddings import *
+'''
 def create_network(params= {
                                 "N": 1000,     # number of nodes
                                 "k": 25,       # average degree

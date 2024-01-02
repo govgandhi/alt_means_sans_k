@@ -268,6 +268,20 @@ def _label_switching_(A_indptr, A_indices, Z, num_nodes, rho, node_size,epochs=1
             break
     return cids
 
+def proposed_method_labels(emb,device_name):
+        rpos, cpos, vpos = find_knn_edges(emb, num_neighbors=100, device = device_name)
+        cneg = np.random.choice(emb.shape[0], len(cpos))
+        vneg = np.array(np.sum(emb[rpos, :] * emb[cneg, :], axis=1)).reshape(-1)
+
+        model = LogisticRegression()
+        model.fit(
+            np.concatenate([vpos, vneg]).reshape((-1, 1)),
+            np.concatenate([np.ones_like(vpos), np.zeros_like(vneg)]),
+                )
+        w1, b0 = model.coef_[0, 0], -model.intercept_[0] 
+        return louvain(emb, w1, b0, device = device_name)
+
+    # Evaluate the clustering
 def clustering_method_values(net, community_table, emb, score_keys, device_name):
 
 

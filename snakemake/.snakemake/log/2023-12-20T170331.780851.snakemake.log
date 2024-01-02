@@ -1,0 +1,28 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count
+------------------  -------
+run_python_command        1
+total                     1
+
+Select jobs to execute...
+
+[Wed Dec 20 17:03:32 2023]
+rule run_python_command:
+    output: output.txt
+    jobid: 0
+    reason: Missing output files: output.txt
+    resources: tmpdir=/tmp
+
+RuleException in rule run_python_command in file /nfs/nfs9/home/nobackup/gogandhi/snakemake/Snakefile, line 31:
+NameError: The name 'date' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}, when formatting the following:
+
+        # Use Python within the shell command
+        python -c "print('Hello, SnakeMake!')"
+        
+        # Access Python variables
+        python -c "print('Current date:', '{date}'.format(date=datetime.now()))"
+        

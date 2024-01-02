@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count
+------------------  -------
+run_python_command        1
+total                     1
+
+Select jobs to execute...
+
+[Wed Dec 20 17:06:07 2023]
+rule run_python_command:
+    output: output.txt
+    jobid: 0
+    reason: Missing output files: output.txt
+    resources: tmpdir=/tmp
+
+[Wed Dec 20 17:06:07 2023]
+Error in rule run_python_command:
+    jobid: 0
+    output: output.txt
+    shell:
+        
+        # Use Python within the shell command
+        python -c "print('Hello, SnakeMake!')"
+        
+        # Access Python variables
+        python -c "print('Current date:', datetime.now())"
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-12-20T170606.216790.snakemake.log
