@@ -72,8 +72,8 @@ def calc_esim(y, ypred):
     S = np.sum(np.multiply(Q, (nAB**2))) / N
     
     # Calc the expected element-centric similarity for random partitions
-    Q = np.maximum(nA[:, None] @ np.ones((1, K)), np.ones((K, 1)) @ nB[None, :]) 
-    Q = 1 / np.maximum(Q, 1)
+    #Q = np.maximum(nA[:, None] @ np.ones((1, K)), np.ones((K, 1)) @ nB[None, :]) 
+    #Q = 1 / np.maximum(Q, 1)
     Srand = np.sum(np.multiply(Q, (nAB_rand**2))) / N
     Scorrected = (S - Srand) / (1 - Srand)
     return Scorrected
@@ -98,8 +98,25 @@ def find_knn_edges(emb, num_neighbors,
 def find_knn(target, emb, num_neighbors, metric="dotsim", device=None): 
     if metric == "dotsim":
         index = faiss.IndexFlatIP(emb.shape[1]) 
+    elif metric == "euclidean":
+        index = faiss.IndexFlatL2(emb.shape[1])
+    elif metric == "manhattan":
+        index = faiss.IndexFlatL1(emb.shape[1])
+    elif metric == "cosine":
+        index = faiss.IndexFlatIP(emb.shape[1])
+        emb = emb / np.linalg.norm(emb, axis=1, keepdims=True)
+    elif metric=="mahalanobis":
+        # THis mathematical trick works, but it needs some reworking in target.astype to
+        # give right results.
+        # map the vectors back to a space where they follow a unit Gaussian
+        xc = emb - emb.mean(0)
+        cov = np.dot(xc.T, xc) / xc.shape[0]
+        L = np.linalg.cholesky(cov)
+        mahalanobis_transform = np.linalg.inv(L)
+        emb = np.dot(emb, mahalanobis_transform.T)
+        index = faiss.IndexFlatL2(emb.shape[1])
     else:
-        index = faiss.IndexFlatL2(emb.shape[1]) 
+        raise ValueError("Invalid metric specified.")
     
     if device is None:
         index.add(emb.astype(np.float32))
@@ -117,8 +134,15 @@ def find_knn(target, emb, num_neighbors, metric="dotsim", device=None):
         except RuntimeError:
             if metric == "dotsim":
                 index = faiss.IndexFlatIP(emb.shape[1]) 
-            else:
+            elif metric == "euclidean":
                 index = faiss.IndexFlatL2(emb.shape[1])
+            elif metric == "manhattan":
+                index = faiss.IndexFlatL1(emb.shape[1])
+            elif metric == "cosine":
+                index = faiss.IndexFlatIP(emb.shape[1])
+                emb = emb / np.linalg.norm(emb, axis=1, keepdims=True)
+            else:
+                raise ValueError("Invalid metric specified.")
             
             index.add(emb.astype(np.float32))
             distances, indices = index.search(target.astype(np.float32),
@@ -192,7 +216,7 @@ def louvain(Z, w1, b0, num_neighbors=100, iteration = 50, device = "cuda:0", ret
 #
 # Clustering based on a label switching algorithm
 #
-def label_switching(Z, rho, num_neighbors=50, node_size=None, device=None,epochs=50):
+def label_switching(Z, rho, num_neighbors=50, node_size=None, device=None,epochs=50): # This involves distance metrics (cosine similarity, atm)
     num_nodes, dim = Z.shape
     if node_size is None:
         node_size = np.ones(num_nodes)
@@ -269,7 +293,7 @@ def _label_switching_(A_indptr, A_indices, Z, num_nodes, rho, node_size,epochs=1
     return cids
 
 def proposed_method_labels(emb,device_name):
-        rpos, cpos, vpos = find_knn_edges(emb, num_neighbors=100, device = device_name)
+        rpos, cpos, vpos = find_knn_edges(emb, num_neighbors=200, device = device_name) # this might involve distance metrics
         cneg = np.random.choice(emb.shape[0], len(cpos))
         vneg = np.array(np.sum(emb[rpos, :] * emb[cneg, :], axis=1)).reshape(-1)
 
@@ -279,7 +303,7 @@ def proposed_method_labels(emb,device_name):
             np.concatenate([np.ones_like(vpos), np.zeros_like(vneg)]),
                 )
         w1, b0 = model.coef_[0, 0], -model.intercept_[0] 
-        return louvain(emb, w1, b0, device = device_name)
+        return louvain(emb, w1, b0, device = device_name) # this might involve distance metrics
 
     # Evaluate the clustering
 def clustering_method_values(net, community_table, emb, score_keys, device_name):
