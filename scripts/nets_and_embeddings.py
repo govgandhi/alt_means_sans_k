@@ -114,7 +114,6 @@ def create_and_save_network_and_embedding(params, emb_params, path_name=None, sa
 
 # import pandas as pd
 
-
 """
 # For loading:
 # net = sparse.load_npz(path_name+"net_"+file_name + ".npz")

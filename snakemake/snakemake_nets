@@ -1,10 +1,19 @@
-import sys
-sys.path.insert(0, Path(workflow.basedir).parent.as_posix())
+# Snakefile
+
+runs = list(range(1, 11))
+values = [1, 2, 3, 4, 5]  # Replace this with your actual values
+
 rule all:
+    input:
+        expand("../Data/results/run_{run}/value_{value}/result.txt", run=runs, value=values)
+
+rule run_function:
+    input:
+        script="../Scripts/script.py"
     output:
-        "output.txt"
-    shell:
-        """
-        python -c "print(sys.path)"
-        """
-        
+        "../Data/results/run_{run}/value_{value}/result.txt"
+    params:
+        run_no="{run}",
+        value="{value}"
+    run:
+        "python {input.script} {params.run_no} {params.value}"
