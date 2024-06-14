@@ -1,0 +1,50 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job stats:
+job               count
+--------------  -------
+all                   1
+process_input1        1
+process_input2        1
+total                 3
+
+Select jobs to execute...
+
+[Wed Dec 20 16:56:42 2023]
+rule process_input1:
+    input: input1.txt
+    output: output1.txt
+    jobid: 1
+    reason: Missing output files: output1.txt
+    resources: tmpdir=/tmp
+
+
+[Wed Dec 20 16:56:42 2023]
+rule process_input2:
+    input: input2.txt
+    output: output2.txt
+    jobid: 2
+    reason: Missing output files: output2.txt
+    resources: tmpdir=/tmp
+
+[Wed Dec 20 16:56:42 2023]
+Finished job 1.
+1 of 3 steps (33%) done
+[Wed Dec 20 16:56:42 2023]
+Finished job 2.
+2 of 3 steps (67%) done
+Select jobs to execute...
+
+[Wed Dec 20 16:56:42 2023]
+localrule all:
+    input: output1.txt, output2.txt
+    jobid: 0
+    reason: Input files updated by another job: output1.txt, output2.txt
+    resources: tmpdir=/tmp
+
+[Wed Dec 20 16:56:42 2023]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2023-12-20T165641.002285.snakemake.log

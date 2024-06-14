@@ -72,8 +72,8 @@ def calc_esim(y, ypred):
     S = np.sum(np.multiply(Q, (nAB**2))) / N
     
     # Calc the expected element-centric similarity for random partitions
-    Q = np.maximum(nA[:, None] @ np.ones((1, K)), np.ones((K, 1)) @ nB[None, :]) 
-    Q = 1 / np.maximum(Q, 1)
+    #Q = np.maximum(nA[:, None] @ np.ones((1, K)), np.ones((K, 1)) @ nB[None, :]) 
+    #Q = 1 / np.maximum(Q, 1)
     Srand = np.sum(np.multiply(Q, (nAB_rand**2))) / N
     Scorrected = (S - Srand) / (1 - Srand)
     return Scorrected
@@ -98,8 +98,25 @@ def find_knn_edges(emb, num_neighbors,
 def find_knn(target, emb, num_neighbors, metric="dotsim", device=None): 
     if metric == "dotsim":
         index = faiss.IndexFlatIP(emb.shape[1]) 
+    elif metric == "euclidean":
+        index = faiss.IndexFlatL2(emb.shape[1])
+    elif metric == "manhattan":
+        index = faiss.IndexFlatL1(emb.shape[1])
+    elif metric == "cosine":
+        index = faiss.IndexFlatIP(emb.shape[1])
+        emb = emb / np.linalg.norm(emb, axis=1, keepdims=True)
+    elif metric=="mahalanobis":
+        # THis mathematical trick works, but it needs some reworking in target.astype to
+        # give right results.
+        # map the vectors back to a space where they follow a unit Gaussian
+        xc = emb - emb.mean(0)
+        cov = np.dot(xc.T, xc) / xc.shape[0]
+        L = np.linalg.cholesky(cov)
+        mahalanobis_transform = np.linalg.inv(L)
+        emb = np.dot(emb, mahalanobis_transform.T)
+        index = faiss.IndexFlatL2(emb.shape[1])
     else:
-        index = faiss.IndexFlatL2(emb.shape[1]) 
+        raise ValueError("Invalid metric specified.")
     
     if device is None:
         index.add(emb.astype(np.float32))
@@ -117,8 +134,15 @@ def find_knn(target, emb, num_neighbors, metric="dotsim", device=None):
         except RuntimeError:
             if metric == "dotsim":
                 index = faiss.IndexFlatIP(emb.shape[1]) 
-            else:
+            elif metric == "euclidean":
                 index = faiss.IndexFlatL2(emb.shape[1])
+            elif metric == "manhattan":
+                index = faiss.IndexFlatL1(emb.shape[1])
+            elif metric == "cosine":
+                index = faiss.IndexFlatIP(emb.shape[1])
+                emb = emb / np.linalg.norm(emb, axis=1, keepdims=True)
+            else:
+                raise ValueError("Invalid metric specified.")
             
             index.add(emb.astype(np.float32))
             distances, indices = index.search(target.astype(np.float32),
@@ -192,7 +216,7 @@ def louvain(Z, w1, b0, num_neighbors=100, iteration = 50, device = "cuda:0", ret
 #
 # Clustering based on a label switching algorithm
 #
-def label_switching(Z, rho, num_neighbors=50, node_size=None, device=None,epochs=50):
+def label_switching(Z, rho, num_neighbors=50, node_size=None, device=None,epochs=50): # This involves distance metrics (cosine similarity, atm)
     num_nodes, dim = Z.shape
     if node_size is None:
         node_size = np.ones(num_nodes)
@@ -268,6 +292,20 @@ def _label_switching_(A_indptr, A_indices, Z, num_nodes, rho, node_size,epochs=1
             break
     return cids
 
+# def proposed_method_labels(emb,device_name):
+#         rpos, cpos, vpos = find_knn_edges(emb, num_neighbors=200, device = device_name) # this might involve distance metrics
+#         cneg = np.random.choice(emb.shape[0], len(cpos))
+#         vneg = np.array(np.sum(emb[rpos, :] * emb[cneg, :], axis=1)).reshape(-1)
+
+#         model = LogisticRegression()
+#         model.fit(
+#             np.concatenate([vpos, vneg]).reshape((-1, 1)),
+#             np.concatenate([np.ones_like(vpos), np.zeros_like(vneg)]),
+#                 )
+#         w1, b0 = model.coef_[0, 0], -model.intercept_[0] 
+#         return louvain(emb, w1, b0, device = device_name) # this might involve distance metrics
+
+    # Evaluate the clustering
 def clustering_method_values(net, community_table, emb, score_keys, device_name):
 
 
@@ -278,7 +316,7 @@ def clustering_method_values(net, community_table, emb, score_keys, device_name)
     # Clustering
 
     def proposed_method_labels(emb,device_name):
-        rpos, cpos, vpos = find_knn_edges(emb, num_neighbors=100, device = device_name)
+        rpos, cpos, vpos = find_knn_edges(emb, num_neighbors=500, device = device_name)
         cneg = np.random.choice(emb.shape[0], len(cpos))
         vneg = np.array(np.sum(emb[rpos, :] * emb[cneg, :], axis=1)).reshape(-1)
 
@@ -292,24 +330,24 @@ def clustering_method_values(net, community_table, emb, score_keys, device_name)
 
     # Evaluate the clustering
     def method_score(key):
-        if key == "kmeans":
+        if key == "kmeans": # Does use k
             kmeans = KMeans(n_clusters= len(set(community_table["community_id"])), random_state=0).fit(X)
             return calc_esim(community_table["community_id"], kmeans.labels_)
         
-        if key == "dbscan":
+        if key == "dbscan": # Does kinda use k (kinda we give k as minimum cluster size to avoid errors)
             
             clusterer = fast_hdbscan.HDBSCAN(min_cluster_size=len(set(community_table["community_id"])))
             dbscan_labels = clusterer.fit_predict(X)
             return calc_esim(community_table["community_id"], dbscan_labels)
         
-        if key == "optics":
+        if key == "optics": # Does not use k
             optics = OPTICS().fit(X)
             return calc_esim(community_table["community_id"], optics.labels_)
         
-        if key == "proposed":
+        if key == "proposed": # Does not use k
             return calc_esim(community_table["community_id"], proposed_method_labels(emb,device_name)) 
         
-        if key == "xmeans":
+        if key == "xmeans": # Does use k
             # Create instance of X-Means algorithm with MNDL splitting criterion.
             initial_centers = kmeans_plusplus_initializer(X, amount_centers=len(set(community_table['community_id']))).initialize()
             xmeans_mndl = xmeans(X, initial_centers, 20, splitting_type=splitting_type.MINIMUM_NOISELESS_DESCRIPTION_LENGTH)
@@ -319,11 +357,11 @@ def clustering_method_values(net, community_table, emb, score_keys, device_name)
 
             return calc_esim(community_table["community_id"], xmeans_labels)
         
-        if key == "belief_prop":
+        if key == "belief_prop": # Does use k
             belief_prop_labels = belief_propagation.detect(net, q=len(set(community_table['community_id'])), init_memberships=community_table["community_id"]) 
             return calc_esim(community_table["community_id"], belief_prop_labels)
         
-        if key == "infomap":
+        if key == "infomap": # Does not use k
             r, c, v = sparse.find(net + net.T)
             im = infomap.Infomap(silent=True)
             for i in range(len(r)):
@@ -339,7 +377,7 @@ def clustering_method_values(net, community_table, emb, score_keys, device_name)
 
             return calc_esim(community_table["community_id"], infomap_labels)
             
-        if key == "flatsbm":
+        if key == "flatsbm": # Does use k
             r, c, v = sparse.find(net)
             g = Graph(directed=False)
             g.add_edge_list(np.vstack([r, c]).T)
@@ -359,7 +397,7 @@ def clustering_method_values(net, community_table, emb, score_keys, device_name)
     
     return score_dictionary
 
-def get_scores(params= None, emb_params = None, score_keys = None, path_name = None, device_name = "cuda:3"):
+def get_scores(params= None, emb_params = None, score_keys = None, path_name = None, device_name = "cuda:0"):
     
     
     # Defaults
@@ -384,9 +422,12 @@ def get_scores(params= None, emb_params = None, score_keys = None, path_name = N
     
     if score_keys is None:
         score_keys = ['kmeans', 'dbscan', 'optics', 'proposed','xmeans','belief_prop','infomap','flatsbm']
-    # Will prohibit using existing files to begin with:
     
+    # Allowing existing files in path to be uses. We might need to generate all nets and embeddings first and then proceed to clustering.
+    # Easier for snakemake as well.
+
     net, community_table, emb = create_and_save_network_and_embedding(params,emb_params, path_name, save_file=True)
+
     return clustering_method_values(net, community_table, emb, score_keys,device_name)
 
 
