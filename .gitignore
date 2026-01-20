@@ -1,5 +1,5 @@
-# Data files
-/data/
+# Data files - NEVER COMMIT
+**/data/
 archive/kmeans/data/
 are_angles_important/*.txt
 are_angles_important/*.inf_coord
@@ -9,6 +9,11 @@ are_angles_important/*.inf_log
 *.pkl
 *.pickle
 *.npz
+*.npy
+*.h5
+*.hdf5
+*.edge
+*.edgelist
 *.wv
 *.gz
 
@@ -21,6 +26,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.so
+*.o
 .Python
 *.egg-info/
 dist/
