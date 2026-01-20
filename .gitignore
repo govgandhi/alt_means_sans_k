@@ -1,1 +1,49 @@
+# Data files
 /data/
+archive/kmeans/data/
+are_angles_important/*.txt
+are_angles_important/*.inf_coord
+are_angles_important/*.inf_log
+*.csv
+*.parquet
+*.pkl
+*.pickle
+*.npz
+*.wv
+*.gz
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Credentials (NEVER COMMIT)
+*credentials*.json
+*creds*.json
+*.pem
+*.key
+
+# Large model files
+*.pt
+*.pth
+*.ckpt
+
+# Output files that can be regenerated
+*.out
