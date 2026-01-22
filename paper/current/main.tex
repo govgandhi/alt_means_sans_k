@@ -6,7 +6,6 @@
 % --- Custom Commands ---
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
 \newcommand{\E}{\mathbb{E}}
-\newcommand{\Var}{\text{Var}}
 \newcommand{\Vol}{\text{Vol}}
 \newcommand{\Comm}{\text{Comm}}
 
@@ -15,7 +14,7 @@
 \newtheorem{proposition}{Proposition}
 \newtheorem{remark}{Remark}
 
-\title{Community Information in Graph Embeddings:\\A Theoretical Analysis via the DCSBM}
+\title{Why Node2Vec Resists Theoretical Analysis:\\Tracing Community Information Through Graph Embedding Pipelines}
 \author{}
 \date{\today}
 
@@ -25,407 +24,206 @@
 
 \section{Introduction}
 
-Graph embedding methods map nodes to vectors in $\mathbb{R}^d$, aiming to preserve structural information. A fundamental question is: \textbf{where does community information live in these embeddings, and can it be separated from degree information?}
+Spectral methods like Laplacian Eigenmaps have well-understood theoretical properties on generative models like the Degree-Corrected Stochastic Block Model (DCSBM). In particular, \citet{qin2013regularized} showed that eigenvector normalization perfectly separates community from degree information---community lives in direction, degree in magnitude.
 
-We address this question using the Degree-Corrected Stochastic Block Model (DCSBM), which cleanly separates community membership from degree heterogeneity. This makes it an ideal theoretical lens for understanding how community structure propagates through embedding algorithms.
+Neural embedding methods like Node2Vec lack comparable theoretical guarantees. This paper asks: \textbf{why?} We trace community information through the Node2Vec pipeline and identify precisely where theoretical analysis breaks down.
 
-\textbf{Main result}: For Laplacian Eigenmaps applied to DCSBM graphs, we prove that community information lives entirely in the \textit{direction} of node embeddings, while degree information lives in the \textit{magnitude}. Normalizing embeddings perfectly recovers community structure.
+\textbf{Main contributions:}
+\begin{enumerate}
+    \item We show the random walk co-occurrence matrix preserves the spectral structure of the normalized adjacency via a similarity transformation (Section~\ref{sec:cooccurrence}).
+    \item We prove the PMI transform converts the multiplicative community-degree structure to additive, breaking the separation property (Section~\ref{sec:pmi}).
+    \item We identify three theoretical barriers in SGNS that prevent closed-form characterization of embeddings (Section~\ref{sec:sgns}).
+\end{enumerate}
 
-We then contrast this with Node2Vec, explaining precisely where its pipeline diverges and why the same clean separation cannot be established theoretically.
+\section{Background: DCSBM and Spectral Methods}
 
-\section{The Degree-Corrected Stochastic Block Model}
+\subsection{The Degree-Corrected Stochastic Block Model}
 
-\subsection{Model Definition}
+In the DCSBM, each node $i$ has community assignment $g_i \in \{1, \ldots, K\}$ and degree parameter $\theta_i > 0$. Edges form independently with $\E[A_{ij}] = \theta_i \theta_j B_{g_i, g_j}$, where $B$ is the community connectivity matrix.
 
-Consider a graph $G = (V, E)$ with $n$ nodes. In the DCSBM, each node $i \in V$ has:
-\begin{itemize}
-    \item A \textbf{community assignment} $g_i \in \{1, \ldots, K\}$, where $K$ is the number of communities
-    \item A \textbf{degree parameter} $\theta_i > 0$ controlling the node's overall connectivity
-\end{itemize}
+The expected degree factors as $\E[d_i] = \theta_i \cdot \gamma_{g_i}$, where $\gamma_g = \sum_k B_{gk} \Vol_k$ and $\Vol_k = \sum_{j \in \Comm_k} \theta_j$.
 
-Edges are generated independently. For nodes $i \neq j$, the edge indicator $A_{ij} \in \{0,1\}$ satisfies:
-\begin{equation}
-    \E[A_{ij}] = \theta_i \theta_j B_{g_i, g_j}
-\end{equation}
-where $A$ is the adjacency matrix and $B \in \mathbb{R}^{K \times K}$ is a symmetric \textbf{community connectivity matrix}. The entry $B_{ab}$ controls the base rate of connections between communities $a$ and $b$.
+\subsection{Known Result: Spectral Separation}
 
-\textbf{Key property}: This factorization separates two distinct roles:
-\begin{itemize}
-    \item $\theta_i$ controls ``how much'' node $i$ connects (its propensity for edges)
-    \item $g_i$ controls ``to whom'' (the pattern of connections across communities)
-\end{itemize}
+For the normalized adjacency $S = D^{-1/2}AD^{-1/2}$, \citet{qin2013regularized} established:
 
-\subsection{Derived Quantities}
-
-We define several quantities that will appear throughout.
-
-\textbf{Community node set}: $\Comm_k = \{j : g_j = k\}$ is the set of all nodes in community $k$.
-
-\textbf{Community degree mass}:
-\begin{equation}
-    \Vol_k = \sum_{j \in \Comm_k} \theta_j
-\end{equation}
-This is the sum of degree parameters over all nodes in community $k$. It measures the ``total connectivity potential'' of community $k$.
-
-\textbf{Expected degree}: The expected degree of node $i$ is:
-\begin{align}
-    \E[d_i] &= \sum_{j \neq i} \E[A_{ij}] = \sum_{j \neq i} \theta_i \theta_j B_{g_i, g_j}
-\end{align}
-
-We can group this sum by the community of $j$:
-\begin{align}
-    \E[d_i] &= \theta_i \sum_{k=1}^{K} B_{g_i, k} \sum_{j \in \Comm_k, j \neq i} \theta_j
-\end{align}
-
-For large $n$, the omission of the single term $j = i$ is negligible, so:
-\begin{equation}
-    \E[d_i] \approx \theta_i \sum_{k=1}^{K} B_{g_i, k} \Vol_k = \theta_i \cdot \gamma_{g_i}
-\end{equation}
-where we define the \textbf{community degree factor}:
-\begin{equation}
-    \gamma_g = \sum_{k=1}^{K} B_{gk} \Vol_k
-\end{equation}
-
-This shows that expected degree factors into:
-\begin{itemize}
-    \item A node-specific term $\theta_i$
-    \item A community-specific term $\gamma_{g_i}$ (which depends only on the community structure, not on the individual node)
-\end{itemize}
-
-\section{The Population Normalized Adjacency Matrix}
-
-\subsection{Definition and Motivation}
-
-The \textbf{degree matrix} is $D = \text{diag}(d_1, \ldots, d_n)$ where $d_i = \sum_j A_{ij}$ is the observed degree of node $i$.
-
-The \textbf{normalized adjacency matrix} is:
-\begin{equation}
-    S = D^{-1/2} A D^{-1/2}
-\end{equation}
-
-This normalization is standard in spectral graph theory \citep{chung1997spectral}. The entry $S_{ij} = A_{ij}/\sqrt{d_i d_j}$ downweights connections between high-degree nodes.
-
-\subsection{The Population Matrix via Concentration}
-
-To analyze the structure of $S$ for DCSBM, we work with a \textbf{population} version that replaces random quantities with their expectations.
-
-\begin{remark}[Why we use expected values]
-The actual matrix $S$ is random because both $A$ and $D$ are random. Computing $\E[S_{ij}] = \E[A_{ij}/\sqrt{d_i d_j}]$ exactly is difficult because $A_{ij}$ and $d_i$ are correlated (indeed, $d_i = \sum_k A_{ik}$ includes $A_{ij}$).
-
-However, for large graphs, degrees concentrate around their expectations. Specifically, if $\E[d_i] = \Omega(\log n)$, then with high probability $d_i = (1 + o(1))\E[d_i]$. This concentration result (which can be made precise via Chernoff bounds) justifies replacing $d_i$ with $\E[d_i]$ and $A_{ij}$ with $\E[A_{ij}]$ in our analysis.
-\end{remark}
-
-Define the \textbf{population normalized adjacency matrix} $\bar{S}$ with entries:
-\begin{equation}
-    \bar{S}_{ij} = \frac{\E[A_{ij}]}{\sqrt{\E[d_i] \E[d_j]}}
-\end{equation}
-
-Substituting the DCSBM expressions:
-\begin{align}
-    \bar{S}_{ij} &= \frac{\theta_i \theta_j B_{g_i, g_j}}{\sqrt{(\theta_i \gamma_{g_i})(\theta_j \gamma_{g_j})}} \\
-    &= \frac{\theta_i \theta_j B_{g_i, g_j}}{\sqrt{\theta_i \theta_j} \sqrt{\gamma_{g_i} \gamma_{g_j}}} \\
-    &= \frac{\sqrt{\theta_i \theta_j} \cdot B_{g_i, g_j}}{\sqrt{\gamma_{g_i} \gamma_{g_j}}}
-\end{align}
-
-This can be written in matrix form. Define:
-\begin{itemize}
-    \item $\Theta = \text{diag}(\theta_1, \ldots, \theta_n)$: diagonal matrix of degree parameters
-    \item $\Gamma = \text{diag}(\gamma_{g_1}, \ldots, \gamma_{g_n})$: diagonal matrix of community degree factors
-    \item $\tilde{B} \in \mathbb{R}^{n \times n}$ with $\tilde{B}_{ij} = B_{g_i, g_j}$: the $n \times n$ ``expanded'' connectivity matrix
-\end{itemize}
-
-Then:
-\begin{equation}
-    \bar{S} = \Theta^{1/2} \Gamma^{-1/2} \tilde{B} \Gamma^{-1/2} \Theta^{1/2}
-\end{equation}
-
-\section{Eigenvector Structure of the Population Matrix}
-
-We now derive the key theoretical result: the eigenvectors of $\bar{S}$ have a specific factored structure.
-
-\begin{theorem}[Eigenvector Structure for DCSBM]
-\label{thm:eigenvector}
-The population normalized adjacency matrix $\bar{S}$ has $K$ non-trivial eigenvectors of the form:
-\begin{equation}
-    u_i = \sqrt{\theta_i} \cdot c_{g_i}
-\end{equation}
-where $c_g \in \mathbb{R}$ is a constant that depends only on the community $g$ (for each eigenvector). The remaining $n - K$ eigenvalues are zero.
+\begin{theorem}[\citealt{qin2013regularized}]
+\label{thm:known}
+In the DCSBM population limit, eigenvectors of $S$ have the form $u_i = \sqrt{\theta_i} \cdot c_{g_i}$, where $c_g$ depends only on community. Consequently, normalized embeddings $\hat{u}_i = u_i/\|u_i\|$ depend only on community $g_i$.
 \end{theorem}
 
-\begin{proof}
-We verify that vectors of the form $u_i = \sqrt{\theta_i} \cdot c_{g_i}$ satisfy the eigenvector equation $\sum_j \bar{S}_{ij} u_j = \lambda u_i$.
+This clean separation---community in direction, degree in magnitude---enables perfect community recovery via row-normalized spectral clustering.
 
-\textbf{Step 1}: Compute the left-hand side.
-\begin{align}
-    \sum_j \bar{S}_{ij} u_j &= \sum_j \frac{\sqrt{\theta_i \theta_j} \cdot B_{g_i, g_j}}{\sqrt{\gamma_{g_i} \gamma_{g_j}}} \cdot \sqrt{\theta_j} \cdot c_{g_j} \\
-    &= \frac{\sqrt{\theta_i}}{\sqrt{\gamma_{g_i}}} \sum_j \frac{\theta_j B_{g_i, g_j} c_{g_j}}{\sqrt{\gamma_{g_j}}}
-\end{align}
+\section{The Node2Vec Pipeline}
 
-\textbf{Step 2}: Group the sum by community. Since $B_{g_i, g_j}$ and $c_{g_j}$ depend only on $g_j$:
-\begin{align}
-    &= \frac{\sqrt{\theta_i}}{\sqrt{\gamma_{g_i}}} \sum_{k=1}^{K} \frac{B_{g_i, k} \cdot c_k}{\sqrt{\gamma_k}} \sum_{j \in \Comm_k} \theta_j \\
-    &= \frac{\sqrt{\theta_i}}{\sqrt{\gamma_{g_i}}} \sum_{k=1}^{K} \frac{B_{g_i, k} \cdot \Vol_k \cdot c_k}{\sqrt{\gamma_k}}
-\end{align}
-
-\textbf{Step 3}: For this to equal $\lambda u_i = \lambda \sqrt{\theta_i} \cdot c_{g_i}$, we need:
+Node2Vec proceeds through four stages:
 \begin{equation}
-    \sum_{k=1}^{K} \frac{B_{g_i, k} \cdot \Vol_k}{\sqrt{\gamma_{g_i} \gamma_k}} c_k = \lambda c_{g_i}
+    \text{Graph } G \xrightarrow{\text{random walks}} C \xrightarrow{\text{PMI}} M \xrightarrow{\text{SGNS}} E
 \end{equation}
+We trace community information through each stage.
 
-This must hold for all nodes $i$. Since the left side depends on $i$ only through $g_i$, this is actually a system of $K$ equations (one for each community $g$):
-\begin{equation}
-    \sum_{k=1}^{K} \frac{B_{gk} \cdot \Vol_k}{\sqrt{\gamma_g \gamma_k}} c_k = \lambda c_g \quad \text{for } g = 1, \ldots, K
-\end{equation}
+\section{Stage 1-2: Co-occurrence Preserves Structure}
+\label{sec:cooccurrence}
 
-\textbf{Step 4}: This is an eigenvalue equation for a $K \times K$ matrix. Define $\hat{B} \in \mathbb{R}^{K \times K}$ with entries:
-\begin{equation}
-    \hat{B}_{gk} = \frac{B_{gk} \cdot \Vol_k}{\sqrt{\gamma_g \gamma_k}}
-\end{equation}
-
-Then $\hat{B} \mathbf{c} = \lambda \mathbf{c}$, where $\mathbf{c} = (c_1, \ldots, c_K)^T$.
-
-The matrix $\hat{B}$ has at most $K$ non-zero eigenvalues (since it is $K \times K$). Each eigenvalue $\lambda$ of $\hat{B}$ with eigenvector $\mathbf{c}$ gives an eigenvalue $\lambda$ of $\bar{S}$ with eigenvector $\mathbf{u}$ defined by $u_i = \sqrt{\theta_i} \cdot c_{g_i}$.
-\end{proof}
-
-\begin{remark}[The remaining eigenvalues]
-The matrix $\bar{S}$ is $n \times n$ but has rank at most $K$ (since $\tilde{B}$ has rank at most $K$). The remaining $n - K$ eigenvalues are zero, corresponding to eigenvectors orthogonal to the $K$-dimensional subspace spanned by the community structure.
-\end{remark}
-
-\section{The Separation Property}
-
-The factorization $u_i = \sqrt{\theta_i} \cdot c_{g_i}$ has a crucial geometric interpretation.
-
-\subsection{Direction vs.\ Magnitude}
-
-Consider a single eigenvector $\mathbf{u}$. For node $i$:
-\begin{equation}
-    u_i = \sqrt{\theta_i} \cdot c_{g_i}
-\end{equation}
-
-\textbf{For the full embedding} (using the top $K$ eigenvectors), let $\mathbf{c}_g = (c_g^{(1)}, \ldots, c_g^{(K)})^T \in \mathbb{R}^K$ be the vector of community coefficients across all $K$ eigenvectors. The embedding of node $i$ is:
-\begin{equation}
-    \mathbf{u}_i = \sqrt{\theta_i} \cdot \mathbf{c}_{g_i} \in \mathbb{R}^K
-\end{equation}
-
-This is a scalar ($\sqrt{\theta_i}$) times a vector ($\mathbf{c}_{g_i}$) that depends only on community.
-
-\subsection{Separation via Normalization}
-
-\begin{proposition}[Normalization Recovers Community]
-The normalized embedding $\hat{\mathbf{u}}_i = \mathbf{u}_i / \|\mathbf{u}_i\|$ depends only on the community $g_i$:
-\begin{equation}
-    \hat{\mathbf{u}}_i = \frac{\sqrt{\theta_i} \cdot \mathbf{c}_{g_i}}{\|\sqrt{\theta_i} \cdot \mathbf{c}_{g_i}\|} = \frac{\sqrt{\theta_i} \cdot \mathbf{c}_{g_i}}{\sqrt{\theta_i} \|\mathbf{c}_{g_i}\|} = \frac{\mathbf{c}_{g_i}}{\|\mathbf{c}_{g_i}\|}
-\end{equation}
-\end{proposition}
-
-\textbf{Implications}:
-\begin{enumerate}
-    \item \textbf{All nodes in the same community have identical normalized embeddings}: If $g_i = g_j$, then $\hat{\mathbf{u}}_i = \hat{\mathbf{u}}_j$.
-
-    \item \textbf{Community detection is trivial after normalization}: K-means or any clustering algorithm on normalized embeddings will perfectly recover communities (in the population limit).
-
-    \item \textbf{Degree information is entirely in magnitude}: $\|\mathbf{u}_i\| = \sqrt{\theta_i} \|\mathbf{c}_{g_i}\|$. Since $\|\mathbf{c}_{g_i}\|$ depends only on community, within each community, $\|\mathbf{u}_i\| \propto \sqrt{\theta_i}$.
-\end{enumerate}
-
-\subsection{Geometric Picture}
-
-In $\mathbb{R}^K$:
-\begin{itemize}
-    \item Each community $g$ corresponds to a \textbf{ray} from the origin in direction $\mathbf{c}_g / \|\mathbf{c}_g\|$
-    \item All nodes in community $g$ lie on this ray
-    \item The position along the ray is determined by $\sqrt{\theta_i}$
-    \item Normalization projects all nodes onto the unit sphere, collapsing each ray to a single point
-\end{itemize}
-
-\section{Laplacian Eigenmaps: The Complete Picture}
-
-\subsection{Algorithm Definition}
-
-Laplacian Eigenmaps \citep{belkin2003laplacian} is a spectral embedding method that proceeds as follows:
-
-\textbf{Input}: Graph $G$ with adjacency matrix $A$ and degree matrix $D$.
-
-\textbf{Steps}:
-\begin{enumerate}
-    \item Compute the normalized Laplacian $L = I - D^{-1/2} A D^{-1/2} = I - S$
-    \item Find the $K$ smallest eigenvalues $0 = \lambda_1 \leq \lambda_2 \leq \cdots \leq \lambda_K$ and corresponding eigenvectors $\mathbf{v}_1, \ldots, \mathbf{v}_K$
-    \item Embed node $i$ as $\mathbf{e}_i = (v_2(i), \ldots, v_K(i))^T \in \mathbb{R}^{K-1}$
-\end{enumerate}
-
-\textbf{Output}: Embeddings $E \in \mathbb{R}^{n \times (K-1)}$.
-
-\begin{remark}
-The eigenvectors of $L = I - S$ are the same as the eigenvectors of $S$, with eigenvalues $1 - \lambda$. Thus analyzing $S$ is equivalent to analyzing $L$.
-\end{remark}
-
-\subsection{Theoretical Guarantee for DCSBM}
-
-Combining the previous results:
-
-\begin{theorem}[Community Recovery via Laplacian Eigenmaps]
-For a DCSBM graph with $K$ communities, in the population limit (large $n$ with degree concentration), Laplacian Eigenmaps produces embeddings satisfying:
-\begin{equation}
-    \mathbf{e}_i = \sqrt{\theta_i} \cdot \mathbf{c}_{g_i}
-\end{equation}
-where $\mathbf{c}_g \in \mathbb{R}^{K-1}$ depends only on community $g$.
-
-Consequently:
-\begin{enumerate}
-    \item Normalized embeddings $\hat{\mathbf{e}}_i = \mathbf{e}_i / \|\mathbf{e}_i\|$ are identical for all nodes in the same community.
-    \item Community structure is perfectly recoverable by clustering normalized embeddings.
-    \item Degree information is encoded in embedding magnitude: $\|\mathbf{e}_i\| \propto \sqrt{\theta_i}$ within each community.
-\end{enumerate}
-\end{theorem}
-
-This is the \textbf{complete theoretical picture} for Laplacian Eigenmaps on DCSBM: we can trace community information from the generative model all the way to the final embeddings, with a precise characterization of where community and degree information live.
-
-\section{Why Node2Vec is Harder to Analyze}
-
-Node2Vec and related random-walk embedding methods (DeepWalk, LINE) follow a different pipeline that introduces theoretical barriers absent in Laplacian Eigenmaps.
-
-\subsection{The Node2Vec Pipeline}
-
-Node2Vec proceeds as follows:
-\begin{enumerate}
-    \item \textbf{Random walks}: Generate sequences of nodes by random walks on the graph
-    \item \textbf{Co-occurrence counting}: Build a co-occurrence matrix $C$ where $C_{ij}$ counts how often $i$ and $j$ appear within a context window
-    \item \textbf{PMI transform}: Implicitly work with the pointwise mutual information matrix $M_{ij} = \log(C_{ij} \cdot n / (\#i \cdot \#j)) - \log(k)$
-    \item \textbf{SGNS optimization}: Learn embeddings by stochastic gradient descent on the Skip-Gram objective
-\end{enumerate}
-
-We analyze where community information is preserved and where theoretical barriers arise.
-
-\subsection{Step 1-2: Co-occurrence Matrix (Preserves Structure)}
-
-The co-occurrence matrix for window size $w$ is \citep{qiu2018network}:
+Random walks on $G$ generate node sequences. The co-occurrence matrix $C$ counts pairs appearing within a context window of size $w$. Following \citet{qiu2018network}:
 \begin{equation}
     C = \sum_{r=1}^{w} T^r D^{-1}
 \end{equation}
-where $T = D^{-1}A$ is the random walk transition matrix.
+where $T = D^{-1}A$ is the transition matrix.
 
-\begin{proposition}
-The co-occurrence matrix $C$ is related to the normalized adjacency $S$ by a similarity transformation:
-\begin{equation}
-    D^{1/2} C D^{1/2} = \sum_{r=1}^{w} S^r
-\end{equation}
+\begin{proposition}[Co-occurrence preserves eigenvector structure]
+\label{prop:similarity}
+The matrix $\tilde{C} = D^{1/2} C D^{1/2}$ satisfies $\tilde{C} = \sum_{r=1}^{w} S^r$, a polynomial in $S$.
 \end{proposition}
 
 \begin{proof}
-Since $T = D^{-1}A$, we have $D^{1/2} T D^{-1/2} = D^{-1/2} A D^{-1/2} = S$. Therefore $D^{1/2} T^r D^{-1/2} = S^r$, and:
+We have $D^{1/2} T D^{-1/2} = D^{-1/2} A D^{-1/2} = S$. Therefore:
 \begin{equation}
-    D^{1/2} C D^{1/2} = D^{1/2} \left(\sum_{r=1}^{w} T^r D^{-1}\right) D^{1/2} = \sum_{r=1}^{w} S^r
+    D^{1/2} C D^{1/2} = \sum_{r=1}^{w} D^{1/2} T^r D^{-1} D^{1/2} = \sum_{r=1}^{w} D^{1/2} T^r D^{-1/2} = \sum_{r=1}^{w} S^r
 \end{equation}
 \end{proof}
 
-\textbf{Implication}: Since $\sum_r S^r$ is a polynomial in $S$, it shares the same eigenvectors. The matrix $C$ is similar to this polynomial, so its eigenvectors are $D^{-1/2} \mathbf{u}$, which still have the factored structure. Community information is preserved at this stage.
+\textbf{Implication:} Since $\tilde{C} = p(S)$ for polynomial $p$, they share eigenvectors. The matrix $C$ is similar to $\tilde{C}$, so its eigenvectors are $D^{-1/2}\mathbf{u}$, which still factor as:
+\begin{equation}
+    [D^{-1/2}\mathbf{u}]_i = \frac{\sqrt{\theta_i} \cdot c_{g_i}}{\sqrt{d_i}} = \frac{\sqrt{\theta_i} \cdot c_{g_i}}{\sqrt{\theta_i \gamma_{g_i}}} = \frac{c_{g_i}}{\sqrt{\gamma_{g_i}}}
+\end{equation}
+This depends only on community---the multiplicative structure is preserved.
 
-\subsection{Step 3: PMI Transform (Structure Changes)}
+\section{Stage 3: PMI Transform Breaks Separation}
+\label{sec:pmi}
 
-The Skip-Gram objective implicitly factorizes the PMI matrix:
+Skip-Gram with Negative Sampling (SGNS) implicitly factorizes the PMI matrix \citep{levy2014neural}:
 \begin{equation}
     M_{ij} = \log(C_{ij}) - \log(\pi_i) - \log(\pi_j) + \text{const}
 \end{equation}
-where $\pi_i \propto d_i$ is the node frequency.
+where $\pi_i \propto d_i$ is the stationary distribution.
 
-\textbf{The logarithm is the key transformation}. For DCSBM with $d_i \approx \theta_i \gamma_{g_i}$:
+\subsection{The Logarithm Converts Multiplicative to Additive}
+
+From Section~\ref{sec:cooccurrence}, the co-occurrence matrix has entries:
 \begin{equation}
-    \log(d_i) = \log(\theta_i) + \log(\gamma_{g_i})
+    C_{ij} = \frac{[p(S)]_{ij}}{\sqrt{d_i d_j}}
 \end{equation}
 
-The PMI matrix becomes (after detailed calculation):
+The matrix $p(S)$ inherits spectral structure from $S$. Using Theorem~\ref{thm:known}, the leading terms satisfy:
 \begin{equation}
-    M_{ij} = H_{g_i, g_j} - \log(\theta_i) - \log(\theta_j) + \text{community offsets} + \text{const}
+    [p(S)]_{ij} \approx \sqrt{\theta_i \theta_j} \cdot F_{g_i, g_j}
+\end{equation}
+where $F_{g_i, g_j}$ depends only on communities.
+
+Therefore:
+\begin{equation}
+    C_{ij} \approx \frac{\sqrt{\theta_i \theta_j} \cdot F_{g_i, g_j}}{\sqrt{\theta_i \gamma_{g_i}} \sqrt{\theta_j \gamma_{g_j}}} = \frac{F_{g_i, g_j}}{\sqrt{\gamma_{g_i} \gamma_{g_j}}}
 \end{equation}
 
-where $H_{g_i, g_j}$ is a community-dependent term.
+\textbf{Key observation:} The $\theta_i$ terms cancel in $C_{ij}$---the co-occurrence matrix depends only on community structure, not individual degree parameters.
 
-\textbf{Critical change}:
-\begin{itemize}
-    \item In Laplacian eigenvectors: community and degree combine \textit{multiplicatively} as $\sqrt{\theta_i} \cdot c_{g_i}$
-    \item In PMI matrix: they combine \textit{additively} as $H_{g_i, g_j} - \log(\theta_i) - \log(\theta_j)$
-\end{itemize}
+\subsection{PMI Reintroduces Degree Dependence}
 
-The logarithm converts multiplicative structure (where normalization separates factors) to additive structure (where normalization does not help).
+The PMI transform subtracts $\log(\pi_i) + \log(\pi_j)$ where $\pi_i \propto d_i = \theta_i \gamma_{g_i}$:
+\begin{align}
+    M_{ij} &= \log(C_{ij}) - \log(d_i) - \log(d_j) + \text{const} \\
+    &= \log(C_{ij}) - \log(\theta_i) - \log(\gamma_{g_i}) - \log(\theta_j) - \log(\gamma_{g_j}) + \text{const}
+\end{align}
 
-\subsection{Step 4: SGNS Optimization (Theoretical Barriers)}
-
-Even if we fully characterized the PMI matrix $M$, three obstacles prevent us from determining the final embeddings:
-
-\textbf{Barrier 1: Non-uniqueness of factorization.}
-If $M = E \cdot E'^T$, then for any orthogonal matrix $Q$, we also have $M = (EQ)(E'Q)^T$. The factorization is determined only up to rotation. Community and degree information could be distributed across dimensions in arbitrary ways.
-
-\textbf{Barrier 2: Low-rank approximation.}
-When the embedding dimension $d < \text{rank}(M)$, SGNS computes an approximate factorization. The PMI matrix has additive rank-1 offset terms from degree:
+Since $C_{ij}$ depends only on communities, we have:
 \begin{equation}
-    M = H^{(g)} + \mathbf{r}\mathbf{1}^T + \mathbf{1}\mathbf{r}^T + \ldots
+    M_{ij} = \underbrace{H_{g_i, g_j}}_{\text{community block}} - \underbrace{\log(\theta_i) - \log(\theta_j)}_{\text{degree offsets}} + \text{const}
 \end{equation}
-How these rank-1 terms project onto the top-$d$ subspace depends on their alignment with the leading singular vectors---a relationship that is not easily characterized.
 
-\textbf{Barrier 3: Stochastic optimization.}
-SGNS uses stochastic gradient descent, not SVD. The final embedding depends on:
-\begin{itemize}
-    \item Random initialization
-    \item Learning rate schedule
-    \item Order of training samples
-    \item Number of negative samples
-\end{itemize}
-Different runs may converge to different local optima.
+where $H_{g_i, g_j} = \log(C_{ij}) - \log(\gamma_{g_i}) - \log(\gamma_{g_j})$ depends only on communities.
 
-\subsection{Summary: Laplacian Eigenmaps vs.\ Node2Vec}
+\subsection{Why This Breaks Separation}
 
 \begin{center}
 \begin{tabular}{|l|c|c|}
 \hline
-\textbf{Property} & \textbf{Laplacian Eigenmaps} & \textbf{Node2Vec} \\
+& \textbf{Structure} & \textbf{Normalization separates?} \\
 \hline
-Core computation & Eigenvectors of $S$ & Factorize PMI matrix \\
+Laplacian eigenvectors & $u_i = \sqrt{\theta_i} \cdot c_{g_i}$ (multiplicative) & Yes \\
 \hline
-Structure & Multiplicative & Additive (after log) \\
-\hline
-Embedding formula & $\mathbf{e}_i = \sqrt{\theta_i} \cdot \mathbf{c}_{g_i}$ & Unknown closed form \\
-\hline
-Normalization recovers community? & Yes (proven) & Unknown \\
-\hline
-Degree in magnitude? & Yes: $\|\mathbf{e}_i\| \propto \sqrt{\theta_i}$ & Unknown \\
-\hline
-Theoretical barriers & None & Factorization non-uniqueness, \\
-& & low-rank approx., SGD \\
+PMI matrix & $M_{ij} = H_{g_i,g_j} - \log\theta_i - \log\theta_j$ (additive) & No \\
 \hline
 \end{tabular}
 \end{center}
 
-\section{Empirical Predictions}
+In the Laplacian, dividing by magnitude removes $\sqrt{\theta_i}$, leaving only $c_{g_i}$.
 
-Although we cannot prove results for Node2Vec, the theory suggests testable hypotheses:
+In PMI, the degree terms $-\log(\theta_i)$ are \textit{additive offsets} to each row/column. No normalization of the resulting embeddings can remove additive structure---it would require \textit{subtraction}, not division.
+
+\subsection{Rank Structure of PMI}
+
+The PMI matrix decomposes as:
+\begin{equation}
+    M = H^{(g)} + \mathbf{r}\mathbf{1}^T + \mathbf{1}\mathbf{r}^T + \text{const}
+\end{equation}
+where $H^{(g)}$ is rank-$K$ (community block structure) and $r_i = -\log(\theta_i)$ creates rank-2 offset terms.
+
+The total rank is at most $K + 2$, but the community and degree information are now additively entangled rather than multiplicatively separable.
+
+\section{Stage 4: SGNS Optimization}
+\label{sec:sgns}
+
+Even with the PMI matrix fully characterized, three barriers prevent determining where community information ends up in learned embeddings.
+
+\subsection{Barrier 1: Non-uniqueness of Factorization}
+
+SGNS seeks embeddings $E, E'$ such that $E_i \cdot E'_j \approx M_{ij}$. If $M = EE'^T$, then for any orthogonal $Q$:
+\begin{equation}
+    M = (EQ)(E'Q)^T
+\end{equation}
+The factorization is determined only up to rotation. Community and degree information could be distributed across dimensions arbitrarily.
+
+\subsection{Barrier 2: Low-Rank Approximation}
+
+When embedding dimension $d < \text{rank}(M) \leq K + 2$, SGNS computes an approximate factorization. The rank-1 offset terms $\mathbf{r}\mathbf{1}^T + \mathbf{1}\mathbf{r}^T$ may or may not align with the top-$d$ singular vectors of $M$. Their fate under projection is not analytically tractable.
+
+\subsection{Barrier 3: Stochastic Optimization}
+
+SGNS uses stochastic gradient descent, not SVD. The final embedding depends on:
+\begin{itemize}
+    \item Random initialization
+    \item Learning rate and schedule
+    \item Order of training samples
+    \item Number of negative samples
+\end{itemize}
+Different runs may converge to different local optima with different distributions of community/degree information across dimensions.
+
+\section{Summary and Implications}
+
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Pipeline Stage} & \textbf{Community Info} & \textbf{Separation Preserved?} \\
+\hline
+Normalized adjacency $S$ & In eigenvector direction & Yes (known) \\
+\hline
+Co-occurrence $C$ & In similar eigenvectors & Yes (Prop.~\ref{prop:similarity}) \\
+\hline
+PMI matrix $M$ & Block structure + offsets & No (additive) \\
+\hline
+SGNS embeddings $E$ & Unknown & Cannot determine \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{The PMI transform is the critical juncture.} Before it, community and degree are multiplicatively separable. After it, they are additively entangled.
+
+\subsection{Practical Implications}
 
 \begin{enumerate}
-    \item \textbf{Laplacian Eigenmaps on DCSBM}: Normalized embeddings should perfectly cluster by community. Embedding norms should correlate with $\sqrt{\theta_i}$ (or equivalently, $\sqrt{d_i}$ up to community effects).
+    \item \textbf{When degree heterogeneity is high}, spectral methods with row-normalization have provable guarantees; Node2Vec does not.
 
-    \item \textbf{Node2Vec on DCSBM}: If the multiplicative structure of the co-occurrence matrix ``survives'' the PMI transform and factorization, similar patterns might hold approximately. This is an empirical question.
+    \item \textbf{Normalizing Node2Vec embeddings} will not recover the clean separation that works for spectral methods---the underlying structure is different.
 
-    \item \textbf{Comparison}: On DCSBM graphs, Laplacian Eigenmaps should achieve better community recovery than Node2Vec when degree heterogeneity is high (large variance in $\theta_i$), because Laplacian Eigenmaps has provable guarantees while Node2Vec does not.
+    \item \textbf{Empirical questions remain}: Does the additive structure approximately preserve separation in practice? This requires experiments on DCSBM graphs with varying degree heterogeneity.
 \end{enumerate}
 
 \section{Conclusion}
 
-We analyzed where community information lives in graph embeddings using the DCSBM as a theoretical framework.
+We traced community information through the Node2Vec pipeline on DCSBM graphs. While the co-occurrence matrix preserves the multiplicative eigenvector structure of spectral methods, the PMI transform converts this to additive structure. Combined with the non-uniqueness, approximation, and stochasticity of SGNS, this explains why Node2Vec resists the theoretical analysis possible for Laplacian Eigenmaps.
 
-\textbf{For Laplacian Eigenmaps}, we established a complete theoretical picture:
-\begin{itemize}
-    \item Eigenvectors of the population normalized adjacency have the form $u_i = \sqrt{\theta_i} \cdot c_{g_i}$
-    \item Community information lives entirely in direction; degree information in magnitude
-    \item Normalizing embeddings perfectly separates community from degree
-\end{itemize}
-
-\textbf{For Node2Vec}, we identified where the theory breaks down:
-\begin{itemize}
-    \item The co-occurrence matrix preserves the eigenvector structure of $S$
-    \item The PMI (logarithm) transform converts multiplicative to additive structure
-    \item SGNS factorization introduces non-uniqueness, approximation, and stochastic effects
-    \item No closed-form embedding characterization is possible
-\end{itemize}
-
-The contrast highlights an important methodological point: spectral methods like Laplacian Eigenmaps admit rigorous theoretical analysis on generative models like DCSBM, while neural embedding methods like Node2Vec introduce optimization-dependent factors that resist closed-form characterization. This does not mean Node2Vec performs worse empirically---only that its behavior cannot be predicted from theory alone.
+The insight is not that Node2Vec performs worse---empirically it often excels---but that its behavior on structured graphs cannot be predicted from theory alone. For applications requiring guarantees under degree heterogeneity, spectral methods remain the principled choice.
 
 \bibliographystyle{plainnat}
 \bibliography{references}
