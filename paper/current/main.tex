@@ -1,69 +1,231 @@
-\documentclass[12pt]{article} %{{{
+\documentclass[11pt]{article}
 \usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{natbib}
 
-% Figures
-\usepackage{graphicx}
-\graphicspath{{../../figs/}}
+% --- Custom Commands ---
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Vol}{\text{Vol}}
+\newcommand{\Comm}{\text{Comm}}
 
-% Math
-\usepackage{amsmath}
-\usepackage{amssymb}
-\DeclareMathOperator*{\argmin}{\arg\!\min}
-\DeclareMathOperator*{\argmax}{\arg\!\max}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
 
-% abbreviations
-\def\eg{e.g.,~}
-\def\ie{i.e.,~}
-\def\cf{cf.\ }
-\def\viz{viz.\ }
-\def\vs{vs.\ }
-
-% Refs
-\usepackage{biblatex}
-\addbibresource{../main.bib}
-
-\usepackage{url}
-
-\newcommand{\secref}[1]{Section~\ref{sec:#1}}
-\newcommand{\figref}[1]{Fig.~\ref{fig:#1}}
-\newcommand{\tabref}[1]{Table~\ref{tab:#1}}
-%\newcommand{\eqnref}[1]{\eqref{eq:#1}}
-%\newcommand{\thmref}[1]{Theorem~\ref{#1}}
-%\newcommand{\prgref}[1]{Program~\ref{#1}}
-%\newcommand{\algref}[1]{Algorithm~\ref{#1}}
-%\newcommand{\clmref}[1]{Claim~\ref{#1}}
-%\newcommand{\lemref}[1]{Lemma~\ref{#1}}
-%\newcommand{\ptyref}[1]{Property~\ref{#1}}
-
-% for quick author comments 
-\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
-\definecolor{light-gray}{gray}{0.8}
-\def\del#1{ {\color{light-gray}{#1}} }
-\def\yy#1{\footnote{\color{red}\textbf{yy: #1}} }
-
-%}}}
-
-\begin{document} %{{{
-
-\title{An awesome paper} %{{{
+\title{Why Node2Vec Resists Theoretical Analysis:\\Tracing Community Information Through Graph Embedding Pipelines}
+\author{}
 \date{\today}
-\maketitle %}}}
 
-\section{Introduction}\label{sec:introduction} %{{{
+\begin{document}
 
+\maketitle
 
-%}}}
+\section{Introduction}
 
-\section{Results}\label{sec:results} %{{{ 
+Spectral methods like Laplacian Eigenmaps have well-understood theoretical properties on generative models like the Degree-Corrected Stochastic Block Model (DCSBM). In particular, \citet{qin2013regularized} showed that eigenvector normalization perfectly separates community from degree information---community lives in direction, degree in magnitude.
 
+Neural embedding methods like Node2Vec lack comparable theoretical guarantees. This paper asks: \textbf{why?} We trace community information through the Node2Vec pipeline and identify precisely where theoretical analysis breaks down.
 
-%}}}
+\textbf{Main contributions:}
+\begin{enumerate}
+    \item We show the random walk co-occurrence matrix preserves the spectral structure of the normalized adjacency via a similarity transformation (Section~\ref{sec:cooccurrence}).
+    \item We prove the PMI transform converts the multiplicative community-degree structure to additive, breaking the separation property (Section~\ref{sec:pmi}).
+    \item We identify three theoretical barriers in SGNS that prevent closed-form characterization of embeddings (Section~\ref{sec:sgns}).
+\end{enumerate}
 
-\section{Methods}\label{sec:methods} %{{{
+\section{Background: DCSBM and Spectral Methods}
 
-%}}}
+\subsection{The Degree-Corrected Stochastic Block Model}
 
-\printbibliography{}
-    
-\end{document} %}}}
+In the DCSBM, each node $i$ has community assignment $g_i \in \{1, \ldots, K\}$ and degree parameter $\theta_i > 0$. Edges form independently with $\E[A_{ij}] = \theta_i \theta_j B_{g_i, g_j}$, where $B$ is the community connectivity matrix.
 
+The expected degree factors as $\E[d_i] = \theta_i \cdot \gamma_{g_i}$, where $\gamma_g = \sum_k B_{gk} \Vol_k$ and $\Vol_k = \sum_{j \in \Comm_k} \theta_j$.
+
+\subsection{Known Result: Spectral Separation}
+
+For the normalized adjacency $S = D^{-1/2}AD^{-1/2}$, \citet{qin2013regularized} established:
+
+\begin{theorem}[\citealt{qin2013regularized}]
+\label{thm:known}
+In the DCSBM population limit, eigenvectors of $S$ have the form $u_i = \sqrt{\theta_i} \cdot c_{g_i}$, where $c_g$ depends only on community. Consequently, normalized embeddings $\hat{u}_i = u_i/\|u_i\|$ depend only on community $g_i$.
+\end{theorem}
+
+This clean separation---community in direction, degree in magnitude---enables perfect community recovery via row-normalized spectral clustering.
+
+\section{The Node2Vec Pipeline}
+
+Node2Vec proceeds through four stages:
+\begin{equation}
+    \text{Graph } G \xrightarrow{\text{random walks}} C \xrightarrow{\text{PMI}} M \xrightarrow{\text{SGNS}} E
+\end{equation}
+We trace community information through each stage.
+
+\section{Stage 1-2: Co-occurrence Preserves Structure}
+\label{sec:cooccurrence}
+
+Random walks on $G$ generate node sequences. The co-occurrence matrix $C$ counts pairs appearing within a context window of size $w$. Following \citet{qiu2018network}:
+\begin{equation}
+    C = \sum_{r=1}^{w} T^r D^{-1}
+\end{equation}
+where $T = D^{-1}A$ is the transition matrix.
+
+\begin{proposition}[Co-occurrence preserves eigenvector structure]
+\label{prop:similarity}
+The matrix $\tilde{C} = D^{1/2} C D^{1/2}$ satisfies $\tilde{C} = \sum_{r=1}^{w} S^r$, a polynomial in $S$.
+\end{proposition}
+
+\begin{proof}
+We have $D^{1/2} T D^{-1/2} = D^{-1/2} A D^{-1/2} = S$. Therefore:
+\begin{equation}
+    D^{1/2} C D^{1/2} = \sum_{r=1}^{w} D^{1/2} T^r D^{-1} D^{1/2} = \sum_{r=1}^{w} D^{1/2} T^r D^{-1/2} = \sum_{r=1}^{w} S^r
+\end{equation}
+\end{proof}
+
+\textbf{Implication:} Since $\tilde{C} = p(S)$ for polynomial $p$, they share eigenvectors. The matrix $C$ is similar to $\tilde{C}$, so its eigenvectors are $D^{-1/2}\mathbf{u}$, which still factor as:
+\begin{equation}
+    [D^{-1/2}\mathbf{u}]_i = \frac{\sqrt{\theta_i} \cdot c_{g_i}}{\sqrt{d_i}} = \frac{\sqrt{\theta_i} \cdot c_{g_i}}{\sqrt{\theta_i \gamma_{g_i}}} = \frac{c_{g_i}}{\sqrt{\gamma_{g_i}}}
+\end{equation}
+This depends only on community---the multiplicative structure is preserved.
+
+\section{Stage 3: PMI Transform Breaks Separation}
+\label{sec:pmi}
+
+Skip-Gram with Negative Sampling (SGNS) implicitly factorizes the PMI matrix \citep{levy2014neural}:
+\begin{equation}
+    M_{ij} = \log(C_{ij}) - \log(\pi_i) - \log(\pi_j) + \text{const}
+\end{equation}
+where $\pi_i \propto d_i$ is the stationary distribution.
+
+\subsection{The Logarithm Converts Multiplicative to Additive}
+
+From Section~\ref{sec:cooccurrence}, the co-occurrence matrix has entries:
+\begin{equation}
+    C_{ij} = \frac{[p(S)]_{ij}}{\sqrt{d_i d_j}}
+\end{equation}
+
+The matrix $p(S)$ inherits spectral structure from $S$. Using Theorem~\ref{thm:known}, the leading terms satisfy:
+\begin{equation}
+    [p(S)]_{ij} \approx \sqrt{\theta_i \theta_j} \cdot F_{g_i, g_j}
+\end{equation}
+where $F_{g_i, g_j}$ depends only on communities.
+
+Therefore:
+\begin{equation}
+    C_{ij} \approx \frac{\sqrt{\theta_i \theta_j} \cdot F_{g_i, g_j}}{\sqrt{\theta_i \gamma_{g_i}} \sqrt{\theta_j \gamma_{g_j}}} = \frac{F_{g_i, g_j}}{\sqrt{\gamma_{g_i} \gamma_{g_j}}}
+\end{equation}
+
+\textbf{Key observation:} The $\theta_i$ terms cancel in $C_{ij}$---the co-occurrence matrix depends only on community structure, not individual degree parameters.
+
+\subsection{PMI Reintroduces Degree Dependence}
+
+The PMI transform subtracts $\log(\pi_i) + \log(\pi_j)$ where $\pi_i \propto d_i = \theta_i \gamma_{g_i}$:
+\begin{align}
+    M_{ij} &= \log(C_{ij}) - \log(d_i) - \log(d_j) + \text{const} \\
+    &= \log(C_{ij}) - \log(\theta_i) - \log(\gamma_{g_i}) - \log(\theta_j) - \log(\gamma_{g_j}) + \text{const}
+\end{align}
+
+Since $C_{ij}$ depends only on communities, we have:
+\begin{equation}
+    M_{ij} = \underbrace{H_{g_i, g_j}}_{\text{community block}} - \underbrace{\log(\theta_i) - \log(\theta_j)}_{\text{degree offsets}} + \text{const}
+\end{equation}
+
+where $H_{g_i, g_j} = \log(C_{ij}) - \log(\gamma_{g_i}) - \log(\gamma_{g_j})$ depends only on communities.
+
+\subsection{Why This Breaks Separation}
+
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+& \textbf{Structure} & \textbf{Normalization separates?} \\
+\hline
+Laplacian eigenvectors & $u_i = \sqrt{\theta_i} \cdot c_{g_i}$ (multiplicative) & Yes \\
+\hline
+PMI matrix & $M_{ij} = H_{g_i,g_j} - \log\theta_i - \log\theta_j$ (additive) & No \\
+\hline
+\end{tabular}
+\end{center}
+
+In the Laplacian, dividing by magnitude removes $\sqrt{\theta_i}$, leaving only $c_{g_i}$.
+
+In PMI, the degree terms $-\log(\theta_i)$ are \textit{additive offsets} to each row/column. No normalization of the resulting embeddings can remove additive structure---it would require \textit{subtraction}, not division.
+
+\subsection{Rank Structure of PMI}
+
+The PMI matrix decomposes as:
+\begin{equation}
+    M = H^{(g)} + \mathbf{r}\mathbf{1}^T + \mathbf{1}\mathbf{r}^T + \text{const}
+\end{equation}
+where $H^{(g)}$ is rank-$K$ (community block structure) and $r_i = -\log(\theta_i)$ creates rank-2 offset terms.
+
+The total rank is at most $K + 2$, but the community and degree information are now additively entangled rather than multiplicatively separable.
+
+\section{Stage 4: SGNS Optimization}
+\label{sec:sgns}
+
+Even with the PMI matrix fully characterized, three barriers prevent determining where community information ends up in learned embeddings.
+
+\subsection{Barrier 1: Non-uniqueness of Factorization}
+
+SGNS seeks embeddings $E, E'$ such that $E_i \cdot E'_j \approx M_{ij}$. If $M = EE'^T$, then for any orthogonal $Q$:
+\begin{equation}
+    M = (EQ)(E'Q)^T
+\end{equation}
+The factorization is determined only up to rotation. Community and degree information could be distributed across dimensions arbitrarily.
+
+\subsection{Barrier 2: Low-Rank Approximation}
+
+When embedding dimension $d < \text{rank}(M) \leq K + 2$, SGNS computes an approximate factorization. The rank-1 offset terms $\mathbf{r}\mathbf{1}^T + \mathbf{1}\mathbf{r}^T$ may or may not align with the top-$d$ singular vectors of $M$. Their fate under projection is not analytically tractable.
+
+\subsection{Barrier 3: Stochastic Optimization}
+
+SGNS uses stochastic gradient descent, not SVD. The final embedding depends on:
+\begin{itemize}
+    \item Random initialization
+    \item Learning rate and schedule
+    \item Order of training samples
+    \item Number of negative samples
+\end{itemize}
+Different runs may converge to different local optima with different distributions of community/degree information across dimensions.
+
+\section{Summary and Implications}
+
+\begin{center}
+\begin{tabular}{|l|c|c|}
+\hline
+\textbf{Pipeline Stage} & \textbf{Community Info} & \textbf{Separation Preserved?} \\
+\hline
+Normalized adjacency $S$ & In eigenvector direction & Yes (known) \\
+\hline
+Co-occurrence $C$ & In similar eigenvectors & Yes (Prop.~\ref{prop:similarity}) \\
+\hline
+PMI matrix $M$ & Block structure + offsets & No (additive) \\
+\hline
+SGNS embeddings $E$ & Unknown & Cannot determine \\
+\hline
+\end{tabular}
+\end{center}
+
+\textbf{The PMI transform is the critical juncture.} Before it, community and degree are multiplicatively separable. After it, they are additively entangled.
+
+\subsection{Practical Implications}
+
+\begin{enumerate}
+    \item \textbf{When degree heterogeneity is high}, spectral methods with row-normalization have provable guarantees; Node2Vec does not.
+
+    \item \textbf{Normalizing Node2Vec embeddings} will not recover the clean separation that works for spectral methods---the underlying structure is different.
+
+    \item \textbf{Empirical questions remain}: Does the additive structure approximately preserve separation in practice? This requires experiments on DCSBM graphs with varying degree heterogeneity.
+\end{enumerate}
+
+\section{Conclusion}
+
+We traced community information through the Node2Vec pipeline on DCSBM graphs. While the co-occurrence matrix preserves the multiplicative eigenvector structure of spectral methods, the PMI transform converts this to additive structure. Combined with the non-uniqueness, approximation, and stochasticity of SGNS, this explains why Node2Vec resists the theoretical analysis possible for Laplacian Eigenmaps.
+
+The insight is not that Node2Vec performs worse---empirically it often excels---but that its behavior on structured graphs cannot be predicted from theory alone. For applications requiring guarantees under degree heterogeneity, spectral methods remain the principled choice.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
