@@ -1,1 +1,72 @@
-/data/
+# Data files - NEVER COMMIT
+**/data/
+archive/kmeans/data/
+are_angles_important/*.txt
+are_angles_important/*.inf_coord
+are_angles_important/*.inf_log
+*.csv
+*.parquet
+*.pkl
+*.pickle
+*.npz
+*.npy
+*.h5
+*.hdf5
+*.edge
+*.edgelist
+*.wv
+*.gz
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.o
+.Python
+*.egg-info/
+dist/
+build/
+
+# Environment
+.env
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Credentials (NEVER COMMIT)
+*credentials*.json
+*creds*.json
+*.pem
+*.key
+
+# Large model files
+*.pt
+*.pth
+*.ckpt
+
+# Output files that can be regenerated
+*.out
+
+# LaTeX auxiliary files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
