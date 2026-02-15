@@ -5,6 +5,7 @@ are_angles_important/*.txt
 are_angles_important/*.inf_coord
 are_angles_important/*.inf_log
 *.csv
+*.tsv
 *.parquet
 *.pkl
 *.pickle
@@ -17,9 +18,25 @@ are_angles_important/*.inf_log
 *.wv
 *.gz
 
+# Office files
+*.docx
+*.doc
+*.ppt
+*.pptx
+*.xls
+*.xlsx
+
 # Jupyter checkpoints
 .ipynb_checkpoints/
 **/.ipynb_checkpoints/
+
+# Snakemake
+.snakemake
+workflow/config.yaml
+
+# Virtual environment
+.venv/
+env/
 
 # Python
 __pycache__/
@@ -31,6 +48,30 @@ __pycache__/
 *.egg-info/
 dist/
 build/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib64/
+parts/
+sdist/
+var/
+.installed.cfg
+*.egg
+*.manifest
+*.spec
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
 
 # Environment
 .env
@@ -39,6 +80,7 @@ build/
 # OS files
 .DS_Store
 Thumbs.db
+*.un~
 
 # Credentials (NEVER COMMIT)
 *credentials*.json
@@ -58,6 +100,7 @@ Thumbs.db
 *.aux
 *.bbl
 *.blg
+*.bcf
 *.fdb_latexmk
 *.fls
 *.log
@@ -70,3 +113,16 @@ Thumbs.db
 *.nav
 *.snm
 *.vrb
+*blx.bib
+main.pdf
+supp.pdf
+
+# Translations
+*.mo
+*.pot
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
