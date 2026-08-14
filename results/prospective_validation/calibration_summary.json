@@ -1,0 +1,42 @@
+{
+  "config": {
+    "nodes": 600,
+    "attachment": 3,
+    "triangle_probability": 0.35,
+    "dimension": 64,
+    "negatives": 5,
+    "walk_length": 5,
+    "walks_per_node": 300,
+    "epochs": 5,
+    "learning_rate": 0.025,
+    "min_count": 1
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "thresholds": [
+    0.0003,
+    0.001,
+    0.003
+  ],
+  "rows": 9000,
+  "sha256": "89d7d1d795eb143e0fc0ec10eec9ef08c3d2477df7a42d47de94ab496612ed71",
+  "leave_one_seed_out": {
+    "raw_norm": {
+      "rmse": 0.26338233493732954,
+      "mae": 0.21098622815577314,
+      "r_squared": 0.8284180447242784,
+      "spearman": 0.9324646434173761
+    },
+    "balanced_norm": {
+      "rmse": 0.26497769632927326,
+      "mae": 0.21212472270861868,
+      "r_squared": 0.8231878973295506,
+      "spearman": 0.929706276869866
+    }
+  }
+}

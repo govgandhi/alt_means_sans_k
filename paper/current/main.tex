@@ -1,231 +1,981 @@
-\documentclass[11pt]{article}
-\usepackage[margin=1in]{geometry}
-\usepackage{amsmath, amssymb, amsthm}
-\usepackage{natbib}
+\documentclass[aps,pre,reprint,superscriptaddress,longbibliography]{revtex4-2}
 
-% --- Custom Commands ---
-\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
-\newcommand{\E}{\mathbb{E}}
-\newcommand{\Vol}{\text{Vol}}
-\newcommand{\Comm}{\text{Comm}}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+    pdftitle={Degree Information and Norm Turnover in Random-Walk Network Embeddings},
+    pdfauthor={Govind Gandhi and Sadamori Kojaku and Yong-Yeol Ahn},
+    pdfsubject={Population geometry and finite-training mechanisms in random-walk embeddings}
+}
+
+\graphicspath{
+    {../../results/turnover_surface/}
+    {../../results/gensim_threshold_sweep/}
+    {../../results/prospective_validation/}
+}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ones}{\mathbf{1}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\col}{col}
 
 \newtheorem{theorem}{Theorem}
-\newtheorem{lemma}{Lemma}
-\newtheorem{proposition}{Proposition}
-\newtheorem{remark}{Remark}
-
-\title{Why Node2Vec Resists Theoretical Analysis:\\Tracing Community Information Through Graph Embedding Pipelines}
-\author{}
-\date{\today}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
 
 \begin{document}
+
+\title{Degree Information and Norm Turnover in Random-Walk Network Embeddings}
+\author{Govind Gandhi}
+\affiliation{School of Data Science, University of Virginia, Charlottesville, Virginia 22904, USA}
+\author{Sadamori Kojaku}
+\affiliation{School of Systems Science and Industrial Engineering, Binghamton University, Binghamton, New York 13902, USA}
+\author{Yong-Yeol Ahn}
+\email{yyahn@virginia.edu}
+\affiliation{School of Data Science, University of Virginia, Charlottesville, Virginia 22904, USA}
+\date{\today}
+
+\begin{abstract}
+Random-walk network embeddings assign each node a direction and a norm, but the structural meaning of the norm depends on both the population operator and finite training.
+We derive the population geometry of normalized spectral embeddings, random-walk pair probabilities, and skip-gram with negative sampling under the degree-corrected stochastic block model.
+The first two operators have an exact radial-angular structure: degree propensity controls radius within each community, while direction depends only on community.
+At unigram negative sampling, however, marginal normalization cancels node-specific degree from the optimal skip-gram score.
+We then use controlled finite-sample experiments to separate the effects of training exposure and context specificity.
+Equal exposure leaves norms decreasing with degree, proportional exposure makes them increase, and sublinear exposure produces an inverted-U.
+Mixing node contexts toward their marginal distribution removes the decreasing branch.
+Literal word2vec experiments reproduce the threshold-dependent movement of the norm peak, which persists after approximately matching retained-token budgets.
+We then freeze predictions based only on realized pair exposure and empirical context KL before training embeddings on two new synthetic graph families and the NetScience coauthorship network.
+Across nine graph-family--threshold curves, the median peak error is zero degree bins, eight peaks lie within one bin of their predictions, and the pooled node-level Spearman correlation is \(0.881\).
+The inverted-U therefore requires the marginal norm gain from exposure to weaken relative to the loss of context specificity; exposure need not decrease or reach a fixed ceiling.
+These results distinguish population score geometry from optimizer-dependent embedding norms and provide testable controls for interpreting radial information in network embeddings.
+\end{abstract}
 
 \maketitle
 
 \section{Introduction}
 
-Spectral methods like Laplacian Eigenmaps have well-understood theoretical properties on generative models like the Degree-Corrected Stochastic Block Model (DCSBM). In particular, \citet{qin2013regularized} showed that eigenvector normalization perfectly separates community from degree information---community lives in direction, degree in magnitude.
+Random-walk embedding methods map nodes to vectors by sampling paths through a network and training a predictive model on the resulting node sequences~\citep{perozzi2014deepwalk,grover2016node2vec}.
+Most applications compare vector directions through cosine similarity.
+The vector norm is nevertheless a second observable that can encode node frequency, contextual concentration, and training dynamics.
+Its interpretation matters whenever embeddings enter a dot product, a clustering method without row normalization, or a downstream model that retains vector scale.
 
-Neural embedding methods like Node2Vec lack comparable theoretical guarantees. This paper asks: \textbf{why?} We trace community information through the Node2Vec pipeline and identify precisely where theoretical analysis breaks down.
+Empirical work has reported a nonmonotonic relation between frequency and embedding norm.
+Word2vec norms first increase and then decrease with word frequency in domain-specific corpora~\citep{schakel2015measuring,wilson2015controlled}.
+Trajectory embeddings of scientific organizations show the same inverted-U against organization size: norms increase up to roughly \(10^3\) researchers and then decrease for larger institutions~\citep{murray2023unsupervised}.
+The proposed explanation is a competition between repeated exposure, which pushes an embedding away from its initialization, and context diversity, which makes the update directions less coherent.
+This explanation has not been connected to a population model of network structure or tested by interventions that vary the two mechanisms separately.
 
-\textbf{Main contributions:}
-\begin{enumerate}
-    \item We show the random walk co-occurrence matrix preserves the spectral structure of the normalized adjacency via a similarity transformation (Section~\ref{sec:cooccurrence}).
-    \item We prove the PMI transform converts the multiplicative community-degree structure to additive, breaking the separation property (Section~\ref{sec:pmi}).
-    \item We identify three theoretical barriers in SGNS that prevent closed-form characterization of embeddings (Section~\ref{sec:sgns}).
-\end{enumerate}
+Two theoretical traditions address parts of the problem.
+Spectral embeddings under the degree-corrected stochastic block model (DCSBM) have a ray geometry in which rows from one community share a direction and their lengths vary with degree propensity~\citep{qin2013regularized}.
+The matrix-factorization view of skip-gram identifies a shifted pointwise mutual information score~\citep{levy2014neural,qiu2018network}, while an information-geometric analysis relates a centered, transformed word-vector norm to the Kullback--Leibler (KL) divergence between conditional and marginal context distributions~\citep{oyama2022norm}.
+These results do not by themselves determine the norms returned by finite stochastic optimization.
 
-\section{Background: DCSBM and Spectral Methods}
+We connect the population and finite-training regimes.
+Under the DCSBM, the normalized-adjacency eigenspace and the stationary random-walk pair matrix have exact radial-angular factorizations.
+The radial exponent is \(1/2\) for the normalized eigenspace and \(1\) for raw stationary pairs.
+The optimal skip-gram score behaves differently: unigram negative sampling cancels node-specific degree, and other negative-sampling exponents add a context-side log-degree term.
+Because skip-gram identifies dot products rather than either factor, individual norms require a balancing convention or an explicit optimizer.
 
-\subsection{The Degree-Corrected Stochastic Block Model}
+We then intervene on the two finite-training mechanisms in heterogeneous configuration-model networks.
+The exposure intervention assigns each node an exact number of positive-center updates proportional to stationary frequency raised to an exponent \(\beta\).
+The specificity intervention mixes each conditional context distribution toward its own marginal while preserving that marginal.
+Equal exposure reveals a decreasing structural relation between degree and norm; proportional exposure produces a monotone increase; an intermediate exponent produces an inverted-U.
+Context mixing removes the decreasing branch.
+Literal Gensim word2vec experiments shift the peak to higher degree as subsampling weakens, and matching expected retained-center counts does not change the peak locations.
+Before training on new targets, we freeze node-level norms and peak locations predicted from realized positive-pair exposure and context KL.
+The predictions reproduce the peak movement in direct preferential-attachment graphs, clustered scale-free graphs, and an empirical coauthorship network, with explicit misses at the boundaries of the tested degree range.
 
-In the DCSBM, each node $i$ has community assignment $g_i \in \{1, \ldots, K\}$ and degree parameter $\theta_i > 0$. Edges form independently with $\E[A_{ij}] = \theta_i \theta_j B_{g_i, g_j}$, where $B$ is the community connectivity matrix.
+Our random-walk formulas apply to DeepWalk, equivalently node2vec with return and in--out parameters \(p=q=1\).
+General node2vec walks are second-order Markov chains on directed edges and require a separate state-space argument.
 
-The expected degree factors as $\E[d_i] = \theta_i \cdot \gamma_{g_i}$, where $\gamma_g = \sum_k B_{gk} \Vol_k$ and $\Vol_k = \sum_{j \in \Comm_k} \theta_j$.
+\section{DCSBM setup}
+\label{sec:setup}
 
-\subsection{Known Result: Spectral Separation}
+Let \(n\) nodes belong to \(K\) communities.
+Write \(g_i\in\{1,\dots,K\}\) for the community of node \(i\), and let \(Z\in\{0,1\}^{n\times K}\) be the membership matrix.
+Each node has a degree propensity \(\theta_i>0\), collected in \(\Theta=\diag(\theta_1,\dots,\theta_n)\).
+Let \(B\in\R^{K\times K}\) be symmetric with nonnegative entries.
+We assume that every community is nonempty, that the block degree factors defined below are positive, and that \(\theta_i\theta_jB_{g_i g_j}\leq 1\).
 
-For the normalized adjacency $S = D^{-1/2}AD^{-1/2}$, \citet{qin2013regularized} established:
-
-\begin{theorem}[\citealt{qin2013regularized}]
-\label{thm:known}
-In the DCSBM population limit, eigenvectors of $S$ have the form $u_i = \sqrt{\theta_i} \cdot c_{g_i}$, where $c_g$ depends only on community. Consequently, normalized embeddings $\hat{u}_i = u_i/\|u_i\|$ depend only on community $g_i$.
-\end{theorem}
-
-This clean separation---community in direction, degree in magnitude---enables perfect community recovery via row-normalized spectral clustering.
-
-\section{The Node2Vec Pipeline}
-
-Node2Vec proceeds through four stages:
+The rank-\(K\) population proxy is
 \begin{equation}
-    \text{Graph } G \xrightarrow{\text{random walks}} C \xrightarrow{\text{PMI}} M \xrightarrow{\text{SGNS}} E
+    \Omega=\Theta ZBZ^\top\Theta,
+    \qquad
+    \Omega_{ij}=\theta_i\theta_jB_{g_i g_j}.
+    \label{eq:omega}
 \end{equation}
-We trace community information through each stage.
+This is the standard multiplicative DCSBM structure~\citep{karrer2011stochastic}.
 
-\section{Stage 1-2: Co-occurrence Preserves Structure}
-\label{sec:cooccurrence}
-
-Random walks on $G$ generate node sequences. The co-occurrence matrix $C$ counts pairs appearing within a context window of size $w$. Following \citet{qiu2018network}:
+Define the block propensity masses and block degree factors by
 \begin{equation}
-    C = \sum_{r=1}^{w} T^r D^{-1}
+    s_a=\sum_{i:g_i=a}\theta_i,
+    \qquad
+    \kappa_a=(Bs)_a=\sum_{b=1}^K B_{ab}s_b.
+    \label{eq:block-masses}
 \end{equation}
-where $T = D^{-1}A$ is the transition matrix.
+The population expected degree is
+\begin{equation}
+    \delta_i=(\Omega\ones)_i=\theta_i\kappa_{g_i}.
+    \label{eq:expected-degree}
+\end{equation}
+Let \(\mathcal{D}=\diag(\delta_1,\dots,\delta_n)\) and
+\begin{equation}
+    \vol(\Omega)
+    :=\ones^\top\Omega\ones
+    =\sum_i\delta_i
+    =s^\top Bs.
+    \label{eq:volume}
+\end{equation}
 
-\begin{proposition}[Co-occurrence preserves eigenvector structure]
-\label{prop:similarity}
-The matrix $\tilde{C} = D^{1/2} C D^{1/2}$ satisfies $\tilde{C} = \sum_{r=1}^{w} S^r$, a polynomial in $S$.
-\end{proposition}
+\begin{remark}[Diagonal convention]
+Equation~\eqref{eq:omega} includes the diagonal of the low-rank population proxy.
+A loopless DCSBM has mean adjacency
+\(\Omega-\diag(\Omega)\).
+If we retain the proxy normalization \(\mathcal{D}\), removing the diagonal changes the normalized operator by a diagonal matrix with operator norm
+\begin{equation}
+    \max_i \frac{\theta_i B_{g_i g_i}}{\kappa_{g_i}}.
+    \label{eq:diagonal-perturbation}
+\end{equation}
+The relative difference between the proxy degree and the loopless expected degree is bounded by the same quantity.
+Both differences vanish when the propensities remain bounded and the block degree masses grow.
+\end{remark}
+
+\section{Multiplicative block matrices}
+\label{sec:factorization-lemma}
+
+\begin{lemma}[Multiplicative block matrices produce community rays]
+\label{lem:multiplicative-rays}
+Let
+\begin{equation}
+    M=\diag(r)ZH Z^\top\diag(t),
+    \label{eq:general-multiplicative}
+\end{equation}
+where \(r_i,t_i>0\), \(H\in\R^{K\times K}\), and \(h=\rank(M)\).
+Suppose that \(M=UV^\top\) is a minimal exact factorization with
+\(\rank(U)=\rank(V)=h\).
+Then matrices \(C,E\in\R^{K\times h}\) exist such that
+\begin{equation}
+    u_i=r_i c_{g_i},
+    \qquad
+    v_i=t_i e_{g_i},
+    \label{eq:ray-rows}
+\end{equation}
+where lowercase letters denote rows of their corresponding matrices.
+Consequently,
+\begin{equation}
+    \norm{u_i}=r_i\norm{c_{g_i}},
+    \qquad
+    \frac{u_i}{\norm{u_i}}
+    =
+    \frac{c_{g_i}}{\norm{c_{g_i}}},
+    \label{eq:ray-norm-direction}
+\end{equation}
+and
+\begin{equation}
+    \cos(u_i,u_j)
+    =
+    \frac{c_{g_i}^\top c_{g_j}}
+    {\norm{c_{g_i}}\norm{c_{g_j}}}.
+    \label{eq:ray-cosine}
+\end{equation}
+\end{lemma}
 
 \begin{proof}
-We have $D^{1/2} T D^{-1/2} = D^{-1/2} A D^{-1/2} = S$. Therefore:
-\begin{equation}
-    D^{1/2} C D^{1/2} = \sum_{r=1}^{w} D^{1/2} T^r D^{-1} D^{1/2} = \sum_{r=1}^{w} D^{1/2} T^r D^{-1/2} = \sum_{r=1}^{w} S^r
-\end{equation}
+The column space of \(M\) is contained in the column space of \(\diag(r)Z\).
+Minimality gives \(\col(U)=\col(M)\), so \(U=\diag(r)ZC\) for some \(C\).
+Applying the same argument to \(M^\top\) gives \(V=\diag(t)ZE\).
+Equations~\eqref{eq:ray-rows}--\eqref{eq:ray-cosine} follow row by row.
 \end{proof}
 
-\textbf{Implication:} Since $\tilde{C} = p(S)$ for polynomial $p$, they share eigenvectors. The matrix $C$ is similar to $\tilde{C}$, so its eigenvectors are $D^{-1/2}\mathbf{u}$, which still factor as:
+The lemma does not require \(M\) to be positive semidefinite or its factorization to be unique.
+An invertible change of factorization changes the community vectors but preserves the multiplier \(r_i\) within each community.
+Two communities have distinct normalized directions when their community vectors are nonzero and are not positive scalar multiples of one another.
+Minimality, or an equivalent balancing condition, rules out canceling components in unused dimensions.
+
+\section{Normalized spectral embeddings}
+\label{sec:normalized-spectral}
+
+Define the population normalized adjacency
 \begin{equation}
-    [D^{-1/2}\mathbf{u}]_i = \frac{\sqrt{\theta_i} \cdot c_{g_i}}{\sqrt{d_i}} = \frac{\sqrt{\theta_i} \cdot c_{g_i}}{\sqrt{\theta_i \gamma_{g_i}}} = \frac{c_{g_i}}{\sqrt{\gamma_{g_i}}}
+    \mathcal{S}
+    =
+    \mathcal{D}^{-1/2}\Omega\mathcal{D}^{-1/2}.
+    \label{eq:normalized-adjacency}
 \end{equation}
-This depends only on community---the multiplicative structure is preserved.
-
-\section{Stage 3: PMI Transform Breaks Separation}
-\label{sec:pmi}
-
-Skip-Gram with Negative Sampling (SGNS) implicitly factorizes the PMI matrix \citep{levy2014neural}:
+Let
 \begin{equation}
-    M_{ij} = \log(C_{ij}) - \log(\pi_i) - \log(\pi_j) + \text{const}
+    Q=\Theta^{1/2}Z\diag(s)^{-1/2}.
+    \label{eq:Q}
 \end{equation}
-where $\pi_i \propto d_i$ is the stationary distribution.
-
-\subsection{The Logarithm Converts Multiplicative to Additive}
-
-From Section~\ref{sec:cooccurrence}, the co-occurrence matrix has entries:
+Its columns are orthonormal because \(Q^\top Q=I_K\).
+Define the block operator
 \begin{equation}
-    C_{ij} = \frac{[p(S)]_{ij}}{\sqrt{d_i d_j}}
+    H=
+    \diag(s)^{1/2}
+    \diag(\kappa)^{-1/2}
+    B
+    \diag(\kappa)^{-1/2}
+    \diag(s)^{1/2}.
+    \label{eq:block-operator}
 \end{equation}
-
-The matrix $p(S)$ inherits spectral structure from $S$. Using Theorem~\ref{thm:known}, the leading terms satisfy:
+Direct multiplication gives
 \begin{equation}
-    [p(S)]_{ij} \approx \sqrt{\theta_i \theta_j} \cdot F_{g_i, g_j}
-\end{equation}
-where $F_{g_i, g_j}$ depends only on communities.
-
-Therefore:
-\begin{equation}
-    C_{ij} \approx \frac{\sqrt{\theta_i \theta_j} \cdot F_{g_i, g_j}}{\sqrt{\theta_i \gamma_{g_i}} \sqrt{\theta_j \gamma_{g_j}}} = \frac{F_{g_i, g_j}}{\sqrt{\gamma_{g_i} \gamma_{g_j}}}
-\end{equation}
-
-\textbf{Key observation:} The $\theta_i$ terms cancel in $C_{ij}$---the co-occurrence matrix depends only on community structure, not individual degree parameters.
-
-\subsection{PMI Reintroduces Degree Dependence}
-
-The PMI transform subtracts $\log(\pi_i) + \log(\pi_j)$ where $\pi_i \propto d_i = \theta_i \gamma_{g_i}$:
-\begin{align}
-    M_{ij} &= \log(C_{ij}) - \log(d_i) - \log(d_j) + \text{const} \\
-    &= \log(C_{ij}) - \log(\theta_i) - \log(\gamma_{g_i}) - \log(\theta_j) - \log(\gamma_{g_j}) + \text{const}
-\end{align}
-
-Since $C_{ij}$ depends only on communities, we have:
-\begin{equation}
-    M_{ij} = \underbrace{H_{g_i, g_j}}_{\text{community block}} - \underbrace{\log(\theta_i) - \log(\theta_j)}_{\text{degree offsets}} + \text{const}
+    \mathcal{S}=QHQ^\top.
+    \label{eq:S-QHQ}
 \end{equation}
 
-where $H_{g_i, g_j} = \log(C_{ij}) - \log(\gamma_{g_i}) - \log(\gamma_{g_j})$ depends only on communities.
-
-\subsection{Why This Breaks Separation}
-
-\begin{center}
-\begin{tabular}{|l|c|c|}
-\hline
-& \textbf{Structure} & \textbf{Normalization separates?} \\
-\hline
-Laplacian eigenvectors & $u_i = \sqrt{\theta_i} \cdot c_{g_i}$ (multiplicative) & Yes \\
-\hline
-PMI matrix & $M_{ij} = H_{g_i,g_j} - \log\theta_i - \log\theta_j$ (additive) & No \\
-\hline
-\end{tabular}
-\end{center}
-
-In the Laplacian, dividing by magnitude removes $\sqrt{\theta_i}$, leaving only $c_{g_i}$.
-
-In PMI, the degree terms $-\log(\theta_i)$ are \textit{additive offsets} to each row/column. No normalization of the resulting embeddings can remove additive structure---it would require \textit{subtraction}, not division.
-
-\subsection{Rank Structure of PMI}
-
-The PMI matrix decomposes as:
+\begin{theorem}[Degree controls radius in the population eigenspace]
+\label{thm:spectral-rays}
+Suppose that \(B\) has rank \(K\).
+Let \(H=V\Lambda V^\top\), with \(V\) orthogonal.
+The \(K\) nonzero eigenvectors of \(\mathcal{S}\) can be collected as \(U=QV\).
+For node \(i\) in community \(a=g_i\),
 \begin{equation}
-    M = H^{(g)} + \mathbf{r}\mathbf{1}^T + \mathbf{1}\mathbf{r}^T + \text{const}
+    u_i=\sqrt{\frac{\theta_i}{s_a}}\,v_a,
+    \label{eq:spectral-row}
 \end{equation}
-where $H^{(g)}$ is rank-$K$ (community block structure) and $r_i = -\log(\theta_i)$ creates rank-2 offset terms.
+where \(v_a\) is row \(a\) of \(V\).
+Therefore,
+\begin{equation}
+    \norm{u_i}^2
+    =
+    \frac{\theta_i}{s_a}
+    =
+    \frac{\delta_i}{s_a\kappa_a},
+    \qquad
+    \frac{u_i}{\norm{u_i}}=v_a.
+    \label{eq:spectral-norm-direction}
+\end{equation}
+\end{theorem}
 
-The total rank is at most $K + 2$, but the community and degree information are now additively entangled rather than multiplicatively separable.
+\begin{proof}
+Equation~\eqref{eq:S-QHQ} and \(Q^\top Q=I_K\) imply
+\begin{equation}
+    \mathcal{S}(QV)=QHV=QV\Lambda.
+\end{equation}
+Equation~\eqref{eq:spectral-row} follows from the definition of \(Q\).
+The norm formula uses \(\norm{v_a}=1\).
+\end{proof}
 
-\section{Stage 4: SGNS Optimization}
+Using all \(K\) population eigenvectors, nodes in one community have cosine one, while nodes in different communities have cosine zero because the rows of \(V\) are orthonormal.
+If an embedding drops the trivial eigenvector or retains fewer dimensions, cross-community angles need not be right angles, but they remain functions of the two community labels.
+
+\begin{corollary}[Degree recovery]
+\label{cor:spectral-degree}
+Within each community,
+\begin{equation}
+    \delta_i\propto\norm{u_i}^2.
+\end{equation}
+Across communities, recovery of \(\delta_i\) requires the block calibration factor \(s_a\kappa_a\).
+\end{corollary}
+
+Many matrix-factorization embeddings weight eigenvectors by eigenvalues.
+Define
+\begin{equation}
+    x_i=e_i^\top U\abs{\Lambda}^{1/2},
+    \label{eq:weighted-spectral-embedding}
+\end{equation}
+where \(\abs{\Lambda}\) applies absolute value to each eigenvalue.
+Then
+\begin{equation}
+    x_i
+    =
+    \sqrt{\frac{\theta_i}{s_a}}\,
+    v_a\abs{\Lambda}^{1/2}.
+    \label{eq:weighted-row}
+\end{equation}
+Direction remains community-specific, and norm remains proportional to \(\sqrt{\theta_i}\) within a community.
+If \(H\succeq 0\), then
+\begin{equation}
+    \cos(x_i,x_j)
+    =
+    \frac{B_{ab}}{\sqrt{B_{aa}B_{bb}}},
+    \qquad
+    a=g_i,\quad b=g_j.
+    \label{eq:block-affinity-cosine}
+\end{equation}
+For indefinite \(H\), the same calculation replaces \(H\) by \(V\abs{\Lambda}V^\top\), and the angle remains block-specific.
+
+\section{Raw random-walk pairs}
+\label{sec:raw-pairs}
+
+Let
+\begin{equation}
+    T=\mathcal{D}^{-1}\Omega
+    \label{eq:transition}
+\end{equation}
+be the population simple-random-walk transition matrix.
+For \(a=g_i\) and \(b=g_j\),
+\begin{equation}
+    T_{ij}=\frac{\theta_jB_{ab}}{\kappa_a}.
+    \label{eq:transition-entry}
+\end{equation}
+The induced block transition matrix is
+\begin{equation}
+    W_{ab}
+    =
+    \sum_{j:g_j=b}T_{ij}
+    =
+    \frac{B_{ab}s_b}{\kappa_a}.
+    \label{eq:block-transition}
+\end{equation}
+
+\begin{lemma}[Endpoint distribution at each lag]
+\label{lem:lag-endpoint}
+For every integer \(r\geq 1\),
+\begin{equation}
+    (T^r)_{ij}
+    =
+    \frac{\theta_j}{s_b}(W^r)_{ab}.
+    \label{eq:lag-endpoint}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Equation~\eqref{eq:lag-endpoint} holds for \(r=1\) by Equation~\eqref{eq:block-transition}.
+Assume that it holds at lag \(r\).
+Grouping the intermediate node by community in
+\((T^{r+1})_{ij}=\sum_\ell(T^r)_{i\ell}T_{\ell j}\)
+gives the formula at lag \(r+1\).
+\end{proof}
+
+Let \(a_1,\dots,a_L\geq 0\) be context-window weights with \(\sum_r a_r=1\), and define
+\begin{equation}
+    F=\sum_{r=1}^L a_rW^r.
+    \label{eq:block-window}
+\end{equation}
+The stationary distribution is
+\begin{equation}
+    \pi_i=\frac{\delta_i}{\vol(\Omega)}.
+    \label{eq:stationary}
+\end{equation}
+Define the stationary joint probability of the ordered positive pair \((i,j)\) by
+\begin{equation}
+    J_{ij}
+    =
+    \pi_i\sum_{r=1}^L a_r(T^r)_{ij}.
+    \label{eq:stationary-joint}
+\end{equation}
+
+\begin{theorem}[Raw stationary pairs have radial-angular form]
+\label{thm:raw-pair-rays}
+For \(a=g_i\) and \(b=g_j\),
+\begin{equation}
+    J_{ij}
+    =
+    \theta_i\theta_jG_{ab},
+    \qquad
+    G_{ab}
+    =
+    \frac{\kappa_a}{\vol(\Omega)s_b}F_{ab}.
+    \label{eq:J-factorization}
+\end{equation}
+The random walk is reversible, so \(G\) and \(J\) are symmetric.
+In matrix form,
+\begin{equation}
+    J=\Theta ZGZ^\top\Theta.
+    \label{eq:J-matrix}
+\end{equation}
+Every minimal exact factorization \(J=UV^\top\) therefore has
+\begin{equation}
+    u_i=\theta_i c_{g_i},
+    \qquad
+    v_i=\theta_i e_{g_i}.
+    \label{eq:J-factor-rows}
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+Substituting Equations~\eqref{eq:expected-degree},~\eqref{eq:lag-endpoint}, and~\eqref{eq:block-window} into Equation~\eqref{eq:stationary-joint} yields
+\begin{equation}
+    J_{ij}
+    =
+    \frac{\theta_i\kappa_a}{\vol(\Omega)}
+    \frac{\theta_j}{s_b}F_{ab}.
+\end{equation}
+Reversibility gives \(J_{ij}=J_{ji}\).
+Lemma~\ref{lem:multiplicative-rays} gives Equation~\eqref{eq:J-factor-rows}.
+\end{proof}
+
+Within community \(a\),
+\begin{equation}
+    \norm{u_i}
+    =
+    \theta_i\norm{c_a}
+    =
+    \frac{\delta_i}{\kappa_a}\norm{c_a}.
+    \label{eq:raw-pair-norm}
+\end{equation}
+The raw stationary pair matrix therefore gives the strongest exact version of degree in radius and community in direction.
+It describes pair probabilities before marginal normalization and the entrywise logarithm.
+
+\begin{table*}[t]
+    \centering
+    \caption{Population radial exponents for three embedding operators.}
+    \label{tab:radial-exponents}
+    \begin{tabular}{lll}
+        \toprule
+        Population object & Row form within block \(a\) & Within-block prediction \\
+        \midrule
+        Normalized-adjacency eigenspace
+            & \(u_i=\sqrt{\theta_i}\,c_a\)
+            & \(\norm{u_i}\propto\sqrt{\delta_i}\) \\
+        Raw adjacency or stationary pairs
+            & \(u_i=\theta_i c_a\)
+            & \(\norm{u_i}\propto\delta_i\) \\
+        SGNS score with \(\alpha=1\)
+            & \(u_i=c_a\)
+            & no degree signal \\
+        \bottomrule
+    \end{tabular}
+\end{table*}
+
+\section{Skip-gram with negative sampling}
 \label{sec:sgns}
 
-Even with the PMI matrix fully characterized, three barriers prevent determining where community information ends up in learned embeddings.
-
-\subsection{Barrier 1: Non-uniqueness of Factorization}
-
-SGNS seeks embeddings $E, E'$ such that $E_i \cdot E'_j \approx M_{ij}$. If $M = EE'^T$, then for any orthogonal $Q$:
+Let \(p^+_{ij}=J_{ij}\) be the positive-pair probability.
+Suppose skip-gram with negative sampling (SGNS) draws \(k\) negative contexts per center from
 \begin{equation}
-    M = (EQ)(E'Q)^T
+    q_j
+    =
+    \frac{\delta_j^\alpha}{Z_\alpha},
+    \qquad
+    Z_\alpha=\sum_\ell\delta_\ell^\alpha.
+    \label{eq:negative-distribution}
 \end{equation}
-The factorization is determined only up to rotation. Community and degree information could be distributed across dimensions arbitrarily.
+The expected negative weight for ordered pair \((i,j)\) is
+\begin{equation}
+    p^-_{ij}=k\pi_iq_j.
+    \label{eq:negative-weight}
+\end{equation}
 
-\subsection{Barrier 2: Low-Rank Approximation}
+\begin{theorem}[Unconstrained SGNS score]
+\label{thm:sgns-score}
+For positive weights \(p^+_{ij}\) and \(p^-_{ij}\), the pairwise SGNS objective
+\begin{equation}
+    \ell_{ij}(x)
+    =
+    p^+_{ij}\log\sigma(x)
+    +
+    p^-_{ij}\log\sigma(-x)
+    \label{eq:pairwise-sgns}
+\end{equation}
+has the unique maximizer
+\begin{equation}
+    x^\star_{ij}
+    =
+    \log\frac{p^+_{ij}}{p^-_{ij}}.
+    \label{eq:pairwise-optimum}
+\end{equation}
+For the DCSBM walk and every block pair with \(F_{ab}>0\),
+\begin{equation}
+    x^\star_{ij}
+    =
+    H^{(\alpha)}_{ab}
+    +(1-\alpha)\log\theta_j,
+    \label{eq:dcsbm-sgns-score}
+\end{equation}
+where
+\begin{equation}
+    H^{(\alpha)}_{ab}
+    =
+    \log F_{ab}
+    -\log s_b
+    -\alpha\log\kappa_b
+    +\log Z_\alpha
+    -\log k.
+    \label{eq:sgns-block-score}
+\end{equation}
+\end{theorem}
 
-When embedding dimension $d < \text{rank}(M) \leq K + 2$, SGNS computes an approximate factorization. The rank-1 offset terms $\mathbf{r}\mathbf{1}^T + \mathbf{1}\mathbf{r}^T$ may or may not align with the top-$d$ singular vectors of $M$. Their fate under projection is not analytically tractable.
+\begin{proof}
+Differentiation gives
+\begin{equation}
+    \ell'_{ij}(x)
+    =
+    \frac{p^+_{ij}-p^-_{ij}e^x}{1+e^x}
+\end{equation}
+and
+\begin{equation}
+    \ell''_{ij}(x)
+    =
+    -\frac{(p^+_{ij}+p^-_{ij})e^x}{(1+e^x)^2}<0.
+\end{equation}
+Thus \(e^{x^\star}=p^+_{ij}/p^-_{ij}\).
+Substituting
+\begin{equation}
+    \sum_r a_r(T^r)_{ij}
+    =
+    \frac{\theta_j}{s_b}F_{ab},
+    \qquad
+    \delta_j=\theta_j\kappa_b
+\end{equation}
+gives Equations~\eqref{eq:dcsbm-sgns-score} and~\eqref{eq:sgns-block-score}.
+\end{proof}
 
-\subsection{Barrier 3: Stochastic Optimization}
+\begin{corollary}[Degree cancellation at \(\alpha=1\)]
+\label{cor:alpha-one}
+If \(\alpha=1\), then
+\begin{equation}
+    x^\star_{ij}=H^{(1)}_{g_i g_j}.
+    \label{eq:alpha-one-score}
+\end{equation}
+The score is block-constant and contains no node-specific propensity.
+Every minimal factorization has center and context rows that depend only on community.
+\end{corollary}
 
-SGNS uses stochastic gradient descent, not SVD. The final embedding depends on:
-\begin{itemize}
-    \item Random initialization
-    \item Learning rate and schedule
-    \item Order of training samples
-    \item Number of negative samples
-\end{itemize}
-Different runs may converge to different local optima with different distributions of community/degree information across dimensions.
+The \(\alpha=1\) result agrees with the NetMF target~\citep{qiu2018network}
+\begin{equation}
+    \log\left[
+        \vol(\Omega)
+        \left(\sum_r a_rT^r\right)
+        \mathcal{D}^{-1}
+    \right]
+    -\log k.
+    \label{eq:netmf}
+\end{equation}
+Right multiplication by \(\mathcal{D}^{-1}\) already divides each conditional context probability by its stationary marginal.
+A second subtraction of both stationary marginals would count this normalization twice.
 
-\section{Summary and Implications}
+\begin{corollary}[Additive context-degree term for \(\alpha\neq 1\)]
+\label{cor:alpha-not-one}
+For ordered SGNS and \(\alpha\neq 1\), center-side rows of the score matrix remain block-constant.
+Context columns receive the additive term \((1-\alpha)\log\theta_j\).
+Moreover,
+\begin{equation}
+    X^\star
+    =
+    ZH^{(\alpha)}Z^\top
+    +(1-\alpha)\ones(\log\theta)^\top
+    \label{eq:sgns-score-matrix}
+\end{equation}
+has column space contained in \(\col(Z)\) and rank at most \(K\).
+\end{corollary}
 
-\begin{center}
-\begin{tabular}{|l|c|c|}
-\hline
-\textbf{Pipeline Stage} & \textbf{Community Info} & \textbf{Separation Preserved?} \\
-\hline
-Normalized adjacency $S$ & In eigenvector direction & Yes (known) \\
-\hline
-Co-occurrence $C$ & In similar eigenvectors & Yes (Prop.~\ref{prop:similarity}) \\
-\hline
-PMI matrix $M$ & Block structure + offsets & No (additive) \\
-\hline
-SGNS embeddings $E$ & Unknown & Cannot determine \\
-\hline
-\end{tabular}
-\end{center}
+\begin{proof}
+Equation~\eqref{eq:sgns-score-matrix} follows from Theorem~\ref{thm:sgns-score}.
+Because \(\ones=Z\ones_K\),
+\begin{equation}
+    X^\star
+    =
+    Z\left[
+        H^{(\alpha)}Z^\top
+        +(1-\alpha)\ones_K(\log\theta)^\top
+    \right].
+\end{equation}
+The column-space and rank claims follow.
+\end{proof}
 
-\textbf{The PMI transform is the critical juncture.} Before it, community and degree are multiplicatively separable. After it, they are additively entangled.
+Some implementations tie center and context scores or combine both orientations of each pair.
+For a shared symmetric score, the pairwise optimum is
+\begin{equation}
+    x^{\mathrm{sym}}_{ij}
+    =
+    \log
+    \frac{2J_{ij}}
+    {k(\pi_iq_j+\pi_jq_i)}.
+    \label{eq:symmetric-score}
+\end{equation}
+Under the DCSBM,
+\begin{equation}
+    x^{\mathrm{sym}}_{ij}
+    =
+    C_{ab}
+    -
+    \log\left(
+        \theta_j^{\alpha-1}\kappa_a\kappa_b^\alpha
+        \theta_i^{\alpha-1}\kappa_b\kappa_a^\alpha
+    \right),
+    \label{eq:symmetric-dcsbm-score}
+\end{equation}
+where \(C_{ab}\) is block-specific.
+The score is block-constant when \(\alpha=1\).
+For \(\alpha\neq 1\), it is generally not multiplicatively separable; constant within-block propensities are a degenerate exception.
 
-\subsection{Practical Implications}
+\begin{remark}[Zeros and finite counts]
+If \(F_{ab}=0\), the unconstrained population score is \(-\infty\).
+Finite-data methods must specify how they treat unobserved pairs, for example through truncation, smoothing, or a positive shifted-PMI convention.
+\end{remark}
 
-\begin{enumerate}
-    \item \textbf{When degree heterogeneity is high}, spectral methods with row-normalization have provable guarantees; Node2Vec does not.
+The pairwise optimum identifies dot products rather than the norm of either factor.
+For ordered SGNS, the optimal score has slope \(1-\alpha\) against log context degree within each context block.
+A law such as \(\norm{u_i}\propto d_i^{-\beta}\) requires an additional argument about low-rank approximation, optimization, and factor balancing.
 
-    \item \textbf{Normalizing Node2Vec embeddings} will not recover the clean separation that works for spectral methods---the underlying structure is different.
+\section{Factorization gauge}
+\label{sec:gauge}
 
-    \item \textbf{Empirical questions remain}: Does the additive structure approximately preserve separation in practice? This requires experiments on DCSBM graphs with varying degree heterogeneity.
-\end{enumerate}
+The unconstrained SGNS loss depends on \(U,V\) only through \(UV^\top\).
+For every invertible matrix \(R\),
+\begin{equation}
+    UV^\top
+    =
+    (UR)(VR^{-\top})^\top.
+    \label{eq:gauge}
+\end{equation}
+Individual norms and angles of \(U\) are therefore not identified by the objective.
+The invariance group contains all invertible transformations rather than only rotations.
+
+Two restrictions make norm and angle claims well-defined.
+One can tie the factors, \(U=V\), when the target admits the required positive-semidefinite factorization.
+Alternatively, one can impose the balance condition
+\begin{equation}
+    U^\top U=V^\top V.
+    \label{eq:balance}
+\end{equation}
+For a rank-\(h\) score matrix \(M=P\Sigma Q^\top\), canonical balanced factors are
+\begin{equation}
+    U_{\mathrm{bal}}=P\Sigma^{1/2},
+    \qquad
+    V_{\mathrm{bal}}=Q\Sigma^{1/2}.
+    \label{eq:balanced-factors}
+\end{equation}
+Equivalent minimal balanced factors differ only by an orthogonal transformation, which preserves row norms and angles.
+Empirical norm-degree claims should use balanced factors or identify the optimizer-dependent gauge under study.
+
+\section{Finite-sample transfer}
+\label{sec:finite-sample}
+
+The population theorems describe exact rays.
+Any row-wise embedding error bound yields corresponding bounds for radius and direction.
+
+\begin{lemma}[Stability of radius and direction]
+\label{lem:stability}
+Suppose that population rows satisfy \(u_i=r_i c_{g_i}\), and an estimated embedding obeys
+\begin{equation}
+    \norm{\widehat{u}_iQ-u_i}\leq\varepsilon_i
+    \label{eq:row-error}
+\end{equation}
+for an orthogonal alignment \(Q\).
+Let
+\(\rho_i=\norm{u_i}=r_i\norm{c_{g_i}}>0\), and assume \(\varepsilon_i<\rho_i\).
+Then
+\begin{equation}
+    \abs{\norm{\widehat{u}_i}-\rho_i}
+    \leq
+    \varepsilon_i
+    \label{eq:norm-error}
+\end{equation}
+and
+\begin{equation}
+    \norm{
+        \frac{\widehat{u}_iQ}{\norm{\widehat{u}_i}}
+        -
+        \frac{c_{g_i}}{\norm{c_{g_i}}}
+    }
+    \leq
+    \frac{2\varepsilon_i}{\rho_i}.
+    \label{eq:direction-error}
+\end{equation}
+For two nodes,
+\begin{equation}
+    \abs{
+        \cos(\widehat{u}_i,\widehat{u}_j)
+        -
+        \cos(c_{g_i},c_{g_j})
+    }
+    \leq
+    \frac{2\varepsilon_i}{\rho_i}
+    +
+    \frac{2\varepsilon_j}{\rho_j}.
+    \label{eq:cosine-error}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The reverse triangle inequality gives Equation~\eqref{eq:norm-error}.
+For nonzero vectors \(x,y\),
+\begin{equation}
+    \norm{
+        \frac{x}{\norm{x}}
+        -
+        \frac{y}{\norm{y}}
+    }
+    \leq
+    \frac{2\norm{x-y}}{\norm{y}}.
+\end{equation}
+Apply this inequality with \(x=\widehat{u}_iQ\) and \(y=u_i\) to obtain Equation~\eqref{eq:direction-error}.
+Equation~\eqref{eq:cosine-error} follows by adding the two unit-vector errors.
+\end{proof}
+
+Let \(\Delta>0\) be the minimum Euclidean distance between distinct population directions.
+Nearest-direction assignment is exact whenever
+\begin{equation}
+    \max_i\frac{2\varepsilon_i}{\rho_i}<\frac{\Delta}{2}.
+    \label{eq:direction-recovery}
+\end{equation}
+For the normalized-adjacency embedding, \(\rho_i\propto\sqrt{\theta_i}\).
+The same absolute row error therefore produces more directional error for low-propensity nodes.
+
+\section{Relation to prior theory}
+\label{sec:prior-theory}
+
+\citet{qin2013regularized} derive the population ray structure of regularized spectral clustering under the DCSBM\@.
+Theorem~\ref{thm:spectral-rays} gives the unregularized structure in notation that also supports the walk calculations.
+\citet{levy2014neural} derive the shifted-PMI interpretation of SGNS, and \citet{qiu2018network} identify the matrix targets for DeepWalk, LINE, PTE, and node2vec.
+
+\citet{kojaku2024network} connect a large-window linearization of the \(p=q=1\), \(\alpha=1\) score to the normalized Laplacian.
+Their linearized matrix has the form
+\begin{equation}
+    \widehat{R}
+    =
+    D^{-1/2}\Gamma\Phi\Gamma^\top D^{-1/2},
+    \label{eq:kojaku-congruence}
+\end{equation}
+where \(\Gamma\) contains normalized-Laplacian eigenvectors and \(\Phi\) transforms their eigenvalues.
+Equation~\eqref{eq:kojaku-congruence} is a congruence rather than an ordinary eigendecomposition.
+The columns \(U=D^{1/2}\Gamma\) solve
+\begin{equation}
+    D\widehat{R}U=U\Phi,
+    \label{eq:kojaku-generalized}
+\end{equation}
+which is a generalized eigenproblem.
+For a regular graph, \(D\) is proportional to the identity and the distinction disappears.
+It may also become negligible in a planted-partition regime where degrees concentrate around one value.
+Degree heterogeneity makes the distinction material.
+
+\citet{zhang2022exact} prove exact community recovery for matrix-factorization versions of DeepWalk and node2vec under stochastic block models and degree-corrected variants.
+\citet{davison2024community} establish weakly consistent recovery for embeddings learned by node2vec and analyze the DCSBM case at unigram exponent one.
+These results establish community recovery under specific regimes.
+Our contribution concerns the radial-angular decomposition of the relevant population operators, the SGNS boundary, and the gauge required to interpret learned norms and angles.
+
+\section{Finite-training mechanism}
+\label{sec:finite-training-mechanism}
+
+The population score in Corollary~\ref{cor:alpha-one} contains no node-specific degree at \(\alpha=1\), but a finite optimizer does not begin at that score.
+Nodes that appear more often as positive centers receive more stochastic updates.
+Their norms can therefore depend on exposure even when center frequency cancels from the population optimum.
+
+For an undirected graph \(G\), let \(\pi_i=d_i/\vol(G)\) be the stationary frequency and let \(T_i\) denote the one-step conditional context distribution of node \(i\).
+When the positive-context marginal is \(\pi\), the context specificity is
+\begin{equation}
+    K_i
+    =
+    D_{\mathrm{KL}}(T_i\Vert\pi)
+    =
+    \log\frac{\vol(G)}{d_i}
+    -
+    \frac{1}{d_i}\sum_{j\in N(i)}\log d_j.
+    \label{eq:graph-context-kl}
+\end{equation}
+In an uncorrelated configuration model, the neighbor average in Equation~\eqref{eq:graph-context-kl} changes little with \(d_i\), so specificity decreases approximately as \(-\log d_i\).
+The information-geometric relation between transformed squared norm and context KL therefore predicts a decreasing structural contribution to the norm~\citep{oyama2022norm}.
+
+Word2vec subsampling changes the exposure term.
+For token frequency \(p_i>t\), the Gensim form of the Mikolov retention probability is~\citep{mikolov2013distributed}
+\begin{equation}
+    r_t(p_i)
+    =
+    \sqrt{\frac{t}{p_i}}+\frac{t}{p_i}.
+    \label{eq:retention-probability}
+\end{equation}
+The expected retained-center exposure is consequently
+\begin{equation}
+    m_i
+    \propto
+    p_i r_t(p_i)
+    =
+    \sqrt{tp_i}+t.
+    \label{eq:retained-exposure}
+\end{equation}
+Exposure still increases with frequency, but its asymptotic log elasticity is \(1/2\) rather than \(1\).
+Subsampling therefore weakens the marginal exposure gain without requiring a decreasing exposure count or a fixed ceiling.
+
+Let a finite-training response \(F(\log m_i,K_i)\) approximate the learned norm in a fixed optimizer and gauge.
+Its derivative along degree is
+\begin{equation}
+    \frac{dF}{d\log d_i}
+    =
+    \frac{\partial F}{\partial\log m_i}
+    \frac{d\log m_i}{d\log d_i}
+    +
+    \frac{\partial F}{\partial K_i}
+    \frac{dK_i}{d\log d_i}.
+    \label{eq:two-force-derivative}
+\end{equation}
+The first term is positive when repeated coherent updates increase norm, whereas the second is negative when high-degree nodes have less specific contexts.
+An inverted-U occurs when exposure dominates at low degree and the specificity loss dominates at high degree.
+
+\section{Numerical experiments}
+\label{sec:numerical-experiments}
+
+\subsection{Intervention design}
+
+We generated five heterogeneous configuration-model graphs with \(n=600\) nodes.
+For each graph, we obtained a broad degree sequence from a Barab\'asi--Albert graph with attachment parameter three, sampled a configuration graph with that sequence, removed self-loops and parallel edges, and connected any remaining components.
+Stationary frequency is proportional to degree in these undirected graphs.
+
+The controlled experiment crosses two interventions.
+The exposure intervention assigns an exact total of \(144{,}000\) positive pairs per condition and epoch, with center counts
+\begin{equation}
+    m_i(\beta)
+    \propto
+    \pi_i^\beta,
+    \qquad
+    \beta\in\left\{0,\frac{1}{3},\frac{2}{3},1\right\}.
+    \label{eq:exposure-intervention}
+\end{equation}
+The specificity intervention replaces the one-step transition row by
+\begin{equation}
+    T_i^{(\lambda)}
+    =
+    (1-\lambda)T_i+\lambda q,
+    \qquad
+    q=\sum_i c_iT_i,
+    \label{eq:specificity-intervention}
+\end{equation}
+where \(c_i=m_i/\sum_jm_j\) is the realized center share and \(\lambda\in\{0,1/3,2/3,1\}\).
+Equation~\eqref{eq:specificity-intervention} preserves the positive-context marginal \(q\) while reducing every row's KL divergence toward zero.
+Negative contexts follow the realized \(q\), so the negative-sampling exponent is one after integer pair allocation.
+
+We trained 24-dimensional SGNS embeddings for four epochs with five negative samples per positive pair.
+All conditions within a graph seed used the same initialization and optimizer seed.
+We report raw center-vector norms and the canonical balanced norms defined in Equation~\eqref{eq:balanced-factors}; both give the same qualitative results.
+
+\subsection{Exposure creates the increasing branch}
+
+Figure~\ref{fig:controlled-turnover} separates the two mechanisms.
+With equal center exposure (\(\beta=0\)) and unmodified contexts, the mean raw norm decreases from \(3.507\) in the lowest degree bin to \(2.297\) in the highest, with Spearman correlation \(-0.758\).
+With proportional exposure (\(\beta=1\)), it increases from \(2.496\) to \(4.802\), with correlation \(0.895\).
+The intermediate intervention \(\beta=1/3\) produces an inverted-U with a peak norm of \(3.315\) near degree six; the peak is \(0.093\) above the lowest bin and \(0.361\) above the highest bin.
+Thus strictly increasing but sublinear exposure is sufficient for turnover.
+
+\begin{figure*}[t]
+    \includegraphics[width=\textwidth]{turnover_surface}
+    \caption{
+        Controlled separation of exposure and context specificity.
+        (a) Exact center-update interventions \(m_i\propto\pi_i^\beta\) and the held-out retention law at \(t=3\times10^{-4}\).
+        (b) Mixing each transition row toward its context marginal reduces \(D_{\mathrm{KL}}(T_i^{(\lambda)}\Vert q)\) while preserving \(q\).
+        (c) Increasing \(\beta\) changes the norm-degree curve from decreasing to increasing; \(\beta=1/3\) produces an inverted-U.
+        (d) At equal exposure, context mixing removes the decreasing branch.
+        (e) An exploratory degree-bin interpolation reproduces the strongest held-out turnover.
+        (f) The same exploratory interpolation tracks the peak shift across retention thresholds.
+        Points and error bars show degree-bin means and standard errors across five graph seeds.
+    }
+    \label{fig:controlled-turnover}
+\end{figure*}
+
+\subsection{Context specificity creates the decreasing branch}
+
+At equal exposure, increasing \(\lambda\) progressively flattens the norm-degree curve.
+Full mixing gives a mean norm of \(0.9488\) in both the lowest and highest degree bins.
+This intervention removes node-specific context information without changing the context marginal or the total positive-pair budget.
+The decreasing branch therefore depends on conditional context structure rather than center exposure alone.
+
+A quadratic response surface in log exposure and scalar context KL was declared before the held-out runs.
+It failed at the strongest subsampling threshold: the observed curve peaked near degree \(7.73\), whereas the model predicted a monotone increase through the highest bin near degree \(16.04\).
+A degree-bin-specific interpolation across \(\beta\), added after inspecting this failure, matched the held-out curve with pooled root-mean-square error \(0.013\) and placed the peak in the correct bin.
+We treat this second fit as exploratory because its form was chosen after the global model failed.
+
+\subsection{Literal word2vec validation}
+
+We next trained literal Gensim word2vec models on paired random-walk corpora from the same five graph seeds.
+Each corpus contains 300 length-five walks per node, and each model uses a 64-dimensional embedding, window size one, five negative samples, one worker, and five epochs.
+The three subsampling thresholds \(t\in\{3\times10^{-4},10^{-3},3\times10^{-3}\}\) share the corpus, initialization seed, and training seed within each graph.
+
+As subsampling weakens, the peak moves from the lowest degree bin at \(t=3\times10^{-4}\) to degree six at \(10^{-3}\) and degree \(7.73\) at \(3\times10^{-3}\) (Fig.~\ref{fig:gensim-turnover}).
+The latter two conditions show inverted-U curves.
+The rise from the lowest bin to the peak increases from \(0.372\) to \(0.569\), while the drop from the peak to the highest bin decreases in magnitude from \(0.537\) to \(0.238\).
+
+\begin{figure*}[t]
+    \includegraphics[width=\textwidth]{gensim_threshold_sweep}
+    \caption{
+        Literal Gensim word2vec validation.
+        (a) Expected retained center tokens as a function of degree at three subsampling thresholds.
+        (b) Raw center-vector norms after five epochs.
+        (c) Norms after approximately matching expected retained-center totals with eight, six, and five epochs.
+        (d) Observed peak locations and the exploratory controlled-interpolation fit.
+        The fixed-epoch and budget-matched peak locations coincide.
+        Points and error bars show degree-bin means and standard errors across five paired graph seeds.
+    }
+    \label{fig:gensim-turnover}
+\end{figure*}
+
+Aggressive subsampling retains fewer tokens at a fixed epoch count.
+We therefore repeated training with eight, six, and five epochs, which approximately matches the expected retained-center totals across thresholds.
+The peak locations remain \(2.98\), \(6.00\), and \(7.73\).
+The threshold effect is not explained by the total number of retained centers alone.
+The exploratory controlled fit does not predict the absolute Gensim peaks at the two weaker thresholds, so the present theory explains the mechanism and direction of peak movement rather than a calibrated peak location.
+
+\begin{figure*}[t]
+    \includegraphics[width=\textwidth]{prospective_validation}
+    \caption{
+        Prospective transfer of the two-force norm predictor.
+        (a--c) Solid curves show observed raw center-vector norms; dashed curves were frozen before target training from realized positive-pair exposure and empirical context KL.
+        Points and error bars show degree-bin means and standard errors over five graph seeds for the two synthetic families and five walk and optimizer seeds for NetScience.
+        (d) Frozen and observed peak degrees; circles, squares, and triangles denote direct Barab\'asi--Albert, clustered scale-free, and NetScience targets.
+        Eight of nine peaks fall within one degree bin of the frozen prediction, but the strongest-subsampling NetScience condition misses by two bins.
+    }
+    \label{fig:prospective-validation}
+\end{figure*}
+
+\subsection{Prospective transfer to unseen graphs}
+
+We chose a more flexible prospective predictor after the exploratory analyses above, then fixed its inputs, model class, hyperparameters, targets, and success criteria before training any target embedding.
+External application of the Gensim retention law made two node-level inputs observable before training: the logarithm of the realized positive-pair count and the empirical context KL.
+An extremely randomized tree regressor with 400 trees and minimum leaf size 40 mapped these two inputs to raw center norm (primary) and balanced norm (secondary)~\citep{geurts2006extremely}.
+Leave-one-seed-out prediction within the five configuration-model calibration graphs gave raw-norm \(R^2=0.828\) and Spearman correlation \(0.932\).
+
+The prospective targets comprised five direct Barab\'asi--Albert graphs with \(n=600\) and attachment parameter three~\citep{barabasi1999emergence}, five Holme--Kim clustered scale-free graphs with the same size and attachment parameter and triangle probability \(0.35\)~\citep{holme2002growing}, and the largest connected component of the NetScience coauthorship network, with 379 nodes and 914 edges~\citep{newman2006finding}.
+NetScience used five independent walk and optimizer seeds on the same observed graph.
+All conditions used 300 stationary-start walks per node, walk length five, window size one, 64 dimensions, five negative samples, and five epochs.
+A manifest recorded SHA-256 hashes of the protocol, calibration data, and all \(23{,}685\) node-level target predictions before target training; no outcome file existed at the freeze.
+
+The four declared criteria all passed (Fig.~\ref{fig:prospective-validation}).
+The median absolute peak error was zero degree bins, eight of nine peaks were within one bin, pooled predicted-versus-observed node-norm Spearman correlation was \(0.881\), and the observed peak moved nondecreasingly with weaker subsampling in all three graph families.
+Three boundary classifications differed: the strongest-subsampling direct Barab\'asi--Albert curve was decreasing rather than weakly unimodal, the weakest-subsampling clustered curve continued rising through its last bin, and the strongest-subsampling NetScience peak was two bins above its prediction.
+The predictor also overestimated the absolute NetScience norms.
+The prospective result supports qualitative transfer and approximate peak localization, while these misses rule out an exact universal response curve from the two scalar inputs.
+
+\section{Discussion}
+
+The population calculations and finite-training experiments describe different parts of the embedding pipeline.
+Normalized spectral embeddings and raw random-walk pair probabilities preserve degree as a radial multiplier, with exponents \(1/2\) and \(1\), respectively.
+Unigram SGNS removes node propensity from its population score, but finite stochastic optimization reintroduces a norm-frequency relation through unequal exposure.
+Context specificity supplies a second contribution with the opposite degree dependence.
+
+This separation sharpens the qualitative account proposed for word and trajectory embeddings~\citep{schakel2015measuring,wilson2015controlled,murray2023unsupervised}.
+Sublinear but increasing exposure is sufficient for the rising branch, while declining context specificity can supply the falling branch even as exposure continues to grow.
+Turnover appears when the marginal norm gain from exposure becomes weaker than the norm loss associated with less specific contexts.
+Standard word2vec subsampling provides one such weakening because retained exposure grows asymptotically as the square root of frequency.
+Frozen predictions from exposure and context KL preserved node-norm ordering and approximate peak movement across two unseen synthetic graph families and one empirical graph.
+
+The numerical evidence has clear limits.
+We used small graphs, one-step contexts, and a fixed SGNS implementation and hyperparameter set.
+The five NetScience replicates resample walks and optimization on one graph rather than supplying five independent empirical networks.
+External subsampling in the prospective test made every positive pair observable but differs from the usual internal word2vec implementation.
+The raw center norm depends on the optimizer-selected gauge, although the balanced norm gives the same qualitative curves here.
+Matching retained-center counts does not exactly match realized positive pairs after word2vec deletes tokens from a walk.
+The global scalar response surface failed at the strongest held-out turnover, and the more accurate degree-bin interpolation was chosen after that failure.
+The extremely randomized tree model was also chosen after the initial experiments, so only its evaluation on the three new target families is prospective.
+Although it passed all declared criteria, it missed one peak by two bins, misclassified two boundary peaks, and overestimated the NetScience norm level.
+The present evidence therefore supports a causal mechanism in the controlled model and qualitative transfer across graph topologies, without providing a universal response curve or a calibrated peak for natural sequence data.
+
+The next test should freeze the model before applying it to natural text or mobility sequences, vary the window, dimension, and optimizer, and again predict peaks from realized exposure and context KL before target training.
+General node2vec also requires a second-order state-space analysis on directed edges.
 
 \section{Conclusion}
 
-We traced community information through the Node2Vec pipeline on DCSBM graphs. While the co-occurrence matrix preserves the multiplicative eigenvector structure of spectral methods, the PMI transform converts this to additive structure. Combined with the non-uniqueness, approximation, and stochasticity of SGNS, this explains why Node2Vec resists the theoretical analysis possible for Laplacian Eigenmaps.
+Random-walk embeddings do not have a single norm-degree law.
+The normalized eigenspace, raw pair distribution, population SGNS score, and finite trained factors encode degree in different ways.
+Under finite SGNS training, increasing exposure and decreasing context specificity can generate the observed inverted-U even when exposure remains strictly increasing.
+Hash-locked target predictions recover its approximate peak movement across new graph topologies, with identifiable boundary failures.
+Interpreting embedding norms therefore requires naming the population operator, negative-sampling distribution, factorization gauge, and training exposure.
 
-The insight is not that Node2Vec performs worse---empirically it often excels---but that its behavior on structured graphs cannot be predicted from theory alone. For applications requiring guarantees under degree heterogeneity, spectral methods remain the principled choice.
+\section*{Data Availability}
 
-\bibliographystyle{plainnat}
+All code, the prospective protocol and hash manifest, and generated data needed to reproduce the figures accompany this manuscript in the project repository.
+The prospective validation includes the NetScience coauthorship network distributed with the repository~\citep{newman2006finding}; all other networks are synthetic.
+A permanent public archive will be supplied before submission.
+
+\bibliographystyle{apsrev4-2}
 \bibliography{references}
 
 \end{document}

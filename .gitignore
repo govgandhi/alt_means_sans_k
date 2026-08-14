@@ -95,6 +95,7 @@ Thumbs.db
 
 # Output files that can be regenerated
 *.out
+/tmp/
 
 # LaTeX auxiliary files
 *.aux
@@ -114,8 +115,10 @@ Thumbs.db
 *.snm
 *.vrb
 *blx.bib
+*Notes.bib
 main.pdf
 supp.pdf
+analytical_results.pdf
 
 # Translations
 *.mo
