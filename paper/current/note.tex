@@ -1,0 +1,188 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{booktabs}
+\usepackage{natbib}
+
+% --- Custom Commands (kept in sync with main.tex) ---
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\ones}{\mathbf{1}}
+\newcommand{\KL}{D_{\text{KL}}}
+\DeclareMathOperator{\vol}{vol}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\col}{col}
+
+\title{Theoretical analysis strategy note}
+\author{}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Where we are}
+
+The current \texttt{main.tex} argues that the PMI transform is where Node2Vec loses the multiplicative community--degree separation of spectral methods, leaving additive offsets \(-\log\theta_i-\log\theta_j\) in the population matrix.
+Maybe we can develop two coupled results: an exact radial--angular decomposition of every population operator in the pipeline, and a finite-training mechanism for the inverted-U between frequency and embedding norm observed in word2vec and trajectory embeddings~\citep{schakel2015,murray2023}.
+
+The draft forms \(M_{ij}=\log C_{ij}-\log\pi_i-\log\pi_j+\text{const}\) from \(C=\sum_r T^r D^{-1}\).
+Task~D4 below asks whether \(C\) is a joint distribution or already a ratio of joint to marginals; if the latter, the subtraction double-counts the normalization and the additive-offset conclusion has to be recomputed from the SGNS optimum directly.
+Do not patch the old derivation; redo it inside the framework below.
+
+\section{Setup and notation}
+
+Fix the degree-corrected stochastic block model (DCSBM)~\citep{karrer2011stochastic}.
+Node \(i\) has community \(g_i\in\{1,\dots,K\}\), membership matrix \(Z\in\{0,1\}^{n\times K}\), and propensity \(\theta_i>0\) with \(\Theta=\diag(\theta)\).
+The population proxy is
+\begin{equation}
+    \Omega=\Theta ZBZ^\top\Theta,
+    \qquad
+    \Omega_{ij}=\theta_i\theta_j B_{g_i g_j},
+    \label{eq:omega}
+\end{equation}
+with symmetric nonnegative \(B\).
+Define block masses and degree factors
+\begin{equation}
+    s_a=\sum_{i:g_i=a}\theta_i,
+    \qquad
+    \kappa_a=(Bs)_a,
+    \qquad
+    \delta_i=(\Omega\ones)_i=\theta_i\kappa_{g_i},
+    \qquad
+    \vol(\Omega)=s^\top Bs.
+    \label{eq:block-masses}
+\end{equation}
+
+\section{Derivation program}
+
+
+\paragraph{D1: Multiplicative block lemma.}
+Let \(M=\diag(r)ZHZ^\top\diag(t)\) with \(r_i,t_i>0\) and \(h=\rank M\), and let \(M=UV^\top\) be a minimal factorization.
+Show that the rows obey
+\begin{equation}
+    u_i=r_i c_{g_i},
+    \qquad
+    v_i=t_i e_{g_i}
+    \label{eq:ray-rows}
+\end{equation}
+for some \(C,E\in\R^{K\times h}\), so norms carry \(r_i\) and directions carry only \(g_i\).
+Direction: compare \(\col(U)\) with \(\col(\diag(r)Z)\) and use minimality; then check which parts survive a change of factorization \(U\mapsto UR\).
+Every population operator below should be pushed into the form of Equation~\eqref{eq:ray-rows}, and the radial exponent read off from \(r_i\).
+
+\paragraph{D2: Spectral baseline.}
+For \(\mathcal{S}=\mathcal{D}^{-1/2}\Omega\mathcal{D}^{-1/2}\) with \(\mathcal{D}=\diag(\delta)\), define
+\begin{equation}
+    Q=\Theta^{1/2}Z\diag(s)^{-1/2},
+    \qquad
+    H=\diag(s)^{1/2}\diag(\kappa)^{-1/2}B\,\diag(\kappa)^{-1/2}\diag(s)^{1/2},
+    \label{eq:QH}
+\end{equation}
+and verify \(Q^\top Q=I_K\) and \(\mathcal{S}=QHQ^\top\).
+From the eigendecomposition \(H=V\Lambda V^\top\), derive the row form of \(U=QV\) and determine the within-block radial exponent: is \(\norm{u_i}\propto\delta_i^{1/2}\), and what block calibration is needed to compare degrees \emph{across} communities?
+This recovers the regularized-spectral picture of \citet{qin2013regularized} in notation compatible with the walk calculations.
+
+\paragraph{D3: Raw random-walk pairs.}
+With \(T=\mathcal{D}^{-1}\Omega\), block transition \(W_{ab}=B_{ab}s_b/\kappa_a\), window weights \(a_r\) summing to one, and \(F=\sum_r a_r W^r\), the stationary joint pair probability is
+\begin{equation}
+    J_{ij}=\pi_i\sum_{r} a_r (T^r)_{ij},
+    \qquad
+    \pi_i=\frac{\delta_i}{\vol(\Omega)}.
+    \label{eq:joint}
+\end{equation}
+Prove by induction on \(r\) that \((T^r)_{ij}=(\theta_j/s_b)(W^r)_{ab}\) for \(a=g_i\), \(b=g_j\), then substitute into Equation~\eqref{eq:joint} and reduce \(J\) to the form of Equation~\eqref{eq:ray-rows}.
+Questions to settle: what is \(G_{ab}\) explicitly, why is it symmetric, and what radial exponent does D1 then assign to raw pairs (compare with D2's exponent)?
+
+\paragraph{D4: SGNS population optimum.}
+Let \(p^+_{ij}=J_{ij}\) and let negatives be drawn from \(q_j=\delta_j^\alpha/Z_\alpha\), giving \(p^-_{ij}=k\pi_i q_j\).
+Maximize the pairwise objective
+\begin{equation}
+    \ell_{ij}(x)=p^+_{ij}\log\sigma(x)+p^-_{ij}\log\sigma(-x)
+    \label{eq:pairwise-sgns}
+\end{equation}
+by differentiating in \(x\); the optimum is a log-ratio of the two weights.
+Substitute the DCSBM forms \(\sum_r a_r(T^r)_{ij}=(\theta_j/s_b)F_{ab}\) and \(\delta_j=\theta_j\kappa_b\), and track which \(\theta\) factors cancel.
+The derivation should answer, without further assumptions:
+\begin{enumerate}
+    \item At \(\alpha=1\), does any node-specific term survive, or is \(x^\star_{ij}\) block-constant?
+    \item For \(\alpha\neq 1\), what additive term appears, on which side (center or context), and with what coefficient in \(\alpha\)?
+    \item Write \(X^\star\) in matrix form and bound its rank; does the additive term enlarge the rank beyond \(K\) or live inside \(\col(Z)\)?
+\end{enumerate}
+Then reconcile with the draft: expand \(J_{ij}/(\pi_i\pi_j)\) and compare against \(C=\sum_r T^r D^{-1}\) and against the NetMF target~\citep{qiu2018network,levy2014neural}.
+Whichever way it resolves, this comparison is the paper's ``boundary'' statement: where in the pipeline degree information is exactly removed, and by what mechanism.
+Also work out the tied/symmetric variant \(x^{\mathrm{sym}}_{ij}=\log\bigl[2J_{ij}/(k(\pi_iq_j+\pi_jq_i))\bigr]\), which implementations that share center and context vectors actually optimize; determine for which \(\alpha\) it is multiplicatively separable.
+
+\paragraph{D5: Gauge.}
+The loss depends on \((U,V)\) only through \(UV^\top\), which is invariant under \(U\mapsto UR\), \(V\mapsto VR^{-\top}\) for any invertible \(R\).
+State the conditions under which norm and angle claims are well-defined: tied factors, or the balance condition \(U^\top U=V^\top V\) realized by \(U_{\mathrm{bal}}=P\Sigma^{1/2}\), \(V_{\mathrm{bal}}=Q\Sigma^{1/2}\) from the SVD of the score matrix.
+Check that minimal balanced factors are unique up to orthogonal maps, hence have well-defined row norms.
+Every empirical norm claim in the paper must name its gauge; this section is what licenses that discipline.
+
+\paragraph{D6: Finite-sample transfer.}
+Population rays mean nothing without stability.
+Assuming a row-wise error \(\norm{\widehat{u}_iQ-u_i}\leq\varepsilon_i\) after orthogonal alignment, derive bounds of the form
+\begin{equation}
+    \bigl|\norm{\widehat{u}_i}-\rho_i\bigr|\leq\varepsilon_i,
+    \qquad
+    \norm{\tfrac{\widehat{u}_iQ}{\norm{\widehat{u}_i}}-\tfrac{c_{g_i}}{\norm{c_{g_i}}}}
+    \leq \frac{2\varepsilon_i}{\rho_i},
+    \label{eq:stability}
+\end{equation}
+with \(\rho_i=\norm{u_i}\), plus the induced cosine bound for pairs.
+The interesting corollary to extract: since \(\rho_i\) grows with degree in D2--D3, which nodes lose directional accuracy first, and what does that predict for community recovery of low-degree nodes?
+
+\paragraph{D7: Finite-training mechanism.}
+If D4 ends with a degree-free optimum at the standard \(\alpha\), the observed norm--frequency curve must come from optimization, not the objective.
+Posit \(\norm{u_i}\approx F(\log m_i, K_i)\) in a fixed implementation and gauge, where \(m_i\) counts positive-center updates and
+\begin{equation}
+    K_i=\KL\!\left(\Pr(\cdot\mid i)\,\middle\|\,q\right)
+    \label{eq:specificity}
+\end{equation}
+is context specificity.
+Derive, for an uncorrelated configuration model, the closed form of \(K_i\) in terms of \(d_i\) and neighbor degrees, and determine its leading behavior in \(\log d_i\); connect the sign of \(\partial F/\partial K_i\) to the information-gain account of norms~\citep{oyama2023}.
+For word2vec subsampling with threshold \(t\), start from the retention probability \(r_t(p)=\sqrt{t/p}+t/p\)~\citep{mikolov2013distributed} and compute the log-elasticity of retained exposure \(m_i\propto p_i r_t(p_i)\).
+The turnover prediction is then the sign change of
+\begin{equation}
+    \frac{dF}{d\log d_i}
+    =
+    \frac{\partial F}{\partial\log m_i}\frac{d\log m_i}{d\log d_i}
+    +
+    \frac{\partial F}{\partial K_i}\frac{dK_i}{d\log d_i};
+    \label{eq:two-force}
+\end{equation}
+locate where the two terms cross rather than assuming a peak exists.
+Equation~\eqref{eq:two-force} is a mechanism to test, not a theorem; the experiments must manipulate \(m\) and \(K\) independently.
+
+\section{Experimental strategy}
+
+\paragraph{E1: Intervention grid.}
+Construct positive pairs directly on DCSBM/configuration graphs so exposure is exact, \(m_i(\beta)\propto\pi_i^\beta\), and mix contexts toward the marginal, \(P_\lambda(\cdot\mid i)=(1-\lambda)\Pr(\cdot\mid i)+\lambda q\), over \(\beta,\lambda\in\{0,1/3,2/3,1\}\) at fixed pair budget with paired seeds; report norms in both raw and balanced gauges.
+Decisive controls:
+
+\begin{center}
+\small
+\begin{tabular}{p{0.24\linewidth}p{0.30\linewidth}p{0.36\linewidth}}
+\toprule
+Intervention & Expected pattern & Interpretation if it fails \\
+\midrule
+Equal exposure, \(\beta=0\) & Rising branch disappears & Exposure is not the source of the rise \\
+Homogeneous contexts, \(\lambda=1\) & Falling branch disappears & Scalar specificity is insufficient \\
+Intermediate \(\beta\), \(\lambda=0\) & Turnover can appear & Missing interaction or optimizer dynamics \\
+Weaker subsampling & Peak moves to higher frequency & Rejects the exposure-elasticity account \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\paragraph{E2: Literal word2vec.}
+One walk corpus per graph, reused across subsampling thresholds; fix initialization, seed, window, negatives, dimension, workers; record realized \(m_i\) and empirical \(K_i\) from retained pairs; match total retained-pair budgets so a peak shift cannot be an artifact of training volume.
+
+\paragraph{E3: Prospective test.}
+Fit a low-complexity \(F(\log m,K)\) on E1, freeze everything (model, bins, targets, success criteria) before training any target embedding, then predict peak direction and location on held-out graph families and one empirical dataset.
+Keep the registered claim qualitative.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}
