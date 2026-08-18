@@ -1,0 +1,158 @@
+{
+  "config": {
+    "nodes": 600,
+    "attachment": 3,
+    "dimension": 32,
+    "negatives": 5,
+    "events_per_node": 300,
+    "epochs": 5,
+    "seeds": 5,
+    "batch_size": 128,
+    "learning_rate": 0.025,
+    "min_learning_rate": 0.0025,
+    "subsample": 0.001
+  },
+  "checks": {
+    "maximum_context_allocation_error": 0.004854368932038833,
+    "equalized_updates_per_node_per_epoch": 300,
+    "equalized_updates_per_node_total": 1500
+  },
+  "conditions": {
+    "proportional_off": {
+      "updates_per_epoch_min": 51,
+      "updates_per_epoch_max": 3846,
+      "spearman_updates_degree": 0.9766433410141733,
+      "raw_norm": {
+        "spearman_degree": 0.9615916228600554,
+        "lowest_degree_bin": 3.3110392339197054,
+        "highest_degree_bin": 5.489142591638782,
+        "highest_minus_lowest": 2.1781033577190763,
+        "peak": 5.489142591638782,
+        "highest_minus_peak": 0.0,
+        "peak_degree": 16.04432240735325
+      },
+      "balanced_norm": {
+        "spearman_degree": 0.9614988785497292,
+        "lowest_degree_bin": 3.324259746981755,
+        "highest_degree_bin": 5.512691562721281,
+        "highest_minus_lowest": 2.188431815739526,
+        "peak": 5.512691562721281,
+        "highest_minus_peak": 0.0,
+        "peak_degree": 16.04432240735325
+      },
+      "spearman_raw_norm_context_kl": -0.7413777448979946
+    },
+    "proportional_on": {
+      "updates_per_epoch_min": 51,
+      "updates_per_epoch_max": 3846,
+      "spearman_updates_degree": 0.9766433410141733,
+      "raw_norm": {
+        "spearman_degree": 0.9612531386252209,
+        "lowest_degree_bin": 3.329113986198893,
+        "highest_degree_bin": 5.469542898856651,
+        "highest_minus_lowest": 2.140428912657758,
+        "peak": 5.469542898856651,
+        "highest_minus_peak": 0.0,
+        "peak_degree": 16.04432240735325
+      },
+      "balanced_norm": {
+        "spearman_degree": 0.9610680401174345,
+        "lowest_degree_bin": 3.3479071920045875,
+        "highest_degree_bin": 5.500272109616266,
+        "highest_minus_lowest": 2.1523649176116786,
+        "peak": 5.500272109616266,
+        "highest_minus_peak": 0.0,
+        "peak_degree": 16.04432240735325
+      },
+      "spearman_raw_norm_context_kl": -0.676286056847771
+    },
+    "equalized_off": {
+      "updates_per_epoch_min": 300,
+      "updates_per_epoch_max": 300,
+      "spearman_updates_degree": null,
+      "raw_norm": {
+        "spearman_degree": -0.18246605341886948,
+        "lowest_degree_bin": 4.07222139774398,
+        "highest_degree_bin": 3.474446263402322,
+        "highest_minus_lowest": -0.5977751343416577,
+        "peak": 4.1052144054988275,
+        "highest_minus_peak": -0.6307681420965054,
+        "peak_degree": 5.999999999999998
+      },
+      "balanced_norm": {
+        "spearman_degree": -0.19145972260059407,
+        "lowest_degree_bin": 4.067652563807691,
+        "highest_degree_bin": 3.4682578604997727,
+        "highest_minus_lowest": -0.5993947033079183,
+        "peak": 4.098718334731101,
+        "highest_minus_peak": -0.6304604742313287,
+        "peak_degree": 5.999999999999998
+      },
+      "spearman_raw_norm_context_kl": 0.1431748621465738
+    },
+    "equalized_on": {
+      "updates_per_epoch_min": 300,
+      "updates_per_epoch_max": 300,
+      "spearman_updates_degree": null,
+      "raw_norm": {
+        "spearman_degree": -0.19603593730669377,
+        "lowest_degree_bin": 4.083188918447138,
+        "highest_degree_bin": 3.461397777128474,
+        "highest_minus_lowest": -0.6217911413186639,
+        "peak": 4.119832286648803,
+        "highest_minus_peak": -0.6584345095203292,
+        "peak_degree": 5.999999999999998
+      },
+      "balanced_norm": {
+        "spearman_degree": -0.20707333503899772,
+        "lowest_degree_bin": 4.084220727623195,
+        "highest_degree_bin": 3.459504724754452,
+        "highest_minus_lowest": -0.6247160028687428,
+        "peak": 4.11880432530963,
+        "highest_minus_peak": -0.6592996005551779,
+        "peak_degree": 5.999999999999998
+      },
+      "spearman_raw_norm_context_kl": 0.3617327011040918
+    }
+  },
+  "contrasts": {
+    "proportional_minus_equalized_off": {
+      "spearman_degree": 0.9587161930800552,
+      "lowest_degree_bin": -0.7611821638242738,
+      "highest_degree_bin": 2.014696328236459,
+      "highest_minus_lowest": 2.775878492060733,
+      "peak": 2.014696328236459,
+      "highest_minus_peak": 0.0,
+      "peak_degree": 16.04432240735325
+    },
+    "proportional_minus_equalized_on": {
+      "spearman_degree": 0.9592493886748881,
+      "lowest_degree_bin": -0.7540749322482441,
+      "highest_degree_bin": 2.0081451217281763,
+      "highest_minus_lowest": 2.7622200539764203,
+      "peak": 2.0081451217281763,
+      "highest_minus_peak": 0.0,
+      "peak_degree": 16.04432240735325
+    },
+    "subsampling_on_minus_off_proportional": {
+      "spearman_degree": -0.0925527207932337,
+      "lowest_degree_bin": 0.018074752279187464,
+      "highest_degree_bin": -0.019599692782131122,
+      "highest_minus_lowest": -0.03767444506131859,
+      "peak": 0.024384154915337374,
+      "highest_minus_peak": -0.04398384769746849,
+      "peak_degree": 4.999999999999998,
+      "mean_absolute_effect": 0.05057448643469898
+    },
+    "subsampling_on_minus_off_equalized": {
+      "spearman_degree": -0.05180666206015561,
+      "lowest_degree_bin": 0.010967520703157707,
+      "highest_degree_bin": -0.0130484862738482,
+      "highest_minus_lowest": -0.024016006977005906,
+      "peak": 0.015099703392532578,
+      "highest_minus_peak": -0.02814818966638078,
+      "peak_degree": 4.000000000000001,
+      "mean_absolute_effect": 0.04788755921767338
+    }
+  }
+}
