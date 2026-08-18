@@ -13,7 +13,7 @@ dag.svg: workflow/Snakefile
 	snakemake --dag | dot -Tsvg > dag.svg
 
 test:
-	pytest
+	uv run --frozen python -m pytest
 
 create_conda_env:
 	conda create -n $(PROJ_NAME) -c bioconda -c conda-forge python=3.8 snakemake jupyterlab pandas nb_conda black isort flake8 pytest neovim snakefmt
