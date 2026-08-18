@@ -1,0 +1,222 @@
+{
+  "raw_norm_curves": [
+    {
+      "family": "barabasi_albert",
+      "threshold": 0.0003,
+      "predicted": {
+        "peak_bin": 1,
+        "peak_degree": 4.999999999999997,
+        "peak_norm": 4.192377195093847,
+        "peak_minus_lowest": 0.038339454851572086,
+        "peak_minus_highest": 0.2727886888738116,
+        "inverted_u": true
+      }
+    },
+    {
+      "family": "barabasi_albert",
+      "threshold": 0.001,
+      "predicted": {
+        "peak_bin": 2,
+        "peak_degree": 6.769563527927011,
+        "peak_norm": 5.140220285775721,
+        "peak_minus_lowest": 0.4931127510430402,
+        "peak_minus_highest": 0.2252557181585484,
+        "inverted_u": true
+      }
+    },
+    {
+      "family": "barabasi_albert",
+      "threshold": 0.003,
+      "predicted": {
+        "peak_bin": 2,
+        "peak_degree": 6.769563527927011,
+        "peak_norm": 5.33893802204699,
+        "peak_minus_lowest": 0.5155609595479094,
+        "peak_minus_highest": 0.19101985987052128,
+        "inverted_u": true
+      }
+    },
+    {
+      "family": "powerlaw_cluster",
+      "threshold": 0.0003,
+      "predicted": {
+        "peak_bin": 1,
+        "peak_degree": 4.0,
+        "peak_norm": 4.224284397847229,
+        "peak_minus_lowest": 0.0935366486021616,
+        "peak_minus_highest": 0.23062034978418433,
+        "inverted_u": true
+      }
+    },
+    {
+      "family": "powerlaw_cluster",
+      "threshold": 0.001,
+      "predicted": {
+        "peak_bin": 3,
+        "peak_degree": 6.3374222771722275,
+        "peak_norm": 5.066286200895962,
+        "peak_minus_lowest": 0.5257520807751543,
+        "peak_minus_highest": 0.12172429515088012,
+        "inverted_u": true
+      }
+    },
+    {
+      "family": "powerlaw_cluster",
+      "threshold": 0.003,
+      "predicted": {
+        "peak_bin": 3,
+        "peak_degree": 6.3374222771722275,
+        "peak_norm": 5.268842691075517,
+        "peak_minus_lowest": 0.554892094046803,
+        "peak_minus_highest": 0.1062296435828749,
+        "inverted_u": true
+      }
+    },
+    {
+      "family": "netscience",
+      "threshold": 0.0003,
+      "predicted": {
+        "peak_bin": 0,
+        "peak_degree": 1.6617153455282736,
+        "peak_norm": 4.327170294028021,
+        "peak_minus_lowest": 0.0,
+        "peak_minus_highest": 0.3688550887590236,
+        "inverted_u": false
+      }
+    },
+    {
+      "family": "netscience",
+      "threshold": 0.001,
+      "predicted": {
+        "peak_bin": 2,
+        "peak_degree": 4.0,
+        "peak_norm": 4.7977759968897935,
+        "peak_minus_lowest": 0.17950558932087546,
+        "peak_minus_highest": 0.27077402664058603,
+        "inverted_u": true
+      }
+    },
+    {
+      "family": "netscience",
+      "threshold": 0.003,
+      "predicted": {
+        "peak_bin": 4,
+        "peak_degree": 6.339584838712211,
+        "peak_norm": 5.142918710576703,
+        "peak_minus_lowest": 0.3519450122238297,
+        "peak_minus_highest": 0.20865472807707874,
+        "inverted_u": true
+      }
+    }
+  ],
+  "balanced_norm_curves": [
+    {
+      "family": "barabasi_albert",
+      "threshold": 0.0003,
+      "predicted": {
+        "peak_bin": 1,
+        "peak_degree": 4.999999999999997,
+        "peak_norm": 4.221996592895132,
+        "peak_minus_lowest": 0.038054512195923706,
+        "peak_minus_highest": 0.2690117014403146,
+        "inverted_u": true
+      }
+    },
+    {
+      "family": "barabasi_albert",
+      "threshold": 0.001,
+      "predicted": {
+        "peak_bin": 2,
+        "peak_degree": 6.769563527927011,
+        "peak_norm": 5.163980355031876,
+        "peak_minus_lowest": 0.49509111965321484,
+        "peak_minus_highest": 0.20013868249247935,
+        "inverted_u": true
+      }
+    },
+    {
+      "family": "barabasi_albert",
+      "threshold": 0.003,
+      "predicted": {
+        "peak_bin": 2,
+        "peak_degree": 6.769563527927011,
+        "peak_norm": 5.358657939591274,
+        "peak_minus_lowest": 0.5173541084465043,
+        "peak_minus_highest": 0.15635554779374772,
+        "inverted_u": true
+      }
+    },
+    {
+      "family": "powerlaw_cluster",
+      "threshold": 0.0003,
+      "predicted": {
+        "peak_bin": 1,
+        "peak_degree": 4.0,
+        "peak_norm": 4.253670855167458,
+        "peak_minus_lowest": 0.09283709525736228,
+        "peak_minus_highest": 0.22600742446393518,
+        "inverted_u": true
+      }
+    },
+    {
+      "family": "powerlaw_cluster",
+      "threshold": 0.001,
+      "predicted": {
+        "peak_bin": 3,
+        "peak_degree": 6.3374222771722275,
+        "peak_norm": 5.088162322803302,
+        "peak_minus_lowest": 0.5229094710924587,
+        "peak_minus_highest": 0.096529496488027,
+        "inverted_u": true
+      }
+    },
+    {
+      "family": "powerlaw_cluster",
+      "threshold": 0.003,
+      "predicted": {
+        "peak_bin": 3,
+        "peak_degree": 6.3374222771722275,
+        "peak_norm": 5.2870344400616895,
+        "peak_minus_lowest": 0.5514512805971945,
+        "peak_minus_highest": 0.07267674697508575,
+        "inverted_u": true
+      }
+    },
+    {
+      "family": "netscience",
+      "threshold": 0.0003,
+      "predicted": {
+        "peak_bin": 0,
+        "peak_degree": 1.6617153455282736,
+        "peak_norm": 4.354957069198338,
+        "peak_minus_lowest": 0.0,
+        "peak_minus_highest": 0.36523682175651917,
+        "inverted_u": false
+      }
+    },
+    {
+      "family": "netscience",
+      "threshold": 0.001,
+      "predicted": {
+        "peak_bin": 2,
+        "peak_degree": 4.0,
+        "peak_norm": 4.821160001061344,
+        "peak_minus_lowest": 0.1776920867627929,
+        "peak_minus_highest": 0.25199869047168555,
+        "inverted_u": true
+      }
+    },
+    {
+      "family": "netscience",
+      "threshold": 0.003,
+      "predicted": {
+        "peak_bin": 4,
+        "peak_degree": 6.339584838712211,
+        "peak_norm": 5.174542629843224,
+        "peak_minus_lowest": 0.36139360020692113,
+        "peak_minus_highest": 0.1814074253688247,
+        "inverted_u": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "frozen_utc": "2026-08-13T20:31:44.725789+00:00",
+  "protocol_sha256": "5dd0b3da8a37044630c1a7bbe642de8f5c02925ee8c2cec770c8328bc56923b1",
+  "human_protocol_sha256": "6e05c0345b1e0f037e7add25a1ec9908327e38904916393c901109a791d03392",
+  "calibration_sha256": "89d7d1d795eb143e0fc0ec10eec9ef08c3d2477df7a42d47de94ab496612ed71",
+  "predictions_sha256": "679cb0db608e9fe690bfc87408392d853f158ed851631e7b77921912267c3a9d",
+  "target_outcomes_present_at_freeze": false
+}

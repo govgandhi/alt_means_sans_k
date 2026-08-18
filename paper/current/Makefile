@@ -5,18 +5,22 @@ TEX := latexmk
 MON_OPT := -pvc
 CLN_OPT := -CA
 
-.PHONY: all main-monitor supp-monitor note-monitor wordcount clean
+.PHONY: all monitor main-monitor supp supp-monitor note-monitor wordcount clean
 
 all: ${MAIN}.pdf ${SUPP}.pdf ${NOTE}.pdf
 
-${MAIN}.pdf:
+${MAIN}.pdf: ${MAIN}.tex references.bib
 	${TEX} ${MAIN}.tex
 
-${SUPP}.pdf:
+${SUPP}.pdf: ${SUPP}.tex
 	${TEX} ${SUPP}.tex
 
 ${NOTE}.pdf:
 	${TEX} ${NOTE}.tex
+
+supp: ${SUPP}.pdf
+
+monitor: main-monitor
 
 main-monitor:
 	${TEX} ${MON_OPT} ${MAIN}.tex
@@ -34,4 +38,3 @@ clean:
 
 wordcount:
 	detex -l -n -w ${MAIN}.tex | wc -w
-
