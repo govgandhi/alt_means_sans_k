@@ -769,13 +769,14 @@ In an uncorrelated configuration model, the neighbor average in Equation~\eqref{
 The information-geometric relation between transformed squared norm and context KL therefore predicts a decreasing structural contribution to the norm~\citep{oyama2022norm}.
 
 Word2vec subsampling changes the exposure term.
-For token frequency \(p_i>t\), the Gensim form of the Mikolov retention probability is~\citep{mikolov2013distributed}
+For token frequency \(p_i>\tfrac{3+\sqrt{5}}{2}t\approx2.62t\), the Gensim form of the Mikolov retention probability is~\citep{mikolov2013distributed}
 \begin{equation}
     r_t(p_i)
     =
     \sqrt{\frac{t}{p_i}}+\frac{t}{p_i}.
     \label{eq:retention-probability}
 \end{equation}
+Below this cutoff the expression is at least one, so every token is kept.
 The expected retained-center exposure is consequently
 \begin{equation}
     m_i
