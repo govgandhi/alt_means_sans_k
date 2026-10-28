@@ -739,7 +739,10 @@ The columns \(U=D^{1/2}\Gamma\) solve
 which is a generalized eigenproblem.
 For a regular graph, \(D\) is proportional to the identity and the distinction disappears.
 It may also become negligible in a planted-partition regime where degrees concentrate around one value.
-Degree heterogeneity makes the distinction material.
+Degree heterogeneity makes the distinction material once the embedding is truncated.
+With all \(n\) columns and \(\Phi\succeq 0\), the congruence factor \(D^{-1/2}\Gamma\Phi^{1/2}\) and the factor built from the eigendecomposition of \(\widehat{R}\) both satisfy \(XX^\top=\widehat{R}\).
+They therefore differ by an orthogonal transformation and have the same row norms and angles.
+When degrees vary, keeping \(d<n\) columns selects different subspaces under the two decompositions.
 
 \citet{zhang2022exact} prove exact community recovery for matrix-factorization versions of DeepWalk and node2vec under stochastic block models and degree-corrected variants.
 \citet{davison2024community} establish weakly consistent recovery for embeddings learned by node2vec and analyze the DCSBM case at unigram exponent one.
