@@ -94,6 +94,7 @@ Before training on new targets, we freeze node-level norms and peak locations pr
 The predictions reproduce the peak movement in direct preferential-attachment graphs, clustered scale-free graphs, and an empirical coauthorship network, with explicit misses at the boundaries of the tested degree range.
 
 Our random-walk formulas apply to DeepWalk, equivalently node2vec with return and in--out parameters \(p=q=1\).
+The SGNS results assume negative sampling in place of the hierarchical softmax of the original DeepWalk~\citep{perozzi2014deepwalk}.
 General node2vec walks are second-order Markov chains on directed edges and require a separate state-space argument.
 
 \section{DCSBM setup}
@@ -145,7 +146,8 @@ If we retain the proxy normalization \(\mathcal{D}\), removing the diagonal chan
     \label{eq:diagonal-perturbation}
 \end{equation}
 The relative difference between the proxy degree and the loopless expected degree is bounded by the same quantity.
-Both differences vanish when the propensities remain bounded and the block degree masses grow.
+Because \(\kappa_a\geq B_{aa}s_a\), this quantity is at most \(\max_i\theta_i/s_{g_i}\).
+Both differences therefore vanish when the propensities remain bounded and every block propensity mass \(s_a\) grows.
 \end{remark}
 
 \section{Multiplicative block matrices}
@@ -169,7 +171,7 @@ Then matrices \(C,E\in\R^{K\times h}\) exist such that
     \label{eq:ray-rows}
 \end{equation}
 where lowercase letters denote rows of their corresponding matrices.
-Consequently,
+Consequently, whenever the community vectors involved are nonzero,
 \begin{equation}
     \norm{u_i}=r_i\norm{c_{g_i}},
     \qquad
@@ -197,6 +199,7 @@ Equations~\eqref{eq:ray-rows}--\eqref{eq:ray-cosine} follow row by row.
 
 The lemma does not require \(M\) to be positive semidefinite or its factorization to be unique.
 An invertible change of factorization changes the community vectors but preserves the multiplier \(r_i\) within each community.
+A community vector \(c_a\) is zero exactly when row \(a\) of \(H\) is zero, because the rows of \(Z^\top\diag(t)\) are linearly independent.
 Two communities have distinct normalized directions when their community vectors are nonzero and are not positive scalar multiples of one another.
 Minimality, or an equivalent balancing condition, rules out canceling components in unused dimensions.
 
@@ -364,6 +367,8 @@ Define the stationary joint probability of the ordered positive pair \((i,j)\) b
     \pi_i\sum_{r=1}^L a_r(T^r)_{ij}.
     \label{eq:stationary-joint}
 \end{equation}
+For walks started from \(\pi\), \(J\) is the expected positive-pair frequency, with \(a_r\) proportional to the number of lag-\(r\) pairs per walk.
+For long walks, it is the limiting frequency from any start.
 
 \begin{theorem}[Raw stationary pairs have radial-angular form]
 \label{thm:raw-pair-rays}
@@ -442,7 +447,7 @@ It describes pair probabilities before marginal normalization and the entrywise 
 \label{sec:sgns}
 
 Let \(p^+_{ij}=J_{ij}\) be the positive-pair probability.
-Suppose skip-gram with negative sampling (SGNS) draws \(k\) negative contexts per center from
+Suppose skip-gram with negative sampling (SGNS) draws \(k\) negative contexts per positive pair from
 \begin{equation}
     q_j
     =
@@ -603,6 +608,8 @@ For \(\alpha\neq 1\), it is generally not multiplicatively separable; constant w
 \begin{remark}[Zeros and finite counts]
 If \(F_{ab}=0\), the unconstrained population score is \(-\infty\).
 Finite-data methods must specify how they treat unobserved pairs, for example through truncation, smoothing, or a positive shifted-PMI convention.
+The loopless model of Section~\ref{sec:setup} has \(J_{ii}=0\) at window one, so its diagonal score is \(-\infty\).
+At window one and \(\alpha=1\), its off-diagonal scores equal Equation~\eqref{eq:alpha-one-score} plus a global constant and \(-\log(1-\eta_i)-\log(1-\eta_j)\), where \(\eta_i=\theta_iB_{g_ig_i}/\kappa_{g_i}\) is the ratio in Equation~\eqref{eq:diagonal-perturbation}.
 \end{remark}
 
 The pairwise optimum identifies dot products rather than the norm of either factor.
@@ -877,7 +884,7 @@ We treat this second fit as exploratory because its form was chosen after the gl
 \subsection{Literal word2vec validation}
 
 We next trained literal Gensim word2vec models on paired random-walk corpora from the same five graph seeds.
-Each corpus contains 300 length-five walks per node, and each model uses a 64-dimensional embedding, window size one, five negative samples, one worker, and five epochs.
+Each corpus contains \(300n\) length-five walks with stationary starting nodes, and each model uses a 64-dimensional embedding, window size one, five negative samples, one worker, and five epochs.
 The three subsampling thresholds \(t\in\{3\times10^{-4},10^{-3},3\times10^{-3}\}\) share the corpus, initialization seed, and training seed within each graph.
 
 As subsampling weakens, the peak moves from the lowest degree bin at \(t=3\times10^{-4}\) to degree six at \(10^{-3}\) and degree \(7.73\) at \(3\times10^{-3}\) (Fig.~\ref{fig:gensim-turnover}).
@@ -925,7 +932,7 @@ Leave-one-seed-out prediction within the five configuration-model calibration gr
 
 The prospective targets comprised five direct Barab\'asi--Albert graphs with \(n=600\) and attachment parameter three~\citep{barabasi1999emergence}, five Holme--Kim clustered scale-free graphs with the same size and attachment parameter and triangle probability \(0.35\)~\citep{holme2002growing}, and the largest connected component of the NetScience coauthorship network, with 379 nodes and 914 edges~\citep{newman2006finding}.
 NetScience used five independent walk and optimizer seeds on the same observed graph.
-All conditions used 300 stationary-start walks per node, walk length five, window size one, 64 dimensions, five negative samples, and five epochs.
+All conditions used \(300n\) stationary-start walks of length five, window size one, 64 dimensions, five negative samples, and five epochs.
 A manifest recorded SHA-256 hashes of the protocol, calibration data, and all \(23{,}685\) node-level target predictions before target training; no outcome file existed at the freeze.
 
 The four declared criteria all passed (Fig.~\ref{fig:prospective-validation}).
