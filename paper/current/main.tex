@@ -49,7 +49,7 @@ We derive the population geometry of normalized spectral embeddings, random-walk
 The first two operators have an exact radial-angular structure: degree propensity controls radius within each community, while direction depends only on community.
 At unigram negative sampling, however, marginal normalization cancels node-specific degree from the optimal skip-gram score.
 We then use controlled finite-sample experiments to separate the effects of training exposure and context specificity.
-Equal exposure leaves norms decreasing with degree, proportional exposure makes them increase, and sublinear exposure produces an inverted-U.
+Equal exposure leaves norms decreasing with degree, proportional exposure makes them increase, and exposure proportional to the cube root of frequency produces an inverted-U.
 Mixing node contexts toward their marginal distribution removes the decreasing branch.
 Literal word2vec experiments reproduce the threshold-dependent movement of the norm peak, which persists after approximately matching retained-token budgets.
 We then freeze predictions based only on realized pair exposure and empirical context KL before training embeddings on two new synthetic graph families and the NetScience coauthorship network.
@@ -87,7 +87,7 @@ Because skip-gram identifies dot products rather than either factor, individual 
 We then intervene on the two finite-training mechanisms in heterogeneous configuration-model networks.
 The exposure intervention assigns each node an exact number of positive-center updates proportional to stationary frequency raised to an exponent \(\beta\).
 The specificity intervention mixes each conditional context distribution toward its own marginal while preserving that marginal.
-Equal exposure reveals a decreasing structural relation between degree and norm; proportional exposure produces a monotone increase; an intermediate exponent produces an inverted-U.
+Equal exposure reveals a decreasing structural relation between degree and norm; proportional exposure produces a monotone increase; the exponent \(1/3\) produces an inverted-U, and \(2/3\) still produces an increase.
 Context mixing removes the decreasing branch.
 Literal Gensim word2vec experiments shift the peak to higher degree as subsampling weakens, and matching expected retained-center counts does not change the peak locations.
 Before training on new targets, we freeze node-level norms and peak locations predicted from realized positive-pair exposure and context KL.
@@ -845,7 +845,8 @@ Figure~\ref{fig:controlled-turnover} separates the two mechanisms.
 With equal center exposure (\(\beta=0\)) and unmodified contexts, the mean raw norm decreases from \(3.507\) in the lowest degree bin to \(2.297\) in the highest, with Spearman correlation \(-0.758\).
 With proportional exposure (\(\beta=1\)), it increases from \(2.496\) to \(4.802\), with correlation \(0.895\).
 The intermediate intervention \(\beta=1/3\) produces an inverted-U with a peak norm of \(3.315\) near degree six; the peak is \(0.093\) above the lowest bin and \(0.361\) above the highest bin.
-Thus strictly increasing but sublinear exposure is sufficient for turnover.
+Thus turnover can occur while exposure strictly increases with degree.
+Sublinear exposure alone does not produce it: at \(\beta=2/3\), the mean raw norm increases from \(2.861\) in the lowest bin to \(3.960\) in the highest, with Spearman correlation \(0.821\).
 
 \begin{figure*}[t]
     \includegraphics[width=\textwidth]{turnover_surface}
