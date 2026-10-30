@@ -769,13 +769,14 @@ In an uncorrelated configuration model, the neighbor average in Equation~\eqref{
 The information-geometric relation between transformed squared norm and context KL therefore predicts a decreasing structural contribution to the norm~\citep{oyama2022norm}.
 
 Word2vec subsampling changes the exposure term.
-For token frequency \(p_i>t\), the Gensim form of the Mikolov retention probability is~\citep{mikolov2013distributed}
+For token frequency \(p_i>\tfrac{3+\sqrt{5}}{2}t\approx2.62t\), the Gensim form of the Mikolov retention probability is~\citep{mikolov2013distributed}
 \begin{equation}
     r_t(p_i)
     =
     \sqrt{\frac{t}{p_i}}+\frac{t}{p_i}.
     \label{eq:retention-probability}
 \end{equation}
+Below this cutoff the expression is at least one, so every token is kept.
 The expected retained-center exposure is consequently
 \begin{equation}
     m_i
@@ -785,7 +786,15 @@ The expected retained-center exposure is consequently
     \sqrt{tp_i}+t.
     \label{eq:retained-exposure}
 \end{equation}
-Exposure still increases with frequency, but its asymptotic log elasticity is \(1/2\) rather than \(1\).
+Exposure still increases with frequency.
+Its log elasticity is one below the cutoff and
+\begin{equation}
+    \frac{d\log m_i}{d\log p_i}
+    =
+    \frac{1}{2\left(1+\sqrt{t/p_i}\right)}
+    \label{eq:retained-elasticity}
+\end{equation}
+above it, so it drops to about \(0.31\) at the cutoff and approaches \(1/2\) only as \(p_i/t\) grows.
 Subsampling therefore weakens the marginal exposure gain without requiring a decreasing exposure count or a fixed ceiling.
 
 Let a finite-training response \(F(\log m_i,K_i)\) approximate the learned norm in a fixed optimizer and gauge.
