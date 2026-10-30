@@ -431,9 +431,12 @@ It describes pair probabilities before marginal normalization and the entrywise 
         Raw adjacency or stationary pairs
             & \(u_i=\theta_i c_a\)
             & \(\norm{u_i}\propto\delta_i\) \\
-        SGNS score with \(\alpha=1\)
+        SGNS score, center rows
             & \(u_i=c_a\)
-            & no degree signal \\
+            & no degree signal for any \(\alpha\) \\
+        SGNS score, context rows
+            & \(v_i=e_a+(1-\alpha)(\log\theta_i)\,w\)
+            & affine in \(\log\delta_i\) \\
         \bottomrule
     \end{tabular}
 \end{table*}
@@ -558,6 +561,12 @@ Moreover,
     \label{eq:sgns-score-matrix}
 \end{equation}
 has column space contained in \(\col(Z)\) and rank at most \(K\).
+Every minimal factorization \(X^\star=UV^\top\) therefore has center rows \(u_i=c_{g_i}\), as at \(\alpha=1\), and context rows
+\begin{equation}
+    v_j=e_{g_j}+(1-\alpha)(\log\theta_j)\,w,
+    \label{eq:sgns-context-rows}
+\end{equation}
+where the vectors \(e_b\) and \(w\) are shared by all nodes.
 \end{corollary}
 
 \begin{proof}
@@ -572,6 +581,10 @@ Because \(\ones=Z\ones_K\),
     \right].
 \end{equation}
 The column-space and rank claims follow.
+Minimality gives \(\col(U)=\col(X^\star)\subseteq\col(Z)\), so \(U=ZC\), where \(C\) has full column rank.
+Matching column \(j\) of \(X^\star=ZCV^\top\) gives
+\(v_j^\top=C^{+}\bigl[h_{g_j}+(1-\alpha)(\log\theta_j)\ones_K\bigr]\),
+where \(h_b\) is column \(b\) of \(H^{(\alpha)}\) and \(C^{+}\) is the left inverse of \(C\).
 \end{proof}
 
 Some implementations tie center and context scores or combine both orientations of each pair.
