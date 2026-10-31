@@ -1,0 +1,21 @@
+[submodule "archive/kmeans/LFR-benchmark"]
+	path = archive/kmeans/LFR-benchmark
+	url = https://github.com/skojaku/LFR-benchmark.git
+[submodule "archive/kmeans/fastnode2vec"]
+	path = archive/kmeans/fastnode2vec
+	url = https://github.com/skojaku/fastnode2vec.git
+[submodule "are_angles_important/mercator"]
+	path = are_angles_important/mercator
+	url = https://github.com/networkgeometry/mercator.git
+[submodule "libs/BeliefPropagation"]
+	path = libs/BeliefPropagation
+	url = https://github.com/skojaku/BeliefPropagation.git
+[submodule "libs/LFR-benchmark"]
+	path = libs/LFR-benchmark
+	url = https://github.com/skojaku/LFR-benchmark.git
+[submodule "libs/libs_for_gensim/community-detection-via-neural-embedding"]
+	path = libs/libs_for_gensim/community-detection-via-neural-embedding
+	url = https://github.com/skojaku/community-detection-via-neural-embedding.git
+[submodule "libs/node2vec"]
+	path = libs/node2vec
+	url = https://github.com/skojaku/node2vec.git
