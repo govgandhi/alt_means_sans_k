@@ -157,23 +157,23 @@ Both differences therefore vanish when the propensities remain bounded and every
 \label{lem:multiplicative-rays}
 Let
 \begin{equation}
-    M=\diag(r)ZH Z^\top\diag(t),
+    M=\diag(\xi)Z\mathsf{A} Z^\top\diag(\zeta),
     \label{eq:general-multiplicative}
 \end{equation}
-where \(r_i,t_i>0\), \(H\in\R^{K\times K}\), and \(h=\rank(M)\).
+where \(\xi_i,\zeta_i>0\), \(\mathsf{A}\in\R^{K\times K}\), and \(h=\rank(M)\).
 Suppose that \(M=UV^\top\) is a minimal exact factorization with
 \(\rank(U)=\rank(V)=h\).
 Then matrices \(C,E\in\R^{K\times h}\) exist such that
 \begin{equation}
-    u_i=r_i c_{g_i},
+    u_i=\xi_i c_{g_i},
     \qquad
-    v_i=t_i e_{g_i},
+    v_i=\zeta_i e_{g_i},
     \label{eq:ray-rows}
 \end{equation}
 where lowercase letters denote rows of their corresponding matrices.
 Consequently, whenever the community vectors involved are nonzero,
 \begin{equation}
-    \norm{u_i}=r_i\norm{c_{g_i}},
+    \norm{u_i}=\xi_i\norm{c_{g_i}},
     \qquad
     \frac{u_i}{\norm{u_i}}
     =
@@ -191,15 +191,15 @@ and
 \end{lemma}
 
 \begin{proof}
-The column space of \(M\) is contained in the column space of \(\diag(r)Z\).
-Minimality gives \(\col(U)=\col(M)\), so \(U=\diag(r)ZC\) for some \(C\).
-Applying the same argument to \(M^\top\) gives \(V=\diag(t)ZE\).
+The column space of \(M\) is contained in the column space of \(\diag(\xi)Z\).
+Minimality gives \(\col(U)=\col(M)\), so \(U=\diag(\xi)ZC\) for some \(C\).
+Applying the same argument to \(M^\top\) gives \(V=\diag(\zeta)ZE\).
 Equations~\eqref{eq:ray-rows}--\eqref{eq:ray-cosine} follow row by row.
 \end{proof}
 
 The lemma does not require \(M\) to be positive semidefinite or its factorization to be unique.
-An invertible change of factorization changes the community vectors but preserves the multiplier \(r_i\) within each community.
-A community vector \(c_a\) is zero exactly when row \(a\) of \(H\) is zero, because the rows of \(Z^\top\diag(t)\) are linearly independent.
+An invertible change of factorization changes the community vectors but preserves the multiplier \(\xi_i\) within each community.
+A community vector \(c_a\) is zero exactly when row \(a\) of \(\mathsf{A}\) is zero, because the rows of \(Z^\top\diag(\zeta)\) are linearly independent.
 Two communities have distinct normalized directions when their community vectors are nonzero and are not positive scalar multiples of one another.
 Minimality, or an equivalent balancing condition, rules out canceling components in unused dimensions.
 
@@ -221,7 +221,7 @@ Let
 Its columns are orthonormal because \(Q^\top Q=I_K\).
 Define the block operator
 \begin{equation}
-    H=
+    \mathcal{B}=
     \diag(s)^{1/2}
     \diag(\kappa)^{-1/2}
     B
@@ -231,21 +231,21 @@ Define the block operator
 \end{equation}
 Direct multiplication gives
 \begin{equation}
-    \mathcal{S}=QHQ^\top.
+    \mathcal{S}=Q\mathcal{B}Q^\top.
     \label{eq:S-QHQ}
 \end{equation}
 
 \begin{theorem}[Degree controls radius in the population eigenspace]
 \label{thm:spectral-rays}
 Suppose that \(B\) has rank \(K\).
-Let \(H=V\Lambda V^\top\), with \(V\) orthogonal.
-The \(K\) nonzero eigenvectors of \(\mathcal{S}\) can be collected as \(U=QV\).
+Let \(\mathcal{B}=Y\Lambda Y^\top\), with \(Y\) orthogonal.
+The \(K\) nonzero eigenvectors of \(\mathcal{S}\) can be collected as \(U=QY\).
 For node \(i\) in community \(a=g_i\),
 \begin{equation}
-    u_i=\sqrt{\frac{\theta_i}{s_a}}\,v_a,
+    u_i=\sqrt{\frac{\theta_i}{s_a}}\,y_a,
     \label{eq:spectral-row}
 \end{equation}
-where \(v_a\) is row \(a\) of \(V\).
+where \(y_a\) is row \(a\) of \(Y\).
 Therefore,
 \begin{equation}
     \norm{u_i}^2
@@ -254,7 +254,7 @@ Therefore,
     =
     \frac{\delta_i}{s_a\kappa_a},
     \qquad
-    \frac{u_i}{\norm{u_i}}=v_a.
+    \frac{u_i}{\norm{u_i}}=y_a.
     \label{eq:spectral-norm-direction}
 \end{equation}
 \end{theorem}
@@ -262,13 +262,13 @@ Therefore,
 \begin{proof}
 Equation~\eqref{eq:S-QHQ} and \(Q^\top Q=I_K\) imply
 \begin{equation}
-    \mathcal{S}(QV)=QHV=QV\Lambda.
+    \mathcal{S}(QY)=Q\mathcal{B}Y=QY\Lambda.
 \end{equation}
 Equation~\eqref{eq:spectral-row} follows from the definition of \(Q\).
-The norm formula uses \(\norm{v_a}=1\).
+The norm formula uses \(\norm{y_a}=1\).
 \end{proof}
 
-Using all \(K\) population eigenvectors, nodes in one community have cosine one, while nodes in different communities have cosine zero because the rows of \(V\) are orthonormal.
+Using all \(K\) population eigenvectors, nodes in one community have cosine one, while nodes in different communities have cosine zero because the rows of \(Y\) are orthonormal.
 If an embedding drops the trivial eigenvector or retains fewer dimensions, cross-community angles need not be right angles, but they remain functions of the two community labels.
 
 \begin{corollary}[Degree recovery]
@@ -292,11 +292,11 @@ Then
     x_i
     =
     \sqrt{\frac{\theta_i}{s_a}}\,
-    v_a\abs{\Lambda}^{1/2}.
+    y_a\abs{\Lambda}^{1/2}.
     \label{eq:weighted-row}
 \end{equation}
 Direction remains community-specific, and norm remains proportional to \(\sqrt{\theta_i}\) within a community.
-If \(H\succeq 0\), then
+If \(\mathcal{B}\succeq 0\), then
 \begin{equation}
     \cos(x_i,x_j)
     =
@@ -305,27 +305,27 @@ If \(H\succeq 0\), then
     a=g_i,\quad b=g_j.
     \label{eq:block-affinity-cosine}
 \end{equation}
-For indefinite \(H\), the same calculation replaces \(H\) by \(V\abs{\Lambda}V^\top\), and the angle remains block-specific.
+For indefinite \(\mathcal{B}\), the same calculation replaces \(\mathcal{B}\) by \(Y\abs{\Lambda}Y^\top\), and the angle remains block-specific.
 
 \section{Raw random-walk pairs}
 \label{sec:raw-pairs}
 
 Let
 \begin{equation}
-    T=\mathcal{D}^{-1}\Omega
+    \mathcal{T}=\mathcal{D}^{-1}\Omega
     \label{eq:transition}
 \end{equation}
 be the population simple-random-walk transition matrix.
 For \(a=g_i\) and \(b=g_j\),
 \begin{equation}
-    T_{ij}=\frac{\theta_jB_{ab}}{\kappa_a}.
+    \mathcal{T}_{ij}=\frac{\theta_jB_{ab}}{\kappa_a}.
     \label{eq:transition-entry}
 \end{equation}
 The induced block transition matrix is
 \begin{equation}
     W_{ab}
     =
-    \sum_{j:g_j=b}T_{ij}
+    \sum_{j:g_j=b}\mathcal{T}_{ij}
     =
     \frac{B_{ab}s_b}{\kappa_a}.
     \label{eq:block-transition}
@@ -335,7 +335,7 @@ The induced block transition matrix is
 \label{lem:lag-endpoint}
 For every integer \(r\geq 1\),
 \begin{equation}
-    (T^r)_{ij}
+    (\mathcal{T}^r)_{ij}
     =
     \frac{\theta_j}{s_b}(W^r)_{ab}.
     \label{eq:lag-endpoint}
@@ -346,29 +346,29 @@ For every integer \(r\geq 1\),
 Equation~\eqref{eq:lag-endpoint} holds for \(r=1\) by Equation~\eqref{eq:block-transition}.
 Assume that it holds at lag \(r\).
 Grouping the intermediate node by community in
-\((T^{r+1})_{ij}=\sum_\ell(T^r)_{i\ell}T_{\ell j}\)
+\((\mathcal{T}^{r+1})_{ij}=\sum_\ell(\mathcal{T}^r)_{i\ell}\mathcal{T}_{\ell j}\)
 gives the formula at lag \(r+1\).
 \end{proof}
 
-Let \(a_1,\dots,a_L\geq 0\) be context-window weights with \(\sum_r a_r=1\), and define
+Let \(\omega_1,\dots,\omega_L\geq 0\) be context-window weights with \(\sum_r \omega_r=1\), and define
 \begin{equation}
-    F=\sum_{r=1}^L a_rW^r.
+    F=\sum_{r=1}^L \omega_rW^r.
     \label{eq:block-window}
 \end{equation}
 The stationary distribution is
 \begin{equation}
-    \pi_i=\frac{\delta_i}{\vol(\Omega)}.
+    \varpi_i=\frac{\delta_i}{\vol(\Omega)}.
     \label{eq:stationary}
 \end{equation}
 Define the stationary joint probability of the ordered positive pair \((i,j)\) by
 \begin{equation}
     J_{ij}
     =
-    \pi_i\sum_{r=1}^L a_r(T^r)_{ij}.
+    \varpi_i\sum_{r=1}^L \omega_r(\mathcal{T}^r)_{ij}.
     \label{eq:stationary-joint}
 \end{equation}
-For walks started from \(\pi\), \(J\) is the expected positive-pair frequency, with \(a_r\) proportional to the number of lag-\(r\) pairs per walk.
-If \(T\) is irreducible, the empirical pair frequencies along a single long walk converge to \(J\) from any start, for a fixed finite window with limiting lag weights \(a_r\).
+For walks started from \(\varpi\), \(J\) is the expected positive-pair frequency, with \(\omega_r\) proportional to the number of lag-\(r\) pairs per walk.
+If \(\mathcal{T}\) is irreducible, the empirical pair frequencies along a single long walk converge to \(J\) from any start, for a fixed finite window with limiting lag weights \(\omega_r\).
 This time-average statement does not require aperiodicity; without irreducibility, the limit can depend on the starting component.
 
 \begin{theorem}[Raw stationary pairs have radial-angular form]
@@ -462,7 +462,7 @@ Suppose skip-gram with negative sampling (SGNS) draws \(k\) negative contexts pe
 \end{equation}
 The expected negative weight for ordered pair \((i,j)\) is
 \begin{equation}
-    p^-_{ij}=k\pi_iq_j.
+    p^-_{ij}=k\varpi_iq_j.
     \label{eq:negative-weight}
 \end{equation}
 
@@ -521,7 +521,7 @@ and
 Thus \(e^{x^\star}=p^+_{ij}/p^-_{ij}\).
 Substituting
 \begin{equation}
-    \sum_r a_r(T^r)_{ij}
+    \sum_r \omega_r(\mathcal{T}^r)_{ij}
     =
     \frac{\theta_j}{s_b}F_{ab},
     \qquad
@@ -546,7 +546,7 @@ The \(\alpha=1\) result agrees with the NetMF target~\citep{qiu2018network}
 \begin{equation}
     \log\left[
         \vol(\Omega)
-        \left(\sum_r a_rT^r\right)
+        \left(\sum_r \omega_r\mathcal{T}^r\right)
         \mathcal{D}^{-1}
     \right]
     -\log k.
@@ -602,7 +602,7 @@ For a shared symmetric score, the pairwise optimum is
     =
     \log
     \frac{2J_{ij}}
-    {k(\pi_iq_j+\pi_jq_i)}.
+    {k(\varpi_iq_j+\varpi_jq_i)}.
     \label{eq:symmetric-score}
 \end{equation}
 Under the DCSBM,
@@ -633,7 +633,7 @@ where \(\eta_i=\theta_iB_{g_ig_i}/\kappa_{g_i}<1\) is the ratio in Equation~\eqr
 
 The pairwise optimum identifies dot products rather than the norm of either factor.
 For ordered SGNS, the optimal score has slope \(1-\alpha\) against log context degree within each context block.
-A law such as \(\norm{u_i}\propto d_i^{-\beta}\) requires an additional argument about low-rank approximation, optimization, and factor balancing.
+A law such as \(\norm{u_i}\propto d_i^{-\gamma}\) requires an additional argument about low-rank approximation, optimization, and factor balancing.
 
 \section{Factorization gauge}
 \label{sec:gauge}
@@ -656,11 +656,11 @@ Alternatively, one can impose the balance condition
     U^\top U=V^\top V.
     \label{eq:balance}
 \end{equation}
-For a rank-\(h\) score matrix \(M=P\Sigma Q^\top\), canonical balanced factors are
+For a rank-\(h\) score matrix \(M=P_{\mathrm{svd}}\Sigma Q_{\mathrm{svd}}^\top\), canonical balanced factors are
 \begin{equation}
-    U_{\mathrm{bal}}=P\Sigma^{1/2},
+    U_{\mathrm{bal}}=P_{\mathrm{svd}}\Sigma^{1/2},
     \qquad
-    V_{\mathrm{bal}}=Q\Sigma^{1/2}.
+    V_{\mathrm{bal}}=Q_{\mathrm{svd}}\Sigma^{1/2}.
     \label{eq:balanced-factors}
 \end{equation}
 Equivalent minimal balanced factors differ only by an orthogonal transformation, which preserves row norms and angles.
@@ -674,14 +674,14 @@ Any row-wise embedding error bound yields corresponding bounds for radius and di
 
 \begin{lemma}[Stability of radius and direction]
 \label{lem:stability}
-Suppose that population rows satisfy \(u_i=r_i c_{g_i}\), and an estimated embedding obeys
+Suppose that population rows satisfy \(u_i=\xi_i c_{g_i}\), and an estimated embedding obeys
 \begin{equation}
-    \norm{\widehat{u}_iQ-u_i}\leq\varepsilon_i
+    \norm{\widehat{u}_iO-u_i}\leq\varepsilon_i
     \label{eq:row-error}
 \end{equation}
-for an orthogonal alignment \(Q\).
+for an orthogonal alignment \(O\).
 Let
-\(\rho_i=\norm{u_i}=r_i\norm{c_{g_i}}>0\), and assume \(\varepsilon_i<\rho_i\).
+\(\rho_i=\norm{u_i}=\xi_i\norm{c_{g_i}}>0\), and assume \(\varepsilon_i<\rho_i\).
 Then
 \begin{equation}
     \abs{\norm{\widehat{u}_i}-\rho_i}
@@ -692,7 +692,7 @@ Then
 and
 \begin{equation}
     \norm{
-        \frac{\widehat{u}_iQ}{\norm{\widehat{u}_i}}
+        \frac{\widehat{u}_iO}{\norm{\widehat{u}_i}}
         -
         \frac{c_{g_i}}{\norm{c_{g_i}}}
     }
@@ -727,7 +727,7 @@ For nonzero vectors \(x,y\),
     \leq
     \frac{2\norm{x-y}}{\norm{y}}.
 \end{equation}
-Apply this inequality with \(x=\widehat{u}_iQ\) and \(y=u_i\) to obtain Equation~\eqref{eq:direction-error}.
+Apply this inequality with \(x=\widehat{u}_iO\) and \(y=u_i\) to obtain Equation~\eqref{eq:direction-error}.
 Equation~\eqref{eq:cosine-error} follows by adding the two unit-vector errors.
 \end{proof}
 
@@ -785,7 +785,7 @@ Their norms can therefore depend on exposure even when center frequency cancels 
 For an undirected graph \(G\), let \(\pi_i=d_i/\vol(G)\) be the stationary frequency and let \(T_i\) denote the one-step conditional context distribution of node \(i\).
 When the positive-context marginal is \(\pi\), the context specificity is
 \begin{equation}
-    K_i
+    \mathrm{KL}_i
     =
     D_{\mathrm{KL}}(T_i\Vert\pi)
     =
@@ -800,7 +800,7 @@ The information-geometric relation between transformed squared norm and context 
 Word2vec subsampling changes the exposure term.
 For token frequency \(p_i>\tfrac{3+\sqrt{5}}{2}t\approx2.62t\), the Gensim form of the Mikolov retention probability is~\citep{mikolov2013distributed}
 \begin{equation}
-    r_t(p_i)
+    \operatorname{keep}_t(p_i)
     =
     \sqrt{\frac{t}{p_i}}+\frac{t}{p_i}.
     \label{eq:retention-probability}
@@ -810,7 +810,7 @@ The expected retained-center exposure is consequently
 \begin{equation}
     m_i
     \propto
-    p_i r_t(p_i)
+    p_i \operatorname{keep}_t(p_i)
     =
     \sqrt{tp_i}+t.
     \label{eq:retained-exposure}
@@ -826,16 +826,16 @@ Its log elasticity is one below the cutoff and
 above it, so it drops to about \(0.31\) at the cutoff and approaches \(1/2\) only as \(p_i/t\) grows.
 Subsampling therefore weakens the marginal exposure gain without requiring a decreasing exposure count or a fixed ceiling.
 
-Let a finite-training response \(F(\log m_i,K_i)\) approximate the learned norm in a fixed optimizer and gauge.
+Let a finite-training response \(\nu(\log m_i,\mathrm{KL}_i)\) approximate the learned norm in a fixed optimizer and gauge.
 Its derivative along degree is
 \begin{equation}
-    \frac{dF}{d\log d_i}
+    \frac{d\nu}{d\log d_i}
     =
-    \frac{\partial F}{\partial\log m_i}
+    \frac{\partial \nu}{\partial\log m_i}
     \frac{d\log m_i}{d\log d_i}
     +
-    \frac{\partial F}{\partial K_i}
-    \frac{dK_i}{d\log d_i}.
+    \frac{\partial \nu}{\partial \mathrm{KL}_i}
+    \frac{d\mathrm{KL}_i}{d\log d_i}.
     \label{eq:two-force-derivative}
 \end{equation}
 The first term is positive when repeated coherent updates increase norm, whereas the second is negative when high-degree nodes have less specific contexts.
