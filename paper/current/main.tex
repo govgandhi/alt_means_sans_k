@@ -666,11 +666,13 @@ For a rank-\(h\) score matrix \(M=P_{\mathrm{svd}}\Sigma Q_{\mathrm{svd}}^\top\)
 Equivalent minimal balanced factors differ only by an orthogonal transformation, which preserves row norms and angles.
 Empirical norm-degree claims should use balanced factors or identify the optimizer-dependent gauge under study.
 
-\section{Finite-sample transfer}
+\section{Perturbation of radius and direction}
 \label{sec:finite-sample}
 
 The population theorems describe exact rays.
-Any row-wise embedding error bound yields corresponding bounds for radius and direction.
+The following deterministic lemma converts an assumed row-wise embedding error bound into bounds for radius and direction.
+It does not supply a sampling error bound for a particular estimator.
+For matrix-factorization embeddings, the population and estimated factors must first use a common gauge, for example the balanced convention in Equation~\eqref{eq:balanced-factors}; orthogonal alignment alone cannot remove a general invertible change of gauge.
 
 \begin{lemma}[Stability of radius and direction]
 \label{lem:stability}
@@ -679,7 +681,7 @@ Suppose that population rows satisfy \(u_i=\xi_i c_{g_i}\), and an estimated emb
     \norm{\widehat{u}_iO-u_i}\leq\varepsilon_i
     \label{eq:row-error}
 \end{equation}
-for an orthogonal alignment \(O\).
+for a single orthogonal alignment \(O\) shared by all rows.
 Let
 \(\rho_i=\norm{u_i}=\xi_i\norm{c_{g_i}}>0\), and assume \(\varepsilon_i<\rho_i\).
 Then
@@ -732,13 +734,16 @@ Equation~\eqref{eq:cosine-error} follows by adding the two unit-vector errors.
 \end{proof}
 
 Let \(\Delta>0\) be the minimum Euclidean distance between distinct population directions.
-Nearest-direction assignment is exact whenever
+Assignment to the nearest aligned population direction is exact whenever
 \begin{equation}
     \max_i\frac{2\varepsilon_i}{\rho_i}<\frac{\Delta}{2}.
     \label{eq:direction-recovery}
 \end{equation}
-For the normalized-adjacency embedding, \(\rho_i\propto\sqrt{\theta_i}\).
-The same absolute row error therefore produces more directional error for low-propensity nodes.
+For the normalized-adjacency embedding, \(\rho_i\propto\sqrt{\theta_i}\) within each community.
+At equal absolute error bounds \(\varepsilon_i\), Equation~\eqref{eq:direction-error} therefore gives a larger upper bound for low-propensity nodes.
+The actual degree dependence of directional error also requires an estimator-specific analysis of \(\varepsilon_i\).
+For minimal exact factorizations of the finite ordered SGNS score, the center rows are block-constant (Corollaries~\ref{cor:alpha-one} and~\ref{cor:alpha-not-one}), so their nonzero radii are constant within each community.
+Any within-community degree dependence of this bound then enters through \(\varepsilon_i\).
 
 \section{Relation to prior theory}
 \label{sec:prior-theory}
