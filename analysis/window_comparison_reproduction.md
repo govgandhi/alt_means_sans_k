@@ -55,3 +55,14 @@ displacements cannot be reconstructed independently. All final factors are saved
 Run the window/continuation tests with the pinned environment. The earlier
 symbolic/PDF audit has separate dependencies in
 `analysis/realized_graph_audit_requirements.txt`; it does not change these runs.
+
+The final proposition has a separate symbolic check, with no training or new
+empirical data. In an environment containing the pinned SymPy version above, run:
+
+```sh
+python3 scripts/check_sgns_norm_boundary.py
+```
+
+It verifies derivatives, stationary scores, tail limits, and an exact two-node
+SGNS illustration whose balanced norms grow while loss approaches its infimum.
+This algebraic example is not one of the experimental simple graphs.

@@ -1,5 +1,12 @@
 # Issue 20: population geometry, realized targets, and trained norms
 
+**Final disposition:** the conceptual objection is addressed in consolidated
+PR #38. The [completed bounded analysis](window_comparison_findings.md) adds the
+loss/norm boundary proposition and the fixed-noise trained window-five/ten
+comparison. The full inverted-U mechanism is deferred. The audit below records
+the earlier no-training stage; its statements about unrun trained comparisons
+are historical, not the current status.
+
 Audit of [issue #20](https://github.com/govgandhi/alt_means_sans_k/issues/20)
 against main commit 37d90a9a2fb5b0ef3d749ad9ee2db4fcf5f15e19.
 This is a retrospective mathematical and implementation audit. The new

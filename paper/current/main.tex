@@ -17,6 +17,7 @@
     {../../results/gensim_threshold_sweep/}
     {../../results/prospective_validation/}
     {../../results/training_trajectory/}
+    {../../results/window_training_continuation/report/}
 }
 
 \newcommand{\R}{\mathbb{R}}
@@ -30,6 +31,7 @@
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{remark}[theorem]{Remark}
 
@@ -668,6 +670,42 @@ For a rank-\(h\) score matrix \(M=P_{\mathrm{svd}}\Sigma Q_{\mathrm{svd}}^\top\)
 Equivalent minimal balanced factors differ only by an orthogonal transformation, which preserves row norms and angles.
 Empirical norm-degree claims should use balanced factors or identify the optimizer-dependent gauge under study.
 
+A direct consequence of the separable score objective is the following boundary for interpreting balanced norms.
+\begin{proposition}[Loss convergence and balanced norms]
+\label{prop:loss-norm-boundary}
+For a finite score matrix \(M\), fix \(p^+_{ij}\geq0\) and \(p^-_{ij}>0\), and define
+\begin{equation}
+    L(M)=\sum_{ij}\left[p^+_{ij}\log(1+e^{-M_{ij}})
+    +p^-_{ij}\log(1+e^{M_{ij}})\right].
+    \label{eq:score-loss}
+\end{equation}
+If every \(p^+_{ij}>0\), the unrestricted loss has a unique finite minimizer \(M^\star_{ij}=\log(p^+_{ij}/p^-_{ij})\).
+Every sequence approaching its minimum converges to \(M^\star\), and its canonical balanced row norms converge.
+If some \(p^+_{ij}=0\), every sequence approaching the unrestricted infimum instead sends those scores to \(-\infty\); its total squared balanced center norm diverges.
+\end{proposition}
+
+\begin{proof}
+For positive weights \(a,b\), the scalar loss has second derivative \((a+b)e^x/(1+e^x)^2>0\) and tends to infinity at both ends.
+Thus \(L\) is strictly convex and coercive; compact sublevel sets and uniqueness imply convergence of every minimizing sequence.
+The squared balanced row norms are the diagonal entries of \((MM^\top)^{1/2}\), a continuous matrix function.
+When \(a=0<b\), the scalar infimum is zero, approached only as \(x\to-\infty\).
+Separability forces this limit on every zero-positive pair in a minimizing sequence.
+Finally,
+\begin{equation}
+    \begin{aligned}
+    \sum_i\norm{u_{i,\mathrm{bal}}(M)}^2
+    &=\operatorname{tr}\!\left[(MM^\top)^{1/2}\right]\\
+    &=\norm{M}_*\geq\norm{M}_{\mathrm F},
+    \end{aligned}
+\end{equation}
+where \(\norm{M}_*\) is the sum of singular values.
+\end{proof}
+
+The divergence concerns the total norm, not necessarily every node.
+It changes the score matrix and therefore persists after balancing; it is not merely factorization gauge freedom.
+The proposition concerns unrestricted scores and asymptotically optimal loss.
+With positive weights everywhere, a minimizer over matrices of rank at most \(r\) exists but need not be unique; neither case guarantees convergence of a rank-constrained optimizer.
+
 \section{Perturbation of radius and direction}
 \label{sec:finite-sample}
 
@@ -945,6 +983,33 @@ It failed at the strongest subsampling threshold: the observed curve peaked near
 A degree-bin-specific interpolation across \(\beta\), added after inspecting this failure, matched the held-out curve with pooled root-mean-square error \(0.013\) and placed the peak in the correct bin.
 We treat this second fit as exploratory because its form was chosen after the global model failed.
 
+\subsection{Wider windows with fixed exposure and negative sampling}
+\label{sec:fixed-noise-windows}
+
+We separately fit the exact expected loss with \(P_L=L^{-1}\sum_{r=1}^L T^r\), holding each graph, uniform center share \(c_i=1/600\), negative proposal \(q=\pi\), five collision-allowing negatives, and rank 24 fixed.
+Two matched starts on each of five graphs were continued for up to 3000 additional iterations using score-preserving balanced restarts of L-BFGS.
+From window five to ten, the highest-minus-preceding degree-bin norm gap weakens from \(-0.3258\pm0.0155\) to \(-0.2173\pm0.0123\); the corresponding KL gap changes from \(-0.2980\pm0.0142\) to \(-0.1303\pm0.0063\) (Fig.~\ref{fig:fixed-noise-windows}).
+Both absolute contrasts weaken in every graph and start.
+Norm declines normalized by the preceding bin also weaken, from \(12.31\%\) to \(10.03\%\), whereas relative KL declines increase; no common scale-free law follows.
+Seven of ten window-five fits and all ten window-ten fits pass the predefined repeated loss, gradient, score, and norm stability checks; this does not certify global optimality.
+Window ten has full positive support and still declining norms, so missing context pairs are not necessary for that decline.
+
+The initial 500-iteration endpoints suggest monotone attenuation across windows one through ten, but this trend disappears under continuation; short-window results remain diagnostics rather than settled norm curves.
+Two window-one fits lie within \(1.303\times10^{-6}\) and \(7.327\times10^{-7}\) of the unrestricted loss infimum, bounding their rank-24 objective suboptimality above, yet their highest-bin balanced norms change by \(5.01\%\) and \(1.13\%\) in the final block.
+Thus nearly optimal loss can coexist with unsettled norm geometry beyond gauge ambiguity, consistent with the boundary in Proposition~\ref{prop:loss-norm-boundary}; these finite trajectories do not prove divergence or non-attainment at rank 24.
+
+\begin{figure*}[t]
+    \includegraphics[width=\textwidth]{wide_window_comparison}
+    \caption{
+        Context mixing at fixed graph, exposure, and negative sampling.
+        Window five versus ten for exact expected-loss fits.
+        Points and error bars show means and standard errors across five graphs, after averaging two starts within each graph; faint curves show individual graphs.
+        The labels count fits meeting the predefined stability criteria.
+        Both absolute declines weaken, while a decreasing norm-degree relation remains at full support.
+    }
+    \label{fig:fixed-noise-windows}
+\end{figure*}
+
 \subsection{Literal word2vec validation}
 
 The original, uncorrected Gensim sweep trained word2vec models on paired random-walk corpora from the same five graph seeds.
@@ -1044,8 +1109,10 @@ The prospective result supports qualitative transfer and approximate peak locali
 
 The established population results provide a baseline for interpreting finite-training experiments.
 Normalized spectral embeddings and raw random-walk pair probabilities preserve degree as a radial multiplier, with exponents \(1/2\) and \(1\), respectively.
-Unigram SGNS removes node propensity from the proxy score, while realized-graph scores already depend on degree before training.
-Learned norms additionally depend on rank, exposure, the negative distribution, and optimization.
+For \(F_{ab}>0\) on all block pairs, unigram population degree cancellation concerns an idealized score matrix; realized contexts change that target, while rank constraints, factorization, and optimization determine the resulting norms.
+Balancing removes factorization ambiguity, but nearly optimal loss alone can leave norm geometry unsettled (Proposition~\ref{prop:loss-norm-boundary} and Section~\ref{sec:fixed-noise-windows}).
+Structural interpretation therefore requires a specified graph-conditioned target and evidence that the balanced norm readout has stabilized under the stated fitting procedure.
+An account of the empirical inverted-U must explain these additional stages; its complete explanation remains a future question.
 
 This separation sharpens the qualitative account proposed for word and trajectory embeddings~\citep{schakel2015measuring,wilson2015controlled,murray2023unsupervised}.
 The specified exposure and context interventions generate increasing, decreasing, and inverted-U curves even while exposure grows.
@@ -1056,7 +1123,7 @@ Thus learning-rate history is an additional experimentally demonstrated dependen
 Frozen predictions from exposure and context KL preserved node-norm ordering and approximate peak movement across two unseen synthetic graph families and one empirical graph.
 
 The numerical evidence has clear limits.
-We used small graphs, one-step contexts, and a fixed SGNS implementation and hyperparameter set.
+Most experiments use small graphs and one-step contexts; the fixed-noise window comparison additionally uses exact multi-step contexts and a separate expected-loss optimizer.
 The five NetScience replicates resample walks and optimization on one graph rather than supplying five independent empirical networks.
 External subsampling in the prospective test made every positive pair observable but differs from the usual internal word2vec implementation.
 The raw center norm depends on the optimizer-selected gauge, although the balanced norm gives the same qualitative curves here.
@@ -1075,7 +1142,7 @@ Random-walk embeddings do not have a single norm-degree law.
 The normalized eigenspace, raw pair distribution, population SGNS score, and finite trained factors encode degree in different ways.
 Under finite SGNS training, the exposure and context-sampling interventions produce an inverted-U even when exposure remains strictly increasing.
 Hash-locked target predictions recover its approximate peak movement across new graph topologies, with identifiable boundary failures.
-Interpreting embedding norms therefore requires naming the population operator, negative-sampling distribution, factorization gauge, and training exposure.
+Interpreting embedding norms therefore requires naming the population operator, realized contexts, negative-sampling distribution, factorization gauge, and training procedure, and checking stability of the norm geometry itself.
 
 \section*{Data Availability}
 

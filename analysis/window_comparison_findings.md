@@ -1,15 +1,22 @@
-# Fixed-noise window comparison: revised evidence
+# When do norms admit a structural interpretation?
+
+SGNS can fit its learning objective very well without producing settled norm
+geometry. Context structure affects the declining norm–degree relationship, but
+a good loss alone does not make that relationship structurally interpretable.
+The reported norms are balanced, so this limitation goes beyond factorization
+ambiguity. This closes the bounded analysis of #20; the full PNAS inverted-U
+mechanism is an explicit future question, not a requirement for closing this issue.
 
 The requested comparison is now run: the same five graphs, equal center exposure,
 stationary negative proposal, five negatives, rank 24 and two matched starts;
 only the exact context window changes. This continues draft PR #38. PR #39 is
-closed and consolidated into it. The broader mechanism question remains open.
+closed and consolidated into it. No further experiment is added to this analysis.
 
 **Wider contexts attenuate the absolute norm decline from window 5 to 10, but
 the original monotone window 1–10 result does not survive better optimization.**
 The first 500-iteration endpoints remain archived as optimization diagnostics.
 
-## What the controlled comparison shows
+## Empirical result: window five versus window ten
 
 The gap below is the highest degree-bin mean minus the preceding bin mean.
 Negative values mean a decline. Starts are averaged within graph before computing
@@ -17,8 +24,6 @@ the mean and graph-level SE; they are not ten independent graph replicates.
 
 | Window | Context KL gap ± SE | Balanced norm gap ± SE | Stable starts |
 |---|---:|---:|---:|
-| 1 | −0.6971 ± 0.0230 | +0.0915 ± 0.1050 | 0/10 |
-| 2 | −0.6050 ± 0.0235 | −0.9492 ± 0.0562 | 0/10 |
 | 5 | −0.2980 ± 0.0142 | −0.3258 ± 0.0155 | 7/10 |
 | 10 | −0.1303 ± 0.0063 | −0.2173 ± 0.0123 | 10/10 |
 
@@ -40,14 +45,28 @@ Window five retains 318, 608, 282, 426 and 414 zero entries in the five 600×600
 matrices. Widening changes both support and the distribution of positive weights;
 this experiment does not isolate those two changes.
 
-The short windows are less settled. Window one's uppermost-bin gap becomes
+The short windows remain optimization diagnostics. Their mean upper gaps are
++0.0915 ± 0.1050 at window one and −0.9492 ± 0.0562 at window two, with no stable
+starts in either case. Window one's uppermost-bin gap becomes
 positive in six of ten starts, but eight still have a negative lowest-to-highest
 gap. This is an upper-bin rebound, not a reversal of the whole relation. All
 window-one and window-two fits retain norm drift and initialization disagreement.
 The [all-node plot](../results/window_training_continuation/report/all_final_nodes.png)
 shows their large low-degree outliers; mean curves alone conceal that dispersion.
 
-## Nearly optimal loss can coexist with drifting norms
+## Mathematical boundary and near-optimal fits
+
+Proposition 11 in [the manuscript](../paper/current/main.tex) gives the boundary
+for a finite unrestricted score matrix with fixed nonnegative positive-pair
+weights and strictly positive negative-pair weights. If all positive-pair weights
+are positive too, strict convexity and coercivity give a finite unique optimum;
+loss convergence then implies score and balanced-norm convergence. If any positive
+weight is zero, an unrestricted minimizing sequence instead sends those scores
+to minus infinity. Its total squared balanced center norm equals the nuclear norm
+of the score matrix and diverges. This need not happen to every individual node.
+The result is a direct calculation, not a literature novelty claim or a guarantee
+about the rank-24 optimizer. Positive weights guarantee existence under rank at
+most 24, but do not guarantee uniqueness or algorithmic convergence.
 
 For window one, second starts on graphs 3 and 4 have losses only 1.303×10⁻⁶ and
 7.327×10⁻⁷ above the unrestricted loss infimum. Since the unrestricted infimum is
@@ -57,9 +76,13 @@ Near-optimal objective value does not identify a settled radial geometry here.
 Zero-positive pairs permit unbounded negative score tails; the observed finite
 trajectory does not prove divergence or non-attainment at rank 24.
 
-This distinction matters for the U-shape question: we cannot infer a stable norm
-curve from a good loss, or infer norms from context KL alone. These equal-exposure
-synthetic fits test the declining component, not the full empirical PNAS pipeline.
+Population degree cancellation concerns the idealized finite score matrix when
+all block-window probabilities are positive. Realized contexts change that target;
+rank constraints, factorization and optimization determine the resulting norms.
+Balancing fixes factorization gauge but does not itself settle the score geometry.
+An explanation of the inverted-U must account for these additional stages. These
+equal-exposure synthetic fits test its declining component, not the full empirical
+PNAS pipeline.
 The separate training-history result remains as reported in the
 [earlier findings](window_training_exploration_findings.md).
 
@@ -81,7 +104,11 @@ and recorded-scalar checks, not independent reconstruction of every matrix.
 The current evidence supports context-dependent attenuation and training-dependent
 norm geometry. It does not establish a universal monotone window law, a KL-only
 mechanism, converged short-window norms, or an explanation of the empirical U shape.
-Issues #20–#22 and draft PR #38 remain open. Further steps stay in this PR.
+Issue #20's conceptual objection is addressed by the three-level distinction,
+the positive/zero-support proposition, and the controlled window-five/ten result.
+PR #38 holds the consolidated changes for review; #21/#22 retain their own scope.
+Further PNAS mechanism work is deferred, and no additional experiment is required
+to close this bounded investigation.
 
 Evidence: [full comparison](../results/window_training_continuation/report/kl_and_trained_norms.png),
 [wide windows](../results/window_training_continuation/report/wide_window_comparison.png),
