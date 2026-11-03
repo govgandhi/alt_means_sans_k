@@ -1,5 +1,9 @@
 # Window and training-history exploration
 
+**Historical first pass:** the trained-window fits below are superseded by the
+[continued comparison](../../analysis/window_comparison_findings.md), all within
+draft PR #38. The training-history results remain current. Raw files are retained.
+
 Read the concise [findings](../../analysis/window_training_exploration_findings.md)
 and the [design frozen before execution](../../analysis/window_training_exploration_protocol.md).
 Both lanes are complete: five paired schedule forks (60 saved checkpoints) and

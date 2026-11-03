@@ -23,6 +23,8 @@ are_angles_important/*.inf_log
 !results/window_training_exploration/schedule/seed*/factors/*.npz
 !results/window_training_exploration/windows/runs/*.json.gz
 !results/window_training_exploration/windows/factors/*.npy.gz
+!results/window_training_continuation/*.json.gz
+!results/window_training_continuation/*.npy.gz
 
 # Office files
 *.docx

@@ -1,9 +1,14 @@
-# Context windows and training history: what survives
+# Context windows and training history: archived first pass
+
+**Window results below are superseded by the
+[continued comparison](window_comparison_findings.md).** Better optimization
+changes the initial monotone window trend. The training-history results remain
+valid. PR #39 is closed and this evidence is consolidated into draft PR #38.
 
 The complete frozen exploration contains five paired training forks and forty
 expected-objective fits. It strengthens the evidence for finite-training history
 dependence, while leaving the converged window mechanism unresolved. PRs #35 and
-#36 and the manuscript are unchanged; this branch adds a separate exploration.
+#36 remain unchanged for YY's review.
 
 ## Training history: reheating did not erase the inherited peak
 
@@ -79,12 +84,9 @@ explains its curve. The two lanes also use different dimensions, negative-pair
 conventions and context construction; differences between lanes are not a
 single-variable intervention.
 
-The next numerical priority is a separately specified optimizer-conditioning
-and budget check, beginning with the full-support window-ten case. Compare
-score-preserving balanced restarts against the existing parameterization and
-require within-window agreement across starts and stable score/norm diagnostics
-before interpreting a finite-rank endpoint as a reference optimum. This study
-is proposed, not run. The exact β=1, λ=0 controlled-SGD trajectory requested in
+The optimizer-conditioning and budget check proposed after this first pass has
+now been run; see the [revised evidence](window_comparison_findings.md).
+The exact β=1, λ=0 controlled-SGD trajectory requested in
 #22 also remains unrun. Issues #20–#22 should remain open for these mechanism
 questions; this exploration does not justify closing them.
 
