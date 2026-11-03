@@ -4,6 +4,23 @@ Alternative to K-Means clustering methods for community detection of embedding v
 
 Reproducing the initial results produced by Dr Sadamori Kojaku. Read more [here](./scratchbook/Kmeans_Sadamori.pdf)
 
+## Current research focus
+
+The [PRE manuscript](paper/current/main.tex) studies how graph structure,
+sampling, and training affect embedding norms and their inverted-U relation
+with degree. Population rays and unigram degree cancellation are established
+foundations; the [source audit](analysis/issue31_prior_theory_audit.md) records
+their attribution and assumptions.
+
+The research priority is to explain and predict when turnover appears, moves,
+or disappears. [PR #36](https://github.com/govgandhi/alt_means_sans_k/pull/36)
+provides evidence of learning-rate dependence, with the mechanism and connection
+to the PNAS trajectory results still open. Finish the existing issue work first;
+PRs #35 and #36 remain with YY for review. Then isolate initial rate, decay, and
+duration on fixed graphs and corpora, and test the original PNAS settings.
+Keep population predictions, realized-graph targets, and training effects distinct.
+The older [strategy note](paper/current/note.tex) is historical.
+
 ## Setup
 
 ### 1. Clone the repository
