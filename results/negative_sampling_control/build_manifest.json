@@ -1,0 +1,22 @@
+{
+  "source_url": "https://files.pythonhosted.org/packages/1a/80/fe9d2e1ace968041814dbcfce4e8499a643a36c41267fa4b6c4f54cce420/gensim-4.4.0.tar.gz",
+  "source_sha256": "a3f5b626da5518e79a479140361c663089fe7998df8ba52d56e1ded71ac5bdf5",
+  "original_compile_inputs_sha256": {
+    "word2vec_inner.pyx": "53e5fd493905c719ac67e6bf4b322c233522326c23458c44def985aff7ad8ce7",
+    "word2vec_inner.pxd": "e03789abc2508e6c4460646c560d2432166a67e3d31294ec431be6728a1b18bd",
+    "voidptr.h": "ce33d8317c0c0edeb3c656f6998911e0028aad6c022cf8f0ec8a290d713c1d1a"
+  },
+  "patch": "sdot_ptr and dsdot_ptr: except -1 nogil -> noexcept nogil",
+  "patched_declarations_sha256": "d20905531196fe3f2006131fb1eb2b3827d1612ff648057d5de84dafc210ef14",
+  "generated_word2vec_c_sha256": "f8183635ad2829d82fc110720750dbb4f760a4de489570ee098374d046bac2b8",
+  "extension": "word2vec_inner.cpython-313-darwin.so",
+  "extension_sha256": "f966cc17dd0e07dcd0aa5078ba51b5537d856e5af438fdee9235b070b6a52e43",
+  "python": "3.13.12 (main, Feb 12 2026, 01:06:02) [Clang 21.1.4 ]",
+  "build_packages": {
+    "Cython": "3.1.3",
+    "setuptools": "80.9.0",
+    "wheel": "0.45.1",
+    "pip": "25.2",
+    "numpy": "2.4.1"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "config": {
+    "attachment": 3,
+    "checkpoints": [
+      0,
+      1,
+      2,
+      5,
+      10,
+      20,
+      50,
+      100,
+      200,
+      500
+    ],
+    "dimension": 24,
+    "ftol": 1e-12,
+    "gtol": 1e-08,
+    "initialization_offsets": [
+      100000,
+      200000
+    ],
+    "maxcor": 10,
+    "maxfun": 5000,
+    "maxiter": 500,
+    "maxls": 40,
+    "negatives": 5,
+    "nodes": 600,
+    "protocol": "analysis/window_training_exploration_protocol.md",
+    "requirements": "analysis/window_training_exploration_requirements.txt",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "windows": [
+      1,
+      2,
+      5,
+      10
+    ]
+  },
+  "packages": {
+    "matplotlib": "3.10.8",
+    "networkx": "3.6.1",
+    "numpy": "2.4.1",
+    "scipy": "1.17.1",
+    "threadpoolctl": "3.7.0"
+  },
+  "python": "3.13.12",
+  "scope": "Bounded exact expected-objective fits; no global optimum claim.",
+  "source_sha256": {
+    "analysis/window_training_exploration_protocol.md": "12db0b86485e77f295181279442b8db411e776caeb4f963d97db19febc5209fd",
+    "analysis/window_training_exploration_requirements.txt": "d1c8b9dcee8cc69723159b85fd9acbce9c66b472114dd21d320cdb28aa07d7d6",
+    "scripts/simulate_exact_center_exposure.py": "7e8dd787c446660145776ca59050670a8c52f89454d74a78ed5bdca01bdbfa0d",
+    "scripts/window_training/expected_window.py": "b045e8dd96bea50e0737dd28d449a81c57724dcfafee1b00627b627d92386ac7",
+    "tests/test_expected_window.py": "db4ee344828717a7aebc24774b8e798e3619cfe6f24f806bef2bfd99866694f2"
+  }
+}

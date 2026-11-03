@@ -1,0 +1,20 @@
+{
+  "artifact_sha256": {
+    "all_window_nodes.pdf": "9a2e65d40bacd99b98c10393fc82f240b548a3a7d1b8f74f937094148ffcd7b3",
+    "all_window_nodes.png": "8c641d203b473a7beadb11996c1927d8369c4a288c0b0c412008cf876f54515a",
+    "expected_windows.pdf": "2d2f02147c4142a9b3de3da35b8e41b7e161d7185df95837044f4ee4bb1849fa",
+    "expected_windows.png": "9e7be9ca8a022c509cc02756834981df248d7924576fe5a40f44c4c4741334e1",
+    "full_rank_benchmark.pdf": "a95ecaeb8b072da84005d47cd078aca8049047f759dd1ffd42812491134def82",
+    "full_rank_benchmark.png": "fbe051a6c59186fac821ed6d485fd2f5402cff19da7ed33bcf9ec7650c441c1c",
+    "schedule_fork.pdf": "63c20a916ee9640a0ea761df9e86f267e5150393c19d216fd365e6ae0bc03060",
+    "schedule_fork.png": "5150036a87786cc63ef23d6c8fe701f2f2819c94f53f5f848e2638577fee72e0",
+    "summary.json": "e86695a5a51205bd85f962470ef1774db683195577212ef304756ff26917f1d8",
+    "tables.md": "cfbb014a62c6315fddcbe712e175d560a5ea5e13e0e7feaea7c9de9e9dcd27ff"
+  },
+  "input_completion_sha256": {
+    "schedule": "827a832542b100d124982923eba0c8b294b0fe5c9709dc1ab1fb794ca3537c9d",
+    "windows": "f84030f2cbf81868953cd23910129a1cedb66bb7f9a6d4a6301ff3d603a4544a"
+  },
+  "reference_completion_sha256": "a457d294f4aff027ba4aaf42fb1dbb618cc55eb87f210fc6651a2119d12e555a",
+  "script_sha256": "37972b2ddead23eda4a30a6e28c1baf9680c4d8ce8488c1a47c4edbe55e423a3"
+}

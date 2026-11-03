@@ -12,10 +12,9 @@
 
 The simulation separates four claims:
 
-1. center weights cancel from unrestricted graph-conditioned SGNS scores
-   at fixed conditional contexts and negative proposal;
-2. one-step context information on the realized configuration graphs declines
-   approximately as -log(degree);
+1. center frequency cancels from the population SGNS score at alpha = 1;
+2. context information declines approximately as -log(degree) in a
+   configuration model;
 3. finite Gensim training can produce an inverted-U; and
 4. raw input-vector norms are gauge-dependent even when all scores are fixed.
 
@@ -40,6 +39,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
 from gensim.models import Word2Vec
+from gensim_training import set_negative_table, train_checked
 from scipy.stats import spearmanr
 
 
@@ -109,7 +109,7 @@ def population_checks(
     negatives: int,
     rng: np.random.Generator,
 ) -> dict[str, np.ndarray | float]:
-    """Check realized-graph identities; the legacy name does not mean DCSBM KL."""
+    """Compute graph KL and verify the two exact identities used in the paper."""
     n = len(degree)
     volume = float(degree.sum())
     stationary = degree / volume
@@ -162,7 +162,7 @@ def sample_walks(
         walk = [int(start)]
         for _ in range(walk_length - 1):
             walk.append(int(rng.choice(neighbors[walk[-1]])))
-        counts[walk] += 1
+        np.add.at(counts, walk, 1)
         walks.append(walk)
     return walks, counts
 
@@ -231,7 +231,6 @@ def train_word2vec(
     seed: int,
 ) -> dict[str, np.ndarray | float]:
     model = Word2Vec(
-        sentences=walks,
         vector_size=config.dimension,
         window=1,
         min_count=config.min_count,
@@ -246,6 +245,9 @@ def train_word2vec(
         sorted_vocab=1,
         shrink_windows=False,
     )
+    model.build_vocab(walks)
+    set_negative_table(model)
+    train_checked(model, walks)
     if len(model.wv) != len(counts):
         missing = len(counts) - len(model.wv)
         raise ValueError(f"min_count removed {missing} nodes; increase walks_per_node.")

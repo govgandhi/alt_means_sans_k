@@ -1,0 +1,2689 @@
+{
+  "schedule": {
+    "completed_seeds": 5,
+    "expected_seeds": 5,
+    "endpoints": [
+      {
+        "seed": 0,
+        "branch": "floor",
+        "expected_loss": 0.39642710359114847,
+        "raw_curve": {
+          "means": [
+            4.895151227714676,
+            5.202034198239225,
+            5.358741329430538,
+            5.468405847068732,
+            5.616734349021514,
+            5.359718558196438
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.4645673304817626,
+          "highest_minus_penultimate": -0.25701579082507564
+        },
+        "balanced_curve": {
+          "means": [
+            4.898145272364408,
+            5.201982996411082,
+            5.355751605558558,
+            5.462140340584974,
+            5.618940388482068,
+            5.425600814934531
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.5274555425701228,
+          "highest_minus_penultimate": -0.1933395735475374
+        }
+      },
+      {
+        "seed": 0,
+        "branch": "reheat",
+        "expected_loss": 0.39873935343002564,
+        "raw_curve": {
+          "means": [
+            5.062974140039788,
+            5.360148252937816,
+            5.510036317351154,
+            5.6076176449020165,
+            5.751629559721247,
+            5.483263127490022
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.4202889874502338,
+          "highest_minus_penultimate": -0.26836643223122447
+        },
+        "balanced_curve": {
+          "means": [
+            5.064575980402189,
+            5.359132445933473,
+            5.505732643148201,
+            5.600568900737833,
+            5.753895162568433,
+            5.5539147117470495
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.4893387313448603,
+          "highest_minus_penultimate": -0.19998045082138383
+        }
+      },
+      {
+        "seed": 1,
+        "branch": "floor",
+        "expected_loss": 0.375851721790294,
+        "raw_curve": {
+          "means": [
+            4.87601320654353,
+            5.167293768726491,
+            5.320861818488273,
+            5.481468529934741,
+            5.575565533303593,
+            5.376537049658199
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.500523843114669,
+          "highest_minus_penultimate": -0.19902848364539416
+        },
+        "balanced_curve": {
+          "means": [
+            4.879174599435416,
+            5.1663351079965665,
+            5.324510078856818,
+            5.480068999642145,
+            5.582922576608214,
+            5.440626006233378
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.5614514067979623,
+          "highest_minus_penultimate": -0.14229657037483534
+        }
+      },
+      {
+        "seed": 1,
+        "branch": "reheat",
+        "expected_loss": 0.37783328929538507,
+        "raw_curve": {
+          "means": [
+            5.048465709846087,
+            5.322835955666198,
+            5.47081639168134,
+            5.6184792586212255,
+            5.706882355773933,
+            5.496339415584565
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.44787370573847785,
+          "highest_minus_penultimate": -0.21054294018936837
+        },
+        "balanced_curve": {
+          "means": [
+            5.050265483318565,
+            5.32043535126335,
+            5.474002076636616,
+            5.616616138658946,
+            5.71462194703057,
+            5.564450754781349
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.5141852714627841,
+          "highest_minus_penultimate": -0.15017119224922038
+        }
+      },
+      {
+        "seed": 2,
+        "branch": "floor",
+        "expected_loss": 0.39453286351581873,
+        "raw_curve": {
+          "means": [
+            4.912186190314896,
+            5.18390761713032,
+            5.35296063422537,
+            5.461917894111472,
+            5.557296277034044,
+            5.336826358328926
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.4246401680140304,
+          "highest_minus_penultimate": -0.22046991870511778
+        },
+        "balanced_curve": {
+          "means": [
+            4.91727612734507,
+            5.177172407788483,
+            5.3457666641892185,
+            5.466216614532525,
+            5.553302847180812,
+            5.412757025057409
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.49548089771233883,
+          "highest_minus_penultimate": -0.1405458221234035
+        }
+      },
+      {
+        "seed": 2,
+        "branch": "reheat",
+        "expected_loss": 0.3967562712559174,
+        "raw_curve": {
+          "means": [
+            5.084855439381027,
+            5.338758577978002,
+            5.502040074608481,
+            5.596861102094268,
+            5.688496979649642,
+            5.45139873065421
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.3665432912731834,
+          "highest_minus_penultimate": -0.23709824899543186
+        },
+        "balanced_curve": {
+          "means": [
+            5.08870741018634,
+            5.330569651655885,
+            5.49351771163795,
+            5.600971465491538,
+            5.684763082079594,
+            5.532066044389693
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.44335863420335286,
+          "highest_minus_penultimate": -0.15269703768990084
+        }
+      },
+      {
+        "seed": 3,
+        "branch": "floor",
+        "expected_loss": 0.3775581510413548,
+        "raw_curve": {
+          "means": [
+            4.899626313773723,
+            5.161892446575261,
+            5.393716303230575,
+            5.5220319902549795,
+            5.532604777483482,
+            5.354036938265519
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.45441062449179626,
+          "highest_minus_penultimate": -0.17856783921796282
+        },
+        "balanced_curve": {
+          "means": [
+            4.902315194118257,
+            5.16439679292629,
+            5.3940508330096755,
+            5.523866222771974,
+            5.533707105147006,
+            5.4206288845851525
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.5183136904668952,
+          "highest_minus_penultimate": -0.1130782205618539
+        }
+      },
+      {
+        "seed": 3,
+        "branch": "reheat",
+        "expected_loss": 0.37987450306494697,
+        "raw_curve": {
+          "means": [
+            5.068800997413571,
+            5.318684434954467,
+            5.541275948550469,
+            5.658648550714335,
+            5.665113387183668,
+            5.473579704469287
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.4047787070557165,
+          "highest_minus_penultimate": -0.19153368271438076
+        },
+        "balanced_curve": {
+          "means": [
+            5.070166901798096,
+            5.320111607059278,
+            5.540769281141953,
+            5.660227622705666,
+            5.666446459447695,
+            5.544298823377323
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.474131921579227,
+          "highest_minus_penultimate": -0.12214763607037149
+        }
+      },
+      {
+        "seed": 4,
+        "branch": "floor",
+        "expected_loss": 0.3791947361237555,
+        "raw_curve": {
+          "means": [
+            4.891625704686618,
+            5.146057832863518,
+            5.352767394719469,
+            5.448812714077627,
+            5.547447835336504,
+            5.367242314469382
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.4756166097827643,
+          "highest_minus_penultimate": -0.18020552086712183
+        },
+        "balanced_curve": {
+          "means": [
+            4.8935826628337615,
+            5.141414846177366,
+            5.359021921877404,
+            5.44587398599236,
+            5.549502298318999,
+            5.43327499387661
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.5396923310428487,
+          "highest_minus_penultimate": -0.11622730444238893
+        }
+      },
+      {
+        "seed": 4,
+        "branch": "reheat",
+        "expected_loss": 0.381304334666928,
+        "raw_curve": {
+          "means": [
+            5.060244472813548,
+            5.303850980412145,
+            5.499811957480485,
+            5.592823523437781,
+            5.6794802945522775,
+            5.483031394019701
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.4227869212061526,
+          "highest_minus_penultimate": -0.1964489005325767
+        },
+        "balanced_curve": {
+          "means": [
+            5.06087220864856,
+            5.297924073404432,
+            5.505405685750151,
+            5.5892934387553765,
+            5.681310042770803,
+            5.553371549210535
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 5,
+          "interior_peak": true,
+          "highest_minus_lowest": 0.49249934056197553,
+          "highest_minus_penultimate": -0.12793849356026765
+        }
+      }
+    ]
+  },
+  "windows": {
+    "completed_runs": 40,
+    "expected_runs": 40,
+    "endpoints": [
+      {
+        "seed": 0,
+        "window": 10,
+        "initialization": 100000,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.0003027545041631222,
+        "expected_loss": 2.3979410143135276,
+        "raw_curve": {
+          "means": [
+            1.9095494115180356,
+            1.8980484744076407,
+            1.8201910599285969,
+            1.7697679389684389,
+            1.7130061178388956,
+            1.5379807187921104
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.3715686927259252,
+          "highest_minus_penultimate": -0.17502539904678516
+        },
+        "balanced_curve": {
+          "means": [
+            2.41398571616782,
+            2.398846438964543,
+            2.295410595893928,
+            2.232360706232945,
+            2.1579865385323624,
+            1.936057926770135
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.477927789397685,
+          "highest_minus_penultimate": -0.22192861176222745
+        }
+      },
+      {
+        "seed": 0,
+        "window": 10,
+        "initialization": 200000,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.010012854377578475,
+        "expected_loss": 2.6231324306954233,
+        "raw_curve": {
+          "means": [
+            0.12024825432559234,
+            0.1169752243724516,
+            0.11388549279787306,
+            0.10792994182047039,
+            0.10558314794075735,
+            0.09382896703915039
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.026419287286441953,
+          "highest_minus_penultimate": -0.011754180901606959
+        },
+        "balanced_curve": {
+          "means": [
+            2.0594554163686305,
+            1.9973340715010373,
+            1.906406080172681,
+            1.8114614507713849,
+            1.7357771342906074,
+            1.5255109658540063
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.5339444505146242,
+          "highest_minus_penultimate": -0.21026616843660118
+        }
+      },
+      {
+        "seed": 0,
+        "window": 1,
+        "initialization": 100000,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.06660931511022398,
+        "expected_loss": 0.7166239753841774,
+        "raw_curve": {
+          "means": [
+            1.6134265622972679,
+            1.2783572438600885,
+            0.5513916951277789,
+            0.29889737491936896,
+            0.18549524733801628,
+            0.055923641446380686
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -1.5575029208508873,
+          "highest_minus_penultimate": -0.1295716058916356
+        },
+        "balanced_curve": {
+          "means": [
+            14.927063529063087,
+            12.894049075959472,
+            6.618940052794148,
+            3.861610650182265,
+            2.493658822853746,
+            0.7952209108375424
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -14.131842618225544,
+          "highest_minus_penultimate": -1.6984379120162036
+        }
+      },
+      {
+        "seed": 0,
+        "window": 1,
+        "initialization": 200000,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.012541171726493576,
+        "expected_loss": 0.6931472693135889,
+        "raw_curve": {
+          "means": [
+            1.4616906561236374,
+            0.9961199441360716,
+            0.5837223553189013,
+            0.3390702321634505,
+            0.17139434346568663,
+            0.06473340777622145
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -1.396957248347416,
+          "highest_minus_penultimate": -0.10666093568946518
+        },
+        "balanced_curve": {
+          "means": [
+            14.243665230718204,
+            10.375088239617297,
+            6.815090209822545,
+            4.19195914815459,
+            2.2737385157933327,
+            0.8608671320210601
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -13.382798098697144,
+          "highest_minus_penultimate": -1.4128713837722726
+        }
+      },
+      {
+        "seed": 0,
+        "window": 2,
+        "initialization": 100000,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.02751388612535383,
+        "expected_loss": 2.2325107947981717,
+        "raw_curve": {
+          "means": [
+            0.6234747762270214,
+            0.0811310513463135,
+            0.07259564448493394,
+            0.06454961399547891,
+            0.061576506350516064,
+            0.04769544372414452
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.5757793325028769,
+          "highest_minus_penultimate": -0.013881062626371544
+        },
+        "balanced_curve": {
+          "means": [
+            5.512499029092734,
+            2.672018969335209,
+            2.4318724757323325,
+            2.18747317574504,
+            2.034545712776149,
+            1.4981723201247275
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -4.014326708968007,
+          "highest_minus_penultimate": -0.5363733926514214
+        }
+      },
+      {
+        "seed": 0,
+        "window": 2,
+        "initialization": 200000,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.021148508183128745,
+        "expected_loss": 1.856805015614619,
+        "raw_curve": {
+          "means": [
+            0.5785484604064046,
+            0.11146523098055157,
+            0.09918883274883919,
+            0.0916685032123371,
+            0.08187808273529772,
+            0.06376553875846591
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.5147829216479387,
+          "highest_minus_penultimate": -0.018112543976831805
+        },
+        "balanced_curve": {
+          "means": [
+            5.295127264340385,
+            2.6777009910450857,
+            2.4030992043977975,
+            2.1827122734871915,
+            1.961281274536342,
+            1.4528894693439287
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -3.842237794996456,
+          "highest_minus_penultimate": -0.5083918051924132
+        }
+      },
+      {
+        "seed": 0,
+        "window": 5,
+        "initialization": 100000,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.009272924842334955,
+        "expected_loss": 2.2617080213020704,
+        "raw_curve": {
+          "means": [
+            0.25533353441628764,
+            0.24569326305492276,
+            0.2296073110496173,
+            0.21969573766879477,
+            0.20635519648807465,
+            0.1734390963980844
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.08189443801820323,
+          "highest_minus_penultimate": -0.03291610008999024
+        },
+        "balanced_curve": {
+          "means": [
+            2.6195582336902716,
+            2.5341118222884322,
+            2.3434340578694406,
+            2.2256596827959423,
+            2.0903129755378664,
+            1.7324480078760132
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.8871102258142585,
+          "highest_minus_penultimate": -0.3578649676618533
+        }
+      },
+      {
+        "seed": 0,
+        "window": 5,
+        "initialization": 200000,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.0028046822049199315,
+        "expected_loss": 2.258251800497621,
+        "raw_curve": {
+          "means": [
+            0.26847095886026723,
+            0.26426372789353686,
+            0.25647167126152487,
+            0.2392519901237125,
+            0.22814047204909152,
+            0.18765422102073204
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.08081673783953519,
+          "highest_minus_penultimate": -0.04048625102835948
+        },
+        "balanced_curve": {
+          "means": [
+            2.5819487499486495,
+            2.5435488323181064,
+            2.4072089065916153,
+            2.2515489864583036,
+            2.130331034479505,
+            1.7584448908816606
+          ],
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.823503859066989,
+          "highest_minus_penultimate": -0.37188614359784444
+        }
+      },
+      {
+        "seed": 1,
+        "window": 10,
+        "initialization": 100001,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.0012702191087129399,
+        "expected_loss": 2.4047237604426046,
+        "raw_curve": {
+          "means": [
+            1.288957059744565,
+            1.2576837363500886,
+            1.221856042197727,
+            1.2249069218940993,
+            1.1301002259308157,
+            1.0264909923547865
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.2624660673897785,
+          "highest_minus_penultimate": -0.10360923357602925
+        },
+        "balanced_curve": {
+          "means": [
+            2.4338213562835,
+            2.369976572335228,
+            2.284703986571014,
+            2.2927457267745734,
+            2.1269884902523,
+            1.9470922981850363
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.4867290580984638,
+          "highest_minus_penultimate": -0.1798961920672637
+        }
+      },
+      {
+        "seed": 1,
+        "window": 10,
+        "initialization": 200001,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.05397363664341678,
+        "expected_loss": 2.8420249309527903,
+        "raw_curve": {
+          "means": [
+            0.06745929680523619,
+            0.06322058997956823,
+            0.059897260603255155,
+            0.05938434968678553,
+            0.056341966346623515,
+            0.05248787960396569
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.014971417201270494,
+          "highest_minus_penultimate": -0.0038540867426578237
+        },
+        "balanced_curve": {
+          "means": [
+            2.013767886914188,
+            1.9023949785781438,
+            1.7836072487334018,
+            1.7682923826656498,
+            1.6055595207882942,
+            1.4413622639396664
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.5724056229745216,
+          "highest_minus_penultimate": -0.16419725684862785
+        }
+      },
+      {
+        "seed": 1,
+        "window": 1,
+        "initialization": 100001,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.08611199317735542,
+        "expected_loss": 1.263977264069227,
+        "raw_curve": {
+          "means": [
+            0.6720941846388498,
+            0.2903188766483897,
+            0.1628582688529948,
+            0.13540506995357104,
+            0.08508234119715236,
+            0.05164560237524249
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.6204485822636073,
+          "highest_minus_penultimate": -0.03343673882190987
+        },
+        "balanced_curve": {
+          "means": [
+            8.674142217745215,
+            4.6884074807611,
+            3.327561468071635,
+            2.979329000364105,
+            2.0859006549690013,
+            1.265582440920845
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -7.4085597768243705,
+          "highest_minus_penultimate": -0.8203182140481564
+        }
+      },
+      {
+        "seed": 1,
+        "window": 1,
+        "initialization": 200001,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.056270040415673614,
+        "expected_loss": 0.8704759150927068,
+        "raw_curve": {
+          "means": [
+            1.9065461131215289,
+            0.9430229424152681,
+            0.35177073222256083,
+            0.23442231171530117,
+            0.11410430851135553,
+            0.04129286483947211
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -1.8652532482820567,
+          "highest_minus_penultimate": -0.07281144367188341
+        },
+        "balanced_curve": {
+          "means": [
+            16.93832627239586,
+            10.368836126345524,
+            4.860611110725885,
+            3.453453127127957,
+            1.7920782583597126,
+            0.6996255525702127
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -16.238700719825648,
+          "highest_minus_penultimate": -1.0924527057895
+        }
+      },
+      {
+        "seed": 1,
+        "window": 2,
+        "initialization": 100001,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.034704156261578085,
+        "expected_loss": 1.7455877254403298,
+        "raw_curve": {
+          "means": [
+            0.9732717137918343,
+            0.26217459658179004,
+            0.2274621632201331,
+            0.2267432716376306,
+            0.186284986927864,
+            0.14403578469965156
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.8292359290921827,
+          "highest_minus_penultimate": -0.042249202228212435
+        },
+        "balanced_curve": {
+          "means": [
+            5.496653479857744,
+            2.7814329467475547,
+            2.423524203491733,
+            2.350758503345706,
+            1.970786746029992,
+            1.4250681198617077
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -4.071585359996036,
+          "highest_minus_penultimate": -0.5457186261682843
+        }
+      },
+      {
+        "seed": 1,
+        "window": 2,
+        "initialization": 200001,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.024670195790173606,
+        "expected_loss": 1.642931311881933,
+        "raw_curve": {
+          "means": [
+            0.9896741499666842,
+            0.2488030870194936,
+            0.22560799892438507,
+            0.20953852124359149,
+            0.1745481621693481,
+            0.12849212458932935
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.8611820253773549,
+          "highest_minus_penultimate": -0.04605603758001875
+        },
+        "balanced_curve": {
+          "means": [
+            5.407171610890818,
+            2.9731381758774784,
+            2.69539961158667,
+            2.510189239145552,
+            2.115739665936811,
+            1.510819664259288
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -3.8963519466315297,
+          "highest_minus_penultimate": -0.6049200016775231
+        }
+      },
+      {
+        "seed": 1,
+        "window": 5,
+        "initialization": 100001,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 6.637485366476965e-05,
+        "expected_loss": 1.9448110035143764,
+        "raw_curve": {
+          "means": [
+            2.553795683080472,
+            2.472846667078617,
+            2.3705452962185283,
+            2.378402824493788,
+            2.193559436498912,
+            1.9422566823453435
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.6115390007351282,
+          "highest_minus_penultimate": -0.2513027541535686
+        },
+        "balanced_curve": {
+          "means": [
+            3.0417995809594807,
+            2.9387205650673174,
+            2.8158840649860024,
+            2.8257492398521022,
+            2.617144976622437,
+            2.3242264718450634
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.7175731091144173,
+          "highest_minus_penultimate": -0.29291850477737347
+        }
+      },
+      {
+        "seed": 1,
+        "window": 5,
+        "initialization": 200001,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.003911350003143935,
+        "expected_loss": 2.1766561912831057,
+        "raw_curve": {
+          "means": [
+            0.4937041785794597,
+            0.4631029495125518,
+            0.44394795897719463,
+            0.4456062583394071,
+            0.3944331715726666,
+            0.319683447697034
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.1740207308824257,
+          "highest_minus_penultimate": -0.07474972387563261
+        },
+        "balanced_curve": {
+          "means": [
+            2.7017697744367997,
+            2.555381957975477,
+            2.417316135370404,
+            2.426330709165542,
+            2.1598105643433536,
+            1.8112172248087124
+          ],
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.8905525496280873,
+          "highest_minus_penultimate": -0.3485933395346412
+        }
+      },
+      {
+        "seed": 2,
+        "window": 10,
+        "initialization": 100002,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.0003319243804491494,
+        "expected_loss": 2.397928904205561,
+        "raw_curve": {
+          "means": [
+            1.789908563663865,
+            1.7730828083004024,
+            1.7068483352420456,
+            1.6715975364686557,
+            1.579614568934692,
+            1.392470722483964
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.3974378411799009,
+          "highest_minus_penultimate": -0.187143846450728
+        },
+        "balanced_curve": {
+          "means": [
+            2.406192515033221,
+            2.38006018350338,
+            2.301692466030371,
+            2.258323444006521,
+            2.1527095085982775,
+            1.9513284268284918
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.454864088204729,
+          "highest_minus_penultimate": -0.20138108176978564
+        }
+      },
+      {
+        "seed": 2,
+        "window": 10,
+        "initialization": 200002,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.0005584138769914843,
+        "expected_loss": 2.3977456234033174,
+        "raw_curve": {
+          "means": [
+            1.910735675895589,
+            1.8817773514933627,
+            1.8166601146859551,
+            1.788157396724642,
+            1.7026751666446627,
+            1.5373194000867116
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.37341627580887726,
+          "highest_minus_penultimate": -0.16535576655795103
+        },
+        "balanced_curve": {
+          "means": [
+            2.409111471209142,
+            2.381943483062436,
+            2.3006130586879046,
+            2.259309167172522,
+            2.15516907085843,
+            1.952682920878
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.45642855033114205,
+          "highest_minus_penultimate": -0.20248614998043002
+        }
+      },
+      {
+        "seed": 2,
+        "window": 1,
+        "initialization": 100002,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.08073176213238614,
+        "expected_loss": 0.9868138614733177,
+        "raw_curve": {
+          "means": [
+            1.3452936383848593,
+            1.1682373392308616,
+            0.2637976405922978,
+            0.14047531181450781,
+            0.09909346796745125,
+            0.046645905940474616
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -1.2986477324443846,
+          "highest_minus_penultimate": -0.05244756202697663
+        },
+        "balanced_curve": {
+          "means": [
+            12.73261669928632,
+            11.519560857038002,
+            4.146590559307593,
+            2.4000360978285404,
+            1.7242659849346997,
+            0.8401907908635545
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -11.892425908422766,
+          "highest_minus_penultimate": -0.8840751940711452
+        }
+      },
+      {
+        "seed": 2,
+        "window": 1,
+        "initialization": 200002,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.07547157846380771,
+        "expected_loss": 0.8666209634231705,
+        "raw_curve": {
+          "means": [
+            1.5700368196972492,
+            0.8899395637816154,
+            0.2572759337684259,
+            0.22444812723531465,
+            0.125021307881953,
+            0.04073399536330276
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -1.5293028243339464,
+          "highest_minus_penultimate": -0.08428731251865025
+        },
+        "balanced_curve": {
+          "means": [
+            15.848687152268079,
+            10.101538933662939,
+            3.9552075055483837,
+            3.557463080659906,
+            2.065307416166573,
+            0.7390027859792659
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -15.109684366288812,
+          "highest_minus_penultimate": -1.3263046301873072
+        }
+      },
+      {
+        "seed": 2,
+        "window": 2,
+        "initialization": 100002,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.05939043071749798,
+        "expected_loss": 1.7706388817949092,
+        "raw_curve": {
+          "means": [
+            0.580741245883591,
+            0.6928507092335148,
+            0.205705948665559,
+            0.18411459557981402,
+            0.15971331226744995,
+            0.12025431002310469
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 2,
+          "interior_peak": true,
+          "highest_minus_lowest": -0.4604869358604863,
+          "highest_minus_penultimate": -0.03945900224434526
+        },
+        "balanced_curve": {
+          "means": [
+            4.480287846504101,
+            4.887074175135328,
+            2.5367097147622317,
+            2.2865009004822396,
+            1.9720286610459679,
+            1.4000518371304183
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 2,
+          "interior_peak": true,
+          "highest_minus_lowest": -3.080236009373683,
+          "highest_minus_penultimate": -0.5719768239155496
+        }
+      },
+      {
+        "seed": 2,
+        "window": 2,
+        "initialization": 200002,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.0174692997176866,
+        "expected_loss": 1.694561452727521,
+        "raw_curve": {
+          "means": [
+            0.7057646201698913,
+            0.30098741781452876,
+            0.2122234091342318,
+            0.1986109145027261,
+            0.17668722976603168,
+            0.12593842336736832
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.5798261968025229,
+          "highest_minus_penultimate": -0.05074880639866336
+        },
+        "balanced_curve": {
+          "means": [
+            4.98154477944681,
+            3.3230510664220403,
+            2.516654953518081,
+            2.362405674117512,
+            2.0636415838645106,
+            1.4703562622488087
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -3.511188517198001,
+          "highest_minus_penultimate": -0.5932853216157019
+        }
+      },
+      {
+        "seed": 2,
+        "window": 5,
+        "initialization": 100002,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.007755914144233411,
+        "expected_loss": 2.3016038385357245,
+        "raw_curve": {
+          "means": [
+            0.25692438893462155,
+            0.26205915297093907,
+            0.23379759955555132,
+            0.22598839018469336,
+            0.21140236999497092,
+            0.18014354272169547
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 2,
+          "interior_peak": true,
+          "highest_minus_lowest": -0.07678084621292608,
+          "highest_minus_penultimate": -0.03125882727327545
+        },
+        "balanced_curve": {
+          "means": [
+            2.553406279347892,
+            2.5902483501742677,
+            2.3238128364573654,
+            2.2307743020540003,
+            2.0658406929084925,
+            1.7067894232149468
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 2,
+          "interior_peak": true,
+          "highest_minus_lowest": -0.8466168561329455,
+          "highest_minus_penultimate": -0.3590512696935457
+        }
+      },
+      {
+        "seed": 2,
+        "window": 5,
+        "initialization": 200002,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.048005781450225014,
+        "expected_loss": 2.397897373239649,
+        "raw_curve": {
+          "means": [
+            0.13673554472417834,
+            0.13566256906661003,
+            0.12253524623675283,
+            0.1179460037332873,
+            0.11212872046317654,
+            0.09591670091659785
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.040818843807580496,
+          "highest_minus_penultimate": -0.016212019546578693
+        },
+        "balanced_curve": {
+          "means": [
+            2.565982216833363,
+            2.5319300864511853,
+            2.2693884675039495,
+            2.198272512347528,
+            2.0788093136435757,
+            1.6847548707734807
+          ],
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.8812273460598821,
+          "highest_minus_penultimate": -0.39405444287009495
+        }
+      },
+      {
+        "seed": 3,
+        "window": 10,
+        "initialization": 100003,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.0005818143933663713,
+        "expected_loss": 2.403600186325339,
+        "raw_curve": {
+          "means": [
+            1.705833385783536,
+            1.6626680551161037,
+            1.6104831980426348,
+            1.5832085613512579,
+            1.4771824703936105,
+            1.2916617416625469
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.41417164412098906,
+          "highest_minus_penultimate": -0.18552072873106362
+        },
+        "balanced_curve": {
+          "means": [
+            2.4164815909784574,
+            2.349162911232898,
+            2.2867874979756593,
+            2.2658060079816704,
+            2.1412783823997557,
+            1.9238136602797673
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.4926679306986901,
+          "highest_minus_penultimate": -0.21746472211998835
+        }
+      },
+      {
+        "seed": 3,
+        "window": 10,
+        "initialization": 200003,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.0011189126613703087,
+        "expected_loss": 2.393824315562897,
+        "raw_curve": {
+          "means": [
+            1.727496674212839,
+            1.6750113360106444,
+            1.6392138595975683,
+            1.6141297649420219,
+            1.5327931210628079,
+            1.4029354743143703
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.32456119989846877,
+          "highest_minus_penultimate": -0.12985764674843758
+        },
+        "balanced_curve": {
+          "means": [
+            2.4332539775716753,
+            2.3589025879618903,
+            2.3036223380144207,
+            2.2761472635259894,
+            2.1544326691734006,
+            1.9424561414555126
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.4907978361161627,
+          "highest_minus_penultimate": -0.211976527717888
+        }
+      },
+      {
+        "seed": 3,
+        "window": 1,
+        "initialization": 100003,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.021673709132102283,
+        "expected_loss": 0.6363787464910267,
+        "raw_curve": {
+          "means": [
+            1.8541784225170754,
+            0.9616250899168529,
+            0.550112280728896,
+            0.41272622320392705,
+            0.22317357376737218,
+            0.0660131739174218
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -1.7881652485996535,
+          "highest_minus_penultimate": -0.1571603998499504
+        },
+        "balanced_curve": {
+          "means": [
+            16.53876072213156,
+            9.66754080278617,
+            7.006068374578744,
+            5.451322516188511,
+            3.0680876159249033,
+            0.9250969941958523
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -15.613663727935707,
+          "highest_minus_penultimate": -2.142990621729051
+        }
+      },
+      {
+        "seed": 3,
+        "window": 1,
+        "initialization": 200003,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.039695552807305044,
+        "expected_loss": 1.3203131514766107,
+        "raw_curve": {
+          "means": [
+            0.29442441520708923,
+            0.18436565946072433,
+            0.1129327004461092,
+            0.10277303855631183,
+            0.08018904896428289,
+            0.04929061071070343
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.2451338044963858,
+          "highest_minus_penultimate": -0.030898438253579456
+        },
+        "balanced_curve": {
+          "means": [
+            6.550462153337503,
+            4.724581877689369,
+            3.401955774203435,
+            3.1379327115589906,
+            2.5266489349062478,
+            1.601177932726959
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -4.949284220610544,
+          "highest_minus_penultimate": -0.9254710021792887
+        }
+      },
+      {
+        "seed": 3,
+        "window": 2,
+        "initialization": 100003,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.042769810354761496,
+        "expected_loss": 2.074318817105654,
+        "raw_curve": {
+          "means": [
+            0.8004218148384415,
+            0.300232306188862,
+            0.11509367538438452,
+            0.10661400157366574,
+            0.09318298395759908,
+            0.07542940477323362
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.7249924100652079,
+          "highest_minus_penultimate": -0.01775357918436546
+        },
+        "balanced_curve": {
+          "means": [
+            6.096854842856943,
+            3.4491564290937062,
+            2.2982752545128493,
+            2.139613599113871,
+            1.890770891729703,
+            1.3597775704155388
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -4.737077272441404,
+          "highest_minus_penultimate": -0.5309933213141642
+        }
+      },
+      {
+        "seed": 3,
+        "window": 2,
+        "initialization": 200003,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.013898768762415394,
+        "expected_loss": 1.6599119934430568,
+        "raw_curve": {
+          "means": [
+            0.8568602631190282,
+            0.3738558773078292,
+            0.3455059032379386,
+            0.3232989817468287,
+            0.27536047241167283,
+            0.20340890241133286
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.6534513607076953,
+          "highest_minus_penultimate": -0.07195157000033997
+        },
+        "balanced_curve": {
+          "means": [
+            4.865076774320868,
+            2.9452580005115303,
+            2.7684132160506016,
+            2.564395186072408,
+            2.1832796629604427,
+            1.5857951422617438
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -3.2792816320591243,
+          "highest_minus_penultimate": -0.597484520698699
+        }
+      },
+      {
+        "seed": 3,
+        "window": 5,
+        "initialization": 100003,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.02029113362271563,
+        "expected_loss": 2.3860604833403976,
+        "raw_curve": {
+          "means": [
+            0.2053058709259243,
+            0.15764427702819178,
+            0.14972155732981388,
+            0.14509605750925528,
+            0.13696848391069616,
+            0.11935503403387657
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.08595083689204774,
+          "highest_minus_penultimate": -0.017613449876819592
+        },
+        "balanced_curve": {
+          "means": [
+            2.680629503421082,
+            2.3380978014750595,
+            2.200001847340917,
+            2.1301621070531174,
+            1.9721475664403965,
+            1.588364649859997
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -1.0922648535610848,
+          "highest_minus_penultimate": -0.3837829165803994
+        }
+      },
+      {
+        "seed": 3,
+        "window": 5,
+        "initialization": 200003,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.07839584918228641,
+        "expected_loss": 2.447170166451061,
+        "raw_curve": {
+          "means": [
+            0.16338360202700472,
+            0.14304403856474476,
+            0.12990816733633367,
+            0.12980733319803922,
+            0.11966573380975538,
+            0.09909964432326249
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.06428395770374223,
+          "highest_minus_penultimate": -0.020566089486492897
+        },
+        "balanced_curve": {
+          "means": [
+            2.783975707665416,
+            2.4779134667608735,
+            2.273723174780861,
+            2.2070818172056215,
+            1.9935566404620533,
+            1.6331437000024387
+          ],
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            53,
+            75
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -1.1508320076629772,
+          "highest_minus_penultimate": -0.3604129404596146
+        }
+      },
+      {
+        "seed": 4,
+        "window": 10,
+        "initialization": 100004,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.024122860018795586,
+        "expected_loss": 2.559617246911157,
+        "raw_curve": {
+          "means": [
+            0.30516689303306765,
+            0.28871026487627427,
+            0.2841094307576616,
+            0.27519554527363915,
+            0.26350650165607997,
+            0.23185846960195297
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.07330842343111468,
+          "highest_minus_penultimate": -0.031648032054127
+        },
+        "balanced_curve": {
+          "means": [
+            2.131452726763509,
+            1.99823670447744,
+            1.943342347912459,
+            1.8674199573925232,
+            1.7970512285955216,
+            1.5543818515313814
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.5770708752321274,
+          "highest_minus_penultimate": -0.24266937706414016
+        }
+      },
+      {
+        "seed": 4,
+        "window": 10,
+        "initialization": 200004,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 5.365568806238977e-05,
+        "expected_loss": 2.3985695553539013,
+        "raw_curve": {
+          "means": [
+            1.594491046096363,
+            1.534884219242037,
+            1.511418745826952,
+            1.467092725841212,
+            1.4189699185502407,
+            1.2405359065589343
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.35395513953742874,
+          "highest_minus_penultimate": -0.17843401199130637
+        },
+        "balanced_curve": {
+          "means": [
+            2.437798169512863,
+            2.3440856519723905,
+            2.300199320796707,
+            2.235277540401956,
+            2.177277358077319,
+            1.931698781814628
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.5060993876982351,
+          "highest_minus_penultimate": -0.24557857626269097
+        }
+      },
+      {
+        "seed": 4,
+        "window": 1,
+        "initialization": 100004,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.0771825526490777,
+        "expected_loss": 0.8692597235756341,
+        "raw_curve": {
+          "means": [
+            2.082281924037663,
+            0.9645724226074206,
+            0.4533133310735544,
+            0.3233479880361615,
+            0.13268951021088846,
+            0.04491108460745926
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -2.0373708394302037,
+          "highest_minus_penultimate": -0.08777842560342919
+        },
+        "balanced_curve": {
+          "means": [
+            18.3630860510617,
+            10.141075798972892,
+            5.755764448250193,
+            4.0585181419300405,
+            1.9328716885337889,
+            0.7111881350713654
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -17.651897915990336,
+          "highest_minus_penultimate": -1.2216835534624235
+        }
+      },
+      {
+        "seed": 4,
+        "window": 1,
+        "initialization": 200004,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.027035445706813925,
+        "expected_loss": 1.5748139491856215,
+        "raw_curve": {
+          "means": [
+            0.12202228947129087,
+            0.09367843631521947,
+            0.08838804942840672,
+            0.04782638626045981,
+            0.04046585748640086,
+            0.02296554360995987
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.09905674586133101,
+          "highest_minus_penultimate": -0.01750031387644099
+        },
+        "balanced_curve": {
+          "means": [
+            4.819928298218561,
+            4.274633321509043,
+            4.113979440290126,
+            3.047587326457115,
+            2.642347731314951,
+            1.6582478401983116
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -3.1616804580202493,
+          "highest_minus_penultimate": -0.9840998911166392
+        }
+      },
+      {
+        "seed": 4,
+        "window": 2,
+        "initialization": 100004,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.008222361211364193,
+        "expected_loss": 1.9145263364839291,
+        "raw_curve": {
+          "means": [
+            1.0306957808584407,
+            0.15987199146193387,
+            0.142457721369727,
+            0.1261480945301862,
+            0.11811624563610784,
+            0.08743622118289893
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.9432595596755418,
+          "highest_minus_penultimate": -0.030680024453208915
+        },
+        "balanced_curve": {
+          "means": [
+            6.591261738945171,
+            2.642287926846288,
+            2.4136172140268632,
+            2.1212630496793428,
+            1.9612558990440476,
+            1.382917480533791
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -5.20834425841138,
+          "highest_minus_penultimate": -0.5783384185102567
+        }
+      },
+      {
+        "seed": 4,
+        "window": 2,
+        "initialization": 200004,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.022663396025215922,
+        "expected_loss": 2.1174638435750754,
+        "raw_curve": {
+          "means": [
+            0.5058337519208936,
+            0.06580080021154927,
+            0.06018711508964278,
+            0.055510577034622394,
+            0.053839833944416327,
+            0.039017529278448725
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.46681622264244493,
+          "highest_minus_penultimate": -0.014822304665967602
+        },
+        "balanced_curve": {
+          "means": [
+            5.3323837019750036,
+            2.758213520798674,
+            2.5970308322790037,
+            2.3473778486378767,
+            2.237907871300841,
+            1.5454976053714395
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -3.7868860966035642,
+          "highest_minus_penultimate": -0.6924102659294016
+        }
+      },
+      {
+        "seed": 4,
+        "window": 5,
+        "initialization": 100004,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.004893199787786422,
+        "expected_loss": 2.377347872313803,
+        "raw_curve": {
+          "means": [
+            0.24955741420656088,
+            0.20518340265194746,
+            0.19757200573975486,
+            0.19287747791639068,
+            0.1808558787209347,
+            0.15944674364007838
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.0901106705664825,
+          "highest_minus_penultimate": -0.021409135080856317
+        },
+        "balanced_curve": {
+          "means": [
+            2.6584243270734715,
+            2.317146727049314,
+            2.2377252652373962,
+            2.1066400437819865,
+            2.0192366005464844,
+            1.6150095392453647
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -1.0434147878281068,
+          "highest_minus_penultimate": -0.40422706130111963
+        }
+      },
+      {
+        "seed": 4,
+        "window": 5,
+        "initialization": 200004,
+        "iterations": 500,
+        "optimizer_success": false,
+        "gradient_max": 0.002863107536205604,
+        "expected_loss": 2.089989858090338,
+        "raw_curve": {
+          "means": [
+            0.4971935840817768,
+            0.4682051130129976,
+            0.4626800022437451,
+            0.4444814209006236,
+            0.41996916724390077,
+            0.339641936408661
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.15755164767311575,
+          "highest_minus_penultimate": -0.08032723083523974
+        },
+        "balanced_curve": {
+          "means": [
+            2.833973005016275,
+            2.657934358564794,
+            2.5930225507666624,
+            2.4939725206118704,
+            2.3960348204183672,
+            1.9798228386647976
+          ],
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            51,
+            72
+          ],
+          "peak_bin": 1,
+          "interior_peak": false,
+          "highest_minus_lowest": -0.8541501663514772,
+          "highest_minus_penultimate": -0.41621198175356966
+        }
+      }
+    ]
+  },
+  "report": {
+    "verified_curves": 241,
+    "verified_initialization_comparisons": 40
+  },
+  "provenance": {
+    "verification_source_sha256": {
+      "scripts/window_training/verify.py": "ac1e3fc2a644285be4a07b8e089877a878f78bf4c09e92fafd264e1c73656d65",
+      "tests/test_window_verification.py": "8f0043feba07ce9e35142cc7743ecc00ff4be46aeeb5dbb096148496037946c2"
+    },
+    "input_manifest_sha256": {
+      "schedule/plan.json": "1f71f18d13a393ef246e975379541f64b10f2738de5b9f38f010d0dce430db2b",
+      "schedule/completion.json": "827a832542b100d124982923eba0c8b294b0fe5c9709dc1ab1fb794ca3537c9d",
+      "windows/plan.json": "d73ec84baafca522d1c4265f73fecc9cc5dca3185b173d019fa95c9dc6d2bfd6",
+      "windows/completion.json": "f84030f2cbf81868953cd23910129a1cedb66bb7f9a6d4a6301ff3d603a4544a",
+      "report/manifest.json": "9fa12f2342560d1656a4c766c1a5d269c43950090af82dd431d323043aba188a"
+    }
+  },
+  "repeat": {
+    "mode": "compare_existing_seed_zero_repeat",
+    "byte_identical_scientific_artifacts": 42,
+    "artifact_sha256": {
+      "schedule/seed0/completion.json": "f26b1e2f837c88d1ee430fa8cff50d15453ded23ea4fa870bda6e290a61b7c9d",
+      "schedule/seed0/factors/floor_epoch10.npz": "06a4fe0453578fdc4cbeb4c2b45bc38e71d5284415bbb8d775b3bdc0cf9df83b",
+      "schedule/seed0/factors/floor_epoch15.npz": "bbf8d5cfdf682a88fdbc0e218ea052f73be2e12bf2f495ba211645712f8ffb9b",
+      "schedule/seed0/factors/floor_epoch20.npz": "17547c37016df5dd0c6dcec4a955b09eb83971189f57d5cb1cb1ccfdff3d374e",
+      "schedule/seed0/factors/floor_epoch5.npz": "b74f3d1d456c09eb9e8195a82c246f3ac60b2d35a3166788743752dea0ac1aec",
+      "schedule/seed0/factors/floor_epoch6.npz": "76c63cb836bc34b9f6d19501ab853fa9ddeacbc773de283aaba92e981c894145",
+      "schedule/seed0/factors/floor_epoch7.npz": "9a390b78d2c7f9a8ecb2f231c10fb741f40c797737957148d5afe47a6d56959c",
+      "schedule/seed0/factors/reheat_epoch10.npz": "d7105907d9c5342eb6183ab15110b980f9d2ae49af01e97535f21cf420aafbda",
+      "schedule/seed0/factors/reheat_epoch15.npz": "516ffcc52e83ba548701a9afd13234577f555f5fb089b39a40496b8072bb2757",
+      "schedule/seed0/factors/reheat_epoch20.npz": "b9b363d2ab965b707dce2e58ce1cafa9570b31eb1e39035aa14df919962fe40b",
+      "schedule/seed0/factors/reheat_epoch5.npz": "b74f3d1d456c09eb9e8195a82c246f3ac60b2d35a3166788743752dea0ac1aec",
+      "schedule/seed0/factors/reheat_epoch6.npz": "50edf3283549929aab877c2f8242ed0a8ef7357137063ea9ddfad8777d540b06",
+      "schedule/seed0/factors/reheat_epoch7.npz": "2b1b9012b277be7e281fca91396a37940345ab6a961ad46775475403e4b71b0d",
+      "schedule/seed0/floor.json": "086cc7b6a43fee8ee5dcf5616848c2f8835b2029a994e79480f0857a5ea0767b",
+      "schedule/seed0/metadata.json": "6535ae61ad7e7c5291a7e5361c06994cea94f5a4b9893b3e1c0a82be5ca3d5c4",
+      "schedule/seed0/pairing.json": "6f3a3c512169c7b347f5a2c1dab6c781b710a8c3c34657556e0fc27dbaf5f6fa",
+      "schedule/seed0/reheat.json": "1380b46b31a57327d59fa70752bab37ac3711e122daa6c03d4809e7502d1277a",
+      "windows/graphs/seed0.json": "70bb131939f55ffb40927c7b7f148d00649ac63b71e6b0cd07739b213d532ebc",
+      "windows/runs/seed0_L10_init100000.json.gz": "7f50701bd77407da1445ae459e11a41a3caa43d4a929c884ffc500160d508530",
+      "windows/runs/seed0_L10_init100000.sha256": "f99247bef87c79981e440cd7c4808e908e44d7e24ff5adcebea41fbd70b84d9a",
+      "windows/runs/seed0_L10_init200000.json.gz": "cca70b4f31765b1ae40f586bb2b430a684dbe35af0f9a14c03c7c6a635a15b87",
+      "windows/runs/seed0_L10_init200000.sha256": "f7a4b6ee1dd3ffe42e940363b644ba9347bbbf58414f0852a2ff67e8bd9ec31b",
+      "windows/runs/seed0_L1_init100000.json.gz": "b17424b4c8ebb469d7be21c60a4b115e97a941c9e2d8090ffac25f12a0759ccd",
+      "windows/runs/seed0_L1_init100000.sha256": "c322c45fee3830989a855fc16822c6522a23f4d548d85a92860d941a0410d677",
+      "windows/runs/seed0_L1_init200000.json.gz": "86a658cf1fb38189454d5a623b7a12d90c552f966cdd0125f15e52e947544b96",
+      "windows/runs/seed0_L1_init200000.sha256": "7e422c231a63aa9c9e23327399fe612e60fe2c0a2135de31e1e2e47206c6ea0e",
+      "windows/runs/seed0_L2_init100000.json.gz": "52eb85d379f64d9bda4688c9fb31645c0f3a01f0bbad690a0228ccb936ccf766",
+      "windows/runs/seed0_L2_init100000.sha256": "789c0c5877fd366aac8f8c230705ede8b5b8eae31568a815b6d66825136fbe7a",
+      "windows/runs/seed0_L2_init200000.json.gz": "ddccf5d8e46209a6f45063956ebddaf2c5a4f40b2d42ad0b88956c17e7adfc5a",
+      "windows/runs/seed0_L2_init200000.sha256": "af4f9500e8e570b8f3291c35abc46b962050c439d1a49cf27db44d61db5a3dc8",
+      "windows/runs/seed0_L5_init100000.json.gz": "c41cdaf54f95c59f6c3b4fe2d3f1d939978ed44a9dda042d89f1f9ff33fed20a",
+      "windows/runs/seed0_L5_init100000.sha256": "b9f939a1944edc3d81a885b8a795381fdf77cb1a08db808623dbd8ff5c99a44e",
+      "windows/runs/seed0_L5_init200000.json.gz": "088499ded1250da9bd083ac100eb6e0c9154cbde973a3b70c63c7b05fa667f75",
+      "windows/runs/seed0_L5_init200000.sha256": "88f865749602aacada25032acdee5e570fe4d4a6ec15761312c82244b318b5a3",
+      "windows/factors/seed0_L10_init100000.npy.gz": "37c75cbdd5ce754a61903b44bd2e8f60ba6a8c30bce34470dced2056c2633275",
+      "windows/factors/seed0_L10_init200000.npy.gz": "a00ed991598853671d35567489f2300df86264c156ef4279bde7a7d182158958",
+      "windows/factors/seed0_L1_init100000.npy.gz": "fc0a1f1ffb5a74cc203e58ca914d831234130997c822f13f120d3e747b87d744",
+      "windows/factors/seed0_L1_init200000.npy.gz": "6ec48ac0c4badabb3094d016ead6f05717e520013d27a0de46f8af64093e4c23",
+      "windows/factors/seed0_L2_init100000.npy.gz": "89375bd0f3f1cf456c4d3ff2cd669f4f4b99ef96243e5a17b52b59b653d61817",
+      "windows/factors/seed0_L2_init200000.npy.gz": "9255f76fd9e64c9dd6f3dd00522a6b06cf3837647c22c558e92ac86a0750cd51",
+      "windows/factors/seed0_L5_init100000.npy.gz": "5ef786673e58c9f2e67850a20b69fe3b8af9cf4be58b0f8eb513c47bf66aa7bb",
+      "windows/factors/seed0_L5_init200000.npy.gz": "6d53ca1d7e16d33842b9a87a8b782d1e3bb28c0ab3a55bdbf36aeda576b777de"
+    }
+  }
+}

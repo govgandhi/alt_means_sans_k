@@ -83,7 +83,7 @@
     "results/turnover_surface/turnover_surface.pdf": "d0f8aa3fdb3c34ff7373be47a00795bd18ec09d1e0f2639b9d5dc143875bb19e",
     "scripts/audit_realized_graph.py": "de70965a3f1cb854397424e6efa8934002a68c15d9bee94419c15c90fa1055c0",
     "scripts/simulate_exact_center_exposure.py": "7e8dd787c446660145776ca59050670a8c52f89454d74a78ed5bdca01bdbfa0d",
-    "scripts/simulate_turnover_surface.py": "61163a7706e866b9fdd096fee732636008e91e898dce19522b45f26e8c6512ec",
+    "scripts/simulate_turnover_surface.py": "d8bf33c7c7e22c623c2f488329a0f7bba57cd1e932f5a963593fe138fcad6bff",
     "tests/test_realized_graph_audit.py": "045c36eac0bd5855ade808ee8b15ed1721b5c8344f2558f736959395898268de"
   }
 }

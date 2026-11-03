@@ -16,6 +16,7 @@
     {../../results/turnover_surface/}
     {../../results/gensim_threshold_sweep/}
     {../../results/prospective_validation/}
+    {../../results/training_trajectory/}
 }
 
 \newcommand{\R}{\mathbb{R}}
@@ -52,7 +53,7 @@ At unigram negative sampling, however, marginal normalization cancels node-speci
 We then use controlled finite-sample experiments to probe sensitivity to exposure and context sampling.
 Equal exposure leaves norms decreasing with degree, proportional exposure makes them increase, and exposure proportional to the cube root of frequency produces an inverted-U.
 Mixing node contexts toward their marginal distribution removes the decreasing branch.
-Literal word2vec experiments reproduce the threshold-dependent movement of the norm peak, which persists after approximately matching retained-token budgets.
+Corrected word2vec controls show that turnover persists without subsampling under the original learning-rate schedule, but is absent at twenty epochs under a constant-rate alternative.
 We then freeze predictions based only on realized pair exposure and empirical context KL before training embeddings on two new synthetic graph families and the NetScience coauthorship network.
 Across nine graph-family--threshold curves, the median peak error is zero degree bins, eight peaks lie within one bin of their predictions, and the pooled node-level Spearman correlation is \(0.881\).
 The controlled curves are consistent with a weakening norm response to exposure relative to context specificity; exposure itself need not decrease or reach a fixed ceiling.
@@ -90,7 +91,7 @@ The exposure intervention assigns each node an exact number of positive-center u
 The context intervention mixes each conditional context distribution toward its own marginal, preserving that marginal before integer pair allocation.
 Equal exposure reveals a decreasing norm-degree relation; proportional exposure produces a monotone increase; the exponent \(1/3\) produces an inverted-U, and \(2/3\) still produces an increase.
 Context mixing removes the decreasing branch.
-Literal Gensim word2vec experiments shift the peak to higher degree as subsampling weakens, and matching expected retained-center counts does not change the peak locations.
+Corrected Gensim controls reproduce the peak movement with weaker subsampling under the original learning-rate schedule, but also show that the unfiltered curve depends on learning-rate history.
 Before training on new targets, we freeze node-level norms and peak locations predicted from realized positive-pair exposure and context KL.
 The predictions reproduce the peak movement in direct preferential-attachment graphs, clustered scale-free graphs, and an empirical coauthorship network, with explicit misses at the boundaries of the tested degree range.
 
@@ -824,7 +825,7 @@ In an uncorrelated configuration model, the neighbor average in Equation~\eqref{
 This is a realized-graph relation, not Equation~\eqref{eq:population-context-kl}.
 The local KL approximation for centered, transformed embeddings~\citep{oyama2022norm} motivates a specificity hypothesis; it does not establish a decreasing raw or balanced norm at convergence.
 
-Word2vec subsampling changes the exposure term.
+Word2vec subsampling changes retained-token exposure and the conditional context distribution.
 For token frequency \(p_i>\tfrac{3+\sqrt{5}}{2}t\approx2.62t\), the Gensim form of the Mikolov retention probability is~\citep{mikolov2013distributed}
 \begin{equation}
     \operatorname{keep}_t(p_i)
@@ -843,6 +844,7 @@ The expected retained-center exposure is consequently
     \label{eq:retained-exposure}
 \end{equation}
 Exposure still increases with frequency.
+Here \(m_i\) counts expected retained tokens, not realized positive pairs: deleting tokens before windowing also changes which contexts remain adjacent to each center.
 Its log elasticity is one below the cutoff and
 \begin{equation}
     \frac{d\log m_i}{d\log p_i}
@@ -945,7 +947,7 @@ We treat this second fit as exploratory because its form was chosen after the gl
 
 \subsection{Literal word2vec validation}
 
-We next trained literal Gensim word2vec models on paired random-walk corpora from the same five graph seeds.
+The original, uncorrected Gensim sweep trained word2vec models on paired random-walk corpora from the same five graph seeds.
 Each corpus contains \(300n\) length-five walks with stationary starting nodes, and each model uses a 64-dimensional embedding, window size one, five negative samples, one worker, and five epochs.
 The three subsampling thresholds \(t\in\{3\times10^{-4},10^{-3},3\times10^{-3}\}\) share the corpus, initialization seed, and training seed within each graph.
 
@@ -956,22 +958,57 @@ The rise from the lowest bin to the peak increases from \(0.372\) to \(0.569\), 
 \begin{figure*}[t]
     \includegraphics[width=\textwidth]{gensim_threshold_sweep}
     \caption{
-        Literal Gensim word2vec validation.
+        Historical Gensim word2vec sweep, before the implementation corrections described below.
         (a) Expected retained center tokens as a function of degree at three subsampling thresholds.
         (b) Raw center-vector norms after five epochs.
         (c) Norms after approximately matching expected retained-center totals with eight, six, and five epochs.
         (d) Observed peak locations and the exploratory controlled-interpolation fit.
         The fixed-epoch and budget-matched peak locations coincide.
-        Points and error bars show degree-bin means and standard errors across five paired graph seeds.
+        Points show pooled degree-bin means; the historical plotting routine computed node-based standard errors, rather than variation across graph seeds.
     }
     \label{fig:gensim-turnover}
 \end{figure*}
 
 Aggressive subsampling retains fewer tokens at a fixed epoch count.
-We therefore repeated training with eight, six, and five epochs, which approximately matches the expected retained-center totals across thresholds.
+That sweep also repeated training with eight, six, and five epochs, which approximately matches the expected retained-center totals across thresholds.
 The peak locations remain \(2.98\), \(6.00\), and \(7.73\).
-The threshold effect is not explained by the total number of retained centers alone.
+These historical retained-token budget comparisons have not yet been repeated with the corrected implementation and do not match realized positive-pair counts.
 The exploratory controlled fit places the peak too high at all three thresholds, by four, two, and one degree bins from strongest to weakest subsampling; this comparison does not establish the mechanism generating the Gensim peak.
+
+\subsection{Corrected no-subsampling and training-trajectory controls}
+
+We repeated the fixed-five-epoch sweep with corrected repeated-visit counts, integer-token negative-table indexing, and compiled inner-product arithmetic, adding a condition with subsampling disabled.
+All four conditions share the original corpus, initialization, and raw-token negative distribution within each graph.
+Without subsampling, all five graphs have interior maxima in both raw and balanced norms; the pooled maximum lies near degree \(7.73\), with a raw-norm drop of \(0.244\) to the highest-degree bin.
+Subsampling is therefore unnecessary for this turnover under the original training schedule.
+
+To test dependence on training duration and learning-rate history, we trained forty continuous trajectories: five graphs, four subsampling settings, and two schedules.
+The first schedule reproduces the original decay from \(0.025\) to \(0.0001\) over five epochs, then continues at \(0.0001\); the second uses a constant rate of \(0.0025\), the final rate used by the separate controlled trainer.
+We recorded checkpoints after \(1,2,5,10,20\) epochs without restarting training or redefining either schedule.
+All twenty five-epoch continuation checkpoints reproduce the corrected baseline factors exactly.
+With subsampling disabled, the original schedule develops interior maxima by epoch two and retains them through epoch twenty in all five graphs.
+Under the constant-rate alternative, no graph has an interior maximum at any recorded checkpoint; at epoch twenty all five binned curves are increasing, for both norm readouts (Fig.~\ref{fig:training-schedule}).
+The weakest filtering setting, \(t=0.003\), shows the same schedule contrast.
+At stronger filtering settings, interior maxima can appear, disappear, or reappear during training; the full trajectories and graph-level uncertainty are retained with the experiment outputs.
+
+\begin{figure*}[t]
+    \includegraphics[width=\textwidth]{unfiltered_schedule_comparison}
+    \caption{
+        Learning-rate dependence without subsampling, after twenty epochs on five paired graphs.
+        Left: raw input norms. Right: balanced norms.
+        Each schedule uses the same graph, corpus, initial factors, and negative distribution within a pair.
+        Solid curves and error bars show equally weighted graph means and standard errors in common degree bins; faint curves show individual graphs.
+        Eight requested quantile bins yield six occupied bins because degrees repeat.
+        This comparison demonstrates schedule dependence at a fixed epoch count, not convergence or matched optimization progress.
+    }
+    \label{fig:training-schedule}
+\end{figure*}
+
+A fixed-corpus expected logistic SGNS loss decreases at every recorded interval in all forty trajectories.
+This diagnostic integrates over independent retention, accounts for skipped negative proposals equal to the positive output, and is compared only within a subsampling setting.
+Its smooth objective differs from Gensim's approximate arithmetic and its skipped updates outside the score interval \((-6,6)\).
+Neither loss reduction nor persistence of a binned maximum establishes convergence, and these tests do not identify why high-degree nodes follow different norm trajectories.
+Embedding dimension and realized positive-pair budgets have not been matched between the controlled and Gensim pipelines.
 
 \begin{figure*}[t]
     \includegraphics[width=\textwidth]{prospective_validation}
@@ -1014,6 +1051,8 @@ This separation sharpens the qualitative account proposed for word and trajector
 The specified exposure and context interventions generate increasing, decreasing, and inverted-U curves even while exposure grows.
 Within the response model, turnover occurs when the marginal norm gain from exposure becomes weaker than the norm loss associated with less specific contexts.
 Standard word2vec subsampling makes retained-token exposure grow asymptotically as the square root of frequency, but this scaling does not establish the origin of the observed norm turnover.
+The corrected controls show turnover without subsampling under the original annealing schedule, while a constant-rate alternative gives increasing unfiltered curves at twenty epochs.
+Thus learning-rate history is an additional experimentally demonstrated dependence; the exposure--specificity account has not been established as a complete mechanism for the Gensim curves.
 Frozen predictions from exposure and context KL preserved node-norm ordering and approximate peak movement across two unseen synthetic graph families and one empirical graph.
 
 The numerical evidence has clear limits.
