@@ -18,6 +18,7 @@
     {../../results/prospective_validation/}
     {../../results/training_trajectory/}
     {../../results/window_training_continuation/report/}
+    {../../results/norm_identifiability/}
 }
 
 \newcommand{\R}{\mathbb{R}}
@@ -59,6 +60,7 @@ Corrected word2vec controls show that turnover persists without subsampling unde
 We then freeze predictions based only on realized pair exposure and empirical context KL before training embeddings on two new synthetic graph families and the NetScience coauthorship network.
 Across nine graph-family--threshold curves, the median peak error is zero degree bins, eight peaks lie within one bin of their predictions, and the pooled node-level Spearman correlation is \(0.881\).
 The controlled curves are consistent with a weakening norm response to exposure relative to context specificity; exposure itself need not decrease or reach a fixed ceiling.
+An exact graph construction shows that arbitrarily small objective gaps can also permit distinct balanced norm-degree shapes after removing overall scale.
 These results distinguish population geometry, realized-graph targets, and trained norms, providing testable controls for interpreting radial information in network embeddings.
 \end{abstract}
 
@@ -706,6 +708,29 @@ It changes the score matrix and therefore persists after balancing; it is not me
 The proposition concerns unrestricted scores and asymptotically optimal loss.
 With positive weights everywhere, a minimizer over matrices of rank at most \(r\) exists but need not be unique; neither case guarantees convergence of a rank-constrained optimizer.
 
+Removing overall scale need not identify the curve either.
+Write \(r_i(M)^2=[(MM^\top)^{1/2}]_{ii}\), \(\rho(M)^2=n^{-1}\sum_i r_i(M)^2\), and \(\widetilde r_i=r_i/\rho\) for \(\rho>0\).
+\begin{proposition}[Different shapes at arbitrarily small loss gap]
+\label{prop:normalized-shapes}
+On a triangle with one pendant node, fix one-step contexts, uniform center exposure, stationary noise, five collision-allowing negatives, and dimension four.
+For every \(\delta>0\), there are balanced embeddings with increasing, decreasing, and peaked norm-degree profiles, each within \(\delta\) of the same unrestricted loss infimum.
+Their RMS radii are equal, and their RMS-normalized profiles are distinct.
+\end{proposition}
+
+\begin{proof}
+The degrees are \((3,2,2,1)\), with weights \(p^+_{ij}=A_{ij}/(4d_i)\) and \(p^-_{ij}=5d_j/32\).
+Keep edge scores at \(\log[8/(5d_id_j)]\) and set off-diagonal nonedge scores to \(-s\), where \(s=\max\{0,\log[(35/16)/\delta]\}\).
+For each desired positive node profile \(h\), let \(\alpha_i=h_i^2/(\frac14\sum_jh_j^2)\) and set \(M_{ii}=-D\alpha_i\).
+Choose one common \(D\) so that every diagonal is at most \(-s\) and strictly exceeds its off-diagonal absolute row sum in magnitude.
+Then \(M\) is symmetric negative definite, so \((MM^\top)^{1/2}=-M\), \(r_i^2=D\alpha_i\), and \(\rho=\sqrt D\).
+All edge terms are minimized; the remaining loss is at most \((35/16)e^{-s}\le\delta\), including the diagonals.
+Assigning \(h\) by degree \(1,2,3\) as \((1,2,3)\), \((3,2,1)\), or \((1,3,1)\) yields the three shapes.
+Balanced factors \(U=(-M)^{1/2}\), \(V=-U\) realize each score matrix in four dimensions.
+\end{proof}
+
+The common RMS can grow as the tolerance shrinks, but the normalized shapes remain different.
+This is a statement about what the fixed objective permits, not which solution training selects, nor a guarantee about the larger rank-24 experiments.
+
 \section{Perturbation of radius and direction}
 \label{sec:finite-sample}
 
@@ -1010,6 +1035,25 @@ Thus nearly optimal loss can coexist with unsettled norm geometry beyond gauge a
     \label{fig:fixed-noise-windows}
 \end{figure*}
 
+Reconstructing all forty final fits from saved factors separates overall scale from shape (Fig.~\ref{fig:norm-identifiability}).
+After dividing each fit's balanced radii by their node-level RMS, the upper-bin gap changes from \(-0.1129\pm0.0054\) at window five to \(-0.0934\pm0.0053\) at window ten; the decline weakens in every paired graph and start.
+Normalized node-level RMS differences between starts span \(0.984\)--\(1.187\) at window one and \(0.487\)--\(0.886\) at window two, versus at most \(0.00452\) and \(5.54\times10^{-5}\) at windows five and ten.
+Short-window differences include large low-degree outliers, and the paired loss gaps do not establish two equally near-optimal shapes at the tight tolerances attained by the best single fits.
+The exact construction in Proposition~\ref{prop:normalized-shapes} supplies that logical counterexample separately.
+A conservative full-support loss-to-radius bound is uninformative for all ten window-ten fits; their agreement supports numerical robustness, not certified uniqueness of rank-24 geometry.
+
+\begin{figure*}[t]
+    \includegraphics[width=\textwidth]{norm_identifiability}
+    \caption{
+        Objective accuracy and normalized balanced shape.
+        (a) The exact four-node construction has three distinct profiles at a common RMS, each within \(10^{-6}\) of the same loss infimum.
+        (b) Saved window-five and window-ten fits, normalized separately before averaging starts within graph; error bars are graph-level standard errors and faint lines show individual graphs.
+        (c) Node-level RMS differences between the two normalized starts on every graph, including unsettled short windows; the dotted line is the geometric bound \(\sqrt2\).
+        Agreement between starts does not certify uniqueness or global optimality.
+    }
+    \label{fig:norm-identifiability}
+\end{figure*}
+
 \subsection{Literal word2vec validation}
 
 The original, uncorrected Gensim sweep trained word2vec models on paired random-walk corpora from the same five graph seeds.
@@ -1110,8 +1154,8 @@ The prospective result supports qualitative transfer and approximate peak locali
 The established population results provide a baseline for interpreting finite-training experiments.
 Normalized spectral embeddings and raw random-walk pair probabilities preserve degree as a radial multiplier, with exponents \(1/2\) and \(1\), respectively.
 For \(F_{ab}>0\) on all block pairs, unigram population degree cancellation concerns an idealized score matrix; realized contexts change that target, while rank constraints, factorization, and optimization determine the resulting norms.
-Balancing removes factorization ambiguity, but nearly optimal loss alone can leave norm geometry unsettled (Proposition~\ref{prop:loss-norm-boundary} and Section~\ref{sec:fixed-noise-windows}).
-Structural interpretation therefore requires a specified graph-conditioned target and evidence that the balanced norm readout has stabilized under the stated fitting procedure.
+Balancing removes factorization ambiguity, but nearly optimal loss alone can leave norm geometry unsettled and, in the exact construction, permit different shapes even after RMS normalization (Propositions~\ref{prop:loss-norm-boundary} and~\ref{prop:normalized-shapes}).
+Structural interpretation therefore requires a specified graph-conditioned target and evidence about the accuracy and stability of the balanced norm readout; repeated-start agreement supports robustness without proving uniqueness.
 An account of the empirical inverted-U must explain these additional stages; its complete explanation remains a future question.
 
 This separation sharpens the qualitative account proposed for word and trajectory embeddings~\citep{schakel2015measuring,wilson2015controlled,murray2023unsupervised}.

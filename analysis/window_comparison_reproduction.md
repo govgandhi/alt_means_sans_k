@@ -66,3 +66,50 @@ python3 scripts/check_sgns_norm_boundary.py
 It verifies derivatives, stationary scores, tail limits, and an exact two-node
 SGNS illustration whose balanced norms grow while loss approaches its infimum.
 This algebraic example is not one of the experimental simple graphs.
+
+## Normalized-profile addition
+
+The new analysis reuses the frozen final factors and does not train embeddings.
+Run from the repository root with the same pinned numerical environment:
+
+```sh
+python3 scripts/window_training/exact_norm_profiles.py
+python3 scripts/window_training/normalized_profiles.py
+python3 scripts/window_training/plot_norm_identifiability.py
+python3 -m pytest -q tests/test_exact_norm_profiles.py tests/test_normalized_profiles.py
+```
+
+The exact script has no data inputs; its graph, profiles and illustrative
+tolerances are declared in its configuration and justified by the construction.
+The empirical script rebuilds every graph/kernel, verifies frozen manifests and
+recomputes all 40 final losses and full-SVD balanced radii. It writes every node,
+condition, paired start and full-support target to `results/norm_identifiability/`.
+Its configuration points to the existing frozen run; no scientific training
+parameters are changed. Both scripts accept `--output` for separate destinations.
+The figure script verifies the generated input checksums and writes the composite
+and all-node figures with a separate manifest. It uses the standard result paths;
+run the first two scripts at their defaults before rebuilding the figures.
+
+Each stage records source/runtime and input/output hashes. Repeated executions
+are deterministic in the pinned runtime; platform-level floating-point identity
+is not guaranteed. The saved empirical JSON files contain raw balanced radii and
+per-fit RMS-normalized radii; normalization precedes averaging starts. Reported
+checkpoint drift comes from recorded scalar/node readouts, not saved intermediate
+factors. The conservative bound and its limitations are derived in
+`paper/current/norm_geometry_supplement.tex`.
+
+Build the main manuscript and supporting calculations without touching the
+personal draft:
+
+```sh
+cd paper/current
+latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+make norm-geometry
+```
+
+Validation of this addition: all 12 generated artifacts reproduce byte-for-byte
+after running the three scripts from a clean export of the staged repository
+files in the pinned runtime. All 15 new tests and Ruff pass. An independent
+mathematical/code review found no blockers. The 14-page main manuscript and
+two-page supporting calculations compile with resolved references and no
+overfull boxes; the changed pages and figures were visually checked.

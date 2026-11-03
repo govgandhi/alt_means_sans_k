@@ -9,7 +9,7 @@ mechanism is an explicit future question, not a requirement for closing this iss
 
 The requested comparison is now run: the same five graphs, equal center exposure,
 stationary negative proposal, five negatives, rank 24 and two matched starts;
-only the exact context window changes. This continues draft PR #38. PR #39 is
+only the exact context window changes. This continues PR #38. PR #39 is
 closed and consolidated into it. No further experiment is added to this analysis.
 
 **Wider contexts attenuate the absolute norm decline from window 5 to 10, but
@@ -109,6 +109,13 @@ the positive/zero-support proposition, and the controlled window-five/ten result
 PR #38 holds the consolidated changes for review; #21/#22 retain their own scope.
 Further PNAS mechanism work is deferred, and no additional experiment is required
 to close this bounded investigation.
+
+The [normalized-profile addition](norm_identifiability_findings.md) sharpens the
+boundary: one exact four-node objective permits rising, falling and peaked
+balanced shapes at arbitrarily small loss gaps, even at equal RMS. Reconstructing
+all 40 saved fits preserves the window-five/ten attenuation after RMS normalization.
+Short-window disagreement and uninformative full-support bounds remain explicit;
+no new training was performed.
 
 Evidence: [full comparison](../results/window_training_continuation/report/kl_and_trained_norms.png),
 [wide windows](../results/window_training_continuation/report/wide_window_comparison.png),

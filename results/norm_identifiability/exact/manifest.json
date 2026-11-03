@@ -1,0 +1,10 @@
+{
+  "numpy": "2.4.1",
+  "outputs_sha256": {
+    "exact.json": "7cef7ce4cad7bb297c657c60db5a5f7e5d28bd2a43518d45d4eeaf18a5775c9e"
+  },
+  "python": "3.13.12",
+  "source_sha256": {
+    "scripts/window_training/exact_norm_profiles.py": "5485d6d812848c3d71a1a4d25940399d00544890a52f0a0f97e7991d8a26fb93"
+  }
+}
