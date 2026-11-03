@@ -19,3 +19,6 @@
 [submodule "libs/node2vec"]
 	path = libs/node2vec
 	url = https://github.com/skojaku/node2vec.git
+[submodule "archive/kmeans/research_graph_emb_detec_limit"]
+	path = archive/kmeans/research_graph_emb_detec_limit
+	url = https://github.com/skojaku/community-detection-via-neural-embedding.git
