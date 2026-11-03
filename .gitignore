@@ -19,6 +19,10 @@ are_angles_important/*.inf_log
 *.edgelist
 *.wv
 *.gz
+# Complete synthetic evidence for the fixed window/history exploration.
+!results/window_training_exploration/schedule/seed*/factors/*.npz
+!results/window_training_exploration/windows/runs/*.json.gz
+!results/window_training_exploration/windows/factors/*.npy.gz
 
 # Office files
 *.docx
