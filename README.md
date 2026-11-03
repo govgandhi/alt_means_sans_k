@@ -2,6 +2,44 @@
 
 Alternative to K-Means clustering methods for community detection of embedding vectors.
 
+## Corrected SGNS experiments
+
+The corrected sampler and target revalidation is documented in
+[its protocol](analysis/negative_sampling_revalidation_protocol.md), with
+[results and limitations](results/negative_sampling_revalidation/README.md).
+Use the pinned experiment environment; the older notebook environments below do
+not include the numerical correction:
+
+```sh
+uv venv --python 3.13.12 .venv
+uv pip install --python .venv/bin/python \
+  -r analysis/negative_sampling_control_requirements.txt \
+  -r analysis/negative_sampling_control_build_requirements.txt
+.venv/bin/python scripts/build_control_gensim.py --install
+.venv/bin/python scripts/check_control_gensim.py
+.venv/bin/python -m pytest
+.venv/bin/python scripts/revalidate_negative_sampling.py \
+  --output /tmp/fresh-revalidation > /tmp/revalidation-training.txt 2>&1
+.venv/bin/python scripts/check_revalidation_repeat.py --output /tmp/fresh-revalidation
+.venv/bin/python scripts/report_negative_sampling_revalidation.py \
+  --output /tmp/fresh-revalidation --training-log /tmp/revalidation-training.txt
+```
+
+The build requires a C compiler and modifies only the active virtual environment.
+Production batch trainers check the numerical wrapper before training. They assign
+negative weights by vocabulary position and count every repeated walk visit.
+The staged prospective trainer explicitly uses original-token negative counts;
+the new revalidation compares both original- and retained-token samplers.
+
+The minimal `make test` environment skips the scientific tests when their optional
+dependencies are absent. The pinned environment above runs all 26 tests, including
+the mandatory numerical checks; an installed but defective BLAS build fails them.
+
+Historical output status is recorded in [results/README.md](results/README.md).
+To reproduce the original calibration-only control with its exact source files,
+run `scripts/reproduce_calibration_control.py --output /tmp/fresh-control` in the
+same pinned environment. No historical files or manuscript drafts are replaced.
+
 Reproducing the initial results produced by Dr Sadamori Kojaku. Read more [here](./scratchbook/Kmeans_Sadamori.pdf)
 
 ## Setup

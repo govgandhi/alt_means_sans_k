@@ -1,0 +1,5 @@
+results/negative_sampling_control/*.json linguist-generated=true
+results/negative_sampling_control/*.jsonl linguist-generated=true
+results/negative_sampling_revalidation/*.json linguist-generated=true
+results/negative_sampling_revalidation/*.jsonl linguist-generated=true
+archive/negative_sampling_control/** linguist-generated=true
