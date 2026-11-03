@@ -7,7 +7,7 @@
 #   "scipy>=1.15,<2",
 # ]
 # ///
-"""Causally separate exposure and context specificity in finite SGNS.
+"""Vary exposure and conditional contexts in finite SGNS.
 
 The calibration experiment crosses two interventions:
 
@@ -20,10 +20,9 @@ marginal is q = c T and the intervention is
 
     T(lambda) = (1 - lambda) T + lambda 1 q.
 
-Thus c T(lambda) = q: lambda changes row specificity while preserving the
-positive-context marginal within every exposure condition. Negative contexts
-are sampled from the realized positive-context marginal, so the unigram
-exponent is exactly one after integer pair allocation.
+Thus c T(lambda) = q before integer allocation. Rounding can change the
+marginal and support; negatives follow the resulting empirical marginal.
+The intervention therefore does not isolate specificity from noise changes.
 
 Three conditions are held out from calibration. Their center counts follow the
 actual Gensim/Mikolov retention law at three thresholds. A quadratic response
@@ -34,8 +33,8 @@ an exploratory secondary analysis. For the full run, both analyses predict
 every held-out graph seed using only calibration conditions from the other
 graph seeds.
 
-The total pair budget is fixed. The held-out conditions therefore isolate the
-redistribution of exposure caused by subsampling, not its reduction in runtime.
+The total pair budget is fixed. Held-out conditions vary the distribution of
+center exposure and can also change the empirical context/noise distribution.
 Run the fixed defaults with
 
     uv run scripts/simulate_turnover_surface.py
@@ -976,7 +975,7 @@ def make_figure(
         xlabel="degree",
         ylabel=r"$D_{KL}(T_i^{(\lambda)}\Vert q)$",
     )
-    axes[0, 1].set_title("B  Specificity interventions")
+    axes[0, 1].set_title("B  Intended context KL")
     axes[0, 1].legend(frameon=False, fontsize=7)
 
     for beta in CALIBRATION_BETAS:
@@ -994,7 +993,7 @@ def make_figure(
         r"held out: $t=3\times10^{-4}$",
     )
     axes[0, 2].set(xlabel="degree", ylabel="raw center-vector norm")
-    axes[0, 2].set_title("C  Exposure creates the rising limb")
+    axes[0, 2].set_title("C  Norm response to exposure")
     axes[0, 2].legend(frameon=False, fontsize=7, ncol=2)
 
     for context_mix in CALIBRATION_LAMBDAS:
@@ -1065,7 +1064,7 @@ def make_figure(
     for axis in axes.flat:
         axis.spines[["top", "right"]].set_visible(False)
         axis.grid(alpha=0.15)
-    fig.suptitle("Causal two-force test for the norm-frequency turnover", fontsize=13)
+    fig.suptitle("Exposure and context interventions for norm turnover", fontsize=13)
     fig.savefig(path, dpi=220)
     fig.savefig(path.with_suffix(".pdf"))
     plt.close(fig)
