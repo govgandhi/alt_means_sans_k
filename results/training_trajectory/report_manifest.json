@@ -1,0 +1,15 @@
+{
+  "script_sha256": "f76585e69865c1fb3db48cfe0c8ce27f6d8685a385adffd63032adbff2eea99d",
+  "input_completion_sha256": "a457d294f4aff027ba4aaf42fb1dbb618cc55eb87f210fc6651a2119d12e555a",
+  "artifact_sha256": {
+    "summary.json": "3dbfb64856ed2f02a55d6391f44183cb405e619695372bc20b4471d0b6c6c68f",
+    "README.md": "10ab26126eac275855b0fc1d4b428c13a6fc7961392d809be69dd393e3b2f699",
+    "curves_baseline_then_floor.png": "eeaa1b7af3c7f6b8cf0c4a3a592b76ecb768c84040ae22fe327f3951b2edb3bc",
+    "curves_constant.png": "189183556eababd49d6ba786ae2ddddd563692a11ba70c21dacb364dfa32faf0",
+    "degree_loss.png": "79a837dff794b420510857be71d894ed31337204b4b1e3b674c16ec76618fc05",
+    "gradient.png": "fde35472468a37c777ee35686ff2e42a3b6dfdf6d293cb8993964c6c309853a9",
+    "loss.png": "617bdacc5356b86f4288181869a7e503f8d8d7b266b716f79efeeb68fd1543aa",
+    "unfiltered_schedule_comparison.png": "101fb0e1d3ee2ffbe202f32bc2ef041ea84166f5aa451e210c73662eef2aea22",
+    "unfiltered_schedule_comparison.pdf": "d0aeda8d50e9a81eb10b38f458629be867d4460d3481e5afe69f6b98978e15e6"
+  }
+}

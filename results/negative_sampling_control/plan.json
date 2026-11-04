@@ -1,0 +1,101 @@
+{
+  "status": "retrospective calibration diagnostic; no target validation",
+  "source_sha256": {
+    "analysis/negative_sampling_control_build_requirements.txt": "3be42f59f8c0b5af936786b17463c0696267298130d5ee2513ef0826ab63e46f",
+    "analysis/negative_sampling_control_protocol.md": "e0fc1ebbfe56d72b3b1abd5dec0da67da167fe9cfc76fd5c2e1e0db133540db5",
+    "analysis/negative_sampling_control_requirements.txt": "db06aa19e94c6ff5d63eb49904eab17599a7f8ef6525cf8448dad38ae8bd30c1",
+    "analysis/prospective_validation_protocol.md": "6e05c0345b1e0f037e7add25a1ec9908327e38904916393c901109a791d03392",
+    "results/prospective_validation/calibration.jsonl": "89d7d1d795eb143e0fc0ec10eec9ef08c3d2477df7a42d47de94ab496612ed71",
+    "results/prospective_validation/calibration_summary.json": "853799ba97f5fc2947f34a57d18a2bc5f0ca949608a9661f95e53e43bb7a9cfb",
+    "results/prospective_validation/freeze_manifest.json": "24c593ad26473fc25c61456c4b727a2e7b4fb54db25f244451cd6648686a69b8",
+    "results/prospective_validation/frozen_prediction_summary.json": "8a9ebdf0bc064b95d85f98fba61593d3c376db680287288150dfa6c023f1d294",
+    "results/prospective_validation/frozen_predictions.jsonl": "679cb0db608e9fe690bfc87408392d853f158ed851631e7b77921912267c3a9d",
+    "results/prospective_validation/outcomes.jsonl": "4b5becbf76269839f04d8ecf8297dc1a0d91a462313ef4c9b3c81f6ebd592b4d",
+    "results/prospective_validation/protocol.json": "5dd0b3da8a37044630c1a7bbe642de8f5c02925ee8c2cec770c8328bc56923b1",
+    "results/prospective_validation/summary.json": "863204c0fd523e9696c3f458fa06e45b635df9a0d2bda486a424468f4cc273f0",
+    "scripts/build_control_gensim.py": "ff4466995f33259a55fcb590a1f74b0108f2ae8e84c6592b51e693ca0c0735dd",
+    "scripts/check_control_gensim.py": "0e424f7e1d3e3d8e170c848c991cb48bb665092def1c7c5c1567500ed4ac7d29",
+    "scripts/negative_sampling_control.py": "9b9b968203ef32943b46142240bd8e8ebf8bf016173c989ab597d0ff060dd59f",
+    "scripts/prospective_norm_turnover.py": "b35ecce0c149b0df71509f3a8571aa374ea94411b0d8d565fceec2684bb5b8e3",
+    "scripts/simulate_exact_center_exposure.py": "7e8dd787c446660145776ca59050670a8c52f89454d74a78ed5bdca01bdbfa0d",
+    "scripts/simulate_norm_frequency.py": "0b955feaacdf70582348c6397ccbad9ab95cc7a46a6ec936f577b4706c26a4f8"
+  },
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "thresholds": [
+    0.0003,
+    0.001,
+    0.003
+  ],
+  "training": {
+    "nodes": 600,
+    "attachment": 3,
+    "triangle_probability": 0.35,
+    "dimension": 64,
+    "negatives": 5,
+    "walk_length": 5,
+    "walks_per_node": 300,
+    "epochs": 5,
+    "learning_rate": 0.025,
+    "min_count": 1
+  },
+  "min_alpha": 0.0001,
+  "arms": [
+    "legacy",
+    "retained",
+    "raw"
+  ],
+  "bins": 6,
+  "table_domain": 2147483647,
+  "python": "3.13.12",
+  "platform": "macOS-15.7.9-arm64-arm-64bit-Mach-O",
+  "blas_check": {
+    "wrapper": "our_dot_float",
+    "dot_products": {
+      "-2.0": -2.0,
+      "-1.0": -1.0,
+      "-0.5": -0.5,
+      "0.0": 0.0,
+      "1.0": 1.0
+    },
+    "passed": true,
+    "extension_sha256": "f966cc17dd0e07dcd0aa5078ba51b5537d856e5af438fdee9235b070b6a52e43"
+  },
+  "allow_unpatched_blas": false,
+  "packages": {
+    "Cython": "3.1.3",
+    "Pygments": "2.21.0",
+    "cloudpickle": "3.1.2",
+    "contourpy": "1.4.0",
+    "cycler": "0.12.1",
+    "fonttools": "4.68.0",
+    "gensim": "4.4.0",
+    "iniconfig": "2.3.1",
+    "joblib": "1.6.0",
+    "kiwisolver": "1.5.1",
+    "matplotlib": "3.10.8",
+    "networkx": "3.6.1",
+    "numpy": "2.4.1",
+    "packaging": "26.3",
+    "pillow": "13.0.0",
+    "pip": "25.2",
+    "pluggy": "1.7.0",
+    "pyparsing": "3.3.3",
+    "pytest": "9.2.0",
+    "python-dateutil": "4.0.0",
+    "ruff": "0.17.3",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.1",
+    "setuptools": "80.9.0",
+    "smart_open": "9.0.1",
+    "threadpoolctl": "3.7.0",
+    "tzdata": "2026.6",
+    "wheel": "0.45.1",
+    "wrapt": "2.5.2"
+  }
+}

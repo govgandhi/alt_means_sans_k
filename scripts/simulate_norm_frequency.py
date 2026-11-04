@@ -39,6 +39,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
 from gensim.models import Word2Vec
+from gensim_training import set_negative_table, train_checked
 from scipy.stats import spearmanr
 
 
@@ -161,7 +162,7 @@ def sample_walks(
         walk = [int(start)]
         for _ in range(walk_length - 1):
             walk.append(int(rng.choice(neighbors[walk[-1]])))
-        counts[walk] += 1
+        np.add.at(counts, walk, 1)
         walks.append(walk)
     return walks, counts
 
@@ -230,7 +231,6 @@ def train_word2vec(
     seed: int,
 ) -> dict[str, np.ndarray | float]:
     model = Word2Vec(
-        sentences=walks,
         vector_size=config.dimension,
         window=1,
         min_count=config.min_count,
@@ -245,6 +245,9 @@ def train_word2vec(
         sorted_vocab=1,
         shrink_windows=False,
     )
+    model.build_vocab(walks)
+    set_negative_table(model)
+    train_checked(model, walks)
     if len(model.wv) != len(counts):
         missing = len(counts) - len(model.wv)
         raise ValueError(f"min_count removed {missing} nodes; increase walks_per_node.")

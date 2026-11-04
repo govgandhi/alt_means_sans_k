@@ -1,0 +1,11 @@
+{
+  "plan.json": "2146da36203401e82450e73d0dcced83e5ed019c3573fedad46d42ab61a2724a",
+  "outcomes.jsonl": "f95560d17531ef50c9a832df75b412514d55c7e07a860811a92b053ba76812b1",
+  "checks.json": "9b6a89c208cf7d21d9cc45a89ade637c11f5a6fcb08cae76cfaa060cafdeb2df",
+  "summary.json": "35a11e90e26ca1f04bdc910ef4bab1ceab289fd26f37d0a664ff1d41b302a9b3",
+  "negative_sampling_control.png": "e21e5f425ffe07b33a74936e91d45fd54b3abcf5f283c0d98e43464dbb7ca3df",
+  "training_log.txt": "8f8ae7a18dc43c4da5b6c251c947c3d64b4b04c4ddda636256ec46da854c80b7",
+  "build_manifest.json": "3219bd872e12de16e9fcda375b3e9b47fbf93524b78d286bb07f64dddb6359cc",
+  "comparison_report.json": "76f20260c55409a226fe1106389590043aba50fc0b5ed5351850977a732f875b",
+  "README.md": "e300058bcc9c8068e7b8787b416a2d2bc47bb3a74d6ba89d901939421115f7b6"
+}

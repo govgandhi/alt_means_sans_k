@@ -1,0 +1,3658 @@
+{
+  "reporter_sha256": "218ee6c2986833b6fcc2c1c867d37e1361f984d09996d9acc658369caa5d2eba",
+  "independent_repeat": {
+    "family": "netscience",
+    "replicate": 301,
+    "node_condition_rows": 1137,
+    "models_retrained": 6,
+    "all_fields_exact": true,
+    "plan_sha256": "4d1e554266d19583e7f473bd2a7eef44195815ba73640d502582d93c04bfc3a3",
+    "outcomes_sha256": "083227fd40749e25bc782d154cbeeb4cbe67ed9b7dc8ef04a953d8fee0e45d14",
+    "check_script_sha256": "d0439ce2c6963f5b1510b336a2bc43ac1f1e12c7cf5a150b9dcea94de50696eb"
+  },
+  "verified_calibration_rows": 9000,
+  "verified_target_rows": 23685,
+  "sampler_counts": {
+    "calibration": {
+      "raw_norm": {
+        "conditions": 15,
+        "same_peak": 15,
+        "retained_interior": 10,
+        "raw_interior": 10,
+        "lost_interior_under_raw": 0,
+        "gained_interior_under_raw": 0
+      },
+      "balanced_norm": {
+        "conditions": 15,
+        "same_peak": 15,
+        "retained_interior": 10,
+        "raw_interior": 10,
+        "lost_interior_under_raw": 0,
+        "gained_interior_under_raw": 0
+      }
+    },
+    "targets": {
+      "raw_norm": {
+        "conditions": 45,
+        "same_peak": 39,
+        "retained_interior": 35,
+        "raw_interior": 35,
+        "lost_interior_under_raw": 0,
+        "gained_interior_under_raw": 0
+      },
+      "balanced_norm": {
+        "conditions": 45,
+        "same_peak": 39,
+        "retained_interior": 33,
+        "raw_interior": 31,
+        "lost_interior_under_raw": 2,
+        "gained_interior_under_raw": 0
+      }
+    },
+    "target_family_curves": {
+      "raw_norm": {
+        "conditions": 9,
+        "same_peak": 8,
+        "retained_interior": 7,
+        "raw_interior": 7,
+        "lost_interior_under_raw": 0,
+        "gained_interior_under_raw": 0
+      },
+      "balanced_norm": {
+        "conditions": 9,
+        "same_peak": 8,
+        "retained_interior": 7,
+        "raw_interior": 7,
+        "lost_interior_under_raw": 0,
+        "gained_interior_under_raw": 0
+      }
+    }
+  },
+  "family_sampler_curves": [
+    {
+      "family": "barabasi_albert",
+      "threshold": 0.0003,
+      "response": "raw_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            3.2935537438050546,
+            4.999999999999997,
+            6.769563527927011,
+            14.308248290391456
+          ],
+          "node_counts": [
+            1775,
+            353,
+            434,
+            438
+          ],
+          "mean_norm": [
+            4.177563961447144,
+            4.126287647835404,
+            4.090779105832327,
+            3.756119536514405
+          ],
+          "peak_bin": 1,
+          "peak_minus_lowest": 0.0,
+          "peak_minus_highest": 0.42144442493273937,
+          "interior_peak": false
+        },
+        "raw": {
+          "degree": [
+            3.2935537438050546,
+            4.999999999999997,
+            6.769563527927011,
+            14.308248290391456
+          ],
+          "node_counts": [
+            1775,
+            353,
+            434,
+            438
+          ],
+          "mean_norm": [
+            4.16981603300913,
+            4.107586974829852,
+            4.050086833417455,
+            3.8286537399511626
+          ],
+          "peak_bin": 1,
+          "peak_minus_lowest": 0.0,
+          "peak_minus_highest": 0.34116229305796697,
+          "interior_peak": false
+        }
+      }
+    },
+    {
+      "family": "barabasi_albert",
+      "threshold": 0.0003,
+      "response": "balanced_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            3.2935537438050546,
+            4.999999999999997,
+            6.769563527927011,
+            14.308248290391456
+          ],
+          "node_counts": [
+            1775,
+            353,
+            434,
+            438
+          ],
+          "mean_norm": [
+            4.210957634453277,
+            4.1599964973491526,
+            4.124120572639059,
+            3.7895509899121675
+          ],
+          "peak_bin": 1,
+          "peak_minus_lowest": 0.0,
+          "peak_minus_highest": 0.42140664454110954,
+          "interior_peak": false
+        },
+        "raw": {
+          "degree": [
+            3.2935537438050546,
+            4.999999999999997,
+            6.769563527927011,
+            14.308248290391456
+          ],
+          "node_counts": [
+            1775,
+            353,
+            434,
+            438
+          ],
+          "mean_norm": [
+            4.193130536797566,
+            4.131062940420298,
+            4.073326226301053,
+            3.8538278469038656
+          ],
+          "peak_bin": 1,
+          "peak_minus_lowest": 0.0,
+          "peak_minus_highest": 0.3393026898937008,
+          "interior_peak": false
+        }
+      }
+    },
+    {
+      "family": "barabasi_albert",
+      "threshold": 0.001,
+      "response": "raw_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            3.2935537438050546,
+            4.999999999999997,
+            6.769563527927011,
+            14.308248290391456
+          ],
+          "node_counts": [
+            1775,
+            353,
+            434,
+            438
+          ],
+          "mean_norm": [
+            4.7131503863407715,
+            5.047174351434721,
+            5.2696123085057724,
+            4.956400303032874
+          ],
+          "peak_bin": 3,
+          "peak_minus_lowest": 0.5564619221650009,
+          "peak_minus_highest": 0.3132120054728986,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            3.2935537438050546,
+            4.999999999999997,
+            6.769563527927011,
+            14.308248290391456
+          ],
+          "node_counts": [
+            1775,
+            353,
+            434,
+            438
+          ],
+          "mean_norm": [
+            4.688356373688488,
+            5.0156637446623,
+            5.253536183346349,
+            4.969285996381353
+          ],
+          "peak_bin": 3,
+          "peak_minus_lowest": 0.5651798096578613,
+          "peak_minus_highest": 0.2842501869649965,
+          "interior_peak": true
+        }
+      }
+    },
+    {
+      "family": "barabasi_albert",
+      "threshold": 0.001,
+      "response": "balanced_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            3.2935537438050546,
+            4.999999999999997,
+            6.769563527927011,
+            14.308248290391456
+          ],
+          "node_counts": [
+            1775,
+            353,
+            434,
+            438
+          ],
+          "mean_norm": [
+            4.732990581426109,
+            5.069504823739923,
+            5.300541139747607,
+            5.009087093978274
+          ],
+          "peak_bin": 3,
+          "peak_minus_lowest": 0.5675505583214981,
+          "peak_minus_highest": 0.2914540457693331,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            3.2935537438050546,
+            4.999999999999997,
+            6.769563527927011,
+            14.308248290391456
+          ],
+          "node_counts": [
+            1775,
+            353,
+            434,
+            438
+          ],
+          "mean_norm": [
+            4.70366000758157,
+            5.0339180486730415,
+            5.2807677847862955,
+            5.017548692307692
+          ],
+          "peak_bin": 3,
+          "peak_minus_lowest": 0.5771077772047253,
+          "peak_minus_highest": 0.26321909247860376,
+          "interior_peak": true
+        }
+      }
+    },
+    {
+      "family": "barabasi_albert",
+      "threshold": 0.003,
+      "response": "raw_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            3.2935537438050546,
+            4.999999999999997,
+            6.769563527927011,
+            14.308248290391456
+          ],
+          "node_counts": [
+            1775,
+            353,
+            434,
+            438
+          ],
+          "mean_norm": [
+            4.79018050421114,
+            5.170670931283295,
+            5.389132411903193,
+            5.303788548276864
+          ],
+          "peak_bin": 3,
+          "peak_minus_lowest": 0.5989519076920535,
+          "peak_minus_highest": 0.08534386362632951,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            3.2935537438050546,
+            4.999999999999997,
+            6.769563527927011,
+            14.308248290391456
+          ],
+          "node_counts": [
+            1775,
+            353,
+            434,
+            438
+          ],
+          "mean_norm": [
+            4.7883223605157115,
+            5.171346587847999,
+            5.38522033855504,
+            5.302385903082809
+          ],
+          "peak_bin": 3,
+          "peak_minus_lowest": 0.5968979780393289,
+          "peak_minus_highest": 0.08283443547223168,
+          "interior_peak": true
+        }
+      }
+    },
+    {
+      "family": "barabasi_albert",
+      "threshold": 0.003,
+      "response": "balanced_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            3.2935537438050546,
+            4.999999999999997,
+            6.769563527927011,
+            14.308248290391456
+          ],
+          "node_counts": [
+            1775,
+            353,
+            434,
+            438
+          ],
+          "mean_norm": [
+            4.798181846660787,
+            5.174604995258076,
+            5.399689270125125,
+            5.363022029820735
+          ],
+          "peak_bin": 3,
+          "peak_minus_lowest": 0.601507423464338,
+          "peak_minus_highest": 0.03666724030439017,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            3.2935537438050546,
+            4.999999999999997,
+            6.769563527927011,
+            14.308248290391456
+          ],
+          "node_counts": [
+            1775,
+            353,
+            434,
+            438
+          ],
+          "mean_norm": [
+            4.796614376100926,
+            5.177058568858784,
+            5.39733753692913,
+            5.363388273933466
+          ],
+          "peak_bin": 3,
+          "peak_minus_lowest": 0.6007231608282035,
+          "peak_minus_highest": 0.03394926299566414,
+          "interior_peak": true
+        }
+      }
+    },
+    {
+      "family": "powerlaw_cluster",
+      "threshold": 0.0003,
+      "response": "raw_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            2.999009613575158,
+            4.0,
+            4.999999999999997,
+            6.3374222771722275,
+            13.408968244256492
+          ],
+          "node_counts": [
+            1228,
+            596,
+            326,
+            355,
+            495
+          ],
+          "mean_norm": [
+            4.055367522739451,
+            4.067175946009557,
+            4.0436658668864,
+            3.99112511331004,
+            3.7316035334049618
+          ],
+          "peak_bin": 2,
+          "peak_minus_lowest": 0.01180842327010545,
+          "peak_minus_highest": 0.3355724126045949,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            2.999009613575158,
+            4.0,
+            4.999999999999997,
+            6.3374222771722275,
+            13.408968244256492
+          ],
+          "node_counts": [
+            1228,
+            596,
+            326,
+            355,
+            495
+          ],
+          "mean_norm": [
+            4.0493750045668495,
+            4.054458290622102,
+            4.009843112414724,
+            3.947377390622715,
+            3.8141875658905393
+          ],
+          "peak_bin": 2,
+          "peak_minus_lowest": 0.005083286055252323,
+          "peak_minus_highest": 0.24027072473156252,
+          "interior_peak": true
+        }
+      }
+    },
+    {
+      "family": "powerlaw_cluster",
+      "threshold": 0.0003,
+      "response": "balanced_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            2.999009613575158,
+            4.0,
+            4.999999999999997,
+            6.3374222771722275,
+            13.408968244256492
+          ],
+          "node_counts": [
+            1228,
+            596,
+            326,
+            355,
+            495
+          ],
+          "mean_norm": [
+            4.089130007996179,
+            4.101927106783616,
+            4.078190960064487,
+            4.025390836584729,
+            3.7657096823098337
+          ],
+          "peak_bin": 2,
+          "peak_minus_lowest": 0.012797098787436845,
+          "peak_minus_highest": 0.3362174244737819,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            2.999009613575158,
+            4.0,
+            4.999999999999997,
+            6.3374222771722275,
+            13.408968244256492
+          ],
+          "node_counts": [
+            1228,
+            596,
+            326,
+            355,
+            495
+          ],
+          "mean_norm": [
+            4.0726954283769,
+            4.078838212796531,
+            4.0339643413016555,
+            3.971292013001177,
+            3.8393742778859634
+          ],
+          "peak_bin": 2,
+          "peak_minus_lowest": 0.00614278441963112,
+          "peak_minus_highest": 0.2394639349105674,
+          "interior_peak": true
+        }
+      }
+    },
+    {
+      "family": "powerlaw_cluster",
+      "threshold": 0.001,
+      "response": "raw_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            2.999009613575158,
+            4.0,
+            4.999999999999997,
+            6.3374222771722275,
+            13.408968244256492
+          ],
+          "node_counts": [
+            1228,
+            596,
+            326,
+            355,
+            495
+          ],
+          "mean_norm": [
+            4.509084379577351,
+            4.732536596126321,
+            4.805425424886512,
+            4.987077470182343,
+            4.873449490591239
+          ],
+          "peak_bin": 4,
+          "peak_minus_lowest": 0.4779930906049916,
+          "peak_minus_highest": 0.11362797959110438,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            2.999009613575158,
+            4.0,
+            4.999999999999997,
+            6.3374222771722275,
+            13.408968244256492
+          ],
+          "node_counts": [
+            1228,
+            596,
+            326,
+            355,
+            495
+          ],
+          "mean_norm": [
+            4.4838180160645535,
+            4.699542497908014,
+            4.777492509245025,
+            4.963665499220057,
+            4.890838467218127
+          ],
+          "peak_bin": 4,
+          "peak_minus_lowest": 0.4798474831555035,
+          "peak_minus_highest": 0.07282703200193019,
+          "interior_peak": true
+        }
+      }
+    },
+    {
+      "family": "powerlaw_cluster",
+      "threshold": 0.001,
+      "response": "balanced_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            2.999009613575158,
+            4.0,
+            4.999999999999997,
+            6.3374222771722275,
+            13.408968244256492
+          ],
+          "node_counts": [
+            1228,
+            596,
+            326,
+            355,
+            495
+          ],
+          "mean_norm": [
+            4.5323039295866465,
+            4.757201072043426,
+            4.831007995458633,
+            5.018447346720476,
+            4.927701540094423
+          ],
+          "peak_bin": 4,
+          "peak_minus_lowest": 0.4861434171338299,
+          "peak_minus_highest": 0.09074580662605314,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            2.999009613575158,
+            4.0,
+            4.999999999999997,
+            6.3374222771722275,
+            13.408968244256492
+          ],
+          "node_counts": [
+            1228,
+            596,
+            326,
+            355,
+            495
+          ],
+          "mean_norm": [
+            4.502147362169043,
+            4.719288064368012,
+            4.798381528367331,
+            4.989848207060767,
+            4.9411277450451925
+          ],
+          "peak_bin": 4,
+          "peak_minus_lowest": 0.48770084489172394,
+          "peak_minus_highest": 0.04872046201557456,
+          "interior_peak": true
+        }
+      }
+    },
+    {
+      "family": "powerlaw_cluster",
+      "threshold": 0.003,
+      "response": "raw_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            2.999009613575158,
+            4.0,
+            4.999999999999997,
+            6.3374222771722275,
+            13.408968244256492
+          ],
+          "node_counts": [
+            1228,
+            596,
+            326,
+            355,
+            495
+          ],
+          "mean_norm": [
+            4.653272553954926,
+            4.9179097474458855,
+            5.061374590602882,
+            5.221626523104577,
+            5.229969081184507
+          ],
+          "peak_bin": 5,
+          "peak_minus_lowest": 0.576696527229581,
+          "peak_minus_highest": 0.0,
+          "interior_peak": false
+        },
+        "raw": {
+          "degree": [
+            2.999009613575158,
+            4.0,
+            4.999999999999997,
+            6.3374222771722275,
+            13.408968244256492
+          ],
+          "node_counts": [
+            1228,
+            596,
+            326,
+            355,
+            495
+          ],
+          "mean_norm": [
+            4.648377771783967,
+            4.913883119662158,
+            5.059067011614455,
+            5.2151687088451615,
+            5.225821688605773
+          ],
+          "peak_bin": 5,
+          "peak_minus_lowest": 0.5774439168218057,
+          "peak_minus_highest": 0.0,
+          "interior_peak": false
+        }
+      }
+    },
+    {
+      "family": "powerlaw_cluster",
+      "threshold": 0.003,
+      "response": "balanced_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            2.999009613575158,
+            4.0,
+            4.999999999999997,
+            6.3374222771722275,
+            13.408968244256492
+          ],
+          "node_counts": [
+            1228,
+            596,
+            326,
+            355,
+            495
+          ],
+          "mean_norm": [
+            4.662139294563164,
+            4.928482062576545,
+            5.06739205921363,
+            5.231343042735743,
+            5.290065073539957
+          ],
+          "peak_bin": 5,
+          "peak_minus_lowest": 0.6279257789767927,
+          "peak_minus_highest": 0.0,
+          "interior_peak": false
+        },
+        "raw": {
+          "degree": [
+            2.999009613575158,
+            4.0,
+            4.999999999999997,
+            6.3374222771722275,
+            13.408968244256492
+          ],
+          "node_counts": [
+            1228,
+            596,
+            326,
+            355,
+            495
+          ],
+          "mean_norm": [
+            4.6574802433411335,
+            4.923993775541317,
+            5.066897245746145,
+            5.226789187451263,
+            5.287458695802604
+          ],
+          "peak_bin": 5,
+          "peak_minus_lowest": 0.6299784524614704,
+          "peak_minus_highest": 0.0,
+          "interior_peak": false
+        }
+      }
+    },
+    {
+      "family": "netscience",
+      "threshold": 0.0003,
+      "response": "raw_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            1.6617153455282736,
+            2.9999999999999996,
+            4.0,
+            4.9999999999999964,
+            6.339584838712211,
+            11.368408788684
+          ],
+          "node_counts": [
+            505,
+            360,
+            310,
+            165,
+            280,
+            275
+          ],
+          "mean_norm": [
+            3.8039426252820654,
+            3.880135811703516,
+            3.9039939197006963,
+            3.858961680435291,
+            3.83887935834303,
+            3.584649498631571
+          ],
+          "peak_bin": 3,
+          "peak_minus_lowest": 0.10005129441863092,
+          "peak_minus_highest": 0.3193444210691254,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            1.6617153455282736,
+            2.9999999999999996,
+            4.0,
+            4.9999999999999964,
+            6.339584838712211,
+            11.368408788684
+          ],
+          "node_counts": [
+            505,
+            360,
+            310,
+            165,
+            280,
+            275
+          ],
+          "mean_norm": [
+            3.761401597090162,
+            3.8446629855455043,
+            3.86868176470579,
+            3.8190699341456917,
+            3.802820297093002,
+            3.6380125798763983
+          ],
+          "peak_bin": 3,
+          "peak_minus_lowest": 0.10728016761562786,
+          "peak_minus_highest": 0.23066918482939158,
+          "interior_peak": true
+        }
+      }
+    },
+    {
+      "family": "netscience",
+      "threshold": 0.0003,
+      "response": "balanced_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            1.6617153455282736,
+            2.9999999999999996,
+            4.0,
+            4.9999999999999964,
+            6.339584838712211,
+            11.368408788684
+          ],
+          "node_counts": [
+            505,
+            360,
+            310,
+            165,
+            280,
+            275
+          ],
+          "mean_norm": [
+            3.824354459876726,
+            3.9016024781860206,
+            3.9266091950381363,
+            3.881316664555871,
+            3.862180664312424,
+            3.610140002746485
+          ],
+          "peak_bin": 3,
+          "peak_minus_lowest": 0.10225473516141026,
+          "peak_minus_highest": 0.31646919229165116,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            1.6617153455282736,
+            2.9999999999999996,
+            4.0,
+            4.9999999999999964,
+            6.339584838712211,
+            11.368408788684
+          ],
+          "node_counts": [
+            505,
+            360,
+            310,
+            165,
+            280,
+            275
+          ],
+          "mean_norm": [
+            3.7756374755300026,
+            3.8601710901524737,
+            3.8860234311097868,
+            3.836006620854596,
+            3.8209710412523896,
+            3.659994823612381
+          ],
+          "peak_bin": 3,
+          "peak_minus_lowest": 0.11038595557978415,
+          "peak_minus_highest": 0.2260286074974056,
+          "interior_peak": true
+        }
+      }
+    },
+    {
+      "family": "netscience",
+      "threshold": 0.001,
+      "response": "raw_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            1.6617153455282736,
+            2.9999999999999996,
+            4.0,
+            4.9999999999999964,
+            6.339584838712211,
+            11.368408788684
+          ],
+          "node_counts": [
+            505,
+            360,
+            310,
+            165,
+            280,
+            275
+          ],
+          "mean_norm": [
+            4.044278212185689,
+            4.200108152957922,
+            4.255847935423432,
+            4.264833873419634,
+            4.2426583422031365,
+            4.073092617565155
+          ],
+          "peak_bin": 4,
+          "peak_minus_lowest": 0.220555661233945,
+          "peak_minus_highest": 0.19174125585447843,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            1.6617153455282736,
+            2.9999999999999996,
+            4.0,
+            4.9999999999999964,
+            6.339584838712211,
+            11.368408788684
+          ],
+          "node_counts": [
+            505,
+            360,
+            310,
+            165,
+            280,
+            275
+          ],
+          "mean_norm": [
+            4.016560093611201,
+            4.165162247580852,
+            4.211632986992369,
+            4.208536796306248,
+            4.221555392131737,
+            4.1230240719
+          ],
+          "peak_bin": 5,
+          "peak_minus_lowest": 0.20499529852053655,
+          "peak_minus_highest": 0.0985313202317375,
+          "interior_peak": true
+        }
+      }
+    },
+    {
+      "family": "netscience",
+      "threshold": 0.001,
+      "response": "balanced_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            1.6617153455282736,
+            2.9999999999999996,
+            4.0,
+            4.9999999999999964,
+            6.339584838712211,
+            11.368408788684
+          ],
+          "node_counts": [
+            505,
+            360,
+            310,
+            165,
+            280,
+            275
+          ],
+          "mean_norm": [
+            4.069621952855146,
+            4.230255718317742,
+            4.293994047019047,
+            4.303221563224519,
+            4.286224326709284,
+            4.130147318850744
+          ],
+          "peak_bin": 4,
+          "peak_minus_lowest": 0.2335996103693736,
+          "peak_minus_highest": 0.17307424437377517,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            1.6617153455282736,
+            2.9999999999999996,
+            4.0,
+            4.9999999999999964,
+            6.339584838712211,
+            11.368408788684
+          ],
+          "node_counts": [
+            505,
+            360,
+            310,
+            165,
+            280,
+            275
+          ],
+          "mean_norm": [
+            4.036494395744023,
+            4.190777168058165,
+            4.246360468735191,
+            4.242548909059021,
+            4.261755328051981,
+            4.181463256261898
+          ],
+          "peak_bin": 5,
+          "peak_minus_lowest": 0.2252609323079584,
+          "peak_minus_highest": 0.08029207179008324,
+          "interior_peak": true
+        }
+      }
+    },
+    {
+      "family": "netscience",
+      "threshold": 0.003,
+      "response": "raw_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            1.6617153455282736,
+            2.9999999999999996,
+            4.0,
+            4.9999999999999964,
+            6.339584838712211,
+            11.368408788684
+          ],
+          "node_counts": [
+            505,
+            360,
+            310,
+            165,
+            280,
+            275
+          ],
+          "mean_norm": [
+            4.268298432737781,
+            4.550762852354492,
+            4.608757168009685,
+            4.80296485007309,
+            4.807915822509969,
+            4.724989029447598
+          ],
+          "peak_bin": 5,
+          "peak_minus_lowest": 0.5396173897721877,
+          "peak_minus_highest": 0.08292679306237094,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            1.6617153455282736,
+            2.9999999999999996,
+            4.0,
+            4.9999999999999964,
+            6.339584838712211,
+            11.368408788684
+          ],
+          "node_counts": [
+            505,
+            360,
+            310,
+            165,
+            280,
+            275
+          ],
+          "mean_norm": [
+            4.267348165950989,
+            4.549277815087594,
+            4.593776292792548,
+            4.789439407549833,
+            4.804350878183594,
+            4.728406008869113
+          ],
+          "peak_bin": 5,
+          "peak_minus_lowest": 0.5370027122326047,
+          "peak_minus_highest": 0.07594486931448063,
+          "interior_peak": true
+        }
+      }
+    },
+    {
+      "family": "netscience",
+      "threshold": 0.003,
+      "response": "balanced_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            1.6617153455282736,
+            2.9999999999999996,
+            4.0,
+            4.9999999999999964,
+            6.339584838712211,
+            11.368408788684
+          ],
+          "node_counts": [
+            505,
+            360,
+            310,
+            165,
+            280,
+            275
+          ],
+          "mean_norm": [
+            4.2792646989832335,
+            4.562977035277036,
+            4.633438879059519,
+            4.821796365301232,
+            4.837574749154226,
+            4.815553214990187
+          ],
+          "peak_bin": 5,
+          "peak_minus_lowest": 0.5583100501709923,
+          "peak_minus_highest": 0.022021534164038847,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            1.6617153455282736,
+            2.9999999999999996,
+            4.0,
+            4.9999999999999964,
+            6.339584838712211,
+            11.368408788684
+          ],
+          "node_counts": [
+            505,
+            360,
+            310,
+            165,
+            280,
+            275
+          ],
+          "mean_norm": [
+            4.276802580799602,
+            4.560285961821307,
+            4.617326130260162,
+            4.808168678828247,
+            4.834565423429353,
+            4.821360552777757
+          ],
+          "peak_bin": 5,
+          "peak_minus_lowest": 0.5577628426297512,
+          "peak_minus_highest": 0.013204870651596146,
+          "interior_peak": true
+        }
+      }
+    }
+  ],
+  "family_details": [
+    {
+      "family": "barabasi_albert",
+      "threshold": 0.0003,
+      "arm": "retained",
+      "node_rows": 3000,
+      "observed_mean": 4.097444686726372,
+      "predicted_mean": 4.1439331918374345,
+      "observed_minus_predicted_mean": -0.04648850511106267,
+      "interior_runs": 0,
+      "runs": 5
+    },
+    {
+      "family": "barabasi_albert",
+      "threshold": 0.0003,
+      "arm": "raw",
+      "node_rows": 3000,
+      "observed_mean": 4.095363228169309,
+      "predicted_mean": 4.1386067573795495,
+      "observed_minus_predicted_mean": -0.04324352921024028,
+      "interior_runs": 0,
+      "runs": 5
+    },
+    {
+      "family": "barabasi_albert",
+      "threshold": 0.001,
+      "arm": "retained",
+      "node_rows": 3000,
+      "observed_mean": 4.868469852143743,
+      "predicted_mean": 4.784215539598673,
+      "observed_minus_predicted_mean": 0.08425431254507146,
+      "interior_runs": 5,
+      "runs": 5
+    },
+    {
+      "family": "barabasi_albert",
+      "threshold": 0.001,
+      "arm": "raw",
+      "node_rows": 3000,
+      "observed_mean": 4.8496479450500685,
+      "predicted_mean": 4.772117064068984,
+      "observed_minus_predicted_mean": 0.0775308809810856,
+      "interior_runs": 5,
+      "runs": 5
+    },
+    {
+      "family": "barabasi_albert",
+      "threshold": 0.003,
+      "arm": "retained",
+      "node_rows": 3000,
+      "observed_mean": 4.996586694876343,
+      "predicted_mean": 4.976206213856957,
+      "observed_minus_predicted_mean": 0.02038048101938572,
+      "interior_runs": 5,
+      "runs": 5
+    },
+    {
+      "family": "barabasi_albert",
+      "threshold": 0.003,
+      "arm": "raw",
+      "node_rows": 3000,
+      "observed_mean": 4.994796062636296,
+      "predicted_mean": 4.96411567753657,
+      "observed_minus_predicted_mean": 0.030680385099726513,
+      "interior_runs": 5,
+      "runs": 5
+    },
+    {
+      "family": "powerlaw_cluster",
+      "threshold": 0.0003,
+      "arm": "retained",
+      "node_rows": 3000,
+      "observed_mean": 3.995418806203743,
+      "predicted_mean": 4.1615803763471,
+      "observed_minus_predicted_mean": -0.16616157014335647,
+      "interior_runs": 1,
+      "runs": 5
+    },
+    {
+      "family": "powerlaw_cluster",
+      "threshold": 0.0003,
+      "arm": "raw",
+      "node_rows": 3000,
+      "observed_mean": 3.9952134400843153,
+      "predicted_mean": 4.15657343897683,
+      "observed_minus_predicted_mean": -0.16135999889251412,
+      "interior_runs": 1,
+      "runs": 5
+    },
+    {
+      "family": "powerlaw_cluster",
+      "threshold": 0.001,
+      "arm": "retained",
+      "node_rows": 3000,
+      "observed_mean": 4.702362039227558,
+      "predicted_mean": 4.741089438311803,
+      "observed_minus_predicted_mean": -0.03872739908424598,
+      "interior_runs": 5,
+      "runs": 5
+    },
+    {
+      "family": "powerlaw_cluster",
+      "threshold": 0.001,
+      "arm": "raw",
+      "node_rows": 3000,
+      "observed_mean": 4.682528234663473,
+      "predicted_mean": 4.728890244023558,
+      "observed_minus_predicted_mean": -0.04636200936008525,
+      "interior_runs": 5,
+      "runs": 5
+    },
+    {
+      "family": "powerlaw_cluster",
+      "threshold": 0.003,
+      "arm": "retained",
+      "node_rows": 3000,
+      "observed_mean": 4.912604377719798,
+      "predicted_mean": 4.932716836795123,
+      "observed_minus_predicted_mean": -0.020112459075325467,
+      "interior_runs": 4,
+      "runs": 5
+    },
+    {
+      "family": "powerlaw_cluster",
+      "threshold": 0.003,
+      "arm": "raw",
+      "node_rows": 3000,
+      "observed_mean": 4.90810157211852,
+      "predicted_mean": 4.920531664401576,
+      "observed_minus_predicted_mean": -0.012430092283055662,
+      "interior_runs": 4,
+      "runs": 5
+    },
+    {
+      "family": "netscience",
+      "threshold": 0.0003,
+      "arm": "retained",
+      "node_rows": 1895,
+      "observed_mean": 3.8129137429126536,
+      "predicted_mean": 4.223745464124657,
+      "observed_minus_predicted_mean": -0.4108317212120032,
+      "interior_runs": 5,
+      "runs": 5
+    },
+    {
+      "family": "netscience",
+      "threshold": 0.0003,
+      "arm": "raw",
+      "node_rows": 1895,
+      "observed_mean": 3.788003963151344,
+      "predicted_mean": 4.215768949773911,
+      "observed_minus_predicted_mean": -0.42776498662256673,
+      "interior_runs": 5,
+      "runs": 5
+    },
+    {
+      "family": "netscience",
+      "threshold": 0.001,
+      "arm": "retained",
+      "node_rows": 1895,
+      "observed_mean": 4.1611898084229155,
+      "predicted_mean": 4.682989387680053,
+      "observed_minus_predicted_mean": -0.5217995792571368,
+      "interior_runs": 5,
+      "runs": 5
+    },
+    {
+      "family": "netscience",
+      "threshold": 0.001,
+      "arm": "raw",
+      "node_rows": 1895,
+      "observed_mean": 4.139157352680905,
+      "predicted_mean": 4.6704145380722935,
+      "observed_minus_predicted_mean": -0.5312571853913887,
+      "interior_runs": 5,
+      "runs": 5
+    },
+    {
+      "family": "netscience",
+      "threshold": 0.003,
+      "arm": "retained",
+      "node_rows": 1895,
+      "observed_mean": 4.570215129881868,
+      "predicted_mean": 4.950786396813375,
+      "observed_minus_predicted_mean": -0.3805712669315069,
+      "interior_runs": 5,
+      "runs": 5
+    },
+    {
+      "family": "netscience",
+      "threshold": 0.003,
+      "arm": "raw",
+      "node_rows": 1895,
+      "observed_mean": 4.566020521677366,
+      "predicted_mean": 4.938274906392782,
+      "observed_minus_predicted_mean": -0.3722543847154154,
+      "interior_runs": 5,
+      "runs": 5
+    }
+  ],
+  "individual_peak_changes": [
+    {
+      "family": "barabasi_albert",
+      "replicate": 104,
+      "threshold": 0.003,
+      "response": "balanced_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            3.320764213967928,
+            4.999999999999999,
+            6.808186237246927,
+            14.301216408439952
+          ],
+          "node_counts": [
+            354,
+            67,
+            94,
+            85
+          ],
+          "mean_norm": [
+            4.825096435463222,
+            5.233280635999354,
+            5.355401437364048,
+            5.345442504286721
+          ],
+          "peak_bin": 3,
+          "peak_minus_lowest": 0.5303050019008255,
+          "peak_minus_highest": 0.009958933077326648,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            3.320764213967928,
+            4.999999999999999,
+            6.808186237246927,
+            14.301216408439952
+          ],
+          "node_counts": [
+            354,
+            67,
+            94,
+            85
+          ],
+          "mean_norm": [
+            4.822325590062134,
+            5.228739705604774,
+            5.350642396271118,
+            5.353084721489767
+          ],
+          "peak_bin": 4,
+          "peak_minus_lowest": 0.5307591314276339,
+          "peak_minus_highest": 0.0,
+          "interior_peak": false
+        }
+      },
+      "raw_minus_retained_rmse": 0.06445428780639449,
+      "raw_minus_retained_mean": -0.001804805014831162,
+      "sampler_spearman": 0.9917627548965414
+    },
+    {
+      "family": "netscience",
+      "replicate": 301,
+      "threshold": 0.001,
+      "response": "balanced_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.074700989805743,
+            4.214010747192901,
+            4.304078145764455,
+            4.318237569581509,
+            4.2843481582325555,
+            4.149511489114529
+          ],
+          "peak_bin": 4,
+          "peak_minus_lowest": 0.24353657977576582,
+          "peak_minus_highest": 0.16872608046698012,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.04181809253749,
+            4.1781577469179,
+            4.253556202544698,
+            4.261250402745311,
+            4.264874216797555,
+            4.189871178108316
+          ],
+          "peak_bin": 5,
+          "peak_minus_lowest": 0.22305612426006505,
+          "peak_minus_highest": 0.07500303868923908,
+          "interior_peak": true
+        }
+      },
+      "raw_minus_retained_rmse": 0.0703235357828484,
+      "raw_minus_retained_mean": -0.02582132837682066,
+      "sampler_spearman": 0.9717201975916044
+    },
+    {
+      "family": "netscience",
+      "replicate": 302,
+      "threshold": 0.001,
+      "response": "raw_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.053338203382519,
+            4.203562278379094,
+            4.249759407732893,
+            4.261938414014151,
+            4.24485954489115,
+            4.0660988805748515
+          ],
+          "peak_bin": 4,
+          "peak_minus_lowest": 0.2086002106316318,
+          "peak_minus_highest": 0.19583953343929927,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.027543731618862,
+            4.170009396177213,
+            4.212264555465393,
+            4.208235879253755,
+            4.220445925265123,
+            4.122442251721679
+          ],
+          "peak_bin": 5,
+          "peak_minus_lowest": 0.19290219364626093,
+          "peak_minus_highest": 0.09800367354344353,
+          "interior_peak": true
+        }
+      },
+      "raw_minus_retained_rmse": 0.06594776578050536,
+      "raw_minus_retained_mean": -0.01948863044940553,
+      "sampler_spearman": 0.9760848912077907
+    },
+    {
+      "family": "netscience",
+      "replicate": 302,
+      "threshold": 0.001,
+      "response": "balanced_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.078838310355432,
+            4.234364198011544,
+            4.2872120010313655,
+            4.300554355574019,
+            4.287343015439131,
+            4.121815715975432
+          ],
+          "peak_bin": 4,
+          "peak_minus_lowest": 0.2217160452185869,
+          "peak_minus_highest": 0.1787386395985875,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.0480607158824045,
+            4.195812739992929,
+            4.246350363794471,
+            4.244130383122686,
+            4.260155219042508,
+            4.179796281568142
+          ],
+          "peak_bin": 5,
+          "peak_minus_lowest": 0.21209450316010336,
+          "peak_minus_highest": 0.08035893747436607,
+          "interior_peak": true
+        }
+      },
+      "raw_minus_retained_rmse": 0.06827929794275486,
+      "raw_minus_retained_mean": -0.022726227201343586,
+      "sampler_spearman": 0.9744900950705699
+    },
+    {
+      "family": "netscience",
+      "replicate": 302,
+      "threshold": 0.003,
+      "response": "raw_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.275861851258001,
+            4.56663087273473,
+            4.614031258474189,
+            4.798882160834367,
+            4.790330340591986,
+            4.725318292327439
+          ],
+          "peak_bin": 4,
+          "peak_minus_lowest": 0.5230203095763661,
+          "peak_minus_highest": 0.07356386850692775,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.278957122828563,
+            4.560337107731026,
+            4.591936263790934,
+            4.782476980863543,
+            4.8112676358732225,
+            4.728006450351738
+          ],
+          "peak_bin": 5,
+          "peak_minus_lowest": 0.532310513044659,
+          "peak_minus_highest": 0.08326118552148465,
+          "interior_peak": true
+        }
+      },
+      "raw_minus_retained_rmse": 0.05781730352789821,
+      "raw_minus_retained_mean": -0.0019299525961823942,
+      "sampler_spearman": 0.9800905077116713
+    },
+    {
+      "family": "netscience",
+      "replicate": 303,
+      "threshold": 0.001,
+      "response": "raw_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.0378536794638755,
+            4.202931220082373,
+            4.245990565624688,
+            4.259802188947763,
+            4.2320217836130185,
+            4.0731019043058065
+          ],
+          "peak_bin": 4,
+          "peak_minus_lowest": 0.22194850948388734,
+          "peak_minus_highest": 0.18670028464195632,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.007260280432007,
+            4.164450376212269,
+            4.202242758892994,
+            4.193865606466398,
+            4.210093989418703,
+            4.128083700981617
+          ],
+          "peak_bin": 5,
+          "peak_minus_lowest": 0.20283370898669606,
+          "peak_minus_highest": 0.08201028843708613,
+          "interior_peak": true
+        }
+      },
+      "raw_minus_retained_rmse": 0.06990316904790891,
+      "raw_minus_retained_mean": -0.023622118622238328,
+      "sampler_spearman": 0.9723138100307939
+    },
+    {
+      "family": "netscience",
+      "replicate": 303,
+      "threshold": 0.001,
+      "response": "balanced_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.063255555001359,
+            4.232371449651571,
+            4.28403489697794,
+            4.2975967320023045,
+            4.276618773428808,
+            4.131150269462788
+          ],
+          "peak_bin": 4,
+          "peak_minus_lowest": 0.23434117700094514,
+          "peak_minus_highest": 0.16644646253951656,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.026955021559435,
+            4.18882760091514,
+            4.237506983417066,
+            4.2264655504167985,
+            4.251599609002018,
+            4.1878875908585425
+          ],
+          "peak_bin": 5,
+          "peak_minus_lowest": 0.2246445874425831,
+          "peak_minus_highest": 0.06371201814347582,
+          "interior_peak": true
+        }
+      },
+      "raw_minus_retained_rmse": 0.07285255384370333,
+      "raw_minus_retained_mean": -0.027213960820282497,
+      "sampler_spearman": 0.9698690437615586
+    },
+    {
+      "family": "netscience",
+      "replicate": 303,
+      "threshold": 0.003,
+      "response": "raw_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.270144068814665,
+            4.556687452119503,
+            4.617370112995106,
+            4.805441528512008,
+            4.802383321994836,
+            4.721580446774459
+          ],
+          "peak_bin": 4,
+          "peak_minus_lowest": 0.5352974596973423,
+          "peak_minus_highest": 0.08386108173754891,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.265279934175226,
+            4.553733196436489,
+            4.6029414901521815,
+            4.771922227870288,
+            4.796371318927659,
+            4.7312687826843725
+          ],
+          "peak_bin": 5,
+          "peak_minus_lowest": 0.5310913847524334,
+          "peak_minus_highest": 0.06510253624328666,
+          "interior_peak": true
+        }
+      },
+      "raw_minus_retained_rmse": 0.058563046084205095,
+      "raw_minus_retained_mean": -0.00661875789423488,
+      "sampler_spearman": 0.9801458351243103
+    },
+    {
+      "family": "netscience",
+      "replicate": 304,
+      "threshold": 0.001,
+      "response": "raw_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.050018561822849,
+            4.212342189103986,
+            4.267293697541776,
+            4.273102479963821,
+            4.247414102942672,
+            4.073943017938817
+          ],
+          "peak_bin": 4,
+          "peak_minus_lowest": 0.22308391814097206,
+          "peak_minus_highest": 0.1991594620250039,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.021152568979724,
+            4.174477972453867,
+            4.224615392801051,
+            4.209343080208173,
+            4.216649636246119,
+            4.120454371028213
+          ],
+          "peak_bin": 3,
+          "peak_minus_lowest": 0.20346282382132763,
+          "peak_minus_highest": 0.10416102177283815,
+          "interior_peak": true
+        }
+      },
+      "raw_minus_retained_rmse": 0.070499114670322,
+      "raw_minus_retained_mean": -0.025215012340147284,
+      "sampler_spearman": 0.9723219658645295
+    },
+    {
+      "family": "netscience",
+      "replicate": 304,
+      "threshold": 0.001,
+      "response": "balanced_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.075193707720392,
+            4.242191774869955,
+            4.305442749611818,
+            4.311260052727797,
+            4.290595486374367,
+            4.1304737978476656
+          ],
+          "peak_bin": 4,
+          "peak_minus_lowest": 0.23606634500740498,
+          "peak_minus_highest": 0.18078625488013156,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.0412187154420325,
+            4.200535881190524,
+            4.258462967942921,
+            4.243475187866739,
+            4.255857609352692,
+            4.178180000022587
+          ],
+          "peak_bin": 3,
+          "peak_minus_lowest": 0.21724425250088863,
+          "peak_minus_highest": 0.08028296792033451,
+          "interior_peak": true
+        }
+      },
+      "raw_minus_retained_rmse": 0.07314923591451343,
+      "raw_minus_retained_mean": -0.02876471124673612,
+      "sampler_spearman": 0.9698675007659872
+    },
+    {
+      "family": "netscience",
+      "replicate": 305,
+      "threshold": 0.001,
+      "response": "raw_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.030765861754988,
+            4.198795133668909,
+            4.251775829327037,
+            4.248707211193763,
+            4.247396552920821,
+            4.060753328625177
+          ],
+          "peak_bin": 3,
+          "peak_minus_lowest": 0.22100996757204872,
+          "peak_minus_highest": 0.19102250070185978,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            1.6617153455282738,
+            3.0000000000000004,
+            4.000000000000002,
+            4.999999999999999,
+            6.339584838712213,
+            11.368408788683995
+          ],
+          "node_counts": [
+            101,
+            72,
+            62,
+            33,
+            56,
+            55
+          ],
+          "mean_norm": [
+            4.004977728650676,
+            4.165519379683906,
+            4.201500323191913,
+            4.2014681463258325,
+            4.235033973175768,
+            4.11291359971649
+          ],
+          "peak_bin": 5,
+          "peak_minus_lowest": 0.230056244525092,
+          "peak_minus_highest": 0.1221203734592784,
+          "interior_peak": true
+        }
+      },
+      "raw_minus_retained_rmse": 0.06866152251311479,
+      "raw_minus_retained_mean": -0.019788696061149844,
+      "sampler_spearman": 0.9747691568410911
+    },
+    {
+      "family": "powerlaw_cluster",
+      "replicate": 203,
+      "threshold": 0.003,
+      "response": "balanced_norm",
+      "curves": {
+        "retained": {
+          "degree": [
+            3.2993747272028005,
+            5.000000000000001,
+            6.654433648524775,
+            14.674782519491472
+          ],
+          "node_counts": [
+            372,
+            62,
+            80,
+            86
+          ],
+          "mean_norm": [
+            4.750472355345426,
+            4.972652299866993,
+            5.312385921530548,
+            5.3116959887303965
+          ],
+          "peak_bin": 3,
+          "peak_minus_lowest": 0.5619135661851216,
+          "peak_minus_highest": 0.0006899328001512828,
+          "interior_peak": true
+        },
+        "raw": {
+          "degree": [
+            3.2993747272028005,
+            5.000000000000001,
+            6.654433648524775,
+            14.674782519491472
+          ],
+          "node_counts": [
+            372,
+            62,
+            80,
+            86
+          ],
+          "mean_norm": [
+            4.745368605096773,
+            4.96675700957477,
+            5.30870870158935,
+            5.309018678100093
+          ],
+          "peak_bin": 4,
+          "peak_minus_lowest": 0.5636500730033207,
+          "peak_minus_highest": 0.0,
+          "interior_peak": false
+        }
+      },
+      "raw_minus_retained_rmse": 0.05965292446345786,
+      "raw_minus_retained_mean": -0.004647549000197426,
+      "sampler_spearman": 0.9938204828346744
+    }
+  ],
+  "predictor": {
+    "retained": {
+      "primary_response": "raw_norm",
+      "criteria": {
+        "median_absolute_peak_bin_error": 0.0,
+        "fraction_peaks_within_one_bin": 0.8888888888888888,
+        "pooled_spearman": 0.8749893002441799,
+        "families_with_nondecreasing_observed_peaks": 3
+      },
+      "passed": {
+        "median_peak_error": true,
+        "fraction_peaks": true,
+        "pooled_spearman": true,
+        "peak_order": true
+      },
+      "all_primary_criteria_passed": true,
+      "peak_order": {
+        "barabasi_albert": {
+          "actual_peak_degrees": [
+            3.2935537438050546,
+            6.769563527927011,
+            6.769563527927011
+          ],
+          "predicted_peak_degrees": [
+            4.999999999999997,
+            6.769563527927011,
+            6.769563527927011
+          ],
+          "actual_nondecreasing": true,
+          "predicted_nondecreasing": true
+        },
+        "powerlaw_cluster": {
+          "actual_peak_degrees": [
+            4.0,
+            6.3374222771722275,
+            13.408968244256492
+          ],
+          "predicted_peak_degrees": [
+            4.0,
+            6.3374222771722275,
+            6.3374222771722275
+          ],
+          "actual_nondecreasing": true,
+          "predicted_nondecreasing": true
+        },
+        "netscience": {
+          "actual_peak_degrees": [
+            4.0,
+            4.9999999999999964,
+            6.339584838712211
+          ],
+          "predicted_peak_degrees": [
+            1.6617153455282736,
+            4.9999999999999964,
+            6.339584838712211
+          ],
+          "actual_nondecreasing": true,
+          "predicted_nondecreasing": true
+        }
+      },
+      "curves": [
+        {
+          "family": "barabasi_albert",
+          "threshold": 0.0003,
+          "predicted": {
+            "peak_bin": 1,
+            "peak_degree": 4.999999999999997,
+            "peak_norm": 4.207367108835426,
+            "peak_minus_lowest": 0.03244252377372003,
+            "peak_minus_highest": 0.2726700378623246,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 0,
+            "peak_degree": 3.2935537438050546,
+            "peak_norm": 4.177563961447144,
+            "peak_minus_lowest": 0.0,
+            "peak_minus_highest": 0.42144442493273937,
+            "inverted_u": false
+          },
+          "absolute_peak_bin_error": 1,
+          "node_rmse": 0.26422073369358406,
+          "node_spearman": 0.7967081896068114
+        },
+        {
+          "family": "barabasi_albert",
+          "threshold": 0.001,
+          "predicted": {
+            "peak_bin": 2,
+            "peak_degree": 6.769563527927011,
+            "peak_norm": 5.1234520121264016,
+            "peak_minus_lowest": 0.4767064690953511,
+            "peak_minus_highest": 0.22337595346317496,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 2,
+            "peak_degree": 6.769563527927011,
+            "peak_norm": 5.2696123085057724,
+            "peak_minus_lowest": 0.5564619221650009,
+            "peak_minus_highest": 0.3132120054728986,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.2787640010942565,
+          "node_spearman": 0.9340912379808447
+        },
+        {
+          "family": "barabasi_albert",
+          "threshold": 0.003,
+          "predicted": {
+            "peak_bin": 2,
+            "peak_degree": 6.769563527927011,
+            "peak_norm": 5.316449922708669,
+            "peak_minus_lowest": 0.49225148398346086,
+            "peak_minus_highest": 0.1882207775107032,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 2,
+            "peak_degree": 6.769563527927011,
+            "peak_norm": 5.389132411903193,
+            "peak_minus_lowest": 0.5989519076920535,
+            "peak_minus_highest": 0.08534386362632951,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.23781401130188554,
+          "node_spearman": 0.9174175528894045
+        },
+        {
+          "family": "powerlaw_cluster",
+          "threshold": 0.0003,
+          "predicted": {
+            "peak_bin": 1,
+            "peak_degree": 4.0,
+            "peak_norm": 4.242443876409625,
+            "peak_minus_lowest": 0.08762462134429949,
+            "peak_minus_highest": 0.23411196041577575,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 1,
+            "peak_degree": 4.0,
+            "peak_norm": 4.067175946009557,
+            "peak_minus_lowest": 0.01180842327010545,
+            "peak_minus_highest": 0.3355724126045949,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.30993334267746475,
+          "node_spearman": 0.7568083608409985
+        },
+        {
+          "family": "powerlaw_cluster",
+          "threshold": 0.001,
+          "predicted": {
+            "peak_bin": 3,
+            "peak_degree": 6.3374222771722275,
+            "peak_norm": 5.052751618745355,
+            "peak_minus_lowest": 0.5142596004119762,
+            "peak_minus_highest": 0.12435760852414379,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 3,
+            "peak_degree": 6.3374222771722275,
+            "peak_norm": 4.987077470182343,
+            "peak_minus_lowest": 0.4779930906049916,
+            "peak_minus_highest": 0.11362797959110438,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.2819117944570063,
+          "node_spearman": 0.9031563407736282
+        },
+        {
+          "family": "powerlaw_cluster",
+          "threshold": 0.003,
+          "predicted": {
+            "peak_bin": 3,
+            "peak_degree": 6.3374222771722275,
+            "peak_norm": 5.248288444115394,
+            "peak_minus_lowest": 0.5382316249492849,
+            "peak_minus_highest": 0.10681905950604342,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 4,
+            "peak_degree": 13.408968244256492,
+            "peak_norm": 5.229969081184507,
+            "peak_minus_lowest": 0.576696527229581,
+            "peak_minus_highest": 0.0,
+            "inverted_u": false
+          },
+          "absolute_peak_bin_error": 1,
+          "node_rmse": 0.26984812339225434,
+          "node_spearman": 0.8864815558036502
+        },
+        {
+          "family": "netscience",
+          "threshold": 0.0003,
+          "predicted": {
+            "peak_bin": 0,
+            "peak_degree": 1.6617153455282736,
+            "peak_norm": 4.354432518976816,
+            "peak_minus_lowest": 0.0,
+            "peak_minus_highest": 0.38229903658920295,
+            "inverted_u": false
+          },
+          "actual": {
+            "peak_bin": 2,
+            "peak_degree": 4.0,
+            "peak_norm": 3.9039939197006963,
+            "peak_minus_lowest": 0.10005129441863092,
+            "peak_minus_highest": 0.3193444210691254,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 2,
+          "node_rmse": 0.43508070409844274,
+          "node_spearman": 0.8351734109482886
+        },
+        {
+          "family": "netscience",
+          "threshold": 0.001,
+          "predicted": {
+            "peak_bin": 3,
+            "peak_degree": 4.9999999999999964,
+            "peak_norm": 4.803048627400744,
+            "peak_minus_lowest": 0.1789735315902954,
+            "peak_minus_highest": 0.2801152919551493,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 3,
+            "peak_degree": 4.9999999999999964,
+            "peak_norm": 4.264833873419634,
+            "peak_minus_lowest": 0.220555661233945,
+            "peak_minus_highest": 0.19174125585447843,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.5507264889233568,
+          "node_spearman": 0.8297982030927523
+        },
+        {
+          "family": "netscience",
+          "threshold": 0.003,
+          "predicted": {
+            "peak_bin": 4,
+            "peak_degree": 6.339584838712211,
+            "peak_norm": 5.124819953085343,
+            "peak_minus_lowest": 0.32226632790965937,
+            "peak_minus_highest": 0.20221009805108014,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 4,
+            "peak_degree": 6.339584838712211,
+            "peak_norm": 4.807915822509969,
+            "peak_minus_lowest": 0.5396173897721877,
+            "peak_minus_highest": 0.08292679306237094,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.49658070324128145,
+          "node_spearman": 0.5482674805851805
+        }
+      ],
+      "balanced_norm_curves": [
+        {
+          "family": "barabasi_albert",
+          "threshold": 0.0003,
+          "predicted": {
+            "peak_bin": 1,
+            "peak_degree": 4.999999999999997,
+            "peak_norm": 4.237060215058127,
+            "peak_minus_lowest": 0.03149797018442868,
+            "peak_minus_highest": 0.2693120878862971,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 0,
+            "peak_degree": 3.2935537438050546,
+            "peak_norm": 4.210957634453277,
+            "peak_minus_lowest": 0.0,
+            "peak_minus_highest": 0.42140664454110954,
+            "inverted_u": false
+          },
+          "absolute_peak_bin_error": 1,
+          "node_rmse": 0.2659511312741343,
+          "node_spearman": 0.7993308253864401
+        },
+        {
+          "family": "barabasi_albert",
+          "threshold": 0.001,
+          "predicted": {
+            "peak_bin": 2,
+            "peak_degree": 6.769563527927011,
+            "peak_norm": 5.1444474051203635,
+            "peak_minus_lowest": 0.4764920587103445,
+            "peak_minus_highest": 0.19832269539253744,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 2,
+            "peak_degree": 6.769563527927011,
+            "peak_norm": 5.300541139747607,
+            "peak_minus_lowest": 0.5675505583214981,
+            "peak_minus_highest": 0.2914540457693331,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.2815725953930365,
+          "node_spearman": 0.9343253225698108
+        },
+        {
+          "family": "barabasi_albert",
+          "threshold": 0.003,
+          "predicted": {
+            "peak_bin": 2,
+            "peak_degree": 6.769563527927011,
+            "peak_norm": 5.333256163458874,
+            "peak_minus_lowest": 0.49248657841183796,
+            "peak_minus_highest": 0.14872601796905371,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 2,
+            "peak_degree": 6.769563527927011,
+            "peak_norm": 5.399689270125125,
+            "peak_minus_lowest": 0.601507423464338,
+            "peak_minus_highest": 0.03666724030439017,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.24537464611354176,
+          "node_spearman": 0.9160195654830803
+        },
+        {
+          "family": "powerlaw_cluster",
+          "threshold": 0.0003,
+          "predicted": {
+            "peak_bin": 1,
+            "peak_degree": 4.0,
+            "peak_norm": 4.2723182744537995,
+            "peak_minus_lowest": 0.0865081437508115,
+            "peak_minus_highest": 0.23124149035357178,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 1,
+            "peak_degree": 4.0,
+            "peak_norm": 4.101927106783616,
+            "peak_minus_lowest": 0.012797098787436845,
+            "peak_minus_highest": 0.3362174244737819,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.3089112489113692,
+          "node_spearman": 0.760569793787932
+        },
+        {
+          "family": "powerlaw_cluster",
+          "threshold": 0.001,
+          "predicted": {
+            "peak_bin": 3,
+            "peak_degree": 6.3374222771722275,
+            "peak_norm": 5.073508825337619,
+            "peak_minus_lowest": 0.5100240938807064,
+            "peak_minus_highest": 0.10198915438049916,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 3,
+            "peak_degree": 6.3374222771722275,
+            "peak_norm": 5.018447346720476,
+            "peak_minus_lowest": 0.4861434171338299,
+            "peak_minus_highest": 0.09074580662605314,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.2814697823543466,
+          "node_spearman": 0.9046429676058059
+        },
+        {
+          "family": "powerlaw_cluster",
+          "threshold": 0.003,
+          "predicted": {
+            "peak_bin": 3,
+            "peak_degree": 6.3374222771722275,
+            "peak_norm": 5.264693212379855,
+            "peak_minus_lowest": 0.5336091086811141,
+            "peak_minus_highest": 0.07097403971272165,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 4,
+            "peak_degree": 13.408968244256492,
+            "peak_norm": 5.290065073539957,
+            "peak_minus_lowest": 0.6279257789767927,
+            "peak_minus_highest": 0.0,
+            "inverted_u": false
+          },
+          "absolute_peak_bin_error": 1,
+          "node_rmse": 0.27707069602794304,
+          "node_spearman": 0.8856658847247271
+        },
+        {
+          "family": "netscience",
+          "threshold": 0.0003,
+          "predicted": {
+            "peak_bin": 0,
+            "peak_degree": 1.6617153455282736,
+            "peak_norm": 4.3837528961203205,
+            "peak_minus_lowest": 0.0,
+            "peak_minus_highest": 0.3800644692912556,
+            "inverted_u": false
+          },
+          "actual": {
+            "peak_bin": 2,
+            "peak_degree": 4.0,
+            "peak_norm": 3.9266091950381363,
+            "peak_minus_lowest": 0.10225473516141026,
+            "peak_minus_highest": 0.31646919229165116,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 2,
+          "node_rmse": 0.4423238236861365,
+          "node_spearman": 0.830916131463467
+        },
+        {
+          "family": "netscience",
+          "threshold": 0.001,
+          "predicted": {
+            "peak_bin": 3,
+            "peak_degree": 4.9999999999999964,
+            "peak_norm": 4.826037015653084,
+            "peak_minus_lowest": 0.17670308482668062,
+            "peak_minus_highest": 0.26490168870067254,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 3,
+            "peak_degree": 4.9999999999999964,
+            "peak_norm": 4.303221563224519,
+            "peak_minus_lowest": 0.2335996103693736,
+            "peak_minus_highest": 0.17307424437377517,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.542028575595289,
+          "node_spearman": 0.8150038623229481
+        },
+        {
+          "family": "netscience",
+          "threshold": 0.003,
+          "predicted": {
+            "peak_bin": 4,
+            "peak_degree": 6.339584838712211,
+            "peak_norm": 5.152114022183494,
+            "peak_minus_lowest": 0.3289956684160007,
+            "peak_minus_highest": 0.16985628314169166,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 4,
+            "peak_degree": 6.339584838712211,
+            "peak_norm": 4.837574749154226,
+            "peak_minus_lowest": 0.5583100501709923,
+            "peak_minus_highest": 0.022021534164038847,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.4966549924683962,
+          "node_spearman": 0.5480470119647851
+        }
+      ]
+    },
+    "raw": {
+      "primary_response": "raw_norm",
+      "criteria": {
+        "median_absolute_peak_bin_error": 0.0,
+        "fraction_peaks_within_one_bin": 0.8888888888888888,
+        "pooled_spearman": 0.8726420959883027,
+        "families_with_nondecreasing_observed_peaks": 3
+      },
+      "passed": {
+        "median_peak_error": true,
+        "fraction_peaks": true,
+        "pooled_spearman": true,
+        "peak_order": true
+      },
+      "all_primary_criteria_passed": true,
+      "peak_order": {
+        "barabasi_albert": {
+          "actual_peak_degrees": [
+            3.2935537438050546,
+            6.769563527927011,
+            6.769563527927011
+          ],
+          "predicted_peak_degrees": [
+            4.999999999999997,
+            6.769563527927011,
+            6.769563527927011
+          ],
+          "actual_nondecreasing": true,
+          "predicted_nondecreasing": true
+        },
+        "powerlaw_cluster": {
+          "actual_peak_degrees": [
+            4.0,
+            6.3374222771722275,
+            13.408968244256492
+          ],
+          "predicted_peak_degrees": [
+            4.0,
+            6.3374222771722275,
+            6.3374222771722275
+          ],
+          "actual_nondecreasing": true,
+          "predicted_nondecreasing": true
+        },
+        "netscience": {
+          "actual_peak_degrees": [
+            4.0,
+            6.339584838712211,
+            6.339584838712211
+          ],
+          "predicted_peak_degrees": [
+            1.6617153455282736,
+            4.9999999999999964,
+            6.339584838712211
+          ],
+          "actual_nondecreasing": true,
+          "predicted_nondecreasing": true
+        }
+      },
+      "curves": [
+        {
+          "family": "barabasi_albert",
+          "threshold": 0.0003,
+          "predicted": {
+            "peak_bin": 1,
+            "peak_degree": 4.999999999999997,
+            "peak_norm": 4.196188188182132,
+            "peak_minus_lowest": 0.028565393740387357,
+            "peak_minus_highest": 0.2406983931304838,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 0,
+            "peak_degree": 3.2935537438050546,
+            "peak_norm": 4.16981603300913,
+            "peak_minus_lowest": 0.0,
+            "peak_minus_highest": 0.34116229305796697,
+            "inverted_u": false
+          },
+          "absolute_peak_bin_error": 1,
+          "node_rmse": 0.25350486872802613,
+          "node_spearman": 0.7900096865844903
+        },
+        {
+          "family": "barabasi_albert",
+          "threshold": 0.001,
+          "predicted": {
+            "peak_bin": 2,
+            "peak_degree": 6.769563527927011,
+            "peak_norm": 5.106829414659945,
+            "peak_minus_lowest": 0.47405791401072417,
+            "peak_minus_highest": 0.20394779732909285,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 2,
+            "peak_degree": 6.769563527927011,
+            "peak_norm": 5.253536183346349,
+            "peak_minus_lowest": 0.5651798096578613,
+            "peak_minus_highest": 0.2842501869649965,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.28233866744426594,
+          "node_spearman": 0.9339895429768345
+        },
+        {
+          "family": "barabasi_albert",
+          "threshold": 0.003,
+          "predicted": {
+            "peak_bin": 2,
+            "peak_degree": 6.769563527927011,
+            "peak_norm": 5.303780245838396,
+            "peak_minus_lowest": 0.49435934367333356,
+            "peak_minus_highest": 0.1722351084717335,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 2,
+            "peak_degree": 6.769563527927011,
+            "peak_norm": 5.38522033855504,
+            "peak_minus_lowest": 0.5968979780393289,
+            "peak_minus_highest": 0.08283443547223168,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.24211809102235826,
+          "node_spearman": 0.9160460310416
+        },
+        {
+          "family": "powerlaw_cluster",
+          "threshold": 0.0003,
+          "predicted": {
+            "peak_bin": 1,
+            "peak_degree": 4.0,
+            "peak_norm": 4.233374830720694,
+            "peak_minus_lowest": 0.08424107950896076,
+            "peak_minus_highest": 0.2114191799766738,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 1,
+            "peak_degree": 4.0,
+            "peak_norm": 4.054458290622102,
+            "peak_minus_lowest": 0.005083286055252323,
+            "peak_minus_highest": 0.24027072473156252,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.30418635840102703,
+          "node_spearman": 0.7310434965114225
+        },
+        {
+          "family": "powerlaw_cluster",
+          "threshold": 0.001,
+          "predicted": {
+            "peak_bin": 3,
+            "peak_degree": 6.3374222771722275,
+            "peak_norm": 5.035457215151234,
+            "peak_minus_lowest": 0.5075743279365188,
+            "peak_minus_highest": 0.10728261549512386,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 3,
+            "peak_degree": 6.3374222771722275,
+            "peak_norm": 4.963665499220057,
+            "peak_minus_lowest": 0.4798474831555035,
+            "peak_minus_highest": 0.07282703200193019,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.2916193028467124,
+          "node_spearman": 0.901015606212958
+        },
+        {
+          "family": "powerlaw_cluster",
+          "threshold": 0.003,
+          "predicted": {
+            "peak_bin": 3,
+            "peak_degree": 6.3374222771722275,
+            "peak_norm": 5.233863312646307,
+            "peak_minus_lowest": 0.5354838407174354,
+            "peak_minus_highest": 0.09089509591591405,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 4,
+            "peak_degree": 13.408968244256492,
+            "peak_norm": 5.225821688605773,
+            "peak_minus_lowest": 0.5774439168218057,
+            "peak_minus_highest": 0.0,
+            "inverted_u": false
+          },
+          "absolute_peak_bin_error": 1,
+          "node_rmse": 0.27376467813137473,
+          "node_spearman": 0.8835903689103836
+        },
+        {
+          "family": "netscience",
+          "threshold": 0.0003,
+          "predicted": {
+            "peak_bin": 0,
+            "peak_degree": 1.6617153455282736,
+            "peak_norm": 4.34654358327725,
+            "peak_minus_lowest": 0.0,
+            "peak_minus_highest": 0.3861567577280258,
+            "inverted_u": false
+          },
+          "actual": {
+            "peak_bin": 2,
+            "peak_degree": 4.0,
+            "peak_norm": 3.86868176470579,
+            "peak_minus_lowest": 0.10728016761562786,
+            "peak_minus_highest": 0.23066918482939158,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 2,
+          "node_rmse": 0.45546814301899996,
+          "node_spearman": 0.8055909804845328
+        },
+        {
+          "family": "netscience",
+          "threshold": 0.001,
+          "predicted": {
+            "peak_bin": 3,
+            "peak_degree": 4.9999999999999964,
+            "peak_norm": 4.786892010924901,
+            "peak_minus_lowest": 0.17375523791280134,
+            "peak_minus_highest": 0.2662855722416779,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 4,
+            "peak_degree": 6.339584838712211,
+            "peak_norm": 4.221555392131737,
+            "peak_minus_lowest": 0.20499529852053655,
+            "peak_minus_highest": 0.0985313202317375,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 1,
+          "node_rmse": 0.5607206337802253,
+          "node_spearman": 0.8174814454823165
+        },
+        {
+          "family": "netscience",
+          "threshold": 0.003,
+          "predicted": {
+            "peak_bin": 4,
+            "peak_degree": 6.339584838712211,
+            "peak_norm": 5.108753994196123,
+            "peak_minus_lowest": 0.31784143169404366,
+            "peak_minus_highest": 0.18123223906112162,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 4,
+            "peak_degree": 6.339584838712211,
+            "peak_norm": 4.804350878183594,
+            "peak_minus_lowest": 0.5370027122326047,
+            "peak_minus_highest": 0.07594486931448063,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.49250253708221703,
+          "node_spearman": 0.5427138508387216
+        }
+      ],
+      "balanced_norm_curves": [
+        {
+          "family": "barabasi_albert",
+          "threshold": 0.0003,
+          "predicted": {
+            "peak_bin": 1,
+            "peak_degree": 4.999999999999997,
+            "peak_norm": 4.219905148167241,
+            "peak_minus_lowest": 0.02993970116830713,
+            "peak_minus_highest": 0.2370510621510551,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 0,
+            "peak_degree": 3.2935537438050546,
+            "peak_norm": 4.193130536797566,
+            "peak_minus_lowest": 0.0,
+            "peak_minus_highest": 0.3393026898937008,
+            "inverted_u": false
+          },
+          "absolute_peak_bin_error": 1,
+          "node_rmse": 0.25521628767079646,
+          "node_spearman": 0.7916365193112106
+        },
+        {
+          "family": "barabasi_albert",
+          "threshold": 0.001,
+          "predicted": {
+            "peak_bin": 2,
+            "peak_degree": 6.769563527927011,
+            "peak_norm": 5.127082045943502,
+            "peak_minus_lowest": 0.4784543100235368,
+            "peak_minus_highest": 0.17976603296187665,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 2,
+            "peak_degree": 6.769563527927011,
+            "peak_norm": 5.2807677847862955,
+            "peak_minus_lowest": 0.5771077772047253,
+            "peak_minus_highest": 0.26321909247860376,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.28324609363288994,
+          "node_spearman": 0.9349381464014263
+        },
+        {
+          "family": "barabasi_albert",
+          "threshold": 0.003,
+          "predicted": {
+            "peak_bin": 2,
+            "peak_degree": 6.769563527927011,
+            "peak_norm": 5.321104619124329,
+            "peak_minus_lowest": 0.49869112411733774,
+            "peak_minus_highest": 0.13566299891814104,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 2,
+            "peak_degree": 6.769563527927011,
+            "peak_norm": 5.39733753692913,
+            "peak_minus_lowest": 0.6007231608282035,
+            "peak_minus_highest": 0.03394926299566414,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.2486282026251132,
+          "node_spearman": 0.9148971491162357
+        },
+        {
+          "family": "powerlaw_cluster",
+          "threshold": 0.0003,
+          "predicted": {
+            "peak_bin": 1,
+            "peak_degree": 4.0,
+            "peak_norm": 4.2561934419819085,
+            "peak_minus_lowest": 0.08492946758419517,
+            "peak_minus_highest": 0.20758600848088715,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 1,
+            "peak_degree": 4.0,
+            "peak_norm": 4.078838212796531,
+            "peak_minus_lowest": 0.00614278441963112,
+            "peak_minus_highest": 0.2394639349105674,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.30436294236179706,
+          "node_spearman": 0.7335282648677062
+        },
+        {
+          "family": "powerlaw_cluster",
+          "threshold": 0.001,
+          "predicted": {
+            "peak_bin": 3,
+            "peak_degree": 6.3374222771722275,
+            "peak_norm": 5.054411768930158,
+            "peak_minus_lowest": 0.5075118389414159,
+            "peak_minus_highest": 0.08428822482762488,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 3,
+            "peak_degree": 6.3374222771722275,
+            "peak_norm": 4.989848207060767,
+            "peak_minus_lowest": 0.48770084489172394,
+            "peak_minus_highest": 0.04872046201557456,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.29053557879304737,
+          "node_spearman": 0.9031113154568128
+        },
+        {
+          "family": "powerlaw_cluster",
+          "threshold": 0.003,
+          "predicted": {
+            "peak_bin": 3,
+            "peak_degree": 6.3374222771722275,
+            "peak_norm": 5.250480006064544,
+            "peak_minus_lowest": 0.5360400159729979,
+            "peak_minus_highest": 0.057232548605197664,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 4,
+            "peak_degree": 13.408968244256492,
+            "peak_norm": 5.287458695802604,
+            "peak_minus_lowest": 0.6299784524614704,
+            "peak_minus_highest": 0.0,
+            "inverted_u": false
+          },
+          "absolute_peak_bin_error": 1,
+          "node_rmse": 0.2803258736942545,
+          "node_spearman": 0.8836110170367486
+        },
+        {
+          "family": "netscience",
+          "threshold": 0.0003,
+          "predicted": {
+            "peak_bin": 0,
+            "peak_degree": 1.6617153455282736,
+            "peak_norm": 4.368823057504785,
+            "peak_minus_lowest": 0.0,
+            "peak_minus_highest": 0.38418699103522824,
+            "inverted_u": false
+          },
+          "actual": {
+            "peak_bin": 2,
+            "peak_degree": 4.0,
+            "peak_norm": 3.8860234311097868,
+            "peak_minus_lowest": 0.11038595557978415,
+            "peak_minus_highest": 0.2260286074974056,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 2,
+          "node_rmse": 0.460600171500254,
+          "node_spearman": 0.7997886219022436
+        },
+        {
+          "family": "netscience",
+          "threshold": 0.001,
+          "predicted": {
+            "peak_bin": 3,
+            "peak_degree": 4.9999999999999964,
+            "peak_norm": 4.807700553165969,
+            "peak_minus_lowest": 0.17516053781766328,
+            "peak_minus_highest": 0.24911826185540864,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 4,
+            "peak_degree": 6.339584838712211,
+            "peak_norm": 4.261755328051981,
+            "peak_minus_lowest": 0.2252609323079584,
+            "peak_minus_highest": 0.08029207179008324,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 1,
+          "node_rmse": 0.5515458423500887,
+          "node_spearman": 0.80098613105485
+        },
+        {
+          "family": "netscience",
+          "threshold": 0.003,
+          "predicted": {
+            "peak_bin": 4,
+            "peak_degree": 6.339584838712211,
+            "peak_norm": 5.134117860767328,
+            "peak_minus_lowest": 0.32675663806272937,
+            "peak_minus_highest": 0.14924748171488034,
+            "inverted_u": true
+          },
+          "actual": {
+            "peak_bin": 4,
+            "peak_degree": 6.339584838712211,
+            "peak_norm": 4.834565423429353,
+            "peak_minus_lowest": 0.5577628426297512,
+            "peak_minus_highest": 0.013204870651596146,
+            "inverted_u": true
+          },
+          "absolute_peak_bin_error": 0,
+          "node_rmse": 0.49205884030904345,
+          "node_spearman": 0.5396114456596868
+        }
+      ]
+    }
+  },
+  "historical_predictor": {
+    "primary_response": "raw_norm",
+    "criteria": {
+      "median_absolute_peak_bin_error": 0.0,
+      "fraction_peaks_within_one_bin": 0.8888888888888888,
+      "pooled_spearman": 0.8805547854548442,
+      "families_with_nondecreasing_observed_peaks": 3
+    },
+    "passed": {
+      "median_peak_error": true,
+      "fraction_peaks": true,
+      "pooled_spearman": true,
+      "peak_order": true
+    },
+    "all_primary_criteria_passed": true,
+    "peak_order": {
+      "barabasi_albert": {
+        "actual_peak_degrees": [
+          3.2935537438050546,
+          6.769563527927011,
+          6.769563527927011
+        ],
+        "predicted_peak_degrees": [
+          4.999999999999997,
+          6.769563527927011,
+          6.769563527927011
+        ],
+        "actual_nondecreasing": true,
+        "predicted_nondecreasing": true
+      },
+      "powerlaw_cluster": {
+        "actual_peak_degrees": [
+          4.0,
+          6.3374222771722275,
+          13.408968244256492
+        ],
+        "predicted_peak_degrees": [
+          4.0,
+          6.3374222771722275,
+          6.3374222771722275
+        ],
+        "actual_nondecreasing": true,
+        "predicted_nondecreasing": true
+      },
+      "netscience": {
+        "actual_peak_degrees": [
+          4.0,
+          4.0,
+          4.9999999999999964
+        ],
+        "predicted_peak_degrees": [
+          1.6617153455282736,
+          4.0,
+          6.339584838712211
+        ],
+        "actual_nondecreasing": true,
+        "predicted_nondecreasing": true
+      }
+    },
+    "curves": [
+      {
+        "family": "barabasi_albert",
+        "threshold": 0.0003,
+        "predicted": {
+          "peak_bin": 1,
+          "peak_degree": 4.999999999999997,
+          "peak_norm": 4.192377195093847,
+          "peak_minus_lowest": 0.038339454851572086,
+          "peak_minus_highest": 0.2727886888738116,
+          "inverted_u": true
+        },
+        "actual": {
+          "peak_bin": 0,
+          "peak_degree": 3.2935537438050546,
+          "peak_norm": 4.153907142922633,
+          "peak_minus_lowest": 0.0,
+          "peak_minus_highest": 0.40645519214054104,
+          "inverted_u": false
+        },
+        "absolute_peak_bin_error": 1,
+        "node_rmse": 0.25935540429024523,
+        "node_spearman": 0.8098413857521831
+      },
+      {
+        "family": "barabasi_albert",
+        "threshold": 0.001,
+        "predicted": {
+          "peak_bin": 2,
+          "peak_degree": 6.769563527927011,
+          "peak_norm": 5.140220285775721,
+          "peak_minus_lowest": 0.4931127510430402,
+          "peak_minus_highest": 0.2252557181585484,
+          "inverted_u": true
+        },
+        "actual": {
+          "peak_bin": 2,
+          "peak_degree": 6.769563527927011,
+          "peak_norm": 5.265698205911914,
+          "peak_minus_lowest": 0.5550258153331784,
+          "peak_minus_highest": 0.30623755878483383,
+          "inverted_u": true
+        },
+        "absolute_peak_bin_error": 0,
+        "node_rmse": 0.27066689474631167,
+        "node_spearman": 0.935042708531431
+      },
+      {
+        "family": "barabasi_albert",
+        "threshold": 0.003,
+        "predicted": {
+          "peak_bin": 2,
+          "peak_degree": 6.769563527927011,
+          "peak_norm": 5.33893802204699,
+          "peak_minus_lowest": 0.5155609595479094,
+          "peak_minus_highest": 0.19101985987052128,
+          "inverted_u": true
+        },
+        "actual": {
+          "peak_bin": 2,
+          "peak_degree": 6.769563527927011,
+          "peak_norm": 5.387864095457667,
+          "peak_minus_lowest": 0.6071993022734468,
+          "peak_minus_highest": 0.07128625840615044,
+          "inverted_u": true
+        },
+        "absolute_peak_bin_error": 0,
+        "node_rmse": 0.23600267374786604,
+        "node_spearman": 0.9155530142634174
+      },
+      {
+        "family": "powerlaw_cluster",
+        "threshold": 0.0003,
+        "predicted": {
+          "peak_bin": 1,
+          "peak_degree": 4.0,
+          "peak_norm": 4.224284397847229,
+          "peak_minus_lowest": 0.0935366486021616,
+          "peak_minus_highest": 0.23062034978418433,
+          "inverted_u": true
+        },
+        "actual": {
+          "peak_bin": 1,
+          "peak_degree": 4.0,
+          "peak_norm": 4.054267088884636,
+          "peak_minus_lowest": 0.027419594474994646,
+          "peak_minus_highest": 0.3254411115195519,
+          "inverted_u": true
+        },
+        "absolute_peak_bin_error": 0,
+        "node_rmse": 0.30284845324529774,
+        "node_spearman": 0.7757507619910177
+      },
+      {
+        "family": "powerlaw_cluster",
+        "threshold": 0.001,
+        "predicted": {
+          "peak_bin": 3,
+          "peak_degree": 6.3374222771722275,
+          "peak_norm": 5.066286200895962,
+          "peak_minus_lowest": 0.5257520807751543,
+          "peak_minus_highest": 0.12172429515088012,
+          "inverted_u": true
+        },
+        "actual": {
+          "peak_bin": 3,
+          "peak_degree": 6.3374222771722275,
+          "peak_norm": 4.989972474791153,
+          "peak_minus_lowest": 0.48327221150858346,
+          "peak_minus_highest": 0.1311353544666618,
+          "inverted_u": true
+        },
+        "absolute_peak_bin_error": 0,
+        "node_rmse": 0.27744495145814296,
+        "node_spearman": 0.9030865924217613
+      },
+      {
+        "family": "powerlaw_cluster",
+        "threshold": 0.003,
+        "predicted": {
+          "peak_bin": 3,
+          "peak_degree": 6.3374222771722275,
+          "peak_norm": 5.268842691075517,
+          "peak_minus_lowest": 0.554892094046803,
+          "peak_minus_highest": 0.1062296435828749,
+          "inverted_u": true
+        },
+        "actual": {
+          "peak_bin": 4,
+          "peak_degree": 13.408968244256492,
+          "peak_norm": 5.244915406497761,
+          "peak_minus_lowest": 0.6032328785810961,
+          "peak_minus_highest": 0.0,
+          "inverted_u": false
+        },
+        "absolute_peak_bin_error": 1,
+        "node_rmse": 0.26706093446470497,
+        "node_spearman": 0.8848848014788028
+      },
+      {
+        "family": "netscience",
+        "threshold": 0.0003,
+        "predicted": {
+          "peak_bin": 0,
+          "peak_degree": 1.6617153455282736,
+          "peak_norm": 4.327170294028021,
+          "peak_minus_lowest": 0.0,
+          "peak_minus_highest": 0.3688550887590236,
+          "inverted_u": false
+        },
+        "actual": {
+          "peak_bin": 2,
+          "peak_degree": 4.0,
+          "peak_norm": 3.9135938030526733,
+          "peak_minus_lowest": 0.10189783827899124,
+          "peak_minus_highest": 0.3201368676669012,
+          "inverted_u": true
+        },
+        "absolute_peak_bin_error": 2,
+        "node_rmse": 0.40538835756112274,
+        "node_spearman": 0.8423909542458543
+      },
+      {
+        "family": "netscience",
+        "threshold": 0.001,
+        "predicted": {
+          "peak_bin": 2,
+          "peak_degree": 4.0,
+          "peak_norm": 4.7977759968897935,
+          "peak_minus_lowest": 0.17950558932087546,
+          "peak_minus_highest": 0.27077402664058603,
+          "inverted_u": true
+        },
+        "actual": {
+          "peak_bin": 2,
+          "peak_degree": 4.0,
+          "peak_norm": 4.2980621857188055,
+          "peak_minus_lowest": 0.24189780416998996,
+          "peak_minus_highest": 0.3057177528647679,
+          "inverted_u": true
+        },
+        "absolute_peak_bin_error": 0,
+        "node_rmse": 0.5460746900711391,
+        "node_spearman": 0.8102393649472241
+      },
+      {
+        "family": "netscience",
+        "threshold": 0.003,
+        "predicted": {
+          "peak_bin": 4,
+          "peak_degree": 6.339584838712211,
+          "peak_norm": 5.142918710576703,
+          "peak_minus_lowest": 0.3519450122238297,
+          "peak_minus_highest": 0.20865472807707874,
+          "inverted_u": true
+        },
+        "actual": {
+          "peak_bin": 3,
+          "peak_degree": 4.9999999999999964,
+          "peak_norm": 4.817178661560942,
+          "peak_minus_lowest": 0.5921828293322795,
+          "peak_minus_highest": 0.06742695331922022,
+          "inverted_u": true
+        },
+        "absolute_peak_bin_error": 1,
+        "node_rmse": 0.5204576875797424,
+        "node_spearman": 0.5060447265365647
+      }
+    ],
+    "balanced_norm_curves": [
+      {
+        "family": "barabasi_albert",
+        "threshold": 0.0003,
+        "predicted": {
+          "peak_bin": 1,
+          "peak_degree": 4.999999999999997,
+          "peak_norm": 4.221996592895132,
+          "peak_minus_lowest": 0.038054512195923706,
+          "peak_minus_highest": 0.2690117014403146,
+          "inverted_u": true
+        },
+        "actual": {
+          "peak_bin": 0,
+          "peak_degree": 3.2935537438050546,
+          "peak_norm": 4.187147380989722,
+          "peak_minus_lowest": 0.0,
+          "peak_minus_highest": 0.4068327255016766,
+          "inverted_u": false
+        },
+        "absolute_peak_bin_error": 1,
+        "node_rmse": 0.26116839326290736,
+        "node_spearman": 0.8120181500119438
+      },
+      {
+        "family": "barabasi_albert",
+        "threshold": 0.001,
+        "predicted": {
+          "peak_bin": 2,
+          "peak_degree": 6.769563527927011,
+          "peak_norm": 5.163980355031876,
+          "peak_minus_lowest": 0.49509111965321484,
+          "peak_minus_highest": 0.20013868249247935,
+          "inverted_u": true
+        },
+        "actual": {
+          "peak_bin": 2,
+          "peak_degree": 6.769563527927011,
+          "peak_norm": 5.298030214450908,
+          "peak_minus_lowest": 0.5661910780954749,
+          "peak_minus_highest": 0.2842531179232992,
+          "inverted_u": true
+        },
+        "absolute_peak_bin_error": 0,
+        "node_rmse": 0.2735779346632194,
+        "node_spearman": 0.9349795898577231
+      },
+      {
+        "family": "barabasi_albert",
+        "threshold": 0.003,
+        "predicted": {
+          "peak_bin": 2,
+          "peak_degree": 6.769563527927011,
+          "peak_norm": 5.358657939591274,
+          "peak_minus_lowest": 0.5173541084465043,
+          "peak_minus_highest": 0.15635554779374772,
+          "inverted_u": true
+        },
+        "actual": {
+          "peak_bin": 2,
+          "peak_degree": 6.769563527927011,
+          "peak_norm": 5.401404716729093,
+          "peak_minus_lowest": 0.6106222660520766,
+          "peak_minus_highest": 0.023295423065941456,
+          "inverted_u": true
+        },
+        "absolute_peak_bin_error": 0,
+        "node_rmse": 0.24397743162534208,
+        "node_spearman": 0.913532192035738
+      },
+      {
+        "family": "powerlaw_cluster",
+        "threshold": 0.0003,
+        "predicted": {
+          "peak_bin": 1,
+          "peak_degree": 4.0,
+          "peak_norm": 4.253670855167458,
+          "peak_minus_lowest": 0.09283709525736228,
+          "peak_minus_highest": 0.22600742446393518,
+          "inverted_u": true
+        },
+        "actual": {
+          "peak_bin": 1,
+          "peak_degree": 4.0,
+          "peak_norm": 4.088499732987654,
+          "peak_minus_lowest": 0.028416522456543802,
+          "peak_minus_highest": 0.3260972387414198,
+          "inverted_u": true
+        },
+        "absolute_peak_bin_error": 0,
+        "node_rmse": 0.30250059614370345,
+        "node_spearman": 0.7789010840125987
+      },
+      {
+        "family": "powerlaw_cluster",
+        "threshold": 0.001,
+        "predicted": {
+          "peak_bin": 3,
+          "peak_degree": 6.3374222771722275,
+          "peak_norm": 5.088162322803302,
+          "peak_minus_lowest": 0.5229094710924587,
+          "peak_minus_highest": 0.096529496488027,
+          "inverted_u": true
+        },
+        "actual": {
+          "peak_bin": 3,
+          "peak_degree": 6.3374222771722275,
+          "peak_norm": 5.0216833538835965,
+          "peak_minus_lowest": 0.49072665583755803,
+          "peak_minus_highest": 0.10880560603239431,
+          "inverted_u": true
+        },
+        "absolute_peak_bin_error": 0,
+        "node_rmse": 0.27693746653235063,
+        "node_spearman": 0.9042957712231842
+      },
+      {
+        "family": "powerlaw_cluster",
+        "threshold": 0.003,
+        "predicted": {
+          "peak_bin": 3,
+          "peak_degree": 6.3374222771722275,
+          "peak_norm": 5.2870344400616895,
+          "peak_minus_lowest": 0.5514512805971945,
+          "peak_minus_highest": 0.07267674697508575,
+          "inverted_u": true
+        },
+        "actual": {
+          "peak_bin": 4,
+          "peak_degree": 13.408968244256492,
+          "peak_norm": 5.306457401815466,
+          "peak_minus_lowest": 0.6531760809596516,
+          "peak_minus_highest": 0.0,
+          "inverted_u": false
+        },
+        "absolute_peak_bin_error": 1,
+        "node_rmse": 0.2743286951652082,
+        "node_spearman": 0.8835017228799145
+      },
+      {
+        "family": "netscience",
+        "threshold": 0.0003,
+        "predicted": {
+          "peak_bin": 0,
+          "peak_degree": 1.6617153455282736,
+          "peak_norm": 4.354957069198338,
+          "peak_minus_lowest": 0.0,
+          "peak_minus_highest": 0.36523682175651917,
+          "inverted_u": false
+        },
+        "actual": {
+          "peak_bin": 2,
+          "peak_degree": 4.0,
+          "peak_norm": 3.9341323419632523,
+          "peak_minus_lowest": 0.10297821998870882,
+          "peak_minus_highest": 0.3179713468307206,
+          "inverted_u": true
+        },
+        "absolute_peak_bin_error": 2,
+        "node_rmse": 0.4129051492565264,
+        "node_spearman": 0.8400748607214322
+      },
+      {
+        "family": "netscience",
+        "threshold": 0.001,
+        "predicted": {
+          "peak_bin": 2,
+          "peak_degree": 4.0,
+          "peak_norm": 4.821160001061344,
+          "peak_minus_lowest": 0.1776920867627929,
+          "peak_minus_highest": 0.25199869047168555,
+          "inverted_u": true
+        },
+        "actual": {
+          "peak_bin": 2,
+          "peak_degree": 4.0,
+          "peak_norm": 4.330186604720175,
+          "peak_minus_lowest": 0.25059516847070196,
+          "peak_minus_highest": 0.29191174860304603,
+          "inverted_u": true
+        },
+        "absolute_peak_bin_error": 0,
+        "node_rmse": 0.5424212692834728,
+        "node_spearman": 0.7977678381726377
+      },
+      {
+        "family": "netscience",
+        "threshold": 0.003,
+        "predicted": {
+          "peak_bin": 4,
+          "peak_degree": 6.339584838712211,
+          "peak_norm": 5.174542629843224,
+          "peak_minus_lowest": 0.36139360020692113,
+          "peak_minus_highest": 0.1814074253688247,
+          "inverted_u": true
+        },
+        "actual": {
+          "peak_bin": 4,
+          "peak_degree": 6.339584838712211,
+          "peak_norm": 4.846184475415914,
+          "peak_minus_lowest": 0.6024429016900612,
+          "peak_minus_highest": 0.02218955554734059,
+          "inverted_u": true
+        },
+        "absolute_peak_bin_error": 0,
+        "node_rmse": 0.519507892722882,
+        "node_spearman": 0.5038958062914202
+      }
+    ],
+    "freeze_manifest": {
+      "frozen_utc": "2026-08-13T20:31:44.725789+00:00",
+      "protocol_sha256": "5dd0b3da8a37044630c1a7bbe642de8f5c02925ee8c2cec770c8328bc56923b1",
+      "human_protocol_sha256": "6e05c0345b1e0f037e7add25a1ec9908327e38904916393c901109a791d03392",
+      "calibration_sha256": "89d7d1d795eb143e0fc0ec10eec9ef08c3d2477df7a42d47de94ab496612ed71",
+      "predictions_sha256": "679cb0db608e9fe690bfc87408392d853f158ed851631e7b77921912267c3a9d",
+      "target_outcomes_present_at_freeze": false
+    },
+    "outcomes_sha256": "4b5becbf76269839f04d8ecf8297dc1a0d91a462313ef4c9b3c81f6ebd592b4d",
+    "config": {
+      "nodes": 600,
+      "attachment": 3,
+      "triangle_probability": 0.35,
+      "dimension": 64,
+      "negatives": 5,
+      "walk_length": 5,
+      "walks_per_node": 300,
+      "epochs": 5,
+      "learning_rate": 0.025,
+      "min_count": 1
+    }
+  }
+}
