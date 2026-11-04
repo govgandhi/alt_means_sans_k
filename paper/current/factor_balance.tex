@@ -1,0 +1,50 @@
+\section{Native factor balance}
+\label{sec:factor-balance}
+
+\paragraph{Gradient-flow identity.}
+Let \(U\) and \(V\) be real matrices with the same column dimension, \(M=UV^\top\), and \(G=\nabla_M\mathcal{L}(M)\) for a differentiable score-only loss.
+Under simultaneous Euclidean gradient flow with the same rate for both factors, \(\dot U=-GV\) and \(\dot V=-G^\top U\).
+Consequently,
+\begin{equation}
+ \frac{d}{dt}(U^\top U)=\frac{d}{dt}(V^\top V)
+ =-V^\top G^\top U-U^\top GV,
+ \qquad D=U^\top U-V^\top V=\text{constant}.
+\end{equation}
+This is the established balance conservation property for linear factors~\citep{du2018algorithmic}, not a new theorem.
+When \(D=0\),
+\begin{equation}
+ MM^\top=U(V^\top V)U^\top=(UU^\top)^2.
+\end{equation}
+Uniqueness of the positive-semidefinite square root gives \(UU^\top=(MM^\top)^{1/2}\), including rank-deficient factors.
+Its diagonal gives equality of raw and canonical balanced squared row norms.
+Conservation does not drive a nonzero \(D\) to zero: with \(V=0\) and small nonzero \(U\), absolute imbalance is small but \(\|D\|_F/\|U^\top U\|_F=1\).
+
+For one simultaneous gradient-descent step of size \(\eta\), with both gradients evaluated at the pre-update factors,
+\begin{equation}
+ D_{\rm next}-D=\eta^2\left(V^\top G^\top GV-U^\top GG^\top U\right).
+\end{equation}
+The first-order terms cancel; the remaining terms need not vanish.
+This formula also applies to a score-only sampled loss with simultaneous updates, but not verbatim to Gensim's sequential updates.
+Unequal factor learning rates, adaptive updates, or factor-specific regularization are outside the stated flow identity.
+Neither balance nor norm agreement establishes score convergence or identifies a norm--degree profile independently of training.
+
+\paragraph{Native training diagnostic.}
+We replay all twenty corrected Gensim controls: five graph seeds at each of four filtering thresholds, at the original five-epoch endpoints.
+Graphs, walks, vocabulary and initialization signatures, training-token counts, and both final factor hashes match the recorded runs exactly.
+We measure the native factors before any balancing transformation.
+Table~\ref{tab:factor-balance} compares the requested relative Gram imbalance with actual norm discrepancies, where \(r_i=\|u_i\|\) and \(r_{{\rm bal},i}\) is the canonical balanced norm.
+The individual-node error is \(|r_i-r_{{\rm bal},i}|/r_i\).
+
+\input{../../results/factor_balance/table.tex}
+
+Final relative Gram imbalance ranges from \(0.0786\) to \(0.163\); it is not zero.
+Absolute imbalance grows from \(0.407\)--\(0.411\) initially to approximately \(225\)--\(910\), so these finite-step runs do not approximately conserve the initial absolute imbalance.
+Nevertheless, relative norm-vector discrepancies are \(0.55\)--\(1.15\%\), with a maximum individual discrepancy of \(12.45\%\).
+Thus close aggregate norm agreement is an observed property of these runs, not a quantitative consequence of conserved initialization imbalance.
+The diagnostic does not cover the custom mini-batch pipeline or later learning schedules; already balanced factors would not test native balance.
+
+\paragraph{Reproduction.}
+Run \texttt{python3}~\path{scripts/factor_balance.py} using the pinned, patched runtime documented in \path{analysis/negative_sampling_control_protocol.md}.
+The script checks source hashes, dependency versions, and the source completion manifest before replaying the existing conditions; it generates Table~\ref{tab:factor-balance} from the same records as \path{results/factor_balance/summary.json}.
+The latter retains initial and final diagnostics and raw and balanced norms for every node in every run, with final factor hashes.
+No original result or training configuration is changed.
