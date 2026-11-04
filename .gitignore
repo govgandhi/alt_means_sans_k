@@ -5,6 +5,8 @@ are_angles_important/*.txt
 are_angles_important/*.inf_coord
 are_angles_important/*.inf_log
 *.csv
+# Reproducible synthetic output needed by the issue 21 baseline checks.
+!results/subsampling_origin/outcomes.csv
 *.tsv
 *.parquet
 *.pkl
