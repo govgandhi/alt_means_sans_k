@@ -83,11 +83,12 @@ The proposed explanation is a competition between repeated exposure, which pushe
 A population account must distinguish the graph-conditioned target from training dynamics and specify what each intervention changes.
 
 Two theoretical traditions address parts of the problem.
-Spectral embeddings under the degree-corrected stochastic block model (DCSBM) have a ray geometry in which rows from one community share a direction and their lengths vary with degree propensity~\citep{qin2013regularized}.
+Population spectral embeddings under the degree-corrected stochastic block model (DCSBM) have community rays, with node-specific length multipliers in SCORE~\citep{jin2015fast} and regularized spectral clustering~\citep{qin2013regularized}.
 The matrix-factorization view of skip-gram identifies a shifted pointwise mutual information score~\citep{levy2014neural,qiu2018network}, while an information-geometric analysis relates a centered, transformed word-vector norm to the Kullback--Leibler (KL) divergence between conditional and marginal context distributions~\citep{oyama2022norm}.
+Related analyses establish sampler-dependent targets~\citep{davison2023asymptotics}, including a block-constant DCSBM target at unigram negative sampling~\citep{davison2024community}.
 These results do not by themselves determine the norms returned by finite stochastic optimization.
 
-We connect the population and finite-training regimes.
+We compare these population results with finite training.
 Under the DCSBM, the normalized-adjacency eigenspace and the stationary random-walk pair matrix have exact radial-angular factorizations.
 The radial exponent is \(1/2\) for the normalized eigenspace and \(1\) for raw stationary pairs.
 The optimal skip-gram score behaves differently: unigram negative sampling cancels node-specific degree, and other negative-sampling exponents add a context-side log-degree term.
@@ -434,16 +435,19 @@ It describes pair probabilities before marginal normalization and the entrywise 
 
 \begin{table*}[t]
     \centering
-    \caption{Population row forms for three embedding operators. SGNS rows refer to minimal exact factorizations of the finite ordered score matrix, with \(F_{ab}>0\) for every block pair.}
+    \caption{Population row forms. SGNS rows refer to minimal exact factorizations of the finite ordered score matrix, with \(F_{ab}>0\) for every block pair.}
     \label{tab:radial-exponents}
     \begin{tabular}{lll}
         \toprule
         Population object & Row form within block \(a\) & Within-block prediction \\
         \midrule
-        Normalized-adjacency eigenspace
+        Normalized-adjacency eigenspace~\citep{qin2013regularized}
             & \(u_i=\sqrt{\theta_i}\,c_a\)
             & \(\norm{u_i}\propto\sqrt{\delta_i}\) \\
-        Raw adjacency or stationary pairs
+        Raw-adjacency population eigenspace~\citep{jin2015fast}
+            & \(u_i=\theta_i c_a\)
+            & \(\norm{u_i}\propto\delta_i\) \\
+        Stationary pairs (Theorem~\ref{thm:raw-pair-rays})
             & \(u_i=\theta_i c_a\)
             & \(\norm{u_i}\propto\delta_i\) \\
         SGNS score, center rows
@@ -550,6 +554,8 @@ If \(\alpha=1\), then
 The score is block-constant and contains no node-specific propensity.
 Every minimal exact factorization has center and context rows that depend only on community.
 \end{corollary}
+
+This cancellation is explicit in~\citet[Lemma~S9]{davison2024community}; here it follows for the finite population-walk proxy with ordered SGNS.
 
 The \(\alpha=1\) result agrees with the NetMF target~\citep{qiu2018network}
 \begin{equation}
@@ -672,7 +678,7 @@ For a rank-\(h\) score matrix \(M=P_{\mathrm{svd}}\Sigma Q_{\mathrm{svd}}^\top\)
     V_{\mathrm{bal}}=Q_{\mathrm{svd}}\Sigma^{1/2}.
     \label{eq:balanced-factors}
 \end{equation}
-Equivalent minimal balanced factors differ only by an orthogonal transformation, which preserves row norms and angles.
+Equivalent minimal balanced factors differ only by an orthogonal transformation, which preserves row norms and angles~\citep[Proposition~S24]{davison2024community}.
 Empirical norm-degree claims should use balanced factors or identify the optimizer-dependent gauge under study.
 
 A direct consequence of the separable score objective is the following boundary for interpreting balanced norms.
@@ -818,7 +824,11 @@ Any within-community degree dependence of this bound then enters through \(\vare
 
 \citet{qin2013regularized} derive the population ray structure of regularized spectral clustering under the DCSBM\@.
 Theorem~\ref{thm:spectral-rays} gives the unregularized structure in notation that also supports the walk calculations.
+The raw-adjacency population form \(u_i=\theta_i c_{g_i}\) underlies SCORE~\citep[Lemma~2.1]{jin2015fast}, where eigenvector ratios remove \(\theta_i\).
 \citet{levy2014neural} derive the shifted-PMI interpretation of SGNS, and \citet{qiu2018network} identify the matrix targets for DeepWalk, LINE, PTE, and node2vec.
+
+The graphon analysis of~\citet{davison2023asymptotics} gives a related degree-normalized logistic target [Eqs.~(16)--(17)].
+Its nonedge-only negatives introduce a finite-density correction absent from our sampler (Remark~28).
 
 \citet{kojaku2024network} connect a large-window linearization of the \(p=q=1\), \(\alpha=1\) score to the normalized Laplacian.
 Their linearized matrix has the form
@@ -844,9 +854,9 @@ They therefore differ by an orthogonal transformation and have the same row norm
 When degrees vary, keeping only \(d<n\) spectral components need not select the same subspace in the two constructions.
 
 \citet{zhang2022exact} prove exact community recovery for matrix-factorization versions of DeepWalk and node2vec under stochastic block models and degree-corrected variants.
-\citet{davison2024community} establish weakly consistent recovery for embeddings learned by node2vec and analyze the DCSBM case at unigram exponent one.
-These results establish community recovery under specific regimes.
-Our contribution concerns the radial-angular decomposition of the relevant population operators, the SGNS boundary, and the gauge required to interpret learned norms and angles.
+\citet{davison2024community} also establish asymptotic score and balanced-factor convergence (Theorems~2 and~3).
+Their symmetrized negatives [Eq.~(S9), Appendix~F] yield the joint propensity dependence in Equation~\eqref{eq:symmetric-dcsbm-score}, whereas our ordered negatives give a context-only term.
+These population results support our operator and gauge comparison but do not explain finite-training norm turnover.
 
 \section{From population scores to trained norms}
 \label{sec:finite-training-mechanism}
@@ -1184,6 +1194,7 @@ The extremely randomized tree model was also chosen after the initial experiment
 Although it passed all declared criteria, it missed one peak by two bins, misclassified two boundary peaks, and overestimated the NetScience norm level.
 The present evidence supports effects of the specified interventions and improved node-norm prediction relative to the degree-and-threshold baseline, without identifying a unique mechanism or a calibrated peak for natural sequence data.
 
+Before transfer to natural sequences, the next tests should separate realized-graph sparsity from training dynamics and isolate learning-rate history at fixed graph and corpus.
 The next test should freeze the model before applying it to natural text or mobility sequences, vary the window, dimension, and optimizer, and again predict peaks from realized exposure and context KL before target training.
 It should also prespecify degree or frequency baselines (including threshold when varied), within-curve ranking criteria, and uncertainty across independent graphs or datasets.
 General node2vec also requires a second-order state-space analysis on directed edges.
@@ -1194,7 +1205,7 @@ Random-walk embeddings do not have a single norm-degree law.
 The normalized eigenspace, raw pair distribution, population SGNS score, and finite trained factors encode degree in different ways.
 Under finite SGNS training, the exposure and context-sampling interventions produce an inverted-U even when exposure remains strictly increasing.
 Hash-locked target predictions recover its approximate peak movement across new graph topologies, with identifiable boundary failures.
-Interpreting embedding norms therefore requires naming the population operator, realized contexts, negative-sampling distribution, factorization gauge, and training procedure, and checking stability of the norm geometry itself.
+Interpreting embedding norms therefore requires naming the population operator, realized contexts, negative-sampling distribution, factorization gauge, and training procedure (including learning-rate history), and checking stability of the norm geometry itself.
 
 \section*{Data Availability}
 
