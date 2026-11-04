@@ -1,0 +1,137 @@
+calibration/0 t=0.0003 retained complete
+calibration/0 t=0.0003 raw complete
+calibration/0 t=0.001 retained complete
+calibration/0 t=0.001 raw complete
+calibration/0 t=0.003 retained complete
+calibration/0 t=0.003 raw complete
+calibration/1 t=0.0003 retained complete
+calibration/1 t=0.0003 raw complete
+calibration/1 t=0.001 retained complete
+calibration/1 t=0.001 raw complete
+calibration/1 t=0.003 retained complete
+calibration/1 t=0.003 raw complete
+calibration/2 t=0.0003 retained complete
+calibration/2 t=0.0003 raw complete
+calibration/2 t=0.001 retained complete
+calibration/2 t=0.001 raw complete
+calibration/2 t=0.003 retained complete
+calibration/2 t=0.003 raw complete
+calibration/3 t=0.0003 retained complete
+calibration/3 t=0.0003 raw complete
+calibration/3 t=0.001 retained complete
+calibration/3 t=0.001 raw complete
+calibration/3 t=0.003 retained complete
+calibration/3 t=0.003 raw complete
+calibration/4 t=0.0003 retained complete
+calibration/4 t=0.0003 raw complete
+calibration/4 t=0.001 retained complete
+calibration/4 t=0.001 raw complete
+calibration/4 t=0.003 retained complete
+calibration/4 t=0.003 raw complete
+predicted barabasi_albert/101
+predicted barabasi_albert/102
+predicted barabasi_albert/103
+predicted barabasi_albert/104
+predicted barabasi_albert/105
+predicted powerlaw_cluster/201
+predicted powerlaw_cluster/202
+predicted powerlaw_cluster/203
+predicted powerlaw_cluster/204
+predicted powerlaw_cluster/205
+predicted netscience/301
+predicted netscience/302
+predicted netscience/303
+predicted netscience/304
+predicted netscience/305
+Froze 23685 target rows for both arms before target training.
+barabasi_albert/101 t=0.0003 retained complete
+barabasi_albert/101 t=0.0003 raw complete
+barabasi_albert/101 t=0.001 retained complete
+barabasi_albert/101 t=0.001 raw complete
+barabasi_albert/101 t=0.003 retained complete
+barabasi_albert/101 t=0.003 raw complete
+barabasi_albert/102 t=0.0003 retained complete
+barabasi_albert/102 t=0.0003 raw complete
+barabasi_albert/102 t=0.001 retained complete
+barabasi_albert/102 t=0.001 raw complete
+barabasi_albert/102 t=0.003 retained complete
+barabasi_albert/102 t=0.003 raw complete
+barabasi_albert/103 t=0.0003 retained complete
+barabasi_albert/103 t=0.0003 raw complete
+barabasi_albert/103 t=0.001 retained complete
+barabasi_albert/103 t=0.001 raw complete
+barabasi_albert/103 t=0.003 retained complete
+barabasi_albert/103 t=0.003 raw complete
+barabasi_albert/104 t=0.0003 retained complete
+barabasi_albert/104 t=0.0003 raw complete
+barabasi_albert/104 t=0.001 retained complete
+barabasi_albert/104 t=0.001 raw complete
+barabasi_albert/104 t=0.003 retained complete
+barabasi_albert/104 t=0.003 raw complete
+barabasi_albert/105 t=0.0003 retained complete
+barabasi_albert/105 t=0.0003 raw complete
+barabasi_albert/105 t=0.001 retained complete
+barabasi_albert/105 t=0.001 raw complete
+barabasi_albert/105 t=0.003 retained complete
+barabasi_albert/105 t=0.003 raw complete
+powerlaw_cluster/201 t=0.0003 retained complete
+powerlaw_cluster/201 t=0.0003 raw complete
+powerlaw_cluster/201 t=0.001 retained complete
+powerlaw_cluster/201 t=0.001 raw complete
+powerlaw_cluster/201 t=0.003 retained complete
+powerlaw_cluster/201 t=0.003 raw complete
+powerlaw_cluster/202 t=0.0003 retained complete
+powerlaw_cluster/202 t=0.0003 raw complete
+powerlaw_cluster/202 t=0.001 retained complete
+powerlaw_cluster/202 t=0.001 raw complete
+powerlaw_cluster/202 t=0.003 retained complete
+powerlaw_cluster/202 t=0.003 raw complete
+powerlaw_cluster/203 t=0.0003 retained complete
+powerlaw_cluster/203 t=0.0003 raw complete
+powerlaw_cluster/203 t=0.001 retained complete
+powerlaw_cluster/203 t=0.001 raw complete
+powerlaw_cluster/203 t=0.003 retained complete
+powerlaw_cluster/203 t=0.003 raw complete
+powerlaw_cluster/204 t=0.0003 retained complete
+powerlaw_cluster/204 t=0.0003 raw complete
+powerlaw_cluster/204 t=0.001 retained complete
+powerlaw_cluster/204 t=0.001 raw complete
+powerlaw_cluster/204 t=0.003 retained complete
+powerlaw_cluster/204 t=0.003 raw complete
+powerlaw_cluster/205 t=0.0003 retained complete
+powerlaw_cluster/205 t=0.0003 raw complete
+powerlaw_cluster/205 t=0.001 retained complete
+powerlaw_cluster/205 t=0.001 raw complete
+powerlaw_cluster/205 t=0.003 retained complete
+powerlaw_cluster/205 t=0.003 raw complete
+netscience/301 t=0.0003 retained complete
+netscience/301 t=0.0003 raw complete
+netscience/301 t=0.001 retained complete
+netscience/301 t=0.001 raw complete
+netscience/301 t=0.003 retained complete
+netscience/301 t=0.003 raw complete
+netscience/302 t=0.0003 retained complete
+netscience/302 t=0.0003 raw complete
+netscience/302 t=0.001 retained complete
+netscience/302 t=0.001 raw complete
+netscience/302 t=0.003 retained complete
+netscience/302 t=0.003 raw complete
+netscience/303 t=0.0003 retained complete
+netscience/303 t=0.0003 raw complete
+netscience/303 t=0.001 retained complete
+netscience/303 t=0.001 raw complete
+netscience/303 t=0.003 retained complete
+netscience/303 t=0.003 raw complete
+netscience/304 t=0.0003 retained complete
+netscience/304 t=0.0003 raw complete
+netscience/304 t=0.001 retained complete
+netscience/304 t=0.001 raw complete
+netscience/304 t=0.003 retained complete
+netscience/304 t=0.003 raw complete
+netscience/305 t=0.0003 retained complete
+netscience/305 t=0.0003 raw complete
+netscience/305 t=0.001 retained complete
+netscience/305 t=0.001 raw complete
+netscience/305 t=0.003 retained complete
+netscience/305 t=0.003 raw complete
+Verified complete corrected revalidation.

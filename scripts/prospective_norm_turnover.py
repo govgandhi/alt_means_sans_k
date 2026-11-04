@@ -9,7 +9,11 @@
 #   "scipy>=1.15,<2",
 # ]
 # ///
-"""Run the frozen prospective validation of the norm-turnover mechanism.
+"""Run staged norm-turnover prediction with corrected counts and raw-token noise.
+
+The original frozen outputs predate the count/table/BLAS fixes. Use
+scripts/revalidate_negative_sampling.py for their retrospective revalidation.
+This entry point refuses to train into the original historical output directory.
 
 The workflow has three deliberately separate stages:
 
@@ -40,6 +44,7 @@ import matplotlib.pyplot as plt
 import networkx as nx
 import numpy as np
 from gensim.models import Word2Vec
+from gensim_training import set_negative_table, train_checked
 from matplotlib.lines import Line2D
 from scipy.stats import spearmanr
 from simulate_exact_center_exposure import (
@@ -296,9 +301,10 @@ def train_embedding(
     nodes: int,
     config: Config,
     seed: int,
+    negative_counts: np.ndarray | None = None,
 ) -> dict[str, np.ndarray]:
+    """Train with explicit raw counts, or retained counts when omitted."""
     model = Word2Vec(
-        sentences=walks,
         vector_size=config.dimension,
         window=1,
         min_count=config.min_count,
@@ -313,6 +319,9 @@ def train_embedding(
         sorted_vocab=1,
         shrink_windows=False,
     )
+    model.build_vocab(walks)
+    set_negative_table(model, negative_counts)
+    train_checked(model, walks)
     if len(model.wv) != nodes:
         raise ValueError(f"Training retained {len(model.wv)} of {nodes} nodes.")
     indices = np.asarray([model.wv.key_to_index[node] for node in range(nodes)])
@@ -499,6 +508,10 @@ def grouped_curve_summary(
 def calibrate(config: Config, output_dir: Path, force: bool) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     calibration_path = output_dir / "calibration.jsonl"
+    if (output_dir / "freeze_manifest.json").exists():
+        raise FileExistsError(
+            "Cannot replace calibration after predictions are frozen."
+        )
     if calibration_path.exists() and not force:
         raise FileExistsError(f"Calibration already exists: {calibration_path}")
 
@@ -525,6 +538,7 @@ def calibrate(config: Config, output_dir: Path, force: bool) -> None:
                 graph.number_of_nodes(),
                 config,
                 optimizer_seed("calibration", seed),
+                negative_counts=token_counts,
             )
             append_rows(
                 rows,
@@ -949,6 +963,7 @@ def evaluate(
                     graph.number_of_nodes(),
                     config,
                     optimizer_seed(family, replicate),
+                    negative_counts=token_counts,
                 )
                 append_rows(
                     rows,
@@ -994,7 +1009,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=Path("results/prospective_validation"),
+        default=Path("results/prospective_validation_corrected"),
     )
     parser.add_argument(
         "--netscience",
@@ -1016,6 +1031,9 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    historical = Path(__file__).resolve().parents[1] / "results/prospective_validation"
+    if args.stage != "plot" and args.output_dir.resolve() == historical:
+        raise ValueError("Original prospective results are immutable historical data.")
     config = Config()
     if args.stage == "calibrate":
         calibrate(config, args.output_dir, args.force)
