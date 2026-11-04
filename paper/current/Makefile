@@ -5,7 +5,7 @@ TEX := latexmk
 MON_OPT := -pvc
 CLN_OPT := -CA
 
-.PHONY: all monitor main-monitor supp supp-monitor note-monitor wordcount clean
+.PHONY: all monitor main-monitor supp supp-monitor note-monitor norm-geometry wordcount clean
 
 all: ${MAIN}.pdf ${SUPP}.pdf ${NOTE}.pdf
 
@@ -19,6 +19,9 @@ ${NOTE}.pdf:
 	${TEX} ${NOTE}.tex
 
 supp: ${SUPP}.pdf
+
+norm-geometry:
+	${TEX} -pdf -interaction=nonstopmode -halt-on-error norm_geometry_supplement.tex
 
 monitor: main-monitor
 

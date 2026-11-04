@@ -1,0 +1,7 @@
+{
+  "identical_full_fork_state": true,
+  "identical_final_rng_and_token_counts": true,
+  "floor_matches_uninterrupted_pr36": true,
+  "alpha_times_tokens_ratio_reheat_over_floor": 25.0,
+  "caveat": "Matched token counts do not imply equal optimization effort; reheat has 25 times the learning-rate exposure."
+}

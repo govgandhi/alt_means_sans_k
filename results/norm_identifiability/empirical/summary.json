@@ -1,0 +1,5787 @@
+{
+  "aggregation": "Normalize each start separately; average its bin means within each graph; average graphs equally and report graph-level SE.",
+  "conditions": [
+    {
+      "actual_evaluations": 3114,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.07734467433717176,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.0048339430960399055,
+          "node_rms": 0.0035158310098227672
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.004318288848978454,
+        "relative_loss_change": 0.0005537360254020407,
+        "relative_radius_norm_change": 0.003539737185553306
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 0.2805381710645137,
+      "finite_unrestricted_target": false,
+      "initialization": 100000,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 0.0016792623704932064,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.4064104937963639,
+        "high_minus_penultimate": -0.005343731851969902,
+        "interior_peak": false,
+        "node_counts": [
+          258,
+          96,
+          77,
+          39,
+          58,
+          72
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          0.7301448012672829,
+          0.6485827878889688,
+          0.4087382276037441,
+          0.3241706645848272,
+          0.32907803932288887,
+          0.32373430747091897
+        ]
+      },
+      "radius_rms": 21.85924011786849,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -8.883824570316222,
+        "high_minus_penultimate": -0.11680991767771332,
+        "interior_peak": false,
+        "node_counts": [
+          258,
+          96,
+          77,
+          39,
+          58,
+          72
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          15.960410531714906,
+          14.177526896781538,
+          8.934707062542225,
+          7.086124396328744,
+          7.193395879076398,
+          7.076585961398685
+        ]
+      },
+      "seed": 0,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.27885890869402047,
+      "window": 1,
+      "zero_positive_pairs": 356484
+    },
+    {
+      "actual_evaluations": 3081,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.03932955016666955,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.0039530241025262924,
+          "node_rms": 0.0021868212591264085
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.0024700534674180524,
+        "relative_loss_change": 1.4543200577255e-05,
+        "relative_radius_norm_change": 0.0022375099706848475
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 0.2789089151082599,
+      "finite_unrestricted_target": false,
+      "initialization": 200000,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 5.000641423941188e-05,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.43937592153904526,
+        "high_minus_penultimate": -0.018186453690485105,
+        "interior_peak": false,
+        "node_counts": [
+          258,
+          96,
+          77,
+          39,
+          58,
+          72
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          0.880693100231002,
+          0.6971137946585676,
+          0.5415470035202199,
+          0.4610179384511446,
+          0.45950363238244185,
+          0.44131717869195675
+        ]
+      },
+      "radius_rms": 17.5856563638899,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -7.7267139707531,
+        "high_minus_penultimate": -0.31982072507866643,
+        "interior_peak": false,
+        "node_counts": [
+          258,
+          96,
+          77,
+          39,
+          58,
+          72
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          15.487566222711246,
+          12.259203639392874,
+          9.523459508800858,
+          8.107303043190772,
+          8.080672977036812,
+          7.760852251958146
+        ]
+      },
+      "seed": 0,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.27885890869402047,
+      "window": 1,
+      "zero_positive_pairs": 356484
+    },
+    {
+      "actual_evaluations": 3112,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.17634641516728322,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.007199522149304083,
+          "node_rms": 0.009498611043764559
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.005784969970466897,
+        "relative_loss_change": 0.0020357261261397712,
+        "relative_radius_norm_change": 0.009908057660391592
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 1.0188775787991904,
+      "finite_unrestricted_target": false,
+      "initialization": 100000,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 0.18853827958083924,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.43099672299876945,
+        "high_minus_penultimate": -0.04025391868418993,
+        "interior_peak": false,
+        "node_counts": [
+          258,
+          96,
+          77,
+          39,
+          58,
+          72
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          0.5390038390295525,
+          0.34385916716242754,
+          0.23538405010774327,
+          0.17330249137207845,
+          0.14826103471497298,
+          0.10800711603078306
+        ]
+      },
+      "radius_rms": 17.8476575485751,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -7.692281916640119,
+        "high_minus_penultimate": -0.7184381556636106,
+        "interior_peak": false,
+        "node_counts": [
+          258,
+          96,
+          77,
+          39,
+          58,
+          72
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          9.61995593636675,
+          6.137080660453248,
+          4.201053918719644,
+          3.0930435183237464,
+          2.6461121753902423,
+          1.9276740197266318
+        ]
+      },
+      "seed": 0,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.8303392992183511,
+      "window": 2,
+      "zero_positive_pairs": 321090
+    },
+    {
+      "actual_evaluations": 3239,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.19377726010920884,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.0075468626063484034,
+          "node_rms": 0.011846926497324484
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.010111238639938928,
+        "relative_loss_change": 0.0016345886474494818,
+        "relative_radius_norm_change": 0.012924308952412832
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 1.003366717924226,
+      "finite_unrestricted_target": false,
+      "initialization": 200000,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 0.1730274187058749,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.554393687791359,
+        "high_minus_penultimate": -0.05748681699861094,
+        "interior_peak": false,
+        "node_counts": [
+          258,
+          96,
+          77,
+          39,
+          58,
+          72
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          0.668546545214772,
+          0.4456657744635127,
+          0.2944323406170245,
+          0.19842733746011548,
+          0.17163967442202388,
+          0.11415285742341294
+        ]
+      },
+      "radius_rms": 15.069650402057247,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -8.354519060123053,
+        "high_minus_penultimate": -0.866306234896109,
+        "interior_peak": false,
+        "node_counts": [
+          258,
+          96,
+          77,
+          39,
+          58,
+          72
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          10.074762713889772,
+          6.716027417327229,
+          4.436992440158,
+          2.990230605734978,
+          2.5865498886628275,
+          1.7202436537667185
+        ]
+      },
+      "seed": 0,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.8303392992183511,
+      "window": 2,
+      "zero_positive_pairs": 321090
+    },
+    {
+      "actual_evaluations": 1032,
+      "actual_iterations": 978,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 1,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 9.222735624726031e-09,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 4.161256894619214e-10,
+          "node_rms": 3.1692974159279845e-09
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 1.3287842009627109e-07,
+        "relative_loss_change": 3.4550749049001176e-13,
+        "relative_radius_norm_change": 3.199835340438828e-09
+      },
+      "failed_final_gates": [],
+      "final_loss": 1.9466238123052524,
+      "finite_unrestricted_target": false,
+      "initialization": 100000,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 0.08497649156248999,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.24447203870164413,
+        "high_minus_penultimate": -0.11238067579991384,
+        "interior_peak": false,
+        "node_counts": [
+          258,
+          96,
+          77,
+          39,
+          58,
+          72
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.0516123351537408,
+          1.0362564312490188,
+          0.9860972813874468,
+          0.952636735007508,
+          0.9195209722520105,
+          0.8071402964520966
+        ]
+      },
+      "radius_rms": 2.8822531935436175,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.7046303142799335,
+        "high_minus_penultimate": -0.3239095617168912,
+        "interior_peak": false,
+        "node_counts": [
+          258,
+          96,
+          77,
+          39,
+          58,
+          72
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          3.031013011366731,
+          2.9867534082975964,
+          2.842182038423648,
+          2.745740271762355,
+          2.6502922588036886,
+          2.3263826970867973
+        ]
+      },
+      "seed": 0,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 1.8616473207427624,
+      "window": 5,
+      "zero_positive_pairs": 318
+    },
+    {
+      "actual_evaluations": 927,
+      "actual_iterations": 878,
+      "blocks": 8,
+      "consecutive_stable_checkpoints": 2,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 2.1755366122410948e-08,
+        "final_block": 8,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 2.070332905113048e-09,
+          "node_rms": 7.54471302789678e-09
+        },
+        "previous_block": 7,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 1.1027100986719702e-07,
+        "relative_loss_change": 2.0748700073550904e-13,
+        "relative_radius_norm_change": 7.548039920552525e-09
+      },
+      "failed_final_gates": [],
+      "final_loss": 1.9466238122233621,
+      "finite_unrestricted_target": false,
+      "initialization": 200000,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 0.08497649148059971,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.24447199681089404,
+        "high_minus_penultimate": -0.1123786502917895,
+        "interior_peak": false,
+        "node_counts": [
+          258,
+          96,
+          77,
+          39,
+          58,
+          72
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.0516123537419606,
+          1.0362569347366395,
+          0.9860974858760407,
+          0.9526374317451538,
+          0.9195190072228561,
+          0.8071403569310666
+        ]
+      },
+      "radius_rms": 2.8822537170608276,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.7046303215254817,
+        "high_minus_penultimate": -0.3239037825217883,
+        "interior_peak": false,
+        "node_counts": [
+          258,
+          96,
+          77,
+          39,
+          58,
+          72
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          3.0310136154798517,
+          2.9867554019747384,
+          2.8421831440505554,
+          2.7457427786587503,
+          2.6502870764761584,
+          2.32638329395437
+        ]
+      },
+      "seed": 0,
+      "stability_reached": true,
+      "target": null,
+      "unrestricted_loss_infimum": 1.8616473207427624,
+      "window": 5,
+      "zero_positive_pairs": 318
+    },
+    {
+      "actual_evaluations": 1472,
+      "actual_iterations": 1400,
+      "blocks": 7,
+      "consecutive_stable_checkpoints": 2,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 4.8188194155124525e-08,
+        "final_block": 7,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 3.431115835894616e-09,
+          "node_rms": 2.072190258210104e-08
+        },
+        "previous_block": 6,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 2.769714355092907e-07,
+        "relative_loss_change": 3.7466684186423445e-13,
+        "relative_radius_norm_change": 2.0722558441948755e-08
+      },
+      "failed_final_gates": [],
+      "final_loss": 2.394287680845406,
+      "finite_unrestricted_target": true,
+      "initialization": 100000,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 0.04935176411461928,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.20266318912652892,
+        "high_minus_penultimate": -0.09569641573314913,
+        "interior_peak": false,
+        "node_counts": [
+          258,
+          96,
+          77,
+          39,
+          58,
+          72
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.0412454658224966,
+          1.0355828347016498,
+          0.9910083483439366,
+          0.9623973489349202,
+          0.9342786924291168,
+          0.8385822766959676
+        ]
+      },
+      "radius_rms": 2.3253979127226323,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.4712725569805425,
+        "high_minus_penultimate": -0.222532245400902,
+        "interior_peak": false,
+        "node_counts": [
+          258,
+          96,
+          77,
+          39,
+          58,
+          72
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          2.421310032855539,
+          2.408142162266603,
+          2.3044887447296927,
+          2.2379567864230587,
+          2.1725697212758983,
+          1.9500374758749963
+        ]
+      },
+      "seed": 0,
+      "stability_reached": true,
+      "target": {
+        "bound": {
+          "minimum_curvature_scale_h": 6.626513596744105e-08,
+          "normalized_profile_rms_error_bound": 1.4142135623730951,
+          "radius_rms_error_bound": 207.36194771653882,
+          "scope": "Unrestricted finite score target; does not certify a unique rank-constrained optimum.",
+          "score_frobenius_error_bound": 744764.1346240359,
+          "status": "not certified beyond trivial geometric bound"
+        },
+        "normalized_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.0889712982861448,
+          "high_minus_penultimate": -0.052373439530223886,
+          "interior_peak": true,
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin_zero_based": 1,
+          "values": [
+            1.0151888255863477,
+            1.020600329331506,
+            0.9990261865624777,
+            0.9893790819097297,
+            0.9785909668304268,
+            0.9262175273002029
+          ]
+        },
+        "normalized_profile_error": {
+          "max_absolute_bin_difference": 0.08763525060423527,
+          "node_rms": 0.0535281563382192
+        },
+        "radius_rms": 2.835004212706028,
+        "radius_rms_error": 0.5278142359257377,
+        "raw_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.25223400545114494,
+          "high_minus_penultimate": -0.14847892170208876,
+          "interior_peak": true,
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin_zero_based": 1,
+          "values": [
+            2.8780645972293804,
+            2.8934062331439794,
+            2.8322434475082625,
+            2.804893865177305,
+            2.774309513480324,
+            2.6258305917782354
+          ]
+        }
+      },
+      "unrestricted_loss_infimum": 2.344935916730787,
+      "window": 10,
+      "zero_positive_pairs": 0
+    },
+    {
+      "actual_evaluations": 903,
+      "actual_iterations": 863,
+      "blocks": 6,
+      "consecutive_stable_checkpoints": 2,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 5.801289253385487e-07,
+        "final_block": 6,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 5.110240874905969e-08,
+          "node_rms": 2.453038284232597e-07
+        },
+        "previous_block": 5,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 1.6171745977426611e-06,
+        "relative_loss_change": 3.4296854318337687e-12,
+        "relative_radius_norm_change": 2.494750968844696e-07
+      },
+      "failed_final_gates": [],
+      "final_loss": 2.394287681047989,
+      "finite_unrestricted_target": true,
+      "initialization": 200000,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 0.04935176431720212,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.20266290487877692,
+        "high_minus_penultimate": -0.09569707670216687,
+        "interior_peak": false,
+        "node_counts": [
+          258,
+          96,
+          77,
+          39,
+          58,
+          72
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.0412453452995472,
+          1.035583747737411,
+          0.9910070519833869,
+          0.9623975121530836,
+          0.9342795171229371,
+          0.8385824404207702
+        ]
+      },
+      "radius_rms": 2.325398030618346,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.4712719198845021,
+        "high_minus_penultimate": -0.22253379369915205,
+        "interior_peak": false,
+        "node_counts": [
+          258,
+          96,
+          77,
+          39,
+          58,
+          72
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          2.4213098753500875,
+          2.4081444075289413,
+          2.304485847011061,
+          2.237957279432777,
+          2.1725717491647374,
+          1.9500379554655853
+        ]
+      },
+      "seed": 0,
+      "stability_reached": true,
+      "target": {
+        "bound": {
+          "minimum_curvature_scale_h": 6.626513596744105e-08,
+          "normalized_profile_rms_error_bound": 1.4142135623730951,
+          "radius_rms_error_bound": 207.36194814213513,
+          "scope": "Unrestricted finite score target; does not certify a unique rank-constrained optimum.",
+          "score_frobenius_error_bound": 744764.1376811917,
+          "status": "not certified beyond trivial geometric bound"
+        },
+        "normalized_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.0889712982861448,
+          "high_minus_penultimate": -0.052373439530223886,
+          "interior_peak": true,
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin_zero_based": 1,
+          "values": [
+            1.0151888255863477,
+            1.020600329331506,
+            0.9990261865624777,
+            0.9893790819097297,
+            0.9785909668304268,
+            0.9262175273002029
+          ]
+        },
+        "normalized_profile_error": {
+          "max_absolute_bin_difference": 0.08763508687943267,
+          "node_rms": 0.05352789357996799
+        },
+        "radius_rms": 2.835004212706028,
+        "radius_rms_error": 0.527813947330195,
+        "raw_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.25223400545114494,
+          "high_minus_penultimate": -0.14847892170208876,
+          "interior_peak": true,
+          "node_counts": [
+            258,
+            96,
+            77,
+            39,
+            58,
+            72
+          ],
+          "peak_bin_zero_based": 1,
+          "values": [
+            2.8780645972293804,
+            2.8934062331439794,
+            2.8322434475082625,
+            2.804893865177305,
+            2.774309513480324,
+            2.6258305917782354
+          ]
+        }
+      },
+      "unrestricted_loss_infimum": 2.344935916730787,
+      "window": 10,
+      "zero_positive_pairs": 0
+    },
+    {
+      "actual_evaluations": 3115,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.08829892429636851,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.010364858739876026,
+          "node_rms": 0.005687686042909409
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.006633423390510095,
+        "relative_loss_change": 1.7239584835015975e-05,
+        "relative_radius_norm_change": 0.00643363129884016
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 0.2752151035027842,
+      "finite_unrestricted_target": false,
+      "initialization": 100001,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 6.534767599475355e-05,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.1796084268828272,
+        "high_minus_penultimate": 0.0050048109173551625,
+        "interior_peak": false,
+        "node_counts": [
+          247,
+          116,
+          68,
+          41,
+          53,
+          75
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          0.814317528879789,
+          0.6165327590780352,
+          0.5807232326302435,
+          0.6031125052627324,
+          0.6297042910796067,
+          0.6347091019969618
+        ]
+      },
+      "radius_rms": 13.765633680793258,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -2.47242381045254,
+        "high_minus_penultimate": 0.06889439372994666,
+        "interior_peak": false,
+        "node_counts": [
+          247,
+          116,
+          68,
+          41,
+          53,
+          75
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          11.20959680240796,
+          8.486964113676997,
+          7.994023290314016,
+          8.302225815752271,
+          8.668278598225474,
+          8.73717299195542
+        ]
+      },
+      "seed": 1,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.27514975582678947,
+      "window": 1,
+      "zero_positive_pairs": 356490
+    },
+    {
+      "actual_evaluations": 3126,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.08394934286952441,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.004797910351888396,
+          "node_rms": 0.003101358650849732
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.0025059726880300374,
+        "relative_loss_change": 0.001127228481750675,
+        "relative_radius_norm_change": 0.0031148867777305044
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 0.27904636404983846,
+      "finite_unrestricted_target": false,
+      "initialization": 200001,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 0.003896608223048992,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.41503299260775206,
+        "high_minus_penultimate": -0.0036241736836618577,
+        "interior_peak": false,
+        "node_counts": [
+          247,
+          116,
+          68,
+          41,
+          53,
+          75
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          0.6619674316508791,
+          0.4432285139922577,
+          0.2785218306621233,
+          0.2581117419745876,
+          0.2505586127267889,
+          0.24693443904312706
+        ]
+      },
+      "radius_rms": 26.958696396564633,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -11.188748442270047,
+        "high_minus_penultimate": -0.09770299802625981,
+        "interior_peak": false,
+        "node_counts": [
+          247,
+          116,
+          68,
+          41,
+          53,
+          75
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          17.845779014289704,
+          11.948862943017774,
+          7.508585472635569,
+          6.9583560882813345,
+          6.754733570045916,
+          6.657030572019656
+        ]
+      },
+      "seed": 1,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.27514975582678947,
+      "window": 1,
+      "zero_positive_pairs": 356490
+    },
+    {
+      "actual_evaluations": 3116,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.19656007880568724,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.0061255660458716665,
+          "node_rms": 0.012445821440096594
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.01838065174274785,
+        "relative_loss_change": 0.0020135340512601463,
+        "relative_radius_norm_change": 0.01434633370926035
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 0.9864282791357709,
+      "finite_unrestricted_target": false,
+      "initialization": 100001,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 0.16606589652004267,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.6994140288646723,
+        "high_minus_penultimate": -0.06085966708235588,
+        "interior_peak": false,
+        "node_counts": [
+          247,
+          116,
+          68,
+          41,
+          53,
+          75
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          0.8070071199025441,
+          0.5298765769326884,
+          0.34420614132332555,
+          0.28399263899941785,
+          0.1684527581202277,
+          0.10759309103787182
+        ]
+      },
+      "radius_rms": 13.797778867440377,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -9.650360107060306,
+        "high_minus_penultimate": -0.8397282283483853,
+        "interior_peak": false,
+        "node_counts": [
+          247,
+          116,
+          68,
+          41,
+          53,
+          75
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          11.134905784865243,
+          7.311119835553493,
+          4.7492802227941775,
+          3.9184676328947923,
+          2.324273906153322,
+          1.4845456778049366
+        ]
+      },
+      "seed": 1,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.8203623826157282,
+      "window": 2,
+      "zero_positive_pairs": 322136
+    },
+    {
+      "actual_evaluations": 3120,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.18630910584460467,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.007010438083730031,
+          "node_rms": 0.011359126464757455
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.007925912023223632,
+        "relative_loss_change": 0.00185143740759397,
+        "relative_radius_norm_change": 0.012440913313773215
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 0.991671977726462,
+      "finite_unrestricted_target": false,
+      "initialization": 200001,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 0.17130959511073374,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.5576879486971936,
+        "high_minus_penultimate": -0.06121021644901706,
+        "interior_peak": false,
+        "node_counts": [
+          247,
+          116,
+          68,
+          41,
+          53,
+          75
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          0.671958853087128,
+          0.4480300932441306,
+          0.321081934565863,
+          0.26061461023058397,
+          0.17548112083895143,
+          0.11427090438993437
+        ]
+      },
+      "radius_rms": 15.050544145029603,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -8.393507091018115,
+        "high_minus_penultimate": -0.9212470647927482,
+        "interior_peak": false,
+        "node_counts": [
+          247,
+          116,
+          68,
+          41,
+          53,
+          75
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          10.11334638203128,
+          6.743096696672518,
+          4.832457830355027,
+          3.922391696115087,
+          2.6410863558059123,
+          1.7198392910131641
+        ]
+      },
+      "seed": 1,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.8203623826157282,
+      "window": 2,
+      "zero_positive_pairs": 322136
+    },
+    {
+      "actual_evaluations": 780,
+      "actual_iterations": 737,
+      "blocks": 5,
+      "consecutive_stable_checkpoints": 2,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 4.5136624121541495e-07,
+        "final_block": 5,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 2.2536491228741795e-08,
+          "node_rms": 1.554222216672575e-07
+        },
+        "previous_block": 4,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 1.0985358874320059e-06,
+        "relative_loss_change": 2.8199700780512877e-12,
+        "relative_radius_norm_change": 1.564578534846025e-07
+      },
+      "failed_final_gates": [],
+      "final_loss": 1.9401550065801219,
+      "finite_unrestricted_target": false,
+      "initialization": 100001,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 0.08409809492465525,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.24461165018148479,
+        "high_minus_penultimate": -0.09720746776412914,
+        "interior_peak": false,
+        "node_counts": [
+          247,
+          116,
+          68,
+          41,
+          53,
+          75
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.0559031311948397,
+          1.0218664116007954,
+          0.9829608153696225,
+          0.981602948278051,
+          0.908498948777484,
+          0.8112914810133549
+        ]
+      },
+      "radius_rms": 2.8849063135829733,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.7056816939845154,
+        "high_minus_penultimate": -0.28043443748014996,
+        "interior_peak": false,
+        "node_counts": [
+          247,
+          116,
+          68,
+          41,
+          53,
+          75
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          3.0461816097160237,
+          2.947988862465511,
+          2.835749862264491,
+          2.8318325429190105,
+          2.6209343532116582,
+          2.3404999157315083
+        ]
+      },
+      "seed": 1,
+      "stability_reached": true,
+      "target": null,
+      "unrestricted_loss_infimum": 1.8560569116554666,
+      "window": 5,
+      "zero_positive_pairs": 608
+    },
+    {
+      "actual_evaluations": 841,
+      "actual_iterations": 802,
+      "blocks": 5,
+      "consecutive_stable_checkpoints": 2,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 2.7806163829223878e-08,
+        "final_block": 5,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 2.688442801712654e-09,
+          "node_rms": 9.469230056649645e-09
+        },
+        "previous_block": 4,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 1.3493696944793496e-07,
+        "relative_loss_change": 3.044285879740934e-13,
+        "relative_radius_norm_change": 9.638497834769624e-09
+      },
+      "failed_final_gates": [],
+      "final_loss": 1.9401550065681292,
+      "finite_unrestricted_target": false,
+      "initialization": 200001,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 0.08409809491266262,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.2446119043670818,
+        "high_minus_penultimate": -0.09720828278546756,
+        "interior_peak": false,
+        "node_counts": [
+          247,
+          116,
+          68,
+          41,
+          53,
+          75
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.0559029149758,
+          1.0218660979209309,
+          0.9829622601092793,
+          0.981602431008295,
+          0.9084992933941857,
+          0.8112910106087181
+        ]
+      },
+      "radius_rms": 2.8849063677650917,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.7056824405397406,
+        "high_minus_penultimate": -0.2804367940073047,
+        "interior_peak": false,
+        "node_counts": [
+          247,
+          116,
+          68,
+          41,
+          53,
+          75
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          3.046181043155408,
+          2.9479880128953604,
+          2.8357540834620254,
+          2.831831103829525,
+          2.620935396622972,
+          2.3404986026156673
+        ]
+      },
+      "seed": 1,
+      "stability_reached": true,
+      "target": null,
+      "unrestricted_loss_infimum": 1.8560569116554666,
+      "window": 5,
+      "zero_positive_pairs": 608
+    },
+    {
+      "actual_evaluations": 1313,
+      "actual_iterations": 1257,
+      "blocks": 6,
+      "consecutive_stable_checkpoints": 2,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 1.8883868709750702e-06,
+        "final_block": 6,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 2.2508832531187295e-07,
+          "node_rms": 8.085037157950435e-07
+        },
+        "previous_block": 5,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 3.39975928895663e-06,
+        "relative_loss_change": 1.2529448120106033e-11,
+        "relative_radius_norm_change": 8.111511246550003e-07
+      },
+      "failed_final_gates": [],
+      "final_loss": 2.390637865903713,
+      "finite_unrestricted_target": true,
+      "initialization": 100001,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 0.04831625322500788,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.20318874620800376,
+        "high_minus_penultimate": -0.0763329934678798,
+        "interior_peak": false,
+        "node_counts": [
+          247,
+          116,
+          68,
+          41,
+          53,
+          75
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.046438816736822,
+          1.0222403416989356,
+          0.9841202362145334,
+          0.9902511096195725,
+          0.919583063996698,
+          0.8432500705288182
+        ]
+      },
+      "radius_rms": 2.328033503538497,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.47303020871421353,
+        "high_minus_penultimate": -0.17770576621861034,
+        "interior_peak": false,
+        "node_counts": [
+          247,
+          116,
+          68,
+          41,
+          53,
+          75
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          2.4361446247665026,
+          2.379809764143764,
+          2.291064881417654,
+          2.305337760110538,
+          2.1408201822708994,
+          1.963114416052289
+        ]
+      },
+      "seed": 1,
+      "stability_reached": true,
+      "target": {
+        "bound": {
+          "minimum_curvature_scale_h": 5.442951383069891e-08,
+          "normalized_profile_rms_error_bound": 1.4142135623730951,
+          "radius_rms_error_bound": 226.38600329490978,
+          "scope": "Unrestricted finite score target; does not certify a unique rank-constrained optimum.",
+          "score_frobenius_error_bound": 887686.8206847598,
+          "status": "not certified beyond trivial geometric bound"
+        },
+        "normalized_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.08704605129098175,
+          "high_minus_penultimate": -0.040522919941785585,
+          "interior_peak": false,
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin_zero_based": 0,
+          "values": [
+            1.0164906455097433,
+            1.0133817295991059,
+            0.9994918175620922,
+            1.0039612888182392,
+            0.9699675141605472,
+            0.9294445942187616
+          ]
+        },
+        "normalized_profile_error": {
+          "max_absolute_bin_difference": 0.0861945236899434,
+          "node_rms": 0.05326689309677519
+        },
+        "radius_rms": 2.838151517915716,
+        "radius_rms_error": 0.5281739518549136,
+        "raw_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.24704988260006866,
+          "high_minus_penultimate": -0.11501018674315588,
+          "interior_peak": false,
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin_zero_based": 0,
+          "values": [
+            2.884954468500604,
+            2.8761308940897563,
+            2.8367092191581906,
+            2.849394255788104,
+            2.7529147726436913,
+            2.6379045859005354
+          ]
+        }
+      },
+      "unrestricted_loss_infimum": 2.342321612678705,
+      "window": 10,
+      "zero_positive_pairs": 0
+    },
+    {
+      "actual_evaluations": 1093,
+      "actual_iterations": 1043,
+      "blocks": 5,
+      "consecutive_stable_checkpoints": 2,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 7.724986155087433e-06,
+        "final_block": 5,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 3.5914498563993646e-07,
+          "node_rms": 3.3159083206122274e-06
+        },
+        "previous_block": 4,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 4.479607375276744e-05,
+        "relative_loss_change": 9.300870762789705e-11,
+        "relative_radius_norm_change": 3.3182411899586377e-06
+      },
+      "failed_final_gates": [],
+      "final_loss": 2.3906378655457834,
+      "finite_unrestricted_target": true,
+      "initialization": 200001,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 0.04831625286707819,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.20317746390405123,
+        "high_minus_penultimate": -0.07633025884444267,
+        "interior_peak": false,
+        "node_counts": [
+          247,
+          116,
+          68,
+          41,
+          53,
+          75
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.0464354738941408,
+          1.022236113305973,
+          0.9841340578942976,
+          0.9902507526456095,
+          0.9195882688345323,
+          0.8432580099900896
+        ]
+      },
+      "radius_rms": 2.328036074470653,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.47300446548808983,
+        "high_minus_penultimate": -0.17769959616354525,
+        "interior_peak": false,
+        "node_counts": [
+          247,
+          116,
+          68,
+          41,
+          53,
+          75
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          2.436139532831353,
+          2.379802548402975,
+          2.2910995888931147,
+          2.3053394749306944,
+          2.1408346635068085,
+          1.9631350673432633
+        ]
+      },
+      "seed": 1,
+      "stability_reached": true,
+      "target": {
+        "bound": {
+          "minimum_curvature_scale_h": 5.442951383069891e-08,
+          "normalized_profile_rms_error_bound": 1.4142135623730951,
+          "radius_rms_error_bound": 226.3860024563712,
+          "scope": "Unrestricted finite score target; does not certify a unique rank-constrained optimum.",
+          "score_frobenius_error_bound": 887686.8141087376,
+          "status": "not certified beyond trivial geometric bound"
+        },
+        "normalized_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.08704605129098175,
+          "high_minus_penultimate": -0.040522919941785585,
+          "interior_peak": false,
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin_zero_based": 0,
+          "values": [
+            1.0164906455097433,
+            1.0133817295991059,
+            0.9994918175620922,
+            1.0039612888182392,
+            0.9699675141605472,
+            0.9294445942187616
+          ]
+        },
+        "normalized_profile_error": {
+          "max_absolute_bin_difference": 0.08618658422867198,
+          "node_rms": 0.053258279748755785
+        },
+        "radius_rms": 2.838151517915716,
+        "radius_rms_error": 0.5281657492695586,
+        "raw_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.24704988260006866,
+          "high_minus_penultimate": -0.11501018674315588,
+          "interior_peak": false,
+          "node_counts": [
+            247,
+            116,
+            68,
+            41,
+            53,
+            75
+          ],
+          "peak_bin_zero_based": 0,
+          "values": [
+            2.884954468500604,
+            2.8761308940897563,
+            2.8367092191581906,
+            2.849394255788104,
+            2.7529147726436913,
+            2.6379045859005354
+          ]
+        }
+      },
+      "unrestricted_loss_infimum": 2.342321612678705,
+      "window": 10,
+      "zero_positive_pairs": 0
+    },
+    {
+      "actual_evaluations": 3106,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.06357795894571819,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.004477700406153917,
+          "node_rms": 0.002621748672760343
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.0018671511646541161,
+        "relative_loss_change": 0.0008578620225804801,
+        "relative_radius_norm_change": 0.002647839315960695
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 0.28037021329917133,
+      "finite_unrestricted_target": false,
+      "initialization": 100002,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 0.0031111665937790245,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.2914119012126269,
+        "high_minus_penultimate": 0.008194697222778269,
+        "interior_peak": false,
+        "node_counts": [
+          256,
+          110,
+          63,
+          40,
+          62,
+          69
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          0.5854643026593087,
+          0.5622922792088502,
+          0.29293192692032705,
+          0.2750426316620735,
+          0.28585770422390355,
+          0.2940524014466818
+        ]
+      },
+      "radius_rms": 24.02008131302578,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -6.999737562710731,
+        "high_minus_penultimate": 0.19683729362676416,
+        "interior_peak": false,
+        "node_counts": [
+          256,
+          110,
+          63,
+          40,
+          62,
+          69
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          14.06290015575053,
+          13.506306268283176,
+          7.036248703807582,
+          6.606546377071604,
+          6.866325299413035,
+          7.063162593039799
+        ]
+      },
+      "seed": 2,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.2772590467053923,
+      "window": 1,
+      "zero_positive_pairs": 356490
+    },
+    {
+      "actual_evaluations": 3124,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.07953229736998059,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.005809227831991948,
+          "node_rms": 0.0029802286632804897
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.0023987074594675386,
+        "relative_loss_change": 0.0009098831608933544,
+        "relative_radius_norm_change": 0.003001932300123469
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 0.2826824275126766,
+      "finite_unrestricted_target": false,
+      "initialization": 200002,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 0.005423380807284273,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.37864191363540345,
+        "high_minus_penultimate": -0.0045989348506927374,
+        "interior_peak": false,
+        "node_counts": [
+          256,
+          110,
+          63,
+          40,
+          62,
+          69
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          0.6325484014022684,
+          0.4366341737884293,
+          0.2520348475809532,
+          0.2779778388760108,
+          0.2585054226175577,
+          0.253906487766865
+        ]
+      },
+      "radius_rms": 26.50313062845314,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -10.035196098486567,
+        "high_minus_penultimate": -0.12188617109965527,
+        "interior_peak": false,
+        "node_counts": [
+          256,
+          110,
+          63,
+          40,
+          62,
+          69
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          16.76451291118353,
+          11.572172544761447,
+          6.679712488360278,
+          7.367282975546014,
+          6.851202983796618,
+          6.729316812696963
+        ]
+      },
+      "seed": 2,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.2772590467053923,
+      "window": 1,
+      "zero_positive_pairs": 356490
+    },
+    {
+      "actual_evaluations": 3170,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.2978490065703131,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.006703738853027441,
+          "node_rms": 0.018066775852112634
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.03945652824090524,
+        "relative_loss_change": 0.001521362916392266,
+        "relative_radius_norm_change": 0.022486571683964243
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 0.9826905363951559,
+      "finite_unrestricted_target": false,
+      "initialization": 100002,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 0.15633617884266082,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.7047854436389293,
+        "high_minus_penultimate": -0.08292027497043468,
+        "interior_peak": false,
+        "node_counts": [
+          256,
+          110,
+          63,
+          40,
+          62,
+          69
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          0.8085364123890334,
+          0.7474929881107625,
+          0.41611088473202523,
+          0.26902034437111044,
+          0.1866712437205388,
+          0.10375096875010413
+        ]
+      },
+      "radius_rms": 13.420822344594665,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -9.458800230134406,
+        "high_minus_penultimate": -1.1128582791431434,
+        "interior_peak": false,
+        "node_counts": [
+          256,
+          110,
+          63,
+          40,
+          62,
+          69
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          10.851223549809147,
+          10.031970597264756,
+          5.5845502596406185,
+          3.6104742488863506,
+          2.505281598817884,
+          1.3924233196747404
+        ]
+      },
+      "seed": 2,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.8263543575524951,
+      "window": 2,
+      "zero_positive_pairs": 321930
+    },
+    {
+      "actual_evaluations": 3162,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.34775115608030266,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.00800689794463838,
+          "node_rms": 0.021353907201963184
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.04116041896886196,
+        "relative_loss_change": 0.0016041845722454262,
+        "relative_radius_norm_change": 0.02765601563614128
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 0.9822704822524797,
+      "finite_unrestricted_target": false,
+      "initialization": 200002,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 0.15591612469998462,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.75924962752253,
+        "high_minus_penultimate": -0.0844135076005482,
+        "interior_peak": false,
+        "node_counts": [
+          256,
+          110,
+          63,
+          40,
+          62,
+          69
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          0.8768121541843137,
+          0.6867007986244189,
+          0.4347928220262053,
+          0.31516608117653955,
+          0.20197603426233182,
+          0.11756252666178363
+        ]
+      },
+      "radius_rms": 12.792296980090532,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -9.71254671729132,
+        "high_minus_penultimate": -1.0798426583573413,
+        "interior_peak": false,
+        "node_counts": [
+          256,
+          110,
+          63,
+          40,
+          62,
+          69
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          11.216441472078667,
+          8.784480552468914,
+          5.561998904170866,
+          4.031698108461614,
+          2.583737413144689,
+          1.5038947547873476
+        ]
+      },
+      "seed": 2,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.8263543575524951,
+      "window": 2,
+      "zero_positive_pairs": 321930
+    },
+    {
+      "actual_evaluations": 1101,
+      "actual_iterations": 1055,
+      "blocks": 7,
+      "consecutive_stable_checkpoints": 2,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 1.8225910086280903e-06,
+        "final_block": 7,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 1.6550424031258615e-07,
+          "node_rms": 6.327527725949437e-07
+        },
+        "previous_block": 6,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 2.623814597381357e-06,
+        "relative_loss_change": 1.111853900563895e-11,
+        "relative_radius_norm_change": 6.32769047378263e-07
+      },
+      "failed_final_gates": [],
+      "final_loss": 1.94362488799324,
+      "finite_unrestricted_target": false,
+      "initialization": 100002,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 0.08463561950315768,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.23549274813558063,
+        "high_minus_penultimate": -0.10612044884632255,
+        "interior_peak": false,
+        "node_counts": [
+          256,
+          110,
+          63,
+          40,
+          62,
+          69
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.0477006432004436,
+          1.0314974332265034,
+          0.9899712550047552,
+          0.9700727973450132,
+          0.9183283439111856,
+          0.812207895064863
+        ]
+      },
+      "radius_rms": 2.880341584196995,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.6782995552317419,
+        "high_minus_penultimate": -0.30566314174571296,
+        "interior_peak": false,
+        "node_counts": [
+          256,
+          110,
+          63,
+          40,
+          62,
+          69
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          3.017735730400176,
+          2.971064950914761,
+          2.8514553729498835,
+          2.794141017891145,
+          2.645099316914147,
+          2.339436175168434
+        ]
+      },
+      "seed": 2,
+      "stability_reached": true,
+      "target": null,
+      "unrestricted_loss_infimum": 1.8589892684900824,
+      "window": 5,
+      "zero_positive_pairs": 282
+    },
+    {
+      "actual_evaluations": 1745,
+      "actual_iterations": 1668,
+      "blocks": 9,
+      "consecutive_stable_checkpoints": 2,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 5.928433042939621e-07,
+        "final_block": 9,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 4.095439420925828e-08,
+          "node_rms": 2.0575472647552336e-07
+        },
+        "previous_block": 8,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 1.3280609075360308e-06,
+        "relative_loss_change": 3.507359603895825e-12,
+        "relative_radius_norm_change": 2.0582400771608647e-07
+      },
+      "failed_final_gates": [],
+      "final_loss": 1.9436248875671185,
+      "finite_unrestricted_target": false,
+      "initialization": 200002,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 0.0846356190770361,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.23549324967676688,
+        "high_minus_penultimate": -0.10612364882196257,
+        "interior_peak": false,
+        "node_counts": [
+          256,
+          110,
+          63,
+          40,
+          62,
+          69
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.0477018071496649,
+          1.0314946197309185,
+          0.9899657788649453,
+          0.9700757766367489,
+          0.9183322062948606,
+          0.812208557472898
+        ]
+      },
+      "radius_rms": 2.8803408684277287,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.6783008312828458,
+        "high_minus_penultimate": -0.30567228280857117,
+        "interior_peak": false,
+        "node_counts": [
+          256,
+          110,
+          63,
+          40,
+          62,
+          69
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          3.017738333058766,
+          2.9710561087742833,
+          2.8514388912095896,
+          2.794148904918597,
+          2.6451097845844913,
+          2.33943750177592
+        ]
+      },
+      "seed": 2,
+      "stability_reached": true,
+      "target": null,
+      "unrestricted_loss_infimum": 1.8589892684900824,
+      "window": 5,
+      "zero_positive_pairs": 282
+    },
+    {
+      "actual_evaluations": 662,
+      "actual_iterations": 626,
+      "blocks": 4,
+      "consecutive_stable_checkpoints": 2,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 4.709654504617449e-08,
+        "final_block": 4,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 7.242265120943614e-09,
+          "node_rms": 2.0113880142870055e-08
+        },
+        "previous_block": 3,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 2.679391764511104e-07,
+        "relative_loss_change": 3.5847197379389243e-13,
+        "relative_radius_norm_change": 2.0251441666162884e-08
+      },
+      "failed_final_gates": [],
+      "final_loss": 2.3934377473071833,
+      "finite_unrestricted_target": true,
+      "initialization": 100002,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 0.04883585153868353,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.19341938043057094,
+        "high_minus_penultimate": -0.0871483744303585,
+        "interior_peak": false,
+        "node_counts": [
+          256,
+          110,
+          63,
+          40,
+          62,
+          69
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.0386495874463808,
+          1.0282801259701104,
+          0.9940947875747872,
+          0.9764216545654957,
+          0.9323785814461684,
+          0.8452302070158099
+        ]
+      },
+      "radius_rms": 2.3255897497828815,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.4498141285386905,
+        "high_minus_penultimate": -0.20267136628548177,
+        "interior_peak": false,
+        "node_counts": [
+          256,
+          110,
+          63,
+          40,
+          62,
+          69
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          2.4154728341815215,
+          2.3913577208615386,
+          2.3118566482965157,
+          2.2707561913235583,
+          2.1683300719283127,
+          1.965658705642831
+        ]
+      },
+      "seed": 2,
+      "stability_reached": true,
+      "target": {
+        "bound": {
+          "minimum_curvature_scale_h": 1.4990111895501193e-07,
+          "normalized_profile_rms_error_bound": 1.4142135623730951,
+          "radius_rms_error_bound": 137.14752177936424,
+          "scope": "Unrestricted finite score target; does not certify a unique rank-constrained optimum.",
+          "score_frobenius_error_bound": 325789.1047080016,
+          "status": "not certified beyond trivial geometric bound"
+        },
+        "normalized_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.08501928365587341,
+          "high_minus_penultimate": -0.05197293288242233,
+          "interior_peak": true,
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin_zero_based": 1,
+          "values": [
+            1.0126760368644767,
+            1.0190515325439258,
+            1.0009099592436537,
+            0.9946225225442309,
+            0.9796296860910256,
+            0.9276567532086033
+          ]
+        },
+        "normalized_profile_error": {
+          "max_absolute_bin_difference": 0.08242654619279344,
+          "node_rms": 0.05049734494674632
+        },
+        "radius_rms": 2.83150946234045,
+        "radius_rms_error": 0.5222510947237192,
+        "raw_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.24073290615301213,
+          "high_minus_penultimate": -0.14716185124216352,
+          "interior_peak": true,
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin_zero_based": 1,
+          "values": [
+            2.8674017806671923,
+            2.8854540570106626,
+            2.8340860205492,
+            2.816283084040917,
+            2.7738307257563437,
+            2.62666887451418
+          ]
+        }
+      },
+      "unrestricted_loss_infimum": 2.3446018957684998,
+      "window": 10,
+      "zero_positive_pairs": 0
+    },
+    {
+      "actual_evaluations": 648,
+      "actual_iterations": 619,
+      "blocks": 4,
+      "consecutive_stable_checkpoints": 2,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 5.191478093824789e-08,
+        "final_block": 4,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 4.977096512703838e-09,
+          "node_rms": 2.208379204328469e-08
+        },
+        "previous_block": 3,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 3.127404851635495e-07,
+        "relative_loss_change": 4.2526799375353613e-13,
+        "relative_radius_norm_change": 2.2323276358758475e-08
+      },
+      "failed_final_gates": [],
+      "final_loss": 2.393437747318005,
+      "finite_unrestricted_target": true,
+      "initialization": 200002,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 0.048835851549505094,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.19341911774846243,
+        "high_minus_penultimate": -0.08714943721837431,
+        "interior_peak": false,
+        "node_counts": [
+          256,
+          110,
+          63,
+          40,
+          62,
+          69
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.0386493741189522,
+          1.0282800935483625,
+          0.9940941181969407,
+          0.9764220809655967,
+          0.9323796935888641,
+          0.8452302563704898
+        ]
+      },
+      "radius_rms": 2.325589679275702,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.4498135040104372,
+        "high_minus_penultimate": -0.2026738317497383,
+        "interior_peak": false,
+        "node_counts": [
+          256,
+          110,
+          63,
+          40,
+          62,
+          69
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          2.415472264837203,
+          2.3913575729607244,
+          2.3118550215074847,
+          2.270757114110496,
+          2.1683325925765042,
+          1.965658760826766
+        ]
+      },
+      "seed": 2,
+      "stability_reached": true,
+      "target": {
+        "bound": {
+          "minimum_curvature_scale_h": 1.4990111895501193e-07,
+          "normalized_profile_rms_error_bound": 1.4142135623730951,
+          "radius_rms_error_bound": 137.14752179455945,
+          "scope": "Unrestricted finite score target; does not certify a unique rank-constrained optimum.",
+          "score_frobenius_error_bound": 325789.10478019295,
+          "status": "not certified beyond trivial geometric bound"
+        },
+        "normalized_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.08501928365587341,
+          "high_minus_penultimate": -0.05197293288242233,
+          "interior_peak": true,
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin_zero_based": 1,
+          "values": [
+            1.0126760368644767,
+            1.0190515325439258,
+            1.0009099592436537,
+            0.9946225225442309,
+            0.9796296860910256,
+            0.9276567532086033
+          ]
+        },
+        "normalized_profile_error": {
+          "max_absolute_bin_difference": 0.08242649683811354,
+          "node_rms": 0.05049745305781481
+        },
+        "radius_rms": 2.83150946234045,
+        "radius_rms_error": 0.5222512313739075,
+        "raw_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.24073290615301213,
+          "high_minus_penultimate": -0.14716185124216352,
+          "interior_peak": true,
+          "node_counts": [
+            256,
+            110,
+            63,
+            40,
+            62,
+            69
+          ],
+          "peak_bin_zero_based": 1,
+          "values": [
+            2.8674017806671923,
+            2.8854540570106626,
+            2.8340860205492,
+            2.816283084040917,
+            2.7738307257563437,
+            2.62666887451418
+          ]
+        }
+      },
+      "unrestricted_loss_infimum": 2.3446018957684998,
+      "window": 10,
+      "zero_positive_pairs": 0
+    },
+    {
+      "actual_evaluations": 3100,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.06329653402023355,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.004883639194515288,
+          "node_rms": 0.0026680789107494706
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.0028011538098516578,
+        "relative_loss_change": 0.0006452786399204768,
+        "relative_radius_norm_change": 0.0026871564226551366
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 0.2739087448627604,
+      "finite_unrestricted_target": false,
+      "initialization": 100003,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 0.0029586077556190693,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.4326232768616015,
+        "high_minus_penultimate": 0.0037282155547340157,
+        "interior_peak": false,
+        "node_counts": [
+          239,
+          111,
+          76,
+          46,
+          64,
+          64
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          0.72977042727822,
+          0.45462095137790515,
+          0.3582643366995671,
+          0.3168912801578573,
+          0.2934189348618844,
+          0.29714715041661843
+        ]
+      },
+      "radius_rms": 23.5626556909246,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -10.193753316569465,
+        "high_minus_penultimate": 0.08784665945774695,
+        "interior_peak": false,
+        "node_counts": [
+          239,
+          111,
+          76,
+          46,
+          64,
+          64
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          17.195329311375627,
+          10.71207694719815,
+          8.441659211989382,
+          7.466800125815919,
+          6.913729335348415,
+          7.001575994806162
+        ]
+      },
+      "seed": 3,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.27095013710714133,
+      "window": 1,
+      "zero_positive_pairs": 356496
+    },
+    {
+      "actual_evaluations": 3106,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.2900089897991243,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.028080094966039804,
+          "node_rms": 0.017831613260028054
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.04387335176816662,
+        "relative_loss_change": 2.414861544175473e-06,
+        "relative_radius_norm_change": 0.02586476608436991
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 0.2709514399941054,
+      "finite_unrestricted_target": false,
+      "initialization": 200003,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 1.3028869640940854e-06,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": 0.037406127425362756,
+        "high_minus_penultimate": 0.047877580305358935,
+        "interior_peak": false,
+        "node_counts": [
+          239,
+          111,
+          76,
+          46,
+          64,
+          64
+        ],
+        "peak_bin_zero_based": 5,
+        "values": [
+          0.8974568922150399,
+          0.8272550046421864,
+          0.8044609977569271,
+          0.8418797033581384,
+          0.8869854393350437,
+          0.9348630196404026
+        ]
+      },
+      "radius_rms": 11.420808794216974,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": 0.42720822905718236,
+        "high_minus_penultimate": 0.5468006901972693,
+        "interior_peak": false,
+        "node_counts": [
+          239,
+          111,
+          76,
+          46,
+          64,
+          64
+        ],
+        "peak_bin_zero_based": 5,
+        "values": [
+          10.249683567040162,
+          9.447921232077485,
+          9.187595237786876,
+          9.614947119785404,
+          10.130091105900075,
+          10.676891796097344
+        ]
+      },
+      "seed": 3,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.27095013710714133,
+      "window": 1,
+      "zero_positive_pairs": 356496
+    },
+    {
+      "actual_evaluations": 3114,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.18099892896341394,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.005289342131568953,
+          "node_rms": 0.010507594730479118
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.010953424275857904,
+        "relative_loss_change": 0.003027113763142686,
+        "relative_radius_norm_change": 0.010954348352396349
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 0.9913498555172351,
+      "finite_unrestricted_target": false,
+      "initialization": 100003,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 0.179999527084735,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.5468184211552125,
+        "high_minus_penultimate": -0.04449678028765122,
+        "interior_peak": false,
+        "node_counts": [
+          239,
+          111,
+          76,
+          46,
+          64,
+          64
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          0.6379469558779262,
+          0.4020778456235837,
+          0.2655844200321701,
+          0.21830993140933558,
+          0.13562531501036484,
+          0.09112853472271362
+        ]
+      },
+      "radius_rms": 16.573280318222128,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -9.062574976972982,
+        "high_minus_penultimate": -0.7374576129655841,
+        "interior_peak": false,
+        "node_counts": [
+          239,
+          111,
+          76,
+          46,
+          64,
+          64
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          10.572873727921353,
+          6.663748845266496,
+          4.4016050413456025,
+          3.6181116894987655,
+          2.2477563639139557,
+          1.5102987509483716
+        ]
+      },
+      "seed": 3,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.8113503284325001,
+      "window": 2,
+      "zero_positive_pairs": 323360
+    },
+    {
+      "actual_evaluations": 3176,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.3309266882548687,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.004077097587251055,
+          "node_rms": 0.01499579279792819
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.04867320779737826,
+        "relative_loss_change": 0.0010631963204088546,
+        "relative_radius_norm_change": 0.023824335212460645
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 0.953646820297666,
+      "finite_unrestricted_target": false,
+      "initialization": 200003,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 0.1422964918651659,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.9068962718339554,
+        "high_minus_penultimate": -0.07805988114650005,
+        "interior_peak": false,
+        "node_counts": [
+          239,
+          111,
+          76,
+          46,
+          64,
+          64
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          0.9909780091029012,
+          0.745147018979683,
+          0.6194881452693519,
+          0.4221845981920876,
+          0.1621416184154459,
+          0.08408173726894584
+        ]
+      },
+      "radius_rms": 14.145871514259257,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -12.82883813812387,
+        "high_minus_penultimate": -1.1042250491167378,
+        "interior_peak": false,
+        "node_counts": [
+          239,
+          111,
+          76,
+          46,
+          64,
+          64
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          14.018247590226082,
+          10.540753989719901,
+          8.763199707587026,
+          5.972169081324443,
+          2.29363450121895,
+          1.189409452102212
+        ]
+      },
+      "seed": 3,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.8113503284325001,
+      "window": 2,
+      "zero_positive_pairs": 323360
+    },
+    {
+      "actual_evaluations": 843,
+      "actual_iterations": 792,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 1,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 1.9219166243459482e-08,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 1.0943175254851667e-09,
+          "node_rms": 6.415896977803912e-09
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 1.222082077429989e-07,
+        "relative_loss_change": 2.2411161897165574e-13,
+        "relative_radius_norm_change": 6.641308341502155e-09
+      },
+      "failed_final_gates": [],
+      "final_loss": 1.9320148664780987,
+      "finite_unrestricted_target": false,
+      "initialization": 100003,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 0.08379160264816199,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.26464596282065767,
+        "high_minus_penultimate": -0.12201441066340657,
+        "interior_peak": false,
+        "node_counts": [
+          239,
+          111,
+          76,
+          46,
+          64,
+          64
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.0575473168938379,
+          1.0203974631145507,
+          0.9917774454653095,
+          0.9742820896188971,
+          0.9149157647365868,
+          0.7929013540731802
+        ]
+      },
+      "radius_rms": 2.893882543644222,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.7658543320526188,
+        "high_minus_penultimate": -0.3530953730918691,
+        "interior_peak": false,
+        "node_counts": [
+          239,
+          111,
+          76,
+          46,
+          64,
+          64
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          3.060417719436862,
+          2.9529104060860476,
+          2.8700874366121183,
+          2.819457931733342,
+          2.647658760476112,
+          2.294563387384243
+        ]
+      },
+      "seed": 3,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 1.8482232638299367,
+      "window": 5,
+      "zero_positive_pairs": 426
+    },
+    {
+      "actual_evaluations": 1479,
+      "actual_iterations": 1400,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 6.67092696279942e-08,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 3.737919973545445e-09,
+          "node_rms": 2.3048467049059932e-08
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 1.8517521519441958e-07,
+        "relative_loss_change": 2.3790310322534346e-13,
+        "relative_radius_norm_change": 2.3051821172410995e-08
+      },
+      "failed_final_gates": [
+        "gradient"
+      ],
+      "final_loss": 1.9320148664027241,
+      "finite_unrestricted_target": false,
+      "initialization": 200003,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 0.0837916025727874,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.26464612135193377,
+        "high_minus_penultimate": -0.12201427254888464,
+        "interior_peak": false,
+        "node_counts": [
+          239,
+          111,
+          76,
+          46,
+          64,
+          64
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.057547349408324,
+          1.0203976291316492,
+          0.9917774932840956,
+          0.9742819160727102,
+          0.9149155006052749,
+          0.7929012280563903
+        ]
+      },
+      "radius_rms": 2.8938828370777463,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.7658548684795563,
+        "high_minus_penultimate": -0.3530950092077436,
+        "interior_peak": false,
+        "node_counts": [
+          239,
+          111,
+          76,
+          46,
+          64,
+          64
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          3.060418123849812,
+          2.9529111859389023,
+          2.8700878660148335,
+          2.819457715398037,
+          2.6476582645779994,
+          2.2945632553702557
+        ]
+      },
+      "seed": 3,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 1.8482232638299367,
+      "window": 5,
+      "zero_positive_pairs": 426
+    },
+    {
+      "actual_evaluations": 698,
+      "actual_iterations": 657,
+      "blocks": 7,
+      "consecutive_stable_checkpoints": 2,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 6.267578244748759e-08,
+        "final_block": 7,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 7.718646721777134e-09,
+          "node_rms": 2.6656991095320726e-08
+        },
+        "previous_block": 6,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 1.794819926006948e-07,
+        "relative_loss_change": 1.672232191134338e-13,
+        "relative_radius_norm_change": 2.6850843279541138e-08
+      },
+      "failed_final_gates": [],
+      "final_loss": 2.387444768566036,
+      "finite_unrestricted_target": true,
+      "initialization": 100003,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 0.048168090940936104,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.22012535687200274,
+        "high_minus_penultimate": -0.10205145030944074,
+        "interior_peak": false,
+        "node_counts": [
+          239,
+          111,
+          76,
+          46,
+          64,
+          64
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.0474303565194627,
+          1.0190448016291687,
+          0.9937489940434664,
+          0.9842267235180483,
+          0.9293564499569007,
+          0.82730499964746
+        ]
+      },
+      "radius_rms": 2.3342202549514224,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.5138210666390397,
+        "high_minus_penultimate": -0.23821056235946525,
+        "interior_peak": false,
+        "node_counts": [
+          239,
+          111,
+          76,
+          46,
+          64,
+          64
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          2.44493315383872,
+          2.3786750166657593,
+          2.31962903023386,
+          2.2974019535003025,
+          2.1693226495591453,
+          1.93111208719968
+        ]
+      },
+      "seed": 3,
+      "stability_reached": true,
+      "target": {
+        "bound": {
+          "minimum_curvature_scale_h": 1.7101018523158638e-07,
+          "normalized_profile_rms_error_bound": 1.4142135623730951,
+          "radius_rms_error_bound": 127.5234215161637,
+          "scope": "Unrestricted finite score target; does not certify a unique rank-constrained optimum.",
+          "score_frobenius_error_bound": 281669.96540964587,
+          "status": "not certified beyond trivial geometric bound"
+        },
+        "normalized_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.09983602555212356,
+          "high_minus_penultimate": -0.05605552471123343,
+          "interior_peak": false,
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            64,
+            64
+          ],
+          "peak_bin_zero_based": 0,
+          "values": [
+            1.0188240400074033,
+            1.009502733396834,
+            1.003030828410416,
+            0.9991894632043755,
+            0.9750435391665132,
+            0.9189880144552798
+          ]
+        },
+        "normalized_profile_error": {
+          "max_absolute_bin_difference": 0.09168301480781982,
+          "node_rms": 0.052210262052510066
+        },
+        "radius_rms": 2.8429920670761186,
+        "radius_rms_error": 0.5262493399368728,
+        "raw_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.2838330286530959,
+          "high_minus_penultimate": -0.15936541206982557,
+          "interior_peak": false,
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            64,
+            64
+          ],
+          "peak_bin_zero_based": 0,
+          "values": [
+            2.89650866348749,
+            2.8700082627388572,
+            2.8516086882036,
+            2.8406877173960856,
+            2.77204104690422,
+            2.6126756348343942
+          ]
+        }
+      },
+      "unrestricted_loss_infimum": 2.3392766776251,
+      "window": 10,
+      "zero_positive_pairs": 0
+    },
+    {
+      "actual_evaluations": 647,
+      "actual_iterations": 590,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 2,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 3.826141273302558e-08,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 4.194748881580779e-09,
+          "node_rms": 1.6275485861128903e-08
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 1.5851838573212434e-07,
+        "relative_loss_change": 1.880563676523744e-13,
+        "relative_radius_norm_change": 1.6391516144599847e-08
+      },
+      "failed_final_gates": [],
+      "final_loss": 2.387444768625255,
+      "finite_unrestricted_target": true,
+      "initialization": 200003,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 0.048168091000154956,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.22012549609344945,
+        "high_minus_penultimate": -0.10205196296417374,
+        "interior_peak": false,
+        "node_counts": [
+          239,
+          111,
+          76,
+          46,
+          64,
+          64
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.0474302538674618,
+          1.0190450548736607,
+          0.9937490395910761,
+          0.984226459229372,
+          0.9293567207381861,
+          0.8273047577740124
+        ]
+      },
+      "radius_rms": 2.3342204785089744,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.5138214408232771,
+        "high_minus_penultimate": -0.23821178182301406,
+        "interior_peak": false,
+        "node_counts": [
+          239,
+          111,
+          76,
+          46,
+          64,
+          64
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          2.444933148387283,
+          2.3786758356094,
+          2.3196293587121155,
+          2.2974015566235777,
+          2.16932348938702,
+          1.931111707564006
+        ]
+      },
+      "seed": 3,
+      "stability_reached": true,
+      "target": {
+        "bound": {
+          "minimum_curvature_scale_h": 1.7101018523158638e-07,
+          "normalized_profile_rms_error_bound": 1.4142135623730951,
+          "radius_rms_error_bound": 127.52342159455311,
+          "scope": "Unrestricted finite score target; does not certify a unique rank-constrained optimum.",
+          "score_frobenius_error_bound": 281669.96575593436,
+          "status": "not certified beyond trivial geometric bound"
+        },
+        "normalized_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.09983602555212356,
+          "high_minus_penultimate": -0.05605552471123343,
+          "interior_peak": false,
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            64,
+            64
+          ],
+          "peak_bin_zero_based": 0,
+          "values": [
+            1.0188240400074033,
+            1.009502733396834,
+            1.003030828410416,
+            0.9991894632043755,
+            0.9750435391665132,
+            0.9189880144552798
+          ]
+        },
+        "normalized_profile_error": {
+          "max_absolute_bin_difference": 0.09168325668126742,
+          "node_rms": 0.0522102948371817
+        },
+        "radius_rms": 2.8429920670761186,
+        "radius_rms_error": 0.526249147035147,
+        "raw_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.2838330286530959,
+          "high_minus_penultimate": -0.15936541206982557,
+          "interior_peak": false,
+          "node_counts": [
+            239,
+            111,
+            76,
+            46,
+            64,
+            64
+          ],
+          "peak_bin_zero_based": 0,
+          "values": [
+            2.89650866348749,
+            2.8700082627388572,
+            2.8516086882036,
+            2.8406877173960856,
+            2.77204104690422,
+            2.6126756348343942
+          ]
+        }
+      },
+      "unrestricted_loss_infimum": 2.3392766776251,
+      "window": 10,
+      "zero_positive_pairs": 0
+    },
+    {
+      "actual_evaluations": 3119,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.09490459257018777,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.005121353511873927,
+          "node_rms": 0.0037421874503016316
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.0026316997386136476,
+        "relative_loss_change": 0.0009744376175270797,
+        "relative_radius_norm_change": 0.003753125081305522
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 0.27840447447984157,
+      "finite_unrestricted_target": false,
+      "initialization": 100004,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 0.002378509411986418,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.4951004385567496,
+        "high_minus_penultimate": 0.014005176673202668,
+        "interior_peak": false,
+        "node_counts": [
+          221,
+          131,
+          76,
+          49,
+          58,
+          65
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          0.7707966436560533,
+          0.4730478377282788,
+          0.31975441652538655,
+          0.2988467786230823,
+          0.261691028426101,
+          0.27569620509930365
+        ]
+      },
+      "radius_rms": 25.293883764084143,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -12.523012944401508,
+        "high_minus_penultimate": 0.3542453108674515,
+        "interior_peak": false,
+        "node_counts": [
+          221,
+          131,
+          76,
+          49,
+          58,
+          65
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          19.496440710382398,
+          11.965217022350421,
+          8.087831044645673,
+          7.558995681763231,
+          6.619182455113438,
+          6.973427765980889
+        ]
+      },
+      "seed": 4,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.27602596506785515,
+      "window": 1,
+      "zero_positive_pairs": 356468
+    },
+    {
+      "actual_evaluations": 3126,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.06451752668610018,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.007039348500418319,
+          "node_rms": 0.003956029751932581
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.011756434720431252,
+        "relative_loss_change": 2.7373148053788654e-07,
+        "relative_radius_norm_change": 0.005606895450591021
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 0.27602669775926847,
+      "finite_unrestricted_target": false,
+      "initialization": 200004,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 7.326914133187756e-07,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": 0.10832504673931342,
+        "high_minus_penultimate": 0.02740426221419512,
+        "interior_peak": false,
+        "node_counts": [
+          221,
+          131,
+          76,
+          49,
+          58,
+          65
+        ],
+        "peak_bin_zero_based": 5,
+        "values": [
+          0.8583943453947671,
+          0.898342093004949,
+          0.93684948506393,
+          0.9058042067287458,
+          0.9393151299198854,
+          0.9667193921340805
+        ]
+      },
+      "radius_rms": 11.552448288927067,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": 1.2514195008515259,
+        "high_minus_penultimate": 0.31658632212568705,
+        "interior_peak": false,
+        "node_counts": [
+          221,
+          131,
+          76,
+          49,
+          58,
+          65
+        ],
+        "peak_bin_zero_based": 5,
+        "values": [
+          9.916556286680446,
+          10.378050575206185,
+          10.822905230709004,
+          10.464256258126436,
+          10.851389465406285,
+          11.167975787531972
+        ]
+      },
+      "seed": 4,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.27602596506785515,
+      "window": 1,
+      "zero_positive_pairs": 356468
+    },
+    {
+      "actual_evaluations": 3196,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.46878611795548714,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.012888235013545746,
+          "node_rms": 0.026975265679739447
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.04648209629072361,
+        "relative_loss_change": 0.0025118308026628824,
+        "relative_radius_norm_change": 0.030577679504902984
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 0.9986773903468824,
+      "finite_unrestricted_target": false,
+      "initialization": 100004,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 0.17491305063720353,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.7257482732750907,
+        "high_minus_penultimate": -0.06406859226246456,
+        "interior_peak": false,
+        "node_counts": [
+          221,
+          131,
+          76,
+          49,
+          58,
+          65
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          0.8157587203671391,
+          0.43021541678176267,
+          0.3971153303027373,
+          0.19954754289864451,
+          0.154079039354513,
+          0.09001044709204845
+        ]
+      },
+      "radius_rms": 15.546233219124002,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -11.282651914711096,
+        "high_minus_penultimate": -0.9960252773332379,
+        "interior_peak": false,
+        "node_counts": [
+          221,
+          131,
+          76,
+          49,
+          58,
+          65
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          12.681975317361703,
+          6.688229203751916,
+          6.173647539775816,
+          3.102212640205479,
+          2.3953486799838446,
+          1.3993234026506067
+        ]
+      },
+      "seed": 4,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.8237643397096789,
+      "window": 2,
+      "zero_positive_pairs": 322404
+    },
+    {
+      "actual_evaluations": 3213,
+      "actual_iterations": 3000,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 0,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 0.19335067578201978,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 0.0072120143287497385,
+          "node_rms": 0.0114854030581104
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 0.008605928844718138,
+        "relative_loss_change": 0.0018172285875994597,
+        "relative_radius_norm_change": 0.012359974987736047
+      },
+      "failed_final_gates": [
+        "every_bin",
+        "gradient",
+        "loss",
+        "node_norms",
+        "scores",
+        "upper_gap"
+      ],
+      "final_loss": 1.00348501563824,
+      "finite_unrestricted_target": false,
+      "initialization": 200004,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 0.1797206759285611,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.5386090298724764,
+        "high_minus_penultimate": -0.07102015751415175,
+        "interior_peak": false,
+        "node_counts": [
+          221,
+          131,
+          76,
+          49,
+          58,
+          65
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          0.6534829215250796,
+          0.4034888613456031,
+          0.3726023972356778,
+          0.22170755058513988,
+          0.18589404916675498,
+          0.11487389165260323
+        ]
+      },
+      "radius_rms": 15.713703661589408,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -8.463542684872252,
+        "high_minus_penultimate": -1.115989709176783,
+        "interior_peak": false,
+        "node_counts": [
+          221,
+          131,
+          76,
+          49,
+          58,
+          65
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          10.268636976754788,
+          6.340304397936944,
+          5.854963653759261,
+          3.483846749431732,
+          2.9210840010593193,
+          1.8050942918825363
+        ]
+      },
+      "seed": 4,
+      "stability_reached": false,
+      "target": null,
+      "unrestricted_loss_infimum": 0.8237643397096789,
+      "window": 2,
+      "zero_positive_pairs": 322404
+    },
+    {
+      "actual_evaluations": 712,
+      "actual_iterations": 672,
+      "blocks": 7,
+      "consecutive_stable_checkpoints": 2,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 3.306802239084878e-08,
+        "final_block": 7,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 3.417987781695331e-09,
+          "node_rms": 1.1432070209970155e-08
+        },
+        "previous_block": 6,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 1.772410886412183e-07,
+        "relative_loss_change": 3.7192712933577615e-13,
+        "relative_radius_norm_change": 1.1476498808429563e-08
+      },
+      "failed_final_gates": [],
+      "final_loss": 1.9474500355989774,
+      "finite_unrestricted_target": false,
+      "initialization": 100004,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 0.08604631249111527,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.2636280581545447,
+        "high_minus_penultimate": -0.12715599555320112,
+        "interior_peak": false,
+        "node_counts": [
+          221,
+          131,
+          76,
+          49,
+          58,
+          65
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.062555044671594,
+          1.0123661502802657,
+          0.9916343666225105,
+          0.9568486426760363,
+          0.9260829820702503,
+          0.7989269865170492
+        ]
+      },
+      "radius_rms": 2.881368517478474,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.7596095870904889,
+        "high_minus_penultimate": -0.3663832823956259,
+        "interior_peak": false,
+        "node_counts": [
+          221,
+          131,
+          76,
+          49,
+          58,
+          65
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          3.061612653804664,
+          2.9169999535784394,
+          2.8572640448358086,
+          2.7570335549987406,
+          2.668386349109801,
+          2.302003066714175
+        ]
+      },
+      "seed": 4,
+      "stability_reached": true,
+      "target": null,
+      "unrestricted_loss_infimum": 1.8614037231078622,
+      "window": 5,
+      "zero_positive_pairs": 414
+    },
+    {
+      "actual_evaluations": 1062,
+      "actual_iterations": 1007,
+      "blocks": 12,
+      "consecutive_stable_checkpoints": 2,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 1.13398652925033e-15,
+        "final_block": 12,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 4.773959005888173e-15,
+          "node_rms": 2.7673668331092744e-15
+        },
+        "previous_block": 11,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 1.376657620788736e-15,
+        "relative_loss_change": 0.0,
+        "relative_radius_norm_change": 3.9365213860612593e-16
+      },
+      "failed_final_gates": [],
+      "final_loss": 1.947447652960476,
+      "finite_unrestricted_target": false,
+      "initialization": 200004,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 0.08604392985261389,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.2631636591848667,
+        "high_minus_penultimate": -0.12686451791564146,
+        "interior_peak": false,
+        "node_counts": [
+          221,
+          131,
+          76,
+          49,
+          58,
+          65
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.0624472173330948,
+          1.0122460170826602,
+          0.9914106819240832,
+          0.9578959530543482,
+          0.9261480760638695,
+          0.799283558148228
+        ]
+      },
+      "radius_rms": 2.8806817442060595,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.7580907487523101,
+        "high_minus_penultimate": -0.3654563007470908,
+        "interior_peak": false,
+        "node_counts": [
+          221,
+          131,
+          76,
+          49,
+          58,
+          65
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          3.0605723031539736,
+          2.9159586220553146,
+          2.855938652429586,
+          2.7593933848125256,
+          2.6679378551487543,
+          2.3024815544016635
+        ]
+      },
+      "seed": 4,
+      "stability_reached": true,
+      "target": null,
+      "unrestricted_loss_infimum": 1.8614037231078622,
+      "window": 5,
+      "zero_positive_pairs": 414
+    },
+    {
+      "actual_evaluations": 681,
+      "actual_iterations": 647,
+      "blocks": 8,
+      "consecutive_stable_checkpoints": 2,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 4.6791766006536174e-08,
+        "final_block": 8,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 3.6102433265128298e-09,
+          "node_rms": 2.0123579844206104e-08
+        },
+        "previous_block": 7,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 2.313140530377862e-07,
+        "relative_loss_change": 2.5902395972163286e-13,
+        "relative_radius_norm_change": 2.013500520322877e-08
+      },
+      "failed_final_gates": [],
+      "final_loss": 2.3951167560989286,
+      "finite_unrestricted_target": true,
+      "initialization": 100004,
+      "initialization_offset": 100000,
+      "loss_gap_to_unrestricted_infimum": 0.0491818818161005,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.21980058289221083,
+        "high_minus_penultimate": -0.10569278746062494,
+        "interior_peak": false,
+        "node_counts": [
+          221,
+          131,
+          76,
+          49,
+          58,
+          65
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.05208679752832,
+          1.0111471110104484,
+          0.993893780717778,
+          0.9673020882721134,
+          0.937979002096734,
+          0.8322862146361091
+        ]
+      },
+      "radius_rms": 2.323901363122968,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.5107948741984316,
+        "high_minus_penultimate": -0.24561961285201228,
+        "interior_peak": false,
+        "node_counts": [
+          221,
+          131,
+          76,
+          49,
+          58,
+          65
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          2.4449459428997407,
+          2.349806149595032,
+          2.309711111809485,
+          2.2479146414872577,
+          2.1797706815533213,
+          1.934151068701309
+        ]
+      },
+      "seed": 4,
+      "stability_reached": true,
+      "target": {
+        "bound": {
+          "minimum_curvature_scale_h": 1.7177074913753083e-07,
+          "normalized_profile_rms_error_bound": 1.4142135623730951,
+          "radius_rms_error_bound": 128.57281992309834,
+          "scope": "Unrestricted finite score target; does not certify a unique rank-constrained optimum.",
+          "score_frobenius_error_bound": 286324.7997819503,
+          "status": "not certified beyond trivial geometric bound"
+        },
+        "normalized_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.09576391590073419,
+          "high_minus_penultimate": -0.05640864998424089,
+          "interior_peak": false,
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            58,
+            65
+          ],
+          "peak_bin_zero_based": 0,
+          "values": [
+            1.0201674864987191,
+            1.0058231524510375,
+            1.0019582080589264,
+            0.98951832307531,
+            0.9808122205822258,
+            0.924403570597985
+          ]
+        },
+        "normalized_profile_error": {
+          "max_absolute_bin_difference": 0.09211735596187587,
+          "node_rms": 0.05372260790299624
+        },
+        "radius_rms": 2.838232473959688,
+        "radius_rms_error": 0.5325154201840819,
+        "raw_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.2718002559430084,
+          "high_minus_penultimate": -0.16010086219749864,
+          "interior_peak": false,
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            58,
+            65
+          ],
+          "peak_bin_zero_based": 0,
+          "values": [
+            2.895472489058496,
+            2.8547599343470407,
+            2.843790323663304,
+            2.808483038130479,
+            2.7837730953129864,
+            2.623672233115488
+          ]
+        }
+      },
+      "unrestricted_loss_infimum": 2.345934874282828,
+      "window": 10,
+      "zero_positive_pairs": 0
+    },
+    {
+      "actual_evaluations": 627,
+      "actual_iterations": 603,
+      "blocks": 6,
+      "consecutive_stable_checkpoints": 2,
+      "endpoint_drift": {
+        "absolute_radius_rms_change": 5.513623907890462e-07,
+        "final_block": 6,
+        "normalized_profile": {
+          "max_absolute_bin_difference": 2.017485711824918e-08,
+          "node_rms": 2.37235965574999e-07
+        },
+        "previous_block": 5,
+        "provenance": "Final interval from recorded checkpoint radius diagnostics; intermediate factors were not saved.",
+        "recorded_relative_score_rms_change": 1.6810573045201485e-06,
+        "relative_loss_change": 3.078250378581352e-12,
+        "relative_radius_norm_change": 2.3725728984165655e-07
+      },
+      "failed_final_gates": [],
+      "final_loss": 2.395116756326323,
+      "finite_unrestricted_target": true,
+      "initialization": 200004,
+      "initialization_offset": 200000,
+      "loss_gap_to_unrestricted_infimum": 0.04918188204349505,
+      "normalized_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.21979894400124778,
+        "high_minus_penultimate": -0.10568990482125074,
+        "interior_peak": false,
+        "node_counts": [
+          221,
+          131,
+          76,
+          49,
+          58,
+          65
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          1.0520871077700709,
+          1.011146581055296,
+          0.9938924751602535,
+          0.9673030516290926,
+          0.9379780685900738,
+          0.8322881637688231
+        ]
+      },
+      "radius_rms": 2.3239007298919168,
+      "rank_constraint": 24,
+      "raw_curve": {
+        "bin_labels": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "high_minus_low": -0.5107909263939723,
+        "high_minus_penultimate": -0.24561284695631258,
+        "interior_peak": false,
+        "node_counts": [
+          221,
+          131,
+          76,
+          49,
+          58,
+          65
+        ],
+        "peak_bin_zero_based": 0,
+        "values": [
+          2.444945997656743,
+          2.349804277742119,
+          2.3097074484589974,
+          2.2479162677075264,
+          2.1797679182190834,
+          1.9341550712627709
+        ]
+      },
+      "seed": 4,
+      "stability_reached": true,
+      "target": {
+        "bound": {
+          "minimum_curvature_scale_h": 1.7177074913753083e-07,
+          "normalized_profile_rms_error_bound": 1.4142135623730951,
+          "radius_rms_error_bound": 128.57282022032723,
+          "scope": "Unrestricted finite score target; does not certify a unique rank-constrained optimum.",
+          "score_frobenius_error_bound": 286324.8011057761,
+          "status": "not certified beyond trivial geometric bound"
+        },
+        "normalized_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.09576391590073419,
+          "high_minus_penultimate": -0.05640864998424089,
+          "interior_peak": false,
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            58,
+            65
+          ],
+          "peak_bin_zero_based": 0,
+          "values": [
+            1.0201674864987191,
+            1.0058231524510375,
+            1.0019582080589264,
+            0.98951832307531,
+            0.9808122205822258,
+            0.924403570597985
+          ]
+        },
+        "normalized_profile_error": {
+          "max_absolute_bin_difference": 0.09211540682916186,
+          "node_rms": 0.053722242135094744
+        },
+        "radius_rms": 2.838232473959688,
+        "radius_rms_error": 0.5325157835360577,
+        "raw_curve": {
+          "bin_labels": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "high_minus_low": -0.2718002559430084,
+          "high_minus_penultimate": -0.16010086219749864,
+          "interior_peak": false,
+          "node_counts": [
+            221,
+            131,
+            76,
+            49,
+            58,
+            65
+          ],
+          "peak_bin_zero_based": 0,
+          "values": [
+            2.895472489058496,
+            2.8547599343470407,
+            2.843790323663304,
+            2.808483038130479,
+            2.7837730953129864,
+            2.623672233115488
+          ]
+        }
+      },
+      "unrestricted_loss_infimum": 2.345934874282828,
+      "window": 10,
+      "zero_positive_pairs": 0
+    }
+  ],
+  "definition": "radius=sqrt(diag(sqrt(M M^T))); normalized_radius=radius/sqrt(mean(radius^2)); zero RMS has undefined normalized shape.",
+  "paired_starts": [
+    {
+      "initializations": [
+        100000,
+        200000
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        0.0016792623704932064,
+        5.000641423941188e-05
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 0.15054829896371913,
+        "node_rms": 1.0481300284985509
+      },
+      "seed": 0,
+      "window": 1
+    },
+    {
+      "initializations": [
+        100000,
+        200000
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        0.18853827958083924,
+        0.1730274187058749
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 0.12954270618521946,
+        "node_rms": 0.663784456392119
+      },
+      "seed": 0,
+      "window": 2
+    },
+    {
+      "initializations": [
+        100000,
+        200000
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        0.08497649156248999,
+        0.08497649148059971
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 1.9650291543937826e-06,
+        "node_rms": 6.248161644047879e-06
+      },
+      "seed": 0,
+      "window": 5
+    },
+    {
+      "initializations": [
+        100000,
+        200000
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        0.04935176411461928,
+        0.04935176431720212
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 1.2963605496851827e-06,
+        "node_rms": 5.648578172501319e-06
+      },
+      "seed": 0,
+      "window": 10
+    },
+    {
+      "initializations": [
+        100001,
+        200001
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        6.534767599475355e-05,
+        0.003896608223048992
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 0.3877746629538348,
+        "node_rms": 1.1216559641766226
+      },
+      "seed": 1,
+      "window": 1
+    },
+    {
+      "initializations": [
+        100001,
+        200001
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        0.16606589652004267,
+        0.17130959511073374
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 0.13504826681541615,
+        "node_rms": 0.4865986836847455
+      },
+      "seed": 1,
+      "window": 2
+    },
+    {
+      "initializations": [
+        100001,
+        200001
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        0.08409809492465525,
+        0.08409809491266262
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 1.444739656797367e-06,
+        "node_rms": 6.201579219367122e-06
+      },
+      "seed": 1,
+      "window": 5
+    },
+    {
+      "initializations": [
+        100001,
+        200001
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        0.04831625322500788,
+        0.04831625286707819
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 1.3821679764269845e-05,
+        "node_rms": 5.5381956503501665e-05
+      },
+      "seed": 1,
+      "window": 10
+    },
+    {
+      "initializations": [
+        100002,
+        200002
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        0.0031111665937790245,
+        0.005423380807284273
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 0.12565810542042088,
+        "node_rms": 1.186836118952469
+      },
+      "seed": 2,
+      "window": 1
+    },
+    {
+      "initializations": [
+        100002,
+        200002
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        0.15633617884266082,
+        0.15591612469998462
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 0.06827574179528029,
+        "node_rms": 0.7416900813621772
+      },
+      "seed": 2,
+      "window": 2
+    },
+    {
+      "initializations": [
+        100002,
+        200002
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        0.08463561950315768,
+        0.0846356190770361
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 5.476139809945657e-06,
+        "node_rms": 2.7268686374338727e-05
+      },
+      "seed": 2,
+      "window": 5
+    },
+    {
+      "initializations": [
+        100002,
+        200002
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        0.04883585153868353,
+        0.048835851549505094
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 1.1121426957139136e-06,
+        "node_rms": 4.8966083025766665e-06
+      },
+      "seed": 2,
+      "window": 10
+    },
+    {
+      "initializations": [
+        100003,
+        200003
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        0.0029586077556190693,
+        1.3028869640940854e-06
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 0.6377158692237842,
+        "node_rms": 0.9844456015456233
+      },
+      "seed": 3,
+      "window": 1
+    },
+    {
+      "initializations": [
+        100003,
+        200003
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        0.179999527084735,
+        0.1422964918651659
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 0.35390372523718183,
+        "node_rms": 0.8861951405858564
+      },
+      "seed": 3,
+      "window": 2
+    },
+    {
+      "initializations": [
+        100003,
+        200003
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        0.08379160264816199,
+        0.0837916025727874
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 2.641313118223465e-07,
+        "node_rms": 2.4447464288371946e-06
+      },
+      "seed": 3,
+      "window": 5
+    },
+    {
+      "initializations": [
+        100003,
+        200003
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        0.048168090940936104,
+        0.048168091000154956
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 2.7078128539415047e-07,
+        "node_rms": 1.9339244820007152e-06
+      },
+      "seed": 3,
+      "window": 10
+    },
+    {
+      "initializations": [
+        100004,
+        200004
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        0.002378509411986418,
+        7.326914133187756e-07
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 0.6910231870347769,
+        "node_rms": 1.0477924555045255
+      },
+      "seed": 4,
+      "window": 1
+    },
+    {
+      "initializations": [
+        100004,
+        200004
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        0.17491305063720353,
+        0.1797206759285611
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 0.16227579884205956,
+        "node_rms": 0.7462143147044438
+      },
+      "seed": 4,
+      "window": 2
+    },
+    {
+      "initializations": [
+        100004,
+        200004
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        0.08604631249111527,
+        0.08604392985261389
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 0.0010473103783118498,
+        "node_rms": 0.004512167705177055
+      },
+      "seed": 4,
+      "window": 5
+    },
+    {
+      "initializations": [
+        100004,
+        200004
+      ],
+      "interpretation": "Observed disagreement; both actual gaps are reported, with no automatic near-optimality or nonidentification classification.",
+      "loss_gaps": [
+        0.0491818818161005,
+        0.04918188204349505
+      ],
+      "normalized_profile": {
+        "max_absolute_bin_difference": 1.94913271400754e-06,
+        "node_rms": 6.785216240797942e-06
+      },
+      "seed": 4,
+      "window": 10
+    }
+  ],
+  "scope": "40 balanced final fits only; no new fitting. Final factors independently reconstructed. The general bound concerns the unrestricted target and does not establish rank-24 uniqueness. A trivial bound means accuracy was not certified, not that a fit is unstable.",
+  "window_five_ten_pairs": [
+    {
+      "absolute_decline_weakens": true,
+      "difference_ten_minus_five": 0.01668426006676471,
+      "initialization_offset": 100000,
+      "seed": 0,
+      "window_contrast_exceeds_both_start_discrepancies": true,
+      "window_five_between_start_upper_gap_difference": 2.0255081243369943e-06,
+      "window_five_stable": false,
+      "window_five_upper_gap": -0.11238067579991384,
+      "window_ten_between_start_upper_gap_difference": 6.60969017740598e-07,
+      "window_ten_stable": true,
+      "window_ten_upper_gap": -0.09569641573314913
+    },
+    {
+      "absolute_decline_weakens": true,
+      "difference_ten_minus_five": 0.016681573589622634,
+      "initialization_offset": 200000,
+      "seed": 0,
+      "window_contrast_exceeds_both_start_discrepancies": true,
+      "window_five_between_start_upper_gap_difference": 2.0255081243369943e-06,
+      "window_five_stable": true,
+      "window_five_upper_gap": -0.1123786502917895,
+      "window_ten_between_start_upper_gap_difference": 6.60969017740598e-07,
+      "window_ten_stable": true,
+      "window_ten_upper_gap": -0.09569707670216687
+    },
+    {
+      "absolute_decline_weakens": true,
+      "difference_ten_minus_five": 0.020874474296249335,
+      "initialization_offset": 100000,
+      "seed": 1,
+      "window_contrast_exceeds_both_start_discrepancies": true,
+      "window_five_between_start_upper_gap_difference": 8.150213384183758e-07,
+      "window_five_stable": true,
+      "window_five_upper_gap": -0.09720746776412914,
+      "window_ten_between_start_upper_gap_difference": 2.734623437139483e-06,
+      "window_ten_stable": true,
+      "window_ten_upper_gap": -0.0763329934678798
+    },
+    {
+      "absolute_decline_weakens": true,
+      "difference_ten_minus_five": 0.020878023941024892,
+      "initialization_offset": 200000,
+      "seed": 1,
+      "window_contrast_exceeds_both_start_discrepancies": true,
+      "window_five_between_start_upper_gap_difference": 8.150213384183758e-07,
+      "window_five_stable": true,
+      "window_five_upper_gap": -0.09720828278546756,
+      "window_ten_between_start_upper_gap_difference": 2.734623437139483e-06,
+      "window_ten_stable": true,
+      "window_ten_upper_gap": -0.07633025884444267
+    },
+    {
+      "absolute_decline_weakens": true,
+      "difference_ten_minus_five": 0.018972074415964046,
+      "initialization_offset": 100000,
+      "seed": 2,
+      "window_contrast_exceeds_both_start_discrepancies": true,
+      "window_five_between_start_upper_gap_difference": 3.199975640022501e-06,
+      "window_five_stable": true,
+      "window_five_upper_gap": -0.10612044884632255,
+      "window_ten_between_start_upper_gap_difference": 1.0627880158153857e-06,
+      "window_ten_stable": true,
+      "window_ten_upper_gap": -0.0871483744303585
+    },
+    {
+      "absolute_decline_weakens": true,
+      "difference_ten_minus_five": 0.018974211603588254,
+      "initialization_offset": 200000,
+      "seed": 2,
+      "window_contrast_exceeds_both_start_discrepancies": true,
+      "window_five_between_start_upper_gap_difference": 3.199975640022501e-06,
+      "window_five_stable": true,
+      "window_five_upper_gap": -0.10612364882196257,
+      "window_ten_between_start_upper_gap_difference": 1.0627880158153857e-06,
+      "window_ten_stable": true,
+      "window_ten_upper_gap": -0.08714943721837431
+    },
+    {
+      "absolute_decline_weakens": true,
+      "difference_ten_minus_five": 0.01996296035396583,
+      "initialization_offset": 100000,
+      "seed": 3,
+      "window_contrast_exceeds_both_start_discrepancies": true,
+      "window_five_between_start_upper_gap_difference": 1.3811452193035478e-07,
+      "window_five_stable": false,
+      "window_five_upper_gap": -0.12201441066340657,
+      "window_ten_between_start_upper_gap_difference": 5.126547329981079e-07,
+      "window_ten_stable": true,
+      "window_ten_upper_gap": -0.10205145030944074
+    },
+    {
+      "absolute_decline_weakens": true,
+      "difference_ten_minus_five": 0.019962309584710902,
+      "initialization_offset": 200000,
+      "seed": 3,
+      "window_contrast_exceeds_both_start_discrepancies": true,
+      "window_five_between_start_upper_gap_difference": 1.3811452193035478e-07,
+      "window_five_stable": false,
+      "window_five_upper_gap": -0.12201427254888464,
+      "window_ten_between_start_upper_gap_difference": 5.126547329981079e-07,
+      "window_ten_stable": true,
+      "window_ten_upper_gap": -0.10205196296417374
+    },
+    {
+      "absolute_decline_weakens": true,
+      "difference_ten_minus_five": 0.02146320809257618,
+      "initialization_offset": 100000,
+      "seed": 4,
+      "window_contrast_exceeds_both_start_discrepancies": true,
+      "window_five_between_start_upper_gap_difference": 0.00029147763755965617,
+      "window_five_stable": true,
+      "window_five_upper_gap": -0.12715599555320112,
+      "window_ten_between_start_upper_gap_difference": 2.8826393742020784e-06,
+      "window_ten_stable": true,
+      "window_ten_upper_gap": -0.10569278746062494
+    },
+    {
+      "absolute_decline_weakens": true,
+      "difference_ten_minus_five": 0.021174613094390726,
+      "initialization_offset": 200000,
+      "seed": 4,
+      "window_contrast_exceeds_both_start_discrepancies": true,
+      "window_five_between_start_upper_gap_difference": 0.00029147763755965617,
+      "window_five_stable": true,
+      "window_five_upper_gap": -0.12686451791564146,
+      "window_ten_between_start_upper_gap_difference": 2.8826393742020784e-06,
+      "window_ten_stable": true,
+      "window_ten_upper_gap": -0.10568990482125074
+    }
+  ],
+  "windows": [
+    {
+      "normalized_curve": {
+        "high_minus_low_by_graph": [
+          -0.42289320766770466,
+          -0.29732070974528957,
+          -0.3350269074240152,
+          -0.19760857471811932,
+          -0.19338769590871807
+        ],
+        "high_minus_low_mean": -0.2892474190927693,
+        "high_minus_low_se": 0.04336409845995379,
+        "mean": [
+          0.756155387463461,
+          0.6057650195368428,
+          0.4773826304963422,
+          0.4562855289679201,
+          0.45946182348961023,
+          0.4669079683706917
+        ],
+        "se": [
+          0.039446737057249374,
+          0.03819987524961506,
+          0.0623932023019409,
+          0.060628427432836834,
+          0.06191950225414909,
+          0.06747616347808094
+        ],
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "upper_gap_by_graph": [
+          -0.011765092771227503,
+          0.0006903186168466524,
+          0.001797881186042738,
+          0.02580289793004653,
+          0.020704719443698893
+        ],
+        "upper_gap_mean": 0.007446144881081462,
+        "upper_gap_se": 0.006925950856553508,
+        "values_by_graph": [
+          [
+            0.8054189507491425,
+            0.6728482912737682,
+            0.475142615561982,
+            0.3925943015179859,
+            0.39429083585266533,
+            0.38252574308143783
+          ],
+          [
+            0.738142480265334,
+            0.5298806365351465,
+            0.4296225316461834,
+            0.43061212361865997,
+            0.4401314519031978,
+            0.44082177052004445
+          ],
+          [
+            0.6090063520307886,
+            0.4994632264986397,
+            0.27248338725064014,
+            0.27651023526904217,
+            0.27218156342073063,
+            0.27397944460677337
+          ],
+          [
+            0.8136136597466299,
+            0.6409379780100457,
+            0.5813626672282471,
+            0.5793854917579979,
+            0.5902021870984641,
+            0.6160050850285106
+          ],
+          [
+            0.8145954945254101,
+            0.6856949653666139,
+            0.6283019507946582,
+            0.6023254926759141,
+            0.6005030791729932,
+            0.6212077986166921
+          ]
+        ]
+      },
+      "raw_curve": {
+        "high_minus_low_by_graph": [
+          -8.30526927053466,
+          -6.830586126361293,
+          -8.51746683059865,
+          -4.883272543756142,
+          -5.635796721774991
+        ],
+        "high_minus_low_mean": -6.834478298605148,
+        "high_minus_low_se": 0.7155324259362286,
+        "mean": [
+          14.818877551353648,
+          11.445430218274605,
+          8.421672725159146,
+          7.953283788166172,
+          7.892900166936246,
+          7.984399252748503
+        ],
+        "se": [
+          0.35160327076864534,
+          0.6239343355505578,
+          0.48833277837409406,
+          0.36267656622236855,
+          0.3371257837165366,
+          0.41817583086486604
+        ],
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "upper_gap_by_graph": [
+          -0.21831532137819032,
+          -0.014404302148157022,
+          0.03747556126355445,
+          0.3173236748275077,
+          0.33541581649656926
+        ],
+        "upper_gap_mean": 0.09149908581225681,
+        "upper_gap_se": 0.10502646147532457,
+        "values_by_graph": [
+          [
+            15.723988377213075,
+            13.218365268087206,
+            9.229083285671543,
+            7.596713719759758,
+            7.637034428056605,
+            7.418719106678415
+          ],
+          [
+            14.527687908348831,
+            10.217913528347385,
+            7.751304381474792,
+            7.630290952016803,
+            7.711506084135695,
+            7.697101781987538
+          ],
+          [
+            15.41370653346703,
+            12.539239406522311,
+            6.85798059608393,
+            6.986914676308809,
+            6.858764141604826,
+            6.896239702868381
+          ],
+          [
+            13.722506439207894,
+            10.079999089637818,
+            8.81462722488813,
+            8.54087362280066,
+            8.521910220624244,
+            8.839233895451752
+          ],
+          [
+            14.706498498531422,
+            11.171633798778302,
+            9.45536813767734,
+            9.011625969944834,
+            8.735285960259862,
+            9.070701776756431
+          ]
+        ]
+      },
+      "window": 1
+    },
+    {
+      "normalized_curve": {
+        "high_minus_low_by_graph": [
+          -0.49269520539506423,
+          -0.628550988780933,
+          -0.7320175355807297,
+          -0.7268573464945839,
+          -0.6321786515737835
+        ],
+        "high_minus_low_mean": -0.6424599455650188,
+        "high_minus_low_se": 0.04351558611360858,
+        "mean": [
+          0.747003153068039,
+          0.5182554541268573,
+          0.3700798466212124,
+          0.25622731266950527,
+          0.16902218880261255,
+          0.10454320750302011
+        ],
+        "se": [
+          0.041489667469267265,
+          0.05873417931906332,
+          0.03240133454207021,
+          0.025172972219791815,
+          0.007541986553402746,
+          0.004540011698250908
+        ],
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "upper_gap_by_graph": [
+          -0.04887036784140043,
+          -0.06103494176568648,
+          -0.08366689128549143,
+          -0.06127833071707564,
+          -0.06754437488830814
+        ],
+        "upper_gap_mean": -0.06447898129959242,
+        "upper_gap_se": 0.005671450052810243,
+        "values_by_graph": [
+          [
+            0.6037751921221622,
+            0.3947624708129701,
+            0.26490819536238386,
+            0.18586491441609698,
+            0.15995035456849843,
+            0.111079986727098
+          ],
+          [
+            0.739482986494836,
+            0.48895333508840955,
+            0.3326440379445943,
+            0.2723036246150009,
+            0.17196693947958958,
+            0.1109319977139031
+          ],
+          [
+            0.8426742832866736,
+            0.7170968933675907,
+            0.4254518533791153,
+            0.292093212773825,
+            0.19432363899143532,
+            0.11065674770594389
+          ],
+          [
+            0.8144624824904136,
+            0.5736124323016334,
+            0.442536282650761,
+            0.3202472648007116,
+            0.14888346671290537,
+            0.08760513599582972
+          ],
+          [
+            0.7346208209461094,
+            0.4168521390636829,
+            0.3848588637692075,
+            0.2106275467418922,
+            0.16998654426063398,
+            0.10244216937232584
+          ]
+        ]
+      },
+      "raw_curve": {
+        "high_minus_low_by_graph": [
+          -8.023400488381586,
+          -9.02193359903921,
+          -9.585673473712863,
+          -10.945706557548426,
+          -9.873097299791674
+        ],
+        "high_minus_low_mean": -9.489962283694753,
+        "high_minus_low_se": 0.4819231687958469,
+        "mean": [
+          11.055236945130478,
+          7.595681219641541,
+          5.455974951830604,
+          3.7742645970876985,
+          2.5144864884150944,
+          1.5652746614357267
+        ],
+        "se": [
+          0.40988682093619666,
+          0.5982512564257657,
+          0.4080046737056232,
+          0.3028261876810592,
+          0.06796237426652489,
+          0.08055018602007083
+        ],
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "upper_gap_by_graph": [
+          -0.7923721952798597,
+          -0.8804876465705669,
+          -1.0963504687502423,
+          -0.920841331041161,
+          -1.0560074932550103
+        ],
+        "upper_gap_mean": -0.949211826979368,
+        "upper_gap_se": 0.05620572138213098,
+        "values_by_graph": [
+          [
+            9.847359325128261,
+            6.426554038890238,
+            4.3190231794388225,
+            3.0416370620293622,
+            2.616331032026535,
+            1.8239588367466752
+          ],
+          [
+            10.62412608344826,
+            7.0271082661130055,
+            4.790869026574603,
+            3.9204296645049395,
+            2.482680130979617,
+            1.6021924844090503
+          ],
+          [
+            11.033832510943906,
+            9.408225574866835,
+            5.573274581905743,
+            3.8210861786739825,
+            2.5445095059812863,
+            1.448159037231044
+          ],
+          [
+            12.295560659073718,
+            8.602251417493198,
+            6.582402374466314,
+            4.795140385411605,
+            2.270695432566453,
+            1.3498541015252918
+          ],
+          [
+            11.475306147058244,
+            6.51426680084443,
+            6.014305596767539,
+            3.2930296948186055,
+            2.658216340521582,
+            1.6022088472665716
+          ]
+        ]
+      },
+      "window": 2
+    },
+    {
+      "normalized_curve": {
+        "high_minus_low_by_graph": [
+          -0.24447201775626914,
+          -0.24461177727428318,
+          -0.2354929989061736,
+          -0.2646460420862957,
+          -0.2633958586697056
+        ],
+        "high_minus_low_mean": -0.25052373893854546,
+        "high_minus_low_se": 0.005755991133066242,
+        "mean": [
+          1.05505301137233,
+          1.024464518807393,
+          0.9884654863908088,
+          0.9671936721442762,
+          0.9174761095328565,
+          0.8045292724337845
+        ],
+        "se": [
+          0.0025328402658560596,
+          0.004240377482546903,
+          0.0017099002039763266,
+          0.005359644711177857,
+          0.002886944564226266,
+          0.0037157633677912397
+        ],
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "upper_gap_by_graph": [
+          -0.11237966304585179,
+          -0.09720787527479835,
+          -0.10612204883414256,
+          -0.12201434160614566,
+          -0.12701025673442135
+        ],
+        "upper_gap_mean": -0.11294683709907194,
+        "upper_gap_se": 0.005360101446798553,
+        "values_by_graph": [
+          [
+            1.0516123444478507,
+            1.0362566829928292,
+            0.9860973836317437,
+            0.9526370833763309,
+            0.9195199897374333,
+            0.8071403266915815
+          ],
+          [
+            1.0559030230853197,
+            1.0218662547608632,
+            0.9829615377394509,
+            0.981602689643173,
+            0.9084991210858349,
+            0.8112912458110365
+          ],
+          [
+            1.0477012251750542,
+            1.031496026478711,
+            0.9899685169348502,
+            0.970074286990881,
+            0.9183302751030231,
+            0.8122082262688806
+          ],
+          [
+            1.057547333151081,
+            1.0203975461231,
+            0.9917774693747026,
+            0.9742820028458037,
+            0.9149156326709309,
+            0.7929012910647852
+          ],
+          [
+            1.0625011310023442,
+            1.0123060836814628,
+            0.9915225242732968,
+            0.9573722978651922,
+            0.92611552906706,
+            0.7991052723326386
+          ]
+        ]
+      },
+      "raw_curve": {
+        "high_minus_low_by_graph": [
+          -0.7046303179027076,
+          -0.7056820672621278,
+          -0.6783001932572938,
+          -0.7658546002660875,
+          -0.7588501679213993
+        ],
+        "high_minus_low_mean": -0.7226634693219232,
+        "high_minus_low_se": 0.016965573637482127,
+        "mean": [
+          3.0432884143422267,
+          2.9550386912980953,
+          2.8512141392252537,
+          2.789877920692203,
+          2.6464299415925785,
+          2.3206249450203034
+        ],
+        "se": [
+          0.008433044872851712,
+          0.011839863651904009,
+          0.005941099296773556,
+          0.016739126456348247,
+          0.007551320278461181,
+          0.009484619972781423
+        ],
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "upper_gap_by_graph": [
+          -0.32390667211933977,
+          -0.28043561574372733,
+          -0.30566771227714185,
+          -0.35309519114980636,
+          -0.3659197915713581
+        ],
+        "upper_gap_mean": -0.3258049965722747,
+        "upper_gap_se": 0.01552650325922647,
+        "values_by_graph": [
+          [
+            3.0310133134232915,
+            2.9867544051361676,
+            2.8421825912371017,
+            2.7457415252105526,
+            2.6502896676399237,
+            2.326382995520584
+          ],
+          [
+            3.0461813264357156,
+            2.9479884376804355,
+            2.8357519728632585,
+            2.8318318233742676,
+            2.620934874917315,
+            2.340499259173588
+          ],
+          [
+            3.017737031729471,
+            2.971060529844522,
+            2.8514471320797368,
+            2.794144961404871,
+            2.645104550749319,
+            2.339436838472177
+          ],
+          [
+            3.060417921643337,
+            2.9529107960124747,
+            2.870087651313476,
+            2.8194578235656893,
+            2.6476585125270558,
+            2.2945633213772494
+          ],
+          [
+            3.0610924784793188,
+            2.916479287816877,
+            2.8566013486326973,
+            2.758213469905633,
+            2.6681621021292776,
+            2.3022423105579195
+          ]
+        ]
+      },
+      "window": 5
+    },
+    {
+      "normalized_curve": {
+        "high_minus_low_by_graph": [
+          -0.20266304700265292,
+          -0.20318310505602755,
+          -0.1934192490895167,
+          -0.22012542648272615,
+          -0.21979976344672925
+        ],
+        "high_minus_low_mean": -0.20783811821553053,
+        "high_minus_low_se": 0.0052460137129861206,
+        "mean": [
+          1.0451698579003657,
+          1.0232586805531017,
+          0.9913742889720456,
+          0.9761198781532905,
+          0.930715805880021,
+          0.837331739684835
+        ],
+        "se": [
+          0.0023714814256331714,
+          0.004138866678725227,
+          0.0018978754849457366,
+          0.005155323208096089,
+          0.0031139885626788504,
+          0.0033541712704590475
+        ],
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "upper_gap_by_graph": [
+          -0.095696746217658,
+          -0.07633162615616118,
+          -0.08714890582436641,
+          -0.10205170663680718,
+          -0.10569134614093778
+        ],
+        "upper_gap_mean": -0.0933840661951861,
+        "upper_gap_se": 0.005299096883003027,
+        "values_by_graph": [
+          [
+            1.0412454055610219,
+            1.0355832912195304,
+            0.9910077001636617,
+            0.962397430544002,
+            0.9342791047760269,
+            0.8385823585583689
+          ],
+          [
+            1.0464371453154815,
+            1.0222382275024544,
+            0.9841271470544155,
+            0.990250931132591,
+            0.9195856664156151,
+            0.8432540402594539
+          ],
+          [
+            1.0386494807826665,
+            1.0282801097592364,
+            0.994094452885864,
+            0.9764218677655462,
+            0.9323791375175162,
+            0.8452302316931498
+          ],
+          [
+            1.0474303051934624,
+            1.0190449282514147,
+            0.9937490168172712,
+            0.9842265913737102,
+            0.9293565853475434,
+            0.8273048787107362
+          ],
+          [
+            1.0520869526491954,
+            1.0111468460328723,
+            0.9938931279390157,
+            0.967302569950603,
+            0.9379785353434039,
+            0.8322871892024661
+          ]
+        ]
+      },
+      "raw_curve": {
+        "high_minus_low_by_graph": [
+          -0.4712722384325223,
+          -0.47301733710115146,
+          -0.44981381627456374,
+          -0.5138212537311584,
+          -0.510792900296202
+        ],
+        "high_minus_low_mean": -0.4837435091671196,
+        "high_minus_low_se": 0.01236557256907495,
+        "mean": [
+          2.4325607407604695,
+          2.381557545577686,
+          2.307352768106998,
+          2.2718739025649786,
+          2.1661643719441734,
+          1.9488172315933496
+        ],
+        "se": [
+          0.006074055115553214,
+          0.00954575319178642,
+          0.00474068864977841,
+          0.013223403348579238,
+          0.006643679813259326,
+          0.00713563977374494
+        ],
+        "seeds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "upper_gap_by_graph": [
+          -0.22253301955002702,
+          -0.1777026811910778,
+          -0.20267259901760992,
+          -0.23821117209123965,
+          -0.24561622990416243
+        ],
+        "upper_gap_mean": -0.21734714035082336,
+        "upper_gap_se": 0.012345784489285116,
+        "values_by_graph": [
+          [
+            2.421309954102813,
+            2.408143284897772,
+            2.304487295870377,
+            2.237957032927918,
+            2.172570735220318,
+            1.9500377156702908
+          ],
+          [
+            2.4361420787989276,
+            2.3798061562733697,
+            2.2910822351553843,
+            2.305338617520616,
+            2.140827422888854,
+            1.9631247416977762
+          ],
+          [
+            2.4154725495093623,
+            2.3913576469111315,
+            2.3118558349020004,
+            2.270756652717027,
+            2.1683313322524085,
+            1.9656587332347986
+          ],
+          [
+            2.4449331511130015,
+            2.3786754261375798,
+            2.319629194472988,
+            2.29740175506194,
+            2.1693230694730827,
+            1.931111897381843
+          ],
+          [
+            2.444945970278242,
+            2.349805213668575,
+            2.309709280134241,
+            2.247915454597392,
+            2.1797692998862024,
+            1.93415306998204
+          ]
+        ]
+      },
+      "window": 10
+    }
+  ]
+}

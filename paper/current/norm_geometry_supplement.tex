@@ -1,0 +1,132 @@
+\documentclass[aps,pre,onecolumn,10pt,superscriptaddress]{revtex4-2}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\RMS}{\operatorname{RMS}}
+\begin{document}
+\title{Supporting calculations: loss accuracy and balanced norm shape}
+\author{Govind Gandhi}
+\affiliation{School of Data Science, University of Virginia, Charlottesville, Virginia 22904, USA}
+\author{Sadamori Kojaku}
+\affiliation{School of Systems Science and Industrial Engineering, Binghamton University, Binghamton, New York 13902, USA}
+\author{Yong-Yeol Ahn}
+\affiliation{School of Data Science, University of Virginia, Charlottesville, Virginia 22904, USA}
+\date{\today}
+\maketitle
+
+These calculations concern a fixed ordered SGNS objective with separate center and context factors.
+For \(X=UV^\top\in\mathbb R^{n\times n}\), write
+\begin{equation}
+ L(X)=\sum_{ij}\{a_{ij}\log(1+e^{-X_{ij}})+b_{ij}\log(1+e^{X_{ij}})\},
+ \qquad r_i(X)^2=[(XX^\top)^{1/2}]_{ii}.
+\end{equation}
+The canonical balanced center radii \(r_i\) depend only on the score matrix.
+Set \(\rho(X)=\RMS(r)=\sqrt{n^{-1}\sum_i r_i^2}\) and \(\widetilde r=r/\rho\) when \(\rho>0\).
+Balancing removes factorization gauge; RMS normalization removes overall radius scale.
+Neither operation implies that near-optimal loss identifies a unique normalized profile.
+
+\section{Exact sparse-graph construction}
+
+Take a triangle on nodes \(0,1,2\), with a pendant node \(3\) attached to \(0\).
+Its degree vector is \(d=(3,2,2,1)\) and its volume is eight.
+Fix uniform center exposure, one-step positive contexts, stationary noise \(q_j=d_j/8\), and five collision-allowing negatives:
+\begin{equation}
+ a_{ij}=\frac{A_{ij}}{4d_i},\qquad b_{ij}=\frac{5d_j}{32}.
+\end{equation}
+On an edge, the scalar loss is minimized at the symmetric score
+\(X_{ij}^\star=\log[8/(5d_id_j)]\).
+On a zero-positive pair, including each diagonal, its infimum is zero as the score tends to \(-\infty\).
+The total negative weight of these pairs is \(B_0=35/16\).
+
+Given any tolerance \(\delta>0\), put \(s=\max\{0,\log(B_0/\delta)\}\).
+Keep every edge score at its optimum and set every off-diagonal nonedge score to \(-s\).
+Let \(R_i\) denote the absolute off-diagonal row sum of this common symmetric matrix.
+For any finite collection of strictly positive desired node profiles \(h^{(p)}\), set
+\begin{equation}
+ \alpha_i^{(p)}=\frac{(h_i^{(p)})^2}{\RMS(h^{(p)})^2},
+ \qquad
+ D=\max_{p,i}\frac{\max\{s,R_i+1\}}{\alpha_i^{(p)}},
+ \qquad X_{ii}^{(p)}=-D\alpha_i^{(p)}.
+\end{equation}
+Each \(X^{(p)}\) is strictly negative definite by symmetric diagonal dominance.
+Consequently \((X^{(p)}X^{(p)\top})^{1/2}=-X^{(p)}\), and hence
+\begin{equation}
+ r_i(X^{(p)})^2=D\alpha_i^{(p)},\qquad
+ \rho(X^{(p)})=\sqrt D,\qquad
+ \widetilde r_i(X^{(p)})=\frac{h_i^{(p)}}{\RMS(h^{(p)})}.
+\end{equation}
+All positive-pair terms attain their scalar minima, while every zero-positive score is at most \(-s\).
+Thus, for the common unrestricted infimum \(L_{\inf}\),
+\begin{equation}
+ 0<L(X^{(p)})-L_{\inf}
+ \le B_0\log(1+e^{-s})\le B_0e^{-s}\le\delta.
+\end{equation}
+This includes \(\delta\ge B_0\), when \(s=0\).
+Explicit balanced factors are \(U=(-X)^{1/2}\) and \(V=-(-X)^{1/2}\); four dimensions suffice.
+Choosing degree-level profiles \((1,2,3)\), \((3,2,1)\), and \((1,3,1)\) at degrees \(1,2,3\) gives increasing, decreasing, and peaked curves.
+The RMS uses all four nodes, including both degree-two nodes.
+The profiles share one RMS at each tolerance; that RMS can grow as \(\delta\) decreases.
+Their losses need not be exactly equal, and the construction does not claim that an optimizer selects all three shapes.
+It does not establish nonidentification for the rank-24 fits on the larger experimental graphs.
+
+\section{A conservative full-support bound}
+
+Suppose now that every \(a_{ij},b_{ij}>0\).
+The unique unrestricted optimum is \(X^\star_{ij}=\log(a_{ij}/b_{ij})\).
+Define
+\begin{equation}
+ \Delta=L(X)-L(X^\star),\quad
+ h=\min_{ij}\frac{a_{ij}b_{ij}}{a_{ij}+b_{ij}}>0,\quad
+ \psi(t)=t-1+e^{-t},\quad E=\norm{X-X^\star}_{\mathrm F}.
+\end{equation}
+For the scalar loss \(\ell(x)=a\log(1+e^{-x})+b\log(1+e^x)\),
+\(\ell''(x)=(a+b)e^x/(1+e^x)^2\) and \(\lvert(\log\ell'')'(x)\rvert\le1\).
+Integrating this curvature lower bound away from \(x^\star\) gives
+\(\ell(x^\star+z)-\ell(x^\star)\ge\ell''(x^\star)\psi(|z|)\).
+Moreover,
+\begin{equation}
+ \frac{\psi(t)}{t^2}=\int_0^1(1-u)e^{-ut}\,du
+\end{equation}
+is decreasing for \(t\ge0\), with the continuous extension at zero.
+Since each \(|z_{ij}|\le E\), summing yields \(\Delta\ge h\psi(E)\).
+The inequality \(\psi(t)\ge t^2/(t+2)\) follows because
+\((t+2)\psi(t)-t^2=t-2+(t+2)e^{-t}\) vanishes at zero and has nonnegative derivative \(1-(t+1)e^{-t}\).
+Therefore
+\begin{equation}
+ E\le\psi^{-1}(\Delta/h)\le B,
+ \qquad B=\frac{c+\sqrt{c^2+8c}}2,\qquad c=\Delta/h.
+ \label{eq:score-bound}
+\end{equation}
+
+To pass from scores to radii, form the Hermitian dilation
+\(H(X)=\left(\begin{smallmatrix}0&X\\X^\top&0\end{smallmatrix}\right)\).
+Its absolute value has diagonal blocks \((XX^\top)^{1/2}\) and \((X^\top X)^{1/2}\).
+For Hermitian matrices \(A,B\), expansion in their two eigenbases and
+\((|\lambda|-|\mu|)^2\le(\lambda-\mu)^2\) imply
+\(\norm{|A|-|B|}_{\mathrm F}\le\norm{A-B}_{\mathrm F}\).
+Applying this to the dilations gives
+\begin{equation}
+ \norm{(XX^\top)^{1/2}-(X^\star X^{\star\top})^{1/2}}_{\mathrm F}
+ \le\sqrt2 E.
+\end{equation}
+Using \((r_i-r_i^\star)^2\le|r_i^2-r_i^{\star2}|\) and Cauchy--Schwarz,
+\begin{equation}
+ \RMS(r-r^\star)\le e,\qquad e=(2/n)^{1/4}\sqrt B.
+\end{equation}
+For nonzero fitted and target RMS, the reverse triangle inequality gives
+\begin{equation}
+ \RMS(\widetilde r-\widetilde r^\star)
+ \le\min\{\sqrt2,\,2e/\rho^\star\}.
+\end{equation}
+The cap \(\sqrt2\) uses nonnegative unit-RMS profiles; it is a trivial bound, not a useful loss-based certificate.
+If \(e<\rho^\star\), nonzero fitted RMS is guaranteed.
+A zero target RMS makes its normalized shape undefined.
+For a bin of \(m\) nodes, its normalized mean error is at most \(\sqrt{n/m}\) times the profile RMS bound.
+
+The bound concerns distance to the unrestricted optimum, including for a rank-constrained fitted matrix.
+It neither proves uniqueness of a rank-constrained optimum nor separates approximation error from incomplete optimization when \(\Delta\) is large.
+Small positive pair weights can make \(h\) tiny and the certificate uninformative.
+Failure to certify a curve is not evidence that it is unstable.
+The accompanying condition table reports this limitation alongside actual shape differences; it does not convert repeated-start agreement into a uniqueness claim.
+
+\end{document}

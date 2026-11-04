@@ -1,0 +1,89 @@
+{
+  "config": {
+    "alphas": [
+      0.75,
+      1.0,
+      1.25
+    ],
+    "attachment": 3,
+    "block_matrices": [
+      [
+        [
+          0.2
+        ]
+      ],
+      [
+        [
+          0.18,
+          0.04,
+          0.03
+        ],
+        [
+          0.04,
+          0.16,
+          0.05
+        ],
+        [
+          0.03,
+          0.05,
+          0.2
+        ]
+      ]
+    ],
+    "events_per_node": 240,
+    "negatives": 5,
+    "nodes": 600,
+    "nodes_per_block": 8,
+    "output": "results/realized_graph_audit",
+    "root": ".",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "theta_max": 1.5,
+    "theta_min": 0.5,
+    "tolerance": 1e-10,
+    "windows": [
+      1,
+      2,
+      5,
+      10
+    ]
+  },
+  "config_sha256": "479f456c8cc0d1444132cad583b78b88635e62e1153577757457842b70f39ea1",
+  "output_sha256": {
+    "allocations.json.gz": "1db58de643646444c8c5dde74310dc1901e4606f73bf6bd3706c29462d62b1cb",
+    "checks.json": "e45e621a2141a308347837212326a3107423448e114907f5a702cd2b209b699a",
+    "graphs.json": "e9017183bb19e089b69c7b89565513432b654ebb7f5162b4845b3b9d84014d79",
+    "turnover_surface_qualified.pdf": "f9c5049ad48abe15ed9232125230c9eb901aab6b696d5292311d3266be938e73",
+    "window_kl.png": "0964c5e7937017a3817abf94e9394bd251c8f0bc1779818685b8bbc70656ae40",
+    "windows.json.gz": "ad804c85553d080daa47b1ffc75dded64e655a8b10226d1832360f247449e632"
+  },
+  "runtime": {
+    "packages": {
+      "PyMuPDF": "1.26.7",
+      "matplotlib": "3.10.8",
+      "mpmath": "1.3.0",
+      "networkx": "3.6.1",
+      "numpy": "2.4.1",
+      "pytest": "8.4.2",
+      "scipy": "1.17.1",
+      "sympy": "1.14.0"
+    },
+    "python": "3.13.12"
+  },
+  "runtime_sha256": "34f8ca9a0a47b1fc500468881e10e86eca433f29111c31acb2b14636e4f9e6f4",
+  "scope": "Retrospective exact-matrix and allocation audit; no training, convergence claim, density sweep, or norm prediction.",
+  "source_sha256": {
+    "analysis/realized_graph_audit_protocol.md": "57d3a029f99511bc01fc62f228214aba6511db3b4d8aab12559b42a73801e360",
+    "analysis/realized_graph_audit_requirements.txt": "12d666230bdbae2f78fb85bd8fe1611c6bf9ef77c24283723b370a92fd315568",
+    "results/turnover_surface/turnover_surface.pdf": "d0f8aa3fdb3c34ff7373be47a00795bd18ec09d1e0f2639b9d5dc143875bb19e",
+    "scripts/audit_realized_graph.py": "de70965a3f1cb854397424e6efa8934002a68c15d9bee94419c15c90fa1055c0",
+    "scripts/simulate_exact_center_exposure.py": "7e8dd787c446660145776ca59050670a8c52f89454d74a78ed5bdca01bdbfa0d",
+    "scripts/simulate_turnover_surface.py": "61163a7706e866b9fdd096fee732636008e91e898dce19522b45f26e8c6512ec",
+    "tests/test_realized_graph_audit.py": "045c36eac0bd5855ade808ee8b15ed1721b5c8344f2558f736959395898268de"
+  }
+}

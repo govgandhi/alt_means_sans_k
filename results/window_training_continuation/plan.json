@@ -1,0 +1,56 @@
+{
+  "config": {
+    "attachment": 3,
+    "block_iterations": 250,
+    "control_blocks": 2,
+    "ftol": 1e-12,
+    "gradient_tolerance": 1e-07,
+    "gtol": 1e-08,
+    "loss_tolerance": 1e-08,
+    "max_blocks": 12,
+    "maxcor": 10,
+    "maxfun": 5000,
+    "maxls": 40,
+    "negatives": 5,
+    "nodes": 600,
+    "offsets": [
+      100000,
+      200000
+    ],
+    "protocol": "analysis/window_optimization_amendment.md",
+    "rank": 24,
+    "reference": "results/window_training_exploration/windows",
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "stability_tolerance": 0.001,
+    "windows": [
+      1,
+      2,
+      5,
+      10
+    ]
+  },
+  "packages": {
+    "matplotlib": "3.10.8",
+    "networkx": "3.6.1",
+    "numpy": "2.4.1",
+    "scipy": "1.17.1",
+    "threadpoolctl": "3.7.0"
+  },
+  "python": "3.13.12",
+  "reference_completion_sha256": "f84030f2cbf81868953cd23910129a1cedb66bb7f9a6d4a6301ff3d603a4544a",
+  "source_sha256": {
+    "analysis/window_optimization_amendment.md": "5184d1a97ec47cde5b425f3d96d875d08c9d14c2fec55b43ee6f05dc854b881d",
+    "analysis/window_training_exploration_requirements.txt": "d1c8b9dcee8cc69723159b85fd9acbce9c66b472114dd21d320cdb28aa07d7d6",
+    "scripts/simulate_exact_center_exposure.py": "7e8dd787c446660145776ca59050670a8c52f89454d74a78ed5bdca01bdbfa0d",
+    "scripts/window_training/continue_windows.py": "e2f77dfcbb437736a9071e7e7523cfbdfcab657e296aaf58ed3a212ae61db6d7",
+    "scripts/window_training/expected_window.py": "b045e8dd96bea50e0737dd28d449a81c57724dcfafee1b00627b627d92386ac7",
+    "scripts/window_training/report.py": "37972b2ddead23eda4a30a6e28c1baf9680c4d8ce8488c1a47c4edbe55e423a3",
+    "tests/test_window_continuation.py": "0b9c48877c774df79274bed99798b0b80a1e5ebccc2a4cb713ea464f94e8c1c7"
+  }
+}
