@@ -1,54 +1,67 @@
-\documentclass[12pt]{article} %{{{
-
-% Figures
-\usepackage{graphicx}
-\graphicspath{{../../figs/}}
-
-% Math
-\usepackage{amsmath}
-\usepackage{amssymb}
-\DeclareMathOperator*{\argmin}{\arg\!\min}
-\DeclareMathOperator*{\argmax}{\arg\!\max}
-
-% abbreviations
-\def\etal{\emph{et~al}.\ }
-\def\eg{e.g.,~}
-\def\ie{i.e.,~}
-\def\cf{cf.\ }
-\def\viz{viz.\ }
-\def\vs{vs.\ }
-
-% Refs
-\usepackage{biblatex}
-\addbibresource{references.bib}
-
-\usepackage{url}
-
-\newcommand{\secref}[1]{Section~\ref{sec:#1}}
-\newcommand{\figref}[1]{Fig.~\ref{fig:#1}}
-\newcommand{\tabref}[1]{Table~\ref{tab:#1}}
-%\newcommand{\eqnref}[1]{\eqref{eq:#1}}
-%\newcommand{\thmref}[1]{Theorem~\ref{#1}}
-%\newcommand{\prgref}[1]{Program~\ref{#1}}
-%\newcommand{\algref}[1]{Algorithm~\ref{#1}}
-%\newcommand{\clmref}[1]{Claim~\ref{#1}}
-%\newcommand{\lemref}[1]{Lemma~\ref{#1}}
-%\newcommand{\ptyref}[1]{Property~\ref{#1}}
-
-% for quick author comments 
-\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
-\definecolor{light-gray}{gray}{0.8}
-\def\del#1{ {\color{light-gray}{#1}} }
-\def\yy#1{\footnote{\color{red}\textbf{yy: #1}} }
-
-%}}}
-
-\begin{document} %{{{
-
-\title{An awesome paper} %{{{
+\documentclass[aps,pre,onecolumn,10pt,superscriptaddress]{revtex4-2}
+\usepackage{amsmath,booktabs}
+\usepackage[hidelinks]{hyperref}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\begin{document}
+\title{Supplemental Material: Degree Information and Norm Turnover in Random-Walk Network Embeddings}
+\author{Govind Gandhi}
+\affiliation{School of Data Science, University of Virginia, Charlottesville, Virginia 22904, USA}
+\author{Sadamori Kojaku}
+\affiliation{School of Systems Science and Industrial Engineering, Binghamton University, New York 13902, USA}
+\author{Yong-Yeol Ahn}
+\affiliation{School of Data Science, University of Virginia, Charlottesville, Virginia 22904, USA}
 \date{\today}
-\maketitle %}}}
+\maketitle
 
-\printbibliography{}
-    
-\end{document} %}}}
+\section{Post hoc predictor comparisons}
+\label{sec:predictor-comparison}
+
+We compare the frozen exposure--KL predictor with degree-and-threshold and single-feature baselines using the existing calibration and target records.
+Every regressor uses the original ExtraTrees settings: 400 trees, minimum leaf size 40, maximum features two, and random seed 20260813.
+Only configuration-model calibration outcomes enter fitting; target outcomes are used solely for evaluation.
+The inputs are log positive-pair count and context KL, log degree and log threshold, or one of log pair count, context KL, and log degree alone.
+These additional comparisons are post hoc, and no hyperparameters are selected from their target scores.
+The original frozen predictions, protocol, and pass/fail outcomes remain unchanged.
+The corrected retained-count and raw-count negative-sampling results are retrospective revalidations of previously examined targets.
+
+Within-curve Spearman correlations compare predicted and observed individual node norms in each of nine family--threshold groups, pooling five replicates per group.
+We report the median and range across these groups; the range is not a confidence interval.
+The pooled correlation additionally reflects variation between families and thresholds.
+Separate correlations for all 45 family--threshold--replicate groups are retained in the accompanying data.
+Thresholds share graphs, and NetScience's replicates share one observed network, so these groups are not independent samples.
+
+Table~\ref{tab:prospective-baselines} reports raw center norms, the primary response.
+The degree-and-threshold baseline passes all four declared criteria in every dataset and achieves more peaks within one bin than the exposure--KL predictor in the corrected retained-noise comparison (9/9 versus 8/9).
+The exposure--KL predictor instead gives higher within-curve correlations; its raw-norm correlation exceeds the degree-and-threshold baseline in all 45 separate replicate groups in each dataset.
+Degree alone fails the pooled-correlation criterion, whereas pairs alone pass all four criteria in the corrected raw-noise arm.
+Thus neither passing the criteria nor peak localization alone distinguishes the proposed predictor.
+
+\input{../../results/prospective_baselines/table.tex}
+
+Table~\ref{tab:balanced-baselines} gives the balanced-norm secondary response.
+The within-curve advantage persists, although the exposure--KL predictor loses to the degree-and-threshold baseline in one of the 45 separate replicate comparisons for the original balanced response; it wins all 45 in each corrected arm.
+These descriptive comparisons support improved predictive ranking relative to the specified baseline, not a causal exposure--specificity mechanism or information statistically independent of degree.
+
+\input{../../results/prospective_baselines/balanced_table.tex}
+
+\section{Interpretation of the declared criteria}
+\label{sec:criteria}
+
+Three frozen criteria evaluate predictions: median absolute peak-bin error at most one, at least two thirds of peaks within one bin, and pooled node-norm Spearman correlation at least 0.5.
+The fourth asks whether observed peak degree is nondecreasing with weaker subsampling in at least two of three graph families.
+It depends only on observed curves, is identical for every predictor, and permits ties; the original Barab\'asi--Albert peaks at thresholds \(10^{-3}\) and \(3\times10^{-3}\) both have degree approximately 6.77.
+Keeping this response property distinct from predictive skill changes the interpretation, not the frozen evaluation.
+
+For the next genuinely new test on natural text or mobility, comparators and evaluation rules should be specified before examining outcomes.
+They should include degree or frequency baselines, threshold when varied, and pair/KL ablations, together with within-target ranking and peak-error criteria and uncertainty across independent graphs or datasets.
+No new pass threshold should be chosen retrospectively from the present comparison.
+
+\section{Reproducibility}
+
+The repository script \path{scripts/prospective_baselines.py} verifies the original freeze hashes, corrected completion manifest, dependency versions, and target-record alignment before fitting baselines.
+It reproduces the frozen predictor exactly and generates both tables from the same summaries.
+All per-curve and per-replicate records, including failures, are in \path{results/prospective_baselines/summary.json}; setup and commands are in \path{analysis/prospective_baselines.md}.
+No new embeddings are trained for these comparisons.
+
+\end{document}

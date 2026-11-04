@@ -1,0 +1,33 @@
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{6pt}
+\caption{Post hoc comparisons for raw center norms (primary response). The last column applies the original four criteria, including the predictor-independent observed-peak property. Within-curve Spearman is the median [range] across nine family--threshold groups, each pooling five replicates. Corrected results are retrospective revalidations.}
+\label{tab:prospective-baselines}
+\begin{tabular}{lccccc}
+\toprule
+Inputs & \shortstack{Median peak\\error (bins)} & \shortstack{Peaks within\\one bin} & Pooled $\rho$ & Within-curve $\rho$ & All four pass \\
+\midrule
+\multicolumn{6}{l}{\textit{Original}} \\
+Pairs + KL & 0 & 8/9 & 0.881 & $0.842 [0.506, 0.935]$ & Yes \\
+Degree + threshold & 1 & 7/9 & 0.652 & $0.293 [0.163, 0.610]$ & Yes \\
+Pairs only & 1 & 5/9 & 0.591 & $0.523 [0.045, 0.631]$ & No \\
+KL only & 2 & 2/9 & 0.670 & $0.630 [-0.140, 0.825]$ & No \\
+Degree only & 1 & 5/9 & 0.178 & $0.279 [0.123, 0.398]$ & No \\
+\midrule
+\multicolumn{6}{l}{\textit{Corrected, retained noise}} \\
+Pairs + KL & 0 & 8/9 & 0.875 & $0.835 [0.548, 0.934]$ & Yes \\
+Degree + threshold & 0 & 9/9 & 0.649 & $0.285 [0.164, 0.602]$ & Yes \\
+Pairs only & 1 & 5/9 & 0.581 & $0.510 [-0.146, 0.627]$ & No \\
+KL only & 2 & 2/9 & 0.666 & $0.634 [-0.089, 0.829]$ & No \\
+Degree only & 1 & 6/9 & 0.169 & $0.257 [0.117, 0.382]$ & No \\
+\midrule
+\multicolumn{6}{l}{\textit{Corrected, raw noise}} \\
+Pairs + KL & 0 & 8/9 & 0.873 & $0.817 [0.543, 0.934]$ & Yes \\
+Degree + threshold & 0 & 8/9 & 0.643 & $0.284 [0.151, 0.595]$ & Yes \\
+Pairs only & 1 & 6/9 & 0.593 & $0.500 [-0.015, 0.617]$ & Yes \\
+KL only & 2 & 2/9 & 0.658 & $0.624 [-0.087, 0.794]$ & No \\
+Degree only & 0 & 6/9 & 0.128 & $0.193 [0.041, 0.285]$ & No \\
+\bottomrule
+\end{tabular}
+\end{table}

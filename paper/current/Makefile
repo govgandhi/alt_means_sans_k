@@ -9,11 +9,11 @@ CLN_OPT := -CA
 
 all: ${MAIN}.pdf ${SUPP}.pdf ${NOTE}.pdf
 
-${MAIN}.pdf: ${MAIN}.tex references.bib
-	${TEX} ${MAIN}.tex
+${MAIN}.pdf: ${MAIN}.tex references.bib ${SUPP}.pdf
+	${TEX} -pdf -interaction=nonstopmode -halt-on-error ${MAIN}.tex
 
-${SUPP}.pdf: ${SUPP}.tex
-	${TEX} ${SUPP}.tex
+${SUPP}.pdf: ${SUPP}.tex ../../results/prospective_baselines/table.tex ../../results/prospective_baselines/balanced_table.tex
+	${TEX} -pdf -interaction=nonstopmode -halt-on-error ${SUPP}.tex
 
 ${NOTE}.pdf:
 	${TEX} ${NOTE}.tex

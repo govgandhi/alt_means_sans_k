@@ -1,0 +1,33 @@
+\begin{table}[htbp]
+\centering
+\small
+\setlength{\tabcolsep}{6pt}
+\caption{Post hoc comparisons for balanced norms (secondary response, without a separate primary pass/fail test). Within-curve Spearman is the median [range] across nine family--threshold groups, each pooling five replicates. Corrected results are retrospective revalidations.}
+\label{tab:balanced-baselines}
+\begin{tabular}{lccc}
+\toprule
+Inputs & \shortstack{Median peak\\error (bins)} & \shortstack{Peaks within\\one bin} & Within-curve $\rho$ \\
+\midrule
+\multicolumn{4}{l}{\textit{Original}} \\
+Pairs + KL & 0 & 8/9 & $0.840 [0.504, 0.935]$ \\
+Degree + threshold & 1 & 7/9 & $0.308 [0.159, 0.614]$ \\
+Pairs only & 1 & 5/9 & $0.528 [0.047, 0.623]$ \\
+KL only & 2 & 2/9 & $0.617 [-0.179, 0.823]$ \\
+Degree only & 1 & 5/9 & $0.276 [0.123, 0.375]$ \\
+\midrule
+\multicolumn{4}{l}{\textit{Corrected, retained noise}} \\
+Pairs + KL & 0 & 8/9 & $0.831 [0.548, 0.934]$ \\
+Degree + threshold & 1 & 9/9 & $0.306 [0.181, 0.604]$ \\
+Pairs only & 1 & 5/9 & $0.529 [-0.146, 0.617]$ \\
+KL only & 2 & 2/9 & $0.621 [-0.144, 0.824]$ \\
+Degree only & 1 & 6/9 & $0.268 [0.103, 0.375]$ \\
+\midrule
+\multicolumn{4}{l}{\textit{Corrected, raw noise}} \\
+Pairs + KL & 0 & 8/9 & $0.801 [0.540, 0.935]$ \\
+Degree + threshold & 0 & 8/9 & $0.288 [0.144, 0.598]$ \\
+Pairs only & 1 & 6/9 & $0.524 [-0.011, 0.611]$ \\
+KL only & 2 & 2/9 & $0.611 [-0.140, 0.791]$ \\
+Degree only & 0 & 6/9 & $0.225 [0.012, 0.347]$ \\
+\bottomrule
+\end{tabular}
+\end{table}
