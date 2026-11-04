@@ -12,7 +12,7 @@ all: ${MAIN}.pdf ${SUPP}.pdf ${NOTE}.pdf
 ${MAIN}.pdf: ${MAIN}.tex references.bib ${SUPP}.pdf
 	${TEX} -pdf -interaction=nonstopmode -halt-on-error ${MAIN}.tex
 
-${SUPP}.pdf: ${SUPP}.tex ../../results/prospective_baselines/table.tex ../../results/prospective_baselines/balanced_table.tex
+${SUPP}.pdf: ${SUPP}.tex factor_balance.tex references.bib ../../results/prospective_baselines/table.tex ../../results/prospective_baselines/balanced_table.tex ../../results/factor_balance/table.tex
 	${TEX} -pdf -interaction=nonstopmode -halt-on-error ${SUPP}.tex
 
 ${NOTE}.pdf:
