@@ -40,7 +40,7 @@ To reproduce the original calibration-only control with its exact source files,
 run `scripts/reproduce_calibration_control.py --output /tmp/fresh-control` in the
 same pinned environment. No historical files or manuscript drafts are replaced.
 
-Reproducing the initial results produced by Dr Sadamori Kojaku. Read more [here](./scratchbook/Kmeans_Sadamori.pdf)
+Reproducing the initial results produced by Dr Sadamori Kojaku. Read more [here](<paper/archive/20220803_testing_the_proposed_method - Sadamori Kojaku.pdf>).
 
 ## Setup
 
@@ -65,14 +65,12 @@ conda activate gensim_mod_env
 ```
 
 ### 3. Install local libraries (if needed)
-Some notebooks may require local packages from `libs/`:
-Reproducing the initial results produced by Dr Sadamori Kojaku. Read more [here](https://github.com/govgandhi/alt_means_sans_k/blob/ff494bf976c0ce7c4300eb1dda092ff2329d82cf/paper/20220803_testing_the_proposed_method%20-%20Sadamori%20Kojaku.pdf)  
-## Setup
-Setup virtual environment with these packages to reproduce results. 
-Note: If you are using Apple silicon macs, CUDA was made to run on nvidia cards and the gpu functionalities might not work. [Fixing a workable version of the code for it]
-
+`libs/BeliefPropagation`, `libs/LFR-benchmark`, and `libs/node2vec` are Git submodules.
+Fetch them, then install the ones a notebook needs:
 ```bash
+git submodule update --init libs
 pip install -e libs/node2vec  # if using node2vec modifications
+cd libs/LFR-benchmark && python3 setup.py build && pip install -e .
 ```
 
 ### 4. Data
@@ -110,5 +108,3 @@ Investigates the role of angular information in network embeddings.
 
 ## Note for Apple Silicon Macs
 CUDA was made to run on NVIDIA cards. GPU functionalities may not work on Apple Silicon. See PyTorch documentation for Metal/MPS support.
-Install in-house package(s):  
-`cd libs/LFR-benchmark && python3 setup.py build && pip install -e .`
