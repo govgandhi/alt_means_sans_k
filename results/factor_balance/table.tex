@@ -1,0 +1,15 @@
+\begin{table}[htbp]
+\caption{Native Gensim factor balance at the original five-epoch endpoints. Ranges span five graph seeds at each threshold; the last column is the largest individual-node discrepancy across those runs.}
+\label{tab:factor-balance}
+\centering
+\begin{tabular}{lrrr}
+\toprule
+Threshold & $\|D\|_F/\|U^\top U\|_F$ & $\|r-r_{\rm bal}\|_2/\|r\|_2$ (\%) & Max. node error (\%) \\
+\midrule
+No filtering & 0.1347--0.1630 & 1.054--1.150 & 12.45 \\
+0.0003 & 0.0786--0.0803 & 0.548--0.567 & 1.88 \\
+0.001 & 0.0944--0.1066 & 0.648--0.726 & 3.48 \\
+0.003 & 0.1264--0.1491 & 0.874--0.968 & 6.68 \\
+\bottomrule
+\end{tabular}
+\end{table}

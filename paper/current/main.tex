@@ -675,6 +675,12 @@ For a rank-\(h\) score matrix \(M=P_{\mathrm{svd}}\Sigma Q_{\mathrm{svd}}^\top\)
 Equivalent minimal balanced factors differ only by an orthogonal transformation, which preserves row norms and angles.
 Empirical norm-degree claims should use balanced factors or identify the optimizer-dependent gauge under study.
 
+Under simultaneous Euclidean gradient flow for a differentiable score-only loss, \(U^\top U-V^\top V\) is conserved~\citep{du2018algorithmic}.
+Exact balance implies \(UU^\top=(MM^\top)^{1/2}\), so raw and canonical balanced norms coincide.
+Small random center initialization with zero contexts is not exact balance, and finite training steps need not preserve the imbalance.
+In twenty corrected Gensim controls, raw and balanced norm vectors differ by only \(0.55\)--\(1.15\%\) in relative Euclidean norm, but individual discrepancies reach \(12.45\%\) (Supplemental Material, Sec.~\ref{sm-sec:factor-balance}).
+This empirical agreement does not establish convergence or structurally determined norms.
+
 A direct consequence of the separable score objective is the following boundary for interpreting balanced norms.
 \begin{proposition}[Loss convergence and balanced norms]
 \label{prop:loss-norm-boundary}
