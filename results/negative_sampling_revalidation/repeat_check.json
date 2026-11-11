@@ -1,0 +1,10 @@
+{
+  "family": "netscience",
+  "replicate": 301,
+  "node_condition_rows": 1137,
+  "models_retrained": 6,
+  "all_fields_exact": true,
+  "plan_sha256": "4d1e554266d19583e7f473bd2a7eef44195815ba73640d502582d93c04bfc3a3",
+  "outcomes_sha256": "083227fd40749e25bc782d154cbeeb4cbe67ed9b7dc8ef04a953d8fee0e45d14",
+  "check_script_sha256": "d0439ce2c6963f5b1510b336a2bc43ac1f1e12c7cf5a150b9dcea94de50696eb"
+}

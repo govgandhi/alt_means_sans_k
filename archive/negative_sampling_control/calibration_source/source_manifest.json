@@ -1,0 +1,8 @@
+{
+  "scripts/build_control_gensim.py": "ff4466995f33259a55fcb590a1f74b0108f2ae8e84c6592b51e693ca0c0735dd",
+  "scripts/check_control_gensim.py": "0e424f7e1d3e3d8e170c848c991cb48bb665092def1c7c5c1567500ed4ac7d29",
+  "scripts/negative_sampling_control.py": "9b9b968203ef32943b46142240bd8e8ebf8bf016173c989ab597d0ff060dd59f",
+  "scripts/prospective_norm_turnover.py": "b35ecce0c149b0df71509f3a8571aa374ea94411b0d8d565fceec2684bb5b8e3",
+  "scripts/simulate_exact_center_exposure.py": "7e8dd787c446660145776ca59050670a8c52f89454d74a78ed5bdca01bdbfa0d",
+  "scripts/simulate_norm_frequency.py": "0b955feaacdf70582348c6397ccbad9ab95cc7a46a6ec936f577b4706c26a4f8"
+}

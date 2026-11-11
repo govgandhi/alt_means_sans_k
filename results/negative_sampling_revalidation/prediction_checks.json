@@ -1,0 +1,272 @@
+[
+  {
+    "family": "barabasi_albert",
+    "replicate": 101,
+    "threshold": 0.0003,
+    "retained_walk_sha256": "af3ddbf737f158f278acd3fae7ac02e010334ef0af3d4aa044612fa54c99e1ae"
+  },
+  {
+    "family": "barabasi_albert",
+    "replicate": 101,
+    "threshold": 0.001,
+    "retained_walk_sha256": "37c4fd49b25d49a21eea62783ff315e2dc52ea726b522dc18f98ee8b8f616da9"
+  },
+  {
+    "family": "barabasi_albert",
+    "replicate": 101,
+    "threshold": 0.003,
+    "retained_walk_sha256": "7a61b5787bb3c4cf9e0a8a19f85d869f28667ac6b3ad166ce296f270ea620470"
+  },
+  {
+    "family": "barabasi_albert",
+    "replicate": 102,
+    "threshold": 0.0003,
+    "retained_walk_sha256": "f53b7b51d7ee01e7c618dd99cb37809c892968f3f46431f84ccd1c9178649f4f"
+  },
+  {
+    "family": "barabasi_albert",
+    "replicate": 102,
+    "threshold": 0.001,
+    "retained_walk_sha256": "01447abfce4d51ca2b1847e9f7244b72ab43b827f563ac9f84b28f041bae8ef6"
+  },
+  {
+    "family": "barabasi_albert",
+    "replicate": 102,
+    "threshold": 0.003,
+    "retained_walk_sha256": "0aba78650895fa7edd3dc25d59300a44ee261f1c5f0e67bc9f0fec2b50131342"
+  },
+  {
+    "family": "barabasi_albert",
+    "replicate": 103,
+    "threshold": 0.0003,
+    "retained_walk_sha256": "ef18f579751adaa2c96f49e20b513a9e8f5428a9f5ba6bc5448bf586b3b9d471"
+  },
+  {
+    "family": "barabasi_albert",
+    "replicate": 103,
+    "threshold": 0.001,
+    "retained_walk_sha256": "ef41dfdc49be890f9125d7605f8142f52d93d65271c483cad08c4ca05caf558a"
+  },
+  {
+    "family": "barabasi_albert",
+    "replicate": 103,
+    "threshold": 0.003,
+    "retained_walk_sha256": "c92782e882d0afa8e98116eafbf37cfb965ecfa818afe60d49c34a277e6e957d"
+  },
+  {
+    "family": "barabasi_albert",
+    "replicate": 104,
+    "threshold": 0.0003,
+    "retained_walk_sha256": "03c7c8854ccec155b81b4e1788f51379efab6e11f35c2c6015af588dcab1d877"
+  },
+  {
+    "family": "barabasi_albert",
+    "replicate": 104,
+    "threshold": 0.001,
+    "retained_walk_sha256": "be38bcd34d22d6fd002ed3c9a9eb4d894aff458ee5f9ab15a059640ce88471ba"
+  },
+  {
+    "family": "barabasi_albert",
+    "replicate": 104,
+    "threshold": 0.003,
+    "retained_walk_sha256": "744d193348d239b5807546c15b1ca363776db0c397ba92da6bd5df7684db325c"
+  },
+  {
+    "family": "barabasi_albert",
+    "replicate": 105,
+    "threshold": 0.0003,
+    "retained_walk_sha256": "3f84c57feab7d0b07c6483c0bdf5441d637ce5011b93fc32e3c1dff537cf9a39"
+  },
+  {
+    "family": "barabasi_albert",
+    "replicate": 105,
+    "threshold": 0.001,
+    "retained_walk_sha256": "54ea7d3c70ffbe270bdf84c6b8ce48460d3fabc31aa304adaa73e69ac21bbcf2"
+  },
+  {
+    "family": "barabasi_albert",
+    "replicate": 105,
+    "threshold": 0.003,
+    "retained_walk_sha256": "8b4974a0cb77626d843b61bb9c42aa8f2d8291add700e58e0a0bc803eeada4ad"
+  },
+  {
+    "family": "powerlaw_cluster",
+    "replicate": 201,
+    "threshold": 0.0003,
+    "retained_walk_sha256": "e0e46857bdfa4718ff6f09b0d589efb5a18a9d7c25000576483ca75c973fe754"
+  },
+  {
+    "family": "powerlaw_cluster",
+    "replicate": 201,
+    "threshold": 0.001,
+    "retained_walk_sha256": "9aa4e064932669c3c578e9ef1a8114468817dbfd8fea652c4e74cf899dc23ae6"
+  },
+  {
+    "family": "powerlaw_cluster",
+    "replicate": 201,
+    "threshold": 0.003,
+    "retained_walk_sha256": "654088b48c403df3598d6d755f0fc37c277933fd2422ccbd24f9cfe6991b0fc6"
+  },
+  {
+    "family": "powerlaw_cluster",
+    "replicate": 202,
+    "threshold": 0.0003,
+    "retained_walk_sha256": "d97ca52216dcd10aabef6f4dd81a0dbabab831a87a308e146ae48cd1aa9a6755"
+  },
+  {
+    "family": "powerlaw_cluster",
+    "replicate": 202,
+    "threshold": 0.001,
+    "retained_walk_sha256": "5974deb3b4f660046e2c435357e163c249b5e7903d80a234983925f2b1178454"
+  },
+  {
+    "family": "powerlaw_cluster",
+    "replicate": 202,
+    "threshold": 0.003,
+    "retained_walk_sha256": "81c17f3fa3c408cac0e0bb0e3f6e16dc65d14627efe7b77749d3969dee15fc50"
+  },
+  {
+    "family": "powerlaw_cluster",
+    "replicate": 203,
+    "threshold": 0.0003,
+    "retained_walk_sha256": "79b6ac5f97a56439c420ecb788b3ffb4c855250671dfdceb488b3201b82e73f7"
+  },
+  {
+    "family": "powerlaw_cluster",
+    "replicate": 203,
+    "threshold": 0.001,
+    "retained_walk_sha256": "2d64bf18e39fb4c280c41b24ac3c4dbdd76e7331d65192e0af9cfac4f630dbc2"
+  },
+  {
+    "family": "powerlaw_cluster",
+    "replicate": 203,
+    "threshold": 0.003,
+    "retained_walk_sha256": "11e9b1c3c474d8a44370f25277a4cb7eaa303a9ef32868e2be607bcc077903e2"
+  },
+  {
+    "family": "powerlaw_cluster",
+    "replicate": 204,
+    "threshold": 0.0003,
+    "retained_walk_sha256": "b14092bd18ef1706685a482b95aa14d4beef274f9fd6109bfd1aedb34c617431"
+  },
+  {
+    "family": "powerlaw_cluster",
+    "replicate": 204,
+    "threshold": 0.001,
+    "retained_walk_sha256": "394d2a2b4c1d897383ecd288710b8735cc56fb6b9031c491b5dc4431fac12a23"
+  },
+  {
+    "family": "powerlaw_cluster",
+    "replicate": 204,
+    "threshold": 0.003,
+    "retained_walk_sha256": "ce0fde6beab55064ac315b79bb219a46f3dafd7c419771d134e613a7db91e1bc"
+  },
+  {
+    "family": "powerlaw_cluster",
+    "replicate": 205,
+    "threshold": 0.0003,
+    "retained_walk_sha256": "431d0579d04f7e6fc9b4dbf29f4196a9ff25fb3506ab866744da5cdd8aa295b3"
+  },
+  {
+    "family": "powerlaw_cluster",
+    "replicate": 205,
+    "threshold": 0.001,
+    "retained_walk_sha256": "84ded919605443e859b3103662c33083b455aa3979a279cb57343596cbabf02f"
+  },
+  {
+    "family": "powerlaw_cluster",
+    "replicate": 205,
+    "threshold": 0.003,
+    "retained_walk_sha256": "d6370b0377440b91ae29d2447af04c6d8b31604dc7228718be4d78ad8a4015b0"
+  },
+  {
+    "family": "netscience",
+    "replicate": 301,
+    "threshold": 0.0003,
+    "retained_walk_sha256": "43ce29ed75687e4cee51638b42273cdc66a1b7b869eabefec4caf8b08e0dc26b"
+  },
+  {
+    "family": "netscience",
+    "replicate": 301,
+    "threshold": 0.001,
+    "retained_walk_sha256": "a6a90a3e40c6fefb3b6afa367901f18f56269d44d9e742a5c0a9bd26a2984fd6"
+  },
+  {
+    "family": "netscience",
+    "replicate": 301,
+    "threshold": 0.003,
+    "retained_walk_sha256": "5e8d05d453855f4ac6c8554cfabc6236133786777978b93413bfe3bf712317ca"
+  },
+  {
+    "family": "netscience",
+    "replicate": 302,
+    "threshold": 0.0003,
+    "retained_walk_sha256": "5deaa12b75dbfc13d26ce779eaaab6b19ff8cab9c711efb8e48592625fdb7f4a"
+  },
+  {
+    "family": "netscience",
+    "replicate": 302,
+    "threshold": 0.001,
+    "retained_walk_sha256": "9e9abd63738c43a93090727dd0324a90f24a8cec8aaccd37c25efee4beea20ef"
+  },
+  {
+    "family": "netscience",
+    "replicate": 302,
+    "threshold": 0.003,
+    "retained_walk_sha256": "9d86291f5846161bb2c4199aaefd52139035c0100b4f1051ce029d72c132d5c8"
+  },
+  {
+    "family": "netscience",
+    "replicate": 303,
+    "threshold": 0.0003,
+    "retained_walk_sha256": "aba5bc2ead93e936846cba11a98eb5bd7e739d5c7bed9902df70e7e20d256d58"
+  },
+  {
+    "family": "netscience",
+    "replicate": 303,
+    "threshold": 0.001,
+    "retained_walk_sha256": "82b6b7547ad92253b87514deeb45e9363429b884c5b29083e0c8f04f8d2110de"
+  },
+  {
+    "family": "netscience",
+    "replicate": 303,
+    "threshold": 0.003,
+    "retained_walk_sha256": "c5355a415d79d149741634ebe9eafe913c1c68dd037463543d3dd55f1b53e68a"
+  },
+  {
+    "family": "netscience",
+    "replicate": 304,
+    "threshold": 0.0003,
+    "retained_walk_sha256": "8aa4d406f11294f5f42e22516f779c9031cf6ba78f10b17492781e2a87f68559"
+  },
+  {
+    "family": "netscience",
+    "replicate": 304,
+    "threshold": 0.001,
+    "retained_walk_sha256": "c804835b59c438482bd63f1722690feda9f081039c411f79e9db99f059d78175"
+  },
+  {
+    "family": "netscience",
+    "replicate": 304,
+    "threshold": 0.003,
+    "retained_walk_sha256": "bb6182b9a7adbcddee818c90a6d1e3c4a58764b5f48da531d58953bc5b36d208"
+  },
+  {
+    "family": "netscience",
+    "replicate": 305,
+    "threshold": 0.0003,
+    "retained_walk_sha256": "16cd0ea953e0c708cc882b4df0c2ba7c83dbabb5be1b4160ff1a503f8f9dd3b5"
+  },
+  {
+    "family": "netscience",
+    "replicate": 305,
+    "threshold": 0.001,
+    "retained_walk_sha256": "171ba8622cfe05d3fe57228fdab09ce4d7dfa1c0c1bdfac6e1850d1c3576c3dc"
+  },
+  {
+    "family": "netscience",
+    "replicate": 305,
+    "threshold": 0.003,
+    "retained_walk_sha256": "1d467bd3bc7d244fd37a35a3647804b7653d6f5a2fae659fefb42412c0365e73"
+  }
+]
