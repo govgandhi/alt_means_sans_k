@@ -3,11 +3,17 @@
 import sys
 from pathlib import Path
 
-import numpy as np
 import pytest
 
+for dependency in (
+    "numpy",
+):
+    pytest.importorskip(dependency, reason="Requires the pinned scientific environment")
+
+import numpy as np  # noqa: E402
+
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from window_training.exact_norm_profiles import Config, construct, weights
+from window_training.exact_norm_profiles import Config, construct, weights  # noqa: E402
 
 
 @pytest.mark.parametrize("tolerance", [10.0, 1e-2, 1e-6, 1e-10])

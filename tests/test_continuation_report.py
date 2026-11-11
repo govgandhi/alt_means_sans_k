@@ -3,11 +3,21 @@
 import sys
 from pathlib import Path
 
-import numpy as np
 import pytest
 
+for dependency in (
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "networkx",
+    "threadpoolctl",
+):
+    pytest.importorskip(dependency, reason="Requires the pinned scientific environment")
+
+import numpy as np  # noqa: E402
+
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from window_training.report_continuation import aggregate_drops
+from window_training.report_continuation import aggregate_drops  # noqa: E402
 
 
 def test_fractional_decline_is_paired_before_averaging() -> None:
