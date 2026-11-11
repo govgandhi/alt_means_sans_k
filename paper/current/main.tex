@@ -1100,7 +1100,9 @@ The rise from the lowest bin to the peak increases from \(0.372\) to \(0.569\), 
 Aggressive subsampling retains fewer tokens at a fixed epoch count.
 That sweep also repeated training with eight, six, and five epochs, which approximately matches the expected retained-center totals across thresholds.
 The peak locations remain \(2.98\), \(6.00\), and \(7.73\).
-These historical retained-token budget comparisons have not yet been repeated with the corrected implementation and do not match realized positive-pair counts.
+The historical sweep counted walks visiting each node rather than its token occurrences, which affected its stored exposures and epoch rule but not Gensim's own subsampling.
+Repeating both schedules with token counts and the corrected implementation described below leaves the epoch counts and every raw- and balanced-norm peak bin unchanged; the saved lowest, peak, and highest bin means change by at most \(0.019\).
+These retained-token budgets do not match realized positive-pair counts.
 The exploratory controlled fit places the peak too high at all three thresholds, by four, two, and one degree bins from strongest to weakest subsampling; this comparison does not establish the mechanism generating the Gensim peak.
 
 \subsection{Corrected no-subsampling and training-trajectory controls}
@@ -1154,6 +1156,9 @@ Embedding dimension and realized positive-pair budgets have not been matched bet
 
 We chose a more flexible prospective predictor after the exploratory analyses above, then fixed its inputs, model class, hyperparameters, targets, and success criteria before training any target embedding.
 External application of the Gensim retention law made two node-level inputs observable before training: the logarithm of the realized positive-pair count and the empirical context KL.
+The frozen pipeline applied this law to walk-visit shares, which count a node once per walk however often it repeats, rather than to token shares.
+This undercounts tokens by \(10.5\%\)--\(11.2\%\) in the synthetic graphs and by about \(17\%\) in NetScience, changes individual keep probabilities by up to \(20\%\), and changes expected retained tokens by less than \(1\%\).
+Both inputs were measured after this thinning, so the frozen test is internally consistent, but \(t\) is not Gensim's literal threshold; the retrospective revalidation with token counts is summarized in Supplemental Material, Sec.~\ref{sm-sec:predictor-comparison}.
 An extremely randomized tree regressor with 400 trees and minimum leaf size 40 mapped these two inputs to raw center norm (primary) and balanced norm (secondary)~\citep{geurts2006extremely}.
 Leave-one-seed-out prediction within the five configuration-model calibration graphs gave raw-norm \(R^2=0.828\) and Spearman correlation \(0.932\).
 
