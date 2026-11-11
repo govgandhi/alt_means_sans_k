@@ -3,6 +3,7 @@
 \usepackage[hidelinks]{hyperref}
 \renewcommand{\thesection}{S\arabic{section}}
 \renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\theequation}{S\arabic{equation}}
 \begin{document}
 \title{Supplemental Material: Degree Information and Norm Turnover in Random-Walk Network Embeddings}
 \author{Govind Gandhi}
@@ -57,11 +58,15 @@ For the next genuinely new test on natural text or mobility, comparators and eva
 They should include degree or frequency baselines, threshold when varied, and pair/KL ablations, together with within-target ranking and peak-error criteria and uncertainty across independent graphs or datasets.
 No new pass threshold should be chosen retrospectively from the present comparison.
 
+\input{factor_balance}
+
 \section{Reproducibility}
 
 The repository script \path{scripts/prospective_baselines.py} verifies the original freeze hashes, corrected completion manifest, dependency versions, and target-record alignment before fitting baselines.
 It reproduces the frozen predictor exactly and generates both tables from the same summaries.
 All per-curve and per-replicate records, including failures, are in \path{results/prospective_baselines/summary.json}; setup and commands are in \path{analysis/prospective_baselines.md}.
 No new embeddings are trained for these comparisons.
+The separate factor-balance audit deterministically replays existing training runs, as described in Sec.~\ref{sec:factor-balance}.
 
+\bibliography{references}
 \end{document}
