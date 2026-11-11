@@ -4,7 +4,9 @@
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{microtype}
+\usepackage{xr-hyper}
 \usepackage[hidelinks]{hyperref}
+\externaldocument[sm-]{supp}
 \hypersetup{
     pdftitle={Degree Information and Norm Turnover in Random-Walk Network Embeddings},
     pdfauthor={Govind Gandhi and Sadamori Kojaku and Yong-Yeol Ahn},
@@ -59,6 +61,7 @@ Mixing node contexts toward their marginal distribution removes the decreasing b
 Corrected word2vec controls show that turnover persists without subsampling under the original learning-rate schedule, but is absent at twenty epochs under a constant-rate alternative.
 We then freeze predictions based only on realized pair exposure and empirical context KL before training embeddings on two new synthetic graph families and the NetScience coauthorship network.
 Across nine graph-family--threshold curves, the median peak error is zero degree bins, eight peaks lie within one bin of their predictions, and the pooled node-level Spearman correlation is \(0.881\).
+A post hoc degree-and-threshold baseline also passes the declared criteria, but predicts within-curve node-norm rankings less accurately.
 The controlled curves are consistent with a weakening norm response to exposure relative to context specificity; exposure itself need not decrease or reach a fixed ceiling.
 An exact graph construction shows that arbitrarily small objective gaps can also permit distinct balanced norm-degree shapes after removing overall scale.
 These results distinguish population geometry, realized-graph targets, and trained norms, providing testable controls for interpreting radial information in network embeddings.
@@ -1153,11 +1156,15 @@ NetScience used five independent walk and optimizer seeds on the same observed g
 All conditions used \(300n\) stationary-start walks of length five, window size one, 64 dimensions, five negative samples, and five epochs.
 A manifest recorded SHA-256 hashes of the protocol, calibration data, and all \(23{,}685\) node-level target predictions before target training; no outcome file existed at the freeze.
 
-The four declared criteria all passed (Fig.~\ref{fig:prospective-validation}).
+The four declared criteria all passed: three evaluate predictions, while the fourth describes observed peak ordering and permits ties (Fig.~\ref{fig:prospective-validation}).
 The median absolute peak error was zero degree bins, eight of nine peaks were within one bin, pooled predicted-versus-observed node-norm Spearman correlation was \(0.881\), and the observed peak moved nondecreasingly with weaker subsampling in all three graph families.
 Three boundary classifications differed: the strongest-subsampling direct Barab\'asi--Albert curve was decreasing rather than weakly unimodal, the weakest-subsampling clustered curve continued rising through its last bin, and the strongest-subsampling NetScience peak was two bins above its prediction.
 The predictor also overestimated the absolute NetScience norms.
-The prospective result supports qualitative transfer and approximate peak localization, while these misses rule out an exact universal response curve from the two scalar inputs.
+These misses limit the accuracy of the transferred predictor.
+
+A post hoc degree-and-threshold baseline also passes all four criteria, but its median within-curve node-norm Spearman correlation is \(0.293\), versus \(0.842\) for exposure--KL.
+The ranges, feature ablations, and corrected sampling comparisons are reported in Supplemental Material, Sec.~\ref{sm-sec:predictor-comparison} and Tables~\ref{sm-tab:prospective-baselines}--\ref{sm-tab:balanced-baselines}.
+This ranking advantage, which does not extend consistently to peak localization, supports predictive value relative to the baseline rather than identification of a causal mechanism.
 
 \section{Discussion}
 
@@ -1185,10 +1192,11 @@ Matching retained-center counts does not exactly match realized positive pairs a
 The global scalar response surface failed at the strongest held-out turnover, and the more accurate degree-bin interpolation was chosen after that failure.
 The extremely randomized tree model was also chosen after the initial experiments, so only its evaluation on the three new target families is prospective.
 Although it passed all declared criteria, it missed one peak by two bins, misclassified two boundary peaks, and overestimated the NetScience norm level.
-The present evidence supports effects of the specified interventions and qualitative transfer across graph topologies, without identifying a unique mechanism or a calibrated peak for natural sequence data.
+The present evidence supports effects of the specified interventions and improved node-norm prediction relative to the degree-and-threshold baseline, without identifying a unique mechanism or a calibrated peak for natural sequence data.
 
 Before transfer to natural sequences, the next tests should separate realized-graph sparsity from training dynamics and isolate learning-rate history at fixed graph and corpus.
-Predictions should be frozen before any new target training.
+The next test should freeze the model before applying it to natural text or mobility sequences, vary the window, dimension, and optimizer, and again predict peaks from realized exposure and context KL before target training.
+It should also prespecify degree or frequency baselines (including threshold when varied), within-curve ranking criteria, and uncertainty across independent graphs or datasets.
 General node2vec also requires a second-order state-space analysis on directed edges.
 
 \section{Conclusion}
