@@ -1,0 +1,16 @@
+{
+  "artifact_sha256": {
+    "all_final_nodes.pdf": "0d9247434ffcc1360174de2e20106d0e5403605af1f9e1d38077bc107563fdc8",
+    "all_final_nodes.png": "dddc24650b3b49a9b40131c815a4450e872e2bb5c11118fbd3914b238ea27eef",
+    "conditioning_controls.pdf": "2ac2f694a7b09a99139263ba0ed5558f33d452c6a07d271f7f99d19780c584d5",
+    "conditioning_controls.png": "16c4bc98de4388b92265df5dfe2ea5b9f8cd1de312212f55ad603c4b3239156d",
+    "kl_and_trained_norms.pdf": "0fc124a260f3489c1cfde55c335681f509001d0ffc3d0e578c706e1b661a5823",
+    "kl_and_trained_norms.png": "aeded9ef0b9cdf19bbc710ed04f5cf06eb5105d98a3b76b483612a189f40038d",
+    "summary.json": "9935be9da5047b4b40798ca1864eece29dcf41f9a50cc10756830bad5416f20d",
+    "tables.md": "31c82b03496782498c93197051a14a7accf3dbe8d52a5c73b2879d913feea238",
+    "wide_window_comparison.pdf": "e71dd244825ba36ecd9fb72423ff4d01514cf0e694c51b88e90a723a6a2b7dbf",
+    "wide_window_comparison.png": "b9443f2e9a0938c6298c23fb20e9d401056dcd13c72b68a52759901c9cb29a74"
+  },
+  "input_completion_sha256": "93ae6d5d28931a4c002c8df85401291cae09b548583ed5a536439ca25e253636",
+  "script_sha256": "d505acc1db58453d7e5e8590365fb44851863ceecc19b3206c5c5648c3458605"
+}

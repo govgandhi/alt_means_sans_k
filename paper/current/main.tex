@@ -12,10 +12,13 @@
 }
 
 \graphicspath{
+    {../../results/realized_graph_audit/}
     {../../results/turnover_surface/}
     {../../results/gensim_threshold_sweep/}
     {../../results/prospective_validation/}
     {../../results/training_trajectory/}
+    {../../results/window_training_continuation/report/}
+    {../../results/norm_identifiability/}
 }
 
 \newcommand{\R}{\mathbb{R}}
@@ -29,6 +32,7 @@
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{remark}[theorem]{Remark}
 
@@ -45,18 +49,19 @@
 \date{\today}
 
 \begin{abstract}
-Random-walk network embeddings assign each node a direction and a norm, but the structural meaning of the norm depends on both the population operator and finite training.
+Random-walk network embeddings assign each node a direction and a norm, whose structural meaning depends on the population operator, realized graph, and training.
 We compare the population geometry of normalized spectral embeddings, random-walk pair probabilities, and skip-gram with negative sampling under the degree-corrected stochastic block model in a common notation.
 The first two operators have an exact radial-angular structure: degree propensity controls radius within each community, while direction depends only on community.
 At unigram negative sampling, however, marginal normalization cancels node-specific degree from the optimal skip-gram score.
-We then use controlled finite-sample experiments to separate the effects of training exposure and context specificity.
+We then use controlled finite-sample experiments to probe sensitivity to exposure and context sampling.
 Equal exposure leaves norms decreasing with degree, proportional exposure makes them increase, and exposure proportional to the cube root of frequency produces an inverted-U.
 Mixing node contexts toward their marginal distribution removes the decreasing branch.
 Corrected word2vec controls show that turnover persists without subsampling under the original learning-rate schedule, but is absent at twenty epochs under a constant-rate alternative.
 We then freeze predictions based only on realized pair exposure and empirical context KL before training embeddings on two new synthetic graph families and the NetScience coauthorship network.
 Across nine graph-family--threshold curves, the median peak error is zero degree bins, eight peaks lie within one bin of their predictions, and the pooled node-level Spearman correlation is \(0.881\).
-The inverted-U therefore requires the marginal norm gain from exposure to weaken relative to the loss of context specificity; exposure need not decrease or reach a fixed ceiling.
-These results distinguish population score geometry from optimizer-dependent embedding norms and provide testable controls for interpreting radial information in network embeddings.
+The controlled curves are consistent with a weakening norm response to exposure relative to context specificity; exposure itself need not decrease or reach a fixed ceiling.
+An exact graph construction shows that arbitrarily small objective gaps can also permit distinct balanced norm-degree shapes after removing overall scale.
+These results distinguish population geometry, realized-graph targets, and trained norms, providing testable controls for interpreting radial information in network embeddings.
 \end{abstract}
 
 \maketitle
@@ -72,7 +77,7 @@ Empirical work has reported a nonmonotonic relation between frequency and embedd
 Word2vec norms first increase and then decrease with word frequency in domain-specific corpora~\citep{schakel2015measuring,wilson2015controlled}.
 Trajectory embeddings of scientific organizations show the same inverted-U against organization size: norms increase up to roughly \(10^3\) researchers and then decrease for larger institutions~\citep{murray2023unsupervised}.
 The proposed explanation is a competition between repeated exposure, which pushes an embedding away from its initialization, and context diversity, which makes the update directions less coherent.
-This explanation has not been connected to a population model of network structure or tested by interventions that vary the two mechanisms separately.
+A population account must distinguish the graph-conditioned target from training dynamics and specify what each intervention changes.
 
 Two theoretical traditions address parts of the problem.
 Population spectral embeddings under the degree-corrected stochastic block model (DCSBM) have community rays, with node-specific length multipliers in SCORE~\citep{jin2015fast} and regularized spectral clustering~\citep{qin2013regularized}.
@@ -86,10 +91,10 @@ The radial exponent is \(1/2\) for the normalized eigenspace and \(1\) for raw s
 The optimal skip-gram score behaves differently: unigram negative sampling cancels node-specific degree, and other negative-sampling exponents add a context-side log-degree term.
 Because skip-gram identifies dot products rather than either factor, individual norms require a balancing convention or an explicit optimizer.
 
-We then intervene on the two finite-training mechanisms in heterogeneous configuration-model networks.
+We then vary exposure and conditional contexts in heterogeneous configuration-model networks.
 The exposure intervention assigns each node an exact number of positive-center updates proportional to stationary frequency raised to an exponent \(\beta\).
-The specificity intervention mixes each conditional context distribution toward its own marginal while preserving that marginal.
-Equal exposure reveals a decreasing structural relation between degree and norm; proportional exposure produces a monotone increase; the exponent \(1/3\) produces an inverted-U, and \(2/3\) still produces an increase.
+The context intervention mixes each conditional context distribution toward its own marginal, preserving that marginal before integer pair allocation.
+Equal exposure reveals a decreasing norm-degree relation; proportional exposure produces a monotone increase; the exponent \(1/3\) produces an inverted-U, and \(2/3\) still produces an increase.
 Context mixing removes the decreasing branch.
 Corrected Gensim controls reproduce the peak movement with weaker subsampling under the original learning-rate schedule, but also show that the unfiltered curve depends on learning-rate history.
 Before training on new targets, we freeze node-level norms and peak locations predicted from realized positive-pair exposure and context KL.
@@ -673,6 +678,65 @@ For a rank-\(h\) score matrix \(M=P_{\mathrm{svd}}\Sigma Q_{\mathrm{svd}}^\top\)
 Equivalent minimal balanced factors differ only by an orthogonal transformation, which preserves row norms and angles~\citep[Proposition~S24]{davison2024community}.
 Empirical norm-degree claims should use balanced factors or identify the optimizer-dependent gauge under study.
 
+A direct consequence of the separable score objective is the following boundary for interpreting balanced norms.
+\begin{proposition}[Loss convergence and balanced norms]
+\label{prop:loss-norm-boundary}
+For a finite score matrix \(M\), fix \(p^+_{ij}\geq0\) and \(p^-_{ij}>0\), and define
+\begin{equation}
+    L(M)=\sum_{ij}\left[p^+_{ij}\log(1+e^{-M_{ij}})
+    +p^-_{ij}\log(1+e^{M_{ij}})\right].
+    \label{eq:score-loss}
+\end{equation}
+If every \(p^+_{ij}>0\), the unrestricted loss has a unique finite minimizer \(M^\star_{ij}=\log(p^+_{ij}/p^-_{ij})\).
+Every sequence approaching its minimum converges to \(M^\star\), and its canonical balanced row norms converge.
+If some \(p^+_{ij}=0\), every sequence approaching the unrestricted infimum instead sends those scores to \(-\infty\); its total squared balanced center norm diverges.
+\end{proposition}
+
+\begin{proof}
+For positive weights \(a,b\), the scalar loss has second derivative \((a+b)e^x/(1+e^x)^2>0\) and tends to infinity at both ends.
+Thus \(L\) is strictly convex and coercive; compact sublevel sets and uniqueness imply convergence of every minimizing sequence.
+The squared balanced row norms are the diagonal entries of \((MM^\top)^{1/2}\), a continuous matrix function.
+When \(a=0<b\), the scalar infimum is zero, approached only as \(x\to-\infty\).
+Separability forces this limit on every zero-positive pair in a minimizing sequence.
+Finally,
+\begin{equation}
+    \begin{aligned}
+    \sum_i\norm{u_{i,\mathrm{bal}}(M)}^2
+    &=\operatorname{tr}\!\left[(MM^\top)^{1/2}\right]\\
+    &=\norm{M}_*\geq\norm{M}_{\mathrm F},
+    \end{aligned}
+\end{equation}
+where \(\norm{M}_*\) is the sum of singular values.
+\end{proof}
+
+The divergence concerns the total norm, not necessarily every node.
+It changes the score matrix and therefore persists after balancing; it is not merely factorization gauge freedom.
+The proposition concerns unrestricted scores and asymptotically optimal loss.
+With positive weights everywhere, a minimizer over matrices of rank at most \(r\) exists but need not be unique; neither case guarantees convergence of a rank-constrained optimizer.
+
+Removing overall scale need not identify the curve either.
+Write \(r_i(M)^2=[(MM^\top)^{1/2}]_{ii}\), \(\rho(M)^2=n^{-1}\sum_i r_i(M)^2\), and \(\widetilde r_i=r_i/\rho\) for \(\rho>0\).
+\begin{proposition}[Different shapes at arbitrarily small loss gap]
+\label{prop:normalized-shapes}
+On a triangle with one pendant node, fix one-step contexts, uniform center exposure, stationary noise, five collision-allowing negatives, and dimension four.
+For every \(\delta>0\), there are balanced embeddings with increasing, decreasing, and peaked norm-degree profiles, each within \(\delta\) of the same unrestricted loss infimum.
+Their RMS radii are equal, and their RMS-normalized profiles are distinct.
+\end{proposition}
+
+\begin{proof}
+The degrees are \((3,2,2,1)\), with weights \(p^+_{ij}=A_{ij}/(4d_i)\) and \(p^-_{ij}=5d_j/32\).
+Keep edge scores at \(\log[8/(5d_id_j)]\) and set off-diagonal nonedge scores to \(-s\), where \(s=\max\{0,\log[(35/16)/\delta]\}\).
+For each desired positive node profile \(h\), let \(\alpha_i=h_i^2/(\frac14\sum_jh_j^2)\) and set \(M_{ii}=-D\alpha_i\).
+Choose one common \(D\) so that every diagonal is at most \(-s\) and strictly exceeds its off-diagonal absolute row sum in magnitude.
+Then \(M\) is symmetric negative definite, so \((MM^\top)^{1/2}=-M\), \(r_i^2=D\alpha_i\), and \(\rho=\sqrt D\).
+All edge terms are minimized; the remaining loss is at most \((35/16)e^{-s}\le\delta\), including the diagonals.
+Assigning \(h\) by degree \(1,2,3\) as \((1,2,3)\), \((3,2,1)\), or \((1,3,1)\) yields the three shapes.
+Balanced factors \(U=(-M)^{1/2}\), \(V=-U\) realize each score matrix in four dimensions.
+\end{proof}
+
+The common RMS can grow as the tolerance shrinks, but the normalized shapes remain different.
+This is a statement about what the fixed objective permits, not which solution training selects, nor a guarantee about the larger rank-24 experiments.
+
 \section{Perturbation of radius and direction}
 \label{sec:finite-sample}
 
@@ -791,15 +855,35 @@ When degrees vary, keeping only \(d<n\) spectral components need not select the 
 Their symmetrized negatives [Eq.~(S9), Appendix~F] yield the joint propensity dependence in Equation~\eqref{eq:symmetric-dcsbm-score}, whereas our ordered negatives give a context-only term.
 These population results support our operator and gauge comparison but do not explain finite-training norm turnover.
 
-\section{Finite-training mechanism}
+\section{From population scores to trained norms}
 \label{sec:finite-training-mechanism}
 
-The population score in Corollary~\ref{cor:alpha-one} contains no node-specific degree at \(\alpha=1\), but a finite optimizer does not begin at that score.
-Nodes that appear more often as positive centers receive more stochastic updates.
-Their norms can therefore depend on exposure even when center frequency cancels from the population optimum.
+Corollary~\ref{cor:alpha-one} concerns walks on the population proxy \(\Omega\).
+With stationary reference \(\varpi\), its window-averaged context KL is
+\begin{equation}
+    \mathrm{KL}^{\mathrm{pop}}_i
+    =\sum_b F_{ab}\log\frac{F_{ab}\vol(\Omega)}{s_b\kappa_b},
+    \qquad a=g_i,
+    \label{eq:population-context-kl}
+\end{equation}
+using \(0\log0=0\).
+This quantity is block-constant; for \(K=1\), it is zero and the unigram score is \(-\log k\).
 
-For an undirected graph \(G\), let \(\pi_i=d_i/\vol(G)\) be the stationary frequency and let \(T_i\) denote the one-step conditional context distribution of node \(i\).
-When the positive-context marginal is \(\pi\), the context specificity is
+A realized graph or finite corpus instead defines conditional contexts \(P_{ij}\).
+For positive center shares \(c_i\) and negative proposal \(q_j\), the standard ordered SGNS weights are \(c_iP_{ij}\) and \(kc_iq_j\), giving \(x^\star_{ij}=\log[P_{ij}/(kq_j)]\) on their common positive support.
+For a simple graph with positive degrees, window one, and \(q_j=\pi_j=d_j/\vol(G)\), this becomes
+\begin{equation}
+    x^\star_{ij}=\log\frac{\vol(G)}{kd_id_j}
+    \quad\text{on edges}.
+    \label{eq:realized-graph-score}
+\end{equation}
+Nonedges have score \(-\infty\), so no finite exact factorization represents the entire target.
+Degree dependence therefore enters before optimization.
+These weights allow negative collisions; literal Gensim skips proposals equal to the positive context.
+Although \(c_i\) cancels from free pair scores at fixed \(P,q\), it still weights the rank-constrained loss, and changing exposure can also change \(q\).
+
+For the same realized graph, let \(T_i\) be its one-step transition row.
+Specificity relative to stationary noise is
 \begin{equation}
     \mathrm{KL}_i
     =
@@ -811,7 +895,8 @@ When the positive-context marginal is \(\pi\), the context specificity is
     \label{eq:graph-context-kl}
 \end{equation}
 In an uncorrelated configuration model, the neighbor average in Equation~\eqref{eq:graph-context-kl} changes little with \(d_i\), so specificity decreases approximately as \(-\log d_i\).
-The information-geometric relation between transformed squared norm and context KL therefore predicts a decreasing structural contribution to the norm~\citep{oyama2022norm}.
+This is a realized-graph relation, not Equation~\eqref{eq:population-context-kl}.
+The local KL approximation for centered, transformed embeddings~\citep{oyama2022norm} motivates a specificity hypothesis; it does not establish a decreasing raw or balanced norm at convergence.
 
 Word2vec subsampling changes retained-token exposure and the conditional context distribution.
 For token frequency \(p_i>\tfrac{3+\sqrt{5}}{2}t\approx2.62t\), the Gensim form of the Mikolov retention probability is~\citep{mikolov2013distributed}
@@ -855,8 +940,8 @@ Its derivative along degree is
     \frac{d\mathrm{KL}_i}{d\log d_i}.
     \label{eq:two-force-derivative}
 \end{equation}
-The first term is positive when repeated coherent updates increase norm, whereas the second is negative when high-degree nodes have less specific contexts.
-An inverted-U occurs when exposure dominates at low degree and the specificity loss dominates at high degree.
+If both response partial derivatives are positive, the two terms have opposite signs when exposure increases and specificity decreases with degree.
+Their crossover describes an inverted-U within this response model; it does not assign either branch uniquely to transient training or to the converged target.
 
 \section{Numerical experiments}
 \label{sec:numerical-experiments}
@@ -887,28 +972,30 @@ The specificity intervention replaces the one-step transition row by
     \label{eq:specificity-intervention}
 \end{equation}
 where \(c_i=m_i/\sum_jm_j\) is the realized center share and \(\lambda\in\{0,1/3,2/3,1\}\).
-Equation~\eqref{eq:specificity-intervention} preserves the positive-context marginal \(q\) while reducing every row's KL divergence toward zero.
-Negative contexts follow the realized \(q\), so the negative-sampling exponent is one after integer pair allocation.
+Equation~\eqref{eq:specificity-intervention} preserves the intended marginal \(q\) before integer allocation, while reducing every row's KL divergence toward zero.
+Generally \(q\neq\pi\), including at equal exposure.
+Integer allocation can change the marginal and support; negatives follow the resulting empirical marginal.
+Thus exposure also changes the noise distribution, and the interventions do not hold the score target fixed.
 
 We trained 24-dimensional SGNS embeddings for four epochs with five negative samples per positive pair.
 All conditions within a graph seed used the same initialization and optimizer seed.
 We report raw center-vector norms and the canonical balanced norms defined in Equation~\eqref{eq:balanced-factors}; both give the same qualitative results.
 
-\subsection{Exposure creates the increasing branch}
+\subsection{Norm curves under exposure and context interventions}
 
-Figure~\ref{fig:controlled-turnover} separates the two mechanisms.
+Figure~\ref{fig:controlled-turnover} compares these interventions.
 With equal center exposure (\(\beta=0\)) and unmodified contexts, the mean raw norm decreases from \(3.507\) in the lowest degree bin to \(2.297\) in the highest, with Spearman correlation \(-0.758\).
 With proportional exposure (\(\beta=1\)), it increases from \(2.496\) to \(4.802\), with correlation \(0.895\).
 The intermediate intervention \(\beta=1/3\) produces an inverted-U with a peak norm of \(3.315\) near degree six; the peak is \(0.093\) above the lowest bin and \(0.361\) above the highest bin.
 Thus turnover can occur while exposure strictly increases with degree.
-Sublinear exposure alone does not produce it: at \(\beta=2/3\), the mean raw norm increases from \(2.861\) in the lowest bin to \(3.960\) in the highest, with Spearman correlation \(0.821\).
+Sublinear exposure does not guarantee it: at \(\beta=2/3\), the mean raw norm increases from \(2.861\) in the lowest bin to \(3.960\) in the highest, with Spearman correlation \(0.821\).
 
 \begin{figure*}[t]
-    \includegraphics[width=\textwidth]{turnover_surface}
+    \includegraphics[width=\textwidth]{turnover_surface_qualified}
     \caption{
-        Controlled separation of exposure and context specificity.
+        Exposure and context interventions.
         (a) Exact center-update interventions \(m_i\propto\pi_i^\beta\) and the held-out retention law at \(t=3\times10^{-4}\).
-        (b) Mixing each transition row toward its context marginal reduces \(D_{\mathrm{KL}}(T_i^{(\lambda)}\Vert q)\) while preserving \(q\).
+        (b) Mixing each transition row toward its context marginal reduces the intended \(D_{\mathrm{KL}}(T_i^{(\lambda)}\Vert q)\); integer allocation can change \(q\).
         (c) Increasing \(\beta\) changes the norm-degree curve from decreasing to increasing; \(\beta=1/3\) produces an inverted-U.
         (d) At equal exposure, context mixing removes the decreasing branch.
         (e) An exploratory degree-bin interpolation reproduces the strongest held-out turnover.
@@ -918,17 +1005,64 @@ Sublinear exposure alone does not produce it: at \(\beta=2/3\), the mean raw nor
     \label{fig:controlled-turnover}
 \end{figure*}
 
-\subsection{Context specificity creates the decreasing branch}
+\subsection{Context mixing at equal exposure}
 
 At equal exposure, increasing \(\lambda\) progressively flattens the norm-degree curve.
 Full mixing gives a mean norm of \(0.9488\) in both the lowest and highest degree bins.
-This intervention removes node-specific context information without changing the context marginal or the total positive-pair budget.
-The decreasing branch therefore depends on conditional context structure rather than center exposure alone.
+The total positive-center budget is fixed, but integer allocation can change the context marginal and hence the negative-sampling distribution.
+The contrast therefore establishes sensitivity to context sampling at fixed exposure without isolating context specificity from noise changes.
 
 A quadratic response surface in log exposure and scalar context KL was declared before the held-out runs.
+This controlled fit uses the intended KL before allocation; the saved empirical KL can differ.
 It failed at the strongest subsampling threshold: the observed curve peaked near degree \(7.73\), whereas the model predicted a monotone increase through the highest bin near degree \(16.04\).
 A degree-bin-specific interpolation across \(\beta\), added after inspecting this failure, matched the held-out curve with pooled root-mean-square error \(0.013\) and placed the peak in the correct bin.
 We treat this second fit as exploratory because its form was chosen after the global model failed.
+
+\subsection{Wider windows with fixed exposure and negative sampling}
+\label{sec:fixed-noise-windows}
+
+We separately fit the exact expected loss with \(P_L=L^{-1}\sum_{r=1}^L T^r\), holding each graph, uniform center share \(c_i=1/600\), negative proposal \(q=\pi\), five collision-allowing negatives, and rank 24 fixed.
+Two matched starts on each of five graphs were continued for up to 3000 additional iterations using score-preserving balanced restarts of L-BFGS.
+From window five to ten, the highest-minus-preceding degree-bin norm gap weakens from \(-0.3258\pm0.0155\) to \(-0.2173\pm0.0123\); the corresponding KL gap changes from \(-0.2980\pm0.0142\) to \(-0.1303\pm0.0063\) (Fig.~\ref{fig:fixed-noise-windows}).
+Both absolute contrasts weaken in every graph and start.
+Norm declines normalized by the preceding bin also weaken, from \(12.31\%\) to \(10.03\%\), whereas relative KL declines increase; no common scale-free law follows.
+Seven of ten window-five fits and all ten window-ten fits pass the predefined repeated loss, gradient, score, and norm stability checks; this does not certify global optimality.
+Window ten has full positive support and still declining norms, so missing context pairs are not necessary for that decline.
+
+The initial 500-iteration endpoints suggest monotone attenuation across windows one through ten, but this trend disappears under continuation; short-window results remain diagnostics rather than settled norm curves.
+Two window-one fits lie within \(1.303\times10^{-6}\) and \(7.327\times10^{-7}\) of the unrestricted loss infimum, bounding their rank-24 objective suboptimality above, yet their highest-bin balanced norms change by \(5.01\%\) and \(1.13\%\) in the final block.
+Thus nearly optimal loss can coexist with unsettled norm geometry beyond gauge ambiguity, consistent with the boundary in Proposition~\ref{prop:loss-norm-boundary}; these finite trajectories do not prove divergence or non-attainment at rank 24.
+
+\begin{figure*}[t]
+    \includegraphics[width=\textwidth]{wide_window_comparison}
+    \caption{
+        Context mixing at fixed graph, exposure, and negative sampling.
+        Window five versus ten for exact expected-loss fits.
+        Points and error bars show means and standard errors across five graphs, after averaging two starts within each graph; faint curves show individual graphs.
+        The labels count fits meeting the predefined stability criteria.
+        Both absolute declines weaken, while a decreasing norm-degree relation remains at full support.
+    }
+    \label{fig:fixed-noise-windows}
+\end{figure*}
+
+Reconstructing all forty final fits from saved factors separates overall scale from shape (Fig.~\ref{fig:norm-identifiability}).
+After dividing each fit's balanced radii by their node-level RMS, the upper-bin gap changes from \(-0.1129\pm0.0054\) at window five to \(-0.0934\pm0.0053\) at window ten; the decline weakens in every paired graph and start.
+Normalized node-level RMS differences between starts span \(0.984\)--\(1.187\) at window one and \(0.487\)--\(0.886\) at window two, versus at most \(0.00452\) and \(5.54\times10^{-5}\) at windows five and ten.
+Short-window differences include large low-degree outliers, and the paired loss gaps do not establish two equally near-optimal shapes at the tight tolerances attained by the best single fits.
+The exact construction in Proposition~\ref{prop:normalized-shapes} supplies that logical counterexample separately.
+A conservative full-support loss-to-radius bound is uninformative for all ten window-ten fits; their agreement supports numerical robustness, not certified uniqueness of rank-24 geometry.
+
+\begin{figure*}[t]
+    \includegraphics[width=\textwidth]{norm_identifiability}
+    \caption{
+        Objective accuracy and normalized balanced shape.
+        (a) The exact four-node construction has three distinct profiles at a common RMS, each within \(10^{-6}\) of the same loss infimum.
+        (b) Saved window-five and window-ten fits, normalized separately before averaging starts within graph; error bars are graph-level standard errors and faint lines show individual graphs.
+        (c) Node-level RMS differences between the two normalized starts on every graph, including unsettled short windows; the dotted line is the geometric bound \(\sqrt2\).
+        Agreement between starts does not certify uniqueness or global optimality.
+    }
+    \label{fig:norm-identifiability}
+\end{figure*}
 
 \subsection{Literal word2vec validation}
 
@@ -1029,19 +1163,21 @@ The prospective result supports qualitative transfer and approximate peak locali
 
 The established population results provide a baseline for interpreting finite-training experiments.
 Normalized spectral embeddings and raw random-walk pair probabilities preserve degree as a radial multiplier, with exponents \(1/2\) and \(1\), respectively.
-Unigram SGNS removes node propensity from its population score, but finite stochastic optimization reintroduces a norm-frequency relation through unequal exposure.
-Context specificity supplies a second contribution with the opposite degree dependence.
+For \(F_{ab}>0\) on all block pairs, unigram population degree cancellation concerns an idealized score matrix; realized contexts change that target, while rank constraints, factorization, and optimization determine the resulting norms.
+Balancing removes factorization ambiguity, but nearly optimal loss alone can leave norm geometry unsettled and, in the exact construction, permit different shapes even after RMS normalization (Propositions~\ref{prop:loss-norm-boundary} and~\ref{prop:normalized-shapes}).
+Structural interpretation therefore requires a specified graph-conditioned target and evidence about the accuracy and stability of the balanced norm readout; repeated-start agreement supports robustness without proving uniqueness.
+An account of the empirical inverted-U must explain these additional stages; its complete explanation remains a future question.
 
 This separation sharpens the qualitative account proposed for word and trajectory embeddings~\citep{schakel2015measuring,wilson2015controlled,murray2023unsupervised}.
-Sublinear but increasing exposure is sufficient for the rising branch, while declining context specificity can supply the falling branch even as exposure continues to grow.
-Turnover appears when the marginal norm gain from exposure becomes weaker than the norm loss associated with less specific contexts.
+The specified exposure and context interventions generate increasing, decreasing, and inverted-U curves even while exposure grows.
+Within the response model, turnover occurs when the marginal norm gain from exposure becomes weaker than the norm loss associated with less specific contexts.
 Standard word2vec subsampling makes retained-token exposure grow asymptotically as the square root of frequency, but this scaling does not establish the origin of the observed norm turnover.
 The corrected controls show turnover without subsampling under the original annealing schedule, while a constant-rate alternative gives increasing unfiltered curves at twenty epochs.
 Thus learning-rate history is an additional experimentally demonstrated dependence; the exposure--specificity account has not been established as a complete mechanism for the Gensim curves.
 Frozen predictions from exposure and context KL preserved node-norm ordering and approximate peak movement across two unseen synthetic graph families and one empirical graph.
 
 The numerical evidence has clear limits.
-We used small graphs, one-step contexts, and a fixed SGNS implementation and hyperparameter set.
+Most experiments use small graphs and one-step contexts; the fixed-noise window comparison additionally uses exact multi-step contexts and a separate expected-loss optimizer.
 The five NetScience replicates resample walks and optimization on one graph rather than supplying five independent empirical networks.
 External subsampling in the prospective test made every positive pair observable but differs from the usual internal word2vec implementation.
 The raw center norm depends on the optimizer-selected gauge, although the balanced norm gives the same qualitative curves here.
@@ -1049,7 +1185,7 @@ Matching retained-center counts does not exactly match realized positive pairs a
 The global scalar response surface failed at the strongest held-out turnover, and the more accurate degree-bin interpolation was chosen after that failure.
 The extremely randomized tree model was also chosen after the initial experiments, so only its evaluation on the three new target families is prospective.
 Although it passed all declared criteria, it missed one peak by two bins, misclassified two boundary peaks, and overestimated the NetScience norm level.
-The present evidence therefore supports a causal mechanism in the controlled model and qualitative transfer across graph topologies, without providing a universal response curve or a calibrated peak for natural sequence data.
+The present evidence supports effects of the specified interventions and qualitative transfer across graph topologies, without identifying a unique mechanism or a calibrated peak for natural sequence data.
 
 Before transfer to natural sequences, the next tests should separate realized-graph sparsity from training dynamics and isolate learning-rate history at fixed graph and corpus.
 Predictions should be frozen before any new target training.
@@ -1059,9 +1195,9 @@ General node2vec also requires a second-order state-space analysis on directed e
 
 Random-walk embeddings do not have a single norm-degree law.
 The normalized eigenspace, raw pair distribution, population SGNS score, and finite trained factors encode degree in different ways.
-Under finite SGNS training, increasing exposure and decreasing context specificity can generate the observed inverted-U even when exposure remains strictly increasing.
+Under finite SGNS training, the exposure and context-sampling interventions produce an inverted-U even when exposure remains strictly increasing.
 Hash-locked target predictions recover its approximate peak movement across new graph topologies, with identifiable boundary failures.
-Interpreting embedding norms therefore requires naming the population operator, negative-sampling distribution, factorization gauge, training exposure, and learning-rate history.
+Interpreting embedding norms therefore requires naming the population operator, realized contexts, negative-sampling distribution, factorization gauge, and training procedure (including learning-rate history), and checking stability of the norm geometry itself.
 
 \section*{Data Availability}
 

@@ -1,0 +1,23 @@
+{
+  "figure_tolerance": 1e-06,
+  "input_sha256": {
+    "empirical/manifest.json": "2295cec1194241ca2271b4b180b8e65d5c9ead428dce17795199bccfd7181d08",
+    "empirical/nodes.json": "747ab351c0cc19b68f97836104ed5837519ef7f326bbef189d73deadb40050b9",
+    "empirical/summary.json": "a439c0850cf14ddd91e62c223d25afad6e969639ebdfc7827bc4f9df2f99c395",
+    "empirical/tables.md": "d51f2eb33d4d5d14123d8d1c1d68f2dadf08f93593c880f79f6a41a72f0f4d52",
+    "empirical/targets.json": "2272e27ab6cf02d1982293f96bd8612d2cea245a53b77b5a85c4bf1de0615007",
+    "exact/exact.json": "7cef7ce4cad7bb297c657c60db5a5f7e5d28bd2a43518d45d4eeaf18a5775c9e",
+    "exact/manifest.json": "b0759c58899e8e6d2d1e78f6df057c27b87636d46bb152e8ea78eac6ee4df377"
+  },
+  "matplotlib": "3.10.8",
+  "numpy": "2.4.1",
+  "output_sha256": {
+    "norm_identifiability.pdf": "b410f94c997ba0d5b811e932964238f9d6bcde76c69b60d415a831493d2b67bd",
+    "norm_identifiability.png": "f2e01efde8f51a45f37407350fd38f10ddf67e92a2adac078a936cefc2197648",
+    "normalized_all_nodes.pdf": "3a6063f5f299692851d42b0665cfb8b3056a72f0f1d1789b0d10a3dc952220de",
+    "normalized_all_nodes.png": "3fb5e9bbd354730bf5556667670da8b01e44119ae9cbe2230f75e8d764dc5a71"
+  },
+  "source_sha256": {
+    "scripts/window_training/plot_norm_identifiability.py": "69714ebe6f510278611717f64084f7b34250cf0aca7e902ba75b9272fa2dde9c"
+  }
+}

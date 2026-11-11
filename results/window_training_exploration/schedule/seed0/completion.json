@@ -1,0 +1,18 @@
+{
+  "factors/floor_epoch10.npz": "06a4fe0453578fdc4cbeb4c2b45bc38e71d5284415bbb8d775b3bdc0cf9df83b",
+  "factors/floor_epoch15.npz": "bbf8d5cfdf682a88fdbc0e218ea052f73be2e12bf2f495ba211645712f8ffb9b",
+  "factors/floor_epoch20.npz": "17547c37016df5dd0c6dcec4a955b09eb83971189f57d5cb1cb1ccfdff3d374e",
+  "factors/floor_epoch5.npz": "b74f3d1d456c09eb9e8195a82c246f3ac60b2d35a3166788743752dea0ac1aec",
+  "factors/floor_epoch6.npz": "76c63cb836bc34b9f6d19501ab853fa9ddeacbc773de283aaba92e981c894145",
+  "factors/floor_epoch7.npz": "9a390b78d2c7f9a8ecb2f231c10fb741f40c797737957148d5afe47a6d56959c",
+  "factors/reheat_epoch10.npz": "d7105907d9c5342eb6183ab15110b980f9d2ae49af01e97535f21cf420aafbda",
+  "factors/reheat_epoch15.npz": "516ffcc52e83ba548701a9afd13234577f555f5fb089b39a40496b8072bb2757",
+  "factors/reheat_epoch20.npz": "b9b363d2ab965b707dce2e58ce1cafa9570b31eb1e39035aa14df919962fe40b",
+  "factors/reheat_epoch5.npz": "b74f3d1d456c09eb9e8195a82c246f3ac60b2d35a3166788743752dea0ac1aec",
+  "factors/reheat_epoch6.npz": "50edf3283549929aab877c2f8242ed0a8ef7357137063ea9ddfad8777d540b06",
+  "factors/reheat_epoch7.npz": "2b1b9012b277be7e281fca91396a37940345ab6a961ad46775475403e4b71b0d",
+  "floor.json": "086cc7b6a43fee8ee5dcf5616848c2f8835b2029a994e79480f0857a5ea0767b",
+  "metadata.json": "6535ae61ad7e7c5291a7e5361c06994cea94f5a4b9893b3e1c0a82be5ca3d5c4",
+  "pairing.json": "6f3a3c512169c7b347f5a2c1dab6c781b710a8c3c34657556e0fc27dbaf5f6fa",
+  "reheat.json": "1380b46b31a57327d59fa70752bab37ac3711e122daa6c03d4809e7502d1277a"
+}
