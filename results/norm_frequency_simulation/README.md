@@ -10,3 +10,7 @@ not revalidate their Gensim training outputs; implementation corrections and
 training controls are in PRs #35 and #36. See
 [`analysis/issue20_realized_graph_audit.md`](../../analysis/issue20_realized_graph_audit.md)
 for the distinction and diagnostic scope.
+
+Its `frequency` axis and gauge direction used walk-visit counts, not token
+counts (issue 44). The rerun with token counts and the corrected build is in
+[`../issue44_token_counts/`](../issue44_token_counts/README.md).

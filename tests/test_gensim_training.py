@@ -185,17 +185,23 @@ def test_supplied_raw_counts_follow_node_ids(
     )
 
 
-def test_walk_counts_include_every_repeated_visit() -> None:
+@pytest.mark.parametrize(
+    ("total_walks", "walk_length", "walk", "expected"),
+    [(1, 3, [0, 1, 0], [2, 1]), (3, 5, [0, 1, 0, 1, 0], [9, 6])],
+)
+def test_walk_counts_include_every_repeated_visit(
+    total_walks: int, walk_length: int, walk: list[int], expected: list[int]
+) -> None:
     walks, counts = simulation.sample_walks(
         [np.array([1]), np.array([0])],
         np.array([1.0, 0.0]),
-        total_walks=3,
-        walk_length=5,
+        total_walks=total_walks,
+        walk_length=walk_length,
         rng=np.random.default_rng(123),
     )
-    assert walks == [[0, 1, 0, 1, 0]] * 3
-    np.testing.assert_array_equal(counts, [9, 6])
-    assert counts.sum() == sum(map(len, walks))
+    assert walks == [walk] * total_walks
+    np.testing.assert_array_equal(counts, expected)
+    assert counts.sum() == total_walks * walk_length
 
 
 def test_blas_failure_prevents_training(

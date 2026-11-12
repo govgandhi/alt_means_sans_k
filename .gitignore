@@ -7,6 +7,9 @@ are_angles_important/*.inf_log
 *.csv
 # Reproducible synthetic output needed by the issue 21 baseline checks.
 !results/subsampling_origin/outcomes.csv
+# Node-level evidence for the issue 44 token-count reruns and count audit.
+!results/issue44_token_counts/count_audit_nodes.csv
+!results/issue44_token_counts/*/node_results.csv
 *.tsv
 *.parquet
 *.pkl

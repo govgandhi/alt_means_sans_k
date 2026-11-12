@@ -1,0 +1,3164 @@
+{
+  "note": "norm_frequency/standard and no_subsampling share one corpus per seed; it is also the threshold-sweep, subsampling-origin and prospective calibration corpus (configuration graph seed s, walk seed 10000 + s).",
+  "corpora": [
+    {
+      "corpus": "norm_frequency/standard",
+      "seed": 0,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 802813,
+      "visit_over_token": 0.8920144444444444,
+      "node_ratio_min": 0.7649812734082397,
+      "node_ratio_max": 0.9815789473684211,
+      "share_ratio_min": 0.8575884372418182,
+      "share_ratio_max": 1.1004070096418206,
+      "log_log_slope_on_degree_token": 0.9991495989645404,
+      "log_log_slope_on_degree_visit": 0.9983148216047745,
+      "degree_bins": [
+        {
+          "nodes": 258,
+          "geometric_mean_degree": 2.977877984512542,
+          "token_count": 197235,
+          "walk_visit_count": 176835,
+          "visit_over_token": 0.8965700813750095
+        },
+        {
+          "nodes": 96,
+          "geometric_mean_degree": 4.0,
+          "token_count": 98361,
+          "walk_visit_count": 86746,
+          "visit_over_token": 0.8819145799656368
+        },
+        {
+          "nodes": 77,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 98244,
+          "walk_visit_count": 87847,
+          "visit_over_token": 0.8941716542486056
+        },
+        {
+          "nodes": 39,
+          "geometric_mean_degree": 6.0,
+          "token_count": 59434,
+          "walk_visit_count": 53212,
+          "visit_over_token": 0.8953124474206683
+        },
+        {
+          "nodes": 58,
+          "geometric_mean_degree": 7.815711459636512,
+          "token_count": 116864,
+          "walk_visit_count": 104196,
+          "visit_over_token": 0.8916004928806134
+        },
+        {
+          "nodes": 72,
+          "geometric_mean_degree": 15.554254556174802,
+          "token_count": 329862,
+          "walk_visit_count": 293977,
+          "visit_over_token": 0.8912120826284932
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 595,
+          "downsampled_nodes_visit_law": 574,
+          "max_relative_keep_difference": 0.10868917714064241,
+          "min_relative_keep_difference": -0.06334403626456264,
+          "expected_retained_tokens_token_law": 519044.7596114321,
+          "expected_retained_tokens_visit_law": 518917.55763220077,
+          "visit_count_times_visit_keep": 462889.0728239322
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 75,
+          "downsampled_nodes_visit_law": 76,
+          "max_relative_keep_difference": 0.04034742473956521,
+          "min_relative_keep_difference": -0.04034742473956521,
+          "expected_retained_tokens_token_law": 775571.738746938,
+          "expected_retained_tokens_visit_law": 775385.8587563414,
+          "visit_count_times_visit_keep": 692028.795216298
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 10,
+          "downsampled_nodes_visit_law": 10,
+          "max_relative_keep_difference": 0.012687258939829471,
+          "min_relative_keep_difference": -0.011796592557107077,
+          "expected_retained_tokens_token_law": 869057.6972511872,
+          "expected_retained_tokens_visit_law": 869405.4387158275,
+          "visit_count_times_visit_keep": 775812.7760904857
+        }
+      },
+      "budget_matched_epochs": {
+        "walk_visit_counts": {
+          "t3e-4": {
+            "retained_per_epoch": 462889.0728239322,
+            "unrounded_epochs": 8.380115470835271,
+            "epochs": 8
+          },
+          "t1e-3": {
+            "retained_per_epoch": 692028.795216298,
+            "unrounded_epochs": 5.605350394762119,
+            "epochs": 6
+          },
+          "t3e-3": {
+            "retained_per_epoch": 775812.7760904857,
+            "unrounded_epochs": 5.0,
+            "epochs": 5
+          }
+        },
+        "token_counts": {
+          "t3e-4": {
+            "retained_per_epoch": 519044.7596114321,
+            "unrounded_epochs": 8.371702836396828,
+            "epochs": 8
+          },
+          "t1e-3": {
+            "retained_per_epoch": 775571.738746938,
+            "unrounded_epochs": 5.602690594781671,
+            "epochs": 6
+          },
+          "t3e-3": {
+            "retained_per_epoch": 869057.6972511872,
+            "unrounded_epochs": 5.000000000000001,
+            "epochs": 5
+          }
+        }
+      }
+    },
+    {
+      "corpus": "norm_frequency/uniform_starts",
+      "seed": 0,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 801216,
+      "visit_over_token": 0.89024,
+      "node_ratio_min": 0.7440912795436023,
+      "node_ratio_max": 0.9842312746386334,
+      "share_ratio_min": 0.8358322245053045,
+      "share_ratio_max": 1.105579702820176,
+      "log_log_slope_on_degree_token": 0.77673006085493,
+      "log_log_slope_on_degree_visit": 0.7944528245179419,
+      "degree_bins": [
+        {
+          "nodes": 258,
+          "geometric_mean_degree": 2.977877984512542,
+          "token_count": 242723,
+          "walk_visit_count": 213092,
+          "visit_over_token": 0.8779225701725836
+        },
+        {
+          "nodes": 96,
+          "geometric_mean_degree": 4.0,
+          "token_count": 111728,
+          "walk_visit_count": 97435,
+          "visit_over_token": 0.8720732493197766
+        },
+        {
+          "nodes": 77,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 102327,
+          "walk_visit_count": 90814,
+          "visit_over_token": 0.8874881507324558
+        },
+        {
+          "nodes": 39,
+          "geometric_mean_degree": 6.0,
+          "token_count": 59159,
+          "walk_visit_count": 52851,
+          "visit_over_token": 0.89337209891986
+        },
+        {
+          "nodes": 58,
+          "geometric_mean_degree": 7.815711459636512,
+          "token_count": 109448,
+          "walk_visit_count": 97985,
+          "visit_over_token": 0.8952653314816168
+        },
+        {
+          "nodes": 72,
+          "geometric_mean_degree": 15.554254556174802,
+          "token_count": 274615,
+          "walk_visit_count": 249039,
+          "visit_over_token": 0.9068659760027675
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 598,
+          "downsampled_nodes_visit_law": 597,
+          "max_relative_keep_difference": 0.12656929852572119,
+          "min_relative_keep_difference": -0.06632360372413293,
+          "expected_retained_tokens_token_law": 528504.8723050545,
+          "expected_retained_tokens_visit_law": 530022.3251296823,
+          "visit_count_times_visit_keep": 470000.8498119843
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 64,
+          "downsampled_nodes_visit_law": 63,
+          "max_relative_keep_difference": 0.03529693439045056,
+          "min_relative_keep_difference": -0.03529693439045056,
+          "expected_retained_tokens_token_law": 818363.701970887,
+          "expected_retained_tokens_visit_law": 816373.4597285262,
+          "visit_count_times_visit_keep": 725340.6103438304
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 8,
+          "downsampled_nodes_visit_law": 8,
+          "max_relative_keep_difference": 0.020029111892976847,
+          "min_relative_keep_difference": -0.020029111892976847,
+          "expected_retained_tokens_token_law": 885245.8638003583,
+          "expected_retained_tokens_visit_law": 884443.0124554022,
+          "visit_count_times_visit_keep": 787136.9378289874
+        }
+      }
+    },
+    {
+      "corpus": "norm_frequency/no_subsampling",
+      "seed": 0,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 802813,
+      "visit_over_token": 0.8920144444444444,
+      "node_ratio_min": 0.7649812734082397,
+      "node_ratio_max": 0.9815789473684211,
+      "share_ratio_min": 0.8575884372418182,
+      "share_ratio_max": 1.1004070096418206,
+      "log_log_slope_on_degree_token": 0.9991495989645404,
+      "log_log_slope_on_degree_visit": 0.9983148216047745,
+      "degree_bins": [
+        {
+          "nodes": 258,
+          "geometric_mean_degree": 2.977877984512542,
+          "token_count": 197235,
+          "walk_visit_count": 176835,
+          "visit_over_token": 0.8965700813750095
+        },
+        {
+          "nodes": 96,
+          "geometric_mean_degree": 4.0,
+          "token_count": 98361,
+          "walk_visit_count": 86746,
+          "visit_over_token": 0.8819145799656368
+        },
+        {
+          "nodes": 77,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 98244,
+          "walk_visit_count": 87847,
+          "visit_over_token": 0.8941716542486056
+        },
+        {
+          "nodes": 39,
+          "geometric_mean_degree": 6.0,
+          "token_count": 59434,
+          "walk_visit_count": 53212,
+          "visit_over_token": 0.8953124474206683
+        },
+        {
+          "nodes": 58,
+          "geometric_mean_degree": 7.815711459636512,
+          "token_count": 116864,
+          "walk_visit_count": 104196,
+          "visit_over_token": 0.8916004928806134
+        },
+        {
+          "nodes": 72,
+          "geometric_mean_degree": 15.554254556174802,
+          "token_count": 329862,
+          "walk_visit_count": 293977,
+          "visit_over_token": 0.8912120826284932
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 595,
+          "downsampled_nodes_visit_law": 574,
+          "max_relative_keep_difference": 0.10868917714064241,
+          "min_relative_keep_difference": -0.06334403626456264,
+          "expected_retained_tokens_token_law": 519044.7596114321,
+          "expected_retained_tokens_visit_law": 518917.55763220077,
+          "visit_count_times_visit_keep": 462889.0728239322
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 75,
+          "downsampled_nodes_visit_law": 76,
+          "max_relative_keep_difference": 0.04034742473956521,
+          "min_relative_keep_difference": -0.04034742473956521,
+          "expected_retained_tokens_token_law": 775571.738746938,
+          "expected_retained_tokens_visit_law": 775385.8587563414,
+          "visit_count_times_visit_keep": 692028.795216298
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 10,
+          "downsampled_nodes_visit_law": 10,
+          "max_relative_keep_difference": 0.012687258939829471,
+          "min_relative_keep_difference": -0.011796592557107077,
+          "expected_retained_tokens_token_law": 869057.6972511872,
+          "expected_retained_tokens_visit_law": 869405.4387158275,
+          "visit_count_times_visit_keep": 775812.7760904857
+        }
+      }
+    },
+    {
+      "corpus": "norm_frequency/regular_control",
+      "seed": 0,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 805227,
+      "visit_over_token": 0.8946966666666667,
+      "node_ratio_min": 0.8360655737704918,
+      "node_ratio_max": 0.9307479224376731,
+      "share_ratio_min": 0.9344681889621717,
+      "share_ratio_max": 1.0402943892764474,
+      "log_log_slope_on_degree_token": null,
+      "log_log_slope_on_degree_visit": null,
+      "degree_bins": [
+        {
+          "nodes": 600,
+          "geometric_mean_degree": 6.0,
+          "token_count": 900000,
+          "walk_visit_count": 805227,
+          "visit_over_token": 0.8946966666666667
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 600,
+          "downsampled_nodes_visit_law": 600,
+          "max_relative_keep_difference": 0.04155413465460467,
+          "min_relative_keep_difference": -0.025944024597424842,
+          "expected_retained_tokens_token_law": 541223.9412347686,
+          "expected_retained_tokens_visit_law": 540434.5122408883,
+          "visit_count_times_visit_keep": 484527.80645954417
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 14,
+          "downsampled_nodes_visit_law": 13,
+          "max_relative_keep_difference": 0.04558116678462776,
+          "min_relative_keep_difference": 0.0,
+          "expected_retained_tokens_token_law": 888719.880562562,
+          "expected_retained_tokens_visit_law": 889939.6746678664,
+          "visit_count_times_visit_keep": 796726.8909426708
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 0,
+          "downsampled_nodes_visit_law": 0,
+          "max_relative_keep_difference": 0.0,
+          "min_relative_keep_difference": 0.0,
+          "expected_retained_tokens_token_law": 900000.0,
+          "expected_retained_tokens_visit_law": 900000.0,
+          "visit_count_times_visit_keep": 805227.0
+        }
+      }
+    },
+    {
+      "corpus": "norm_frequency/standard",
+      "seed": 1,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 802656,
+      "visit_over_token": 0.89184,
+      "node_ratio_min": 0.7041343669250646,
+      "node_ratio_max": 0.9830287206266318,
+      "share_ratio_min": 0.7895299234448607,
+      "share_ratio_max": 1.1022478478500985,
+      "log_log_slope_on_degree_token": 0.998859764255835,
+      "log_log_slope_on_degree_visit": 0.9993026004452261,
+      "degree_bins": [
+        {
+          "nodes": 247,
+          "geometric_mean_degree": 2.9817873616160906,
+          "token_count": 189300,
+          "walk_visit_count": 169059,
+          "visit_over_token": 0.8930744849445325
+        },
+        {
+          "nodes": 116,
+          "geometric_mean_degree": 4.0,
+          "token_count": 119650,
+          "walk_visit_count": 106823,
+          "visit_over_token": 0.8927956539908065
+        },
+        {
+          "nodes": 68,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 87018,
+          "walk_visit_count": 77840,
+          "visit_over_token": 0.8945275690087109
+        },
+        {
+          "nodes": 41,
+          "geometric_mean_degree": 6.0,
+          "token_count": 63176,
+          "walk_visit_count": 55957,
+          "visit_over_token": 0.885731923515259
+        },
+        {
+          "nodes": 53,
+          "geometric_mean_degree": 7.805501281654378,
+          "token_count": 106778,
+          "walk_visit_count": 95811,
+          "visit_over_token": 0.8972915769165933
+        },
+        {
+          "nodes": 75,
+          "geometric_mean_degree": 15.494253315222716,
+          "token_count": 334078,
+          "walk_visit_count": 297166,
+          "visit_over_token": 0.8895108327995258
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 592,
+          "downsampled_nodes_visit_law": 577,
+          "max_relative_keep_difference": 0.08613192193111585,
+          "min_relative_keep_difference": -0.06436816636803744,
+          "expected_retained_tokens_token_law": 520153.9687001436,
+          "expected_retained_tokens_visit_law": 519917.01754884666,
+          "visit_count_times_visit_keep": 463770.3780783851
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 76,
+          "downsampled_nodes_visit_law": 80,
+          "max_relative_keep_difference": 0.0362514007953576,
+          "min_relative_keep_difference": -0.0362514007953576,
+          "expected_retained_tokens_token_law": 778876.9850651424,
+          "expected_retained_tokens_visit_law": 778769.9437616456,
+          "visit_count_times_visit_keep": 695123.617702107
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 8,
+          "downsampled_nodes_visit_law": 8,
+          "max_relative_keep_difference": 0.021932624307670512,
+          "min_relative_keep_difference": -0.005875687765353854,
+          "expected_retained_tokens_token_law": 876173.285903299,
+          "expected_retained_tokens_visit_law": 876628.0561226192,
+          "visit_count_times_visit_keep": 782102.6651795222
+        }
+      },
+      "budget_matched_epochs": {
+        "walk_visit_counts": {
+          "t3e-4": {
+            "retained_per_epoch": 463770.3780783851,
+            "unrounded_epochs": 8.432003229918811,
+            "epochs": 8
+          },
+          "t1e-3": {
+            "retained_per_epoch": 695123.617702107,
+            "unrounded_epochs": 5.625637262656568,
+            "epochs": 6
+          },
+          "t3e-3": {
+            "retained_per_epoch": 782102.6651795222,
+            "unrounded_epochs": 5.0,
+            "epochs": 5
+          }
+        },
+        "token_counts": {
+          "t3e-4": {
+            "retained_per_epoch": 520153.9687001436,
+            "unrounded_epochs": 8.422249359096902,
+            "epochs": 8
+          },
+          "t1e-3": {
+            "retained_per_epoch": 778876.9850651424,
+            "unrounded_epochs": 5.624593502592833,
+            "epochs": 6
+          },
+          "t3e-3": {
+            "retained_per_epoch": 876173.285903299,
+            "unrounded_epochs": 5.0,
+            "epochs": 5
+          }
+        }
+      }
+    },
+    {
+      "corpus": "norm_frequency/uniform_starts",
+      "seed": 1,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 800371,
+      "visit_over_token": 0.8893011111111111,
+      "node_ratio_min": 0.6424581005586593,
+      "node_ratio_max": 0.9822485207100592,
+      "share_ratio_min": 0.7224303360601438,
+      "share_ratio_max": 1.1045173658703942,
+      "log_log_slope_on_degree_token": 0.7711033865108747,
+      "log_log_slope_on_degree_visit": 0.7918425370683816,
+      "degree_bins": [
+        {
+          "nodes": 247,
+          "geometric_mean_degree": 2.9817873616160906,
+          "token_count": 234004,
+          "walk_visit_count": 204138,
+          "visit_over_token": 0.8723697030819986
+        },
+        {
+          "nodes": 116,
+          "geometric_mean_degree": 4.0,
+          "token_count": 133425,
+          "walk_visit_count": 117645,
+          "visit_over_token": 0.8817313097245644
+        },
+        {
+          "nodes": 68,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 89858,
+          "walk_visit_count": 79969,
+          "visit_over_token": 0.8899485855460838
+        },
+        {
+          "nodes": 41,
+          "geometric_mean_degree": 6.0,
+          "token_count": 63874,
+          "walk_visit_count": 56598,
+          "visit_over_token": 0.8860882362150484
+        },
+        {
+          "nodes": 53,
+          "geometric_mean_degree": 7.805501281654378,
+          "token_count": 97514,
+          "walk_visit_count": 87677,
+          "visit_over_token": 0.8991221773283836
+        },
+        {
+          "nodes": 75,
+          "geometric_mean_degree": 15.494253315222716,
+          "token_count": 281325,
+          "walk_visit_count": 254344,
+          "visit_over_token": 0.9040931307206967
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 600,
+          "downsampled_nodes_visit_law": 599,
+          "max_relative_keep_difference": 0.23685514662668483,
+          "min_relative_keep_difference": -0.06515106445196583,
+          "expected_retained_tokens_token_law": 529152.0637016005,
+          "expected_retained_tokens_visit_law": 530642.1797686432,
+          "visit_count_times_visit_keep": 470111.83110259264
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 65,
+          "downsampled_nodes_visit_law": 66,
+          "max_relative_keep_difference": 0.04404586065036542,
+          "min_relative_keep_difference": -0.04404586065036542,
+          "expected_retained_tokens_token_law": 819026.3069278832,
+          "expected_retained_tokens_visit_law": 817366.4398156942,
+          "visit_count_times_visit_keep": 725694.9766858825
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 6,
+          "downsampled_nodes_visit_law": 7,
+          "max_relative_keep_difference": 0.02497427790299911,
+          "min_relative_keep_difference": -0.02497427790299911,
+          "expected_retained_tokens_token_law": 888213.9332238575,
+          "expected_retained_tokens_visit_law": 887620.6950890908,
+          "visit_count_times_visit_keep": 789204.671967452
+        }
+      }
+    },
+    {
+      "corpus": "norm_frequency/no_subsampling",
+      "seed": 1,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 802656,
+      "visit_over_token": 0.89184,
+      "node_ratio_min": 0.7041343669250646,
+      "node_ratio_max": 0.9830287206266318,
+      "share_ratio_min": 0.7895299234448607,
+      "share_ratio_max": 1.1022478478500985,
+      "log_log_slope_on_degree_token": 0.998859764255835,
+      "log_log_slope_on_degree_visit": 0.9993026004452261,
+      "degree_bins": [
+        {
+          "nodes": 247,
+          "geometric_mean_degree": 2.9817873616160906,
+          "token_count": 189300,
+          "walk_visit_count": 169059,
+          "visit_over_token": 0.8930744849445325
+        },
+        {
+          "nodes": 116,
+          "geometric_mean_degree": 4.0,
+          "token_count": 119650,
+          "walk_visit_count": 106823,
+          "visit_over_token": 0.8927956539908065
+        },
+        {
+          "nodes": 68,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 87018,
+          "walk_visit_count": 77840,
+          "visit_over_token": 0.8945275690087109
+        },
+        {
+          "nodes": 41,
+          "geometric_mean_degree": 6.0,
+          "token_count": 63176,
+          "walk_visit_count": 55957,
+          "visit_over_token": 0.885731923515259
+        },
+        {
+          "nodes": 53,
+          "geometric_mean_degree": 7.805501281654378,
+          "token_count": 106778,
+          "walk_visit_count": 95811,
+          "visit_over_token": 0.8972915769165933
+        },
+        {
+          "nodes": 75,
+          "geometric_mean_degree": 15.494253315222716,
+          "token_count": 334078,
+          "walk_visit_count": 297166,
+          "visit_over_token": 0.8895108327995258
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 592,
+          "downsampled_nodes_visit_law": 577,
+          "max_relative_keep_difference": 0.08613192193111585,
+          "min_relative_keep_difference": -0.06436816636803744,
+          "expected_retained_tokens_token_law": 520153.9687001436,
+          "expected_retained_tokens_visit_law": 519917.01754884666,
+          "visit_count_times_visit_keep": 463770.3780783851
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 76,
+          "downsampled_nodes_visit_law": 80,
+          "max_relative_keep_difference": 0.0362514007953576,
+          "min_relative_keep_difference": -0.0362514007953576,
+          "expected_retained_tokens_token_law": 778876.9850651424,
+          "expected_retained_tokens_visit_law": 778769.9437616456,
+          "visit_count_times_visit_keep": 695123.617702107
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 8,
+          "downsampled_nodes_visit_law": 8,
+          "max_relative_keep_difference": 0.021932624307670512,
+          "min_relative_keep_difference": -0.005875687765353854,
+          "expected_retained_tokens_token_law": 876173.285903299,
+          "expected_retained_tokens_visit_law": 876628.0561226192,
+          "visit_count_times_visit_keep": 782102.6651795222
+        }
+      }
+    },
+    {
+      "corpus": "norm_frequency/regular_control",
+      "seed": 1,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 805168,
+      "visit_over_token": 0.8946311111111112,
+      "node_ratio_min": 0.8408514951849975,
+      "node_ratio_max": 0.9277456647398844,
+      "share_ratio_min": 0.9398862667995967,
+      "share_ratio_max": 1.0370147574989268,
+      "log_log_slope_on_degree_token": null,
+      "log_log_slope_on_degree_visit": null,
+      "degree_bins": [
+        {
+          "nodes": 600,
+          "geometric_mean_degree": 6.0,
+          "token_count": 900000,
+          "walk_visit_count": 805168,
+          "visit_over_token": 0.8946311111111112
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 600,
+          "downsampled_nodes_visit_law": 600,
+          "max_relative_keep_difference": 0.03719892532141955,
+          "min_relative_keep_difference": -0.023982016323327193,
+          "expected_retained_tokens_token_law": 541132.7542391028,
+          "expected_retained_tokens_visit_law": 540362.0225602263,
+          "visit_count_times_visit_keep": 484401.49858036044
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 20,
+          "downsampled_nodes_visit_law": 17,
+          "max_relative_keep_difference": 0.04059428403248755,
+          "min_relative_keep_difference": 0.0,
+          "expected_retained_tokens_token_law": 889024.7309306206,
+          "expected_retained_tokens_visit_law": 890282.1261756059,
+          "visit_count_times_visit_keep": 796889.1011018101
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 0,
+          "downsampled_nodes_visit_law": 0,
+          "max_relative_keep_difference": 0.0,
+          "min_relative_keep_difference": 0.0,
+          "expected_retained_tokens_token_law": 900000.0,
+          "expected_retained_tokens_visit_law": 900000.0,
+          "visit_count_times_visit_keep": 805168.0
+        }
+      }
+    },
+    {
+      "corpus": "norm_frequency/standard",
+      "seed": 2,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 802082,
+      "visit_over_token": 0.8912022222222222,
+      "node_ratio_min": 0.7957405614714425,
+      "node_ratio_max": 0.979328165374677,
+      "share_ratio_min": 0.8928844000043614,
+      "share_ratio_max": 1.0988843395528254,
+      "log_log_slope_on_degree_token": 1.0009076188398858,
+      "log_log_slope_on_degree_visit": 0.9983206806031086,
+      "degree_bins": [
+        {
+          "nodes": 256,
+          "geometric_mean_degree": 2.9952522166406466,
+          "token_count": 196424,
+          "walk_visit_count": 175810,
+          "visit_over_token": 0.895053557610068
+        },
+        {
+          "nodes": 110,
+          "geometric_mean_degree": 4.000000000000001,
+          "token_count": 113091,
+          "walk_visit_count": 100492,
+          "visit_over_token": 0.8885941410014944
+        },
+        {
+          "nodes": 63,
+          "geometric_mean_degree": 5.000000000000001,
+          "token_count": 81026,
+          "walk_visit_count": 72295,
+          "visit_over_token": 0.8922444647397132
+        },
+        {
+          "nodes": 40,
+          "geometric_mean_degree": 6.0,
+          "token_count": 61219,
+          "walk_visit_count": 54573,
+          "visit_over_token": 0.8914389323576014
+        },
+        {
+          "nodes": 62,
+          "geometric_mean_degree": 7.7367926613669695,
+          "token_count": 123032,
+          "walk_visit_count": 110201,
+          "visit_over_token": 0.8957100591715976
+        },
+        {
+          "nodes": 69,
+          "geometric_mean_degree": 16.025224207621005,
+          "token_count": 325208,
+          "walk_visit_count": 288711,
+          "visit_over_token": 0.8877733635088928
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 592,
+          "downsampled_nodes_visit_law": 583,
+          "max_relative_keep_difference": 0.07915091098840499,
+          "min_relative_keep_difference": -0.06236640392171644,
+          "expected_retained_tokens_token_law": 519393.45177201787,
+          "expected_retained_tokens_visit_law": 519238.13297015027,
+          "visit_count_times_visit_keep": 462925.71777592145
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 71,
+          "downsampled_nodes_visit_law": 70,
+          "max_relative_keep_difference": 0.03920876796174855,
+          "min_relative_keep_difference": -0.03920876796174855,
+          "expected_retained_tokens_token_law": 773852.5494980187,
+          "expected_retained_tokens_visit_law": 774269.7223356892,
+          "visit_count_times_visit_keep": 690464.3633843802
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 10,
+          "downsampled_nodes_visit_law": 11,
+          "max_relative_keep_difference": 0.016535552886959737,
+          "min_relative_keep_difference": -0.004641916355142106,
+          "expected_retained_tokens_token_law": 870568.1252233916,
+          "expected_retained_tokens_visit_law": 870841.0507000026,
+          "visit_count_times_visit_keep": 776273.0602230406
+        }
+      },
+      "budget_matched_epochs": {
+        "walk_visit_counts": {
+          "t3e-4": {
+            "retained_per_epoch": 462925.71777592145,
+            "unrounded_epochs": 8.384423573965213,
+            "epochs": 8
+          },
+          "t1e-3": {
+            "retained_per_epoch": 690464.3633843802,
+            "unrounded_epochs": 5.621383965553707,
+            "epochs": 6
+          },
+          "t3e-3": {
+            "retained_per_epoch": 776273.0602230406,
+            "unrounded_epochs": 5.0,
+            "epochs": 5
+          }
+        },
+        "token_counts": {
+          "t3e-4": {
+            "retained_per_epoch": 519393.45177201787,
+            "unrounded_epochs": 8.380622842406549,
+            "epochs": 8
+          },
+          "t1e-3": {
+            "retained_per_epoch": 773852.5494980187,
+            "unrounded_epochs": 5.624896666607289,
+            "epochs": 6
+          },
+          "t3e-3": {
+            "retained_per_epoch": 870568.1252233916,
+            "unrounded_epochs": 5.0,
+            "epochs": 5
+          }
+        }
+      }
+    },
+    {
+      "corpus": "norm_frequency/uniform_starts",
+      "seed": 2,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 800906,
+      "visit_over_token": 0.8898955555555556,
+      "node_ratio_min": 0.7845336481700118,
+      "node_ratio_max": 0.9788819875776398,
+      "share_ratio_min": 0.8816019399942199,
+      "share_ratio_max": 1.09999648999992,
+      "log_log_slope_on_degree_token": 0.7872584914474109,
+      "log_log_slope_on_degree_visit": 0.8031080321260715,
+      "degree_bins": [
+        {
+          "nodes": 256,
+          "geometric_mean_degree": 2.9952522166406466,
+          "token_count": 239777,
+          "walk_visit_count": 210550,
+          "visit_over_token": 0.8781075749550624
+        },
+        {
+          "nodes": 110,
+          "geometric_mean_degree": 4.000000000000001,
+          "token_count": 127680,
+          "walk_visit_count": 112066,
+          "visit_over_token": 0.8777098997493734
+        },
+        {
+          "nodes": 63,
+          "geometric_mean_degree": 5.000000000000001,
+          "token_count": 84247,
+          "walk_visit_count": 74639,
+          "visit_over_token": 0.8859543960022316
+        },
+        {
+          "nodes": 40,
+          "geometric_mean_degree": 6.0,
+          "token_count": 61113,
+          "walk_visit_count": 54362,
+          "visit_over_token": 0.8895325053589253
+        },
+        {
+          "nodes": 62,
+          "geometric_mean_degree": 7.7367926613669695,
+          "token_count": 115846,
+          "walk_visit_count": 104041,
+          "visit_over_token": 0.8980974742330335
+        },
+        {
+          "nodes": 69,
+          "geometric_mean_degree": 16.025224207621005,
+          "token_count": 271337,
+          "walk_visit_count": 245248,
+          "visit_over_token": 0.9038501936706015
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 600,
+          "downsampled_nodes_visit_law": 600,
+          "max_relative_keep_difference": 0.0847972287941694,
+          "min_relative_keep_difference": -0.06280843668435698,
+          "expected_retained_tokens_token_law": 528534.792424995,
+          "expected_retained_tokens_visit_law": 529948.76814456,
+          "visit_count_times_visit_keep": 469914.47407169844
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 61,
+          "downsampled_nodes_visit_law": 61,
+          "max_relative_keep_difference": 0.03158712732164304,
+          "min_relative_keep_difference": -0.03158712732164304,
+          "expected_retained_tokens_token_law": 816120.1340446838,
+          "expected_retained_tokens_visit_law": 814612.6793417165,
+          "visit_count_times_visit_keep": 723530.355179728
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 7,
+          "downsampled_nodes_visit_law": 7,
+          "max_relative_keep_difference": 0.023390235562010697,
+          "min_relative_keep_difference": -0.023390235562010697,
+          "expected_retained_tokens_token_law": 886592.4066193647,
+          "expected_retained_tokens_visit_law": 885853.9109308801,
+          "visit_count_times_visit_keep": 788071.2217733753
+        }
+      }
+    },
+    {
+      "corpus": "norm_frequency/no_subsampling",
+      "seed": 2,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 802082,
+      "visit_over_token": 0.8912022222222222,
+      "node_ratio_min": 0.7957405614714425,
+      "node_ratio_max": 0.979328165374677,
+      "share_ratio_min": 0.8928844000043614,
+      "share_ratio_max": 1.0988843395528254,
+      "log_log_slope_on_degree_token": 1.0009076188398858,
+      "log_log_slope_on_degree_visit": 0.9983206806031086,
+      "degree_bins": [
+        {
+          "nodes": 256,
+          "geometric_mean_degree": 2.9952522166406466,
+          "token_count": 196424,
+          "walk_visit_count": 175810,
+          "visit_over_token": 0.895053557610068
+        },
+        {
+          "nodes": 110,
+          "geometric_mean_degree": 4.000000000000001,
+          "token_count": 113091,
+          "walk_visit_count": 100492,
+          "visit_over_token": 0.8885941410014944
+        },
+        {
+          "nodes": 63,
+          "geometric_mean_degree": 5.000000000000001,
+          "token_count": 81026,
+          "walk_visit_count": 72295,
+          "visit_over_token": 0.8922444647397132
+        },
+        {
+          "nodes": 40,
+          "geometric_mean_degree": 6.0,
+          "token_count": 61219,
+          "walk_visit_count": 54573,
+          "visit_over_token": 0.8914389323576014
+        },
+        {
+          "nodes": 62,
+          "geometric_mean_degree": 7.7367926613669695,
+          "token_count": 123032,
+          "walk_visit_count": 110201,
+          "visit_over_token": 0.8957100591715976
+        },
+        {
+          "nodes": 69,
+          "geometric_mean_degree": 16.025224207621005,
+          "token_count": 325208,
+          "walk_visit_count": 288711,
+          "visit_over_token": 0.8877733635088928
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 592,
+          "downsampled_nodes_visit_law": 583,
+          "max_relative_keep_difference": 0.07915091098840499,
+          "min_relative_keep_difference": -0.06236640392171644,
+          "expected_retained_tokens_token_law": 519393.45177201787,
+          "expected_retained_tokens_visit_law": 519238.13297015027,
+          "visit_count_times_visit_keep": 462925.71777592145
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 71,
+          "downsampled_nodes_visit_law": 70,
+          "max_relative_keep_difference": 0.03920876796174855,
+          "min_relative_keep_difference": -0.03920876796174855,
+          "expected_retained_tokens_token_law": 773852.5494980187,
+          "expected_retained_tokens_visit_law": 774269.7223356892,
+          "visit_count_times_visit_keep": 690464.3633843802
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 10,
+          "downsampled_nodes_visit_law": 11,
+          "max_relative_keep_difference": 0.016535552886959737,
+          "min_relative_keep_difference": -0.004641916355142106,
+          "expected_retained_tokens_token_law": 870568.1252233916,
+          "expected_retained_tokens_visit_law": 870841.0507000026,
+          "visit_count_times_visit_keep": 776273.0602230406
+        }
+      }
+    },
+    {
+      "corpus": "norm_frequency/regular_control",
+      "seed": 2,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 805402,
+      "visit_over_token": 0.8948911111111111,
+      "node_ratio_min": 0.839832181638697,
+      "node_ratio_max": 0.928390901432182,
+      "share_ratio_min": 0.9384741575943781,
+      "share_ratio_max": 1.037434487732789,
+      "log_log_slope_on_degree_token": null,
+      "log_log_slope_on_degree_visit": null,
+      "degree_bins": [
+        {
+          "nodes": 600,
+          "geometric_mean_degree": 6.0,
+          "token_count": 900000,
+          "walk_visit_count": 805402,
+          "visit_over_token": 0.8948911111111111
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 600,
+          "downsampled_nodes_visit_law": 600,
+          "max_relative_keep_difference": 0.039091653936097925,
+          "min_relative_keep_difference": -0.02398017835601063,
+          "expected_retained_tokens_token_law": 541167.420208071,
+          "expected_retained_tokens_visit_law": 540391.4613055664,
+          "visit_count_times_visit_keep": 484575.56601736887
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 17,
+          "downsampled_nodes_visit_law": 14,
+          "max_relative_keep_difference": 0.04292617718680991,
+          "min_relative_keep_difference": 0.0,
+          "expected_retained_tokens_token_law": 888777.524249281,
+          "expected_retained_tokens_visit_law": 890054.8916525441,
+          "visit_count_times_visit_keep": 796948.4922484811
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 0,
+          "downsampled_nodes_visit_law": 0,
+          "max_relative_keep_difference": 0.0,
+          "min_relative_keep_difference": 0.0,
+          "expected_retained_tokens_token_law": 900000.0,
+          "expected_retained_tokens_visit_law": 900000.0,
+          "visit_count_times_visit_keep": 805402.0
+        }
+      }
+    },
+    {
+      "corpus": "norm_frequency/standard",
+      "seed": 3,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 802041,
+      "visit_over_token": 0.8911566666666667,
+      "node_ratio_min": 0.7811217510259918,
+      "node_ratio_max": 0.9813581890812251,
+      "share_ratio_min": 0.8765257336263266,
+      "share_ratio_max": 1.1012184790716466,
+      "log_log_slope_on_degree_token": 0.9959547990674488,
+      "log_log_slope_on_degree_visit": 0.9958225342678718,
+      "degree_bins": [
+        {
+          "nodes": 239,
+          "geometric_mean_degree": 2.9898382089250157,
+          "token_count": 184835,
+          "walk_visit_count": 164867,
+          "visit_over_token": 0.8919685124570563
+        },
+        {
+          "nodes": 111,
+          "geometric_mean_degree": 4.000000000000001,
+          "token_count": 113581,
+          "walk_visit_count": 101283,
+          "visit_over_token": 0.8917248483461142
+        },
+        {
+          "nodes": 76,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 97676,
+          "walk_visit_count": 86858,
+          "visit_over_token": 0.8892460788730088
+        },
+        {
+          "nodes": 46,
+          "geometric_mean_degree": 5.999999999999998,
+          "token_count": 70523,
+          "walk_visit_count": 62454,
+          "visit_over_token": 0.8855834266834933
+        },
+        {
+          "nodes": 53,
+          "geometric_mean_degree": 7.436328120091258,
+          "token_count": 101612,
+          "walk_visit_count": 91362,
+          "visit_over_token": 0.8991260874699839
+        },
+        {
+          "nodes": 75,
+          "geometric_mean_degree": 15.168589716575207,
+          "token_count": 331773,
+          "walk_visit_count": 295217,
+          "visit_over_token": 0.8898162297715607
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 596,
+          "downsampled_nodes_visit_law": 591,
+          "max_relative_keep_difference": 0.08774021245041563,
+          "min_relative_keep_difference": -0.06387677378005585,
+          "expected_retained_tokens_token_law": 520904.79105898977,
+          "expected_retained_tokens_visit_law": 521024.135396365,
+          "visit_count_times_visit_keep": 464135.7808759515
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 66,
+          "downsampled_nodes_visit_law": 66,
+          "max_relative_keep_difference": 0.03321791864021317,
+          "min_relative_keep_difference": -0.03321791864021317,
+          "expected_retained_tokens_token_law": 779870.1744135869,
+          "expected_retained_tokens_visit_law": 779952.5054207268,
+          "visit_count_times_visit_keep": 695313.6547452342
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 8,
+          "downsampled_nodes_visit_law": 8,
+          "max_relative_keep_difference": 0.007224203804340856,
+          "min_relative_keep_difference": -0.007157422764214716,
+          "expected_retained_tokens_token_law": 875658.3177872874,
+          "expected_retained_tokens_visit_law": 875677.6197012267,
+          "visit_count_times_visit_keep": 780414.4697261914
+        }
+      },
+      "budget_matched_epochs": {
+        "walk_visit_counts": {
+          "t3e-4": {
+            "retained_per_epoch": 464135.7808759515,
+            "unrounded_epochs": 8.407178479682553,
+            "epochs": 8
+          },
+          "t1e-3": {
+            "retained_per_epoch": 695313.6547452342,
+            "unrounded_epochs": 5.6119599004001905,
+            "epochs": 6
+          },
+          "t3e-3": {
+            "retained_per_epoch": 780414.4697261914,
+            "unrounded_epochs": 5.0,
+            "epochs": 5
+          }
+        },
+        "token_counts": {
+          "t3e-4": {
+            "retained_per_epoch": 520904.79105898977,
+            "unrounded_epochs": 8.405166671697243,
+            "epochs": 8
+          },
+          "t1e-3": {
+            "retained_per_epoch": 779870.1744135869,
+            "unrounded_epochs": 5.614128777560491,
+            "epochs": 6
+          },
+          "t3e-3": {
+            "retained_per_epoch": 875658.3177872874,
+            "unrounded_epochs": 5.0,
+            "epochs": 5
+          }
+        }
+      }
+    },
+    {
+      "corpus": "norm_frequency/uniform_starts",
+      "seed": 3,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 800795,
+      "visit_over_token": 0.8897722222222222,
+      "node_ratio_min": 0.7647521636506688,
+      "node_ratio_max": 0.9799196787148594,
+      "share_ratio_min": 0.859492063868533,
+      "share_ratio_max": 1.1013152065676903,
+      "log_log_slope_on_degree_token": 0.782724548327831,
+      "log_log_slope_on_degree_visit": 0.8008695693661836,
+      "degree_bins": [
+        {
+          "nodes": 239,
+          "geometric_mean_degree": 2.9898382089250157,
+          "token_count": 225980,
+          "walk_visit_count": 197679,
+          "visit_over_token": 0.8747632533852553
+        },
+        {
+          "nodes": 111,
+          "geometric_mean_degree": 4.000000000000001,
+          "token_count": 126588,
+          "walk_visit_count": 111705,
+          "visit_over_token": 0.882429614181439
+        },
+        {
+          "nodes": 76,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 101870,
+          "walk_visit_count": 90042,
+          "visit_over_token": 0.8838912339255914
+        },
+        {
+          "nodes": 46,
+          "geometric_mean_degree": 5.999999999999998,
+          "token_count": 71697,
+          "walk_visit_count": 63313,
+          "visit_over_token": 0.8830634475640543
+        },
+        {
+          "nodes": 53,
+          "geometric_mean_degree": 7.436328120091258,
+          "token_count": 95073,
+          "walk_visit_count": 85695,
+          "visit_over_token": 0.9013600075731281
+        },
+        {
+          "nodes": 75,
+          "geometric_mean_degree": 15.168589716575207,
+          "token_count": 278792,
+          "walk_visit_count": 252361,
+          "visit_over_token": 0.9051945536457288
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 600,
+          "downsampled_nodes_visit_law": 600,
+          "max_relative_keep_difference": 0.10540996395696145,
+          "min_relative_keep_difference": -0.0639609289620291,
+          "expected_retained_tokens_token_law": 529468.8696365226,
+          "expected_retained_tokens_visit_law": 530989.5090749648,
+          "visit_count_times_visit_keep": 470651.4945072087
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 58,
+          "downsampled_nodes_visit_law": 57,
+          "max_relative_keep_difference": 0.0396109368177473,
+          "min_relative_keep_difference": -0.0396109368177473,
+          "expected_retained_tokens_token_law": 819427.1945519454,
+          "expected_retained_tokens_visit_law": 817654.7641344576,
+          "visit_count_times_visit_keep": 726113.1030329432
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 6,
+          "downsampled_nodes_visit_law": 7,
+          "max_relative_keep_difference": 0.02105634133330503,
+          "min_relative_keep_difference": -0.02105634133330503,
+          "expected_retained_tokens_token_law": 889244.6463925737,
+          "expected_retained_tokens_visit_law": 888427.9089973505,
+          "visit_count_times_visit_keep": 790248.3524024386
+        }
+      }
+    },
+    {
+      "corpus": "norm_frequency/no_subsampling",
+      "seed": 3,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 802041,
+      "visit_over_token": 0.8911566666666667,
+      "node_ratio_min": 0.7811217510259918,
+      "node_ratio_max": 0.9813581890812251,
+      "share_ratio_min": 0.8765257336263266,
+      "share_ratio_max": 1.1012184790716466,
+      "log_log_slope_on_degree_token": 0.9959547990674488,
+      "log_log_slope_on_degree_visit": 0.9958225342678718,
+      "degree_bins": [
+        {
+          "nodes": 239,
+          "geometric_mean_degree": 2.9898382089250157,
+          "token_count": 184835,
+          "walk_visit_count": 164867,
+          "visit_over_token": 0.8919685124570563
+        },
+        {
+          "nodes": 111,
+          "geometric_mean_degree": 4.000000000000001,
+          "token_count": 113581,
+          "walk_visit_count": 101283,
+          "visit_over_token": 0.8917248483461142
+        },
+        {
+          "nodes": 76,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 97676,
+          "walk_visit_count": 86858,
+          "visit_over_token": 0.8892460788730088
+        },
+        {
+          "nodes": 46,
+          "geometric_mean_degree": 5.999999999999998,
+          "token_count": 70523,
+          "walk_visit_count": 62454,
+          "visit_over_token": 0.8855834266834933
+        },
+        {
+          "nodes": 53,
+          "geometric_mean_degree": 7.436328120091258,
+          "token_count": 101612,
+          "walk_visit_count": 91362,
+          "visit_over_token": 0.8991260874699839
+        },
+        {
+          "nodes": 75,
+          "geometric_mean_degree": 15.168589716575207,
+          "token_count": 331773,
+          "walk_visit_count": 295217,
+          "visit_over_token": 0.8898162297715607
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 596,
+          "downsampled_nodes_visit_law": 591,
+          "max_relative_keep_difference": 0.08774021245041563,
+          "min_relative_keep_difference": -0.06387677378005585,
+          "expected_retained_tokens_token_law": 520904.79105898977,
+          "expected_retained_tokens_visit_law": 521024.135396365,
+          "visit_count_times_visit_keep": 464135.7808759515
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 66,
+          "downsampled_nodes_visit_law": 66,
+          "max_relative_keep_difference": 0.03321791864021317,
+          "min_relative_keep_difference": -0.03321791864021317,
+          "expected_retained_tokens_token_law": 779870.1744135869,
+          "expected_retained_tokens_visit_law": 779952.5054207268,
+          "visit_count_times_visit_keep": 695313.6547452342
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 8,
+          "downsampled_nodes_visit_law": 8,
+          "max_relative_keep_difference": 0.007224203804340856,
+          "min_relative_keep_difference": -0.007157422764214716,
+          "expected_retained_tokens_token_law": 875658.3177872874,
+          "expected_retained_tokens_visit_law": 875677.6197012267,
+          "visit_count_times_visit_keep": 780414.4697261914
+        }
+      }
+    },
+    {
+      "corpus": "norm_frequency/regular_control",
+      "seed": 3,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 805120,
+      "visit_over_token": 0.8945777777777778,
+      "node_ratio_min": 0.839188803199086,
+      "node_ratio_max": 0.9299539170506912,
+      "share_ratio_min": 0.9380836681229846,
+      "share_ratio_max": 1.0395450682452578,
+      "log_log_slope_on_degree_token": null,
+      "log_log_slope_on_degree_visit": null,
+      "degree_bins": [
+        {
+          "nodes": 600,
+          "geometric_mean_degree": 6.0,
+          "token_count": 900000,
+          "walk_visit_count": 805120,
+          "visit_over_token": 0.8945777777777778
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 600,
+          "downsampled_nodes_visit_law": 600,
+          "max_relative_keep_difference": 0.03976161002469891,
+          "min_relative_keep_difference": -0.025473774321684073,
+          "expected_retained_tokens_token_law": 541121.8407425885,
+          "expected_retained_tokens_visit_law": 540323.3575249932,
+          "visit_count_times_visit_keep": 484372.8943772921
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 21,
+          "downsampled_nodes_visit_law": 19,
+          "max_relative_keep_difference": 0.043754596425534364,
+          "min_relative_keep_difference": 0.0,
+          "expected_retained_tokens_token_law": 889419.332808276,
+          "expected_retained_tokens_visit_law": 890910.9107732403,
+          "visit_count_times_visit_keep": 797405.4566490118
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 0,
+          "downsampled_nodes_visit_law": 0,
+          "max_relative_keep_difference": 0.0,
+          "min_relative_keep_difference": 0.0,
+          "expected_retained_tokens_token_law": 900000.0,
+          "expected_retained_tokens_visit_law": 900000.0,
+          "visit_count_times_visit_keep": 805120.0
+        }
+      }
+    },
+    {
+      "corpus": "norm_frequency/standard",
+      "seed": 4,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 803317,
+      "visit_over_token": 0.8925744444444444,
+      "node_ratio_min": 0.7744845360824743,
+      "node_ratio_max": 0.9917355371900827,
+      "share_ratio_min": 0.8676974126953952,
+      "share_ratio_max": 1.111095599210616,
+      "log_log_slope_on_degree_token": 1.0019461391392386,
+      "log_log_slope_on_degree_visit": 1.0005550660362228,
+      "degree_bins": [
+        {
+          "nodes": 221,
+          "geometric_mean_degree": 2.9780643833224962,
+          "token_count": 167695,
+          "walk_visit_count": 149658,
+          "visit_over_token": 0.8924416351113629
+        },
+        {
+          "nodes": 131,
+          "geometric_mean_degree": 4.0,
+          "token_count": 133432,
+          "walk_visit_count": 119670,
+          "visit_over_token": 0.8968613226212603
+        },
+        {
+          "nodes": 76,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 96524,
+          "walk_visit_count": 86246,
+          "visit_over_token": 0.8935187103725498
+        },
+        {
+          "nodes": 49,
+          "geometric_mean_degree": 5.999999999999998,
+          "token_count": 75173,
+          "walk_visit_count": 67216,
+          "visit_over_token": 0.894150825429343
+        },
+        {
+          "nodes": 51,
+          "geometric_mean_degree": 7.453982486175122,
+          "token_count": 96956,
+          "walk_visit_count": 86859,
+          "visit_over_token": 0.8958599777218532
+        },
+        {
+          "nodes": 72,
+          "geometric_mean_degree": 15.764979594068826,
+          "token_count": 330220,
+          "walk_visit_count": 293668,
+          "visit_over_token": 0.8893101568651203
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 591,
+          "downsampled_nodes_visit_law": 576,
+          "max_relative_keep_difference": 0.08312304713106178,
+          "min_relative_keep_difference": -0.06974998637292762,
+          "expected_retained_tokens_token_law": 520078.64718872623,
+          "expected_retained_tokens_visit_law": 519857.73762051965,
+          "visit_count_times_visit_keep": 464192.3370743695
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 65,
+          "downsampled_nodes_visit_law": 66,
+          "max_relative_keep_difference": 0.03163766025905934,
+          "min_relative_keep_difference": -0.029936231512640687,
+          "expected_retained_tokens_token_law": 775552.6596344381,
+          "expected_retained_tokens_visit_law": 775939.2764655652,
+          "visit_count_times_visit_keep": 693239.3523394587
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 12,
+          "downsampled_nodes_visit_law": 11,
+          "max_relative_keep_difference": 0.021219194952739384,
+          "min_relative_keep_difference": -0.004403190740886909,
+          "expected_retained_tokens_token_law": 876168.9368833986,
+          "expected_retained_tokens_visit_law": 876740.1344848656,
+          "visit_count_times_visit_keep": 782790.8988327042
+        }
+      },
+      "budget_matched_epochs": {
+        "walk_visit_counts": {
+          "t3e-4": {
+            "retained_per_epoch": 464192.3370743695,
+            "unrounded_epochs": 8.431751628714318,
+            "epochs": 8
+          },
+          "t1e-3": {
+            "retained_per_epoch": 693239.3523394587,
+            "unrounded_epochs": 5.645891972166885,
+            "epochs": 6
+          },
+          "t3e-3": {
+            "retained_per_epoch": 782790.8988327042,
+            "unrounded_epochs": 5.0,
+            "epochs": 5
+          }
+        },
+        "token_counts": {
+          "t3e-4": {
+            "retained_per_epoch": 520078.64718872623,
+            "unrounded_epochs": 8.423427318344164,
+            "epochs": 8
+          },
+          "t1e-3": {
+            "retained_per_epoch": 775552.6596344381,
+            "unrounded_epochs": 5.648674696676216,
+            "epochs": 6
+          },
+          "t3e-3": {
+            "retained_per_epoch": 876168.9368833986,
+            "unrounded_epochs": 5.0,
+            "epochs": 5
+          }
+        }
+      }
+    },
+    {
+      "corpus": "norm_frequency/uniform_starts",
+      "seed": 4,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 801126,
+      "visit_over_token": 0.89014,
+      "node_ratio_min": 0.7577881619937694,
+      "node_ratio_max": 0.9850948509485095,
+      "share_ratio_min": 0.8513134585500813,
+      "share_ratio_max": 1.1066740635725947,
+      "log_log_slope_on_degree_token": 0.7793530862319732,
+      "log_log_slope_on_degree_visit": 0.7964216156333259,
+      "degree_bins": [
+        {
+          "nodes": 221,
+          "geometric_mean_degree": 2.9780643833224962,
+          "token_count": 209543,
+          "walk_visit_count": 183004,
+          "visit_over_token": 0.8733481910634094
+        },
+        {
+          "nodes": 131,
+          "geometric_mean_degree": 4.0,
+          "token_count": 147718,
+          "walk_visit_count": 130581,
+          "visit_over_token": 0.8839884103494496
+        },
+        {
+          "nodes": 76,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 101299,
+          "walk_visit_count": 89921,
+          "visit_over_token": 0.8876790491515217
+        },
+        {
+          "nodes": 49,
+          "geometric_mean_degree": 5.999999999999998,
+          "token_count": 74669,
+          "walk_visit_count": 66633,
+          "visit_over_token": 0.8923783631761507
+        },
+        {
+          "nodes": 51,
+          "geometric_mean_degree": 7.453982486175122,
+          "token_count": 91423,
+          "walk_visit_count": 82049,
+          "visit_over_token": 0.8974656268116339
+        },
+        {
+          "nodes": 72,
+          "geometric_mean_degree": 15.764979594068826,
+          "token_count": 275348,
+          "walk_visit_count": 248938,
+          "visit_over_token": 0.9040850124206459
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 597,
+          "downsampled_nodes_visit_law": 597,
+          "max_relative_keep_difference": 0.11237484173557255,
+          "min_relative_keep_difference": -0.06712122289642963,
+          "expected_retained_tokens_token_law": 529158.8780343193,
+          "expected_retained_tokens_visit_law": 530547.3472826651,
+          "visit_count_times_visit_keep": 470715.23396940844
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 58,
+          "downsampled_nodes_visit_law": 60,
+          "max_relative_keep_difference": 0.036660630376580405,
+          "min_relative_keep_difference": -0.036660630376580405,
+          "expected_retained_tokens_token_law": 817223.9368893328,
+          "expected_retained_tokens_visit_law": 815651.8239130566,
+          "visit_count_times_visit_keep": 724823.4341092375
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 6,
+          "downsampled_nodes_visit_law": 6,
+          "max_relative_keep_difference": 0.02086386187327116,
+          "min_relative_keep_difference": -0.02086386187327116,
+          "expected_retained_tokens_token_law": 889464.7649808647,
+          "expected_retained_tokens_visit_law": 888938.6276582943,
+          "visit_count_times_visit_keep": 791132.4936923906
+        }
+      }
+    },
+    {
+      "corpus": "norm_frequency/no_subsampling",
+      "seed": 4,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 803317,
+      "visit_over_token": 0.8925744444444444,
+      "node_ratio_min": 0.7744845360824743,
+      "node_ratio_max": 0.9917355371900827,
+      "share_ratio_min": 0.8676974126953952,
+      "share_ratio_max": 1.111095599210616,
+      "log_log_slope_on_degree_token": 1.0019461391392386,
+      "log_log_slope_on_degree_visit": 1.0005550660362228,
+      "degree_bins": [
+        {
+          "nodes": 221,
+          "geometric_mean_degree": 2.9780643833224962,
+          "token_count": 167695,
+          "walk_visit_count": 149658,
+          "visit_over_token": 0.8924416351113629
+        },
+        {
+          "nodes": 131,
+          "geometric_mean_degree": 4.0,
+          "token_count": 133432,
+          "walk_visit_count": 119670,
+          "visit_over_token": 0.8968613226212603
+        },
+        {
+          "nodes": 76,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 96524,
+          "walk_visit_count": 86246,
+          "visit_over_token": 0.8935187103725498
+        },
+        {
+          "nodes": 49,
+          "geometric_mean_degree": 5.999999999999998,
+          "token_count": 75173,
+          "walk_visit_count": 67216,
+          "visit_over_token": 0.894150825429343
+        },
+        {
+          "nodes": 51,
+          "geometric_mean_degree": 7.453982486175122,
+          "token_count": 96956,
+          "walk_visit_count": 86859,
+          "visit_over_token": 0.8958599777218532
+        },
+        {
+          "nodes": 72,
+          "geometric_mean_degree": 15.764979594068826,
+          "token_count": 330220,
+          "walk_visit_count": 293668,
+          "visit_over_token": 0.8893101568651203
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 591,
+          "downsampled_nodes_visit_law": 576,
+          "max_relative_keep_difference": 0.08312304713106178,
+          "min_relative_keep_difference": -0.06974998637292762,
+          "expected_retained_tokens_token_law": 520078.64718872623,
+          "expected_retained_tokens_visit_law": 519857.73762051965,
+          "visit_count_times_visit_keep": 464192.3370743695
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 65,
+          "downsampled_nodes_visit_law": 66,
+          "max_relative_keep_difference": 0.03163766025905934,
+          "min_relative_keep_difference": -0.029936231512640687,
+          "expected_retained_tokens_token_law": 775552.6596344381,
+          "expected_retained_tokens_visit_law": 775939.2764655652,
+          "visit_count_times_visit_keep": 693239.3523394587
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 12,
+          "downsampled_nodes_visit_law": 11,
+          "max_relative_keep_difference": 0.021219194952739384,
+          "min_relative_keep_difference": -0.004403190740886909,
+          "expected_retained_tokens_token_law": 876168.9368833986,
+          "expected_retained_tokens_visit_law": 876740.1344848656,
+          "visit_count_times_visit_keep": 782790.8988327042
+        }
+      }
+    },
+    {
+      "corpus": "norm_frequency/regular_control",
+      "seed": 4,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 805240,
+      "visit_over_token": 0.8947111111111111,
+      "node_ratio_min": 0.8343936381709741,
+      "node_ratio_max": 0.9281437125748503,
+      "share_ratio_min": 0.9325844150239391,
+      "share_ratio_max": 1.0373669232990974,
+      "log_log_slope_on_degree_token": null,
+      "log_log_slope_on_degree_visit": null,
+      "degree_bins": [
+        {
+          "nodes": 600,
+          "geometric_mean_degree": 6.0,
+          "token_count": 900000,
+          "walk_visit_count": 805240,
+          "visit_over_token": 0.8947111111111111
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 600,
+          "downsampled_nodes_visit_law": 600,
+          "max_relative_keep_difference": 0.04243142613992967,
+          "min_relative_keep_difference": -0.023968108140036137,
+          "expected_retained_tokens_token_law": 540955.843234751,
+          "expected_retained_tokens_visit_law": 540141.1307724859,
+          "visit_count_times_visit_keep": 484301.63007326424
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 23,
+          "downsampled_nodes_visit_law": 20,
+          "max_relative_keep_difference": 0.04644556669537758,
+          "min_relative_keep_difference": 0.0,
+          "expected_retained_tokens_token_law": 887828.0241278172,
+          "expected_retained_tokens_visit_law": 889333.5481538136,
+          "visit_count_times_visit_keep": 796145.5696224715
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 0,
+          "downsampled_nodes_visit_law": 0,
+          "max_relative_keep_difference": 0.0,
+          "min_relative_keep_difference": 0.0,
+          "expected_retained_tokens_token_law": 900000.0,
+          "expected_retained_tokens_visit_law": 900000.0,
+          "visit_count_times_visit_keep": 805240.0
+        }
+      }
+    },
+    {
+      "corpus": "prospective/barabasi_albert",
+      "seed": 101,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 805170,
+      "visit_over_token": 0.8946333333333333,
+      "node_ratio_min": 0.8263610315186246,
+      "node_ratio_max": 0.9895424836601308,
+      "share_ratio_min": 0.9236868342918417,
+      "share_ratio_max": 1.1060872055517688,
+      "log_log_slope_on_degree_token": 1.0011111747902155,
+      "log_log_slope_on_degree_visit": 0.9683384986378394,
+      "degree_bins": [
+        {
+          "nodes": 354,
+          "geometric_mean_degree": 3.2858663475398697,
+          "token_count": 294568,
+          "walk_visit_count": 270905,
+          "visit_over_token": 0.9196688031286494
+        },
+        {
+          "nodes": 67,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 84359,
+          "walk_visit_count": 75740,
+          "visit_over_token": 0.8978295143375337
+        },
+        {
+          "nodes": 38,
+          "geometric_mean_degree": 6.0,
+          "token_count": 57561,
+          "walk_visit_count": 50849,
+          "visit_over_token": 0.8833932697486145
+        },
+        {
+          "nodes": 75,
+          "geometric_mean_degree": 7.745989603493794,
+          "token_count": 147096,
+          "walk_visit_count": 129870,
+          "visit_over_token": 0.8828928046989721
+        },
+        {
+          "nodes": 66,
+          "geometric_mean_degree": 16.379873143473237,
+          "token_count": 316416,
+          "walk_visit_count": 277806,
+          "visit_over_token": 0.8779770934466019
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 585,
+          "downsampled_nodes_visit_law": 591,
+          "max_relative_keep_difference": 0.06658662078177824,
+          "min_relative_keep_difference": -0.06658662078177824,
+          "expected_retained_tokens_token_law": 519176.3343364358,
+          "expected_retained_tokens_visit_law": 516148.8814930526,
+          "visit_count_times_visit_keep": 465618.6346630933
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 68,
+          "downsampled_nodes_visit_law": 67,
+          "max_relative_keep_difference": 0.04933412103345369,
+          "min_relative_keep_difference": -0.013527609217733771,
+          "expected_retained_tokens_token_law": 774506.9965679398,
+          "expected_retained_tokens_visit_law": 776935.0507985811,
+          "visit_count_times_visit_keep": 697062.0811655356
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 13,
+          "downsampled_nodes_visit_law": 13,
+          "max_relative_keep_difference": 0.02594536624170196,
+          "min_relative_keep_difference": -0.0056573165089568445,
+          "expected_retained_tokens_token_law": 867830.2502839321,
+          "expected_retained_tokens_visit_law": 868966.0380354722,
+          "visit_count_times_visit_keep": 777860.8236334564
+        }
+      }
+    },
+    {
+      "corpus": "prospective/barabasi_albert",
+      "seed": 102,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 804909,
+      "visit_over_token": 0.8943433333333334,
+      "node_ratio_min": 0.8326673326673326,
+      "node_ratio_max": 0.9914285714285714,
+      "share_ratio_min": 0.9310376693521868,
+      "share_ratio_max": 1.1085547736274712,
+      "log_log_slope_on_degree_token": 1.0017183692399882,
+      "log_log_slope_on_degree_visit": 0.9680867273763007,
+      "degree_bins": [
+        {
+          "nodes": 354,
+          "geometric_mean_degree": 3.2858663475398697,
+          "token_count": 294729,
+          "walk_visit_count": 271240,
+          "visit_over_token": 0.9203030580635092
+        },
+        {
+          "nodes": 74,
+          "geometric_mean_degree": 4.999999999999998,
+          "token_count": 93244,
+          "walk_visit_count": 83709,
+          "visit_over_token": 0.8977414096349363
+        },
+        {
+          "nodes": 39,
+          "geometric_mean_degree": 6.0,
+          "token_count": 58937,
+          "walk_visit_count": 52097,
+          "visit_over_token": 0.8839438722703904
+        },
+        {
+          "nodes": 71,
+          "geometric_mean_degree": 7.673973385510981,
+          "token_count": 137687,
+          "walk_visit_count": 121742,
+          "visit_over_token": 0.8841938599867816
+        },
+        {
+          "nodes": 62,
+          "geometric_mean_degree": 17.10848587429415,
+          "token_count": 315403,
+          "walk_visit_count": 276121,
+          "visit_over_token": 0.8754545771600143
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 581,
+          "downsampled_nodes_visit_law": 595,
+          "max_relative_keep_difference": 0.06598258562388504,
+          "min_relative_keep_difference": -0.06598258562388504,
+          "expected_retained_tokens_token_law": 518015.3373891737,
+          "expected_retained_tokens_visit_law": 514696.2537481787,
+          "visit_count_times_visit_keep": 464629.8643582673
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 63,
+          "downsampled_nodes_visit_law": 63,
+          "max_relative_keep_difference": 0.04095329298928885,
+          "min_relative_keep_difference": -0.016794727466290515,
+          "expected_retained_tokens_token_law": 767003.3003208983,
+          "expected_retained_tokens_visit_law": 769422.0653984617,
+          "visit_count_times_visit_keep": 690810.6272100944
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 10,
+          "downsampled_nodes_visit_law": 10,
+          "max_relative_keep_difference": 0.021847892759560672,
+          "min_relative_keep_difference": -0.006306491983084528,
+          "expected_retained_tokens_token_law": 861040.1266732037,
+          "expected_retained_tokens_visit_law": 862147.6947229982,
+          "visit_count_times_visit_keep": 771987.6548347543
+        }
+      }
+    },
+    {
+      "corpus": "prospective/barabasi_albert",
+      "seed": 103,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 804521,
+      "visit_over_token": 0.8939122222222222,
+      "node_ratio_min": 0.8406423718344658,
+      "node_ratio_max": 0.9833169774288518,
+      "share_ratio_min": 0.940408186549536,
+      "share_ratio_max": 1.1000151390528856,
+      "log_log_slope_on_degree_token": 0.9998649782344916,
+      "log_log_slope_on_degree_visit": 0.971311059149481,
+      "degree_bins": [
+        {
+          "nodes": 345,
+          "geometric_mean_degree": 3.31019763497255,
+          "token_count": 290015,
+          "walk_visit_count": 265502,
+          "visit_over_token": 0.9154767856834991
+        },
+        {
+          "nodes": 81,
+          "geometric_mean_degree": 4.999999999999997,
+          "token_count": 101227,
+          "walk_visit_count": 90268,
+          "visit_over_token": 0.8917383701976745
+        },
+        {
+          "nodes": 38,
+          "geometric_mean_degree": 6.0,
+          "token_count": 57674,
+          "walk_visit_count": 51013,
+          "visit_over_token": 0.8845060165759268
+        },
+        {
+          "nodes": 61,
+          "geometric_mean_degree": 7.904663158010299,
+          "token_count": 121637,
+          "walk_visit_count": 107780,
+          "visit_over_token": 0.8860790713352023
+        },
+        {
+          "nodes": 75,
+          "geometric_mean_degree": 15.420286775616589,
+          "token_count": 329447,
+          "walk_visit_count": 289958,
+          "visit_over_token": 0.8801354997920758
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 590,
+          "downsampled_nodes_visit_law": 597,
+          "max_relative_keep_difference": 0.06162456662245441,
+          "min_relative_keep_difference": -0.06162456662245441,
+          "expected_retained_tokens_token_law": 520767.5115979311,
+          "expected_retained_tokens_visit_law": 518384.56745237554,
+          "visit_count_times_visit_keep": 466518.98255931126
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 76,
+          "downsampled_nodes_visit_law": 76,
+          "max_relative_keep_difference": 0.04230303266933988,
+          "min_relative_keep_difference": -0.02233048781384106,
+          "expected_retained_tokens_token_law": 782115.44556272,
+          "expected_retained_tokens_visit_law": 784352.9044036607,
+          "visit_count_times_visit_keep": 702633.1401487618
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 9,
+          "downsampled_nodes_visit_law": 8,
+          "max_relative_keep_difference": 0.019192919191379554,
+          "min_relative_keep_difference": 0.0,
+          "expected_retained_tokens_token_law": 874255.6757430749,
+          "expected_retained_tokens_visit_law": 874909.5447124207,
+          "visit_count_times_visit_keep": 782451.5571002854
+        }
+      }
+    },
+    {
+      "corpus": "prospective/barabasi_albert",
+      "seed": 104,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 804525,
+      "visit_over_token": 0.8939166666666667,
+      "node_ratio_min": 0.829477292202228,
+      "node_ratio_max": 0.9846796657381616,
+      "share_ratio_min": 0.927913443313763,
+      "share_ratio_max": 1.1015340718614652,
+      "log_log_slope_on_degree_token": 1.002068207210666,
+      "log_log_slope_on_degree_visit": 0.9720829866844617,
+      "degree_bins": [
+        {
+          "nodes": 354,
+          "geometric_mean_degree": 3.320764213967928,
+          "token_count": 297982,
+          "walk_visit_count": 272912,
+          "visit_over_token": 0.9158674013866609
+        },
+        {
+          "nodes": 67,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 84081,
+          "walk_visit_count": 74744,
+          "visit_over_token": 0.8889523197868722
+        },
+        {
+          "nodes": 36,
+          "geometric_mean_degree": 6.0,
+          "token_count": 54145,
+          "walk_visit_count": 47932,
+          "visit_over_token": 0.8852525625634869
+        },
+        {
+          "nodes": 76,
+          "geometric_mean_degree": 7.722095858963275,
+          "token_count": 148603,
+          "walk_visit_count": 132205,
+          "visit_over_token": 0.88965229504115
+        },
+        {
+          "nodes": 67,
+          "geometric_mean_degree": 16.196009763646895,
+          "token_count": 315189,
+          "walk_visit_count": 276732,
+          "visit_over_token": 0.8779874932183547
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 587,
+          "downsampled_nodes_visit_law": 595,
+          "max_relative_keep_difference": 0.06429708908534515,
+          "min_relative_keep_difference": -0.06429708908534515,
+          "expected_retained_tokens_token_law": 519845.34809460165,
+          "expected_retained_tokens_visit_law": 517271.97052838554,
+          "visit_count_times_visit_keep": 465730.12002081453
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 67,
+          "downsampled_nodes_visit_law": 67,
+          "max_relative_keep_difference": 0.04973443139455713,
+          "min_relative_keep_difference": -0.01821709275510819,
+          "expected_retained_tokens_token_law": 777683.1247634208,
+          "expected_retained_tokens_visit_law": 780179.0429909755,
+          "visit_count_times_visit_keep": 699085.2051246369
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 9,
+          "downsampled_nodes_visit_law": 9,
+          "max_relative_keep_difference": 0.026628635474756024,
+          "min_relative_keep_difference": 0.0,
+          "expected_retained_tokens_token_law": 870311.3373032052,
+          "expected_retained_tokens_visit_law": 871057.5481612894,
+          "visit_count_times_visit_keep": 779023.540906066
+        }
+      }
+    },
+    {
+      "corpus": "prospective/barabasi_albert",
+      "seed": 105,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 804786,
+      "visit_over_token": 0.8942066666666667,
+      "node_ratio_min": 0.8313725490196079,
+      "node_ratio_max": 0.9931693989071039,
+      "share_ratio_min": 0.9297319959811019,
+      "share_ratio_max": 1.110670984605092,
+      "log_log_slope_on_degree_token": 0.999425608177726,
+      "log_log_slope_on_degree_visit": 0.9637742704606472,
+      "degree_bins": [
+        {
+          "nodes": 368,
+          "geometric_mean_degree": 3.266837748858895,
+          "token_count": 304677,
+          "walk_visit_count": 280394,
+          "visit_over_token": 0.9202992021058367
+        },
+        {
+          "nodes": 64,
+          "geometric_mean_degree": 4.999999999999998,
+          "token_count": 80287,
+          "walk_visit_count": 71996,
+          "visit_over_token": 0.8967329704684445
+        },
+        {
+          "nodes": 29,
+          "geometric_mean_degree": 6.0,
+          "token_count": 43788,
+          "walk_visit_count": 38847,
+          "visit_over_token": 0.8871608659906823
+        },
+        {
+          "nodes": 75,
+          "geometric_mean_degree": 8.219518234446923,
+          "token_count": 156464,
+          "walk_visit_count": 137670,
+          "visit_over_token": 0.8798829123632274
+        },
+        {
+          "nodes": 64,
+          "geometric_mean_degree": 17.423488580567252,
+          "token_count": 314784,
+          "walk_visit_count": 275879,
+          "visit_over_token": 0.8764073142218156
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 588,
+          "downsampled_nodes_visit_law": 596,
+          "max_relative_keep_difference": 0.06946004878207102,
+          "min_relative_keep_difference": -0.06946004878207102,
+          "expected_retained_tokens_token_law": 518892.4226849687,
+          "expected_retained_tokens_visit_law": 515512.6301032945,
+          "visit_count_times_visit_keep": 465314.0502751531
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 81,
+          "downsampled_nodes_visit_law": 80,
+          "max_relative_keep_difference": 0.04797526165827448,
+          "min_relative_keep_difference": -0.015427813539040658,
+          "expected_retained_tokens_token_law": 771533.580670167,
+          "expected_retained_tokens_visit_law": 774583.1272016368,
+          "visit_count_times_visit_keep": 694797.5874891356
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 9,
+          "downsampled_nodes_visit_law": 9,
+          "max_relative_keep_difference": 0.025403764739912127,
+          "min_relative_keep_difference": 0.0,
+          "expected_retained_tokens_token_law": 875103.1219970526,
+          "expected_retained_tokens_visit_law": 876198.7139781438,
+          "visit_count_times_visit_keep": 783938.5628185369
+        }
+      }
+    },
+    {
+      "corpus": "prospective/powerlaw_cluster",
+      "seed": 201,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 800067,
+      "visit_over_token": 0.8889633333333333,
+      "node_ratio_min": 0.8210032479249368,
+      "node_ratio_max": 0.9830508474576272,
+      "share_ratio_min": 0.9235513064936351,
+      "share_ratio_max": 1.1058395893242248,
+      "log_log_slope_on_degree_token": 1.0028364135274899,
+      "log_log_slope_on_degree_visit": 0.964622781949744,
+      "degree_bins": [
+        {
+          "nodes": 366,
+          "geometric_mean_degree": 3.2967405875621894,
+          "token_count": 305573,
+          "walk_visit_count": 280334,
+          "visit_over_token": 0.9174043518242777
+        },
+        {
+          "nodes": 56,
+          "geometric_mean_degree": 4.999999999999998,
+          "token_count": 70104,
+          "walk_visit_count": 62471,
+          "visit_over_token": 0.8911189090494123
+        },
+        {
+          "nodes": 51,
+          "geometric_mean_degree": 5.999999999999998,
+          "token_count": 76916,
+          "walk_visit_count": 67822,
+          "visit_over_token": 0.8817671225752769
+        },
+        {
+          "nodes": 62,
+          "geometric_mean_degree": 7.861261149883844,
+          "token_count": 124251,
+          "walk_visit_count": 109297,
+          "visit_over_token": 0.8796468438885804
+        },
+        {
+          "nodes": 65,
+          "geometric_mean_degree": 17.26028559914522,
+          "token_count": 323156,
+          "walk_visit_count": 280143,
+          "visit_over_token": 0.8668971023282873
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 578,
+          "downsampled_nodes_visit_law": 593,
+          "max_relative_keep_difference": 0.06643016186748507,
+          "min_relative_keep_difference": -0.06643016186748507,
+          "expected_retained_tokens_token_law": 518357.6326667027,
+          "expected_retained_tokens_visit_law": 514663.16047889943,
+          "visit_count_times_visit_keep": 462263.9163369285
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 66,
+          "downsampled_nodes_visit_law": 68,
+          "max_relative_keep_difference": 0.05588913195834544,
+          "min_relative_keep_difference": -0.014857715698549101,
+          "expected_retained_tokens_token_law": 767811.2132463891,
+          "expected_retained_tokens_visit_law": 771050.2566045839,
+          "visit_count_times_visit_keep": 688131.1460468795
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 9,
+          "downsampled_nodes_visit_law": 7,
+          "max_relative_keep_difference": 0.026751573064290657,
+          "min_relative_keep_difference": 0.0,
+          "expected_retained_tokens_token_law": 869854.4034204097,
+          "expected_retained_tokens_visit_law": 871012.9329869996,
+          "visit_count_times_visit_keep": 774839.7221879882
+        }
+      }
+    },
+    {
+      "corpus": "prospective/powerlaw_cluster",
+      "seed": 202,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 799663,
+      "visit_over_token": 0.8885144444444445,
+      "node_ratio_min": 0.8199797160243407,
+      "node_ratio_max": 0.9906542056074766,
+      "share_ratio_min": 0.9228659378036831,
+      "share_ratio_max": 1.1149556563786607,
+      "log_log_slope_on_degree_token": 1.0020358538668728,
+      "log_log_slope_on_degree_visit": 0.9630031844967608,
+      "degree_bins": [
+        {
+          "nodes": 249,
+          "geometric_mean_degree": 2.9951188534600175,
+          "token_count": 187043,
+          "walk_visit_count": 173604,
+          "visit_over_token": 0.9281502114487044
+        },
+        {
+          "nodes": 108,
+          "geometric_mean_degree": 4.0,
+          "token_count": 108666,
+          "walk_visit_count": 98163,
+          "visit_over_token": 0.9033460327977473
+        },
+        {
+          "nodes": 75,
+          "geometric_mean_degree": 4.999999999999998,
+          "token_count": 94833,
+          "walk_visit_count": 84128,
+          "visit_over_token": 0.8871173536638091
+        },
+        {
+          "nodes": 39,
+          "geometric_mean_degree": 6.0,
+          "token_count": 58811,
+          "walk_visit_count": 51985,
+          "visit_over_token": 0.8839332777881689
+        },
+        {
+          "nodes": 62,
+          "geometric_mean_degree": 7.734827721049647,
+          "token_count": 121322,
+          "walk_visit_count": 106322,
+          "visit_over_token": 0.8763620777764956
+        },
+        {
+          "nodes": 67,
+          "geometric_mean_degree": 16.435006571214156,
+          "token_count": 329325,
+          "walk_visit_count": 285461,
+          "visit_over_token": 0.866806346314431
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 586,
+          "downsampled_nodes_visit_law": 594,
+          "max_relative_keep_difference": 0.0717676707832271,
+          "min_relative_keep_difference": -0.0717676707832271,
+          "expected_retained_tokens_token_law": 517407.7000288601,
+          "expected_retained_tokens_visit_law": 513485.9378186386,
+          "visit_count_times_visit_keep": 461324.98299196793
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 68,
+          "downsampled_nodes_visit_law": 68,
+          "max_relative_keep_difference": 0.04218656103914764,
+          "min_relative_keep_difference": -0.018500591234900776,
+          "expected_retained_tokens_token_law": 765333.1583127717,
+          "expected_retained_tokens_visit_law": 768208.0062507291,
+          "visit_count_times_visit_keep": 685765.2868203232
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 10,
+          "downsampled_nodes_visit_law": 10,
+          "max_relative_keep_difference": 0.04134794033104017,
+          "min_relative_keep_difference": 0.0,
+          "expected_retained_tokens_token_law": 859637.6376061372,
+          "expected_retained_tokens_visit_law": 861279.1598047931,
+          "visit_count_times_visit_keep": 766242.7341658134
+        }
+      }
+    },
+    {
+      "corpus": "prospective/powerlaw_cluster",
+      "seed": 203,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 799124,
+      "visit_over_token": 0.8879155555555556,
+      "node_ratio_min": 0.8156845369960124,
+      "node_ratio_max": 0.9868073878627969,
+      "share_ratio_min": 0.9186510269950735,
+      "share_ratio_max": 1.1113752672632997,
+      "log_log_slope_on_degree_token": 1.000530207080209,
+      "log_log_slope_on_degree_visit": 0.9627490981891689,
+      "degree_bins": [
+        {
+          "nodes": 372,
+          "geometric_mean_degree": 3.2993747272028005,
+          "token_count": 312197,
+          "walk_visit_count": 285938,
+          "visit_over_token": 0.9158896466013446
+        },
+        {
+          "nodes": 62,
+          "geometric_mean_degree": 5.000000000000001,
+          "token_count": 77955,
+          "walk_visit_count": 69629,
+          "visit_over_token": 0.8931947918671028
+        },
+        {
+          "nodes": 41,
+          "geometric_mean_degree": 6.0,
+          "token_count": 61601,
+          "walk_visit_count": 54526,
+          "visit_over_token": 0.8851479683771367
+        },
+        {
+          "nodes": 54,
+          "geometric_mean_degree": 7.828393942848708,
+          "token_count": 107256,
+          "walk_visit_count": 93782,
+          "visit_over_token": 0.8743753263220706
+        },
+        {
+          "nodes": 71,
+          "geometric_mean_degree": 16.27158832102281,
+          "token_count": 340991,
+          "walk_visit_count": 295249,
+          "visit_over_token": 0.8658556970711837
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 589,
+          "downsampled_nodes_visit_law": 600,
+          "max_relative_keep_difference": 0.06966300860836716,
+          "min_relative_keep_difference": -0.06966300860836716,
+          "expected_retained_tokens_token_law": 517676.5980480353,
+          "expected_retained_tokens_visit_law": 513706.80654431955,
+          "visit_count_times_visit_keep": 461229.4421101596
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 71,
+          "downsampled_nodes_visit_law": 72,
+          "max_relative_keep_difference": 0.04562747801136813,
+          "min_relative_keep_difference": -0.04035992025135149,
+          "expected_retained_tokens_token_law": 764273.6092341562,
+          "expected_retained_tokens_visit_law": 767344.717519417,
+          "visit_count_times_visit_keep": 684568.5372638418
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 10,
+          "downsampled_nodes_visit_law": 10,
+          "max_relative_keep_difference": 0.03362807215841057,
+          "min_relative_keep_difference": 0.0,
+          "expected_retained_tokens_token_law": 864344.4339712812,
+          "expected_retained_tokens_visit_law": 866134.8275920639,
+          "visit_count_times_visit_keep": 770077.6247451223
+        }
+      }
+    },
+    {
+      "corpus": "prospective/powerlaw_cluster",
+      "seed": 204,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 799763,
+      "visit_over_token": 0.8886255555555556,
+      "node_ratio_min": 0.8195413758723828,
+      "node_ratio_max": 0.9861111111111112,
+      "share_ratio_min": 0.9222572665716525,
+      "share_ratio_max": 1.1097037497358593,
+      "log_log_slope_on_degree_token": 1.0013465802965476,
+      "log_log_slope_on_degree_visit": 0.96513095682261,
+      "degree_bins": [
+        {
+          "nodes": 368,
+          "geometric_mean_degree": 3.3027877824532403,
+          "token_count": 308355,
+          "walk_visit_count": 282590,
+          "visit_over_token": 0.9164437093609639
+        },
+        {
+          "nodes": 61,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 76506,
+          "walk_visit_count": 68351,
+          "visit_over_token": 0.8934070530415915
+        },
+        {
+          "nodes": 48,
+          "geometric_mean_degree": 5.999999999999998,
+          "token_count": 72339,
+          "walk_visit_count": 63926,
+          "visit_over_token": 0.8837003552717069
+        },
+        {
+          "nodes": 63,
+          "geometric_mean_degree": 7.735099257141422,
+          "token_count": 123386,
+          "walk_visit_count": 108294,
+          "visit_over_token": 0.8776846643865592
+        },
+        {
+          "nodes": 60,
+          "geometric_mean_degree": 18.006333779144587,
+          "token_count": 319414,
+          "walk_visit_count": 276602,
+          "visit_over_token": 0.8659670521642758
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 585,
+          "downsampled_nodes_visit_law": 594,
+          "max_relative_keep_difference": 0.06899993545047345,
+          "min_relative_keep_difference": -0.06899993545047345,
+          "expected_retained_tokens_token_law": 517312.05735376966,
+          "expected_retained_tokens_visit_law": 513373.74077905924,
+          "visit_count_times_visit_keep": 461212.4391802703
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 60,
+          "downsampled_nodes_visit_law": 60,
+          "max_relative_keep_difference": 0.04479219474998786,
+          "min_relative_keep_difference": -0.024607739883582558,
+          "expected_retained_tokens_token_law": 760509.349053004,
+          "expected_retained_tokens_visit_law": 763335.298099743,
+          "visit_count_times_visit_keep": 681688.0407139652
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 14,
+          "downsampled_nodes_visit_law": 14,
+          "max_relative_keep_difference": 0.03926023097918474,
+          "min_relative_keep_difference": 0.0,
+          "expected_retained_tokens_token_law": 861167.4855298667,
+          "expected_retained_tokens_visit_law": 863393.0518522236,
+          "visit_count_times_visit_keep": 768164.5137400554
+        }
+      }
+    },
+    {
+      "corpus": "prospective/powerlaw_cluster",
+      "seed": 205,
+      "nodes": 600,
+      "token_total": 900000,
+      "walk_visit_total": 799910,
+      "visit_over_token": 0.8887888888888889,
+      "node_ratio_min": 0.8278097982708934,
+      "node_ratio_max": 0.9887798036465638,
+      "share_ratio_min": 0.9313908045202637,
+      "share_ratio_max": 1.1125024356263924,
+      "log_log_slope_on_degree_token": 1.001294386455806,
+      "log_log_slope_on_degree_visit": 0.9636025655614792,
+      "degree_bins": [
+        {
+          "nodes": 361,
+          "geometric_mean_degree": 3.3063156901330846,
+          "token_count": 302601,
+          "walk_visit_count": 277571,
+          "visit_over_token": 0.9172838159821018
+        },
+        {
+          "nodes": 72,
+          "geometric_mean_degree": 4.999999999999998,
+          "token_count": 90394,
+          "walk_visit_count": 80933,
+          "visit_over_token": 0.8953359736265681
+        },
+        {
+          "nodes": 50,
+          "geometric_mean_degree": 5.999999999999998,
+          "token_count": 75555,
+          "walk_visit_count": 66812,
+          "visit_over_token": 0.8842829726689166
+        },
+        {
+          "nodes": 53,
+          "geometric_mean_degree": 7.825191726002799,
+          "token_count": 104660,
+          "walk_visit_count": 91666,
+          "visit_over_token": 0.8758455952608446
+        },
+        {
+          "nodes": 64,
+          "geometric_mean_degree": 17.247171872693027,
+          "token_count": 326790,
+          "walk_visit_count": 282928,
+          "visit_over_token": 0.8657792466109734
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 590,
+          "downsampled_nodes_visit_law": 596,
+          "max_relative_keep_difference": 0.07065860077908315,
+          "min_relative_keep_difference": -0.07065860077908315,
+          "expected_retained_tokens_token_law": 517585.83134770085,
+          "expected_retained_tokens_visit_law": 513638.8865031904,
+          "visit_count_times_visit_keep": 461530.8149719711
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 64,
+          "downsampled_nodes_visit_law": 63,
+          "max_relative_keep_difference": 0.03815871984089636,
+          "min_relative_keep_difference": -0.020088339306510217,
+          "expected_retained_tokens_token_law": 762053.0436573767,
+          "expected_retained_tokens_visit_law": 765131.1188037837,
+          "visit_count_times_visit_keep": 683294.4070801815
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 11,
+          "downsampled_nodes_visit_law": 11,
+          "max_relative_keep_difference": 0.030249793775988465,
+          "min_relative_keep_difference": 0.0,
+          "expected_retained_tokens_token_law": 861215.0500777713,
+          "expected_retained_tokens_visit_law": 863005.265145075,
+          "visit_count_times_visit_keep": 768003.285325846
+        }
+      }
+    },
+    {
+      "corpus": "prospective/netscience",
+      "seed": 301,
+      "nodes": 379,
+      "token_total": 568500,
+      "walk_visit_total": 471919,
+      "visit_over_token": 0.8301125769569041,
+      "node_ratio_min": 0.6453175457481163,
+      "node_ratio_max": 0.9787234042553191,
+      "share_ratio_min": 0.7773855783679066,
+      "share_ratio_max": 1.1790249074929149,
+      "log_log_slope_on_degree_token": 0.9996193275194227,
+      "log_log_slope_on_degree_visit": 0.9719567103309588,
+      "degree_bins": [
+        {
+          "nodes": 101,
+          "geometric_mean_degree": 1.6617153455282738,
+          "token_count": 54450,
+          "walk_visit_count": 46666,
+          "visit_over_token": 0.8570431588613406
+        },
+        {
+          "nodes": 72,
+          "geometric_mean_degree": 3.0000000000000004,
+          "token_count": 67148,
+          "walk_visit_count": 56083,
+          "visit_over_token": 0.8352147495085482
+        },
+        {
+          "nodes": 62,
+          "geometric_mean_degree": 4.000000000000002,
+          "token_count": 76891,
+          "walk_visit_count": 64310,
+          "visit_over_token": 0.836378769947068
+        },
+        {
+          "nodes": 33,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 51563,
+          "walk_visit_count": 43235,
+          "visit_over_token": 0.8384888388961077
+        },
+        {
+          "nodes": 36,
+          "geometric_mean_degree": 6.0,
+          "token_count": 67467,
+          "walk_visit_count": 55869,
+          "visit_over_token": 0.8280937347147495
+        },
+        {
+          "nodes": 32,
+          "geometric_mean_degree": 7.359444256701366,
+          "token_count": 73332,
+          "walk_visit_count": 61607,
+          "visit_over_token": 0.8401107292859871
+        },
+        {
+          "nodes": 43,
+          "geometric_mean_degree": 12.539737164924738,
+          "token_count": 177649,
+          "walk_visit_count": 144149,
+          "visit_over_token": 0.8114259016374986
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 352,
+          "downsampled_nodes_visit_law": 352,
+          "max_relative_keep_difference": 0.17839145888477992,
+          "min_relative_keep_difference": -0.10151089318644868,
+          "expected_retained_tokens_token_law": 242688.5294997631,
+          "expected_retained_tokens_visit_law": 242810.97139623715,
+          "visit_count_times_visit_keep": 202191.0652175339
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 140,
+          "downsampled_nodes_visit_law": 135,
+          "max_relative_keep_difference": 0.1639770315239486,
+          "min_relative_keep_difference": -0.08178331792641047,
+          "expected_retained_tokens_token_law": 449930.596972393,
+          "expected_retained_tokens_visit_law": 450513.9257989053,
+          "visit_count_times_visit_keep": 374999.43039200234
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 11,
+          "downsampled_nodes_visit_law": 9,
+          "max_relative_keep_difference": 0.10043590101346522,
+          "min_relative_keep_difference": -0.016233277571680693,
+          "expected_retained_tokens_token_law": 553283.3833615879,
+          "expected_retained_tokens_visit_law": 554557.8667963175,
+          "visit_count_times_visit_keep": 460710.9468373733
+        }
+      }
+    },
+    {
+      "corpus": "prospective/netscience",
+      "seed": 302,
+      "nodes": 379,
+      "token_total": 568500,
+      "walk_visit_total": 471898,
+      "visit_over_token": 0.8300756376429199,
+      "node_ratio_min": 0.6427125506072875,
+      "node_ratio_max": 0.9863013698630136,
+      "share_ratio_min": 0.7742819105405044,
+      "share_ratio_max": 1.1882066225479304,
+      "log_log_slope_on_degree_token": 0.999131316933764,
+      "log_log_slope_on_degree_visit": 0.9727890708257739,
+      "degree_bins": [
+        {
+          "nodes": 101,
+          "geometric_mean_degree": 1.6617153455282738,
+          "token_count": 54745,
+          "walk_visit_count": 46771,
+          "visit_over_token": 0.8543428623618595
+        },
+        {
+          "nodes": 72,
+          "geometric_mean_degree": 3.0000000000000004,
+          "token_count": 67336,
+          "walk_visit_count": 56085,
+          "visit_over_token": 0.8329125579184983
+        },
+        {
+          "nodes": 62,
+          "geometric_mean_degree": 4.000000000000002,
+          "token_count": 76502,
+          "walk_visit_count": 63868,
+          "visit_over_token": 0.83485399074534
+        },
+        {
+          "nodes": 33,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 51547,
+          "walk_visit_count": 43403,
+          "visit_over_token": 0.8420082643024812
+        },
+        {
+          "nodes": 36,
+          "geometric_mean_degree": 6.0,
+          "token_count": 67318,
+          "walk_visit_count": 55858,
+          "visit_over_token": 0.8297632134050328
+        },
+        {
+          "nodes": 32,
+          "geometric_mean_degree": 7.359444256701366,
+          "token_count": 72732,
+          "walk_visit_count": 61174,
+          "visit_over_token": 0.841087829291096
+        },
+        {
+          "nodes": 43,
+          "geometric_mean_degree": 12.539737164924738,
+          "token_count": 178320,
+          "walk_visit_count": 144739,
+          "visit_over_token": 0.8116812471960521
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 352,
+          "downsampled_nodes_visit_law": 352,
+          "max_relative_keep_difference": 0.1819668414971365,
+          "min_relative_keep_difference": -0.10536763554153694,
+          "expected_retained_tokens_token_law": 242630.50785034697,
+          "expected_retained_tokens_visit_law": 242817.37688988226,
+          "visit_count_times_visit_keep": 202100.0440337672
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 142,
+          "downsampled_nodes_visit_law": 134,
+          "max_relative_keep_difference": 0.13357622116228285,
+          "min_relative_keep_difference": -0.07894444318949134,
+          "expected_retained_tokens_token_law": 449969.7392805886,
+          "expected_retained_tokens_visit_law": 450225.1372511755,
+          "visit_count_times_visit_keep": 374677.31405877054
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 12,
+          "downsampled_nodes_visit_law": 10,
+          "max_relative_keep_difference": 0.10456663625954876,
+          "min_relative_keep_difference": -0.017207482266031415,
+          "expected_retained_tokens_token_law": 553223.6825133204,
+          "expected_retained_tokens_visit_law": 554484.8704088866,
+          "visit_count_times_visit_keep": 460637.9159997233
+        }
+      }
+    },
+    {
+      "corpus": "prospective/netscience",
+      "seed": 303,
+      "nodes": 379,
+      "token_total": 568500,
+      "walk_visit_total": 472269,
+      "visit_over_token": 0.8307282321899736,
+      "node_ratio_min": 0.6347914547304171,
+      "node_ratio_max": 0.9967532467532467,
+      "share_ratio_min": 0.7641385354834683,
+      "share_ratio_max": 1.1998547877993702,
+      "log_log_slope_on_degree_token": 1.000930407655943,
+      "log_log_slope_on_degree_visit": 0.9742185153140894,
+      "degree_bins": [
+        {
+          "nodes": 101,
+          "geometric_mean_degree": 1.6617153455282738,
+          "token_count": 54295,
+          "walk_visit_count": 46480,
+          "visit_over_token": 0.8560640942996592
+        },
+        {
+          "nodes": 72,
+          "geometric_mean_degree": 3.0000000000000004,
+          "token_count": 67592,
+          "walk_visit_count": 56446,
+          "visit_over_token": 0.8350988282636999
+        },
+        {
+          "nodes": 62,
+          "geometric_mean_degree": 4.000000000000002,
+          "token_count": 76937,
+          "walk_visit_count": 64274,
+          "visit_over_token": 0.8354107906468929
+        },
+        {
+          "nodes": 33,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 51327,
+          "walk_visit_count": 43087,
+          "visit_over_token": 0.8394607126853313
+        },
+        {
+          "nodes": 36,
+          "geometric_mean_degree": 6.0,
+          "token_count": 67518,
+          "walk_visit_count": 55935,
+          "visit_over_token": 0.8284457478005866
+        },
+        {
+          "nodes": 32,
+          "geometric_mean_degree": 7.359444256701366,
+          "token_count": 72578,
+          "walk_visit_count": 61005,
+          "visit_over_token": 0.8405439664912232
+        },
+        {
+          "nodes": 43,
+          "geometric_mean_degree": 12.539737164924738,
+          "token_count": 178253,
+          "walk_visit_count": 145042,
+          "visit_over_token": 0.8136861651697307
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 352,
+          "downsampled_nodes_visit_law": 350,
+          "max_relative_keep_difference": 0.19239691307698514,
+          "min_relative_keep_difference": -0.10394768355213524,
+          "expected_retained_tokens_token_law": 242650.720527144,
+          "expected_retained_tokens_visit_law": 242815.11644949365,
+          "visit_count_times_visit_keep": 202269.77333362531
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 144,
+          "downsampled_nodes_visit_law": 135,
+          "max_relative_keep_difference": 0.19326915140052403,
+          "min_relative_keep_difference": -0.07959489599698344,
+          "expected_retained_tokens_token_law": 450202.22498377983,
+          "expected_retained_tokens_visit_law": 450586.20780715323,
+          "visit_count_times_visit_keep": 375221.5471284253
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 11,
+          "downsampled_nodes_visit_law": 10,
+          "max_relative_keep_difference": 0.10227449407121858,
+          "min_relative_keep_difference": -0.017298458944066564,
+          "expected_retained_tokens_token_law": 553628.6980977617,
+          "expected_retained_tokens_visit_law": 554713.5170066403,
+          "visit_count_times_visit_keep": 461147.8111359688
+        }
+      }
+    },
+    {
+      "corpus": "prospective/netscience",
+      "seed": 304,
+      "nodes": 379,
+      "token_total": 568500,
+      "walk_visit_total": 471322,
+      "visit_over_token": 0.8290624450307827,
+      "node_ratio_min": 0.6487358795051102,
+      "node_ratio_max": 0.9903536977491961,
+      "share_ratio_min": 0.7824933856231094,
+      "share_ratio_max": 1.1945465672521502,
+      "log_log_slope_on_degree_token": 0.9978232278279333,
+      "log_log_slope_on_degree_visit": 0.9715012260692865,
+      "degree_bins": [
+        {
+          "nodes": 101,
+          "geometric_mean_degree": 1.6617153455282738,
+          "token_count": 54614,
+          "walk_visit_count": 46610,
+          "visit_over_token": 0.8534441718240744
+        },
+        {
+          "nodes": 72,
+          "geometric_mean_degree": 3.0000000000000004,
+          "token_count": 67444,
+          "walk_visit_count": 56203,
+          "visit_over_token": 0.8333283909613902
+        },
+        {
+          "nodes": 62,
+          "geometric_mean_degree": 4.000000000000002,
+          "token_count": 77274,
+          "walk_visit_count": 64508,
+          "visit_over_token": 0.8347956621890934
+        },
+        {
+          "nodes": 33,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 51169,
+          "walk_visit_count": 42886,
+          "visit_over_token": 0.8381246457816256
+        },
+        {
+          "nodes": 36,
+          "geometric_mean_degree": 6.0,
+          "token_count": 67075,
+          "walk_visit_count": 55586,
+          "visit_over_token": 0.8287141259783825
+        },
+        {
+          "nodes": 32,
+          "geometric_mean_degree": 7.359444256701366,
+          "token_count": 73140,
+          "walk_visit_count": 61430,
+          "visit_over_token": 0.8398960896910036
+        },
+        {
+          "nodes": 43,
+          "geometric_mean_degree": 12.539737164924738,
+          "token_count": 177784,
+          "walk_visit_count": 144099,
+          "visit_over_token": 0.8105285065022724
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 352,
+          "downsampled_nodes_visit_law": 352,
+          "max_relative_keep_difference": 0.1720626403896981,
+          "min_relative_keep_difference": -0.1040934243110585,
+          "expected_retained_tokens_token_law": 242711.03533757912,
+          "expected_retained_tokens_visit_law": 242882.28101138867,
+          "visit_count_times_visit_keep": 201923.30835791846
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 142,
+          "downsampled_nodes_visit_law": 135,
+          "max_relative_keep_difference": 0.16440177620079055,
+          "min_relative_keep_difference": -0.0887055301115256,
+          "expected_retained_tokens_token_law": 450540.1609494012,
+          "expected_retained_tokens_visit_law": 450943.338645398,
+          "visit_count_times_visit_keep": 374840.2172532156
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 11,
+          "downsampled_nodes_visit_law": 10,
+          "max_relative_keep_difference": 0.09767204907304872,
+          "min_relative_keep_difference": -0.015435171737724462,
+          "expected_retained_tokens_token_law": 553533.9758672818,
+          "expected_retained_tokens_visit_law": 554597.4021407643,
+          "visit_count_times_visit_keep": 460145.1297155741
+        }
+      }
+    },
+    {
+      "corpus": "prospective/netscience",
+      "seed": 305,
+      "nodes": 379,
+      "token_total": 568500,
+      "walk_visit_total": 471908,
+      "visit_over_token": 0.8300932277924362,
+      "node_ratio_min": 0.6320754716981132,
+      "node_ratio_max": 0.9927007299270073,
+      "share_ratio_min": 0.7614511846808644,
+      "share_ratio_max": 1.1958906502189064,
+      "log_log_slope_on_degree_token": 1.0042348268348458,
+      "log_log_slope_on_degree_visit": 0.9757078986134587,
+      "degree_bins": [
+        {
+          "nodes": 101,
+          "geometric_mean_degree": 1.6617153455282738,
+          "token_count": 54220,
+          "walk_visit_count": 46536,
+          "visit_over_token": 0.8582810770933235
+        },
+        {
+          "nodes": 72,
+          "geometric_mean_degree": 3.0000000000000004,
+          "token_count": 66937,
+          "walk_visit_count": 55772,
+          "visit_over_token": 0.8332013684509315
+        },
+        {
+          "nodes": 62,
+          "geometric_mean_degree": 4.000000000000002,
+          "token_count": 76665,
+          "walk_visit_count": 64039,
+          "visit_over_token": 0.8353094632492011
+        },
+        {
+          "nodes": 33,
+          "geometric_mean_degree": 4.999999999999999,
+          "token_count": 51561,
+          "walk_visit_count": 43247,
+          "visit_over_token": 0.838754097088885
+        },
+        {
+          "nodes": 36,
+          "geometric_mean_degree": 6.0,
+          "token_count": 66839,
+          "walk_visit_count": 55323,
+          "visit_over_token": 0.8277053815885935
+        },
+        {
+          "nodes": 32,
+          "geometric_mean_degree": 7.359444256701366,
+          "token_count": 73984,
+          "walk_visit_count": 62082,
+          "visit_over_token": 0.8391273788927336
+        },
+        {
+          "nodes": 43,
+          "geometric_mean_degree": 12.539737164924738,
+          "token_count": 178294,
+          "walk_visit_count": 144909,
+          "visit_over_token": 0.8127530932056042
+        }
+      ],
+      "thresholds": {
+        "t3e-4": {
+          "downsampled_nodes_token_law": 352,
+          "downsampled_nodes_visit_law": 352,
+          "max_relative_keep_difference": 0.19570041784129555,
+          "min_relative_keep_difference": -0.10383778525778775,
+          "expected_retained_tokens_token_law": 242544.9425894501,
+          "expected_retained_tokens_visit_law": 242685.38018041925,
+          "visit_count_times_visit_keep": 202062.28522167206
+        },
+        "t1e-3": {
+          "downsampled_nodes_token_law": 143,
+          "downsampled_nodes_visit_law": 135,
+          "max_relative_keep_difference": 0.16737239224147915,
+          "min_relative_keep_difference": -0.07791215997550582,
+          "expected_retained_tokens_token_law": 449395.8756883575,
+          "expected_retained_tokens_visit_law": 449854.08743648336,
+          "visit_count_times_visit_keep": 374335.0784032934
+        },
+        "t3e-3": {
+          "downsampled_nodes_token_law": 11,
+          "downsampled_nodes_visit_law": 10,
+          "max_relative_keep_difference": 0.10507544540124991,
+          "min_relative_keep_difference": -0.018206219086473685,
+          "expected_retained_tokens_token_law": 553230.838512403,
+          "expected_retained_tokens_visit_law": 554490.3518285085,
+          "visit_count_times_visit_keep": 460619.9861017308
+        }
+      }
+    }
+  ],
+  "frozen_calibration_check": [
+    {
+      "seed": 0,
+      "threshold": 0.0003,
+      "frozen_legacy_count_total": 802813,
+      "audit_walk_visit_total": 802813,
+      "frozen_realized_retained_tokens": 518748,
+      "audit_expected_retained_tokens_visit_law": 518917.55763220077,
+      "audit_expected_retained_tokens_token_law": 519044.7596114321
+    },
+    {
+      "seed": 0,
+      "threshold": 0.001,
+      "frozen_legacy_count_total": 802813,
+      "audit_walk_visit_total": 802813,
+      "frozen_realized_retained_tokens": 775234,
+      "audit_expected_retained_tokens_visit_law": 775385.8587563414,
+      "audit_expected_retained_tokens_token_law": 775571.738746938
+    },
+    {
+      "seed": 0,
+      "threshold": 0.003,
+      "frozen_legacy_count_total": 802813,
+      "audit_walk_visit_total": 802813,
+      "frozen_realized_retained_tokens": 869399,
+      "audit_expected_retained_tokens_visit_law": 869405.4387158275,
+      "audit_expected_retained_tokens_token_law": 869057.6972511872
+    },
+    {
+      "seed": 1,
+      "threshold": 0.0003,
+      "frozen_legacy_count_total": 802656,
+      "audit_walk_visit_total": 802656,
+      "frozen_realized_retained_tokens": 519485,
+      "audit_expected_retained_tokens_visit_law": 519917.01754884666,
+      "audit_expected_retained_tokens_token_law": 520153.9687001436
+    },
+    {
+      "seed": 1,
+      "threshold": 0.001,
+      "frozen_legacy_count_total": 802656,
+      "audit_walk_visit_total": 802656,
+      "frozen_realized_retained_tokens": 778838,
+      "audit_expected_retained_tokens_visit_law": 778769.9437616456,
+      "audit_expected_retained_tokens_token_law": 778876.9850651424
+    },
+    {
+      "seed": 1,
+      "threshold": 0.003,
+      "frozen_legacy_count_total": 802656,
+      "audit_walk_visit_total": 802656,
+      "frozen_realized_retained_tokens": 876459,
+      "audit_expected_retained_tokens_visit_law": 876628.0561226192,
+      "audit_expected_retained_tokens_token_law": 876173.285903299
+    },
+    {
+      "seed": 2,
+      "threshold": 0.0003,
+      "frozen_legacy_count_total": 802082,
+      "audit_walk_visit_total": 802082,
+      "frozen_realized_retained_tokens": 520014,
+      "audit_expected_retained_tokens_visit_law": 519238.13297015027,
+      "audit_expected_retained_tokens_token_law": 519393.45177201787
+    },
+    {
+      "seed": 2,
+      "threshold": 0.001,
+      "frozen_legacy_count_total": 802082,
+      "audit_walk_visit_total": 802082,
+      "frozen_realized_retained_tokens": 774736,
+      "audit_expected_retained_tokens_visit_law": 774269.7223356892,
+      "audit_expected_retained_tokens_token_law": 773852.5494980187
+    },
+    {
+      "seed": 2,
+      "threshold": 0.003,
+      "frozen_legacy_count_total": 802082,
+      "audit_walk_visit_total": 802082,
+      "frozen_realized_retained_tokens": 870906,
+      "audit_expected_retained_tokens_visit_law": 870841.0507000026,
+      "audit_expected_retained_tokens_token_law": 870568.1252233916
+    },
+    {
+      "seed": 3,
+      "threshold": 0.0003,
+      "frozen_legacy_count_total": 802041,
+      "audit_walk_visit_total": 802041,
+      "frozen_realized_retained_tokens": 521408,
+      "audit_expected_retained_tokens_visit_law": 521024.135396365,
+      "audit_expected_retained_tokens_token_law": 520904.79105898977
+    },
+    {
+      "seed": 3,
+      "threshold": 0.001,
+      "frozen_legacy_count_total": 802041,
+      "audit_walk_visit_total": 802041,
+      "frozen_realized_retained_tokens": 780170,
+      "audit_expected_retained_tokens_visit_law": 779952.5054207268,
+      "audit_expected_retained_tokens_token_law": 779870.1744135869
+    },
+    {
+      "seed": 3,
+      "threshold": 0.003,
+      "frozen_legacy_count_total": 802041,
+      "audit_walk_visit_total": 802041,
+      "frozen_realized_retained_tokens": 875876,
+      "audit_expected_retained_tokens_visit_law": 875677.6197012267,
+      "audit_expected_retained_tokens_token_law": 875658.3177872874
+    },
+    {
+      "seed": 4,
+      "threshold": 0.0003,
+      "frozen_legacy_count_total": 803317,
+      "audit_walk_visit_total": 803317,
+      "frozen_realized_retained_tokens": 520369,
+      "audit_expected_retained_tokens_visit_law": 519857.73762051965,
+      "audit_expected_retained_tokens_token_law": 520078.64718872623
+    },
+    {
+      "seed": 4,
+      "threshold": 0.001,
+      "frozen_legacy_count_total": 803317,
+      "audit_walk_visit_total": 803317,
+      "frozen_realized_retained_tokens": 775876,
+      "audit_expected_retained_tokens_visit_law": 775939.2764655652,
+      "audit_expected_retained_tokens_token_law": 775552.6596344381
+    },
+    {
+      "seed": 4,
+      "threshold": 0.003,
+      "frozen_legacy_count_total": 803317,
+      "audit_walk_visit_total": 803317,
+      "frozen_realized_retained_tokens": 876797,
+      "audit_expected_retained_tokens_visit_law": 876740.1344848656,
+      "audit_expected_retained_tokens_token_law": 876168.9368833986
+    }
+  ]
+}

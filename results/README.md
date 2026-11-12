@@ -15,10 +15,12 @@ subsampling comparison and no-filter control are in
 [`subsampling_origin/`](subsampling_origin/README.md). Forty continuous runs in
 [`training_trajectory/`](training_trajectory/README.md) test training duration and
 learning-rate history. They show that unfiltered turnover depends on the schedule.
-The historical retained-token budget-matched sweep and the other original
-`norm_frequency_simulation` conditions have **not** been rerun. Their saved outputs
-must not be presented as corrected results. The manuscript labels the historical
-Gensim figure separately from the new control and trajectory evidence.
+Both historical experiments, including the retained-token budget-matched sweep
+and every `norm_frequency_simulation` condition, were rerun with token counts and
+the corrected build in [`issue44_token_counts/`](issue44_token_counts/README.md),
+which also audits what the walk-visit counter changed. The historical saved
+outputs must still not be presented as corrected results. The manuscript labels
+the historical Gensim figure separately from the new control and trajectory evidence.
 Preserve them for comparison; use a new `--output-dir` for any future rerun.
 
 `negative_sampling_control/` is the earlier calibration-only diagnostic with

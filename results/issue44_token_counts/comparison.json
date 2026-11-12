@@ -1,0 +1,1334 @@
+{
+  "gensim_threshold_sweep": {
+    "degree_bins": {
+      "mean_degree": [
+        2.984678385186163,
+        4.000000000000001,
+        4.999999999999998,
+        5.999999999999998,
+        7.7310511099753985,
+        16.04432240735325
+      ],
+      "node_rows_per_bin": [
+        1221,
+        564,
+        360,
+        215,
+        295,
+        345
+      ]
+    },
+    "conditions": [
+      {
+        "schedule": "fixed_epochs",
+        "threshold": 0.0003,
+        "original_epochs": [
+          5,
+          5
+        ],
+        "visit_count_epochs_by_seed": {
+          "0": 5,
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5
+        },
+        "corrected_epochs_by_seed": {
+          "0": 5,
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5
+        },
+        "original_mean_expected_total_retained_centers": 2317913.28662856,
+        "audit_visit_mean_expected_total_retained_centers": 2317913.2866285597,
+        "corrected_mean_expected_total_retained_centers": 2599575.6183313094,
+        "raw_norm": {
+          "original": {
+            "bins": 6,
+            "peak_bin": 0,
+            "peak_degree": 2.984678385186163,
+            "lowest_degree_bin": 4.260873910033892,
+            "peak": 4.260873910033892,
+            "highest_degree_bin": 3.5128097773276603,
+            "peak_minus_lowest": 0.0,
+            "highest_minus_peak": -0.7480641327062316,
+            "inverted_u": false,
+            "spearman_degree": -1.0
+          },
+          "corrected": {
+            "bins": 6,
+            "peak_bin": 0,
+            "peak_degree": 2.984678385186163,
+            "lowest_degree_bin": 4.26805607519022,
+            "peak": 4.26805607519022,
+            "highest_degree_bin": 3.509522850658122,
+            "peak_minus_lowest": 0.0,
+            "highest_minus_peak": -0.7585332245320977,
+            "inverted_u": false,
+            "spearman_degree": -1.0
+          },
+          "max_abs_summary_point_change": 0.007182165156327969,
+          "corrected_curve": {
+            "degree": [
+              2.984678385186163,
+              4.000000000000001,
+              4.999999999999998,
+              5.999999999999998,
+              7.7310511099753985,
+              16.04432240735325
+            ],
+            "mean": [
+              4.26805607519022,
+              4.1851960716964545,
+              4.0624485187419825,
+              3.967049962526486,
+              3.7678182051040503,
+              3.509522850658122
+            ]
+          }
+        },
+        "balanced_norm": {
+          "original": {
+            "bins": 6,
+            "peak_bin": 0,
+            "peak_degree": 2.984678385186163,
+            "lowest_degree_bin": 4.283297611105052,
+            "peak": 4.283297611105052,
+            "highest_degree_bin": 3.5357156382883344,
+            "peak_minus_lowest": 0.0,
+            "highest_minus_peak": -0.7475819728167177,
+            "inverted_u": false,
+            "spearman_degree": -1.0
+          },
+          "corrected": {
+            "bins": 6,
+            "peak_bin": 0,
+            "peak_degree": 2.984678385186163,
+            "lowest_degree_bin": 4.290872863380913,
+            "peak": 4.290872863380913,
+            "highest_degree_bin": 3.532149514656953,
+            "peak_minus_lowest": 0.0,
+            "highest_minus_peak": -0.7587233487239597,
+            "inverted_u": false,
+            "spearman_degree": -1.0
+          },
+          "max_abs_summary_point_change": 0.0075752522758607554,
+          "corrected_curve": {
+            "degree": [
+              2.984678385186163,
+              4.000000000000001,
+              4.999999999999998,
+              5.999999999999998,
+              7.7310511099753985,
+              16.04432240735325
+            ],
+            "mean": [
+              4.290872863380913,
+              4.207348062316682,
+              4.083935782081745,
+              3.9882240081340634,
+              3.7871262750345855,
+              3.532149514656953
+            ]
+          }
+        }
+      },
+      {
+        "schedule": "fixed_epochs",
+        "threshold": 0.001,
+        "original_epochs": [
+          5,
+          5
+        ],
+        "visit_count_epochs_by_seed": {
+          "0": 5,
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5
+        },
+        "corrected_epochs_by_seed": {
+          "0": 5,
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5
+        },
+        "original_mean_expected_total_retained_centers": 3466169.7833874775,
+        "audit_visit_mean_expected_total_retained_centers": 3466169.7833874775,
+        "corrected_mean_expected_total_retained_centers": 3883724.107358125,
+        "raw_norm": {
+          "original": {
+            "bins": 6,
+            "peak_bin": 3,
+            "peak_degree": 5.999999999999998,
+            "lowest_degree_bin": 4.757693846284558,
+            "peak": 5.130138557137718,
+            "highest_degree_bin": 4.592933296023422,
+            "peak_minus_lowest": 0.3724447108531601,
+            "highest_minus_peak": -0.5372052611142957,
+            "inverted_u": true,
+            "spearman_degree": 0.08571428571428573
+          },
+          "corrected": {
+            "bins": 6,
+            "peak_bin": 3,
+            "peak_degree": 5.999999999999998,
+            "lowest_degree_bin": 4.759398765577691,
+            "peak": 5.133995854415084,
+            "highest_degree_bin": 4.606831122648885,
+            "peak_minus_lowest": 0.37459708883739307,
+            "highest_minus_peak": -0.5271647317661987,
+            "inverted_u": true,
+            "spearman_degree": 0.08571428571428573
+          },
+          "max_abs_summary_point_change": 0.013897826625463239,
+          "corrected_curve": {
+            "degree": [
+              2.984678385186163,
+              4.000000000000001,
+              4.999999999999998,
+              5.999999999999998,
+              7.7310511099753985,
+              16.04432240735325
+            ],
+            "mean": [
+              4.759398765577691,
+              4.980189519143042,
+              5.07864923057026,
+              5.133995854415084,
+              5.1058006181486855,
+              4.606831122648885
+            ]
+          }
+        },
+        "balanced_norm": {
+          "original": {
+            "bins": 6,
+            "peak_bin": 3,
+            "peak_degree": 5.999999999999998,
+            "lowest_degree_bin": 4.774697506214352,
+            "peak": 5.152846848442912,
+            "highest_degree_bin": 4.648371676838895,
+            "peak_minus_lowest": 0.3781493422285598,
+            "highest_minus_peak": -0.5044751716040166,
+            "inverted_u": true,
+            "spearman_degree": 0.08571428571428573
+          },
+          "corrected": {
+            "bins": 6,
+            "peak_bin": 3,
+            "peak_degree": 5.999999999999998,
+            "lowest_degree_bin": 4.776188071859084,
+            "peak": 5.155699907048395,
+            "highest_degree_bin": 4.6611545863297765,
+            "peak_minus_lowest": 0.37951183518931053,
+            "highest_minus_peak": -0.49454532071861834,
+            "inverted_u": true,
+            "spearman_degree": 0.08571428571428573
+          },
+          "max_abs_summary_point_change": 0.012782909490881345,
+          "corrected_curve": {
+            "degree": [
+              2.984678385186163,
+              4.000000000000001,
+              4.999999999999998,
+              5.999999999999998,
+              7.7310511099753985,
+              16.04432240735325
+            ],
+            "mean": [
+              4.776188071859084,
+              4.993827786285103,
+              5.096394835791413,
+              5.155699907048395,
+              5.1371772514529646,
+              4.6611545863297765
+            ]
+          }
+        }
+      },
+      {
+        "schedule": "fixed_epochs",
+        "threshold": 0.003,
+        "original_epochs": [
+          5,
+          5
+        ],
+        "visit_count_epochs_by_seed": {
+          "0": 5,
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5
+        },
+        "corrected_epochs_by_seed": {
+          "0": 5,
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5
+        },
+        "original_mean_expected_total_retained_centers": 3897393.870051944,
+        "audit_visit_mean_expected_total_retained_centers": 3897393.870051944,
+        "corrected_mean_expected_total_retained_centers": 4367626.363048564,
+        "raw_norm": {
+          "original": {
+            "bins": 6,
+            "peak_bin": 4,
+            "peak_degree": 7.7310511099753985,
+            "lowest_degree_bin": 4.797829729812092,
+            "peak": 5.366625597047491,
+            "highest_degree_bin": 5.128393899793987,
+            "peak_minus_lowest": 0.5687958672353997,
+            "highest_minus_peak": -0.23823169725350457,
+            "inverted_u": true,
+            "spearman_degree": 0.6571428571428573
+          },
+          "corrected": {
+            "bins": 6,
+            "peak_bin": 4,
+            "peak_degree": 7.7310511099753985,
+            "lowest_degree_bin": 4.809538051348097,
+            "peak": 5.369566433111282,
+            "highest_degree_bin": 5.112583505357668,
+            "peak_minus_lowest": 0.5600283817631846,
+            "highest_minus_peak": -0.2569829277536142,
+            "inverted_u": true,
+            "spearman_degree": 0.6571428571428573
+          },
+          "max_abs_summary_point_change": 0.015810394436319264,
+          "corrected_curve": {
+            "degree": [
+              2.984678385186163,
+              4.000000000000001,
+              4.999999999999998,
+              5.999999999999998,
+              7.7310511099753985,
+              16.04432240735325
+            ],
+            "mean": [
+              4.809538051348097,
+              5.069496185771144,
+              5.2119323979176135,
+              5.318450144091262,
+              5.369566433111282,
+              5.112583505357668
+            ]
+          }
+        },
+        "balanced_norm": {
+          "original": {
+            "bins": 6,
+            "peak_bin": 4,
+            "peak_degree": 7.7310511099753985,
+            "lowest_degree_bin": 4.810039786246014,
+            "peak": 5.383458190423099,
+            "highest_degree_bin": 5.205351475671676,
+            "peak_minus_lowest": 0.5734184041770849,
+            "highest_minus_peak": -0.17810671475142303,
+            "inverted_u": true,
+            "spearman_degree": 0.6571428571428573
+          },
+          "corrected": {
+            "bins": 6,
+            "peak_bin": 4,
+            "peak_degree": 7.7310511099753985,
+            "lowest_degree_bin": 4.819678220431246,
+            "peak": 5.3844493009315,
+            "highest_degree_bin": 5.186829886010422,
+            "peak_minus_lowest": 0.5647710805002539,
+            "highest_minus_peak": -0.19761941492107837,
+            "inverted_u": true,
+            "spearman_degree": 0.6571428571428573
+          },
+          "max_abs_summary_point_change": 0.018521589661253834,
+          "corrected_curve": {
+            "degree": [
+              2.984678385186163,
+              4.000000000000001,
+              4.999999999999998,
+              5.999999999999998,
+              7.7310511099753985,
+              16.04432240735325
+            ],
+            "mean": [
+              4.819678220431246,
+              5.074808551508443,
+              5.221487615606669,
+              5.325755725214092,
+              5.3844493009315,
+              5.186829886010422
+            ]
+          }
+        }
+      },
+      {
+        "schedule": "budget_matched",
+        "threshold": 0.0003,
+        "original_epochs": [
+          8,
+          8
+        ],
+        "visit_count_epochs_by_seed": {
+          "0": 8,
+          "1": 8,
+          "2": 8,
+          "3": 8,
+          "4": 8
+        },
+        "corrected_epochs_by_seed": {
+          "0": 8,
+          "1": 8,
+          "2": 8,
+          "3": 8,
+          "4": 8
+        },
+        "original_mean_expected_total_retained_centers": 3708661.2586056953,
+        "audit_visit_mean_expected_total_retained_centers": 3708661.2586056953,
+        "corrected_mean_expected_total_retained_centers": 4159320.9893300952,
+        "raw_norm": {
+          "original": {
+            "bins": 6,
+            "peak_bin": 0,
+            "peak_degree": 2.984678385186163,
+            "lowest_degree_bin": 4.425505905576163,
+            "peak": 4.425505905576163,
+            "highest_degree_bin": 3.5712809111050614,
+            "peak_minus_lowest": 0.0,
+            "highest_minus_peak": -0.8542249944711013,
+            "inverted_u": false,
+            "spearman_degree": -1.0
+          },
+          "corrected": {
+            "bins": 6,
+            "peak_bin": 0,
+            "peak_degree": 2.984678385186163,
+            "lowest_degree_bin": 4.43466776358124,
+            "peak": 4.43466776358124,
+            "highest_degree_bin": 3.589701462864092,
+            "peak_minus_lowest": 0.0,
+            "highest_minus_peak": -0.844966300717148,
+            "inverted_u": false,
+            "spearman_degree": -1.0
+          },
+          "max_abs_summary_point_change": 0.01842055175903079,
+          "corrected_curve": {
+            "degree": [
+              2.984678385186163,
+              4.000000000000001,
+              4.999999999999998,
+              5.999999999999998,
+              7.7310511099753985,
+              16.04432240735325
+            ],
+            "mean": [
+              4.43466776358124,
+              4.296169242499574,
+              4.139416930499238,
+              4.030405380994084,
+              3.8137668594586467,
+              3.589701462864092
+            ]
+          }
+        },
+        "balanced_norm": {
+          "original": {
+            "bins": 6,
+            "peak_bin": 0,
+            "peak_degree": 2.984678385186163,
+            "lowest_degree_bin": 4.456687876224387,
+            "peak": 4.456687876224387,
+            "highest_degree_bin": 3.6058471933343132,
+            "peak_minus_lowest": 0.0,
+            "highest_minus_peak": -0.8508406828900736,
+            "inverted_u": false,
+            "spearman_degree": -1.0
+          },
+          "corrected": {
+            "bins": 6,
+            "peak_bin": 0,
+            "peak_degree": 2.984678385186163,
+            "lowest_degree_bin": 4.467546728069437,
+            "peak": 4.467546728069437,
+            "highest_degree_bin": 3.6248107698316288,
+            "peak_minus_lowest": 0.0,
+            "highest_minus_peak": -0.8427359582378084,
+            "inverted_u": false,
+            "spearman_degree": -1.0
+          },
+          "max_abs_summary_point_change": 0.018963576497315504,
+          "corrected_curve": {
+            "degree": [
+              2.984678385186163,
+              4.000000000000001,
+              4.999999999999998,
+              5.999999999999998,
+              7.7310511099753985,
+              16.04432240735325
+            ],
+            "mean": [
+              4.467546728069437,
+              4.328257556471835,
+              4.170543875842503,
+              4.061251626532094,
+              3.8420700097510556,
+              3.6248107698316288
+            ]
+          }
+        }
+      },
+      {
+        "schedule": "budget_matched",
+        "threshold": 0.001,
+        "original_epochs": [
+          6,
+          6
+        ],
+        "visit_count_epochs_by_seed": {
+          "0": 6,
+          "1": 6,
+          "2": 6,
+          "3": 6,
+          "4": 6
+        },
+        "corrected_epochs_by_seed": {
+          "0": 6,
+          "1": 6,
+          "2": 6,
+          "3": 6,
+          "4": 6
+        },
+        "original_mean_expected_total_retained_centers": 4159403.7400649725,
+        "audit_visit_mean_expected_total_retained_centers": 4159403.740064974,
+        "corrected_mean_expected_total_retained_centers": 4660468.928829749,
+        "raw_norm": {
+          "original": {
+            "bins": 6,
+            "peak_bin": 3,
+            "peak_degree": 5.999999999999998,
+            "lowest_degree_bin": 4.863070377572213,
+            "peak": 5.212570679010137,
+            "highest_degree_bin": 4.609353789419082,
+            "peak_minus_lowest": 0.3495003014379243,
+            "highest_minus_peak": -0.6032168895910557,
+            "inverted_u": true,
+            "spearman_degree": 0.08571428571428573
+          },
+          "corrected": {
+            "bins": 6,
+            "peak_bin": 3,
+            "peak_degree": 5.999999999999998,
+            "lowest_degree_bin": 4.864279557548668,
+            "peak": 5.215797204760832,
+            "highest_degree_bin": 4.622863167802836,
+            "peak_minus_lowest": 0.3515176472121633,
+            "highest_minus_peak": -0.5929340369579954,
+            "inverted_u": true,
+            "spearman_degree": -0.028571428571428574
+          },
+          "max_abs_summary_point_change": 0.013509378383754544,
+          "corrected_curve": {
+            "degree": [
+              2.984678385186163,
+              4.000000000000001,
+              4.999999999999998,
+              5.999999999999998,
+              7.7310511099753985,
+              16.04432240735325
+            ],
+            "mean": [
+              4.864279557548668,
+              5.081647409300556,
+              5.174053952535197,
+              5.215797204760832,
+              5.167772655161098,
+              4.622863167802836
+            ]
+          }
+        },
+        "balanced_norm": {
+          "original": {
+            "bins": 6,
+            "peak_bin": 3,
+            "peak_degree": 5.999999999999998,
+            "lowest_degree_bin": 4.881555687130553,
+            "peak": 5.238883510905573,
+            "highest_degree_bin": 4.674474166896857,
+            "peak_minus_lowest": 0.35732782377502037,
+            "highest_minus_peak": -0.5644093440087161,
+            "inverted_u": true,
+            "spearman_degree": 0.08571428571428573
+          },
+          "corrected": {
+            "bins": 6,
+            "peak_bin": 3,
+            "peak_degree": 5.999999999999998,
+            "lowest_degree_bin": 4.882988921690261,
+            "peak": 5.241669625748025,
+            "highest_degree_bin": 4.68718551040962,
+            "peak_minus_lowest": 0.35868070405776376,
+            "highest_minus_peak": -0.554484115338405,
+            "inverted_u": true,
+            "spearman_degree": 0.08571428571428573
+          },
+          "max_abs_summary_point_change": 0.012711343512762596,
+          "corrected_curve": {
+            "degree": [
+              2.984678385186163,
+              4.000000000000001,
+              4.999999999999998,
+              5.999999999999998,
+              7.7310511099753985,
+              16.04432240735325
+            ],
+            "mean": [
+              4.882988921690261,
+              5.097030075273077,
+              5.194462112313857,
+              5.241669625748025,
+              5.2053355957349545,
+              4.68718551040962
+            ]
+          }
+        }
+      },
+      {
+        "schedule": "budget_matched",
+        "threshold": 0.003,
+        "original_epochs": [
+          5,
+          5
+        ],
+        "visit_count_epochs_by_seed": {
+          "0": 5,
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5
+        },
+        "corrected_epochs_by_seed": {
+          "0": 5,
+          "1": 5,
+          "2": 5,
+          "3": 5,
+          "4": 5
+        },
+        "original_mean_expected_total_retained_centers": 3897393.870051944,
+        "audit_visit_mean_expected_total_retained_centers": 3897393.870051944,
+        "corrected_mean_expected_total_retained_centers": 4367626.363048564,
+        "raw_norm": {
+          "original": {
+            "bins": 6,
+            "peak_bin": 4,
+            "peak_degree": 7.7310511099753985,
+            "lowest_degree_bin": 4.797829729812092,
+            "peak": 5.366625597047491,
+            "highest_degree_bin": 5.128393899793987,
+            "peak_minus_lowest": 0.5687958672353997,
+            "highest_minus_peak": -0.23823169725350457,
+            "inverted_u": true,
+            "spearman_degree": 0.6571428571428573
+          },
+          "corrected": {
+            "bins": 6,
+            "peak_bin": 4,
+            "peak_degree": 7.7310511099753985,
+            "lowest_degree_bin": 4.809538051348097,
+            "peak": 5.369566433111282,
+            "highest_degree_bin": 5.112583505357668,
+            "peak_minus_lowest": 0.5600283817631846,
+            "highest_minus_peak": -0.2569829277536142,
+            "inverted_u": true,
+            "spearman_degree": 0.6571428571428573
+          },
+          "max_abs_summary_point_change": 0.015810394436319264,
+          "corrected_curve": {
+            "degree": [
+              2.984678385186163,
+              4.000000000000001,
+              4.999999999999998,
+              5.999999999999998,
+              7.7310511099753985,
+              16.04432240735325
+            ],
+            "mean": [
+              4.809538051348097,
+              5.069496185771144,
+              5.2119323979176135,
+              5.318450144091262,
+              5.369566433111282,
+              5.112583505357668
+            ]
+          }
+        },
+        "balanced_norm": {
+          "original": {
+            "bins": 6,
+            "peak_bin": 4,
+            "peak_degree": 7.7310511099753985,
+            "lowest_degree_bin": 4.810039786246014,
+            "peak": 5.383458190423099,
+            "highest_degree_bin": 5.205351475671676,
+            "peak_minus_lowest": 0.5734184041770849,
+            "highest_minus_peak": -0.17810671475142303,
+            "inverted_u": true,
+            "spearman_degree": 0.6571428571428573
+          },
+          "corrected": {
+            "bins": 6,
+            "peak_bin": 4,
+            "peak_degree": 7.7310511099753985,
+            "lowest_degree_bin": 4.819678220431246,
+            "peak": 5.3844493009315,
+            "highest_degree_bin": 5.186829886010422,
+            "peak_minus_lowest": 0.5647710805002539,
+            "highest_minus_peak": -0.19761941492107837,
+            "inverted_u": true,
+            "spearman_degree": 0.6571428571428573
+          },
+          "max_abs_summary_point_change": 0.018521589661253834,
+          "corrected_curve": {
+            "degree": [
+              2.984678385186163,
+              4.000000000000001,
+              4.999999999999998,
+              5.999999999999998,
+              7.7310511099753985,
+              16.04432240735325
+            ],
+            "mean": [
+              4.819678220431246,
+              5.074808551508443,
+              5.221487615606669,
+              5.325755725214092,
+              5.3844493009315,
+              5.186829886010422
+            ]
+          }
+        }
+      }
+    ],
+    "predicted_versus_actual_peaks": [
+      {
+        "threshold": 0.0003,
+        "schedule": "fixed_epochs",
+        "predicted_peak_degree": 7.733557232416483,
+        "predicted_peak_bin": 4,
+        "original_peak_bin": 0,
+        "corrected_peak_bin": 0,
+        "original_bin_error": 4,
+        "corrected_bin_error": 4,
+        "original_peak_degree": 2.984678385186163,
+        "corrected_peak_degree": 2.984678385186163
+      },
+      {
+        "threshold": 0.0003,
+        "schedule": "budget_matched",
+        "predicted_peak_degree": 7.733557232416483,
+        "predicted_peak_bin": 4,
+        "original_peak_bin": 0,
+        "corrected_peak_bin": 0,
+        "original_bin_error": 4,
+        "corrected_bin_error": 4,
+        "original_peak_degree": 2.984678385186163,
+        "corrected_peak_degree": 2.984678385186163
+      },
+      {
+        "threshold": 0.001,
+        "schedule": "fixed_epochs",
+        "predicted_peak_degree": 16.08243129222135,
+        "predicted_peak_bin": 5,
+        "original_peak_bin": 3,
+        "corrected_peak_bin": 3,
+        "original_bin_error": 2,
+        "corrected_bin_error": 2,
+        "original_peak_degree": 5.999999999999998,
+        "corrected_peak_degree": 5.999999999999998
+      },
+      {
+        "threshold": 0.001,
+        "schedule": "budget_matched",
+        "predicted_peak_degree": 16.08243129222135,
+        "predicted_peak_bin": 5,
+        "original_peak_bin": 3,
+        "corrected_peak_bin": 3,
+        "original_bin_error": 2,
+        "corrected_bin_error": 2,
+        "original_peak_degree": 5.999999999999998,
+        "corrected_peak_degree": 5.999999999999998
+      },
+      {
+        "threshold": 0.003,
+        "schedule": "fixed_epochs",
+        "predicted_peak_degree": 16.08243129222135,
+        "predicted_peak_bin": 5,
+        "original_peak_bin": 4,
+        "corrected_peak_bin": 4,
+        "original_bin_error": 1,
+        "corrected_bin_error": 1,
+        "original_peak_degree": 7.7310511099753985,
+        "corrected_peak_degree": 7.7310511099753985
+      },
+      {
+        "threshold": 0.003,
+        "schedule": "budget_matched",
+        "predicted_peak_degree": 16.08243129222135,
+        "predicted_peak_bin": 5,
+        "original_peak_bin": 4,
+        "corrected_peak_bin": 4,
+        "original_bin_error": 1,
+        "corrected_bin_error": 1,
+        "original_peak_degree": 7.7310511099753985,
+        "corrected_peak_degree": 7.7310511099753985
+      }
+    ],
+    "original_peak_comparison": {
+      "fixed_epochs_actual_peak_degrees": [
+        2.984678385186163,
+        5.999999999999998,
+        7.7310511099753985
+      ],
+      "budget_matched_actual_peak_degrees": [
+        2.984678385186163,
+        5.999999999999998,
+        7.7310511099753985
+      ],
+      "controlled_prediction_available": true,
+      "controlled_prediction_status": "exploratory; its interpolation rule was selected after the global quadratic surface failed",
+      "controlled_predicted_peak_degrees": [
+        7.733557232416483,
+        16.08243129222135,
+        16.08243129222135
+      ],
+      "fixed_epochs_mean_absolute_peak_degree_error": 7.727563440565874,
+      "budget_matched_mean_absolute_peak_degree_error": 7.727563440565874
+    },
+    "corrected_peak_comparison": {
+      "fixed_epochs_actual_peak_degrees": [
+        2.984678385186163,
+        5.999999999999998,
+        7.7310511099753985
+      ],
+      "budget_matched_actual_peak_degrees": [
+        2.984678385186163,
+        5.999999999999998,
+        7.7310511099753985
+      ],
+      "controlled_prediction_available": true,
+      "controlled_prediction_status": "exploratory; its interpolation rule was selected after the global quadratic surface failed",
+      "controlled_predicted_peak_degrees": [
+        7.733557232416483,
+        16.08243129222135,
+        16.08243129222135
+      ],
+      "fixed_epochs_mean_absolute_peak_degree_error": 7.727563440565874,
+      "budget_matched_mean_absolute_peak_degree_error": 7.727563440565874
+    },
+    "max_abs_difference_from_subsampling_origin": {
+      "t3e-4": {
+        "raw_norm": 0.0,
+        "balanced_norm": 0.0
+      },
+      "t1e-3": {
+        "raw_norm": 0.0,
+        "balanced_norm": 0.0
+      },
+      "t3e-3": {
+        "raw_norm": 0.0,
+        "balanced_norm": 0.0
+      }
+    }
+  },
+  "norm_frequency_simulation": {
+    "conditions": {
+      "standard": {
+        "original": {
+          "norm_on_frequency": {
+            "spearman": -0.032442109754693825,
+            "quadratic": -0.19152796801048175,
+            "peak_z": 0.5143483510352298,
+            "binned_quadratic": -0.6849189168465468,
+            "binned_peak_z": 0.3930115652235661,
+            "observed_max_z": 4.837744912802554,
+            "peak_bin": 5,
+            "bins": 8,
+            "last_bin_minus_peak": -0.47105684462259045,
+            "inverted_u_by_bins": true
+          },
+          "spearman_norm_context_kl": 0.5345580947544317
+        },
+        "corrected": {
+          "norm_on_frequency": {
+            "spearman": 0.0920259725145785,
+            "quadratic": -0.2268195168254171,
+            "peak_z": 0.6773738072673796,
+            "binned_quadratic": -1.1625062844879113,
+            "binned_peak_z": 0.5489854353283724,
+            "observed_max_z": 4.886371469180004,
+            "peak_bin": 5,
+            "bins": 8,
+            "last_bin_minus_peak": -0.4698557643944321,
+            "inverted_u_by_bins": true
+          },
+          "spearman_norm_context_kl": 0.5346929821316935
+        },
+        "corrected_with_walk_visit_axis": {
+          "spearman": -0.03169549137712556,
+          "quadratic": -0.18605744304948718,
+          "peak_z": 0.5212158327334885,
+          "binned_quadratic": -0.6692399466347303,
+          "binned_peak_z": 0.3972894786201222,
+          "observed_max_z": 4.837744912802554,
+          "peak_bin": 5,
+          "bins": 8,
+          "last_bin_minus_peak": -0.45650726116914697,
+          "inverted_u_by_bins": true
+        },
+        "corrected_curves": {
+          "token_axis": {
+            "mean_frequency": [
+              723.3038180181519,
+              765.3126521020628,
+              792.6739024446048,
+              950.3780923867749,
+              1093.645440194877,
+              1350.9692619922623,
+              1824.4574739164802,
+              3928.5839575339032
+            ],
+            "mean_raw_norm": [
+              4.719178170033862,
+              4.747564365357833,
+              4.782460791057815,
+              4.9299953533056975,
+              5.016553053411932,
+              5.113626574803292,
+              5.109916685620467,
+              4.64377081040886
+            ],
+            "node_standard_error": [
+              0.026817157375290945,
+              0.027208943995742953,
+              0.02570939022307933,
+              0.02788983532928038,
+              0.028197160366461922,
+              0.030259335044184578,
+              0.031480343199382615,
+              0.029665482062958836
+            ]
+          },
+          "walk_visit_axis": {
+            "mean_frequency": [
+              634.1322459450417,
+              683.8547554344402,
+              716.9841552747498,
+              845.9378188743754,
+              978.63473668375,
+              1206.2795353675208,
+              1631.5261260918683,
+              3503.6621396733826
+            ],
+            "mean_raw_norm": [
+              5.049912729920838,
+              4.82932698940324,
+              4.5209328697258355,
+              4.98304691163638,
+              4.905411393380507,
+              5.07327558038401,
+              5.070740617986649,
+              4.616768319214863
+            ],
+            "node_standard_error": [
+              0.02013098216068609,
+              0.02307250397197006,
+              0.025286434970044142,
+              0.032377195703432865,
+              0.030435503736522138,
+              0.03025301040972133,
+              0.03150993670178302,
+              0.02866689377371723
+            ]
+          }
+        }
+      },
+      "uniform_starts": {
+        "original": {
+          "norm_on_frequency": {
+            "spearman": 0.20466454015062338,
+            "quadratic": -0.23370535252567756,
+            "peak_z": 0.9447716802873052,
+            "binned_quadratic": -1.02443875554142,
+            "binned_peak_z": 0.6911287007476378,
+            "observed_max_z": 5.476878492679264,
+            "peak_bin": 6,
+            "bins": 8,
+            "last_bin_minus_peak": -0.38610574934697084,
+            "inverted_u_by_bins": true
+          },
+          "spearman_norm_context_kl": 0.5306890548277478
+        },
+        "corrected": {
+          "norm_on_frequency": {
+            "spearman": 0.2861355577699041,
+            "quadratic": -0.2702560241247305,
+            "peak_z": 1.0368884798846265,
+            "binned_quadratic": -1.0087669953802683,
+            "binned_peak_z": 0.7214683811311438,
+            "observed_max_z": 5.4993692909185246,
+            "peak_bin": 6,
+            "bins": 8,
+            "last_bin_minus_peak": -0.397848771961538,
+            "inverted_u_by_bins": true
+          },
+          "spearman_norm_context_kl": 0.5283502171771773
+        },
+        "corrected_with_walk_visit_axis": {
+          "spearman": 0.20377883730205695,
+          "quadratic": -0.22899102026101162,
+          "peak_z": 0.950231325668264,
+          "binned_quadratic": -1.0312874154179126,
+          "binned_peak_z": 0.6918868055488905,
+          "observed_max_z": 5.476878492679264,
+          "peak_bin": 6,
+          "bins": 8,
+          "last_bin_minus_peak": -0.3865588725248328,
+          "inverted_u_by_bins": true
+        },
+        "corrected_curves": {
+          "token_axis": {
+            "mean_frequency": [
+              827.8927449639431,
+              926.010259543429,
+              1004.2215888081122,
+              1097.4992311447484,
+              1214.02945974543,
+              1407.0719383261949,
+              1751.4431810817657,
+              3369.7681028487436
+            ],
+            "mean_raw_norm": [
+              4.382670135546112,
+              4.802527646588053,
+              4.98960914202794,
+              5.090026622944333,
+              5.125123231049388,
+              5.241584150939625,
+              5.249344817822498,
+              4.85149604586096
+            ],
+            "node_standard_error": [
+              0.024528706996238433,
+              0.022347051429152748,
+              0.023751981998262367,
+              0.023790640198800915,
+              0.026200178751044433,
+              0.025960457299233797,
+              0.03046600876038862,
+              0.03101673689167492
+            ]
+          },
+          "walk_visit_axis": {
+            "mean_frequency": [
+              762.8472506353719,
+              820.9129375564821,
+              866.2792827935887,
+              956.0704476231153,
+              1064.3505134090944,
+              1238.658135845448,
+              1563.1687891057143,
+              3041.544284618785
+            ],
+            "mean_raw_norm": [
+              4.5091211584726265,
+              4.835663170511233,
+              5.06825212437374,
+              4.963521437875853,
+              5.128859191068967,
+              5.199641035796526,
+              5.210147308915624,
+              4.823588436390791
+            ],
+            "node_standard_error": [
+              0.02729044159959101,
+              0.02531907143198448,
+              0.02297404905944334,
+              0.026690797685432536,
+              0.026895757791387063,
+              0.027672249196250043,
+              0.030270183287116025,
+              0.030326090368962166
+            ]
+          }
+        }
+      },
+      "no_subsampling": {
+        "original": {
+          "norm_on_frequency": {
+            "spearman": 0.6742143130012075,
+            "quadratic": -0.4275757716390829,
+            "peak_z": 1.35216072452442,
+            "binned_quadratic": -0.6244687511935011,
+            "binned_peak_z": 1.2072640280542557,
+            "observed_max_z": 4.837744912802554,
+            "peak_bin": 6,
+            "bins": 8,
+            "last_bin_minus_peak": -0.15449954286191403,
+            "inverted_u_by_bins": true
+          },
+          "spearman_norm_context_kl": -0.2638221181402981
+        },
+        "corrected": {
+          "norm_on_frequency": {
+            "spearman": 0.7192084105848834,
+            "quadratic": -0.46556377990235764,
+            "peak_z": 1.2994126016092735,
+            "binned_quadratic": -0.7391756589579279,
+            "binned_peak_z": 1.0956762039083103,
+            "observed_max_z": 4.886371469180004,
+            "peak_bin": 6,
+            "bins": 8,
+            "last_bin_minus_peak": -0.18921152100455796,
+            "inverted_u_by_bins": true
+          },
+          "spearman_norm_context_kl": -0.23670250575278812
+        },
+        "corrected_with_walk_visit_axis": {
+          "spearman": 0.6540869409066141,
+          "quadratic": -0.4395264149227707,
+          "peak_z": 1.2927129517858742,
+          "binned_quadratic": -0.6675142212229105,
+          "binned_peak_z": 1.1389343722076328,
+          "observed_max_z": 4.837744912802554,
+          "peak_bin": 6,
+          "bins": 8,
+          "last_bin_minus_peak": -0.1857579596557759,
+          "inverted_u_by_bins": true
+        },
+        "corrected_curves": {
+          "token_axis": {
+            "mean_frequency": [
+              723.3038180181519,
+              765.3126521020628,
+              792.6739024446048,
+              950.3780923867749,
+              1093.645440194877,
+              1350.9692619922623,
+              1824.4574739164802,
+              3928.5839575339032
+            ],
+            "mean_raw_norm": [
+              4.853972885617667,
+              4.889582143697169,
+              4.899367766121727,
+              5.098176676442437,
+              5.207044788259082,
+              5.390955494026317,
+              5.525979187120622,
+              5.336767666116064
+            ],
+            "node_standard_error": [
+              0.00966385002339917,
+              0.009252768162867922,
+              0.00856797950352741,
+              0.009753070370860057,
+              0.009169980769863192,
+              0.008596642597311722,
+              0.0090920655175262,
+              0.01903767293581308
+            ]
+          },
+          "walk_visit_axis": {
+            "mean_frequency": [
+              634.1322459450417,
+              683.8547554344402,
+              716.9841552747498,
+              845.9378188743754,
+              978.63473668375,
+              1206.2795353675208,
+              1631.5261260918683,
+              3503.6621396733826
+            ],
+            "mean_raw_norm": [
+              4.95955367989199,
+              4.906070410192687,
+              4.821699836612765,
+              5.103913375597209,
+              5.183130525201609,
+              5.375442580005512,
+              5.51675072396716,
+              5.330992764311384
+            ],
+            "node_standard_error": [
+              0.009378512348781235,
+              0.007904745349409666,
+              0.00824847994302217,
+              0.013111064618427938,
+              0.010893132906590148,
+              0.009448672686908736,
+              0.009377705025354064,
+              0.018816544239918267
+            ]
+          }
+        }
+      },
+      "regular_control": {
+        "original": {
+          "norm_on_frequency": {
+            "spearman": 0.24162223874369468,
+            "quadratic": -0.19336615866397708,
+            "peak_z": 1.0129669005673507,
+            "binned_quadratic": -0.7677468588838463,
+            "binned_peak_z": 0.9325022301233373,
+            "observed_max_z": 6.603984326276059,
+            "peak_bin": 6,
+            "bins": 8,
+            "last_bin_minus_peak": -0.008989396814774508,
+            "inverted_u_by_bins": false
+          },
+          "spearman_norm_context_kl": null
+        },
+        "corrected": {
+          "norm_on_frequency": {
+            "spearman": 0.08851974824147198,
+            "quadratic": -0.1804543927982918,
+            "peak_z": 0.52783665885613,
+            "binned_quadratic": -1.0337651903867717,
+            "binned_peak_z": 0.39741196932172296,
+            "observed_max_z": 6.535887829925718,
+            "peak_bin": 3,
+            "bins": 8,
+            "last_bin_minus_peak": -0.04696960775460646,
+            "inverted_u_by_bins": false
+          },
+          "spearman_norm_context_kl": null
+        },
+        "corrected_with_walk_visit_axis": {
+          "spearman": 0.09041674804801467,
+          "quadratic": -0.18137407840264316,
+          "peak_z": 0.527274508890017,
+          "binned_quadratic": -1.034075529899663,
+          "binned_peak_z": 0.3937738355133457,
+          "observed_max_z": 6.603984326276059,
+          "peak_bin": 4,
+          "bins": 8,
+          "last_bin_minus_peak": -0.04776090364787944,
+          "inverted_u_by_bins": false
+        },
+        "corrected_curves": {
+          "token_axis": {
+            "mean_frequency": [
+              1149.3790674427742,
+              1236.9402108270513,
+              1299.2675330363202,
+              1361.6236560286973,
+              1432.94536299438,
+              1526.7815561394211,
+              1685.0127800751036,
+              2247.4206966464567
+            ],
+            "mean_raw_norm": [
+              5.392049702866844,
+              5.408956196851486,
+              5.427571105077945,
+              5.437853309508714,
+              5.434870963457525,
+              5.435205792342211,
+              5.432968052031412,
+              5.390883701754108
+            ],
+            "node_standard_error": [
+              0.0041399649612597995,
+              0.00425425674290486,
+              0.004156704414310287,
+              0.004351247336999773,
+              0.0045895641110867535,
+              0.004476030648322741,
+              0.004517695616855804,
+              0.007694856393663658
+            ]
+          },
+          "walk_visit_axis": {
+            "mean_frequency": [
+              1044.9274203913687,
+              1121.087265746515,
+              1173.6715904651228,
+              1226.4635659019632,
+              1287.8267764941504,
+              1367.904323963526,
+              1498.6156222027225,
+              1964.49301493386
+            ],
+            "mean_raw_norm": [
+              5.392210248380012,
+              5.4063629338189525,
+              5.430063833737032,
+              5.43531258579215,
+              5.43818607847158,
+              5.434845960489366,
+              5.433121865930263,
+              5.390425174823701
+            ],
+            "node_standard_error": [
+              0.004245684241923201,
+              0.0041385304395322045,
+              0.004157516950634979,
+              0.004268625949654137,
+              0.004603101256416051,
+              0.004553532851366464,
+              0.004479478876487616,
+              0.007643468694339299
+            ]
+          }
+        }
+      }
+    },
+    "population": {
+      "original": {
+        "pooled_kl_slope_on_log_degree": -0.9941285280913265,
+        "spearman_kl_degree": -0.7073502680124114
+      },
+      "corrected": {
+        "pooled_kl_slope_on_log_degree": -0.9941285280913265,
+        "spearman_kl_degree": -0.7073502680124114
+      }
+    },
+    "exact_checks": {
+      "original": {
+        "maximum_center_frequency_cancellation_error": 8.881784197001252e-16,
+        "maximum_graph_kl_formula_error": 3.3306690738754696e-15,
+        "maximum_gauge_score_preservation_error": 2.1316282072803006e-13
+      },
+      "corrected": {
+        "maximum_center_frequency_cancellation_error": 8.881784197001252e-16,
+        "maximum_graph_kl_formula_error": 3.3306690738754696e-15,
+        "maximum_gauge_score_preservation_error": 4.156675004196586e-13
+      }
+    },
+    "gauge": {
+      "original": {
+        "raw_norm_frequency_spearman": -0.032442109754693825,
+        "shrunk_direction_norm_frequency_spearman": -0.09504549222309408,
+        "stretched_direction_norm_frequency_spearman": 0.3363689718165588,
+        "balanced_norm_frequency_spearman": -0.015134198638530692
+      },
+      "corrected": {
+        "raw_norm_frequency_spearman": 0.0920259725145785,
+        "shrunk_direction_norm_frequency_spearman": 0.03455307580671704,
+        "stretched_direction_norm_frequency_spearman": 0.2808007030219608,
+        "balanced_norm_frequency_spearman": 0.10798036640510683
+      }
+    },
+    "max_abs_difference_from_subsampling_origin": {
+      "standard": {
+        "raw_norm": 0.0,
+        "balanced_norm": 0.0
+      },
+      "no_subsampling": {
+        "raw_norm": 0.0,
+        "balanced_norm": 0.0
+      }
+    }
+  }
+}

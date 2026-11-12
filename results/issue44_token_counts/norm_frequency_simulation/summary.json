@@ -1,0 +1,92 @@
+{
+  "config": {
+    "nodes": 600,
+    "attachment": 3,
+    "dimension": 64,
+    "negatives": 5,
+    "walk_length": 5,
+    "walks_per_node": 300,
+    "epochs": 5,
+    "seeds": 5,
+    "sample": 0.001,
+    "learning_rate": 0.025,
+    "min_count": 50
+  },
+  "exact_checks": {
+    "maximum_center_frequency_cancellation_error": 8.881784197001252e-16,
+    "maximum_graph_kl_formula_error": 3.3306690738754696e-15,
+    "maximum_gauge_score_preservation_error": 4.156675004196586e-13
+  },
+  "population": {
+    "pooled_kl_slope_on_log_degree": -0.9941285280913265,
+    "spearman_kl_degree": -0.7073502680124114
+  },
+  "conditions": {
+    "standard": {
+      "norm_on_frequency": {
+        "spearman": 0.0920259725145785,
+        "quadratic": -0.2268195168254171,
+        "peak_z": 0.6773738072673796,
+        "binned_quadratic": -1.1625062844879113,
+        "binned_peak_z": 0.5489854353283724,
+        "observed_max_z": 4.886371469180004,
+        "peak_bin": 5,
+        "bins": 8,
+        "last_bin_minus_peak": -0.4698557643944321,
+        "inverted_u_by_bins": true
+      },
+      "spearman_norm_context_kl": 0.5346929821316935
+    },
+    "uniform_starts": {
+      "norm_on_frequency": {
+        "spearman": 0.2861355577699041,
+        "quadratic": -0.2702560241247305,
+        "peak_z": 1.0368884798846265,
+        "binned_quadratic": -1.0087669953802683,
+        "binned_peak_z": 0.7214683811311438,
+        "observed_max_z": 5.4993692909185246,
+        "peak_bin": 6,
+        "bins": 8,
+        "last_bin_minus_peak": -0.397848771961538,
+        "inverted_u_by_bins": true
+      },
+      "spearman_norm_context_kl": 0.5283502171771773
+    },
+    "no_subsampling": {
+      "norm_on_frequency": {
+        "spearman": 0.7192084105848834,
+        "quadratic": -0.46556377990235764,
+        "peak_z": 1.2994126016092735,
+        "binned_quadratic": -0.7391756589579279,
+        "binned_peak_z": 1.0956762039083103,
+        "observed_max_z": 4.886371469180004,
+        "peak_bin": 6,
+        "bins": 8,
+        "last_bin_minus_peak": -0.18921152100455796,
+        "inverted_u_by_bins": true
+      },
+      "spearman_norm_context_kl": -0.23670250575278812
+    },
+    "regular_control": {
+      "norm_on_frequency": {
+        "spearman": 0.08851974824147198,
+        "quadratic": -0.1804543927982918,
+        "peak_z": 0.52783665885613,
+        "binned_quadratic": -1.0337651903867717,
+        "binned_peak_z": 0.39741196932172296,
+        "observed_max_z": 6.535887829925718,
+        "peak_bin": 3,
+        "bins": 8,
+        "last_bin_minus_peak": -0.04696960775460646,
+        "inverted_u_by_bins": false
+      },
+      "spearman_norm_context_kl": null
+    }
+  },
+  "gauge": {
+    "raw_norm_frequency_spearman": 0.0920259725145785,
+    "shrunk_direction_norm_frequency_spearman": 0.03455307580671704,
+    "stretched_direction_norm_frequency_spearman": 0.2808007030219608,
+    "balanced_norm_frequency_spearman": 0.10798036640510683
+  }
+}
