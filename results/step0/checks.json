@@ -1,0 +1,57 @@
+{
+ "real_count_ratio": [
+  0.768320161131666,
+  0.9994303195891799,
+  1.236411197045708
+ ],
+ "null_count_ratio": [
+  0.8090594124742676,
+  0.9989588141222818,
+  1.2418089859931332
+ ],
+ "window1_transition_ratio_top2000": [
+  0.8451695838336788,
+  1.0033924389519018,
+  1.2296402215336026
+ ],
+ "share_positive_mass_target_above_6": 0.02226175373881117,
+ "share_positive_mass_target_below_minus6": 0.00027359547448433465,
+ "kept": {
+  "null_A_s0": 7022,
+  "null_A_s1": 7047,
+  "null_A_s2": 7044,
+  "null_A_s3": 7056,
+  "null_A_s4": 7031,
+  "null_B_s0": 4992,
+  "null_B_s1": 4991,
+  "null_B_s2": 4995,
+  "null_B_s3": 4996,
+  "null_B_s4": 4986,
+  "real_A_s0": 7024,
+  "real_A_s1": 7002,
+  "real_A_s2": 7029,
+  "real_A_s3": 7032,
+  "real_A_s4": 7013,
+  "real_B_s0": 4990,
+  "real_B_s1": 4992,
+  "real_B_s2": 5000,
+  "real_B_s3": 4988,
+  "real_B_s4": 4995,
+  "text_A_s0": 10906,
+  "text_A_s1": 10906,
+  "text_A_s2": 10906,
+  "text_A_s3": 10906,
+  "text_A_s4": 10906,
+  "text_B_s0": 3431,
+  "text_B_s1": 3431,
+  "text_B_s2": 3431,
+  "text_B_s3": 3431,
+  "text_B_s4": 3431,
+  "text_SW_s0": 34531,
+  "text_SW_s1": 34531,
+  "text_SW_s2": 34531,
+  "text_SW_s3": 34531,
+  "text_SW_s4": 34531
+ },
+ "replay_identical": true
+}

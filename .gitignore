@@ -25,6 +25,8 @@ are_angles_important/*.inf_log
 !results/window_training_exploration/windows/factors/*.npy.gz
 !results/window_training_continuation/*.json.gz
 !results/window_training_continuation/*.npy.gz
+# Step 0 (Fig. 1): per-run norms, so the figure redraws without retraining (data/ stays ignored).
+!results/step0/runs/*.npz
 
 # Office files
 *.docx

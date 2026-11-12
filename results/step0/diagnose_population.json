@@ -1,0 +1,34 @@
+{
+ "B": {
+  "vocabulary": 4997,
+  "loss_trained": 2.7057805543521267,
+  "loss_optimum": 2.700145899260836,
+  "positive_weight_outside_6": 0.0,
+  "negative_weight_outside_6": 0.0,
+  "share_of_pairs_below_minus6": 0.0,
+  "score_quantiles_1_25_50_75_99": [
+   -1.789,
+   -1.614,
+   -1.57,
+   -1.531,
+   -1.4
+  ],
+  "weighted_mean_score": -1.5884861887564585
+ },
+ "B50": {
+  "vocabulary": 4997,
+  "loss_trained": 2.8058232980188795,
+  "loss_optimum": 2.700145899260836,
+  "positive_weight_outside_6": 0.0027544695337409515,
+  "negative_weight_outside_6": 0.0027640324886559218,
+  "share_of_pairs_below_minus6": 0.12087813024016131,
+  "score_quantiles_1_25_50_75_99": [
+   -9.335,
+   -4.602,
+   -2.925,
+   -1.751,
+   0.709
+  ],
+  "weighted_mean_score": -1.7108835624658156
+ }
+}
