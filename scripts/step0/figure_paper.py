@@ -47,12 +47,7 @@ LABELS = {
     "SW": "Schakel & Wilson settings",
 }
 MIN_PER_BIN = 10
-THEORY = "exact optimum, all settings (theory)"
-SW_LABEL_AT = {  # axes position and alignment of the direct label, next to the curve
-    "text": (0.02, 0.97, "left", "top"),
-    "blog": (0.02, 0.97, "left", "top"),
-    "ba": (0.97, 0.15, "right", "bottom"),
-}
+THEORY = "theory: optimum of the objective (all settings)"
 
 
 def edges_for(x: np.ndarray) -> np.ndarray:
@@ -181,40 +176,27 @@ def main() -> None:
             b_ax,
             "text",
             "b",
-            "Also in text; the peak moves with training settings",
+            "Also in text: physics abstracts (Schakel & Wilson 2015)",
             "word frequency",
         ),
         (
             c_ax,
             "blog",
             "c",
-            "Also in a real network (BlogCatalog)",
+            "Also in a real network (BlogCatalog, Tang & Liu 2009)",
             "node degree",
         ),
         (
             d_ax,
             "ba",
             "d",
-            "Even where the exact optimum is flat (expected BA graph)",
+            "Even where theory predicts equal norms (synthetic BA graph)",
             "node degree",
         ),
     ):
-        columns = ("A", "B", "SW")
-        for column in columns:
+        for column in ("A", "B", "SW"):  # identity: legend text and marker shape
             x, m, se = curve(sorted(a.runs.glob(f"{corpus}_{column}_s*.npz")))
             plot(ax, x, m, se, COLORS[column], LABELS[column], MARKERS[column])
-            if column == "SW":  # direct label: aqua is below 3:1 contrast on white
-                x0, y0, ha, va = SW_LABEL_AT[corpus]
-                ax.text(
-                    x0,
-                    y0,
-                    "Schakel & Wilson\nsettings",
-                    transform=ax.transAxes,
-                    fontsize=6.3,
-                    color=INK,
-                    ha=ha,
-                    va=va,
-                )
         if corpus == "ba":
             ax.axhline(1.0, color=MUTED, linestyle=":", linewidth=1.1, label=THEORY)
         style(ax, letter, title, xlabel)
