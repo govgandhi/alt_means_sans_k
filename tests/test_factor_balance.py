@@ -3,11 +3,22 @@
 import sys
 from pathlib import Path
 
-import numpy as np
 import pytest
 
+for dependency in (
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "networkx",
+    "threadpoolctl",
+    "gensim",
+):
+    pytest.importorskip(dependency, reason="Requires the pinned scientific environment")
+
+import numpy as np  # noqa: E402
+
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-from factor_balance import Config, measures, output_directory
+from factor_balance import Config, measures, output_directory  # noqa: E402
 
 
 def test_balanced_rank_deficient_factors() -> None:

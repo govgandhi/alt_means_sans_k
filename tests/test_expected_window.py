@@ -3,12 +3,22 @@
 import sys
 from pathlib import Path
 
-import numpy as np
 import pytest
-from scipy.optimize._numdiff import approx_derivative
+
+for dependency in (
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "networkx",
+    "threadpoolctl",
+):
+    pytest.importorskip(dependency, reason="Requires the pinned scientific environment")
+
+import numpy as np  # noqa: E402
+from scipy.optimize._numdiff import approx_derivative  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts/window_training"))
-import expected_window as experiment
+import expected_window as experiment  # noqa: E402
 
 
 def test_gradient_against_finite_differences_including_nonedge() -> None:

@@ -4,11 +4,18 @@ import sys
 from copy import deepcopy
 from pathlib import Path
 
-import numpy as np
 import pytest
 
+for dependency in (
+    "numpy",
+    "sklearn",
+):
+    pytest.importorskip(dependency, reason="Requires the pinned scientific environment")
+
+import numpy as np  # noqa: E402
+
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
-import prospective_baselines as audit
+import prospective_baselines as audit  # noqa: E402
 
 
 def test_predictions_do_not_depend_on_target_outcomes() -> None:

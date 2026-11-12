@@ -3,13 +3,24 @@
 import sys
 from pathlib import Path
 
-import numpy as np
 import pytest
-from scipy.special import expit
+
+for dependency in (
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "networkx",
+    "sympy",
+    "pymupdf",
+):
+    pytest.importorskip(dependency, reason="Requires the pinned scientific environment")
+
+import numpy as np  # noqa: E402
+from scipy.special import expit  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
 
-from audit_realized_graph import (
+from audit_realized_graph import (  # noqa: E402
     Config,
     balanced_factors,
     counterexamples,
