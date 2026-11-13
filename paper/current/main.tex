@@ -77,9 +77,9 @@ The vector norm is nevertheless a second observable that can encode node frequen
 Its interpretation matters whenever embeddings enter a dot product, a clustering method without row normalization, or a downstream model that retains vector scale.
 
 Empirical work has reported a nonmonotonic relation between frequency and embedding norm.
-Word2vec norms first increase and then decrease with word frequency in domain-specific corpora~\citep{schakel2015measuring,wilson2015controlled}.
+Word2vec norms first increase and then decrease with word frequency in a domain-specific corpus~\citep{schakel2015measuring}.
 Trajectory embeddings of scientific organizations show the same inverted-U against organization size: norms increase up to roughly \(10^3\) researchers and then decrease for larger institutions~\citep{murray2023unsupervised}.
-The proposed explanation is a competition between repeated exposure, which pushes an embedding away from its initialization, and context diversity, which makes the update directions less coherent.
+The proposed explanation is a competition between repeated exposure, which pushes an embedding away from its initialization, and context diversity, which makes the update directions less coherent~\citep{schakel2015measuring}.
 A population account must distinguish the graph-conditioned target from training dynamics and specify what each intervention changes.
 
 Two theoretical traditions address parts of the problem.
