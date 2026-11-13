@@ -1,4 +1,6 @@
 Keep the current version of the paper in the `current` folder. 
+The independent author-written PRE draft is in `drafts/GG_draft/main.tex`.
+It is not the current manuscript and will be promoted only when the author decides it is ready.
 When you submit, archive the version by creating a folder with a timestamped folder, e.g. `20200202_nature`. 
 
 Start writing early. 

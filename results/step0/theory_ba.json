@@ -1,0 +1,153 @@
+{
+ "A": {
+  "level_mean": 1.313143156823664,
+  "level_range": [
+   1.3128122639759927,
+   1.313445833808241
+  ],
+  "max_numeric_vs_formula_error": 1.3322676295501878e-15,
+  "runs": [
+   {
+    "run": "ba_A_s0.npz",
+    "level": 1.313445833808241,
+    "nodes": 10000,
+    "score_min": -1.87833850142497,
+    "score_max": -0.8486195892851134,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "ba_A_s1.npz",
+    "level": 1.3133929434527776,
+    "nodes": 10000,
+    "score_min": -1.8888461133907215,
+    "score_max": -0.8473258651514127,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "ba_A_s2.npz",
+    "level": 1.3128122639759927,
+    "nodes": 10000,
+    "score_min": -1.877621831263032,
+    "score_max": -0.8562526203707844,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "ba_A_s3.npz",
+    "level": 1.313181485291286,
+    "nodes": 10000,
+    "score_min": -1.8844412832269613,
+    "score_max": -0.848508093287419,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "ba_A_s4.npz",
+    "level": 1.3128832575900222,
+    "nodes": 10000,
+    "score_min": -1.8831813091026761,
+    "score_max": -0.8703216215578918,
+    "outside_gensim_range": 0
+   }
+  ]
+ },
+ "B": {
+  "level_mean": 1.26859682492627,
+  "level_range": [
+   1.2685968248518826,
+   1.2685968249828892
+  ],
+  "max_numeric_vs_formula_error": 1.1102230246251565e-15,
+  "runs": [
+   {
+    "run": "ba_B_s0.npz",
+    "level": 1.2685968248849568,
+    "nodes": 10000,
+    "score_min": -1.6093955365362544,
+    "score_max": -1.606030488754089,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "ba_B_s1.npz",
+    "level": 1.2685968249828892,
+    "nodes": 10000,
+    "score_min": -1.6093972866088828,
+    "score_max": -1.6060272276557563,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "ba_B_s2.npz",
+    "level": 1.268596824950427,
+    "nodes": 10000,
+    "score_min": -1.6093955365362544,
+    "score_max": -1.605466662448838,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "ba_B_s3.npz",
+    "level": 1.2685968248518826,
+    "nodes": 10000,
+    "score_min": -1.6093966615832958,
+    "score_max": -1.6047312283539206,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "ba_B_s4.npz",
+    "level": 1.2685968249611947,
+    "nodes": 10000,
+    "score_min": -1.6093965365781315,
+    "score_max": -1.6052052172049087,
+    "outside_gensim_range": 0
+   }
+  ]
+ },
+ "SW": {
+  "level_mean": 1.2844520607172258,
+  "level_range": [
+   1.2838909525270776,
+   1.2849429222092021
+  ],
+  "max_numeric_vs_formula_error": 2.220446049250313e-15,
+  "runs": [
+   {
+    "run": "ba_SW_s0.npz",
+    "level": 1.2838909525270776,
+    "nodes": 10000,
+    "score_min": -2.296818955731959,
+    "score_max": -1.3335045405308315,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "ba_SW_s1.npz",
+    "level": 1.2843891838266355,
+    "nodes": 10000,
+    "score_min": -2.2982354399817906,
+    "score_max": -1.3348512341918326,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "ba_SW_s2.npz",
+    "level": 1.2845320305377066,
+    "nodes": 10000,
+    "score_min": -2.3490879599043946,
+    "score_max": -1.3366647749243645,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "ba_SW_s3.npz",
+    "level": 1.2845052144855074,
+    "nodes": 10000,
+    "score_min": -2.4012251767779396,
+    "score_max": -1.3352275514323813,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "ba_SW_s4.npz",
+    "level": 1.2849429222092021,
+    "nodes": 10000,
+    "score_min": -2.369393952630971,
+    "score_max": -1.3367348569585318,
+    "outside_gensim_range": 0
+   }
+  ]
+ },
+ "note": "Flat in any gauge (context factors full rank); level shown is the balanced gauge."
+}

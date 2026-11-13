@@ -1,6 +1,7 @@
 PROJ_NAME=PROJ_NAME
 
-.PHONY: all dryrun test create_conda_env build_conda_env report create_env create_ipykernel
+.PHONY: all dryrun test step0 create_conda_env build_conda_env report create_env create_ipykernel
+PY ?= .venv/bin/python
 
 
 all:
@@ -14,6 +15,10 @@ dag.svg: workflow/Snakefile
 
 test:
 	uv run --frozen python -m pytest
+
+# Fig. 1 (step 0): fetch data, build corpora, train, theory, checks, figures. See scripts/step0/README.md.
+step0:
+	scripts/step0/run_all.sh $(PY)
 
 create_conda_env:
 	conda create -n $(PROJ_NAME) -c bioconda -c conda-forge python=3.8 snakemake jupyterlab pandas nb_conda black isort flake8 pytest neovim snakefmt

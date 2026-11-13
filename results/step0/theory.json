@@ -1,0 +1,103 @@
+{
+ "A": {
+  "level_mean": 1.525506408094541,
+  "level_range": [
+   1.5248045115885789,
+   1.5262741389789418
+  ],
+  "max_numeric_vs_formula_error": 8.215650382226158e-15,
+  "runs": [
+   {
+    "run": "null_A_s0.npz",
+    "level": 1.5248045115885789,
+    "nodes": 7022,
+    "score_min": -3.129055472766272,
+    "score_max": -1.0859696497304896,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "null_A_s1.npz",
+    "level": 1.5262741389789418,
+    "nodes": 7047,
+    "score_min": -3.129282066654165,
+    "score_max": -1.086938100257434,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "null_A_s2.npz",
+    "level": 1.5253271621101228,
+    "nodes": 7044,
+    "score_min": -3.128937829668975,
+    "score_max": -1.0855996283741722,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "null_A_s3.npz",
+    "level": 1.526057390399213,
+    "nodes": 7056,
+    "score_min": -3.1292057017944854,
+    "score_max": -1.0861953012790364,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "null_A_s4.npz",
+    "level": 1.5250688373958488,
+    "nodes": 7031,
+    "score_min": -3.1291921035619774,
+    "score_max": -1.0859501359555872,
+    "outside_gensim_range": 0
+   }
+  ]
+ },
+ "B": {
+  "level_mean": 1.2685572309770898,
+  "level_range": [
+   1.2685571359862535,
+   1.2685572943414725
+  ],
+  "max_numeric_vs_formula_error": 9.325873406851315e-15,
+  "runs": [
+   {
+    "run": "null_B_s0.npz",
+    "level": 1.26855723099761,
+    "nodes": 4992,
+    "score_min": -1.6094303951688211,
+    "score_max": -1.5841197189504017,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "null_B_s1.npz",
+    "level": 1.268557215108802,
+    "nodes": 4991,
+    "score_min": -1.609430395253584,
+    "score_max": -1.5840873175636139,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "null_B_s2.npz",
+    "level": 1.2685572784513113,
+    "nodes": 4995,
+    "score_min": -1.6094303947438473,
+    "score_max": -1.5840969883358031,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "null_B_s3.npz",
+    "level": 1.2685572943414725,
+    "nodes": 4996,
+    "score_min": -1.60943039475289,
+    "score_max": -1.5842157552623366,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "null_B_s4.npz",
+    "level": 1.2685571359862535,
+    "nodes": 4986,
+    "score_min": -1.6094303944974313,
+    "score_max": -1.5841234431666384,
+    "outside_gensim_range": 0
+   }
+  ]
+ },
+ "note": "Flat in any gauge (context factors full rank); level shown is the balanced gauge."
+}
