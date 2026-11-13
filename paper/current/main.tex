@@ -51,8 +51,8 @@
 \date{\today}
 
 \begin{abstract}
-Random-walk network embeddings assign each node a direction and a norm, whose structural meaning depends on the population operator, realized graph, and training.
-We compare the population geometry of normalized spectral embeddings, random-walk pair probabilities, and skip-gram with negative sampling under the degree-corrected stochastic block model in a common notation.
+Where a node's latent properties, such as degree and community, end up in an embedding's geometry, whether in vector norms, in directions, or nowhere, is often unclear.
+We examine this question for random-walk embeddings by comparing the population geometry of normalized spectral embeddings, random-walk pair probabilities, and skip-gram with negative sampling under the degree-corrected stochastic block model.
 The first two operators have an exact radial-angular structure: degree propensity controls radius within each community, while direction depends only on community.
 At unigram negative sampling, however, marginal normalization cancels node-specific degree from the optimal skip-gram score.
 We then use controlled finite-sample experiments to probe sensitivity to exposure and context sampling.
