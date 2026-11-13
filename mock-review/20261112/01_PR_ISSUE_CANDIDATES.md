@@ -3,6 +3,20 @@
 Priorities: P0 desk-reject or veracity, P1 wrong as printed, P2 presentation, P3 later.
 Tracker IDs refer to `../TRACKER.md`; source IDs refer to the action tables in `R<n>_*.md`.
 
+## Filed as
+
+| Item | Filed |
+|---|---|
+| PR-A | [#56](https://github.com/govgandhi/alt_means_sans_k/pull/56) |
+| PR-B | [#57](https://github.com/govgandhi/alt_means_sans_k/pull/57) |
+| I-1 | [#50](https://github.com/govgandhi/alt_means_sans_k/issues/50) |
+| I-2 | [#51](https://github.com/govgandhi/alt_means_sans_k/issues/51) |
+| I-3 | [#52](https://github.com/govgandhi/alt_means_sans_k/issues/52) |
+| I-4 | [#53](https://github.com/govgandhi/alt_means_sans_k/issues/53) |
+| I-5 | [#54](https://github.com/govgandhi/alt_means_sans_k/issues/54) |
+| I-6 | [#55](https://github.com/govgandhi/alt_means_sans_k/issues/55) |
+| R2-20 on #22 | [#22 comment](https://github.com/govgandhi/alt_means_sans_k/issues/22#issuecomment-6857138529) |
+
 ## PR candidates
 
 ### PR-A (P0, T-005): say what the Fig. 1 and Fig. 6 error bars are
