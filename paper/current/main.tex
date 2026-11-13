@@ -71,7 +71,18 @@ These results distinguish population geometry, realized-graph targets, and train
 
 \section{Introduction}
 
-Random-walk embedding methods map nodes to vectors by sampling paths through a network and training a predictive model on the resulting node sequences~\citep{perozzi2014deepwalk,grover2016node2vec}.
+Network geometry abstracts a complex system from the nodes and edges of a network into a geometric space~\citep{boguna2021network}, and many algorithms embed networks into such a latent space.
+Embeddings offer a richer representation that can integrate information about nodes, edges, and the whole system, and scalable machine-learning tools use them for node classification, link prediction, clustering, and compression~\citep{hamilton2017representation}.
+However, this comes at the cost of interpretability.
+
+The network does not tell us what the norm of a vector or the angle between two vectors should be.
+We must choose what the vectors represent, and in effect which algorithm does the conversion; which choice works best depends on the network and the application~\citep{dehghan2022evaluating}.
+The vectors could represent the network's raw connection strengths, connections corrected for how well connected their endpoints are, how often two nodes appear together on random walks, how much more often they appear together than a null model expects, or several of these at once.
+Our ability to extract useful information from embeddings has raced ahead of our understanding of what an algorithm does to the network's information as it converts the network into vectors.
+One part of that understanding is where a known structural property, such as a node's degree or community, ends up in the geometry: in the norms, in the directions, or nowhere.
+
+We focus on random-walk embedding methods, which perform well in community detection~\citep{kojaku2024network}.
+They map nodes to vectors by sampling paths through a network and training a predictive model on the resulting node sequences~\citep{perozzi2014deepwalk,grover2016node2vec}.
 Most applications compare vector directions through cosine similarity.
 The vector norm is nevertheless a second observable that can encode node frequency, contextual concentration, and training dynamics.
 Its interpretation matters whenever embeddings enter a dot product, a clustering method without row normalization, or a downstream model that retains vector scale.
