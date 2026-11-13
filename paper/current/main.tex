@@ -92,10 +92,14 @@ Empirical work has reported a nonmonotonic relation between frequency and embedd
 Word2vec norms first increase and then decrease with word frequency in a domain-specific corpus~\citep{schakel2015measuring}.
 Trajectory embeddings of scientific organizations show the same inverted-U against organization size: norms increase up to roughly \(10^3\) researchers and then decrease for larger institutions~\citep{murray2023unsupervised}.
 The proposed explanation is a competition between repeated exposure, which pushes an embedding away from its initialization, and context diversity, which makes the update directions less coherent~\citep{schakel2015measuring}.
-A population account must distinguish the graph-conditioned target from training dynamics and specify what each intervention changes.
+
+Where the curve comes from is hard to settle in text or trajectory data, which come with no planted popularity or topic for the geometry to recover.
+Networks can supply this ground truth.
+A degree-corrected stochastic block model (DCSBM) fixes each node's degree propensity and community~\citep{karrer2011stochastic}, and skip-gram with negative sampling (SGNS) on random walks factorizes a closed-form matrix in the limit of long walks~\citep{qiu2018network}.
+With a planted property and an exact target, we can ask where the property ends up in the geometry, whether the objective or the training put it there, and what changing exposure or context does to it.
 
 Two theoretical traditions address parts of the problem.
-Population spectral embeddings under the degree-corrected stochastic block model (DCSBM) have community rays, with node-specific length multipliers in SCORE~\citep{jin2015fast} and regularized spectral clustering~\citep{qin2013regularized}.
+Population spectral embeddings under the DCSBM have community rays, with node-specific length multipliers in SCORE~\citep{jin2015fast} and regularized spectral clustering~\citep{qin2013regularized}.
 The matrix-factorization view of skip-gram identifies a shifted pointwise mutual information score~\citep{levy2014neural,qiu2018network}, while an information-geometric analysis relates a centered, transformed word-vector norm to the Kullback--Leibler (KL) divergence between conditional and marginal context distributions~\citep{oyama2022norm}.
 Related analyses establish sampler-dependent targets~\citep{davison2023asymptotics}, including a block-constant DCSBM target at unigram negative sampling~\citep{davison2024community}.
 These results do not by themselves determine the norms returned by finite stochastic optimization.
