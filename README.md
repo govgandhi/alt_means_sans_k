@@ -15,6 +15,8 @@ uv venv --python 3.13.12 .venv
 uv pip install --python .venv/bin/python \
   -r analysis/negative_sampling_control_requirements.txt \
   -r analysis/negative_sampling_control_build_requirements.txt
+# Pins from analysis/realized_graph_audit_requirements.txt for its test
+uv pip install --python .venv/bin/python PyMuPDF==1.26.7 sympy==1.14.0 mpmath==1.3.0
 .venv/bin/python scripts/build_control_gensim.py --install
 .venv/bin/python scripts/check_control_gensim.py
 .venv/bin/python -m pytest
@@ -32,8 +34,9 @@ The staged prospective trainer explicitly uses original-token negative counts;
 the new revalidation compares both original- and retained-token samplers.
 
 The minimal `make test` environment skips the scientific tests when their optional
-dependencies are absent. The pinned environment above runs all 26 tests, including
-the mandatory numerical checks; an installed but defective BLAS build fails them.
+dependencies are absent. The pinned environment above runs the whole suite with no
+skips, including the mandatory numerical checks; an installed but defective BLAS
+build fails them. `pytest -rs` names any test that skipped and why.
 
 Historical output status is recorded in [results/README.md](results/README.md).
 To reproduce the original calibration-only control with its exact source files,
