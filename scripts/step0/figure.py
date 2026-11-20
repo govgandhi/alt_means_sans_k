@@ -1,6 +1,7 @@
 """Step-0 problem figure: published curves reproduced (top row) and the 3 x 2 grid.
 
-Inputs: results/step0/runs/*.npz (train.py), results/step0/theory.json (theory.py), and
+Inputs: results/step0/runs/*.npz (train.py), results/step0/theory.json (theory.py; drawn
+  only on the corpus it was computed for, the pop row), and
   the PNAS
 anchor inputs (see anchor_pnas.py). Bins: log-spaced, 4 per decade; per-seed bin means,
 then
@@ -31,7 +32,8 @@ BLUE, ORANGE = "#2a78d6", "#eb6834"
 MIN_PER_BIN = 10
 ROWS = [
     ("real", "PNAS organization network, weighted walks", "node strength"),
-    ("null", "Same strengths, random wiring (null)", "node strength"),
+    ("null", "Same strengths, random wiring (one sampled graph)", "node strength"),
+    ("pop", "Same strengths, expected graph (population process)", "node strength"),
     ("text", "hep-th abstracts (Schakel & Wilson corpus)", "word frequency"),
 ]
 COLS = [("A", "A: Gensim defaults (skip-gram)"), ("B", "B: PNAS-reported settings")]
@@ -121,11 +123,12 @@ def main() -> None:
         )
     a = p.parse_args()
     theory = json.loads((a.runs.parent / "theory.json").read_text())
+    assert theory["corpus"] == "pop", "theory line must match the pop corpus (#59)"
     plt.rcParams.update(
         {"text.color": INK, "axes.edgecolor": MUTED, "axes.labelcolor": INK}
     )
-    fig = plt.figure(figsize=(11, 13.5), facecolor=SURFACE)
-    grid = fig.add_gridspec(4, 2, hspace=0.55, wspace=0.22)
+    fig = plt.figure(figsize=(11, 16.8), facecolor=SURFACE)
+    grid = fig.add_gridspec(5, 2, hspace=0.55, wspace=0.22)
 
     ax = fig.add_subplot(grid[0, 0])
     sizes = read_sizes(a.anchor_sizes)
@@ -166,7 +169,7 @@ def main() -> None:
     for r, (corpus, row_title, xlabel) in enumerate(ROWS, start=1):
         for c, (column, col_title) in enumerate(COLS):
             ax = fig.add_subplot(grid[r, c])
-            level = theory[column]["level_mean"] if corpus == "null" else None
+            level = theory[column]["level_mean"] if corpus == theory["corpus"] else None
             draw(
                 ax,
                 sorted(a.runs.glob(f"{corpus}_{column}_s*.npz")),

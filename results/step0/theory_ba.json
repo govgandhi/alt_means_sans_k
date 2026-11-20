@@ -149,5 +149,6 @@
    }
   ]
  },
- "note": "Flat in any gauge (context factors full rank); level shown is the balanced gauge."
+ "corpus": "ba",
+ "note": "Flat in the balanced gauge (raw factors can carry unused components); level shown is the balanced gauge."
 }

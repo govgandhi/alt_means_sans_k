@@ -1,5 +1,7 @@
-"""Population-theory line for the step-0 null (expected graph of the weighted
-configuration model).
+"""Population-theory line for the step-0 population process (pop corpus: independent
+draws in proportion to strength, i.e. walks on the expected graph of the weighted
+configuration model). It does not hold for the null corpus, which walks one sampled
+realization (issue #59).
 
 With walks started in proportion to strength, every token of a walk on the expected
 graph is an
@@ -58,7 +60,7 @@ def scores(counts: np.ndarray, sample: float, exponent: float) -> np.ndarray:
 def main() -> None:
     p = argparse.ArgumentParser()
     p.add_argument("--runs", type=Path, required=True)
-    p.add_argument("--corpus", default="null")
+    p.add_argument("--corpus", default="pop", choices=("pop", "ba"))
     p.add_argument("--out", type=Path)
     a = p.parse_args()
     out = {}
@@ -92,8 +94,9 @@ def main() -> None:
             "max_numeric_vs_formula_error": max(checks),
             "runs": levels,
         }
+    out["corpus"] = a.corpus
     out["note"] = (
-        "Flat in any gauge (context factors full rank); "
+        "Flat in the balanced gauge (raw factors can carry unused components); "
         "level shown is the balanced gauge."
     )
     (a.out or a.runs.parent / "theory.json").write_text(json.dumps(out, indent=1))

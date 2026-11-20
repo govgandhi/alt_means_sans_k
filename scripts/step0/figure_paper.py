@@ -128,7 +128,9 @@ def main() -> None:
         )
     p.add_argument("--theory", type=Path, default=Path("results/step0/theory_ba.json"))
     a = p.parse_args()
-    levels = {k: v["level_mean"] for k, v in json.loads(a.theory.read_text()).items() if k in COLORS}
+    theory = json.loads(a.theory.read_text())
+    assert theory["corpus"] == "ba", "theory line must match the ba corpus (#59)"
+    levels = {k: theory[k]["level_mean"] for k in COLORS}
     plt.rcParams.update(
         {
             "font.family": "sans-serif",

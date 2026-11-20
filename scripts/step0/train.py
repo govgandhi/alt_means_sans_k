@@ -124,9 +124,6 @@ def main() -> None:
         balanced_norm=balanced,
         x=x,
         settings=json.dumps(settings),
-        vocabulary_before_cutoff=len(model.raw_vocab)
-        if hasattr(model, "raw_vocab") and model.raw_vocab
-        else -1,
     )
     print(f"{a.corpus} {a.column} s{a.seed}: {len(tokens)} tokens kept", flush=True)
 

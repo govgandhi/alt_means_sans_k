@@ -1,103 +1,104 @@
 {
  "A": {
-  "level_mean": 1.525506408094541,
+  "level_mean": 1.5254142377847644,
   "level_range": [
-   1.5248045115885789,
-   1.5262741389789418
+   1.5250867500520549,
+   1.5255509243849499
   ],
-  "max_numeric_vs_formula_error": 8.215650382226158e-15,
+  "max_numeric_vs_formula_error": 8.881784197001252e-15,
   "runs": [
    {
-    "run": "null_A_s0.npz",
-    "level": 1.5248045115885789,
-    "nodes": 7022,
-    "score_min": -3.129055472766272,
-    "score_max": -1.0859696497304896,
+    "run": "pop_A_s0.npz",
+    "level": 1.5255509243849499,
+    "nodes": 7037,
+    "score_min": -3.1285249111767612,
+    "score_max": -1.0861903002518725,
     "outside_gensim_range": 0
    },
    {
-    "run": "null_A_s1.npz",
-    "level": 1.5262741389789418,
-    "nodes": 7047,
-    "score_min": -3.129282066654165,
-    "score_max": -1.086938100257434,
-    "outside_gensim_range": 0
-   },
-   {
-    "run": "null_A_s2.npz",
-    "level": 1.5253271621101228,
-    "nodes": 7044,
-    "score_min": -3.128937829668975,
-    "score_max": -1.0855996283741722,
-    "outside_gensim_range": 0
-   },
-   {
-    "run": "null_A_s3.npz",
-    "level": 1.526057390399213,
-    "nodes": 7056,
-    "score_min": -3.1292057017944854,
-    "score_max": -1.0861953012790364,
-    "outside_gensim_range": 0
-   },
-   {
-    "run": "null_A_s4.npz",
-    "level": 1.5250688373958488,
+    "run": "pop_A_s1.npz",
+    "level": 1.5254945458006581,
     "nodes": 7031,
-    "score_min": -3.1291921035619774,
-    "score_max": -1.0859501359555872,
+    "score_min": -3.1286494113992815,
+    "score_max": -1.0851704561500566,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "pop_A_s2.npz",
+    "level": 1.5255346926454663,
+    "nodes": 7034,
+    "score_min": -3.1286420707783607,
+    "score_max": -1.085524260018242,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "pop_A_s3.npz",
+    "level": 1.5250867500520549,
+    "nodes": 7029,
+    "score_min": -3.128504276053239,
+    "score_max": -1.0854735080494362,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "pop_A_s4.npz",
+    "level": 1.5254042760406912,
+    "nodes": 7035,
+    "score_min": -3.128638968122527,
+    "score_max": -1.086173784955864,
     "outside_gensim_range": 0
    }
   ]
  },
  "B": {
-  "level_mean": 1.2685572309770898,
+  "level_mean": 1.2685572204433453,
   "level_range": [
-   1.2685571359862535,
-   1.2685572943414725
+   1.2685571030195921,
+   1.2685573091625093
   ],
-  "max_numeric_vs_formula_error": 9.325873406851315e-15,
+  "max_numeric_vs_formula_error": 8.43769498715119e-15,
   "runs": [
    {
-    "run": "null_B_s0.npz",
-    "level": 1.26855723099761,
+    "run": "pop_B_s0.npz",
+    "level": 1.2685573091625093,
+    "nodes": 4997,
+    "score_min": -1.6094303955496745,
+    "score_max": -1.5836305679230547,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "pop_B_s1.npz",
+    "level": 1.268557309147671,
+    "nodes": 4997,
+    "score_min": -1.609430395690931,
+    "score_max": -1.58358647578184,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "pop_B_s2.npz",
+    "level": 1.2685571030195921,
+    "nodes": 4984,
+    "score_min": -1.6094303947879294,
+    "score_max": -1.5834254782345545,
+    "outside_gensim_range": 0
+   },
+   {
+    "run": "pop_B_s3.npz",
+    "level": 1.2685572300681693,
     "nodes": 4992,
-    "score_min": -1.6094303951688211,
-    "score_max": -1.5841197189504017,
+    "score_min": -1.609430395342866,
+    "score_max": -1.583591588525466,
     "outside_gensim_range": 0
    },
    {
-    "run": "null_B_s1.npz",
-    "level": 1.268557215108802,
-    "nodes": 4991,
-    "score_min": -1.609430395253584,
-    "score_max": -1.5840873175636139,
-    "outside_gensim_range": 0
-   },
-   {
-    "run": "null_B_s2.npz",
-    "level": 1.2685572784513113,
-    "nodes": 4995,
-    "score_min": -1.6094303947438473,
-    "score_max": -1.5840969883358031,
-    "outside_gensim_range": 0
-   },
-   {
-    "run": "null_B_s3.npz",
-    "level": 1.2685572943414725,
-    "nodes": 4996,
-    "score_min": -1.60943039475289,
-    "score_max": -1.5842157552623366,
-    "outside_gensim_range": 0
-   },
-   {
-    "run": "null_B_s4.npz",
-    "level": 1.2685571359862535,
-    "nodes": 4986,
-    "score_min": -1.6094303944974313,
-    "score_max": -1.5841234431666384,
+    "run": "pop_B_s4.npz",
+    "level": 1.268557150818784,
+    "nodes": 4987,
+    "score_min": -1.6094303948580073,
+    "score_max": -1.5835846538885248,
     "outside_gensim_range": 0
    }
   ]
  },
- "note": "Flat in any gauge (context factors full rank); level shown is the balanced gauge."
+ "corpus": "pop",
+ "note": "Flat in the balanced gauge (raw factors can carry unused components); level shown is the balanced gauge."
 }

@@ -47,10 +47,10 @@ public; the deposited network, vectors and organization sizes are used instead.
 | `blogcatalog_corpus.py` | Fig. 1(c): random walks on BlogCatalog, same walk law as the PNAS walks |
 | `ba_corpus.py` | Fig. 1(d): walks on the expected graph of `networkx.barabasi_albert_graph(10000, 5, seed=k)`, i.e. independent draws in proportion to degree (N and m are our choices) |
 | `train.py` | one Gensim run (corrected build, one worker, seeded) → `results/step0/runs/*.npz` |
-| `theory.py` | exact optimum of the expected loss for the population process → `results/step0/theory.json`; `--corpus ba` → `theory_ba.json` |
+| `theory.py` | exact optimum of the expected loss for the population process (pop corpus) → `results/step0/theory.json`; `--corpus ba` → `theory_ba.json`. Not valid for the null corpus (one sampled graph, whose target contains degree) |
 | `checks.py` | corpus, transition, update-range, cutoff and replay checks → `results/step0/checks.json` |
 | `figure_paper.py` | Fig. 1 (PRE double-column, vector PDF + 600-dpi PNG) |
-| `figure.py`, `anchor_pnas.py` | diagnostic grid (raw and balanced norms, null) and the PNAS redraw |
+| `figure.py`, `anchor_pnas.py` | diagnostic grid (raw and balanced norms; null and pop rows, theory line on pop only) and the PNAS redraw |
 | `diagnose_population.py`, `diagnose_unseen_pairs.py` | 5- vs 50-epoch diagnosis (for the next figure) |
 
 ## Settings
