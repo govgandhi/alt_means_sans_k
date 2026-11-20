@@ -3,13 +3,17 @@
 Panels: (a) PNAS published vectors vs organization size; (b) hep-th abstracts; (c)
 random walks on BlogCatalog; (d) walks on the expected graph of a Barabasi-Albert graph
 (each token an independent draw in proportion to degree) with the exact theory line.
-Series in (b)-(d): Gensim defaults, PNAS settings, Schakel & Wilson settings. y = raw
-norm / mean raw norm of the run, so the exact optimum (identical vectors for every node,
-in any gauge, under every setting) is exactly 1. Bins: 4 per decade; each point at the
+Series in (b)-(d): Gensim defaults, PNAS settings, Schakel & Wilson settings. y = norm /
+mean norm of the run (raw) in (a)-(c). In (d), y = balanced-gauge norm, unnormalized,
+against each setting's exact optimum level (identical balanced rows for every node; levels
+from results/step0/theory_ba.json, written by theory.py --corpus ba). Raw norms are not
+gauge-free (unused components can vary them at the optimum; issue #60), so (d) uses the
+balanced norm, and its absolute level, which the theory fixes. Bins: 4 per decade; each point at the
 mean log x of its tokens; per-seed bin means, then mean +/- SE over 5 seeds as error
 bars (bins with >= 10 tokens in every seed). Markers carry identity as well as colour
 (palette validated for colour-blind separation).
-Inputs: results/step0/runs/*.npz, PNAS factors table and sizes file.
+Inputs: results/step0/runs/*.npz, results/step0/theory_ba.json, PNAS factors table and
+sizes file.
 Run: python scripts/step0/figure_paper.py --runs results/step0/runs --anchor-factors ...
      --anchor-sizes ... --out results/step0/fig1_problem.pdf   (also writes a 600-dpi
      PNG)
@@ -17,6 +21,7 @@ Run: python scripts/step0/figure_paper.py --runs results/step0/runs --anchor-fac
 
 import argparse
 import csv
+import json
 import sys
 from pathlib import Path
 
@@ -47,7 +52,7 @@ LABELS = {
     "SW": "Schakel & Wilson settings",
 }
 MIN_PER_BIN = 10
-THEORY = "theory: optimum of the objective (all settings)"
+THEORY = "theory: optimum of the objective, balanced gauge (one per setting)"
 
 
 def edges_for(x: np.ndarray) -> np.ndarray:
@@ -55,9 +60,9 @@ def edges_for(x: np.ndarray) -> np.ndarray:
     return 10 ** np.arange(lo, hi + 0.25, 0.25)
 
 
-def curve(paths: list[Path]):
+def curve(paths: list[Path], field: str = "raw_norm", normalize: bool = True):
     runs = [np.load(p) for p in paths]
-    values = [(r["x"], r["raw_norm"] / r["raw_norm"].mean()) for r in runs]
+    values = [(r["x"], r[field] / (r[field].mean() if normalize else 1)) for r in runs]
     edges = edges_for(np.concatenate([x for x, _ in values]))
     per_seed = []
     for x, y in values:
@@ -96,10 +101,10 @@ def plot(ax, x, m, se, color, label, marker="o"):
     )
 
 
-def style(ax, letter, title, xlabel):
+def style(ax, letter, title, xlabel, ylabel="raw norm / mean"):
     ax.set_xscale("log")
     ax.set_xlabel(xlabel)
-    ax.set_ylabel("norm / mean norm")
+    ax.set_ylabel(ylabel)
     ax.set_title(title, loc="left", fontsize=7.5, pad=3)
     ax.text(
         -0.17,
@@ -121,7 +126,9 @@ def main() -> None:
         p.add_argument(
             f"--{name.replace('_', '-')}", dest=name, type=Path, required=True
         )
+    p.add_argument("--theory", type=Path, default=Path("results/step0/theory_ba.json"))
     a = p.parse_args()
+    levels = {k: v["level_mean"] for k, v in json.loads(a.theory.read_text()).items() if k in COLORS}
     plt.rcParams.update(
         {
             "font.family": "sans-serif",
@@ -195,11 +202,16 @@ def main() -> None:
         ),
     ):
         for column in ("A", "B", "SW"):  # identity: legend text and marker shape
-            x, m, se = curve(sorted(a.runs.glob(f"{corpus}_{column}_s*.npz")))
+            ba = corpus == "ba"
+            field = "balanced_norm" if ba else "raw_norm"
+            x, m, se = curve(
+                sorted(a.runs.glob(f"{corpus}_{column}_s*.npz")), field, not ba
+            )
             plot(ax, x, m, se, COLORS[column], LABELS[column], MARKERS[column])
-        if corpus == "ba":
-            ax.axhline(1.0, color=MUTED, linestyle=":", linewidth=1.1, label=THEORY)
-        style(ax, letter, title, xlabel)
+            if ba:
+                ax.axhline(levels[column], color=COLORS[column], linestyle=":", linewidth=1.1)
+        ylabel = "balanced norm" if corpus == "ba" else "raw norm / mean"
+        style(ax, letter, title, xlabel, ylabel)
     handles = [
         plt.Line2D(
             [], [], color=COLORS[c], lw=1.1, marker=MARKERS[c], ms=2.6, label=LABELS[c]
