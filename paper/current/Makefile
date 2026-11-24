@@ -6,6 +6,8 @@ MON_OPT := -pvc
 CLN_OPT := -CA
 
 .PHONY: all monitor main-monitor supp supp-monitor note-monitor norm-geometry wordcount clean
+# Always let latexmk check included sources, figures, and bibliography changes.
+.PHONY: ${MAIN}.pdf ${SUPP}.pdf ${NOTE}.pdf
 
 all: ${MAIN}.pdf ${SUPP}.pdf ${NOTE}.pdf
 
@@ -16,7 +18,7 @@ ${SUPP}.pdf: ${SUPP}.tex factor_balance.tex references.bib ../../results/prospec
 	${TEX} -pdf -interaction=nonstopmode -halt-on-error ${SUPP}.tex
 
 ${NOTE}.pdf:
-	${TEX} ${NOTE}.tex
+	${TEX} -pdf -interaction=nonstopmode -halt-on-error ${NOTE}.tex
 
 supp: ${SUPP}.pdf
 
