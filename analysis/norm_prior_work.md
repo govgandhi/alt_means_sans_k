@@ -2,6 +2,12 @@
 
 Literature check of 2026-11-23 for the norm tests (fresh corpus, matched-τ step sizes, window matching, specificity, animation) and the PRE manuscript.
 The test scripts named below live in `scripts/norm_tests/` and arrive in follow-up PRs; numbers quoted here come from those runs.
+
+Training settings, named by what they change:
+
+- **One-hop**: window 1 (fixed), negative-sampling exponent 1, no subsampling, d = 300, 5 epochs. On a graph, every context is a neighbor. Murray et al. (2023) used it; formerly "setting B".
+- **Default**: Gensim defaults, window 5 (shrinking), exponent 0.75, subsampling 1e-3, d = 100, 5 epochs. Formerly "setting A".
+- **Wide**: window 10, subsampling 1e-4, d = 100, 20 epochs, as in Schakel & Wilson (2015). Formerly "SW".
 Sources were checked against arXiv abstract pages or API records, ACL Anthology, Crossref, or the PDFs; section, equation, and figure numbers come from the PDFs.
 Searches used OpenAlex (keyword and `cites:` filters on Schakel & Wilson, Wilson & Schakel, Oyama et al., Murray et al., Zipfian whitening, Arora et al., Mimno & Thompson), the arXiv API, and web search; Semantic Scholar rate-limited most queries.
 
@@ -11,9 +17,13 @@ Searches used OpenAlex (keyword and `cites:` filters on Schakel & Wilson, Wilson
 - Norm tracks context specificity (KL) at fixed frequency: Wilson & Schakel (2015) showed this causally in text, and Oyama et al. (2023) derived an approximation at the SGNS optimum.
 - No prior work found on: step size at fixed summed learning rate, the gradient-flow limit, corpus reuse as the source of a hump, the window acting beyond update count, or Gensim's score clipping.
 - No theorem anywhere covers the inverted U of trained SGNS norms; existing theory is either at the optimum (Oyama, Zipfian whitening, Arora) or for gradient flow without frequency weighting (Karkada et al.).
-- New negative result from this round: at the PNAS settings on BlogCatalog, the trained model learns each node's specificity in its predicted contexts, but its vector norm does not carry it, and Oyama's approximation fails; window 1 is the cause (window 5 restores it), and in text the relation is moderate.
+- Step-size mechanism (new, `analysis/norm_theory_notes.md`): gradient flow plus Smith et al.'s first-order SGD penalty reproduces matched-τ SGD on the PR #36 graphs at every tested step size, node by node; the context-gradient term, ‖w‖² × squared pair errors, carries it, and it shortens hubs because they make the most updates on the least certain pairs.
+  Cancelling the penalty during SGD restores gradient-flow lengths (knockout).
+  The shortening costs almost no loss, so it persists after a switch to small steps; this explains learning-rate history.
+  A matched-step sweep separates two sources of the falling side: the penalty dominates in the one-hop setting (BlogCatalog, hep-th) and in hep-th at window 5, and the specificity target dominates on BlogCatalog at window 5.
+- New negative result from this round: in the one-hop setting on BlogCatalog, the trained model learns each node's specificity in its predicted contexts, but its vector norm does not carry it, and Oyama's approximation fails; window 1 is the cause (window 5 restores it), and in text the relation is moderate.
 
-## The PNAS hypothesis
+## The hypothesis in Murray et al. (2023)
 
 Murray et al. (PNAS 2023), main text near Fig. 5 and SI S16 (arXiv 2012.02785v3, pp. 61–63):
 
@@ -22,15 +32,15 @@ Murray et al. (PNAS 2023), main text near Fig. 5 and SI S16 (arXiv 2012.02785v3,
   The paper states that its experiments do not support specificity as the sole mechanism and that hierarchy distortion is also unsupported.
 - Configuration-model, Barabási–Albert, and nested networks with 5-step walks reproduce the concave shape; a regular tree does not.
 - Settings: Gensim SGNS, d = 300, window 1, negative exponent 1, 5 negatives, 5 epochs, default learning rate, fixed corpus.
-  These are our setting B.
+  This is our one-hop setting.
 
 Verdict from the tests:
 
 - Rising branch = undertraining: supported, and the peak's position moves with training.
 - Falling branch = specificity: partly.
-  At fixed degree, specificity predicts length (BlogCatalog within-bin Spearman 0.23 at B, 0.78 at A, 0.89 at SW), and the correlation grows with epochs.
+  At fixed degree, specificity predicts length (BlogCatalog within-bin Spearman 0.23 one-hop, 0.78 default, 0.89 wide), and the correlation grows with epochs.
   But on configuration-model walks like Fig. S33, the decline at the top comes from finite SGD steps: at the same summed learning rate, gradient flow gives norms rising with degree.
-  At B on BlogCatalog the norm does not encode the specificity the model has learned; window 1 causes this (next section).
+  In the one-hop setting on BlogCatalog the norm does not encode the specificity the model has learned; window 1 causes this (next section).
   On the flat-optimum expected-BA corpus, the hump comes from reusing one sampled corpus.
 
 ## Does Oyama's norm–KL relation hold in our runs?
@@ -42,17 +52,17 @@ BlogCatalog seeds 0 and 1 agree to within 0.03 on every readout, so one seed is 
 
 | Run | model KL vs empirical KL (Pearson) | quadratic vs model KL (Pearson) | balanced norm vs empirical KL, global (Spearman) | same, within bins | balanced-norm peak at 50 epochs |
 |---|---|---|---|---|---|
-| BlogCatalog, B (PNAS) | 0.73 → 0.85 | −0.37 → −0.52 | −0.72 → −0.63 | 0.38 → 0.42 | degree 74 |
-| BlogCatalog, B with window 5 | 0.82 → 0.74 | 0.85 → 0.79 | 0.91 → 0.87 | 0.70 → 0.57 | lowest bin |
-| BlogCatalog, A (defaults) | 0.38 → 0.81 | 0.56 → 0.88 | 0.74 → 0.94 | 0.75 → 0.73 | lowest bin |
-| hep-th text, B | 0.36 → 0.77 | 0.62 → 0.35 | −0.13 → 0.39 | 0.63 → 0.45 | count 236 |
-| hep-th text, A | −0.22 → 0.26 | 0.76 → 0.67 | −0.66 → 0.49 | 0.40 → 0.50 | count 23 |
+| BlogCatalog, one-hop | 0.73 → 0.85 | −0.37 → −0.52 | −0.72 → −0.63 | 0.38 → 0.42 | degree 74 |
+| BlogCatalog, one-hop with window 5 | 0.82 → 0.74 | 0.85 → 0.79 | 0.91 → 0.87 | 0.70 → 0.57 | lowest bin |
+| BlogCatalog, default | 0.38 → 0.81 | 0.56 → 0.88 | 0.74 → 0.94 | 0.75 → 0.73 | lowest bin |
+| hep-th text, one-hop | 0.36 → 0.77 | 0.62 → 0.35 | −0.13 → 0.39 | 0.63 → 0.45 | count 236 |
+| hep-th text, default | −0.22 → 0.26 | 0.76 → 0.67 | −0.66 → 0.49 | 0.40 → 0.50 | count 23 |
 
-- On BlogCatalog at window 5 (A, or B with only the window changed), Oyama's relation holds: the quadratic form matches the model's KL, the norm tracks specificity, and it falls monotonically with degree by 50 epochs.
-- At B on BlogCatalog, the model's predicted context distribution matches empirical specificity (mean KL 3.97 vs 4.05 nats), yet the norm keeps rising with degree up to about 74, and Oyama's quadratic form anticorrelates with the model's KL in both seeds.
+- On BlogCatalog at window 5 (default, or one-hop with only the window changed), Oyama's relation holds: the quadratic form matches the model's KL, the norm tracks specificity, and it falls monotonically with degree by 50 epochs.
+- In the one-hop setting on BlogCatalog, the model's predicted context distribution matches empirical specificity (mean KL 3.97 vs 4.05 nats), yet the norm keeps rising with degree up to about 74, and Oyama's quadratic form anticorrelates with the model's KL in both seeds.
   Changing only the window to 5 restores the relation, so window-1 graph contexts break it; a plausible cause is that they lie far from the second-order regime Oyama's expansion assumes (untested).
-- In text the relation is moderate at both settings, and at B the quadratic approximation weakens as training proceeds.
-- Caveats: empirical KL ignores subsampling (A) and, for text, is the finite-corpus KL, which is inflated for rare words (Oyama et al. §6); the window-5 B run used Gensim's fixed window while its KL used shrinking-window weights.
+- In text the relation is moderate at both settings, and in the one-hop setting the quadratic approximation weakens as training proceeds.
+- Caveats: empirical KL ignores subsampling (default) and, for text, is the finite-corpus KL, which is inflated for rare words (Oyama et al. §6); the one-hop window-5 run used Gensim's fixed window while its KL used shrinking-window weights.
 
 ## What theory exists
 
@@ -73,9 +83,10 @@ BlogCatalog seeds 0 and 1 agree to within 0.03 on every readout, so one seed is 
   Population geometry (degree cancellation at unigram negatives, credited to Davison, Morgan & Ward 2024), the realized-graph score target, a two-force response model that is a framework rather than a derivation, and a boundary result that near-optimal loss can leave norm shapes unsettled.
   None of it derives the trained curve.
 
-A test of the Smith et al. mechanism (`stepsize_specificity.py`, PR #36 graphs, 5 seeds): relative to gradient flow at τ = 0.0628, the extra shrinkage at constant rate 0.025 tracks degree (Spearman −0.82).
+Follow-up tests of the Smith et al. mechanism are in `analysis/norm_theory_notes.md` and the explainer; the first-order penalty, written out for Gensim's update, reproduces SGD across ε = 0.000625–0.025.
+An early correlational check (`stepsize_specificity.py`, PR #36 graphs, 5 seeds): relative to gradient flow at τ = 0.0628, the extra shrinkage at constant rate 0.025 tracks degree (Spearman −0.82).
 At fixed degree, more specific nodes shrink slightly less (within-bin Spearman 0.27), but KL adds almost nothing once degree is in the regression (standardized coefficients −0.109 for log degree, 0.005 for KL).
-So the context-diversity version of that mechanism is at most a small part; the step-size effect is tied to degree or exposure.
+KL is the wrong functional: the penalty per update depends on how close each pair is to chance, the average of r/(1 + r) with r = 5e^(−PMI), which predicts within-bin shrinkage on the PR #36 graphs and hep-th and fails on BlogCatalog.
 
 ## Claim by claim
 
@@ -83,9 +94,9 @@ So the context-diversity version of that mechanism is at most a small part; the 
 |---|---|---|
 | Rare items are short because undertrained | Schakel & Wilson 2015 (heuristic); Gong et al. 2018 §3; Murray et al. SI S16; Oyama et al. App. G; Kunstner et al. 2024 Thm. 3 | Nothing; cite |
 | The ordering changes with training | Zhang, Lu & Shai 2018, Fig. 2 (BlogCatalog; LINE, DeepWalk, node2vec; constant rate 0.025; high-degree norms plateau, low-degree overtake by about 10 iterations); Oyama et al. App. G (Wikipedia; hump at 10 epochs, monotone decline at 100) | Peak location tracked continuously and shown to depend on epochs, window, and learning rate, in text and graphs |
-| Step size matters at fixed summed learning rate; gradient flow rises | None in embeddings; generic: Smith et al. 2021, Barrett & Dherin 2021; Stollenwerk & Stollenwerk 2025 show the optimizer (Adam vs. coupled Adam) flips the sign of norm–frequency correlation in LMs | Strongest claim: matched-τ sweep, gradient-flow limit, and shrinkage tied to degree more than KL |
+| Step size matters at fixed summed learning rate; gradient flow rises | None in embeddings; generic: Smith et al. 2021, Barrett & Dherin 2021; Stollenwerk & Stollenwerk 2025 show the optimizer (Adam vs. coupled Adam) flips the sign of norm–frequency correlation in LMs | Strongest claim: matched-τ sweep, gradient-flow limit, a first-order penalty that reproduces SGD node by node, its hub-shrinking term, persistence after small steps, and transfer to BlogCatalog and hep-th |
 | Reusing one corpus makes a hump where the optimum is flat | Ingredients only: Oyama et al. §6 (finite-sample KL bias); Wilson & Schakel 2015 (equal contexts, unequal norms); Valentini et al. 2023 (frequency artifacts in cosine on shuffled corpora); Antoniak & Mimno 2018 (bootstrap variability) | The fresh-vs-reused experiment; practical relevance because PyG `Node2Vec` resamples walks every batch while Gensim pipelines reuse a fixed corpus. On BlogCatalog a fresh corpus leaves the curve unchanged, so this applies to the flat-optimum control |
-| Norm tracks specificity at fixed frequency | Wilson & Schakel 2015 §5 (controlled noise mixing, text); Schakel & Wilson 2015; Oyama et al. 2023 | Graph version with window-specific KL against the stationary law (closed form at window 1); growth with training; and the boundary: at PNAS settings on graphs (window 1) the model learns KL but the norm does not encode it |
+| Norm tracks specificity at fixed frequency | Wilson & Schakel 2015 §5 (controlled noise mixing, text); Schakel & Wilson 2015; Oyama et al. 2023 | Graph version with window-specific KL against the stationary law (closed form at window 1); growth with training; and the boundary: in the one-hop setting on graphs the model learns KL but the norm does not encode it |
 | Window acts beyond update count | None found | w1 at 15 epochs vs w5 at 5 epochs on the same BA graph |
 | Gensim's ±6 update skipping is not responsible | None found | Methods note |
 
