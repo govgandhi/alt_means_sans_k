@@ -1,7 +1,7 @@
 # Prior work on the norm–frequency curve, and what we can claim
 
 Literature check of 2026-11-23 for the norm tests (fresh corpus, matched-τ step sizes, window matching, specificity, animation) and the PRE manuscript.
-The test scripts named below live in `scripts/norm_tests/` and arrive in follow-up PRs; numbers quoted here come from those runs.
+The test scripts named below are in `scripts/norm_tests/` and `scripts/norm_theory/`, with summaries in `results/norm_tests/` and `results/norm_theory/`; the theory and its checks are in `analysis/norm_theory_notes.md`.
 
 Training settings, named by what they change:
 
