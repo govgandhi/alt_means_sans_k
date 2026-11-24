@@ -1,0 +1,117 @@
+{
+ "pr36": {
+  "genericity_vs_degree_spearman": 0.6660797414549113,
+  "0.025": {
+   "degree": {
+    "spearman": -0.8158365134333874,
+    "within_bins": -0.443659567348219
+   },
+   "kl": {
+    "spearman": 0.6088338023161175,
+    "within_bins": 0.26637589442357795
+   },
+   "genericity": {
+    "spearman": -0.6109156747657633,
+    "within_bins": -0.3068005979398989
+   },
+   "fisher_corpus": {
+    "spearman": -0.7286963019341719,
+    "within_bins": -0.3828422427684802
+   }
+  },
+  "0.0025": {
+   "degree": {
+    "spearman": -0.8027940894626682,
+    "within_bins": -0.429631631896404
+   },
+   "kl": {
+    "spearman": 0.7297044158455994,
+    "within_bins": 0.4748872238381724
+   },
+   "genericity": {
+    "spearman": -0.6994737429826194,
+    "within_bins": -0.45473598737480503
+   },
+   "fisher_corpus": {
+    "spearman": -0.7928472467979077,
+    "within_bins": -0.5187897108903091
+   }
+  }
+ },
+ "blog": {
+  "E5": {
+   "frequency": {
+    "spearman": -0.8526580329587115,
+    "within_bins": -0.38742910343969983
+   },
+   "kl": {
+    "spearman": 0.6469501733932018,
+    "within_bins": -0.23324531730127482
+   },
+   "genericity": {
+    "spearman": -0.7328201839492461,
+    "within_bins": 0.11996844743585082
+   },
+   "fisher_corpus": {
+    "spearman": -0.8134591397884232,
+    "within_bins": -0.09874013503645035
+   }
+  },
+  "E25": {
+   "frequency": {
+    "spearman": -0.851577272583835,
+    "within_bins": -0.34703387392133633
+   },
+   "kl": {
+    "spearman": 0.6369192717421163,
+    "within_bins": -0.2748051202844246
+   },
+   "genericity": {
+    "spearman": -0.7232517975893299,
+    "within_bins": 0.1748956846214167
+   },
+   "fisher_corpus": {
+    "spearman": -0.8091786371571076,
+    "within_bins": -0.04184663863584436
+   }
+  }
+ },
+ "text": {
+  "E5": {
+   "frequency": {
+    "spearman": -0.5136152985341844,
+    "within_bins": -0.09269966008660871
+   },
+   "kl": {
+    "spearman": 0.3903856696839643,
+    "within_bins": 0.14448746376338029
+   },
+   "genericity": {
+    "spearman": -0.48566119638663496,
+    "within_bins": -0.29995299397299474
+   },
+   "fisher_corpus": {
+    "spearman": -0.5508808383605402,
+    "within_bins": -0.27194568747161213
+   }
+  },
+  "E25": {
+   "frequency": {
+    "spearman": -0.4208779864112386,
+    "within_bins": -0.07739804338917569
+   },
+   "kl": {
+    "spearman": 0.29397359936977707,
+    "within_bins": 0.06943321519171536
+   },
+   "genericity": {
+    "spearman": -0.39730184845579297,
+    "within_bins": -0.22401191140925275
+   },
+   "fisher_corpus": {
+    "spearman": -0.45171212153201096,
+    "within_bins": -0.2050671305153813
+   }
+  }
+ }
+}
