@@ -1,0 +1,132 @@
+{
+ "blog_B50_s0": [
+  {
+   "epoch": 5,
+   "window": 1,
+   "median_sd_delta": 2.5209352464290546,
+   "median_rel_third": 0.694824856802006,
+   "median_rel_error_quadratic": 0.3743126845203825,
+   "pearson_kl_quad": -0.14731034850870497,
+   "pearson_kl_quad_plus_third": -0.022501670090882834,
+   "mean_kl": 5.040917234032706,
+   "mean_quad": 3.1000861390431798,
+   "eq10_kl_q_vs_model_at_ubar": 0.8091244228966923
+  },
+  {
+   "epoch": 50,
+   "window": 1,
+   "median_sd_delta": 3.506245092913761,
+   "median_rel_third": 0.7258347984383434,
+   "median_rel_error_quadratic": 0.37933546347396857,
+   "pearson_kl_quad": -0.38434747071361997,
+   "pearson_kl_quad_plus_third": -0.06316229983992465,
+   "mean_kl": 6.557420834771504,
+   "mean_quad": 5.7236975420352705,
+   "eq10_kl_q_vs_model_at_ubar": 2.0016303504292074
+  }
+ ],
+ "blog_B50w5_s0": [
+  {
+   "epoch": 5,
+   "window": 5,
+   "median_sd_delta": 0.7508524973565154,
+   "median_rel_third": 0.17010137079549273,
+   "median_rel_error_quadratic": 0.9483440447521033,
+   "pearson_kl_quad": 0.8602315319726842,
+   "pearson_kl_quad_plus_third": 0.808243427874834,
+   "mean_kl": 5.593175448763833,
+   "mean_quad": 0.2818052634238197,
+   "eq10_kl_q_vs_model_at_ubar": 0.02820456814388095
+  },
+  {
+   "epoch": 50,
+   "window": 5,
+   "median_sd_delta": 0.8038146056117585,
+   "median_rel_third": 0.16220236805729257,
+   "median_rel_error_quadratic": 0.9585514808296407,
+   "pearson_kl_quad": 0.7852420237925897,
+   "pearson_kl_quad_plus_third": 0.8104863344608045,
+   "mean_kl": 8.266625703592386,
+   "mean_quad": 0.36669794602007527,
+   "eq10_kl_q_vs_model_at_ubar": 0.008190398787603019
+  }
+ ],
+ "blog_A50_s0": [
+  {
+   "epoch": 5,
+   "window": 5,
+   "median_sd_delta": 0.8549378716489773,
+   "median_rel_third": 0.1438671180079655,
+   "median_rel_error_quadratic": 0.630359207080942,
+   "pearson_kl_quad": 0.6741059888684192,
+   "pearson_kl_quad_plus_third": 0.5634135160362039,
+   "mean_kl": 1.8514064839280127,
+   "mean_quad": 0.36659476742319863,
+   "eq10_kl_q_vs_model_at_ubar": 0.03505839843389298
+  },
+  {
+   "epoch": 50,
+   "window": 5,
+   "median_sd_delta": 0.90467077913536,
+   "median_rel_third": 0.12135883928518643,
+   "median_rel_error_quadratic": 0.8854424350512011,
+   "pearson_kl_quad": 0.896192308538958,
+   "pearson_kl_quad_plus_third": 0.8061859330403964,
+   "mean_kl": 4.8642622513452975,
+   "mean_quad": 0.43918638499323276,
+   "eq10_kl_q_vs_model_at_ubar": 0.010476874347153862
+  }
+ ],
+ "text_B50_s0": [
+  {
+   "epoch": 5,
+   "window": 1,
+   "median_sd_delta": 1.3600907825891173,
+   "median_rel_third": 0.24837924623012234,
+   "median_rel_error_quadratic": 0.3188793022266452,
+   "pearson_kl_quad": 0.5735785892616472,
+   "pearson_kl_quad_plus_third": 0.6448971489546875,
+   "mean_kl": 1.5464629492470652,
+   "mean_quad": 0.9748901464053144,
+   "eq10_kl_q_vs_model_at_ubar": 0.10967327955678093
+  },
+  {
+   "epoch": 50,
+   "window": 1,
+   "median_sd_delta": 2.3308073452698252,
+   "median_rel_third": 0.6880208439312604,
+   "median_rel_error_quadratic": 0.22831132080691047,
+   "pearson_kl_quad": 0.20481184539297664,
+   "pearson_kl_quad_plus_third": 0.05116821701652329,
+   "mean_kl": 2.8045156620902376,
+   "mean_quad": 2.6887314574375494,
+   "eq10_kl_q_vs_model_at_ubar": 0.24429846596073013
+  }
+ ],
+ "text_A50_s0": [
+  {
+   "epoch": 5,
+   "window": 5,
+   "median_sd_delta": 0.7442068299126132,
+   "median_rel_third": 0.08142658123157887,
+   "median_rel_error_quadratic": 0.16714960218825997,
+   "pearson_kl_quad": 0.7026778764485486,
+   "pearson_kl_quad_plus_third": 0.805387552824437,
+   "mean_kl": 0.5099836125234021,
+   "mean_quad": 0.30017207804890117,
+   "eq10_kl_q_vs_model_at_ubar": 0.28939238480442114
+  },
+  {
+   "epoch": 50,
+   "window": 5,
+   "median_sd_delta": 1.3614602200918915,
+   "median_rel_third": 0.48747359949738756,
+   "median_rel_error_quadratic": 0.7680953194943123,
+   "pearson_kl_quad": 0.7621605298389014,
+   "pearson_kl_quad_plus_third": -0.009116806108438496,
+   "mean_kl": 4.931256093373696,
+   "mean_quad": 0.933805064722298,
+   "eq10_kl_q_vs_model_at_ubar": 0.19014416185719468
+  }
+ ]
+}
