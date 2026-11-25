@@ -1,0 +1,1102 @@
+{
+ "0.0628": {
+  "gf_replica": {
+   "abs_bins": [
+    4.244,
+    4.892,
+    5.444,
+    5.875,
+    6.322,
+    7.258
+   ],
+   "profile": [
+    0.7986,
+    0.9206,
+    1.0244,
+    1.1054,
+    1.1896,
+    1.3657
+   ],
+   "gap": 0.176,
+   "gap_se": 0.0037
+  },
+  "flow_eps0": {
+   "abs_bins": [
+    4.244,
+    4.892,
+    5.444,
+    5.875,
+    6.322,
+    7.258
+   ],
+   "profile": [
+    0.7986,
+    0.9206,
+    1.0244,
+    1.1054,
+    1.1896,
+    1.3657
+   ],
+   "gap": 0.1761,
+   "gap_se": 0.0037
+  },
+  "flow_eps0_vs_replica_max_rel": 0.00014427572204833705,
+  "0.000625": {
+   "gensim": {
+    "abs_bins": [
+     4.197,
+     4.812,
+     5.322,
+     5.706,
+     6.094,
+     6.758
+    ],
+    "profile": [
+     0.8097,
+     0.9283,
+     1.0268,
+     1.1007,
+     1.1757,
+     1.3037
+    ],
+    "gap": 0.1279,
+    "gap_se": 0.0023
+   },
+   "replica_exact": {
+    "abs_bins": [
+     4.251,
+     4.899,
+     5.444,
+     5.862,
+     6.284,
+     7.031
+    ],
+    "profile": [
+     0.8019,
+     0.9241,
+     1.027,
+     1.1058,
+     1.1854,
+     1.3263
+    ],
+    "gap": 0.1408,
+    "gap_se": 0.0023
+   },
+   "flow": {
+    "abs_bins": [
+     4.25,
+     4.897,
+     5.441,
+     5.856,
+     6.275,
+     7.02
+    ],
+    "profile": [
+     0.8023,
+     0.9244,
+     1.027,
+     1.1055,
+     1.1846,
+     1.3252
+    ],
+    "gap": 0.1406,
+    "gap_se": 0.0022
+   },
+   "diff_neg": {
+    "abs_bins": [
+     4.196,
+     4.893,
+     5.434,
+     5.885,
+     6.284,
+     7.107
+    ],
+    "profile": [
+     0.7916,
+     0.923,
+     1.025,
+     1.1101,
+     1.1854,
+     1.3407
+    ],
+    "gap": 0.1553,
+    "gap_se": 0.0044
+   },
+   "flow_vs_gensim_shift": {
+    "spearman": 0.768,
+    "within_bin_spearman": 0.621,
+    "slope_sgd_on_model": 1.472
+   },
+   "diff_neg_vs_gensim_shift": {
+    "spearman": 0.662,
+    "within_bin_spearman": 0.529,
+    "slope_sgd_on_model": 2.192
+   },
+   "flow_vs_replica_exact_shift": {
+    "spearman": 0.851,
+    "within_bin_spearman": 0.817,
+    "slope_sgd_on_model": 0.98
+   },
+   "diff_neg_vs_replica_exact_shift": {
+    "spearman": 0.694,
+    "within_bin_spearman": 0.658,
+    "slope_sgd_on_model": 1.455
+   }
+  },
+  "0.00125": {
+   "gensim": {
+    "abs_bins": [
+     4.202,
+     4.819,
+     5.324,
+     5.695,
+     6.057,
+     6.564
+    ],
+    "profile": [
+     0.8122,
+     0.9316,
+     1.0291,
+     1.1008,
+     1.1708,
+     1.2688
+    ],
+    "gap": 0.098,
+    "gap_se": 0.0014
+   },
+   "flow": {
+    "abs_bins": [
+     4.257,
+     4.902,
+     5.438,
+     5.839,
+     6.231,
+     6.813
+    ],
+    "profile": [
+     0.8058,
+     0.9278,
+     1.0293,
+     1.1052,
+     1.1795,
+     1.2897
+    ],
+    "gap": 0.1102,
+    "gap_se": 0.0012
+   },
+   "flow_vs_gensim_shift": {
+    "spearman": 0.84,
+    "within_bin_spearman": 0.759,
+    "slope_sgd_on_model": 1.252
+   }
+  },
+  "0.0025": {
+   "gensim": {
+    "abs_bins": [
+     4.215,
+     4.836,
+     5.329,
+     5.675,
+     5.987,
+     6.249
+    ],
+    "profile": [
+     0.8169,
+     0.9374,
+     1.033,
+     1.1,
+     1.1605,
+     1.2113
+    ],
+    "gap": 0.0508,
+    "gap_se": 0.0019
+   },
+   "replica_exact": {
+    "abs_bins": [
+     4.281,
+     4.92,
+     5.448,
+     5.828,
+     6.177,
+     6.504
+    ],
+    "profile": [
+     0.812,
+     0.9331,
+     1.0332,
+     1.1054,
+     1.1715,
+     1.2336
+    ],
+    "gap": 0.0621,
+    "gap_se": 0.0018
+   },
+   "flow": {
+    "abs_bins": [
+     4.27,
+     4.912,
+     5.433,
+     5.806,
+     6.147,
+     6.476
+    ],
+    "profile": [
+     0.8119,
+     0.9339,
+     1.033,
+     1.104,
+     1.1687,
+     1.2313
+    ],
+    "gap": 0.0625,
+    "gap_se": 0.0017
+   },
+   "diff_neg": {
+    "abs_bins": [
+     4.213,
+     4.907,
+     5.43,
+     5.847,
+     6.185,
+     6.688
+    ],
+    "profile": [
+     0.7989,
+     0.9304,
+     1.0295,
+     1.1086,
+     1.1727,
+     1.2681
+    ],
+    "gap": 0.0954,
+    "gap_se": 0.0021
+   },
+   "diff_full": {
+    "abs_bins": [
+     4.227,
+     4.918,
+     5.434,
+     5.835,
+     6.144,
+     6.444
+    ],
+    "profile": [
+     0.8032,
+     0.9344,
+     1.0326,
+     1.1087,
+     1.1674,
+     1.2245
+    ],
+    "gap": 0.0571,
+    "gap_se": 0.0026
+   },
+   "flow_vs_gensim_shift": {
+    "spearman": 0.903,
+    "within_bin_spearman": 0.864,
+    "slope_sgd_on_model": 1.144
+   },
+   "diff_neg_vs_gensim_shift": {
+    "spearman": 0.834,
+    "within_bin_spearman": 0.786,
+    "slope_sgd_on_model": 1.601
+   },
+   "diff_full_vs_gensim_shift": {
+    "spearman": 0.831,
+    "within_bin_spearman": 0.783,
+    "slope_sgd_on_model": 1.077
+   },
+   "flow_vs_replica_exact_shift": {
+    "spearman": 0.928,
+    "within_bin_spearman": 0.914,
+    "slope_sgd_on_model": 0.987
+   },
+   "diff_neg_vs_replica_exact_shift": {
+    "spearman": 0.838,
+    "within_bin_spearman": 0.815,
+    "slope_sgd_on_model": 1.378
+   },
+   "diff_full_vs_replica_exact_shift": {
+    "spearman": 0.874,
+    "within_bin_spearman": 0.846,
+    "slope_sgd_on_model": 0.931
+   }
+  },
+  "0.00625": {
+   "gensim": {
+    "abs_bins": [
+     4.264,
+     4.881,
+     5.344,
+     5.622,
+     5.813,
+     5.661
+    ],
+    "profile": [
+     0.83,
+     0.95,
+     1.0401,
+     1.0943,
+     1.1314,
+     1.1018
+    ],
+    "gap": -0.0296,
+    "gap_se": 0.0042
+   },
+   "flow": {
+    "abs_bins": [
+     4.255,
+     4.94,
+     5.414,
+     5.738,
+     5.927,
+     5.833
+    ],
+    "profile": [
+     0.8162,
+     0.9476,
+     1.0385,
+     1.1006,
+     1.1367,
+     1.1188
+    ],
+    "gap": -0.0179,
+    "gap_se": 0.0051
+   },
+   "flow_vs_gensim_shift": {
+    "spearman": 0.948,
+    "within_bin_spearman": 0.919,
+    "slope_sgd_on_model": 1.072
+   }
+  },
+  "0.0125": {
+   "gensim": {
+    "abs_bins": [
+     4.319,
+     4.94,
+     5.361,
+     5.547,
+     5.578,
+     5.174
+    ],
+    "profile": [
+     0.8425,
+     0.9637,
+     1.0457,
+     1.0821,
+     1.0881,
+     1.0093
+    ],
+    "gap": -0.0789,
+    "gap_se": 0.0051
+   },
+   "flow": {
+    "abs_bins": [
+     4.302,
+     4.977,
+     5.392,
+     5.612,
+     5.645,
+     5.283
+    ],
+    "profile": [
+     0.8321,
+     0.9628,
+     1.043,
+     1.0856,
+     1.0918,
+     1.0219
+    ],
+    "gap": -0.0699,
+    "gap_se": 0.0061
+   },
+   "flow_vs_gensim_shift": {
+    "spearman": 0.953,
+    "within_bin_spearman": 0.923,
+    "slope_sgd_on_model": 1.037
+   }
+  },
+  "0.025": {
+   "gensim": {
+    "abs_bins": [
+     4.389,
+     5.012,
+     5.362,
+     5.416,
+     5.266,
+     4.75
+    ],
+    "profile": [
+     0.8582,
+     0.9801,
+     1.0485,
+     1.0591,
+     1.0298,
+     0.9289
+    ],
+    "gap": -0.1008,
+    "gap_se": 0.005
+   },
+   "replica_exact": {
+    "abs_bins": [
+     4.436,
+     5.085,
+     5.46,
+     5.531,
+     5.386,
+     4.856
+    ],
+    "profile": [
+     0.853,
+     0.9778,
+     1.05,
+     1.0638,
+     1.0358,
+     0.9338
+    ],
+    "gap": -0.102,
+    "gap_se": 0.0057
+   },
+   "flow": {
+    "abs_bins": [
+     4.43,
+     5.018,
+     5.348,
+     5.4,
+     5.264,
+     4.767
+    ],
+    "profile": [
+     0.8662,
+     0.9812,
+     1.0458,
+     1.0558,
+     1.0294,
+     0.9321
+    ],
+    "gap": -0.0973,
+    "gap_se": 0.0051
+   },
+   "diff_neg": {
+    "abs_bins": [
+     4.366,
+     5.065,
+     5.438,
+     5.576,
+     5.495,
+     5.104
+    ],
+    "profile": [
+     0.8383,
+     0.9727,
+     1.0443,
+     1.0708,
+     1.055,
+     0.98
+    ],
+    "gap": -0.0751,
+    "gap_se": 0.0053
+   },
+   "diff_full": {
+    "abs_bins": [
+     4.402,
+     5.11,
+     5.45,
+     5.52,
+     5.337,
+     4.802
+    ],
+    "profile": [
+     0.8459,
+     0.982,
+     1.0473,
+     1.0608,
+     1.0256,
+     0.9228
+    ],
+    "gap": -0.1028,
+    "gap_se": 0.007
+   },
+   "flow_vs_gensim_shift": {
+    "spearman": 0.953,
+    "within_bin_spearman": 0.932,
+    "slope_sgd_on_model": 0.999
+   },
+   "diff_neg_vs_gensim_shift": {
+    "spearman": 0.904,
+    "within_bin_spearman": 0.87,
+    "slope_sgd_on_model": 1.149
+   },
+   "diff_full_vs_gensim_shift": {
+    "spearman": 0.914,
+    "within_bin_spearman": 0.879,
+    "slope_sgd_on_model": 0.967
+   },
+   "flow_vs_replica_exact_shift": {
+    "spearman": 0.95,
+    "within_bin_spearman": 0.938,
+    "slope_sgd_on_model": 0.983
+   },
+   "diff_neg_vs_replica_exact_shift": {
+    "spearman": 0.909,
+    "within_bin_spearman": 0.876,
+    "slope_sgd_on_model": 1.132
+   },
+   "diff_full_vs_replica_exact_shift": {
+    "spearman": 0.914,
+    "within_bin_spearman": 0.884,
+    "slope_sgd_on_model": 0.953
+   }
+  }
+ },
+ "0.1": {
+  "gf_replica": {
+   "abs_bins": [
+    4.458,
+    5.082,
+    5.625,
+    6.052,
+    6.501,
+    7.445
+   ],
+   "profile": [
+    0.8105,
+    0.9239,
+    1.0226,
+    1.1002,
+    1.182,
+    1.3536
+   ],
+   "gap": 0.1716,
+   "gap_se": 0.0037
+  },
+  "flow_eps0": {
+   "abs_bins": [
+    4.458,
+    5.082,
+    5.625,
+    6.051,
+    6.501,
+    7.446
+   ],
+   "profile": [
+    0.8104,
+    0.9239,
+    1.0226,
+    1.1002,
+    1.182,
+    1.3537
+   ],
+   "gap": 0.1717,
+   "gap_se": 0.0037
+  },
+  "flow_eps0_vs_replica_max_rel": 0.0001649175620270782,
+  "0.000625": {
+   "gensim": {
+    "abs_bins": [
+     4.393,
+     4.974,
+     5.461,
+     5.82,
+     6.185,
+     6.717
+    ],
+    "profile": [
+     0.8256,
+     0.9349,
+     1.0263,
+     1.0939,
+     1.1625,
+     1.2625
+    ],
+    "gap": 0.1001,
+    "gap_se": 0.0019
+   },
+   "replica_exact": {
+    "abs_bins": [
+     4.47,
+     5.093,
+     5.625,
+     6.029,
+     6.435,
+     7.079
+    ],
+    "profile": [
+     0.8159,
+     0.9296,
+     1.0267,
+     1.1004,
+     1.1747,
+     1.2922
+    ],
+    "gap": 0.1175,
+    "gap_se": 0.002
+   },
+   "flow": {
+    "abs_bins": [
+     4.468,
+     5.089,
+     5.619,
+     6.021,
+     6.424,
+     7.065
+    ],
+    "profile": [
+     0.8164,
+     0.9299,
+     1.0267,
+     1.1001,
+     1.1737,
+     1.2909
+    ],
+    "gap": 0.1172,
+    "gap_se": 0.0017
+   },
+   "diff_neg": {
+    "abs_bins": [
+     4.428,
+     5.085,
+     5.612,
+     6.05,
+     6.437,
+     7.187
+    ],
+    "profile": [
+     0.8081,
+     0.9281,
+     1.0243,
+     1.1042,
+     1.1747,
+     1.3118
+    ],
+    "gap": 0.137,
+    "gap_se": 0.0038
+   },
+   "flow_vs_gensim_shift": {
+    "spearman": 0.78,
+    "within_bin_spearman": 0.661,
+    "slope_sgd_on_model": 1.414
+   },
+   "diff_neg_vs_gensim_shift": {
+    "spearman": 0.741,
+    "within_bin_spearman": 0.602,
+    "slope_sgd_on_model": 2.084
+   },
+   "flow_vs_replica_exact_shift": {
+    "spearman": 0.925,
+    "within_bin_spearman": 0.895,
+    "slope_sgd_on_model": 0.983
+   },
+   "diff_neg_vs_replica_exact_shift": {
+    "spearman": 0.829,
+    "within_bin_spearman": 0.796,
+    "slope_sgd_on_model": 1.443
+   }
+  },
+  "0.00125": {
+   "gensim": {
+    "abs_bins": [
+     4.401,
+     4.988,
+     5.464,
+     5.801,
+     6.123,
+     6.44
+    ],
+    "profile": [
+     0.8292,
+     0.9399,
+     1.0295,
+     1.0932,
+     1.1538,
+     1.2134
+    ],
+    "gap": 0.0597,
+    "gap_se": 0.0018
+   },
+   "flow": {
+    "abs_bins": [
+     4.48,
+     5.098,
+     5.616,
+     5.993,
+     6.352,
+     6.764
+    ],
+    "profile": [
+     0.8216,
+     0.935,
+     1.0299,
+     1.0991,
+     1.1649,
+     1.2405
+    ],
+    "gap": 0.0756,
+    "gap_se": 0.0015
+   },
+   "flow_vs_gensim_shift": {
+    "spearman": 0.865,
+    "within_bin_spearman": 0.801,
+    "slope_sgd_on_model": 1.229
+   }
+  },
+  "0.0025": {
+   "gensim": {
+    "abs_bins": [
+     4.427,
+     5.015,
+     5.471,
+     5.769,
+     6.014,
+     6.038
+    ],
+    "profile": [
+     0.8367,
+     0.9479,
+     1.0341,
+     1.0904,
+     1.1368,
+     1.1413
+    ],
+    "gap": 0.0045,
+    "gap_se": 0.0034
+   },
+   "replica_exact": {
+    "abs_bins": [
+     4.514,
+     5.126,
+     5.628,
+     5.971,
+     6.259,
+     6.358
+    ],
+    "profile": [
+     0.8298,
+     0.9425,
+     1.0346,
+     1.0976,
+     1.1506,
+     1.1688
+    ],
+    "gap": 0.0182,
+    "gap_se": 0.0031
+   },
+   "flow": {
+    "abs_bins": [
+     4.503,
+     5.116,
+     5.61,
+     5.943,
+     6.222,
+     6.326
+    ],
+    "profile": [
+     0.8302,
+     0.9434,
+     1.0344,
+     1.0959,
+     1.1473,
+     1.1665
+    ],
+    "gap": 0.0192,
+    "gap_se": 0.003
+   },
+   "diff_neg": {
+    "abs_bins": [
+     4.458,
+     5.108,
+     5.604,
+     5.985,
+     6.271,
+     6.574
+    ],
+    "profile": [
+     0.8197,
+     0.9393,
+     1.0304,
+     1.1005,
+     1.1532,
+     1.2089
+    ],
+    "gap": 0.0557,
+    "gap_se": 0.0025
+   },
+   "diff_full": {
+    "abs_bins": [
+     4.476,
+     5.125,
+     5.612,
+     5.968,
+     6.212,
+     6.285
+    ],
+    "profile": [
+     0.8246,
+     0.9443,
+     1.0339,
+     1.0995,
+     1.1445,
+     1.1581
+    ],
+    "gap": 0.0135,
+    "gap_se": 0.0045
+   },
+   "flow_vs_gensim_shift": {
+    "spearman": 0.926,
+    "within_bin_spearman": 0.895,
+    "slope_sgd_on_model": 1.137
+   },
+   "diff_neg_vs_gensim_shift": {
+    "spearman": 0.898,
+    "within_bin_spearman": 0.859,
+    "slope_sgd_on_model": 1.498
+   },
+   "diff_full_vs_gensim_shift": {
+    "spearman": 0.888,
+    "within_bin_spearman": 0.85,
+    "slope_sgd_on_model": 1.084
+   },
+   "flow_vs_replica_exact_shift": {
+    "spearman": 0.966,
+    "within_bin_spearman": 0.952,
+    "slope_sgd_on_model": 0.989
+   },
+   "diff_neg_vs_replica_exact_shift": {
+    "spearman": 0.921,
+    "within_bin_spearman": 0.903,
+    "slope_sgd_on_model": 1.301
+   },
+   "diff_full_vs_replica_exact_shift": {
+    "spearman": 0.939,
+    "within_bin_spearman": 0.917,
+    "slope_sgd_on_model": 0.944
+   }
+  },
+  "0.00625": {
+   "gensim": {
+    "abs_bins": [
+     4.503,
+     5.081,
+     5.488,
+     5.687,
+     5.758,
+     5.406
+    ],
+    "profile": [
+     0.8541,
+     0.9637,
+     1.0409,
+     1.0787,
+     1.0921,
+     1.0254
+    ],
+    "gap": -0.0667,
+    "gap_se": 0.0047
+   },
+   "flow": {
+    "abs_bins": [
+     4.518,
+     5.16,
+     5.583,
+     5.83,
+     5.906,
+     5.613
+    ],
+    "profile": [
+     0.8411,
+     0.9607,
+     1.0394,
+     1.0854,
+     1.0996,
+     1.0451
+    ],
+    "gap": -0.0545,
+    "gap_se": 0.0058
+   },
+   "flow_vs_gensim_shift": {
+    "spearman": 0.963,
+    "within_bin_spearman": 0.94,
+    "slope_sgd_on_model": 1.07
+   }
+  },
+  "0.0125": {
+   "gensim": {
+    "abs_bins": [
+     4.58,
+     5.156,
+     5.498,
+     5.574,
+     5.462,
+     4.955
+    ],
+    "profile": [
+     0.8699,
+     0.9795,
+     1.0444,
+     1.0589,
+     1.0376,
+     0.9413
+    ],
+    "gap": -0.0963,
+    "gap_se": 0.0055
+   },
+   "flow": {
+    "abs_bins": [
+     4.58,
+     5.206,
+     5.541,
+     5.651,
+     5.55,
+     5.082
+    ],
+    "profile": [
+     0.8607,
+     0.9785,
+     1.0414,
+     1.062,
+     1.0431,
+     0.9551
+    ],
+    "gap": -0.088,
+    "gap_se": 0.0063
+   },
+   "flow_vs_gensim_shift": {
+    "spearman": 0.968,
+    "within_bin_spearman": 0.945,
+    "slope_sgd_on_model": 1.032
+   }
+  },
+  "0.025": {
+   "gensim": {
+    "abs_bins": [
+     4.696,
+     5.253,
+     5.483,
+     5.39,
+     5.117,
+     4.593
+    ],
+    "profile": [
+     0.8927,
+     0.9986,
+     1.0423,
+     1.0245,
+     0.9727,
+     0.8731
+    ],
+    "gap": -0.0995,
+    "gap_se": 0.005
+   },
+   "replica_exact": {
+    "abs_bins": [
+     4.758,
+     5.348,
+     5.604,
+     5.526,
+     5.253,
+     4.687
+    ],
+    "profile": [
+     0.8865,
+     0.9966,
+     1.0442,
+     1.0298,
+     0.9787,
+     0.8734
+    ],
+    "gap": -0.1054,
+    "gap_se": 0.0056
+   },
+   "flow": {
+    "abs_bins": [
+     4.719,
+     5.244,
+     5.46,
+     5.383,
+     5.139,
+     4.626
+    ],
+    "profile": [
+     0.8982,
+     0.9983,
+     1.0393,
+     1.0246,
+     0.9782,
+     0.8806
+    ],
+    "gap": -0.0976,
+    "gap_se": 0.005
+   },
+   "diff_neg": {
+    "abs_bins": [
+     4.677,
+     5.308,
+     5.565,
+     5.561,
+     5.361,
+     4.914
+    ],
+    "profile": [
+     0.8731,
+     0.991,
+     1.0391,
+     1.0382,
+     1.0008,
+     0.9175
+    ],
+    "gap": -0.0833,
+    "gap_se": 0.0053
+   },
+   "diff_full": {
+    "abs_bins": [
+     4.725,
+     5.363,
+     5.568,
+     5.484,
+     5.195,
+     4.673
+    ],
+    "profile": [
+     0.8818,
+     1.001,
+     1.0391,
+     1.0235,
+     0.9694,
+     0.8722
+    ],
+    "gap": -0.0972,
+    "gap_se": 0.0067
+   },
+   "flow_vs_gensim_shift": {
+    "spearman": 0.967,
+    "within_bin_spearman": 0.942,
+    "slope_sgd_on_model": 1.013
+   },
+   "diff_neg_vs_gensim_shift": {
+    "spearman": 0.937,
+    "within_bin_spearman": 0.899,
+    "slope_sgd_on_model": 1.123
+   },
+   "diff_full_vs_gensim_shift": {
+    "spearman": 0.942,
+    "within_bin_spearman": 0.906,
+    "slope_sgd_on_model": 0.979
+   },
+   "flow_vs_replica_exact_shift": {
+    "spearman": 0.966,
+    "within_bin_spearman": 0.95,
+    "slope_sgd_on_model": 1.003
+   },
+   "diff_neg_vs_replica_exact_shift": {
+    "spearman": 0.941,
+    "within_bin_spearman": 0.907,
+    "slope_sgd_on_model": 1.112
+   },
+   "diff_full_vs_replica_exact_shift": {
+    "spearman": 0.942,
+    "within_bin_spearman": 0.917,
+    "slope_sgd_on_model": 0.968
+   }
+  }
+ }
+}
