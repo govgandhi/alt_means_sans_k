@@ -71,12 +71,19 @@ These results distinguish population geometry, realized-graph targets, and train
 
 \section{Introduction}
 
-# About Network Embeddings
+% About Network Embeddings and Proposition
 Network embeddings represent nodes as vectors, providing an effective way to analyze relationships and structure in networks~\citep{hamilton2017representation,dehghan2022evaluating,perozzi2014deepwalk,grover2016node2vec,qiu2018network,kojaku2021residual2vec,kojaku2024network}. 
 Many powerful methods construct these representations from random walks, which capture the contexts surrounding each node and can reveal properties such as community structure~\citep{kojaku2024network,zhang2022exact,davison2024community,harker2024convergence}, node similarity~\citep{perozzi2014deepwalk,grover2016node2vec}, and potential links~\citep{grover2016node2vec,kojaku2021residual2vec}. 
 In these embeddings, relationships are often assessed through the angles between vectors, typically using cosine similarity~\citep{kojaku2024network,tandon2021community,kim2026uncovering} compared to vector lengths. 
-Vector lengths have been considered to reflect the ``degree'' of a node~\citep{kojaku2021residual2vec,murray2023unsupervised,kojaku2024network}, which holds true only in the stylized case, where an embedding space maximally high dimensional (dimension equal to the number of nodes) is trained infinitely many times. 
-Yet empirical studies suggest that embedding norms can carry meaningful information~\citep{murray2023unsupervised,schakel2015measuring,oyama2022norm,draganov2025importance}. What information these norms encode---and how they are leveraged in applications---remain open questions. % TODO: cite BERT norm studies (not in references.bib)
+Vector lengths have been used to reflect a node's degree~\citep {kojaku2021residual2vec,murray2023unsupervised,kojaku2024network}, which holds only in the stylized case where an embedding space with maximal dimensionality (equal to the number of nodes) is trained infinitely many times. 
+In practice, these theoretical accounts do not hold, and it has been reported that vector length captures meaningful information beyond node degrees~\citep{murray2023unsupervised,schakel2015measuring,oyama2022norm,draganov2025importance}.
+
+% I think this is too specific in the intro. We should first articulate why norm matters here and how they are interpreted
+Vector length in embeddings controls the magnitude of node similarity as the model learns the embedding space. 
+Specifically, the similarity of two nodes, represented by vectors $u$ and $v$, is often given by their dot product $s=u \cdot v$, which scales proportionally to the vectors' lengths. \
+While the vector space is learned based on the dot similarity, the learned vector length is discarded in its applications such as community detection~\citep{tandon2021community,kojaku2024network,kovacs2024iterative} and link prediction~\citep{zhiyuli2016learning,zhang2021adaptive,zhou2021progresses}. 
+Meanwhile, empirical studies have shown that the vector length encodes the role of a node, e.g., the length encodes both ``popularity'' and ``specialization'', meaning that 
+nodes with long vector have many neighbors who locate in a similar part of the network, while hubs with neighbors in different part of the network---that does not specialized---have shorter vectors~\citep{murray2023unsupervised}. 
 
 Word2vec norms first increase and then decrease with word frequency in a domain-specific corpus~\citep{schakel2015measuring}.
 Trajectory embeddings of scientific organizations show the same inverted-U against organization size: norms increase up to roughly \(10^3\) researchers and then decrease for larger institutions~\citep{murray2023unsupervised}.
