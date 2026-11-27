@@ -50,6 +50,13 @@
 \affiliation{School of Data Science, University of Virginia, Charlottesville, Virginia 22904, USA}
 \date{\today}
 
+% SK comments: 
+% I feel the abstract is rather narrow. That makes sense given the technical nature of this work, but it would be helpful if at least the introduction and final sentence were accessible.
+% Another question is how useful the findings are. We now understand how the norm is determined, which is a plus. But can we put this new understanding to practical use?
+% I wonder whether we could demonstrate this with link prediction, since the vector norm scales similarity and, in self-supervised models like node2vec, corresponds to the probability of edges.
+% More specifically, suppose we have vectors u and v learned with word2vec via gensim. We compute the score using dot similarity s. Hub vectors are shorter than theory predicts.
+% These short vector lengths are artifacts of the training algorithm. Would the learned embedding capture link probabilities better if we corrected the training algorithm?
+
 \begin{abstract}
 Random-walk network embeddings assign each node a direction and a norm, whose structural meaning depends on the population operator, realized graph, and training.
 We compare the population geometry of normalized spectral embeddings, random-walk pair probabilities, and skip-gram with negative sampling under the degree-corrected stochastic block model in a common notation.
@@ -71,22 +78,41 @@ These results distinguish population geometry, realized-graph targets, and train
 
 \section{Introduction}
 
-Random-walk embedding methods map nodes to vectors by sampling paths through a network and training a predictive model on the resulting node sequences~\citep{perozzi2014deepwalk,grover2016node2vec}.
-Most applications compare vector directions through cosine similarity.
-The vector norm is nevertheless a second observable that can encode node frequency, contextual concentration, and training dynamics.
-Its interpretation matters whenever embeddings enter a dot product, a clustering method without row normalization, or a downstream model that retains vector scale.
+% About Network Embeddings and Proposition
+Network embeddings represent nodes as vectors, providing an effective way to analyze relationships and structure in networks~\citep{hamilton2017representation,dehghan2022evaluating,perozzi2014deepwalk,grover2016node2vec,qiu2018network,kojaku2021residual2vec,kojaku2024network}. 
+Many powerful methods construct these representations from random walks, which capture the contexts surrounding each node and can reveal properties such as community structure~\citep{kojaku2024network,zhang2022exact,davison2024community,harker2024convergence}, node similarity~\citep{perozzi2014deepwalk,grover2016node2vec}, and potential links~\citep{grover2016node2vec,kojaku2021residual2vec}. 
+In these embeddings, relationships are often assessed through the angles between vectors, typically using cosine similarity while discarding the vector length~\citep{kojaku2024network,tandon2021community,kim2026uncovering,kovacs2024iterative,zhiyuli2016learning,zhang2021adaptive}. 
+Yet, empirical studies have observed that vector length is interpretable and relevant for the domain of the network under study~\citep{murray2023unsupervised,schakel2015measuring,oyama2022norm,draganov2025importance}.
+What information the vector lengths encode---and how we can leverage it for the application of network embedding---remains an open question.
 
-Empirical work has reported a nonmonotonic relation between frequency and embedding norm.
-Word2vec norms first increase and then decrease with word frequency in a domain-specific corpus~\citep{schakel2015measuring}.
-Trajectory embeddings of scientific organizations show the same inverted-U against organization size: norms increase up to roughly \(10^3\) researchers and then decrease for larger institutions~\citep{murray2023unsupervised}.
-The proposed explanation is a competition between repeated exposure, which pushes an embedding away from its initialization, and context diversity, which makes the update directions less coherent~\citep{schakel2015measuring}.
-A population account must distinguish the graph-conditioned target from training dynamics and specify what each intervention changes.
+Vector length in embeddings controls the magnitude of node similarity as the model learns the embedding space. 
+Specifically, the similarity of two nodes, represented by vectors $u$ and $v$, is often given by their dot product $s=u \cdot v$, which scales proportionally to the vectors' lengths. 
+While the role of the vector length during training is understood mechanistically, what the learned vector length captures remains speculative. 
+Prior studies observed that vector lengths tend to increase with degree up to a point, then shrink notably for the largest-degree nodes~\citep{murray2023unsupervised,schakel2015measuring}.
+A common interpretation of this pattern is that vector length encodes two aspects, i.e., popularity and specialization. 
+Nodes with long vectors have many neighbors close to each other, whereas hubs with neighbors far apart---those that are not specialized---have shorter vectors than those with the same degree~\citep{murray2023unsupervised}.
+This interpretation remains speculative and is not grounded in theory. It is not even clear whether the vector lengths are artifactual. 
+
+%The proposed explanation is a competition between repeated exposure, which pushes an embedding away from its initialization, and context diversity, which makes the update directions less coherent~\citep{schakel2015measuring}.
+%A common interpretation of the vector length is that it scales with the node's degree. 
+%The length of a node embedding vector has been demonstrated, both theoretically and empirically, to reflect a node's degree~\citep{kojaku2021residual2vec,murray2023unsupervised,kojaku2024network}.
+%Yet, node degree alone does not account for vector length in practice, and norms have been shown to
+% I think this is too specific in the intro. We should first articulate why norms matter here and how they are interpreted
+
+
+% SK comments: Readers might be confused here when word2vec is introduced here. We know that random-walk-based embeddings is often generated by word2vec but most readers probably don't know
+% SK comments: I suggest keeping the intro as general as possible up to the point where we have to talk about the inner workings of word2vec
+%Word2vec norms first increase and then decrease with word frequency in a domain-specific corpus~\citep{schakel2015measuring}.
+% SK comments: Inverted-U would be interpreted differently by people.
+%Trajectory embeddings of scientific organizations show the same inverted-U against organization size: norms increase up to roughly \(10^3\) researchers and then decrease for larger institutions~\citep{murray2023unsupervised}.
+% SK comments: not clear what the population account means here. Please use straightforward and clear terminology. 
+%A population account must distinguish the graph-conditioned target from training dynamics and specify what each intervention changes.
 
 Two theoretical traditions address parts of the problem.
 Population spectral embeddings under the degree-corrected stochastic block model (DCSBM) have community rays, with node-specific length multipliers in SCORE~\citep{jin2015fast} and regularized spectral clustering~\citep{qin2013regularized}.
 The matrix-factorization view of skip-gram identifies a shifted pointwise mutual information score~\citep{levy2014neural,qiu2018network}, while an information-geometric analysis relates a centered, transformed word-vector norm to the Kullback--Leibler (KL) divergence between conditional and marginal context distributions~\citep{oyama2022norm}.
 Related analyses establish sampler-dependent targets~\citep{davison2023asymptotics}, including a block-constant DCSBM target at unigram negative sampling~\citep{davison2024community}.
-These results do not by themselves determine the norms returned by finite stochastic optimization.
+These results alone do not determine the norms returned by finite stochastic optimization.
 
 We compare these population results with finite training.
 Under the DCSBM, the normalized-adjacency eigenspace and the stationary random-walk pair matrix have exact radial-angular factorizations.
@@ -103,7 +129,7 @@ Corrected Gensim controls reproduce the peak movement with weaker subsampling un
 Before training on new targets, we freeze node-level norms and peak locations predicted from realized positive-pair exposure and context KL.
 The predictions reproduce the peak movement in direct preferential-attachment graphs, clustered scale-free graphs, and an empirical coauthorship network, with explicit misses at the boundaries of the tested degree range.
 
-Our random-walk formulas apply to DeepWalk, equivalently node2vec with return and in--out parameters \(p=q=1\).
+Our random-walk formulas apply to DeepWalk; equivalently, to node2vec with return and in-out parameters \(p=q=1\).
 The SGNS results assume negative sampling in place of the hierarchical softmax of the original DeepWalk~\citep{perozzi2014deepwalk}.
 General node2vec walks are second-order Markov chains on directed edges and require a separate state-space argument.
 
