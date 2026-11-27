@@ -71,12 +71,13 @@ These results distinguish population geometry, realized-graph targets, and train
 
 \section{Introduction}
 
-Random-walk embedding methods map nodes to vectors by sampling paths through a network and training a predictive model on the resulting node sequences~\citep{perozzi2014deepwalk,grover2016node2vec}.
-Most applications compare vector directions through cosine similarity.
-The vector norm is nevertheless a second observable that can encode node frequency, contextual concentration, and training dynamics.
-Its interpretation matters whenever embeddings enter a dot product, a clustering method without row normalization, or a downstream model that retains vector scale.
+# About Network Embeddings
+Network embeddings represent nodes as vectors, providing an effective way to analyze relationships and structure in networks~\citep{hamilton2017representation,dehghan2022evaluating,perozzi2014deepwalk,grover2016node2vec,qiu2018network,kojaku2021residual2vec,kojaku2024network}. 
+Many powerful methods construct these representations from random walks, which capture the contexts surrounding each node and can reveal properties such as community structure~\citep{kojaku2024network,zhang2022exact,davison2024community,harker2024convergence}, node similarity~\citep{perozzi2014deepwalk,grover2016node2vec}, and potential links~\citep{grover2016node2vec,kojaku2021residual2vec}. 
+In these embeddings, relationships are often assessed through the angles between vectors, typically using cosine similarity~\citep{kojaku2024network} compared to vector lengths. % TODO: cite Santo's graph-embedding paper and Munjung's EDM paper (not in references.bib)
+Vector lengths have been considered to reflect the ``degree'' of a node~\citep{kojaku2021residual2vec,murray2023unsupervised,kojaku2024network}, which holds true only in the stylized case, where an embedding space maximally high dimensional (dimension equal to the number of nodes) is trained infinitely many times. 
+Yet empirical studies suggest that embedding norms can carry meaningful information~\citep{murray2023unsupervised,schakel2015measuring,oyama2022norm,draganov2025importance}. What information these norms encode---and how they are leveraged in applications---remain open questions. % TODO: cite BERT norm studies (not in references.bib)
 
-Empirical work has reported a nonmonotonic relation between frequency and embedding norm.
 Word2vec norms first increase and then decrease with word frequency in a domain-specific corpus~\citep{schakel2015measuring}.
 Trajectory embeddings of scientific organizations show the same inverted-U against organization size: norms increase up to roughly \(10^3\) researchers and then decrease for larger institutions~\citep{murray2023unsupervised}.
 The proposed explanation is a competition between repeated exposure, which pushes an embedding away from its initialization, and context diversity, which makes the update directions less coherent~\citep{schakel2015measuring}.
